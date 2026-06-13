@@ -39,7 +39,7 @@ const SERVICE_AREA = [
   { '@type': 'City', name: 'Plainsboro', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'Princeton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'West Windsor Township', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
-  { '@type': 'City', name: 'Ewing', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+  { '@type': 'City', name: 'Ewing', address: { '@type': 'PostalAddress', postalCode: '08628', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'Hamilton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'Lawrence Township', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'Hopewell', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
@@ -47,6 +47,7 @@ const SERVICE_AREA = [
   { '@type': 'City', name: 'Robbinsville', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'East Windsor', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'AdministrativeArea', name: 'Central New Jersey' },
+  { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
 ]
 
 const { render, blogPosts, faqs } = await import('./dist-server/entry-server.js')
@@ -86,6 +87,11 @@ const pageMeta = {
     description:
       'Web design agency and AI automation for local businesses in Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Lawrence, Trenton, and across Central NJ.',
   },
+  '/web-design-ewing-nj': {
+    title: 'Web Design in Ewing, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Ewing, NJ businesses. Hand-coded, fast-loading sites starting at $10,000. Serving Ewing Township and Mercer County.',
+  },
   '/quote': {
     title: 'Get a Quote | Orbit Websites',
     description:
@@ -115,7 +121,7 @@ const pageMeta = {
 
 // --- JSON-LD builders -------------------------------------------------------
 const organization = {
-  '@type': 'ProfessionalService',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
   '@id': `${ORIGIN}/#organization`,
   name: 'OrbitBoyzz',
   alternateName: ['Orbit Websites', 'Orbit Boyzz', 'ORBIT Websites', 'OrbitBoyzz Websites'],
@@ -129,9 +135,16 @@ const organization = {
   priceRange: '$$$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '641 Plainsboro Rd',
     addressLocality: 'Plainsboro',
     addressRegion: 'NJ',
+    postalCode: '08536',
     addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '40.3329',
+    longitude: '-74.5840',
   },
   contactPoint: {
     '@type': 'ContactPoint',
@@ -186,7 +199,7 @@ const pricingFaqPage = {
       name: 'How much does a custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A custom website for a local business typically ranges from $10,000 to $50,000, based on design, features, and AI automation. Orbit Boyzz starts at $10,000 for a fully hand-coded solution with built-in lead intake.',
+        text: 'A custom website for a local business typically ranges from $3,500 to $15,000, based on design, features, and AI automation. Orbit Boyzz starts around $3,500 for a focused hand-coded site and around $5,000 when AI intake is included.',
       },
     },
     {
@@ -194,7 +207,7 @@ const pricingFaqPage = {
       name: 'What factors affect custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Design complexity, page count, integrations, AI automation, and hosting/maintenance fees each add to the base price of $10,000.',
+        text: 'Design complexity, page count, integrations, AI automation, and hosting or maintenance fees each add to the base price of a custom build.',
       },
     },
     {
@@ -202,7 +215,7 @@ const pricingFaqPage = {
       name: 'What factors affect the cost of an AI website for a small business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Basic setups start at $10,000, while fully custom solutions can exceed $25,000.',
+        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Starter AI intake builds begin around $5,000, while fully custom operations systems can exceed $15,000.',
       },
     },
     {
@@ -210,7 +223,7 @@ const pricingFaqPage = {
       name: 'Can a small business afford an AI website?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. With a starting price of $10,000, many small businesses finance the project through a modest retainer or a phased rollout, recouping the expense via faster lead capture and reduced admin labor within a year.',
+        text: 'Yes. With phased builds starting in the low thousands, many small businesses can start with a focused site and add AI intake once lead volume justifies the upgrade.',
       },
     },
   ],
@@ -287,6 +300,21 @@ function graphFor(route) {
         name: q,
         acceptedAnswer: { '@type': 'Answer', text: a },
       })),
+    })
+  }
+  if (route === '/web-design-ewing-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-ewing-nj#service`,
+      name: 'Web Design in Ewing, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Ewing', address: { '@type': 'PostalAddress', postalCode: '08628', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description:
+        'Custom hand-coded website design and AI operations for local businesses in Ewing Township, NJ. Starting at $10,000 with built-in lead intake and 15-second speed-to-lead.',
     })
   }
   if (route === '/pricing') {

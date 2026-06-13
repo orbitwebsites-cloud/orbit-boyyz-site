@@ -35,6 +35,9 @@ BLOG_TOPIC_BACKLOG = [
     "What is a conversion-focused website for a local business?",
     "AI vs human receptionist: cost comparison for contractors",
     "Why handcoded websites outperform template sites for local SEO",
+    "Web design for local businesses in Ewing, NJ — what to look for",
+    "Why Ewing NJ contractors need a custom website, not a template",
+    "How Mercer County small businesses can rank on Google without ads",
 ]
 
 _PROMPT = """\
