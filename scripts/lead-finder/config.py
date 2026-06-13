@@ -57,6 +57,12 @@ FAKE_WEBSITE_DOMAINS = [
 # Indexed by weeks_active (0-based).  After index 3, stay at 50.
 EMAIL_DAILY_LIMITS = [20, 30, 40, 50]
 
+# ── Call sheet ────────────────────────────────────────────────────────────────
+# Generate an AI talking point only for the first N call-sheet leads (these are
+# the ones you'll realistically dial this week). The rest get an instant
+# templated line — avoids hundreds of sequential Cerebras calls per run.
+CALL_SHEET_AI_LIMIT = 40
+
 # ── Sender identity ───────────────────────────────────────────────────────────
 SENDER_NAME    = "Ritvik"
 SENDER_PHONE   = "(609) 662-8052"

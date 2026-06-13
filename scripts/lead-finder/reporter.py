@@ -31,6 +31,14 @@ def _iso_week() -> str:
     return f"{now.year}-W{now.strftime('%V')}"
 
 
+def _template_point(lead: dict) -> str:
+    town = lead.get("location", "NJ")
+    return (
+        f"Noticed {lead['name']} doesn't show up when people search for "
+        f"{lead['category']} in {town} — worth fixing?"
+    )
+
+
 def _talking_point(lead: dict, cerebras_client) -> str:
     from config import CEREBRAS_MODEL
     town = lead.get("location", "").replace(", NJ", "")
@@ -48,15 +56,18 @@ def _talking_point(lead: dict, cerebras_client) -> str:
         return resp.choices[0].message.content.strip().strip('"')
     except Exception as exc:
         log.warning("Talking point failed for %s: %s", lead["name"], exc)
-        town = lead.get("location", "NJ")
-        return (
-            f"Noticed {lead['name']} doesn't show up when people search for "
-            f"{lead['category']} in {town} — worth fixing?"
-        )
+        return _template_point(lead)
 
 
 def write_call_sheet(call_leads: list[dict], cerebras_client) -> str:
-    """Write CSV call sheet. Returns the file path."""
+    """Write CSV call sheet. Returns the file path.
+
+    Only the first CALL_SHEET_AI_LIMIT leads get an AI-generated talking point
+    (those are the ones you'll dial this week); the rest get an instant
+    templated line so a run with hundreds of leads stays fast.
+    """
+    from config import CALL_SHEET_AI_LIMIT
+
     Path(LEADS_DIR).mkdir(exist_ok=True)
     week = _iso_week()
     path = os.path.join(LEADS_DIR, f"{week}-call-sheet.csv")
@@ -67,12 +78,16 @@ def write_call_sheet(call_leads: list[dict], cerebras_client) -> str:
             "yelp_url", "talking_point",
         ])
         writer.writeheader()
-        for lead in call_leads:
+        for i, lead in enumerate(call_leads):
             row = {k: lead.get(k, "") for k in ["name", "category", "phone", "address", "location", "yelp_url"]}
-            row["talking_point"] = _talking_point(lead, cerebras_client)
+            if i < CALL_SHEET_AI_LIMIT:
+                row["talking_point"] = _talking_point(lead, cerebras_client)
+            else:
+                row["talking_point"] = _template_point(lead)
             writer.writerow(row)
 
-    log.info("Call sheet written: %s (%d leads)", path, len(call_leads))
+    log.info("Call sheet written: %s (%d leads, %d AI talking points)",
+             path, len(call_leads), min(len(call_leads), CALL_SHEET_AI_LIMIT))
     return path
 
 
