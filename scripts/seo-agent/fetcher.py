@@ -98,8 +98,12 @@ def fetch(url: str, timeout: int = 12, delay: float = 1.5) -> dict:
 
         # --- FAQ pairs from FAQPage schema ---
         for block in result["schema_blocks"]:
-            if isinstance(block, dict) and block.get("@type") == "FAQPage":
+            if not isinstance(block, dict):
+                continue
+            if block.get("@type") == "FAQPage":
                 for item in block.get("mainEntity", []):
+                    if not isinstance(item, dict):
+                        continue
                     q = item.get("name", "")
                     a_node = item.get("acceptedAnswer", {})
                     a = a_node.get("text", "") if isinstance(a_node, dict) else ""
