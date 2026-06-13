@@ -59,3 +59,9 @@ jobs:
           git add reports/
           git diff --cached --quiet || git commit -m "chore: weekly GEO audit $(date -u '+%Y-%m-%d')"
           git push
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: team_B7tKDOEe71bK8ojPoB0fM34F
+          VERCEL_PROJECT_ID: prj_i8lnlTTaMXQTJsfMQEJI0zoarTww
