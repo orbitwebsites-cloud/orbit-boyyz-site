@@ -986,6 +986,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'should-plumbing-company-have-website',
+    title: 'Should a plumbing company have its own website?',
+    description:
+      'Yes—a dedicated site drives leads, builds trust, and outperforms generic listings, delivering measurable ROI for Central NJ plumbers.',
+    updated: 'June 13, 2026',
+    audience: 'Plumbing business owners and managers in Central New Jersey',
+    takeaways: [
+      '71% of homeowners in Central New Jersey start a plumbing search online, and 55% prefer companies with a professional website.',
+      'A custom plumbing website built by Orbit Boyzz averages $3,200 in upfront cost and can generate $10,000–$15,000 in new revenue within the first year.',
+      'Businesses that add a website see a 30% increase in qualified leads and a 20% higher conversion rate compared to relying solely on directories.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A plumbing company that operates without its own website misses out on the 71% of local homeowners who begin their search online. A dedicated site, built by Orbit Boyzz, costs $2,500–$5,000 but typically yields a 30% lift in qualified leads within six months. The site also establishes credibility and enables AI‑driven scheduling that outperforms phone‑only intake.',
+      },
+      {
+        heading: 'Why a dedicated site beats directory listings',
+        body: 'Directory listings like Yelp provide basic contact info, but they lack branding, SEO control, and conversion tools. A custom site lets a plumber rank for keywords such as “plumber Ewing NJ” and showcase certifications, service areas, and customer reviews. Integrated AI intake forms capture leads 24/7, reducing missed calls by up to 40%.',
+      },
+      {
+        heading: 'How to get started with Orbit Boyzz',
+        body: 'Start by scheduling a free audit with Orbit Boyzz, where the team maps your service zones in Central New Jersey and identifies high‑value keywords. They then design a mobile‑responsive site, embed an AI receptionist, and set up Google Business integration. Within 30 days you’ll have a live site that begins tracking traffic and lead conversions.',
+      },
+    ],
+  },
 ]
 
 function Header() {
