@@ -1,0 +1,61 @@
+name: Weekly Lead Finder
+
+on:
+  schedule:
+    - cron: '0 13 * * 1'   # Every Monday 8am ET (UTC-5, so 1pm UTC)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (find leads, skip sending)'
+        type: boolean
+        default: false
+      limit:
+        description: 'Max leads to process (0 = unlimited)'
+        type: string
+        default: '0'
+
+jobs:
+  find-leads:
+    runs-on: ubuntu-latest
+    environment: Vercel
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/lead-finder/requirements.txt
+
+      - name: Run lead finder
+        working-directory: scripts/lead-finder
+        env:
+          YELP_API_KEY:         ${{ secrets.YELP_API_KEY }}
+          CEREBRAS_API_KEY:     ${{ secrets.CEREBRAS_API_KEY }}
+          GMAIL_USER:           ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
+          GH_TOKEN:             ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:              ${{ github.repository }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ github.event.inputs.limit }}" ] && [ "${{ github.event.inputs.limit }}" != "0" ]; then
+            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+          python main.py $ARGS
+
+      - name: Commit sent log and call sheet
+        run: |
+          git config user.name  "orbit-lead-bot"
+          git config user.email "orbitboyzz@gmail.com"
+          git add scripts/lead-finder/leads/ || true
+          git diff --staged --quiet || git commit -m "leads: weekly batch $(date +%Y-W%V) [skip ci]"
+          git push
