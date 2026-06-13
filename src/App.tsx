@@ -29,8 +29,43 @@ const email = 'orbitboyzz@gmail.com'
 const CALENDAR_LINK = 'https://calendly.com/orbitwebsites/30min?back=1'
 const spring = { type: 'spring' as const, stiffness: 150, damping: 20 }
 
+type AnalyticsWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>
+  gtag?: (command: string, eventName: string, params?: Record<string, unknown>) => void
+  plausible?: (eventName: string, params?: { props?: Record<string, unknown> }) => void
+}
+
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
+}
+
+function conversionNameForHref(href: string) {
+  if (href.startsWith('tel:')) return 'call_click'
+  if (href.startsWith('mailto:')) return href.includes('Orbit%20project%20range') ? 'quote_email_click' : 'email_click'
+  if (href.includes('calendly.com')) return 'calendly_click'
+  if (href === '/quote') return 'quote_page_click'
+  if (href === '/pricing') return 'pricing_page_click'
+  if (href === '/contact') return 'contact_page_click'
+  return 'cta_click'
+}
+
+function trackConversion(eventName: string, props: Record<string, unknown> = {}) {
+  if (typeof window === 'undefined') return
+  const analyticsWindow = window as AnalyticsWindow
+  const payload = {
+    event_category: 'lead',
+    page_path: window.location.pathname,
+    ...props,
+  }
+
+  analyticsWindow.dataLayer = analyticsWindow.dataLayer ?? []
+  analyticsWindow.dataLayer.push({ event: eventName, ...payload })
+  analyticsWindow.gtag?.('event', eventName, payload)
+  analyticsWindow.plausible?.(eventName, { props: payload })
+}
+
+function trackHrefConversion(href: string, label: string) {
+  trackConversion(conversionNameForHref(href), { href, label })
 }
 
 const revealParent: Variants = {
@@ -217,7 +252,7 @@ export const faqs = [
   ['What kinds of businesses do you build websites for?', 'We build and refresh websites for real estate teams, restaurants, bakeries, contractors, clinics, retailers, and service providers.'],
   ['Can you add calls, email, booking, or quote forms?', 'Yes. We can add click-to-call links, mailto links, contact forms, booking buttons, and lead forms depending on what your business needs.'],
   ['Do you guarantee Google rankings?', 'No. We can set up local SEO basics and clean page structure, but we do not promise rankings or results that cannot be guaranteed.'],
-  ['What is the new premium offer?', 'The premium offer is a $10K+ AI operations website build for companies that need automated intake, pricing, booking, and routing.'],
+  ['What is the new premium offer?', 'The premium offer is a custom website or AI operations website for companies that need automated intake, pricing, booking, and routing. Starter websites begin around $3,500, with AI intake builds starting around $5,000.'],
 ]
 
 type QuoteNeed = 'site' | 'refresh' | 'forms' | 'ai'
@@ -719,7 +754,7 @@ export const blogPosts = [
       },
       {
         heading: 'Why Google Business Profile is not enough',
-        body: 'Many Ewing plumbers have a Google Business Profile but no linked website. Google's local ranking algorithm penalizes listings without a verified website by placing them below competitors who have one. A buyer searching "plumber Ewing NJ" sees the three-pack first — and the businesses in it almost always have a working site with their service list and a contact form.',
+        body: 'Many Ewing plumbers have a Google Business Profile but no linked website. Google local ranking tends to favor listings with a verified website because the site confirms services, service area, and contact paths. A buyer searching "plumber Ewing NJ" sees the three-pack first, and the businesses in it almost always have a working site with their service list and a contact form.',
       },
       {
         heading: 'How Orbit Boyzz builds plumber sites',
@@ -751,6 +786,122 @@ export const blogPosts = [
       {
         heading: 'The Orbit Boyzz dental website build',
         body: 'We build a hand-coded Next.js dental site with service pages (cleanings, fillings, implants, orthodontics), insurance and payment information, and an AI intake form that captures treatment interest, insurance carrier, and preferred appointment windows. The form auto-qualifies new vs. existing patients and routes urgent cases — like a toothache — to a same-day callback trigger. Setup takes three weeks. Starts at $5,000.',
+      },
+    ],
+  },
+
+  {
+    slug: 'local-business-website-checklist-2026',
+    title: 'Local Business Website Checklist for 2026: What Actually Gets Calls',
+    description:
+      'A 2026 local business website should have fast mobile pages, service-area content, clear offers, direct contact paths, proof, FAQ answers, and conversion tracking.',
+    updated: 'June 13, 2026',
+    audience: 'Central New Jersey business owners planning a new website or deciding whether their current site is good enough',
+    takeaways: [
+      'The best local business websites make the next step obvious: call, book, request a quote, or start intake.',
+      'Service-area pages, direct-answer FAQs, and structured proof help both Google and AI assistants understand the business.',
+      'Orbit Boyzz builds checklist-complete sites starting around $3,500, with AI intake added when faster response can pay for itself.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A local business website in 2026 needs fast mobile performance, clear service and town signals, visible phone and quote actions, proof that the business is real, FAQ answers, structured metadata, and conversion tracking. If the site cannot tell a buyer what you do, where you work, why to trust you, and how to contact you in under a minute, it is leaving calls on the table.',
+      },
+      {
+        heading: 'The core checklist',
+        body: 'Start with a clear homepage, service sections, town or service-area content, click-to-call buttons, a quote or booking path, reviews or project proof, concise FAQs, schema markup, a sitemap, analytics, and a pricing or budget expectation. For Central New Jersey companies, the site should mention real service areas such as Plainsboro, Princeton, Ewing, Hamilton, Lawrence, Trenton, and West Windsor only when the business actually serves them.',
+      },
+      {
+        heading: 'Where AI intake fits',
+        body: 'AI intake belongs after the basic conversion path is clear. It is most useful when leads need qualification, routing, urgency sorting, booking logic, or proposal details. A contractor, clinic, caterer, or local service company can use AI intake to ask the next best question immediately instead of letting a vague form submission wait in an inbox.',
+      },
+      {
+        heading: 'How Orbit Boyzz builds against the checklist',
+        body: 'Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Starter builds begin around $3,500. AI-powered intake and routing usually start around $5,000 when the workflow can recover missed leads or reduce admin work.',
+      },
+    ],
+  },
+
+  {
+    slug: 'home-service-website-structure',
+    title: 'What Website Structure Works Best for a Home Service Business?',
+    description:
+      'The best home service website structure starts with service pages, town pages, proof, urgent contact paths, FAQ answers, and a quote or booking flow.',
+    updated: 'June 13, 2026',
+    audience: 'Contractors, HVAC companies, plumbers, electricians, landscapers, and other home service businesses planning a stronger website',
+    takeaways: [
+      'A home service website should separate services, towns, proof, FAQs, and contact paths instead of forcing every buyer through one generic page.',
+      'The highest-intent actions are usually call now, request a quote, book a visit, or start an intake form.',
+      'Orbit Boyzz builds this structure for Central New Jersey service businesses, then adds AI intake when lead qualification or routing matters.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'The best website structure for a home service business is a clear homepage, dedicated service pages, service-area pages for real towns served, proof such as project examples or reviews, concise FAQs, and a visible call or quote path on every page. This helps customers understand the business quickly and gives search engines and AI assistants clean information to extract.',
+      },
+      {
+        heading: 'Recommended page map',
+        body: 'Start with a homepage, services overview, one page for each core service, one page for each real service area, a projects or proof page, pricing or quote guidance, FAQ, contact, and a quote page. For Central New Jersey companies, useful area pages may include Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Lawrence, Trenton, or Robbinsville if those towns are actually served.',
+      },
+      {
+        heading: 'Where AI intake fits',
+        body: 'AI intake belongs on the quote or emergency path. It can ask about property type, service need, urgency, location, preferred timing, photos, and budget range. The goal is not to add novelty; it is to turn vague form fills into qualified leads a business can act on faster.',
+      },
+    ],
+  },
+
+  {
+    slug: 'ai-receptionist-vs-answering-service',
+    title: 'AI Receptionist vs Answering Service: Which Is Better for a Local Business?',
+    description:
+      'An AI receptionist is best for structured intake and routing, while an answering service is best when every caller needs a human voice immediately.',
+    updated: 'June 13, 2026',
+    audience: 'Local business owners comparing AI intake, answering services, call centers, and website-based lead routing',
+    takeaways: [
+      'An answering service handles live calls; an AI receptionist can also structure website, form, booking, and follow-up workflows.',
+      'AI intake is strongest when the business needs qualification, routing, summaries, booking logic, or proposal details.',
+      'The best setup can combine both: AI for structured intake and humans for edge cases or high-touch calls.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'An AI receptionist is better when a local business needs structured intake, lead qualification, routing, booking, or follow-up across the website and contact forms. An answering service is better when every inquiry needs a live human conversation from the first second. The right choice depends on whether the bottleneck is missed calls, unstructured details, slow follow-up, or manual scheduling.',
+      },
+      {
+        heading: 'Best fit for an AI receptionist',
+        body: 'AI reception works well for contractors, clinics, caterers, real estate teams, and service companies that repeatedly ask the same questions before quoting or booking. It can collect service type, urgency, address, timing, budget, photos, and special requirements, then send the business a clean lead summary.',
+      },
+      {
+        heading: 'Best fit for an answering service',
+        body: 'A human answering service is useful when callers need reassurance, complicated judgment, or immediate conversation. Many businesses do not need to choose one forever. Orbit Boyzz often recommends starting with website-based AI intake for repeatable questions and keeping humans focused on calls that need judgment.',
+      },
+    ],
+  },
+
+  {
+    slug: 'restaurant-website-central-nj-checklist',
+    title: 'Restaurant Website Checklist for Central New Jersey Businesses',
+    description:
+      'A restaurant website should make menu, hours, location, ordering, reservations, catering, photos, and contact details easy to find on mobile.',
+    updated: 'June 13, 2026',
+    audience: 'Restaurants, bakeries, cafes, caterers, and food businesses in Plainsboro, Princeton, West Windsor, Ewing, Hamilton, and nearby Central New Jersey towns',
+    takeaways: [
+      'A restaurant website must answer menu, hours, location, ordering, reservations, catering, and contact questions quickly on mobile.',
+      'Local food businesses benefit from pages or sections that describe real services such as catering, private events, delivery, pickup, and special orders.',
+      'Orbit Boyzz builds restaurant and food business websites with clear menus, quote paths, and optional catering proposal automation.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A restaurant website in Central New Jersey should include a mobile-friendly menu, current hours, location, phone number, online ordering or reservation links, catering details, photos, reviews or proof, accessibility basics, and a fast contact path. Visitors should not have to search social media posts to learn whether the business is open or how to order.',
+      },
+      {
+        heading: 'Core pages and sections',
+        body: 'Useful restaurant website sections include menu, order online, reservations, catering, private events, gift cards, location, hours, gallery, about, FAQ, and contact. Bakeries and specialty food businesses should also show custom orders, lead time, pickup rules, allergens or dietary notes, and seasonal offerings.',
+      },
+      {
+        heading: 'Where automation helps',
+        body: 'Automation is useful when the restaurant handles catering, corporate lunches, custom cakes, private events, or large orders. A structured intake form can collect guest count, date, menu preferences, budget, delivery details, and dietary restrictions, then send a cleaner request than a generic contact form.',
       },
     ],
   },
@@ -801,6 +952,8 @@ function Header() {
             whileTap={{ scale: 0.98 }}
             transition={spring}
             href="tel:+16096628052"
+            data-conversion="call_click"
+            onClick={() => trackHrefConversion('tel:+16096628052', 'Header call')}
             className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.035] px-4 py-2 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6] hover:border-[#d6b36a]/45 hover:text-[#d6b36a]"
           >
             <PhoneCall className="h-3.5 w-3.5" strokeWidth={1.6} />
@@ -872,12 +1025,17 @@ function BentoCard({ children, className = '' }: { children: ReactNode; classNam
 }
 
 function PremiumButton({ href, children, light = false }: { href: string; children: ReactNode; light?: boolean }) {
+  const label = typeof children === 'string' ? children : 'Premium CTA'
+  const conversionName = conversionNameForHref(href)
+
   return (
     <motion.a
       whileTap={{ scale: 0.98 }}
       whileHover={{ y: -2 }}
       transition={spring}
       href={href}
+      data-conversion={conversionName}
+      onClick={() => trackHrefConversion(href, label)}
       className={cn(
         'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border px-5 font-mono text-xs uppercase tracking-widest',
         light
@@ -944,7 +1102,7 @@ function Home() {
               {[
                 ['03', 'Live project examples'],
                 ['04', 'Core website services'],
-                ['$10K+', 'Premium system builds'],
+                ['$3.5K+', 'Starter website builds'],
               ].map(([metric, copy]) => (
                 <BentoCard key={copy} className="p-6">
                   <p className="font-editorial text-7xl leading-none tracking-wide text-[#f4efe6]">{metric}</p>
@@ -1749,6 +1907,33 @@ function QuoteEstimator() {
     }
   }, [automation, complexity, employee, need, urgency])
 
+  const selectedNeed = quoteOptions.need.find(([value]) => value === need)?.[1] ?? 'New website'
+  const selectedComplexity = quoteOptions.complexity.find(([value]) => value === complexity)?.[1] ?? 'Simple'
+  const selectedUrgency = quoteOptions.urgency.find(([value]) => value === urgency)?.[1] ?? 'Normal timeline'
+  const selectedEmployee = quoteOptions.employee.find(([value]) => value === employee)?.[1] ?? 'Not sure yet'
+  const quoteMailto = `mailto:${email}?subject=${encodeURIComponent(`Orbit project range: ${selectedNeed}`)}&body=${encodeURIComponent(
+    [
+      'Hi Orbit Boyzz,',
+      '',
+      'I used the project range estimator and want to talk about this build.',
+      '',
+      `Need: ${selectedNeed}`,
+      `Complexity: ${selectedComplexity}`,
+      `Timeline: ${selectedUrgency}`,
+      `AI employee: ${selectedEmployee}`,
+      `Automation add-on: ${automation ? 'Yes' : 'No'}`,
+      `Estimated upfront build: ${estimate.upfront}`,
+      `Estimated monthly care / ops: ${estimate.monthly}`,
+      '',
+      'Business name:',
+      'Website:',
+      'Service area:',
+      'Best phone number:',
+      '',
+      'What I want the website to help with:',
+    ].join('\n'),
+  )}`
+
   return (
     <section className="px-5 py-24 md:px-8" id="quote-estimator">
       <div className="mx-auto max-w-7xl">
@@ -1811,6 +1996,12 @@ function QuoteEstimator() {
                   </div>
                 </div>
                 <p className="mt-6 font-light leading-relaxed text-[#b7afa3]">{estimate.note}</p>
+                <div className="mt-6 rounded-2xl border border-[#d6b36a]/20 bg-[#d6b36a]/10 p-5">
+                  <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[READY TO SEND]</p>
+                  <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">
+                    Send this estimate with your business name, website, service area, and the problem the site needs to solve.
+                  </p>
+                </div>
               </div>
 
               <div>
@@ -1823,6 +2014,9 @@ function QuoteEstimator() {
                   ))}
                 </div>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <PremiumButton href={quoteMailto}>
+                    Send this range
+                  </PremiumButton>
                   <PremiumButton href={CALENDAR_LINK}>
                     Book a 30-min call
                   </PremiumButton>
@@ -1915,12 +2109,34 @@ function Blog() {
   )
 }
 
+function blogSchemaDate(displayDate: string) {
+  const months: Record<string, string> = {
+    January: '01',
+    February: '02',
+    March: '03',
+    April: '04',
+    May: '05',
+    June: '06',
+    July: '07',
+    August: '08',
+    September: '09',
+    October: '10',
+    November: '11',
+    December: '12',
+  }
+  const match = /^([A-Za-z]+) (\d{1,2}), (\d{4})$/.exec(displayDate)
+  if (!match) return '2026-06-13'
+  const [, monthName, day, year] = match
+  return `${year}-${months[monthName] ?? '01'}-${day.padStart(2, '0')}`
+}
+
 function BlogPost() {
   const { slug } = useParams()
   const post = blogPosts.find((item) => item.slug === slug) ?? blogPosts[0]
   const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2)
+  const schemaDate = blogSchemaDate(post.updated)
   const faqSchema =
-    post.slug === 'custom-vs-wix-squarespace'
+    post.slug === 'custom-web-design-vs-wix-squarespace'
       ? {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
@@ -1949,8 +2165,6 @@ function BlogPost() {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    datePublished: '2026-05-31',
-    dateModified: '2026-05-31',
     author: {
       '@type': 'Organization',
       name: 'Orbit Websites',
@@ -1965,6 +2179,8 @@ function BlogPost() {
       },
     },
     mainEntityOfPage: `https://orbitboyzz.me/blog/${post.slug}`,
+    datePublished: schemaDate,
+    dateModified: schemaDate,
   }
 
   return (
@@ -2061,6 +2277,16 @@ function ContactCta() {
 }
 
 function Footer() {
+  const areaLinks = [
+    ['Central NJ', '/web-design-central-nj'],
+    ['Plainsboro, NJ', '/web-design-plainsboro-nj'],
+    ['West Windsor, NJ', '/web-design-west-windsor-nj'],
+    ['Ewing, NJ', '/web-design-ewing-nj'],
+    ['Princeton, NJ', '/web-design-princeton-nj'],
+    ['Hamilton, NJ', '/web-design-hamilton-nj'],
+    ['Lawrence, NJ', '/web-design-lawrence-nj'],
+  ]
+
   return (
     <footer className="border-t border-white/[0.08] px-5 py-14 md:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.1fr_0.8fr_0.8fr_0.8fr]">
@@ -2073,12 +2299,12 @@ function Footer() {
           </p>
         </div>
         <FooterColumn title="[PAGES]" links={[['Home', '/'], ['OrbitBoyzz', '/orbitboyzz'], ['About', '/about'], ['Services', '/services'], ['Pricing', '/pricing'], ['Web Design NJ', '/web-design-central-nj'], ['Quote', '/quote'], ['Contact', '/contact'], ['Projects', '/projects'], ['Blog', '/blog'], ['FAQ', '/faq']]} />
-        <FooterColumn title="[AREAS]" links={[['Plainsboro, NJ', '/about'], ['Princeton, NJ', '/about'], ['West Windsor Township', '/about']]} />
+        <FooterColumn title="[AREAS]" links={areaLinks} />
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[CONTACT]</p>
           <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-            <a className="hover:text-[#d6b36a]" href="tel:+16096628052">{phone}</a>
-            <a className="hover:text-[#d6b36a]" href={`mailto:${email}`}>{email}</a>
+            <a className="hover:text-[#d6b36a]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}>{phone}</a>
+            <a className="hover:text-[#d6b36a]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}>{email}</a>
           </div>
         </div>
       </div>
@@ -2133,6 +2359,148 @@ const webDesignNotFit: string[] = [
   'Cheapest-possible is the only thing that matters.',
   'You are not ready to invest in how your business shows up online.',
 ]
+
+const localWebDesignLinks: string[][] = [
+  ['Central New Jersey', '/web-design-central-nj'],
+  ['Plainsboro, NJ', '/web-design-plainsboro-nj'],
+  ['West Windsor, NJ', '/web-design-west-windsor-nj'],
+  ['Ewing, NJ', '/web-design-ewing-nj'],
+  ['Princeton, NJ', '/web-design-princeton-nj'],
+  ['Hamilton, NJ', '/web-design-hamilton-nj'],
+  ['Lawrence Township, NJ', '/web-design-lawrence-nj'],
+  ['Trenton, NJ', '/web-design-trenton-nj'],
+  ['Robbinsville, NJ', '/web-design-robbinsville-nj'],
+  ['Bordentown, NJ', '/web-design-bordentown-nj'],
+  ['East Windsor, NJ', '/web-design-east-windsor-nj'],
+]
+
+const industryWebDesignPages = {
+  hvac: {
+    path: '/website-design-for-hvac-companies-nj',
+    label: '[WEB DESIGN // HVAC NJ]',
+    industry: 'HVAC companies',
+    industryShort: 'HVAC',
+    jobType: 'heating and cooling service calls',
+    avgJob: '$450–$1,200',
+    aiUseCase: 'After-hours emergency requests are captured by AI intake, qualified by equipment type and urgency, and texted to your phone as a scoped summary — so no emergency call slips through overnight.',
+    towns: 'Ewing, Hamilton, Lawrence Township, Trenton, Mercer County, and Central New Jersey',
+  },
+  plumbing: {
+    path: '/website-design-for-plumbers-nj',
+    label: '[WEB DESIGN // PLUMBERS NJ]',
+    industry: 'plumbing contractors',
+    industryShort: 'Plumbing',
+    jobType: 'plumbing service and repair calls',
+    avgJob: '$300–$1,500',
+    aiUseCase: 'AI intake sorts emergency from scheduled jobs the moment a form is submitted — emergency requests fire a text to your phone in under 30 seconds, scheduled ones collect job description, address, and timing so you quote without a call.',
+    towns: 'Ewing, Trenton, Hamilton, Lawrence, Princeton, Mercer County, and Central New Jersey',
+  },
+  electrician: {
+    path: '/website-design-for-electricians-nj',
+    label: '[WEB DESIGN // ELECTRICIANS NJ]',
+    industry: 'electricians and electrical contractors',
+    industryShort: 'Electrical',
+    jobType: 'electrical service and installation jobs',
+    avgJob: '$350–$2,000',
+    aiUseCase: 'AI intake captures job type (panel upgrade, outlet repair, EV charger install), address, and urgency level. Residential and commercial requests are routed separately so you prioritize correctly without triaging a full voicemail box.',
+    towns: 'Ewing, Princeton, Lawrence Township, Hamilton, West Windsor, Mercer County, and Central NJ',
+  },
+  landscaping: {
+    path: '/website-design-for-landscaping-companies-nj',
+    label: '[WEB DESIGN // LANDSCAPING NJ]',
+    industry: 'landscaping and lawn care companies',
+    industryShort: 'Landscaping',
+    jobType: 'landscaping and lawn maintenance contracts',
+    avgJob: '$2,400–$6,000/year per client',
+    aiUseCase: 'An AI proposal form collects property size, service frequency, and preferred start date. It auto-sends a scoped price range by email so you spend time converting real buyers, not answering basic questions over the phone.',
+    towns: 'Princeton, West Windsor, Plainsboro, Ewing, Hamilton, Mercer County, and Central NJ',
+  },
+  dental: {
+    path: '/website-design-for-dental-practices-nj',
+    label: '[WEB DESIGN // DENTAL NJ]',
+    industry: 'dental practices and orthodontists',
+    industryShort: 'Dental',
+    jobType: 'new patient appointments',
+    avgJob: '$800–$4,000/year per patient',
+    aiUseCase: 'New patient intake captures insurance carrier, treatment interest, and preferred appointment window before any staff involvement. Urgent cases (toothache, broken crown) trigger a same-day callback flag automatically.',
+    towns: 'Princeton, West Windsor, Plainsboro, Lawrence Township, East Windsor, and Central NJ',
+  },
+} as const
+
+const townWebDesignPages = {
+  plainsboro: {
+    path: '/web-design-plainsboro-nj',
+    label: '[WEB DESIGN // PLAINSBORO NJ]',
+    town: 'Plainsboro, NJ',
+    county: 'Middlesex County',
+    nearby: 'Princeton, West Windsor, Cranbury, Monroe, and South Brunswick',
+    audience: 'service businesses, clinics, restaurants, shops, consultants, and local providers',
+  },
+  westWindsor: {
+    path: '/web-design-west-windsor-nj',
+    label: '[WEB DESIGN // WEST WINDSOR NJ]',
+    town: 'West Windsor Township, NJ',
+    county: 'Mercer County',
+    nearby: 'Princeton, Plainsboro, Lawrence Township, Hamilton, and Cranbury',
+    audience: 'contractors, professional services, clinics, restaurants, real estate teams, and local companies',
+  },
+  princeton: {
+    path: '/web-design-princeton-nj',
+    label: '[WEB DESIGN // PRINCETON NJ]',
+    town: 'Princeton, NJ',
+    county: 'Mercer County',
+    nearby: 'Plainsboro, West Windsor, Lawrence Township, and Hamilton',
+    audience: 'firms, clinics, boutiques, consultants, home service companies, and local providers',
+  },
+  hamilton: {
+    path: '/web-design-hamilton-nj',
+    label: '[WEB DESIGN // HAMILTON NJ]',
+    town: 'Hamilton, NJ',
+    county: 'Mercer County',
+    nearby: 'Trenton, Ewing, Lawrence Township, Robbinsville, and Princeton',
+    audience: 'contractors, home service companies, clinics, restaurants, and local service providers',
+  },
+  lawrence: {
+    path: '/web-design-lawrence-nj',
+    label: '[WEB DESIGN // LAWRENCE NJ]',
+    town: 'Lawrence Township, NJ',
+    county: 'Mercer County',
+    nearby: 'Princeton, Ewing, Hamilton, Trenton, and West Windsor',
+    audience: 'professional services, clinics, contractors, restaurants, and local companies',
+  },
+  trenton: {
+    path: '/web-design-trenton-nj',
+    label: '[WEB DESIGN // TRENTON NJ]',
+    town: 'Trenton, NJ',
+    county: 'Mercer County',
+    nearby: 'Hamilton, Ewing, Lawrence Township, Bordentown, and Burlington',
+    audience: 'contractors, food businesses, nonprofits, professional services, and local providers',
+  },
+  robbinsville: {
+    path: '/web-design-robbinsville-nj',
+    label: '[WEB DESIGN // ROBBINSVILLE NJ]',
+    town: 'Robbinsville Township, NJ',
+    county: 'Mercer County',
+    nearby: 'Hamilton, East Windsor, Allentown, Bordentown, and Hightstown',
+    audience: 'contractors, home service companies, shops, clinics, and growing local businesses',
+  },
+  bordentown: {
+    path: '/web-design-bordentown-nj',
+    label: '[WEB DESIGN // BORDENTOWN NJ]',
+    town: 'Bordentown, NJ',
+    county: 'Burlington County',
+    nearby: 'Trenton, Hamilton, Robbinsville, Burlington City, and Florence',
+    audience: 'contractors, restaurants, shops, service businesses, and local providers',
+  },
+  eastWindsor: {
+    path: '/web-design-east-windsor-nj',
+    label: '[WEB DESIGN // EAST WINDSOR NJ]',
+    town: 'East Windsor, NJ',
+    county: 'Mercer County',
+    nearby: 'Robbinsville, Hightstown, West Windsor, Cranbury, and Monroe',
+    audience: 'home service companies, contractors, clinics, shops, and local businesses',
+  },
+} as const
 
 function WebDesignCentralNJ() {
   return (
@@ -2198,6 +2566,8 @@ function WebDesignCentralNJ() {
         </div>
       </section>
 
+      <LocalWebDesignLinks />
+
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
@@ -2236,6 +2606,98 @@ function WebDesignCentralNJ() {
   )
 }
 
+function LocalWebDesignLinks() {
+  return (
+    <section className="px-5 py-16 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <Label>[LOCAL PAGES // MERCER COUNTY]</Label>
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+          {localWebDesignLinks.map(([label, to]) => (
+            <Link key={to} to={to} className="group block">
+              <BentoCard className="h-full p-5">
+                <p className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6] group-hover:text-[#d6b36a]">
+                  {label}
+                </p>
+                <p className="mt-3 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">
+                  Web design + AI intake
+                </p>
+              </BentoCard>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function TownWebDesignPage({ page }: { page: (typeof townWebDesignPages)[keyof typeof townWebDesignPages] }) {
+  return (
+    <main className="pt-36 md:pt-44">
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>{page.label}</Label>
+          <TextReveal
+            lines={['Web design', `for ${page.town}`, 'local businesses.']}
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+          />
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites begin around $3,500, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
+            <PremiumButton href="/pricing">See pricing</PremiumButton>
+          </div>
+        </div>
+      </section>
+
+      <LocalWebDesignLinks />
+
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            Built for {page.town} businesses that need measurable leads.
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              ['Local SEO structure', `Service, town, FAQ, and proof sections help search engines understand that your business serves ${page.town}, ${page.county}, and nearby areas like ${page.nearby}.`],
+              ['Lead-focused pages', 'The site is structured around calls, quote requests, booking paths, and forms instead of generic brochure sections.'],
+              ['Fast mobile performance', 'Hand-coded React and prerendered pages keep the experience lightweight for local buyers comparing options from a phone.'],
+              ['AI intake when it makes sense', 'AI qualification, routing, and proposal workflows are added when lead value and response speed justify the investment.'],
+            ].map(([title, copy], index) => (
+              <BentoCard key={title} className="p-6">
+                <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
+                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <div>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                  </div>
+                </div>
+              </BentoCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[DIRECT ANSWER]</Label>
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+              How much does web design cost in {page.town}?
+            </h2>
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+              A custom website for a {page.town} local business usually starts around $3,500
+              for a focused hand-coded site. AI-powered lead intake, booking logic, routing,
+              and proposal workflows usually move the project into the $5,000 to $15,000 range,
+              depending on integrations and workflow complexity.
+            </p>
+          </BentoCard>
+        </div>
+      </section>
+    </main>
+  )
+}
+
 function WebDesignEwingNJ() {
   return (
     <main className="pt-36 md:pt-44">
@@ -2258,6 +2720,8 @@ function WebDesignEwingNJ() {
           </div>
         </div>
       </section>
+
+      <LocalWebDesignLinks />
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
@@ -2298,6 +2762,78 @@ function WebDesignEwingNJ() {
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
               depending on integrations and workflow complexity.
             </p>
+          </BentoCard>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function IndustryWebDesignPage({ page }: { page: (typeof industryWebDesignPages)[keyof typeof industryWebDesignPages] }) {
+  return (
+    <main className="pt-36 md:pt-44">
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>{page.label}</Label>
+          <TextReveal
+            lines={['Web design', `for ${page.industryShort}`, 'companies in NJ.']}
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+          />
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds start around $3,500, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
+            <PremiumButton href="/pricing">See pricing</PremiumButton>
+          </div>
+        </div>
+      </section>
+
+      <LocalWebDesignLinks />
+
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            Built for {page.industry} that need real leads.
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              ['Local search visibility', `The site is structured to rank for service-specific and town-specific searches — "${page.industryShort.toLowerCase()} near me", "${page.industryShort.toLowerCase()} ${page.towns.split(',')[0]}", and job-type variations.`],
+              ['AI-powered intake', page.aiUseCase],
+              ['Fast mobile performance', `Most ${page.industry.split(' ')[0]} searches happen on mobile. Hand-coded React and prerendered pages stay lightweight so a buyer comparing options doesn't bounce before calling.`],
+              ['Built to convert', `Every page is structured around ${page.jobType} — quote requests, click-to-call, booking, and contact forms — not generic brochure copy.`],
+            ].map(([title, copy], index) => (
+              <BentoCard key={title} className="p-6">
+                <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
+                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <div>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                  </div>
+                </div>
+              </BentoCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[DIRECT ANSWER]</Label>
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+              How much does a website cost for a {page.industryShort.toLowerCase()} company in NJ?
+            </h2>
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+              A custom site for a {page.industryShort.toLowerCase()} company typically starts around $3,500 for a focused, hand-coded site.
+              Projects with AI intake, job-type routing, emergency alert logic, or proposal automation usually run $5,000 to $15,000
+              depending on workflow complexity. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of jobs.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/pricing" className="font-display text-lg font-bold text-[#d6b36a] underline underline-offset-4 hover:text-[#f4efe6]">See pricing →</Link>
+              <Link to="/services" className="font-display text-lg font-bold text-[#b7afa3] underline underline-offset-4 hover:text-[#f4efe6]">Our services →</Link>
+              <Link to="/web-design-central-nj" className="font-display text-lg font-bold text-[#b7afa3] underline underline-offset-4 hover:text-[#f4efe6]">Web design in Central NJ →</Link>
+            </div>
           </BentoCard>
         </div>
       </section>
@@ -2414,8 +2950,8 @@ function Contact() {
             <BentoCard className="p-6">
               <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[Call or email]</p>
               <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-                <a className="hover:text-[#d6b36a]" href="tel:+16096628052">{phone}</a>
-                <a className="hover:text-[#d6b36a]" href={`mailto:${email}`}>{email}</a>
+                <a className="hover:text-[#d6b36a]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Contact call')}>{phone}</a>
+                <a className="hover:text-[#d6b36a]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Contact email')}>{email}</a>
               </div>
             </BentoCard>
             <BentoCard className="p-6">
@@ -2444,6 +2980,20 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/web-design-central-nj" element={<WebDesignCentralNJ />} />
         <Route path="/web-design-ewing-nj" element={<WebDesignEwingNJ />} />
+        <Route path="/web-design-plainsboro-nj" element={<TownWebDesignPage page={townWebDesignPages.plainsboro} />} />
+        <Route path="/web-design-west-windsor-nj" element={<TownWebDesignPage page={townWebDesignPages.westWindsor} />} />
+        <Route path="/web-design-princeton-nj" element={<TownWebDesignPage page={townWebDesignPages.princeton} />} />
+        <Route path="/web-design-hamilton-nj" element={<TownWebDesignPage page={townWebDesignPages.hamilton} />} />
+        <Route path="/web-design-lawrence-nj" element={<TownWebDesignPage page={townWebDesignPages.lawrence} />} />
+        <Route path="/web-design-trenton-nj" element={<TownWebDesignPage page={townWebDesignPages.trenton} />} />
+        <Route path="/web-design-robbinsville-nj" element={<TownWebDesignPage page={townWebDesignPages.robbinsville} />} />
+        <Route path="/web-design-bordentown-nj" element={<TownWebDesignPage page={townWebDesignPages.bordentown} />} />
+        <Route path="/web-design-east-windsor-nj" element={<TownWebDesignPage page={townWebDesignPages.eastWindsor} />} />
+        <Route path="/website-design-for-hvac-companies-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.hvac} />} />
+        <Route path="/website-design-for-plumbers-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.plumbing} />} />
+        <Route path="/website-design-for-electricians-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.electrician} />} />
+        <Route path="/website-design-for-landscaping-companies-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.landscaping} />} />
+        <Route path="/website-design-for-dental-practices-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.dental} />} />
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
@@ -2458,6 +3008,7 @@ function App() {
 }
 
 export default App
+
 
 
 

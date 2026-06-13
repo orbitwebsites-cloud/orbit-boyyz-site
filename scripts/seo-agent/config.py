@@ -7,19 +7,33 @@ OUR_SITE_URL = "https://orbitboyzz.me"
 # Seed queries — the expander auto-generates PAA variants from these.
 # Keep focused on commercial intent; the expander handles the long tail.
 TARGET_QUERIES = [
-    # Cost / decision — highest intent, no page yet
+    # Cost / decision — highest intent
     "how much does a custom website cost for a local business",
     "how much does an AI website cost small business",
     "custom web design vs Wix Squarespace template",
     "AI operations website vs regular website",
-    # Vertical fit
+    "website cost for local service business NJ",
+    # Industry — feed industry landing pages
+    "website design for HVAC company New Jersey",
+    "website for plumber NJ",
+    "website for electrician Central NJ",
+    "landscaping company website NJ",
+    "dental practice website New Jersey",
     "AI automation for HVAC company intake and dispatch",
     "AI receptionist for plumbing contractor",
-    "caterer corporate proposal automation",
-    "should my home services business get an AI intake system",
-    # Local commercial
+    "speed to lead home services contractor",
+    # Local commercial — feed town landing pages
     "web design agency Central New Jersey",
+    "web design Ewing NJ",
+    "web design Trenton NJ",
+    "web design Hamilton NJ",
+    "web design Princeton NJ",
+    "web design Mercer County NJ",
+    "small business website Robbinsville NJ",
+    # AI / automation
     "AI automation for home services NJ",
+    "should my home services business get an AI intake system",
+    "caterer corporate proposal automation",
 ]
 
 # How many PAA-style questions to auto-generate per run (0 = disabled)

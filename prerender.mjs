@@ -90,7 +90,77 @@ const pageMeta = {
   '/web-design-ewing-nj': {
     title: 'Web Design in Ewing, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Ewing, NJ businesses. Hand-coded, fast-loading sites starting at $10,000. Serving Ewing Township and Mercer County.',
+      'Custom website design and AI automation for Ewing, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving Ewing Township and Mercer County.',
+  },
+  '/web-design-plainsboro-nj': {
+    title: 'Web Design in Plainsboro, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Plainsboro, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving Plainsboro and Middlesex County.',
+  },
+  '/web-design-west-windsor-nj': {
+    title: 'Web Design in West Windsor, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for West Windsor Township, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving West Windsor and Mercer County.',
+  },
+  '/web-design-princeton-nj': {
+    title: 'Web Design in Princeton, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Princeton, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving Princeton and Mercer County.',
+  },
+  '/web-design-hamilton-nj': {
+    title: 'Web Design in Hamilton, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Hamilton, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving Hamilton Township and Mercer County.',
+  },
+  '/web-design-lawrence-nj': {
+    title: 'Web Design in Lawrence Township, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Lawrence Township, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving Lawrence and Mercer County.',
+  },
+  '/web-design-trenton-nj': {
+    title: 'Web Design in Trenton, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Trenton, NJ businesses. Hand-coded sites starting around $3,500. Serving Trenton, Mercer County, and surrounding areas.',
+  },
+  '/web-design-robbinsville-nj': {
+    title: 'Web Design in Robbinsville, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Robbinsville, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving Robbinsville and Mercer County.',
+  },
+  '/web-design-bordentown-nj': {
+    title: 'Web Design in Bordentown, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for Bordentown, NJ businesses. Hand-coded sites starting around $3,500. Serving Bordentown, Burlington County, and Mercer County.',
+  },
+  '/web-design-east-windsor-nj': {
+    title: 'Web Design in East Windsor, NJ | Orbit Websites',
+    description:
+      'Custom website design and AI automation for East Windsor, NJ businesses. Hand-coded, fast-loading sites starting around $3,500. Serving East Windsor and Mercer County.',
+  },
+  '/website-design-for-hvac-companies-nj': {
+    title: 'Website Design for HVAC Companies in NJ | Orbit Websites',
+    description:
+      'Custom websites and AI dispatch intake for HVAC companies in New Jersey. Capture emergency service calls 24/7, route by urgency, and grow in Mercer County local search.',
+  },
+  '/website-design-for-plumbers-nj': {
+    title: 'Website Design for Plumbers in NJ | Orbit Websites',
+    description:
+      'Custom websites and AI intake for plumbing contractors in New Jersey. Emergency job routing, quote capture, and local SEO for Mercer County and Central NJ plumbers.',
+  },
+  '/website-design-for-electricians-nj': {
+    title: 'Website Design for Electricians in NJ | Orbit Websites',
+    description:
+      'Custom websites and AI intake for electricians in New Jersey. Separate residential and commercial leads automatically. Serving Mercer County and Central NJ electricians.',
+  },
+  '/website-design-for-landscaping-companies-nj': {
+    title: 'Website Design for Landscaping Companies in NJ | Orbit Websites',
+    description:
+      'Custom websites and AI proposal intake for landscaping companies in New Jersey. Capture annual contract leads and grow in Central NJ local search.',
+  },
+  '/website-design-for-dental-practices-nj': {
+    title: 'Website Design for Dental Practices in NJ | Orbit Websites',
+    description:
+      'Custom websites and AI new-patient intake for dental practices in New Jersey. Capture insurance, treatment interest, and appointment windows before staff involvement.',
   },
   '/quote': {
     title: 'Get a Quote | Orbit Websites',
@@ -231,14 +301,15 @@ const pricingFaqPage = {
 
 function blogPostingGraph(post) {
   const url = `${ORIGIN}/blog/${post.slug}`
+  const date = isoDate(post.updated)
   return [
     {
       '@type': 'BlogPosting',
       '@id': `${url}#article`,
       headline: post.title,
       description: post.description,
-      datePublished: '2026-05-31',
-      dateModified: '2026-05-31',
+      datePublished: date,
+      dateModified: date,
       author: { '@id': `${ORIGIN}/#organization` },
       publisher: { '@id': `${ORIGIN}/#organization` },
       mainEntityOfPage: url,
@@ -253,6 +324,38 @@ function blogPostingGraph(post) {
       ],
     },
   ]
+}
+
+function isoDate(displayDate) {
+  const months = {
+    January: '01',
+    February: '02',
+    March: '03',
+    April: '04',
+    May: '05',
+    June: '06',
+    July: '07',
+    August: '08',
+    September: '09',
+    October: '10',
+    November: '11',
+    December: '12',
+  }
+  const match = /^([A-Za-z]+) (\d{1,2}), (\d{4})$/.exec(displayDate)
+  if (!match) return '2026-06-13'
+  const [, monthName, day, year] = match
+  return `${year}-${months[monthName] ?? '01'}-${day.padStart(2, '0')}`
+}
+
+function breadcrumbGraph(route, name) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name: 'Web Design Central NJ', item: `${ORIGIN}/web-design-central-nj` },
+      { '@type': 'ListItem', position: 3, name, item: `${ORIGIN}${route}` },
+    ],
+  }
 }
 
 function graphFor(route) {
@@ -314,8 +417,199 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom hand-coded website design and AI operations for local businesses in Ewing Township, NJ. Starting at $10,000 with built-in lead intake and 15-second speed-to-lead.',
+        'Custom hand-coded website design and AI operations for local businesses in Ewing Township, NJ. Starter sites begin around $3,500, with AI lead intake builds starting around $5,000.',
     })
+    graph.push(breadcrumbGraph(route, 'Web Design in Ewing, NJ'))
+  }
+  if (route === '/web-design-plainsboro-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-plainsboro-nj#service`,
+      name: 'Web Design in Plainsboro, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Plainsboro', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Middlesex County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description:
+        'Custom hand-coded website design and AI operations for local businesses in Plainsboro, NJ. Starter sites begin around $3,500, with AI lead intake builds starting around $5,000.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Plainsboro, NJ'))
+  }
+  if (route === '/web-design-west-windsor-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-west-windsor-nj#service`,
+      name: 'Web Design in West Windsor Township, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'West Windsor Township', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description:
+        'Custom hand-coded website design and AI operations for local businesses in West Windsor Township, NJ. Starter sites begin around $3,500, with AI lead intake builds starting around $5,000.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in West Windsor Township, NJ'))
+  }
+  if (route === '/web-design-princeton-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-princeton-nj#service`,
+      name: 'Web Design in Princeton, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Princeton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description:
+        'Custom hand-coded website design and AI operations for local businesses in Princeton, NJ. Starter sites begin around $3,500, with AI lead intake builds starting around $5,000.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Princeton, NJ'))
+  }
+  if (route === '/web-design-hamilton-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-hamilton-nj#service`,
+      name: 'Web Design in Hamilton, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Hamilton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description:
+        'Custom hand-coded website design and AI operations for local businesses in Hamilton Township, NJ. Starter sites begin around $3,500, with AI lead intake builds starting around $5,000.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Hamilton, NJ'))
+  }
+  if (route === '/web-design-lawrence-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-lawrence-nj#service`,
+      name: 'Web Design in Lawrence Township, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Lawrence Township', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description:
+        'Custom hand-coded website design and AI operations for local businesses in Lawrence Township, NJ. Starter sites begin around $3,500, with AI lead intake builds starting around $5,000.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Lawrence Township, NJ'))
+  }
+  if (route === '/web-design-trenton-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-trenton-nj#service`,
+      name: 'Web Design in Trenton, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Trenton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description: 'Custom hand-coded website design and AI operations for local businesses in Trenton, NJ.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Trenton, NJ'))
+  }
+  if (route === '/web-design-robbinsville-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-robbinsville-nj#service`,
+      name: 'Web Design in Robbinsville, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Robbinsville', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description: 'Custom hand-coded website design and AI operations for local businesses in Robbinsville, NJ.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Robbinsville, NJ'))
+  }
+  if (route === '/web-design-bordentown-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-bordentown-nj#service`,
+      name: 'Web Design in Bordentown, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Bordentown', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Burlington County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description: 'Custom hand-coded website design and AI operations for local businesses in Bordentown, NJ.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in Bordentown, NJ'))
+  }
+  if (route === '/web-design-east-windsor-nj') {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}/web-design-east-windsor-nj#service`,
+      name: 'Web Design in East Windsor, NJ',
+      serviceType: 'Website design',
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'East Windsor', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+      ],
+      description: 'Custom hand-coded website design and AI operations for local businesses in East Windsor, NJ.',
+    })
+    graph.push(breadcrumbGraph(route, 'Web Design in East Windsor, NJ'))
+  }
+  const industryServiceMap = {
+    '/website-design-for-hvac-companies-nj': {
+      id: 'hvac-web-design-nj',
+      name: 'Website Design for HVAC Companies in NJ',
+      serviceType: 'Website design for HVAC contractors',
+      desc: 'Custom hand-coded websites and AI dispatch intake for HVAC companies in New Jersey. Emergency call capture, urgency routing, and local SEO.',
+      label: 'Website Design for HVAC Companies in NJ',
+    },
+    '/website-design-for-plumbers-nj': {
+      id: 'plumber-web-design-nj',
+      name: 'Website Design for Plumbers in NJ',
+      serviceType: 'Website design for plumbing contractors',
+      desc: 'Custom websites and AI intake for plumbing contractors in New Jersey. Emergency job routing, quote capture, and local search visibility.',
+      label: 'Website Design for Plumbers in NJ',
+    },
+    '/website-design-for-electricians-nj': {
+      id: 'electrician-web-design-nj',
+      name: 'Website Design for Electricians in NJ',
+      serviceType: 'Website design for electricians',
+      desc: 'Custom websites and AI intake for electricians in New Jersey. Residential and commercial lead routing for Mercer County and Central NJ.',
+      label: 'Website Design for Electricians in NJ',
+    },
+    '/website-design-for-landscaping-companies-nj': {
+      id: 'landscaping-web-design-nj',
+      name: 'Website Design for Landscaping Companies in NJ',
+      serviceType: 'Website design for landscaping companies',
+      desc: 'Custom websites and AI proposal intake for landscaping companies in New Jersey. Capture annual contracts and grow in Central NJ local search.',
+      label: 'Website Design for Landscaping Companies in NJ',
+    },
+    '/website-design-for-dental-practices-nj': {
+      id: 'dental-web-design-nj',
+      name: 'Website Design for Dental Practices in NJ',
+      serviceType: 'Website design for dental practices',
+      desc: 'Custom websites and AI new-patient intake for dental practices in New Jersey. Insurance capture, treatment interest, and appointment windows.',
+      label: 'Website Design for Dental Practices in NJ',
+    },
+  }
+  if (industryServiceMap[route]) {
+    const s = industryServiceMap[route]
+    graph.push({
+      '@type': 'Service',
+      '@id': `${ORIGIN}${route}#service`,
+      name: s.name,
+      serviceType: s.serviceType,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: SERVICE_AREA,
+      description: s.desc,
+    })
+    graph.push(breadcrumbGraph(route, s.label))
   }
   if (route === '/pricing') {
     graph.push(pricingFaqPage)
@@ -346,6 +640,7 @@ function buildHead(route, meta, graph) {
     `<title>${meta.title}</title>`,
     `<meta name="description" content="${meta.description}" />`,
     `<link rel="canonical" href="${url}" />`,
+    `<link rel="alternate" type="application/rss+xml" title="Orbit Websites Blog" href="${ORIGIN}/feed.xml" />`,
     `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />`,
     `<meta property="og:type" content="${route.startsWith('/blog/') ? 'article' : 'website'}" />`,
     `<meta property="og:site_name" content="OrbitBoyzz / Orbit Websites" />`,
@@ -383,6 +678,54 @@ function writePage(route, meta, graph) {
   return outPath
 }
 
+function xmlEscape(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;')
+}
+
+function rfc822Date(displayDate) {
+  return new Date(`${isoDate(displayDate)}T12:00:00Z`).toUTCString()
+}
+
+function writeFeed() {
+  const items = blogPosts
+    .map((post) => {
+      const url = `${ORIGIN}/blog/${post.slug}`
+      return `    <item>
+      <title>${xmlEscape(post.title)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <description>${xmlEscape(post.description)}</description>
+      <pubDate>${rfc822Date(post.updated)}</pubDate>
+    </item>`
+    })
+    .join('\n')
+
+  const latestPost = blogPosts
+    .map((post) => isoDate(post.updated))
+    .sort()
+    .at(-1)
+
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Orbit Websites Blog</title>
+    <link>${ORIGIN}/blog</link>
+    <description>Direct answers about local business websites, AI intake, pricing, and web design in Central New Jersey.</description>
+    <language>en-us</language>
+    <lastBuildDate>${new Date(`${latestPost ?? '2026-06-13'}T12:00:00Z`).toUTCString()}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`
+
+  writeFileSync(join(distDir, 'feed.xml'), feed, 'utf-8')
+}
+
 // --- Run --------------------------------------------------------------------
 const staticRoutes = Object.keys(pageMeta)
 let count = 0
@@ -401,5 +744,6 @@ for (const post of blogPosts) {
   )
   count++
 }
+writeFeed()
 
 console.log(`Prerendered ${count} routes to dist/.`)

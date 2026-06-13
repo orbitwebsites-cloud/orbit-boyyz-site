@@ -38,6 +38,27 @@ BLOG_TOPIC_BACKLOG = [
     "Web design for local businesses in Ewing, NJ — what to look for",
     "Why Ewing NJ contractors need a custom website, not a template",
     "How Mercer County small businesses can rank on Google without ads",
+    # Industry pages — feed traffic to /website-design-for-*
+    "How HVAC companies in NJ can stop losing emergency calls overnight",
+    "What a plumbing company website should do differently from other local sites",
+    "How electricians in Central NJ can rank above competitors on Google",
+    "Landscaping company websites that actually generate annual contracts",
+    "What dental practices in New Jersey need on their websites to attract new patients",
+    "Why HVAC companies lose 30% of after-hours revenue without AI intake",
+    "Speed-to-lead for plumbers: why the first response wins the job",
+    "How a New Jersey electrician doubled booked jobs with a new website",
+    # Town pages — feed traffic to /web-design-*-nj
+    "Web design for small businesses in Trenton, NJ",
+    "Best website options for Robbinsville NJ contractors and service businesses",
+    "Why Bordentown NJ business owners need a custom site, not a template",
+    "Web design for East Windsor NJ local businesses",
+    "How Hamilton NJ restaurants can get more reservations with a better website",
+    # Funnel/commercial-intent content
+    "Website cost breakdown for a New Jersey service business in 2026",
+    "DIY website vs professional web design for a NJ local business",
+    "What is a local SEO website and why does it matter for NJ contractors",
+    "How to tell if your current website is losing you leads",
+    "Why Google Business Profile and a website work together for local ranking",
 ]
 
 _PROMPT = """\
