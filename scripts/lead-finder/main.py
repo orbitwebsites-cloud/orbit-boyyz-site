@@ -62,15 +62,11 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=0, help="Max leads to process (0 = unlimited)")
     args = parser.parse_args()
 
-    yelp_key       = os.environ.get("YELP_API_KEY", "")
     cerebras_key   = os.environ.get("CEREBRAS_API_KEY", "")
     brevo_key      = os.environ.get("BREVO_API_KEY", "")
     gh_token       = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
     gh_repo        = os.environ.get("GH_REPO", "")
 
-    if not yelp_key:
-        log.error("YELP_API_KEY not set — exiting")
-        sys.exit(1)
     if not cerebras_key:
         log.error("CEREBRAS_API_KEY not set — exiting")
         sys.exit(1)
@@ -85,8 +81,8 @@ def main() -> None:
              log_data.get("weeks_active", 0), max_emails, len(already_seen))
 
     # ── 2. Discover ──
-    log.info("=== Step 1: Discovering leads via Yelp ===")
-    leads = find_candidates(yelp_key, already_seen)
+    log.info("=== Step 1: Discovering leads via Yellow Pages ===")
+    leads = find_candidates(already_seen)
     if args.limit:
         leads = leads[:args.limit]
     log.info("New candidates: %d", len(leads))

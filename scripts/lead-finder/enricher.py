@@ -72,7 +72,7 @@ def enrich(leads: list[dict]) -> list[dict]:
     for i, lead in enumerate(leads):
         if lead.get("email"):
             continue
-        email = find_email(lead.get("yelp_url", ""))
+        email = find_email(lead.get("yp_url", ""))
         if email:
             lead["email"] = email
             log.info("[%d/%d] Email found for %s: %s", i + 1, len(leads), lead["name"], email)

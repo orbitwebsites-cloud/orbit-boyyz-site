@@ -2,17 +2,16 @@
 Orbit Boyzz Lead Finder — Configuration
 """
 
-# ── Yelp search targets ──────────────────────────────────────────────────────
-# Yelp category aliases → display label
-CATEGORIES = [
-    ("hvacrepair",    "HVAC"),
-    ("plumbing",      "Plumbing"),
-    ("electricians",  "Electrician"),
-    ("landscaping",   "Landscaping"),
-    ("dentists",      "Dental"),
-    ("roofing",       "Roofing"),
-    ("painters",      "Painting"),
-    ("carpenters",    "Carpentry"),
+# ── Yellow Pages category slugs → display label ──────────────────────────────
+CATEGORIES_YP = [
+    ("hvac",                   "HVAC"),
+    ("plumbers",               "Plumbing"),
+    ("electricians",           "Electrician"),
+    ("landscaping",            "Landscaping"),
+    ("dentists",               "Dental"),
+    ("roofing-contractors",    "Roofing"),
+    ("painting-contractors",   "Painting"),
+    ("general-contractors",    "Contractor"),
 ]
 
 LOCATIONS = [
@@ -66,12 +65,6 @@ SENDER_ADDRESS = "641 Plainsboro Rd, Plainsboro NJ 08536"
 
 # ── Cerebras ──────────────────────────────────────────────────────────────────
 CEREBRAS_MODEL = "gpt-oss-120b"
-
-# ── Yelp API ──────────────────────────────────────────────────────────────────
-YELP_SEARCH_URL  = "https://api.yelp.com/v3/businesses/search"
-YELP_DETAIL_URL  = "https://api.yelp.com/v3/businesses/{id}"
-YELP_RESULTS_PER_CALL = 50   # Yelp max
-MAX_DETAIL_CALLS = 400       # Stay comfortably under 500/day free limit
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 import os
