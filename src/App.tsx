@@ -535,6 +535,90 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'ai-intake-form-vs-contact-form',
+    title: 'AI Intake Form vs Contact Form: What Should a Local Business Use?',
+    description:
+      'An AI intake form qualifies leads, asks follow-up questions, and routes requests faster than a basic contact form.',
+    updated: 'June 13, 2026',
+    audience: 'Local business owners deciding whether to replace a standard contact form with AI intake.',
+    takeaways: [
+      'A contact form only collects a message; an AI intake form turns the message into structured lead data.',
+      'AI intake is strongest for service businesses where speed, routing, and qualification affect revenue.',
+      'Orbit Boyzz builds AI intake flows that respond in under 15 seconds and route leads by urgency, service type, and location.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A local business should use an AI intake form when missed calls, vague inquiries, or slow follow-up cost real money. A basic contact form captures name, email, and message; an AI intake form asks the next best question, qualifies the lead, and routes the request to the right workflow.',
+      },
+      {
+        heading: 'What an AI intake form does differently',
+        body: 'AI intake turns a static form into a guided conversation. It can collect service area, urgency, budget, event date, project type, photos, and special requirements, then summarize the request for the business owner. For home services, catering, clinics, and real estate teams, that structure saves admin time and reduces back-and-forth.',
+      },
+      {
+        heading: 'When the upgrade pays off',
+        body: 'The upgrade pays off when one qualified customer is worth hundreds or thousands of dollars. If an AI intake flow helps capture even one lead that would have sat unanswered in an inbox, the business case becomes clear. Orbit Boyzz focuses on Central New Jersey businesses that need under-15-second lead response, not decorative forms.',
+      },
+    ],
+  },
+
+  {
+    slug: 'local-seo-website-structure-service-business',
+    title: 'What Website Structure Is Best for Local SEO for a Service Business?',
+    description:
+      'The best local SEO website structure gives each service, town, proof point, and conversion path a clear page or section.',
+    updated: 'June 13, 2026',
+    audience: 'Service business owners in Central New Jersey planning a website for local search.',
+    takeaways: [
+      'Strong local SEO starts with clear service pages, city signals, FAQs, proof, and fast conversion paths.',
+      'A homepage alone is usually too thin for contractors, clinics, caterers, and local service companies.',
+      'Orbit Boyzz structures local business websites around services, towns, schema, and lead actions.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'The best local SEO website structure for a service business includes a clear homepage, dedicated service sections, local area signals, proof points, FAQs, and direct conversion paths such as calls, booking, or quote forms. Search engines and AI assistants need enough structure to understand what the business does, where it works, and who it helps.',
+      },
+      {
+        heading: 'Core pages and sections',
+        body: 'A strong local site should explain the primary service, list the towns served, show real projects or outcomes, answer buyer questions, and make the next action obvious. For a Central New Jersey business, pages or sections should mention towns such as Plainsboro, Princeton, West Windsor, Trenton, Hamilton, and Lawrence only when those areas are actually served.',
+      },
+      {
+        heading: 'How AI search reads the site',
+        body: 'AI search systems extract direct answers, named entities, structured FAQs, and specific proof. A service page that says what the company does, where it works, what the offer costs, and how fast it responds is easier to cite than a generic page with vague slogans. Orbit Boyzz builds local SEO structure into the page hierarchy before design polish.',
+      },
+    ],
+  },
+
+  {
+    slug: 'website-roi-for-local-service-business',
+    title: 'How Do You Calculate Website ROI for a Local Service Business?',
+    description:
+      'Website ROI is calculated by comparing build cost against captured leads, labor saved, and revenue recovered from faster response.',
+    updated: 'June 13, 2026',
+    audience: 'Local service business owners evaluating whether a premium website can pay for itself.',
+    takeaways: [
+      'Website ROI should include revenue captured, admin labor reduced, and missed leads recovered.',
+      'A premium website is easier to justify when the business has high-value leads or expensive manual intake.',
+      'AI intake, routing, and booking automation can turn a website from a brochure into an operating asset.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'To calculate website ROI for a local service business, compare the website cost against new revenue, recovered missed leads, and administrative labor saved. The simplest formula is net gain divided by website cost. If a $10,000 website helps generate $25,000 in extra revenue or avoided labor, the ROI is 150%.',
+      },
+      {
+        heading: 'What to include in the ROI model',
+        body: 'Include monthly lead volume, close rate, average job value, response speed, and admin hours saved. For example, a contractor that captures two extra $2,500 jobs per month adds $5,000 in monthly revenue. If the same site also reduces receptionist or coordinator work, the payback period gets shorter.',
+      },
+      {
+        heading: 'Why speed-to-lead changes the math',
+        body: 'Local buyers often choose the first credible business that responds. A site with AI intake and routing can answer in under 15 seconds, qualify the request, and push the lead toward booking while competitors are still checking voicemail. Orbit Boyzz uses ROI to decide where automation belongs, so the website is tied to measurable business outcomes.',
+      },
+    ],
+  },
 ]
 
 function Header() {
@@ -543,6 +627,7 @@ function Header() {
     ['Home', '/'],
     ['About', '/about'],
     ['Services', '/services'],
+    ['Pricing', '/pricing'],
     ['Quote', '/quote'],
     ['Contact', '/contact'],
     ['Projects', '/projects'],
@@ -1109,12 +1194,112 @@ function Services() {
             lines={['Services that move', 'customers from search', 'to scheduled work.']}
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
+          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
+            Our AI-enabled sites begin at $10,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed, saving the average NJ small business $35,000-$54,000 in annual admin labor.
+          </p>
         </div>
       </section>
       <ServicesPreview />
       <QuoteEstimator />
       <ROISection />
       <InfrastructureBlock />
+    </main>
+  )
+}
+
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a custom website cost for a local business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A custom website for a local business typically ranges from $10,000 to $50,000, based on design, features, and AI automation. Orbit Boyzz starts at $10,000 for a fully hand-coded solution with built-in lead intake.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What factors affect custom website cost for a local business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Design complexity, page count, integrations, AI automation, and hosting/maintenance fees each add to the base price of $10,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What factors affect the cost of an AI website for a small business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Basic setups start at $10,000, while fully custom solutions can exceed $25,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a small business afford an AI website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. With a starting price of $10,000, many small businesses finance the project through a modest retainer or a phased rollout, recouping the expense via faster lead capture and reduced admin labor within a year.',
+      },
+    },
+  ],
+}
+
+function Pricing() {
+  return (
+    <main className="pt-36 md:pt-44">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }} />
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>[PRICING // LOCAL BUSINESS WEBSITES]</Label>
+          <TextReveal
+            lines={['Custom website', 'and AI website', 'costs.']}
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+          />
+          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
+            A custom website for a local business typically costs between $10,000 and $50,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz guarantees a 15-second speed-to-lead and a measurable ROI within the first quarter.
+          </p>
+        </div>
+      </section>
+      <ServicesPreview />
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[CUSTOM WEBSITE COST]</Label>
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+              Custom Website Pricing Breakdown for Local Businesses
+            </h2>
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+              A custom website for a local business usually ranges from $10,000 to $50,000. The price depends on design complexity, required features, number of pages, and whether AI-driven automation is included. Orbit Boyzz starts at $10,000 for a fully hand-coded Next.js site with built-in lead intake.
+            </p>
+            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
+              Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. Our AI intake system delivers qualified leads in under 15 seconds on average. We embed AI-driven lead intake directly into every custom website to automate qualification and routing.
+            </p>
+          </BentoCard>
+        </div>
+      </section>
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[AI WEBSITE COST]</Label>
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+              How Much Does an AI-Powered Website Cost for Small Businesses?
+            </h2>
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+              An AI-powered website for a small business typically costs between $10,000 and $25,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. Most owners see a full ROI within 6-12 months thanks to faster lead conversion and reduced admin costs.
+            </p>
+            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
+              An AI Operations Website starts at $10,000 and can rise to $25,000 based on custom integrations, data pipelines, and ongoing support. Most small businesses recoup the cost in under a year through faster lead qualification and reduced admin overhead.
+            </p>
+            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
+              The average AI-powered website for a small business costs between $10,000 and $25,000. Clients typically see a return on investment within 6-12 months thanks to faster lead capture. NJ admin salaries average $55,000 per year, which AI automation can reduce by up to 80%.
+            </p>
+          </BentoCard>
+        </div>
+      </section>
+      <QuoteEstimator />
+      <ROISection />
     </main>
   )
 }
@@ -1597,6 +1782,31 @@ function BlogPost() {
   const { slug } = useParams()
   const post = blogPosts.find((item) => item.slug === slug) ?? blogPosts[0]
   const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2)
+  const faqSchema =
+    post.slug === 'custom-vs-wix-squarespace'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'Is a custom website better for local SEO than Wix or Squarespace?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. Custom sites let you fine-tune page speed, schema, and on-page content, which Google rewards for local searches, something Wix and Squarespace cannot fully control.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'What is the true 3-year cost of a Wix or Squarespace template?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Wix averages $12-$24 per month plus add-ons, totaling $432-$864 over three years; Squarespace averages $14-$30 per month, totaling $504-$1080, not counting redesign or ecommerce fees.',
+              },
+            },
+          ],
+        }
+      : null
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -1623,6 +1833,7 @@ function BlogPost() {
   return (
     <main className="px-5 pb-24 pt-36 md:px-8 md:pt-44">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <article className="mx-auto max-w-5xl">
         <Label>{`[ANSWER // LAST UPDATED ${post.updated.toUpperCase()}]`}</Label>
         <h1 className="mt-6 font-display text-[clamp(46px,7vw,104px)] font-extrabold leading-[0.86] tracking-tight text-[#f4efe6]">
@@ -1704,7 +1915,7 @@ function Footer() {
             Orbit Websites (also known as OrbitBoyzz) is a Plainsboro, NJ website design agency evolving into a premium AI Operations Studio. No public office address.
           </p>
         </div>
-        <FooterColumn title="[PAGES]" links={[['Home', '/'], ['OrbitBoyzz', '/orbitboyzz'], ['About', '/about'], ['Services', '/services'], ['Web Design NJ', '/web-design-central-nj'], ['Quote', '/quote'], ['Contact', '/contact'], ['Projects', '/projects'], ['Blog', '/blog'], ['FAQ', '/faq']]} />
+        <FooterColumn title="[PAGES]" links={[['Home', '/'], ['OrbitBoyzz', '/orbitboyzz'], ['About', '/about'], ['Services', '/services'], ['Pricing', '/pricing'], ['Web Design NJ', '/web-design-central-nj'], ['Quote', '/quote'], ['Contact', '/contact'], ['Projects', '/projects'], ['Blog', '/blog'], ['FAQ', '/faq']]} />
         <FooterColumn title="[AREAS]" links={[['Plainsboro, NJ', '/about'], ['Princeton, NJ', '/about'], ['West Windsor Township', '/about']]} />
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[CONTACT]</p>
@@ -2004,6 +2215,7 @@ function App() {
         <Route path="/orbitboyzz" element={<OrbitBoyzzBrandPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/web-design-central-nj" element={<WebDesignCentralNJ />} />
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/contact" element={<Contact />} />

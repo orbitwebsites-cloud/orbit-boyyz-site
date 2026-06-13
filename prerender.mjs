@@ -76,6 +76,11 @@ const pageMeta = {
     description:
       'Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.',
   },
+  '/pricing': {
+    title: 'AI Website & Custom Website Cost for Local Business',
+    description:
+      'Discover how much a custom or AI-powered website costs for a local business in Central NJ. Learn pricing factors, ROI, and get a free quote from Orbit Boyzz.',
+  },
   '/web-design-central-nj': {
     title: 'Web Design Agency in Central New Jersey | Orbit Websites',
     description:
@@ -172,6 +177,45 @@ const faqPage = {
   })),
 }
 
+const pricingFaqPage = {
+  '@type': 'FAQPage',
+  '@id': `${ORIGIN}/pricing#faq`,
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a custom website cost for a local business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A custom website for a local business typically ranges from $10,000 to $50,000, based on design, features, and AI automation. Orbit Boyzz starts at $10,000 for a fully hand-coded solution with built-in lead intake.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What factors affect custom website cost for a local business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Design complexity, page count, integrations, AI automation, and hosting/maintenance fees each add to the base price of $10,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What factors affect the cost of an AI website for a small business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Basic setups start at $10,000, while fully custom solutions can exceed $25,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a small business afford an AI website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. With a starting price of $10,000, many small businesses finance the project through a modest retainer or a phased rollout, recouping the expense via faster lead capture and reduced admin labor within a year.',
+      },
+    },
+  ],
+}
+
 function blogPostingGraph(post) {
   const url = `${ORIGIN}/blog/${post.slug}`
   return [
@@ -244,6 +288,9 @@ function graphFor(route) {
         acceptedAnswer: { '@type': 'Answer', text: a },
       })),
     })
+  }
+  if (route === '/pricing') {
+    graph.push(pricingFaqPage)
   }
   if (route === '/blog') {
     graph.push({
