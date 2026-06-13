@@ -19,6 +19,7 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    environment: Vercel
     permissions:
       contents: write   # needed to commit the report
 
