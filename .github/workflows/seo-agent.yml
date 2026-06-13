@@ -55,14 +55,15 @@ jobs:
 
       - name: Commit report
         run: |
-          git config user.name "geo-agent[bot]"
-          git config user.email "geo-agent@orbitboyzz.me"
+          git config user.name "orbitboyzz-ai"
+          git config user.email "263449023+orbitboyzz-ai@users.noreply.github.com"
           git add reports/
-          git diff --cached --quiet || git commit -m "chore: weekly GEO audit $(date -u '+%Y-%m-%d')"
-          git push
-
-      - name: Deploy to Vercel
-        run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: team_B7tKDOEe71bK8ojPoB0fM34F
-          VERCEL_PROJECT_ID: prj_i8lnlTTaMXQTJsfMQEJI0zoarTww
+          git diff --cached --quiet && { echo "Nothing to commit"; exit 0; }
+          git commit -m "chore: weekly GEO audit $(date -u '+%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin master \
+              && git push origin master && exit 0
+            echo "Push attempt $i lost the race, retrying..."
+            sleep 5
+          done
+          echo "Push failed after 5 attempts"; exit 1

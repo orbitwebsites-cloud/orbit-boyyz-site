@@ -161,14 +161,27 @@ def generate(
         existing_slugs=json.dumps(existing_slugs),
     )
 
-    response = client.chat.completions.create(
-        model=CEREBRAS_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.35,
-        max_completion_tokens=2048,
-    )
-    text = _extract_json(response.choices[0].message.content.strip())
-    post = json.loads(text)
+    # The model occasionally returns truncated JSON or strings with raw
+    # newlines/control chars. Retry a few times, and parse with strict=False
+    # so literal control characters inside string values don't blow up.
+    post = None
+    last_err: Exception | None = None
+    for attempt in range(3):
+        response = client.chat.completions.create(
+            model=CEREBRAS_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.35,
+            max_completion_tokens=4096,
+        )
+        text = _extract_json(response.choices[0].message.content.strip())
+        try:
+            post = json.loads(text, strict=False)
+            break
+        except json.JSONDecodeError as exc:
+            last_err = exc
+            log.warning("Blog JSON parse failed (attempt %d/3): %s", attempt + 1, exc)
+    if post is None:
+        raise ValueError(f"Could not parse model JSON after 3 attempts: {last_err}")
 
     # Inject today's date
     d = datetime.now()
