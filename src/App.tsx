@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 import { motion, type Variants } from 'framer-motion'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import {
   Activity,
   ArrowUpRight,
@@ -1958,6 +1959,7 @@ function App() {
       </Routes>
       <ContactCta />
       <Footer />
+      <SpeedInsights />
     </div>
   )
 }
