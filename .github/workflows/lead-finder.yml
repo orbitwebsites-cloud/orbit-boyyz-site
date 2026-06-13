@@ -52,8 +52,8 @@ jobs:
 
       - name: Commit sent log and call sheet
         run: |
-          git config user.name  "Ritvik Thakur"
-          git config user.email "orbitboyzz@gmail.com"
+          git config user.name  "orbitboyzz-ai"
+          git config user.email "263449023+orbitboyzz-ai@users.noreply.github.com"
           git add scripts/lead-finder/leads/ || true
           git diff --staged --quiet || git commit -m "leads: weekly batch $(date +%Y-W%V) [skip ci]"
           git push
