@@ -31,6 +31,7 @@ import tracker
 from analyzer import analyze
 from blog_writer import generate as write_blog
 from expander import expand
+from issue_creator import create_issues
 from site_crawler import crawl
 from site_patcher import get_existing_slugs, patch_blog_post
 
@@ -124,6 +125,8 @@ def main() -> None:
     parser.add_argument("--output-dir", default=cfg.REPORTS_DIR)
     parser.add_argument("--api-key", default=None)
     parser.add_argument("--list-models", action="store_true")
+    parser.add_argument("--no-issues", action="store_true",
+                        help="Skip GitHub Issue creation after audit")
     parser.add_argument("--blog", action="store_true",
                         help="Generate + publish one blog post, then exit")
     parser.add_argument("--backlog-index", type=int, default=0,
@@ -227,6 +230,12 @@ def main() -> None:
         "analyses": analyses,
         "remaining": [],
     })
+
+    # ── Step 7: Create GitHub Issues for Codex ────────────────────────────
+    if not args.no_issues:
+        log.info("=== Step 7: Creating GitHub Issues for Codex ===")
+        n = create_issues(analyses)
+        log.info("Created %d new issue(s)", n)
 
     print(f"\n[DONE] Report: {md_path}")
     print(f"       JSON:   {json_path}")
