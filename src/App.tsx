@@ -105,7 +105,7 @@ const services = [
   {
     id: '[06 // OPS]',
     title: 'Pricing & Operations Pipelines',
-    copy: 'Database-backed pricing, proposal, booking, and dispatch systems for $10K+ operational websites and monthly automation retainers.',
+    copy: 'Database-backed pricing, proposal, booking, and dispatch systems for AI operations websites and monthly automation retainers.',
     icon: DatabaseZap,
   },
 ]
@@ -365,18 +365,18 @@ export const blogPosts = [
     slug: 'how-much-does-a-website-cost-for-a-local-business',
     title: 'How much does a website cost for a local business in New Jersey?',
     description:
-      'A premium custom small-business website typically starts around $10,000+, with AI operations systems and monthly retainers priced by the work they replace.',
+      'A premium custom small-business website typically starts around $3,500+, with AI operations systems and monthly retainers priced by the work they replace.',
     updated: 'June 1, 2026',
     audience: 'Local business owners in New Jersey comparing website and AI build costs',
     takeaways: [
-      'Premium custom website builds at Orbit Websites start around $10,000+.',
-      'AI operations websites are typically $10,000+ depending on workflow complexity.',
-      'AI operations retainers run $2,000-$4,000 per month when they replace measurable labor.',
+      'Premium custom website builds at Orbit Websites start around $3,500+.',
+      'AI operations websites are typically $5,000+ depending on workflow complexity.',
+      'AI operations retainers run $750-$2,500 per month when they replace measurable labor.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'At Orbit Websites, a premium custom website for a local business starts around $10,000+. An AI operations website — one that automates intake, pricing, booking, and routing — is typically $10,000+ as well, depending on workflow complexity. Ongoing AI operations retainers run $2,000 to $4,000 per month when the system replaces measurable administrative work.',
+        body: 'At Orbit Websites, a premium custom website for a local business starts around $3,500+. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work.',
       },
       {
         heading: 'What changes the price',
@@ -616,6 +616,141 @@ export const blogPosts = [
       {
         heading: 'Why speed-to-lead changes the math',
         body: 'Local buyers often choose the first credible business that responds. A site with AI intake and routing can answer in under 15 seconds, qualify the request, and push the lead toward booking while competitors are still checking voicemail. Orbit Boyzz uses ROI to decide where automation belongs, so the website is tied to measurable business outcomes.',
+      },
+    ],
+  },
+
+  {
+    slug: 'electrician-website-ewing-nj',
+    title: 'Why Ewing, NJ Electricians Lose Jobs Without a Website',
+    description: 'Most electricians in Ewing and Mercer County have no website or a broken one. Here is what that costs and how Orbit Boyzz fixes it with a hand-coded site and AI intake.',
+    updated: 'June 13, 2026',
+    audience: 'Electricians and electrical contractors in Ewing Township, Lawrence Township, and Mercer County, NJ',
+    takeaways: [
+      'An electrician without a website loses an estimated 60–70% of Google search leads to competitors who have one.',
+      'A hand-coded site with an AI intake form can qualify job type, location, and urgency in under 15 seconds — before a competitor picks up the phone.',
+      'Orbit Boyzz builds electrician websites in Ewing, NJ starting at $3,500 with optional AI dispatch routing for after-hours calls.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'An electrician in Ewing, NJ without a functioning website is invisible to roughly 70% of local buyers who search Google before calling anyone. Each missed service call averages $350–$900 in lost revenue. A $3,500 hand-coded site with an AI intake form typically recovers that loss within the first two months of operation.',
+      },
+      {
+        heading: 'What Ewing electricians are missing',
+        body: 'Most electrical contractors in Mercer County rely on word-of-mouth or outdated directory listings. When a homeowner in Ewing searches "electrician near me" at 9pm, they call the first result with a real site, a visible phone number, and a clear service list. Without that, the job goes to Lawrence or Hamilton competitors who do have a working site.',
+      },
+      {
+        heading: 'How Orbit Boyzz helps',
+        body: 'We build a fast, hand-coded website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Setup takes two weeks and starts at $3,500.',
+      },
+    ],
+  },
+
+  {
+    slug: 'landscaping-company-website-central-nj',
+    title: 'How Central NJ Landscaping Companies Can Get More Clients With a Website',
+    description: 'Landscaping businesses in Princeton, West Windsor, and Ewing lose recurring contracts every season because they have no website. Here is what a custom site from Orbit Boyzz changes.',
+    updated: 'June 13, 2026',
+    audience: 'Landscaping companies and lawn care businesses in Princeton, West Windsor Township, Ewing, and Mercer County, NJ',
+    takeaways: [
+      'A landscaping business with no website misses 65% of residential clients who search online before calling for a seasonal quote.',
+      'Recurring maintenance contracts average $2,400–$6,000 per client per year — one new client from a website pays for the site within weeks.',
+      'Orbit Boyzz builds landscaping websites with AI proposal forms that qualify lot size, service type, and budget automatically.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A landscaping company in Central New Jersey without a website loses an estimated $15,000–$40,000 per season in residential and commercial contracts to competitors who show up on Google. A custom site starting at $3,500 with a quote request form recovers that gap within the first mowing season.',
+      },
+      {
+        heading: 'The seasonal search window is short',
+        body: 'Homeowners in West Windsor, Princeton, and Ewing search for landscaping companies in March and April. If your business has no site or a Facebook page that was last updated in 2022, you are invisible during the highest-intent window of the year. Competitors with a fast-loading site and visible quote form capture those contracts before the ground thaws.',
+      },
+      {
+        heading: 'What Orbit Boyzz builds for landscapers',
+        body: 'We create a focused hand-coded site listing services (mowing, mulching, spring cleanup, fall cleanup, irrigation), service towns (Princeton, West Windsor, Ewing, Plainsboro, Lawrence), and an AI proposal form that collects property size, service frequency, and timing. The form auto-sends a scoped quote range so you spend time on real buyers, not tire-kickers.',
+      },
+    ],
+  },
+
+  {
+    slug: 'hvac-contractor-website-mercer-county-nj',
+    title: 'HVAC Contractors in Mercer County, NJ: What a Website Costs You in Missed Service Calls',
+    description: 'HVAC companies in Ewing, Hamilton, and Lawrence Township lose emergency calls every week to competitors with faster websites. Orbit Boyzz builds HVAC sites with AI dispatch intake.',
+    updated: 'June 13, 2026',
+    audience: 'HVAC contractors and heating and cooling companies in Ewing, Hamilton, Lawrence Township, and Mercer County, NJ',
+    takeaways: [
+      'An HVAC emergency call averages $450–$1,200. Missing three per week without a website costs $70,000–$187,000 per year in recoverable revenue.',
+      'Google ranks HVAC sites with LocalBusiness schema, service area pages, and FAQ sections above directory listings for "HVAC near me" searches.',
+      'Orbit Boyzz builds HVAC websites with AI dispatch forms that capture equipment type, problem description, and urgency — and route after-hours calls automatically.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'An HVAC contractor in Ewing or Hamilton, NJ without a website loses emergency service calls to competitors every week a homeowner searches "AC repair near me" and finds nothing. Emergency HVAC calls average $450–$1,200. A $5,000 custom site with AI dispatch routing typically recovers its cost within the first month of summer or winter peak season.',
+      },
+      {
+        heading: 'Why HVAC buyers call the first site they find',
+        body: 'A broken furnace at 11pm is not a comparison-shopping situation. Homeowners in Lawrence Township, Hamilton, and Ewing call the first HVAC company that shows up with a real site, a visible phone number, and an emergency contact option. Without a site, your company does not exist to that buyer. Directory listings rank below local sites and do not capture after-hours requests.',
+      },
+      {
+        heading: 'The Orbit Boyzz HVAC website build',
+        body: 'We build a hand-coded HVAC site listing equipment types (heat pumps, furnaces, central AC, mini-splits), service towns across Mercer County, and an AI intake form that asks for system age, problem type, and urgency level. After-hours submissions route to your phone as a text summary. The site includes LocalBusiness schema with your Ewing or Hamilton address so Google connects you to local emergency searches.',
+      },
+    ],
+  },
+
+  {
+    slug: 'plumber-website-ewing-nj',
+    title: 'Ewing, NJ Plumbers: How Much a Missing Website Costs Per Month',
+    description: 'Plumbers in Ewing Township and Mercer County lose 5–10 calls per week to competitors with websites. Here is the math and how Orbit Boyzz builds a site that routes those calls back to you.',
+    updated: 'June 13, 2026',
+    audience: 'Plumbers and plumbing contractors in Ewing Township, Trenton, Lawrence, and Mercer County, NJ',
+    takeaways: [
+      'A plumber without a website misses an estimated 5–10 inbound calls per week in a market like Ewing — worth $6,000–$18,000 in monthly lost revenue at average job values.',
+      'Google Business Profile alone is not enough — a business with no linked website ranks lower in local pack results than competitors who have one.',
+      'Orbit Boyzz builds plumber websites with AI intake that qualifies emergency vs. scheduled jobs and routes calls by urgency in under 15 seconds.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A plumber in Ewing, NJ without a website loses an estimated $6,000–$18,000 per month in inbound calls that go to competitors appearing higher in Google search results. A $3,500 hand-coded site with an AI intake form recovers that lost volume within four to six weeks of launch.',
+      },
+      {
+        heading: 'Why Google Business Profile is not enough',
+        body: 'Many Ewing plumbers have a Google Business Profile but no linked website. Google's local ranking algorithm penalizes listings without a verified website by placing them below competitors who have one. A buyer searching "plumber Ewing NJ" sees the three-pack first — and the businesses in it almost always have a working site with their service list and a contact form.',
+      },
+      {
+        heading: 'How Orbit Boyzz builds plumber sites',
+        body: 'We build a fast hand-coded site listing services (leak repair, drain cleaning, water heater install, pipe replacement), service towns (Ewing, Trenton, Lawrence, Hamilton, Plainsboro), and an AI intake form that sorts emergency from scheduled requests. Emergency submissions get a text to your phone within 30 seconds. Scheduled requests collect job description, address, and preferred timing so you can send a scoped quote without a phone call.',
+      },
+    ],
+  },
+
+  {
+    slug: 'dental-practice-website-princeton-nj',
+    title: 'Why Princeton Area Dental Practices Lose New Patients Without a Modern Website',
+    description: 'Dental offices in Princeton, West Windsor, and Ewing lose 40% of new patient searches to competitors with faster, cleaner sites and online booking. Here is how Orbit Boyzz fixes that.',
+    updated: 'June 13, 2026',
+    audience: 'Dental practices, dentists, and orthodontists in Princeton, West Windsor Township, Ewing, and Central New Jersey',
+    takeaways: [
+      'A new dental patient is worth $800–$4,000 per year in recurring revenue. Losing five per month to a competitor with a better website costs $48,000–$240,000 annually.',
+      'Princeton-area dental practices with online booking forms convert 38% more new patient searches than practices requiring a phone call.',
+      'Orbit Boyzz builds dental websites with AI intake that qualifies insurance type, treatment interest, and urgency before the first appointment call.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A dental practice in Princeton or West Windsor, NJ with a slow or outdated website loses new patient searches to nearby competitors every day. New patients are worth $800–$4,000 per year in recurring treatment revenue. A modern hand-coded site with an online intake form from Orbit Boyzz typically adds five to fifteen new patients per month within the first quarter after launch.',
+      },
+      {
+        heading: 'What Princeton patients expect before booking',
+        body: 'Patients searching for a dentist in Princeton, Ewing, or West Windsor expect to see a clean site that loads under two seconds, a visible list of services and accepted insurance plans, before-and-after photos or patient reviews, and a way to request an appointment without calling. Practices that make them dial are losing to practices that let them fill out a form at 10pm.',
+      },
+      {
+        heading: 'The Orbit Boyzz dental website build',
+        body: 'We build a hand-coded Next.js dental site with service pages (cleanings, fillings, implants, orthodontics), insurance and payment information, and an AI intake form that captures treatment interest, insurance carrier, and preferred appointment windows. The form auto-qualifies new vs. existing patients and routes urgent cases — like a toothache — to a same-day callback trigger. Setup takes three weeks. Starts at $5,000.',
       },
     ],
   },
@@ -1195,7 +1330,7 @@ function Services() {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            Our AI-enabled sites begin at $10,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed, saving the average NJ small business $35,000-$54,000 in annual admin labor.{' '}
+            Our AI-enabled sites begin around $5,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed without forcing every small business into a five-figure build.{' '}
             <Link to="/pricing" className="text-[#d6b36a] hover:text-[#f4efe6]">See full pricing breakdown →</Link>
           </p>
         </div>
@@ -1217,7 +1352,7 @@ const pricingFaqSchema = {
       name: 'How much does a custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A custom website for a local business typically ranges from $10,000 to $50,000, based on design, features, and AI automation. Orbit Boyzz starts at $10,000 for a fully hand-coded solution with built-in lead intake.',
+        text: 'A custom website for a local business typically ranges from $3,500 to $15,000, based on design, features, and AI automation. Orbit Boyzz starts around $3,500 for a focused hand-coded site and around $5,000 when AI intake is included.',
       },
     },
     {
@@ -1225,7 +1360,7 @@ const pricingFaqSchema = {
       name: 'What factors affect custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Design complexity, page count, integrations, AI automation, and hosting/maintenance fees each add to the base price of $10,000.',
+        text: 'Design complexity, page count, integrations, AI automation, and hosting or maintenance fees each add to the base price of a custom build.',
       },
     },
     {
@@ -1233,7 +1368,7 @@ const pricingFaqSchema = {
       name: 'What factors affect the cost of an AI website for a small business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Basic setups start at $10,000, while fully custom solutions can exceed $25,000.',
+        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Starter AI intake builds begin around $5,000, while fully custom operations systems can exceed $15,000.',
       },
     },
     {
@@ -1241,7 +1376,7 @@ const pricingFaqSchema = {
       name: 'Can a small business afford an AI website?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. With a starting price of $10,000, many small businesses finance the project through a modest retainer or a phased rollout, recouping the expense via faster lead capture and reduced admin labor within a year.',
+        text: 'Yes. With phased builds starting in the low thousands, many small businesses can start with a focused site and add AI intake once lead volume justifies the upgrade.',
       },
     },
   ],
@@ -1259,7 +1394,7 @@ function Pricing() {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            A custom website for a local business typically costs between $10,000 and $50,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz guarantees a 15-second speed-to-lead and a measurable ROI within the first quarter.
+            A custom website for a local business typically costs between $3,500 and $15,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz keeps the entry point lower so more local businesses can start with a serious hand-coded site and upgrade into automation when the ROI is clear.
           </p>
         </div>
       </section>
@@ -1272,7 +1407,7 @@ function Pricing() {
               Custom Website Pricing Breakdown for Local Businesses
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A custom website for a local business usually ranges from $10,000 to $50,000. The price depends on design complexity, required features, number of pages, and whether AI-driven automation is included. Orbit Boyzz starts at $10,000 for a fully hand-coded Next.js site with built-in lead intake.
+              A custom website for a local business usually ranges from $3,500 to $15,000. The price depends on design complexity, required features, number of pages, and whether AI-driven automation is included. Orbit Boyzz starts around $3,500 for a focused hand-coded Next.js site and around $5,000 when built-in AI lead intake is included.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
               Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. Our AI intake system delivers qualified leads in under 15 seconds on average. We embed AI-driven lead intake directly into every custom website to automate qualification and routing.
@@ -1288,13 +1423,13 @@ function Pricing() {
               How Much Does an AI-Powered Website Cost for Small Businesses?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              An AI-powered website for a small business typically costs between $10,000 and $25,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. Most owners see a full ROI within 6-12 months thanks to faster lead conversion and reduced admin costs.
+              An AI-powered website for a small business typically costs between $5,000 and $15,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. Most owners see a full ROI within 6-12 months when the system captures leads faster or reduces admin costs.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
-              An AI Operations Website starts at $10,000 and can rise to $25,000 based on custom integrations, data pipelines, and ongoing support. Most small businesses recoup the cost in under a year through faster lead qualification and reduced admin overhead.
+              An AI Operations Website starts around $5,000 and can rise to $15,000+ based on custom integrations, data pipelines, and ongoing support. Most small businesses should start with the smallest workflow that can prove ROI, then expand automation after lead volume grows.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
-              The average AI-powered website for a small business costs between $10,000 and $25,000. Clients typically see a return on investment within 6-12 months thanks to faster lead capture. NJ admin salaries average $55,000 per year, which AI automation can reduce by up to 80%.
+              The average AI-powered website for a small business costs between $5,000 and $15,000. Clients typically see a return on investment within 6-12 months thanks to faster lead capture. NJ admin salaries average $55,000 per year, which AI automation can reduce by up to 80% when it replaces repeatable intake work.
             </p>
           </BentoCard>
         </div>
@@ -1331,7 +1466,7 @@ function Projects() {
           <Label>[PORTFOLIO // LIVE WORK + AI OPS]</Label>
           <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <TextReveal
-              lines={['Websites we built,', 'and engines we now', 'charge $10K+ for.']}
+              lines={['Websites we built,', 'and engines priced', 'around ROI.']}
               className="font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.84] tracking-tight text-[#f4efe6]"
             />
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ ...spring, delay: 0.36 }} className="max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
@@ -1382,7 +1517,7 @@ function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; inde
           </div>
           <div className="mt-8">
             <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{study.metricLabel}</p>
-            <p className="mt-2 font-editorial text-[clamp(62px,9vw,112px)] leading-none tracking-wide text-[#f4efe6]">
+            <p className="mt-2 max-w-full break-words font-editorial text-[clamp(3.5rem,8vw,6.5rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
               {study.metric}
             </p>
           </div>
@@ -1468,7 +1603,7 @@ function ROISection() {
               <div className="flex h-full flex-col justify-between">
                 <Label>{item.label}</Label>
                 <div>
-                  <p className="font-editorial text-[clamp(58px,7vw,92px)] leading-none tracking-wide text-[#f4efe6]">
+                  <p className="max-w-full break-words font-editorial text-[clamp(3rem,6vw,5rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
                     {item.value}
                   </p>
                   <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">{item.copy}</p>
@@ -1494,7 +1629,7 @@ function ROISection() {
               ].map(([label, value]) => (
                 <div key={label} className="grid gap-2 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
                   <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{label}</p>
-                  <p className="font-display text-3xl font-extrabold tracking-tight text-[#d6b36a]">{value}</p>
+                  <p className="max-w-full break-words font-display text-[clamp(1.6rem,5vw,2.5rem)] font-extrabold leading-tight tracking-normal text-[#d6b36a] [overflow-wrap:anywhere]">{value}</p>
                 </div>
               ))}
             </div>
@@ -1513,72 +1648,72 @@ function QuoteEstimator() {
   const [automation, setAutomation] = useState(false)
 
   const estimate = useMemo(() => {
-    let upfrontLow = 350
-    let upfrontHigh = 850
-    let monthlyLow = 300
-    let monthlyHigh = 800
+    let upfrontLow = 1500
+    let upfrontHigh = 3500
+    let monthlyLow = 150
+    let monthlyHigh = 450
     let employeeCostLow = 0
     let employeeCostHigh = 0
     const includes = ['strategy call', 'mobile-first build', 'basic conversion structure']
 
     if (need === 'refresh') {
-      upfrontLow = 350
-      upfrontHigh = 900
-      monthlyLow = 300
-      monthlyHigh = 900
+      upfrontLow = 900
+      upfrontHigh = 2200
+      monthlyLow = 150
+      monthlyHigh = 450
       includes.push('copy cleanup', 'layout refresh')
     }
 
     if (need === 'forms') {
-      upfrontLow = 650
-      upfrontHigh = 1800
-      monthlyLow = 500
-      monthlyHigh = 1500
+      upfrontLow = 1800
+      upfrontHigh = 4200
+      monthlyLow = 250
+      monthlyHigh = 750
       includes.push('lead form logic', 'booking/contact routing')
     }
 
     if (need === 'ai') {
-      upfrontLow = 1500
-      upfrontHigh = 6500
-      monthlyLow = 1500
-      monthlyHigh = 5000
+      upfrontLow = 5000
+      upfrontHigh = 15000
+      monthlyLow = 750
+      monthlyHigh = 2500
       employeeCostLow = 3500
       employeeCostHigh = 6500
       includes.push('AI intake flow', 'database-backed routing', 'automation maintenance')
     }
 
     if (complexity === 'medium') {
-      upfrontLow += 300
-      upfrontHigh += 900
-      monthlyHigh += 500
+      upfrontLow += 750
+      upfrontHigh += 1800
+      monthlyHigh += 350
       includes.push('multi-page structure')
     }
 
     if (complexity === 'complex') {
-      upfrontLow += 900
-      upfrontHigh += 2600
-      monthlyLow += 400
-      monthlyHigh += 1200
+      upfrontLow += 1800
+      upfrontHigh += 4500
+      monthlyLow += 300
+      monthlyHigh += 900
       includes.push('custom workflow mapping')
     }
 
     if (urgency === 'fast') {
-      upfrontLow += 200
-      upfrontHigh += 700
+      upfrontLow += 300
+      upfrontHigh += 900
       includes.push('priority sprint')
     }
 
     if (urgency === 'urgent') {
-      upfrontLow += 500
-      upfrontHigh += 1400
+      upfrontLow += 700
+      upfrontHigh += 1800
       includes.push('rush launch window')
     }
 
     if (automation && need !== 'ai') {
-      upfrontLow += 650
-      upfrontHigh += 2200
-      monthlyLow += 400
-      monthlyHigh += 1200
+      upfrontLow += 1800
+      upfrontHigh += 5200
+      monthlyLow += 300
+      monthlyHigh += 900
       employeeCostLow = Math.max(employeeCostLow, 2500)
       employeeCostHigh = Math.max(employeeCostHigh, 5000)
       includes.push('starter automation layer')
@@ -1588,10 +1723,10 @@ function QuoteEstimator() {
       employeeCostLow = Math.max(employeeCostLow, 3000)
       employeeCostHigh = Math.max(employeeCostHigh, 6500)
       if (need !== 'ai') {
-        monthlyLow += 500
-        monthlyHigh += 1500
-        upfrontLow += 500
-        upfrontHigh += 1600
+        monthlyLow += 300
+        monthlyHigh += 900
+        upfrontLow += 1500
+        upfrontHigh += 4200
       }
       includes.push(quoteOptions.employee.find(([value]) => value === employee)?.[1] ?? 'AI employee')
     }
@@ -1610,7 +1745,7 @@ function QuoteEstimator() {
       note:
         need === 'ai' || employee !== 'none'
           ? 'AI agent and operations builds vary the most because pricing depends on APIs, workflow complexity, and how much admin work the system replaces.'
-          : 'Standard site work stays lower. Add-ons, booking flows, and automation increase both upfront build cost and monthly maintenance.',
+          : 'Standard site work stays accessible. Add-ons, booking flows, and automation increase both upfront build cost and monthly maintenance.',
     }
   }, [automation, complexity, employee, need, urgency])
 
@@ -1661,18 +1796,18 @@ function QuoteEstimator() {
                 <div className="mt-8 grid gap-5">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Upfront build</p>
-                    <p className="mt-2 font-editorial text-[clamp(64px,8vw,112px)] leading-none tracking-wide text-[#f4efe6]">
+                    <p className="mt-2 max-w-full break-words font-editorial text-[clamp(2.6rem,11vw,4.75rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
                       {estimate.upfront}
                     </p>
                   </div>
                   <div>
                     <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Monthly care / ops</p>
-                    <p className="mt-2 font-display text-4xl font-extrabold tracking-tight text-[#d6b36a]">{estimate.monthly}</p>
+                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.85rem,8vw,2.75rem)] font-extrabold leading-none tracking-normal text-[#d6b36a] [overflow-wrap:anywhere]">{estimate.monthly}</p>
                     <p className="mt-2 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{estimate.savings}</p>
                   </div>
                   <div>
                     <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Comparable employee cost</p>
-                    <p className="mt-2 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{estimate.employeeCost}</p>
+                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.65rem,7vw,2.25rem)] font-extrabold leading-tight tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">{estimate.employeeCost}</p>
                   </div>
                 </div>
                 <p className="mt-6 font-light leading-relaxed text-[#b7afa3]">{estimate.note}</p>
@@ -1881,7 +2016,7 @@ function BlogPost() {
         <BentoCard className="p-6 md:p-8">
           <Label>[ORBIT BOYZZ // CENTRAL NEW JERSEY]</Label>
           <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            Orbit Boyzz builds custom and AI-powered websites for local businesses across Central New Jersey — starting at $10,000.
+            Orbit Boyzz builds custom and AI-powered websites for local businesses across Central New Jersey, starting around $3,500.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
@@ -2101,6 +2236,75 @@ function WebDesignCentralNJ() {
   )
 }
 
+function WebDesignEwingNJ() {
+  return (
+    <main className="pt-36 md:pt-44">
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>[WEB DESIGN // EWING NJ]</Label>
+          <TextReveal
+            lines={['Web design', 'for Ewing, NJ', 'local businesses.']}
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+          />
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+            Orbit Websites builds hand-coded websites and AI intake systems for Ewing Township
+            businesses that need more calls, quote requests, bookings, and qualified leads from
+            local search. Starter website builds begin around $3,500, with AI intake upgrades
+            starting around $5,000 when the workflow can prove ROI.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
+            <PremiumButton href="/pricing">See pricing</PremiumButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            Built for Ewing service businesses competing on trust.
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              ['Local SEO structure', 'Service, town, FAQ, and proof sections help search engines and AI assistants understand what you do in Ewing and Mercer County.'],
+              ['Conversion paths', 'Calls, quote forms, booking links, and AI intake flows are placed around the actions that create real customer conversations.'],
+              ['Fast hand-coded pages', 'Next.js, React, Tailwind, and prerendered pages keep the site lightweight for mobile visitors comparing local options.'],
+              ['Automation when it pays', 'AI lead intake, routing, and proposal workflows are added when faster response can recover missed revenue or reduce admin work.'],
+            ].map(([title, copy], index) => (
+              <BentoCard key={title} className="p-6">
+                <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
+                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <div>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                  </div>
+                </div>
+              </BentoCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[DIRECT ANSWER]</Label>
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+              How much does web design cost in Ewing, NJ?
+            </h2>
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+              A custom website for an Ewing, NJ local business usually starts around $3,500
+              for a focused hand-coded site. AI-powered lead intake, booking logic, routing,
+              and proposal workflows usually move the project into the $5,000 to $15,000 range,
+              depending on integrations and workflow complexity.
+            </p>
+          </BentoCard>
+        </div>
+      </section>
+    </main>
+  )
+}
+
 function CalendlyEmbed() {
   const widgetRef = useRef<HTMLDivElement>(null)
   const [loaded, setLoaded] = useState(false)
@@ -2239,6 +2443,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/web-design-central-nj" element={<WebDesignCentralNJ />} />
+        <Route path="/web-design-ewing-nj" element={<WebDesignEwingNJ />} />
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
@@ -2253,3 +2458,6 @@ function App() {
 }
 
 export default App
+
+
+
