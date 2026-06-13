@@ -479,6 +479,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'ai-receptionist-cost-small-business',
+    title: 'How much does an AI receptionist cost for a small business?',
+    description:
+      'An AI receptionist typically costs $30‑$150 per month, with setup fees $0‑$500, depending on features and volume.',
+    updated: 'June 13, 2026',
+    audience: 'Small business owners in Central New Jersey looking to automate front‑desk tasks',
+    takeaways: [
+      'Monthly AI receptionist subscriptions range from $30 to $150 per user.',
+      'One‑time implementation fees are usually $0 to $500 and can be waived by agencies like Orbit Boyzz.',
+      'Central New Jersey firms report up to a 20% reduction in call handling time after AI receptionist adoption.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'For a small business, an AI receptionist usually costs between $30 and $150 per month. Many vendors also charge a one‑time setup fee ranging from $0 to $500. Prices vary by voice quality, integration depth, and call volume.',
+      },
+      {
+        heading: 'Pricing breakdown',
+        body: 'Subscription fees cover the AI engine, cloud hosting, and basic analytics; per‑call or per‑minute add‑ons can add $0.02‑$0.05 each. Custom branding or integration with a CRM such as HubSpot often incurs a $200‑$500 one‑time charge. Orbit Boyzz offers a bundled package for businesses in Princeton and Lawrence Township that includes a $0 setup fee and a flat $99 monthly rate.',
+      },
+      {
+        heading: 'Implementation and ROI',
+        body: 'Deploying an AI receptionist takes 1‑2 weeks of configuration, voice training, and testing with real callers. After launch, Central New Jersey businesses typically see a 20% drop in live‑operator time and a 15% increase in appointment bookings. The payback period is often under six months when the monthly subscription is under $150.',
+      },
+    ],
+  },
 ]
 
 function Header() {
