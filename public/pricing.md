@@ -1,22 +1,22 @@
 # Pricing - Orbit Websites
 
-Last updated: May 31, 2026
+Last updated: June 13, 2026
 
 ## Premium Website System Build
 
-- Price: Starts at $10,000+
+- Price: Starts around $3,500 for focused local business sites.
 - Best for: Local businesses that need a website to drive calls, quote requests, bookings, and customer trust.
 - Includes: Custom design, mobile-first layout, conversion copy, service structure, contact paths, local SEO foundations, and launch support.
 
 ## AI Operations Website Build
 
-- Price: Custom, typically $10,000+ depending on workflow complexity.
+- Price: Custom, typically $5,000-$15,000+ depending on workflow complexity.
 - Best for: HVAC, plumbing, catering, clinics, real estate, and local service businesses with slow intake or high-value missed leads.
 - Includes: Intake logic, qualification flows, database-backed routing, booking/proposal workflows, API integrations, and operational handoff.
 
 ## AI Operations Retainer
 
-- Price: $2,000-$4,000 per month when there is measurable labor or revenue impact.
+- Price: $750-$2,500 per month when there is measurable labor or revenue impact.
 - Best for: Businesses replacing administrative overhead or recovering high-intent leads.
 - Includes: Workflow monitoring, iteration, reporting, automation maintenance, routing improvements, and conversion optimization.
 

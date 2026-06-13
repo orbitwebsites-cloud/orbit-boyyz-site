@@ -10,9 +10,9 @@ Last updated: June 1, 2026 · Paste this into cto.new (or any AI lead tool) as c
 - **Contact:** 609-662-8052 · orbitboyzz@gmail.com · Book: https://calendly.com/orbitwebsites/30min
 
 ## What we sell (offers + pricing)
-1. **Premium custom website build** — starts ~$10,000+. Hand-coded (Next.js/React, Tailwind, Vercel), conversion-focused, mobile-first, local SEO foundations.
-2. **AI operations / automation website** — typically $10,000+. Automates intake, lead qualification, pricing, booking, proposal generation, and lead routing.
-3. **AI operations retainer** — $2,000–$4,000/month when it replaces measurable admin labor or recovers high-intent leads.
+1. **Premium custom website build** — starts around $3,500. Hand-coded (Next.js/React, Tailwind, Vercel), conversion-focused, mobile-first, local SEO foundations.
+2. **AI operations / automation website** — typically $5,000-$15,000+. Automates intake, lead qualification, pricing, booking, proposal generation, and lead routing.
+3. **AI operations retainer** — $750-$2,500/month when it replaces measurable admin labor or recovers high-intent leads.
 
 ## Who we serve (ICP)
 Local **service businesses** in Central NJ where one customer is worth hundreds–thousands of dollars and slow response costs money:
