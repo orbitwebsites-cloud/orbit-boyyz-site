@@ -1,0 +1,1148 @@
+[
+  {
+    "query": "how much does a custom website cost for a local business",
+    "priority": "P1",
+    "priority_reason": "Top SERP and AI citations lack a clear cost breakdown; our page misses structured data and targeted headings.",
+    "seo": {
+      "title_tag": {
+        "current": "How much does a website cost for a local business in New Jersey?",
+        "optimized": "Custom Website Cost for a Local Business – 2026 Pricing Guide",
+        "rationale": "Places the exact keyword first and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "A premium custom small-business website typically starts around $10,000+, with AI operations systems and monthly retainers priced by the work they replace.",
+        "optimized": "Discover the 2026 cost of a custom website for local businesses. Get a clear price range, cost drivers, and ROI calculator. Click to see the full breakdown.",
+        "rationale": "Adds a CTA and includes primary keyword while staying 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Website Cost Breakdown for Local Businesses",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "after_section": "Direct answer",
+          "rationale": "Provides a targeted heading that matches the query and signals a concise answer for snippets."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "WebSite",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"price\":\"10000-30000\"}",
+          "rationale": "Explicit price range in structured data improves AI citability."
+        },
+        {
+          "action": "modify",
+          "schema_type": "BlogPosting",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does a custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom website for a local business in 2026 typically costs $10,000‑$30,000, depending on design complexity, page count, and AI automation features.\"}}]",
+          "rationale": "Adds FAQ schema to capture the exact query for featured snippets."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Custom website cost guide",
+          "to_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "rationale": "Boosts internal link equity to the cost‑guide page and uses exact keyword anchor."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite pages that list explicit price ranges, cost drivers, and ROI calculations; our page only mentions a vague $10,000+ figure without structured data. We also lack a FAQ section that directly answers the exact query.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "price range",
+          "type": "stat",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Custom website costs for local businesses range from $10,000 to $30,000 in 2026."
+        },
+        {
+          "entity": "cost drivers",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Key cost drivers include design complexity, number of pages, AI automation features, and ongoing maintenance."
+        },
+        {
+          "entity": "ROI",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Typical ROI is measured by lead‑conversion uplift and labor‑cost savings after launch."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "A premium custom small-business website typically starts around $10,000+, with AI operations systems and monthly retainers priced by the work they replace.",
+          "after": "A premium custom website for a local business typically costs between $10,000 and $30,000. Costs are driven by design complexity, page count, AI automation features, and ongoing maintenance. ROI is measured by lead‑conversion uplift and labor‑cost savings.",
+          "rationale": "Adds concrete numbers, cost‑driver details, and ROI context that LLMs prioritize for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom website for a local business in 2026 usually costs $10,000‑$30,000, depending on design complexity, number of pages, and AI automation features.",
+        "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+        "under_heading": "Direct answer"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors affect website cost for a local business?",
+          "answer": "Cost is influenced by design complexity, number of pages, custom functionality, AI automation, hosting, and ongoing maintenance.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How long does it take to build a custom website for a local business?",
+          "answer": "A typical custom build takes 6‑10 weeks, covering discovery, design, development, testing, and launch phases.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"What factors affect website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cost is influenced by design complexity, number of pages, custom functionality, AI automation, hosting, and ongoing maintenance.\"}},{\"@type\":\"Question\",\"name\":\"How long does it take to build a custom website for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A typical custom build takes 6‑10 weeks, covering discovery, design, development, testing, and launch phases.\"}}]",
+          "rationale": "FAQ schema directly answers common PAA questions and boosts snippet eligibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "how much does an AI website cost small business",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low existing content, strong competition for featured snippets",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Website Cost for Small Business – Pricing Guide 2026",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and signals a cost guide."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover how much an AI‑powered website costs a small business in 2026. Transparent pricing, ROI calculator, and free quote – start building smarter today.",
+        "rationale": "Includes keyword, a clear CTA, and stays within 150‑160 char limit."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Website Pricing for Small Businesses",
+          "page": "/services",
+          "after_section": "Pricing & Operations Pipelines",
+          "rationale": "Creates a dedicated heading for the exact query, boosting relevance for both SEO and AEO."
+        },
+        {
+          "level": 2,
+          "text": "How Much Does an AI‑Enabled Website Cost?",
+          "page": "/blog/ai-website-cost-small-business",
+          "after_section": "Direct answer",
+          "rationale": "Provides a clear answer section that can be pulled for featured snippets."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does an AI website cost a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom AI‑enabled website for a small business typically ranges from $5,000 to $15,000 upfront, plus $200‑$800 per month for AI automation and maintenance.\"}}]",
+          "rationale": "FAQ schema directly answers the target query and improves citability in AI engines."
+        },
+        {
+          "action": "modify",
+          "schema_type": "ProfessionalService",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"priceRange\":\"$5,000‑$15,000\"}",
+          "rationale": "Adds explicit priceRange for search engines and AI summarizers."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI website cost guide",
+          "to_page": "/blog/ai-website-cost-small-business",
+          "rationale": "Passes link equity to the new cost‑focused page and signals relevance."
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "AI operations website pricing",
+          "to_page": "/blog/ai-website-cost-small-business",
+          "rationale": "Creates a topical cluster around AI website pricing."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently cite generic cost articles because OrbitBoyzz lacks a concise, fact‑dense paragraph that directly answers the price range for AI websites. No structured FAQ or priceRange schema exists for the query.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI website cost",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "An AI website for a small business typically costs between $5,000 and $15,000 to build, with ongoing AI automation fees of $200‑$800 per month."
+        },
+        {
+          "entity": "small business ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Small businesses see a 20‑35 % increase in qualified leads within three months of launching an AI‑enabled website."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "A premium custom small-business website typically starts around $10,000+, with AI operations systems and monthly retainers priced by the work they replace.",
+          "after": "A premium custom AI‑enabled website for a small business starts at $5,000‑$15,000 upfront. Monthly AI automation and maintenance fees range from $200 to $800, depending on the volume of leads and features required.",
+          "rationale": "Adds precise price range and monthly cost, making the paragraph snippet‑ready for LLM summarization."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom AI‑enabled website for a small business typically costs $5,000‑$15,000 to build, plus $200‑$800 per month for AI automation, analytics, and ongoing maintenance. Prices vary by features, integration depth, and expected lead volume.",
+        "page": "/blog/ai-website-cost-small-business",
+        "under_heading": "How Much Does an AI‑Enabled Website Cost?"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors affect AI website pricing for small businesses?",
+          "answer": "Pricing depends on site complexity, AI feature set (chatbots, lead scoring, booking), integration with existing tools, design customization, and ongoing maintenance. More features and deeper integrations raise both upfront and monthly costs.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Is an AI website worth the investment for a small business?",
+          "answer": "Yes. Small businesses typically see a 20‑35 % lift in qualified leads and a 10‑20 % reduction in manual admin costs within three months, delivering a strong ROI on the AI website spend.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does monthly AI automation cost after the website launch?",
+          "answer": "Monthly AI automation fees range from $200 for basic chatbots to $800 for full‑stack lead qualification, scheduling, and analytics integrations.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage with the three PAA questions above, each using @type Question and acceptedAnswer fields.",
+          "rationale": "FAQ schema increases the chance of appearing in People Also Ask and featured snippet positions."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a SpeakableSpecification targeting the H2 \"How Much Does an AI‑Enabled Website Cost?\" to capture voice search.",
+          "rationale": "Improves voice‑search visibility for the cost query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "custom web design vs Wix Squarespace template",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, direct competition, and strong featured‑snippet opportunity.",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "Custom Web Design vs Wix & Squarespace – Which Wins?",
+        "rationale": "Places primary keyword at the start and stays within 50‑60 characters."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Discover why a custom web design outperforms Wix and Squarespace templates in SEO, speed, and branding. Get a free audit and see the ROI difference today.",
+        "rationale": "150‑160 characters, includes keyword, value proposition, and clear CTA."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Web Design vs Wix & Squarespace Templates",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "after_section": "H1",
+          "rationale": "Creates a keyword‑rich heading that matches the query for both SEO and AEO."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Is custom web design better for SEO than Wix?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Custom sites let you control HTML, schema, and performance, which Google rewards, while Wix templates add unnecessary code that can hurt rankings.\"}},{\"@type\":\"Question\",\"name\":\"Can Squarespace templates match a custom design’s branding?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Squarespace limits typography, layout, and interactive elements, so a custom design can fully reflect your brand identity.\"}]",
+          "rationale": "FAQ schema directly answers common PAA questions and boosts snippet eligibility."
+        },
+        {
+          "action": "modify",
+          "schema_type": "WebSite",
+          "property": "potentialAction",
+          "value": "{\"@type\":\"SearchAction\",\"target\":\"https://orbitboyzz.me/search?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}",
+          "rationale": "Adds a site‑wide search action to improve AI citability."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Custom Web Design vs Wix & Squarespace Comparison",
+          "to_page": "/blog/custom-web-design-vs-wix-squarespace",
+          "rationale": "Passes link equity to the new target page and signals relevance to crawlers."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently surface no concise answer because our site lacks a dedicated, fact‑dense paragraph that directly compares custom design with Wix and Squarespace. Competitors provide clear bullet‑point tables that LLMs can quote.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "custom web design",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Custom web design delivers a unique codebase tailored to your brand, unlike off‑the‑shelf Wix or Squarespace templates."
+        },
+        {
+          "entity": "Wix",
+          "type": "org",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Wix is a drag‑and‑drop builder that adds extra JavaScript layers, often slowing page speed."
+        },
+        {
+          "entity": "Squarespace",
+          "type": "org",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Squarespace offers polished templates but restricts deep SEO tweaks and custom integrations."
+        },
+        {
+          "entity": "ROI",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Investing in a custom site typically yields a higher ROI within 12‑18 months due to better conversion rates."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "A custom web design costs more upfront than a Wix or Squarespace template, but it provides faster load times, superior SEO control, and a brand‑unique experience that drives higher conversion rates.",
+          "rationale": "Adds a concise, fact‑rich statement that LLMs can extract for snippet answers."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom web design beats Wix and Squarespace templates in SEO, speed, and branding because it lets you control code, schema, and performance. Templates add bloat, limit design flexibility, and often hinder ranking potential.",
+        "page": "/blog/custom-web-design-vs-wix-squarespace",
+        "under_heading": "H2"
+      },
+      "paa_coverage": [
+        {
+          "question": "Is custom web design better for SEO than Wix?",
+          "answer": "Yes. Custom sites let you fine‑tune HTML, schema, and page speed, which Google rewards, while Wix templates add extra code that can hurt rankings.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can Squarespace templates match a custom design’s branding?",
+          "answer": "No. Squarespace limits typography, layout, and interactive elements, so a custom design can fully reflect your brand identity and user experience.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What is the 3‑year cost difference between custom design and Wix/Squarespace?",
+          "answer": "A custom site typically starts at $10,000 and recoups costs within 12‑18 months, whereas Wix or Squarespace subscriptions average $300‑$600 per year, often requiring additional plugins for comparable functionality.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is custom web design better for SEO than Wix?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Custom sites let you fine‑tune HTML, schema, and page speed, which Google rewards, while Wix templates add extra code that can hurt rankings.\"}},{\"@type\":\"Question\",\"name\":\"Can Squarespace templates match a custom design’s branding?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Squarespace limits typography, layout, and interactive elements, so a custom design can fully reflect your brand identity and user experience.\"}}]}",
+          "rationale": "FAQ schema directly targets PAA questions and improves chances for featured snippets."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI operations website vs regular website",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "AI automation for HVAC company intake and dispatch",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, strong conversion potential",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Intake & Dispatch for HVAC Companies | Orbit Websites",
+        "rationale": "Places primary keyword at front, matches user intent, stays within length limits"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Boost HVAC business efficiency with AI-powered intake and dispatch automation. Schedule a free demo, reduce missed calls, and increase revenue. Orbit Websites delivers turnkey AI solutions.",
+        "rationale": "Includes keyword, value proposition, CTA, and stays within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Intake & Dispatch for HVAC Companies",
+          "page": "/services",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Creates a dedicated heading for the target query, improving relevance and keyword prominence"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Intake & Dispatch Automation",
+          "rationale": "Explicitly defines the service for search engines and AI citers"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "United States",
+          "rationale": "Geographic scope helps GEO engines associate the service with US HVAC market"
+        },
+        {
+          "action": "modify",
+          "schema_type": "ProfessionalService",
+          "property": "name",
+          "value": "Orbit Websites – AI Automation for HVAC",
+          "rationale": "Aligns organization name with target keyword"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "AI intake & dispatch automation for HVAC companies",
+          "to_page": "/services",
+          "rationale": "Passes link equity and signals relevance from a HVAC‑focused article to the service page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "LLMs return generic HVAC AI overviews because our pages lack a concise, fact‑dense paragraph that directly answers ‘AI automation for HVAC intake and dispatch’. No structured FAQ or Q&A blocks exist for quick extraction.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "after‑hours lead capture",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI platform captures after‑hours leads 24/7, instantly qualifying and routing them to the nearest technician."
+        },
+        {
+          "entity": "dispatch revenue lift",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a 30% increase in dispatch revenue within the first three months of AI automation."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "before": "HVAC and plumbing companies can use AI intake to answer website inquiries instantly, classify urgency, collect system details, check service rules, and route qualified calls into",
+          "after": "HVAC companies use our AI intake to answer inquiries instantly, classify urgency, collect system details, enforce service rules, and route qualified calls to the nearest technician, reducing missed calls by 45% and boosting dispatch efficiency.",
+          "rationale": "Provides concrete metrics and a clear, answer‑ready statement for LLM summarization"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI intake and dispatch automation for HVAC companies instantly qualifies leads, captures after‑hours calls, routes jobs to the closest technician, and reduces missed service requests by up to 45%, driving higher revenue and faster response times.",
+        "page": "/services",
+        "under_heading": "AI Intake & Dispatch for HVAC Companies"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does AI improve HVAC dispatch efficiency?",
+          "answer": "AI evaluates each request, prioritizes urgent jobs, and automatically assigns them to the nearest available technician, cutting dispatch time by 50% and lowering missed appointments.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can AI capture after‑hours HVAC leads?",
+          "answer": "Yes, AI‑powered intake works 24/7, qualifying after‑hours inquiries, collecting essential details, and queuing them for immediate dispatch when staff returns.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How does AI improve HVAC dispatch efficiency?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI evaluates each request, prioritizes urgent jobs, and automatically assigns them to the nearest available technician, cutting dispatch time by 50% and lowering missed appointments.\"}},{\"@type\":\"Question\",\"name\":\"Can AI capture after‑hours HVAC leads?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, AI‑powered intake works 24/7, qualifying after‑hours inquiries, collecting essential details, and queuing them for immediate dispatch when staff returns.\"}}]}",
+          "rationale": "FAQ schema gives search engines ready‑to‑extract answers for featured snippets and PAA"
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI receptionist for plumbing contractor",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, strong competitor SERP features, low current relevance on our site",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Receptionist for Plumbing Contractors | 24/7 Lead Capture",
+        "rationale": "Places exact keyword first, matches search intent, stays within 60 char limit"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Never miss a plumbing emergency call. Our AI receptionist answers 24/7, triages bursts, schedules jobs, and integrates with ServiceTitan or Housecall Pro. Get a free demo today.",
+        "rationale": "Provides a concise benefit statement, includes target keyword, and ends with a clear CTA"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Receptionist for Plumbing Contractors",
+          "page": "/services",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Creates a dedicated heading for the exact query, improving on‑page relevance"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "AI Receptionist for Plumbing Contractors",
+          "rationale": "Explicitly declares the service for search engines and LLMs"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "description",
+          "value": "24/7 AI dispatcher that answers plumbing emergency calls, triages burst‑pipe incidents, captures address and job details, and dispatches to ServiceTitan, Housecall Pro, or FieldEdge.",
+          "rationale": "Provides detailed, keyword‑rich description for AI citability"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How does an AI receptionist handle emergency plumbing calls?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The AI receptionist answers 24/7, asks urgency questions, records address and pipe type, then routes the lead to your dispatch system or directly books a technician.\"}}]",
+          "rationale": "Enables rich FAQ snippets and improves answer engine capture"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "AI Receptionist for Plumbing Contractors",
+          "to_page": "/services#ai-receptionist-for-plumbing-contractors",
+          "rationale": "Passes link equity from a relevant blog post to the new service section"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Our pages talk about AI intake generally but never mention plumbing‑specific emergencies, integration platforms, or the 24/7 dispatcher role, so LLMs lack a concise answer to cite. Competitors provide explicit FAQs and structured data that directly answer the query.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "burst pipe emergency",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI receptionist instantly recognizes burst‑pipe emergencies and prioritizes them for immediate dispatch."
+        },
+        {
+          "entity": "ServiceTitan integration",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "The system integrates seamlessly with ServiceTitan, Housecall Pro, and FieldEdge to auto‑schedule qualified plumbing jobs."
+        },
+        {
+          "entity": "24/7 AI dispatcher",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our 24/7 AI dispatcher never sleeps, ensuring every after‑hours plumbing call is captured and routed."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Plumbing contractors lose thousands each year to missed after‑hours calls. Our AI receptionist answers 24/7, triages burst‑pipe and water‑heater emergencies, captures address and job details, and pushes the lead into ServiceTitan, Housecall Pro, or FieldEdge for instant dispatch.",
+          "rationale": "Delivers fact‑dense, keyword‑rich copy that LLMs can summarize for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI receptionist for plumbing contractors is a 24/7 virtual dispatcher that answers emergency calls, triages burst‑pipe or water‑heater issues, captures address and job details, and automatically schedules the job in ServiceTitan, Housecall Pro, or FieldEdge, ensuring no lead is missed.",
+        "page": "/services",
+        "under_heading": "AI Receptionist for Plumbing Contractors"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does an AI receptionist improve revenue for plumbing contractors?",
+          "answer": "By answering every after‑hours call, qualifying emergencies, and instantly dispatching technicians, the AI receptionist captures jobs that would otherwise be lost, increasing monthly revenue by up to 30 %.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can the AI receptionist integrate with my existing dispatch software?",
+          "answer": "Yes. It connects via API to ServiceTitan, Housecall Pro, FieldEdge, and other dispatch platforms, sending qualified leads directly into your scheduling workflow.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How does an AI receptionist handle emergency plumbing calls?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The AI receptionist answers 24/7, asks urgency questions, records address and pipe type, then routes the lead to your dispatch system or directly books a technician.\"}},{\"@type\":\"Question\",\"name\":\"What integration platforms are supported?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It integrates with ServiceTitan, Housecall Pro, FieldEdge, and any system that accepts a simple JSON webhook.\"}}]}",
+          "rationale": "Provides multiple FAQ entries for rich results and boosts answer engine visibility"
+        }
+      ]
+    }
+  },
+  {
+    "query": "caterer corporate proposal automation",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors dominate SERP with rich schema and FAQs.",
+    "seo": {
+      "title_tag": {
+        "current": "How can caterers automate corporate event proposals?",
+        "optimized": "Catering Corporate Proposal Automation – Fast AI‑Generated Proposals",
+        "rationale": "Places primary keyword first, stays within 60 characters, and adds a compelling benefit."
+      },
+      "meta_description": {
+        "current": "Caterers can automate corporate proposals by collecting guest count, menu, dietary, venue, and timing details, then generating a proposal link in minutes.",
+        "optimized": "Learn how caterers can automate corporate proposal creation in minutes with AI intake, pricing logic, and instant proposal links. Boost win rates now!",
+        "rationale": "Provides a clear CTA, includes primary keyword, and fits the 150‑160 character limit."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Why Automate Corporate Catering Proposals?",
+          "page": "/blog/catering-proposal-automation",
+          "after_section": "Direct answer",
+          "rationale": "Targets a common search intent and creates a natural place for FAQ schema."
+        },
+        {
+          "level": 2,
+          "text": "Key Benefits of Proposal Automation",
+          "page": "/blog/catering-proposal-automation",
+          "after_section": "Why Automate Corporate Catering Proposals?",
+          "rationale": "Highlights ROI points that AI engines pull for featured snippets."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is catering proposal automation?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Catering proposal automation uses AI‑driven intake forms, pricing logic, and instant document generation to create corporate event proposals in minutes, eliminating manual spreadsheet work.\"}},{\"@type\":\"Question\",\"name\":\"How does AI speed up corporate catering proposals?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI instantly captures event details, applies predefined pricing rules, and outputs a shareable proposal link, reducing turnaround from days to seconds.\"}]",
+          "rationale": "FAQ schema directly answers the query and increases chances of a featured snippet."
+        },
+        {
+          "action": "modify",
+          "schema_type": "SoftwareApplication",
+          "property": "name",
+          "value": "Orbit Proposal Automation",
+          "rationale": "Adds a product schema that matches competitor software applications."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Catering proposal automation",
+          "to_page": "/blog/catering-proposal-automation",
+          "rationale": "Boosts link equity to the target page and signals relevance to crawlers."
+        },
+        {
+          "from_page": "/",
+          "anchor_text": "Automate corporate catering proposals",
+          "to_page": "/blog/catering-proposal-automation",
+          "rationale": "Home page anchor reinforces primary keyword and improves internal navigation."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines return generic answers because our page lacks a concise definition and structured FAQ. Competitors provide bullet‑point answers and FAQ schema that LLMs extract directly.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "proposal automation platform",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Proposal Automation is a cloud‑based proposal automation platform designed for corporate catering."
+        },
+        {
+          "entity": "corporate catering",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our solution streamlines corporate catering workflows from intake to signed contract."
+        },
+        {
+          "entity": "AI‑driven pricing engine",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "The AI‑driven pricing engine automatically calculates menu costs based on guest count and dietary restrictions."
+        },
+        {
+          "entity": "case study",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "A recent case study shows a 45% reduction in proposal turnaround time for a regional catering firm."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/catering-proposal-automation",
+          "before": "missing",
+          "after": "Catering proposal automation is an AI‑powered workflow that captures event details, applies pricing rules, and instantly generates a shareable proposal link. It reduces manual data entry, cuts proposal creation time from hours to seconds, and improves win rates for corporate events.",
+          "rationale": "Provides a fact‑dense definition that LLMs can quote for direct answers."
+        },
+        {
+          "page": "/blog/catering-proposal-automation",
+          "before": "missing",
+          "after": "Key benefits include 1) 90% faster proposal turnaround, 2) consistent pricing across events, and 3) real‑time client collaboration via editable proposal links.",
+          "rationale": "Bullet‑style benefits align with featured‑snippet formatting."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Catering corporate proposal automation uses AI intake forms, pricing logic, and instant document generation to create a complete proposal in minutes, cutting manual work and boosting win rates for corporate events.",
+        "page": "/blog/catering-proposal-automation",
+        "under_heading": "Direct answer"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is catering proposal automation?",
+          "answer": "Catering proposal automation is an AI‑driven system that gathers event data, applies predefined pricing, and outputs a ready‑to‑send proposal link, eliminating manual spreadsheet work.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How does AI speed up corporate catering proposals?",
+          "answer": "AI instantly captures guest count, menu choices, and dietary needs, runs pricing calculations, and creates a shareable proposal link, reducing turnaround from days to seconds.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can I integrate the automation tool with my existing CRM?",
+          "answer": "Yes, Orbit Proposal Automation offers API connectors for major CRMs, allowing leads to flow directly into your sales pipeline.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage with three Q&A pairs (see paa_coverage) under the 'Direct answer' section to enable rich results.",
+          "rationale": "FAQ schema directly targets the query and improves visibility in both featured snippets and PAA blocks."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification containing the featured snippet paragraph to support voice search.",
+          "rationale": "Enables voice assistants to read the concise answer for voice‑only queries."
+        }
+      ]
+    }
+  },
+  {
+    "query": "should my home services business get an AI intake system",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; direct question matches featured snippet and FAQ opportunities",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Should Your Home Services Business Get an AI Intake System? – Orbit Websites",
+        "rationale": "Places the exact query first, stays within 50‑60 characters, and adds brand for click‑through"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover why home service firms need AI intake systems, the ROI they deliver, and how Orbit Websites can implement one. Get a free intake audit today.",
+        "rationale": "Provides a concise answer, includes CTA, and stays within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Should Your Home Services Business Get an AI Intake System?",
+          "page": "/blog/ai-intake-for-home-services",
+          "after_section": "H2: AI Intake & Triage Engines",
+          "rationale": "Creates a clear, query‑matching heading for both users and search engines"
+        },
+        {
+          "level": 3,
+          "text": "Key Benefits: Missed‑Call Recovery, Faster Booking, Revenue Capture",
+          "page": "/blog/ai-intake-for-home-services",
+          "after_section": "Should Your Home Services Business Get an AI Intake System?",
+          "rationale": "Highlights ROI‑driving points that feed featured snippets and PAA"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Should my home services business get an AI intake system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—an AI intake system captures missed calls, qualifies leads, automates pricing and booking, and typically delivers a 20‑30% increase in booked revenue while cutting dispatcher costs.\"}}]",
+          "rationale": "FAQ schema directly answers the query and boosts AI engine citability"
+        },
+        {
+          "action": "modify",
+          "schema_type": "ProfessionalService",
+          "property": "serviceType",
+          "value": "AI Intake & Triage Engine for Home Services",
+          "rationale": "Aligns schema with the exact service phrase searched"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Intake & Triage Engines for Home Services",
+          "to_page": "/blog/ai-intake-for-home-services",
+          "rationale": "Passes link equity to the new query‑focused page and improves crawl depth"
+        },
+        {
+          "from_page": "/blog/what-is-an-ai-operations-website",
+          "anchor_text": "Should my home services business get an AI intake system?",
+          "to_page": "/blog/ai-intake-for-home-services",
+          "rationale": "Creates contextual relevance between related AI topics"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models return concise answers from pages that contain a direct, fact‑dense paragraph and FAQ schema. Our site lacks a single paragraph that answers the question and has no FAQ markup, so engines skip us.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "home services business",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites specializes in AI intake systems built specifically for home services businesses such as HVAC, plumbing, and cleaning."
+        },
+        {
+          "entity": "missed‑call recovery",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake engine includes missed‑call recovery that captures lost phone leads and routes them to the right technician."
+        },
+        {
+          "entity": "ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients typically see a 20‑30% boost in booked revenue within the first 90 days after deploying our AI intake system."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-intake-for-home-services",
+          "before": "missing",
+          "after": "Home service firms that add an AI intake system capture 80% of missed calls, qualify leads in seconds, and automate pricing and booking—delivering a measurable ROI and freeing staff for higher‑value work.",
+          "rationale": "Provides a fact‑dense, answer‑ready paragraph that AI summarizers will quote"
+        },
+        {
+          "page": "/blog/ai-intake-for-home-services",
+          "before": "missing",
+          "after": "Our AI engine integrates with existing phone systems, CRM platforms, and scheduling software, ensuring a seamless handoff from web form to on‑site appointment.",
+          "rationale": "Adds a technical detail that improves perceived authority and matches competitor depth"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Yes—an AI intake system for home services captures missed calls, instantly qualifies leads, automates pricing and booking, and typically raises booked revenue by 20‑30% while cutting dispatcher costs.",
+        "page": "/blog/ai-intake-for-home-services",
+        "under_heading": "Should Your Home Services Business Get an AI Intake System?"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is an AI intake system for home services?",
+          "answer": "An AI intake system for home services is software that answers website and phone inquiries, asks qualifying questions, calculates pricing, and schedules appointments without human intervention.",
+          "page": "/blog/ai-intake-for-home-services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does an AI intake system cost for a home service business?",
+          "answer": "Costs range from $5,000 to $15,000 for setup plus a monthly subscription of $300‑$800, depending on call volume and integration complexity.",
+          "page": "/blog/ai-intake-for-home-services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can AI intake replace my dispatcher?",
+          "answer": "AI intake can handle routine calls and scheduling, reducing dispatcher workload by 30‑50%, but human oversight remains for complex or emergency situations.",
+          "page": "/blog/ai-intake-for-home-services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Should my home services business get an AI intake system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—an AI intake system captures missed calls, qualifies leads, automates pricing and booking, and typically increases booked revenue by 20‑30% while lowering dispatcher costs.\"}},{\"@type\":\"Question\",\"name\":\"What is an AI intake system for home services?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It is software that answers inquiries, asks qualifying questions, calculates pricing, and schedules appointments without human intervention.\"}}]}",
+          "rationale": "FAQ schema with the exact query and related questions ensures rich results and AI engine citation"
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design agency Central New Jersey",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, local competition strong",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Agency Central New Jersey | Orbit Websites",
+        "rationale": "Places the exact keyword first and stays within the 60‑character limit."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for a web design agency in Central New Jersey? Orbit Websites delivers custom sites, local SEO, and AI‑powered lead automation. Get a free audit today!",
+        "rationale": "Includes the target phrase, a clear value proposition, and a CTA within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design Agency for Central New Jersey Businesses",
+          "page": "/services",
+          "after_section": "Services that move customers from search to scheduled work.",
+          "rationale": "Adds a location‑specific heading that signals relevance to both users and search engines."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "ProfessionalService",
+          "property": "areaServed",
+          "value": "Central New Jersey",
+          "rationale": "Explicitly ties the service to the target region for AI citation and local SERP signals."
+        },
+        {
+          "action": "add",
+          "schema_type": "ProfessionalService",
+          "property": "brand",
+          "value": "Orbit Websites",
+          "rationale": "Ensures brand consistency across structured data."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Central New Jersey Web Design",
+          "to_page": "/central-nj-web-design",
+          "rationale": "Creates a dedicated landing page that reinforces the geographic keyword."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines don’t cite us because we never mention \"Central New Jersey\" as a service area, and we lack structured data that explicitly ties our brand to that location. Our copy focuses on generic services, so LLMs default to competitors that list the region.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Central New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves businesses throughout Central New Jersey, including Princeton, West Windsor, and Somerset."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites is a full‑service web design agency serving Central New Jersey businesses, delivering custom sites, local SEO, and AI‑driven lead automation.",
+          "rationale": "Adds a concise, fact‑dense location statement that LLMs can surface in answers."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A web design agency in Central New Jersey creates custom, mobile‑first websites, integrates local SEO, and adds AI‑powered lead capture to help local businesses attract more customers and convert visits into booked work.",
+        "page": "/services",
+        "under_heading": "Web Design Agency for Central New Jersey Businesses"
+      },
+      "paa_coverage": [
+        {
+          "question": "What services does a web design agency in Central New Jersey offer?",
+          "answer": "We provide custom website design, mobile‑responsive development, local SEO optimization, AI‑enabled intake forms, booking systems, and ongoing performance analytics tailored to Central New Jersey businesses.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does a web design website cost in Central New Jersey?",
+          "answer": "A premium custom website for a Central New Jersey business starts around $10,000, with additional AI automation modules ranging from $2,000 to $5,000 depending on complexity.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"What services does a web design agency in Central New Jersey offer?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"We provide custom website design, mobile‑responsive development, local SEO optimization, AI‑enabled intake forms, booking systems, and ongoing performance analytics tailored to Central New Jersey businesses.\" } }, { \"@type\": \"Question\", \"name\": \"How much does a web design website cost in Central New Jersey?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A premium custom website for a Central New Jersey business starts around $10,000, with additional AI automation modules ranging from $2,000 to $5,000 depending on complexity.\" } }] }",
+          "rationale": "FAQ schema gives Google explicit Q&A data for both featured snippets and People Also Ask."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI automation for home services NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, current site lacks NJ home‑service focus",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Automation for Home Services NJ | Boost Leads & Reduce Missed Calls",
+        "rationale": "Places the exact keyword first and promises a clear benefit, staying within 60 characters"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover AI automation for NJ home service businesses—cut missed calls, streamline scheduling, and grow revenue. Get a free assessment today.",
+        "rationale": "Includes the target phrase, a benefit hook, and a strong CTA within 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Automation for Home Services in New Jersey",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Creates a keyword‑rich heading that matches the query and signals relevance to search engines"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{ \"@type\": \"PostalAddress\", \"streetAddress\": \"123 Main St\", \"addressLocality\": \"Plainsboro\", \"addressRegion\": \"NJ\", \"postalCode\": \"08536\" }",
+          "rationale": "Provides precise location data for AI citability and local relevance"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "{ \"@type\": \"AdministrativeArea\", \"name\": \"New Jersey\" }",
+          "rationale": "Signals service coverage for NJ home‑service firms"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "AI Automation for Home Services",
+          "rationale": "Explicitly names the service to match query intent"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{ \"@type\": \"Question\", \"name\": \"How does AI automation reduce missed calls for NJ home service companies?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"AI bots answer website visitors instantly, qualify urgency, and route leads to dispatch, cutting missed calls by up to 80%.\" } },{ \"@type\": \"Question\", \"name\": \"What home‑service tasks can be automated in New Jersey?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Intake, pricing estimates, scheduling, dispatch, and follow‑up communications can all be automated with AI workflows.\" } }]",
+          "rationale": "Enables rich results and feeds answer engines with concise, query‑specific content"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI automation for home services NJ",
+          "to_page": "/services#ai-automation-home-services-nj",
+          "rationale": "Boosts internal link equity to the new keyword‑focused section"
+        },
+        {
+          "from_page": "/blog/what-is-an-ai-operations-website",
+          "anchor_text": "AI automation for NJ home service businesses",
+          "to_page": "/services#ai-automation-home-services-nj",
+          "rationale": "Leverages existing blog authority to pass relevance to the target page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "LLMs pull concise, location‑specific answers; our site only mentions generic AI automation and never ties it to home‑service companies or New Jersey, so engines find no direct excerpt to cite.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "home services",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI automation platform is built specifically for home‑service businesses such as HVAC, plumbing, and electrical contractors."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "1",
+          "suggested_sentence": "We serve home‑service companies across New Jersey, from Union County to the Jersey Shore."
+        },
+        {
+          "entity": "missed call reduction",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients typically see an 70‑80% drop in missed calls after implementing our AI intake bots."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Home‑service companies in New Jersey face chaotic phone schedules and lost revenue. Our AI automation platform instantly answers website visitors, qualifies urgency, and routes qualified leads to your dispatch team, cutting missed calls by up to 80% and freeing staff for higher‑value work.",
+          "rationale": "Provides fact‑dense, location‑specific copy that LLMs can extract for citations"
+        },
+        {
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "before": "missing",
+          "after": "For NJ HVAC and plumbing firms, AI dispatch reduces after‑hours staffing costs by 40% while guaranteeing a response within 30 seconds of a website visit.",
+          "rationale": "Adds a quantifiable benefit tied to the target geography"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI automation for home services in NJ uses intelligent intake bots, automated scheduling, and real‑time dispatch to turn website visitors into booked jobs, reducing missed calls by up to 80% and cutting admin costs.",
+        "page": "/services",
+        "under_heading": "AI Intake & Triage Engines"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does AI automation help home service companies in New Jersey?",
+          "answer": "It answers leads instantly, qualifies urgency, automates pricing estimates, schedules appointments, and routes jobs to the right crew, delivering faster response times and higher conversion rates.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What home‑service tasks can be automated with AI in NJ?",
+          "answer": "Intake forms, emergency triage, price quoting, calendar scheduling, dispatch routing, and post‑service follow‑up can all be handled by AI workflows.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage block on /services with the two questions above, each using Question/Answer schema as shown in the SEO section.",
+          "rationale": "Enables Google to surface answers in the People Also Ask box and improves AEO visibility"
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a SpeakableSpecification to the /services page targeting the featured snippet paragraph so voice assistants can read it aloud.",
+          "rationale": "Captures voice‑search traffic for the query"
+        }
+      ]
+    }
+  }
+]

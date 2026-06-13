@@ -29,5 +29,5 @@ dist-server
 # SEO agent
 scripts/seo-agent/__pycache__/
 scripts/seo-agent/*.pyc
-reports/
+# reports/ — tracked intentionally (audit output committed by CI)
 *.env
