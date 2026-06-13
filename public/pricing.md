@@ -2,6 +2,12 @@
 
 Last updated: June 13, 2026
 
+## Starter Website Range
+
+- Price: Usually $1,500-$3,500 for focused starter websites and refreshes.
+- Best for: Local businesses that need a clean mobile site, clear service pages, contact paths, and basic local SEO foundations without a large automation build.
+- Includes: Strategy call, mobile-first build, basic conversion structure, service copy cleanup, contact links, launch support, and a path to upgrade into booking or AI intake later.
+
 ## Premium Website System Build
 
 - Price: Starts around $3,500 for focused local business sites.

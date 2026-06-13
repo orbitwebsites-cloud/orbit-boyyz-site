@@ -31,7 +31,9 @@ _ISSUE_TEMPLATE = """## Task
 Implement the SEO/GEO/AEO changes below for the query: **`{query}`**
 
 These changes were identified by the autonomous audit agent. Apply them to
-`src/App.tsx` (and `public/sitemap.xml` if a new page is created).
+`src/App.tsx`. If a new route or blog post is created, `npm run build`
+generates `dist/sitemap.xml` and `dist/feed.xml` from the current route list;
+do not manually edit `public/sitemap.xml`.
 
 {brand_context}
 
@@ -83,7 +85,7 @@ Place this paragraph directly under the first matching H2 heading:
 - [ ] New content renders correctly on the relevant page
 - [ ] No existing styles, colors, or components changed
 - [ ] Schema is valid JSON-LD
-- [ ] `public/sitemap.xml` updated if a new route was added
+- [ ] New route or blog post appears in generated `dist/sitemap.xml` after `npm run build`
 - [ ] TypeScript compiles without errors (`npm run build`)
 """
 

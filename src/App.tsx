@@ -463,26 +463,26 @@ export const blogPosts = [
     slug: 'custom-website-cost-central-nj',
     title: 'How much does a custom website cost for a local business in Central New Jersey?',
     description:
-      'A custom website for a Central New Jersey small business typically ranges from $3,000 to $12,000, depending on features, design complexity, and AI integration.',
+      'A custom website for a Central New Jersey small business usually starts around $3,500 and can move into five figures when design, integrations, or AI intake are more complex.',
     updated: 'June 12, 2026',
     audience: 'Local business owners and managers in Central New Jersey seeking a custom website.',
     takeaways: [
-      'Orbit Boyzz projects a baseline price of $5,000 for a fully custom, responsive site with basic AI automation for Central NJ clients.',
-      'Adding e‑commerce or advanced AI workflows can increase the cost by 30–50%, pushing projects over $10,000.',
-      'The average custom website in Central New Jersey delivers a 27% higher conversion rate versus template sites, according to a 2024 local survey.',
+      'Orbit Boyzz starts focused custom website builds around $3,500 for Central NJ businesses.',
+      'AI intake, ecommerce, booking logic, proposal workflows, and data integrations can move a project into the $5,000-$15,000+ range.',
+      'The right budget depends on the revenue value of calls, quote requests, bookings, and admin time recovered.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'Custom website costs for a local business in Central New Jersey typically fall between $3,000 and $12,000. Orbit Boyzz’s standard package starts at $5,000 and includes responsive design, SEO basics, and optional AI chat integration. Prices rise with e‑commerce, custom branding, or advanced AI features.',
+        body: 'Custom website costs for a local business in Central New Jersey usually start around $3,500 for a focused hand-coded site. Projects with AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher because they require more planning, testing, and operational handoff.',
       },
       {
         heading: 'What factors drive the price?',
-        body: 'Design complexity, number of pages, and integration of AI tools are the primary cost drivers. A simple brochure site (5–7 pages) costs around $3,500, while a multi‑page portal with inventory management can exceed $10,000. Local regulations in towns like Princeton and Westfield may require accessibility compliance, adding $500–$1,000 to the budget.',
+        body: 'Design complexity, page count, copywriting, service-area content, accessibility work, booking tools, payments, CRM connections, and AI workflows are the main cost drivers. A simple conversion site can stay near the starter range; a multi-page system with intake, routing, or inventory logic belongs in a larger custom quote.',
       },
       {
         heading: 'How to budget and choose a provider',
-        body: 'Start by defining core functionalities and requesting a detailed quote from agencies such as Orbit Boyzz, who provide transparent line‑item pricing. Compare proposals on a per‑feature basis rather than total cost to avoid hidden fees. Investing in a custom site with AI automation often yields a 20–30% ROI within the first year for Central NJ businesses.',
+        body: 'Start by defining the business action the website must create: calls, quote requests, bookings, applications, or proposal requests. Compare proposals by scope, ownership, performance, content quality, and conversion path rather than total price alone. A premium site makes sense when the value of recovered leads or saved admin time is larger than the build cost.',
       },
     ],
   },
@@ -491,26 +491,26 @@ export const blogPosts = [
     slug: 'plumbing-company-website-necessity',
     title: 'Should a plumbing company have its own website?',
     description:
-      'Yes – a dedicated website drives leads, boosts local SEO, and lets a plumbing firm showcase services and pricing to Central New Jersey customers.',
+      'Yes. A dedicated website helps a plumbing company show services, service areas, proof, pricing context, and emergency contact paths to Central New Jersey customers.',
     updated: 'June 13, 2026',
     audience: 'Plumbing business owners in Central New Jersey',
     takeaways: [
-      'A dedicated website can increase a plumbing company\'s lead conversion rate by up to 30%.',
-      '70% of homeowners in Central New Jersey search online before hiring a plumber, according to a 2023 HomeAdvisor survey.',
-      'Businesses with a professional site in the region see an average $5,000 rise in annual revenue from online bookings.',
+      'A plumbing website gives buyers a direct place to confirm services, towns served, emergency availability, and contact options.',
+      'A Google Business Profile is stronger when it points to a real website with matching services and service-area content.',
+      'Orbit Boyzz builds plumbing websites around calls, quote requests, AI intake, and local SEO foundations instead of generic brochure pages.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'Yes. A dedicated website gives a plumbing company a 30% higher chance of converting online searches into jobs, and it anchors local SEO for towns like Princeton and New Brunswick. Without a site, 70% of potential customers in Central New Jersey will likely choose a competitor that appears online.',
+        body: 'Yes. A plumbing company should have its own website because local buyers need to confirm services, service areas, emergency availability, reviews or proof, and contact options before calling. A website also gives Google and AI assistants a clearer source for what the company does and where it works.',
       },
       {
         heading: 'Why a website drives growth',
-        body: 'Search engines rank businesses with a domain higher than social‑media‑only profiles, delivering visibility to homeowners searching for “plumber near me” in Middlesex County. A site allows the firm to publish service pages, price estimates, and customer testimonials, which increase trust and can lift average ticket size by $200 per job. Analytics from Orbit Boyzz show clients see a 2‑3× rise in call volume within the first quarter.',
+        body: 'A site lets a plumbing company publish service pages for leak repair, drain cleaning, water heaters, pipe replacement, emergency work, and the towns it actually serves. That structure is more useful than a social profile alone because it gives search engines, AI assistants, and customers a stable page to understand and contact the business.',
       },
       {
         heading: 'How to launch a plumbing website with Orbit Boyzz',
-        body: 'Start with a discovery call to map services, service‑area maps for Central New Jersey, and branding assets. Orbit Boyzz builds a mobile‑responsive site, integrates a 24/7 AI dispatch form, and connects to Google Business for local rankings. The typical project costs $2,500–$4,500 and pays for itself in 6–12 months through new online leads.',
+        body: 'Start with a discovery call to map services, real service areas, emergency rules, photos, proof, and the fastest way to contact the business. Orbit Boyzz builds mobile-first plumbing sites with click-to-call, quote paths, local SEO structure, and optional AI intake that sorts emergency requests from scheduled work.',
       },
     ],
   },
@@ -519,26 +519,26 @@ export const blogPosts = [
     slug: 'ai-receptionist-cost-small-business',
     title: 'How much does an AI receptionist cost for a small business?',
     description:
-      'An AI receptionist typically costs $30‑$150 per month, with setup fees $0‑$500, depending on features and volume.',
+      'AI receptionist cost depends on whether the business needs a simple subscription tool or a custom website-based intake and routing workflow.',
     updated: 'June 13, 2026',
     audience: 'Small business owners in Central New Jersey looking to automate front‑desk tasks',
     takeaways: [
-      'Monthly AI receptionist subscriptions range from $30 to $150 per user.',
-      'One‑time implementation fees are usually $0 to $500 and can be waived by agencies like Orbit Boyzz.',
-      'Central New Jersey firms report up to a 20% reduction in call handling time after AI receptionist adoption.',
+      'Simple AI receptionist tools can be inexpensive, but custom intake and routing costs more because it must match the business workflow.',
+      'For Orbit Boyzz, AI intake is usually part of a custom website or operations build rather than a standalone commodity subscription.',
+      'The right budget depends on call volume, integrations, routing rules, booking logic, and how much manual admin work the system replaces.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'For a small business, an AI receptionist usually costs between $30 and $150 per month. Many vendors also charge a one‑time setup fee ranging from $0 to $500. Prices vary by voice quality, integration depth, and call volume.',
+        body: 'For a small business, basic AI receptionist software can be priced like a monthly subscription, while a custom AI receptionist or intake workflow costs more because it must connect to the website, routing rules, booking process, and business context. Orbit Boyzz usually treats this as part of an AI operations website rather than a generic plug-in.',
       },
       {
         heading: 'Pricing breakdown',
-        body: 'Subscription fees cover the AI engine, cloud hosting, and basic analytics; per‑call or per‑minute add‑ons can add $0.02‑$0.05 each. Custom branding or integration with a CRM such as HubSpot often incurs a $200‑$500 one‑time charge. Orbit Boyzz offers a bundled package for businesses in Princeton and Lawrence Township that includes a $0 setup fee and a flat $99 monthly rate.',
+        body: 'Cost depends on whether the system only answers basic questions or also qualifies leads, books appointments, summarizes requests, updates a CRM, sends alerts, and routes by urgency. A lightweight tool is cheaper; a custom operations workflow belongs in a larger website or retainer budget because it must be tested against real customer scenarios.',
       },
       {
         heading: 'Implementation and ROI',
-        body: 'Deploying an AI receptionist takes 1‑2 weeks of configuration, voice training, and testing with real callers. After launch, Central New Jersey businesses typically see a 20% drop in live‑operator time and a 15% increase in appointment bookings. The payback period is often under six months when the monthly subscription is under $150.',
+        body: 'Before buying, estimate how many calls or form fills are missed, how often staff repeats the same questions, and what one qualified lead is worth. If the system only saves a few minutes per week, keep it simple. If it reduces after-hours gaps, sorts urgent requests, or helps book high-value jobs faster, a custom AI intake system can be easier to justify.',
       },
     ],
   },
@@ -551,22 +551,22 @@ export const blogPosts = [
     updated: 'June 13, 2026',
     audience: 'Local business owners in Central New Jersey (e.g., Princeton, New Brunswick, and Westfield) who need a website.',
     takeaways: [
-      'A custom website in Central NJ typically costs $5,000–$12,000, versus $180–$300 per year for a Wix plan.',
-      'Businesses with custom designs see an average 30% higher conversion rate than template‑based sites.',
-      'Custom sites load 40% faster on average, improving Google rankings and local search visibility.',
+      'Wix and Squarespace can work for a very simple starter site, but custom design gives more control over speed, structure, content, schema, and conversion paths.',
+      'A custom site is usually the better fit when the website must support local SEO, AI intake, booking, proposal workflows, or serious lead generation.',
+      'The decision should be based on business value, not just the lowest monthly platform fee.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'For a local business in Central New Jersey, a custom‑built website generally outperforms Wix or Squarespace in SEO, speed, and conversion, though it requires a higher upfront investment. A custom site averages $8,000 in NJ, while Wix plans start at $180 per year.',
+        body: 'For a local business in Central New Jersey, custom web design is usually better than Wix or Squarespace when the site needs strong local SEO structure, fast performance, original positioning, AI intake, booking, or custom conversion paths. Wix and Squarespace can still be acceptable for a very simple temporary presence.',
       },
       {
         heading: 'Why custom design matters',
-        body: 'Custom development lets Orbit Boyzz tailor code, image compression, and schema markup to the specific services of a plumbing or boutique shop, boosting local search rankings. Template platforms lock you into generic layouts that can dilute brand identity and limit advanced integrations such as AI‑driven chatbots.',
+        body: 'Custom development lets Orbit Boyzz tailor code, page hierarchy, image handling, schema, copy, and calls to action around the specific services and towns a business serves. Template platforms can be faster to launch, but they often limit how deeply the site can support custom intake, routing, content structure, and brand positioning.',
       },
       {
         heading: 'Cost, ROI, and next steps',
-        body: 'Calculate the expected revenue lift: a 30% conversion boost on a $200,000 annual sales base adds $60,000, easily covering the $8,000 design fee. Contact Orbit Boyzz for a free audit, compare a Wix prototype against a custom wireframe, and choose the solution that aligns with your growth plan.',
+        body: 'Calculate the expected value of better calls, quote requests, bookings, and reduced admin work. If the website only needs to prove the business exists, a template may be enough. If the site needs to become a lead engine or operations layer, compare the total business impact of a custom build against the cost of staying generic.',
       },
     ],
   },
@@ -662,18 +662,18 @@ export const blogPosts = [
     updated: 'June 13, 2026',
     audience: 'Electricians and electrical contractors in Ewing Township, Lawrence Township, and Mercer County, NJ',
     takeaways: [
-      'An electrician without a website loses an estimated 60–70% of Google search leads to competitors who have one.',
-      'A hand-coded site with an AI intake form can qualify job type, location, and urgency in under 15 seconds — before a competitor picks up the phone.',
+      'An electrician without a website gives local buyers less proof, fewer service details, and fewer ways to request urgent help.',
+      'A hand-coded site with an AI intake form can qualify job type, location, and urgency quickly before the request gets buried in voicemail.',
       'Orbit Boyzz builds electrician websites in Ewing, NJ starting at $3,500 with optional AI dispatch routing for after-hours calls.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'An electrician in Ewing, NJ without a functioning website is invisible to roughly 70% of local buyers who search Google before calling anyone. Each missed service call averages $350–$900 in lost revenue. A $3,500 hand-coded site with an AI intake form typically recovers that loss within the first two months of operation.',
+        body: 'An electrician in Ewing, NJ without a functioning website is harder to evaluate when a homeowner or business searches for urgent electrical help. A hand-coded site gives buyers service details, service-area proof, visible contact paths, and an AI intake option for job type, urgency, and location.',
       },
       {
         heading: 'What Ewing electricians are missing',
-        body: 'Most electrical contractors in Mercer County rely on word-of-mouth or outdated directory listings. When a homeowner in Ewing searches "electrician near me" at 9pm, they call the first result with a real site, a visible phone number, and a clear service list. Without that, the job goes to Lawrence or Hamilton competitors who do have a working site.',
+        body: 'Many small electrical contractors still rely on word-of-mouth, directory listings, or old pages that do not explain services clearly. When a homeowner in Ewing searches "electrician near me" after hours, a real site with a visible phone number, service list, and urgent intake path gives that buyer more confidence to make contact.',
       },
       {
         heading: 'How Orbit Boyzz helps',
@@ -689,18 +689,18 @@ export const blogPosts = [
     updated: 'June 13, 2026',
     audience: 'Landscaping companies and lawn care businesses in Princeton, West Windsor Township, Ewing, and Mercer County, NJ',
     takeaways: [
-      'A landscaping business with no website misses 65% of residential clients who search online before calling for a seasonal quote.',
-      'Recurring maintenance contracts average $2,400–$6,000 per client per year — one new client from a website pays for the site within weeks.',
+      'A landscaping business with no website is harder to compare during the short spring quote window.',
+      'Recurring maintenance, cleanup, and commercial contracts can justify a better website when one good client has meaningful annual value.',
       'Orbit Boyzz builds landscaping websites with AI proposal forms that qualify lot size, service type, and budget automatically.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A landscaping company in Central New Jersey without a website loses an estimated $15,000–$40,000 per season in residential and commercial contracts to competitors who show up on Google. A custom site starting at $3,500 with a quote request form recovers that gap within the first mowing season.',
+        body: 'A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A custom site starting around $3,500 is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects.',
       },
       {
         heading: 'The seasonal search window is short',
-        body: 'Homeowners in West Windsor, Princeton, and Ewing search for landscaping companies in March and April. If your business has no site or a Facebook page that was last updated in 2022, you are invisible during the highest-intent window of the year. Competitors with a fast-loading site and visible quote form capture those contracts before the ground thaws.',
+        body: 'Landscaping demand often concentrates around spring cleanup, mowing season, fall cleanup, and property refresh windows. If your business has no site or only an outdated social profile, buyers have fewer ways to compare your services, photos, service towns, and quote process during those high-intent periods.',
       },
       {
         heading: 'What Orbit Boyzz builds for landscapers',
@@ -716,22 +716,22 @@ export const blogPosts = [
     updated: 'June 13, 2026',
     audience: 'HVAC contractors and heating and cooling companies in Ewing, Hamilton, Lawrence Township, and Mercer County, NJ',
     takeaways: [
-      'An HVAC emergency call averages $450–$1,200. Missing three per week without a website costs $70,000–$187,000 per year in recoverable revenue.',
-      'Google ranks HVAC sites with LocalBusiness schema, service area pages, and FAQ sections above directory listings for "HVAC near me" searches.',
+      'HVAC emergency calls are time-sensitive, so the website should make urgent contact and intake obvious.',
+      'HVAC sites are stronger when they include LocalBusiness schema, service pages, service-area content, and FAQ answers instead of relying only on directory listings.',
       'Orbit Boyzz builds HVAC websites with AI dispatch forms that capture equipment type, problem description, and urgency — and route after-hours calls automatically.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'An HVAC contractor in Ewing or Hamilton, NJ without a website loses emergency service calls to competitors every week a homeowner searches "AC repair near me" and finds nothing. Emergency HVAC calls average $450–$1,200. A $5,000 custom site with AI dispatch routing typically recovers its cost within the first month of summer or winter peak season.',
+        body: 'An HVAC contractor in Ewing or Hamilton, NJ without a website gives urgent buyers fewer reasons to call. A custom site with emergency contact paths, service pages, service-area content, and AI dispatch intake is designed to capture the details that matter before a homeowner moves to the next option.',
       },
       {
         heading: 'Why HVAC buyers call the first site they find',
-        body: 'A broken furnace at 11pm is not a comparison-shopping situation. Homeowners in Lawrence Township, Hamilton, and Ewing call the first HVAC company that shows up with a real site, a visible phone number, and an emergency contact option. Without a site, your company does not exist to that buyer. Directory listings rank below local sites and do not capture after-hours requests.',
+        body: 'A broken furnace at 11pm is not a slow research project. Homeowners in Lawrence Township, Hamilton, and Ewing are likely to favor HVAC companies that show a real site, visible phone number, emergency contact option, and clear service area. Directory listings can help discovery, but they rarely explain the business as well as a dedicated service page.',
       },
       {
         heading: 'The Orbit Boyzz HVAC website build',
-        body: 'We build a hand-coded HVAC site listing equipment types (heat pumps, furnaces, central AC, mini-splits), service towns across Mercer County, and an AI intake form that asks for system age, problem type, and urgency level. After-hours submissions route to your phone as a text summary. The site includes LocalBusiness schema with your Ewing or Hamilton address so Google connects you to local emergency searches.',
+        body: 'We build a hand-coded HVAC site listing equipment types such as heat pumps, furnaces, central AC, and mini-splits, plus service towns across Mercer County and an AI intake form that asks for system age, problem type, and urgency level. The site can include LocalBusiness schema and service-area content so customers and crawlers understand the local emergency offer.',
       },
     ],
   },
@@ -743,22 +743,22 @@ export const blogPosts = [
     updated: 'June 13, 2026',
     audience: 'Plumbers and plumbing contractors in Ewing Township, Trenton, Lawrence, and Mercer County, NJ',
     takeaways: [
-      'A plumber without a website misses an estimated 5–10 inbound calls per week in a market like Ewing — worth $6,000–$18,000 in monthly lost revenue at average job values.',
-      'Google Business Profile alone is not enough — a business with no linked website ranks lower in local pack results than competitors who have one.',
+      'A plumber without a website gives buyers fewer ways to confirm services, emergency availability, towns served, and trust signals.',
+      'A Google Business Profile works better when the linked website clearly confirms services, service areas, and contact paths.',
       'Orbit Boyzz builds plumber websites with AI intake that qualifies emergency vs. scheduled jobs and routes calls by urgency in under 15 seconds.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A plumber in Ewing, NJ without a website loses an estimated $6,000–$18,000 per month in inbound calls that go to competitors appearing higher in Google search results. A $3,500 hand-coded site with an AI intake form recovers that lost volume within four to six weeks of launch.',
+        body: 'A plumber in Ewing, NJ without a website is harder to choose when a buyer needs leak repair, drain cleaning, water heater help, or emergency service. A $3,500+ hand-coded site can give that buyer a clearer service list, local proof, click-to-call path, and AI intake form for urgent or scheduled requests.',
       },
       {
         heading: 'Why Google Business Profile is not enough',
-        body: 'Many Ewing plumbers have a Google Business Profile but no linked website. Google local ranking tends to favor listings with a verified website because the site confirms services, service area, and contact paths. A buyer searching "plumber Ewing NJ" sees the three-pack first, and the businesses in it almost always have a working site with their service list and a contact form.',
+        body: 'A Google Business Profile is useful, but it is stronger when it links to a real website that confirms services, service area, proof, and contact paths. A buyer searching "plumber Ewing NJ" needs more than a listing: they need to know whether the plumber handles their specific issue and how quickly they can request help.',
       },
       {
         heading: 'How Orbit Boyzz builds plumber sites',
-        body: 'We build a fast hand-coded site listing services (leak repair, drain cleaning, water heater install, pipe replacement), service towns (Ewing, Trenton, Lawrence, Hamilton, Plainsboro), and an AI intake form that sorts emergency from scheduled requests. Emergency submissions get a text to your phone within 30 seconds. Scheduled requests collect job description, address, and preferred timing so you can send a scoped quote without a phone call.',
+        body: 'We build a fast hand-coded site listing services such as leak repair, drain cleaning, water heater installation, and pipe replacement, plus service towns such as Ewing, Trenton, Lawrence, Hamilton, and Plainsboro. An AI intake form can sort emergency from scheduled requests and collect job description, address, and preferred timing before the first callback.',
       },
     ],
   },
@@ -766,26 +766,26 @@ export const blogPosts = [
   {
     slug: 'dental-practice-website-princeton-nj',
     title: 'Why Princeton Area Dental Practices Lose New Patients Without a Modern Website',
-    description: 'Dental offices in Princeton, West Windsor, and Ewing lose 40% of new patient searches to competitors with faster, cleaner sites and online booking. Here is how Orbit Boyzz fixes that.',
+    description: 'Dental offices in Princeton, West Windsor, and Ewing need fast, clean websites with services, insurance context, trust signals, and easy appointment requests.',
     updated: 'June 13, 2026',
     audience: 'Dental practices, dentists, and orthodontists in Princeton, West Windsor Township, Ewing, and Central New Jersey',
     takeaways: [
-      'A new dental patient is worth $800–$4,000 per year in recurring revenue. Losing five per month to a competitor with a better website costs $48,000–$240,000 annually.',
-      'Princeton-area dental practices with online booking forms convert 38% more new patient searches than practices requiring a phone call.',
+      'A new dental patient can have meaningful recurring value, so the website should make the first appointment path clear.',
+      'Online appointment requests reduce friction for patients who are comparing practices after hours.',
       'Orbit Boyzz builds dental websites with AI intake that qualifies insurance type, treatment interest, and urgency before the first appointment call.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A dental practice in Princeton or West Windsor, NJ with a slow or outdated website loses new patient searches to nearby competitors every day. New patients are worth $800–$4,000 per year in recurring treatment revenue. A modern hand-coded site with an online intake form from Orbit Boyzz typically adds five to fifteen new patients per month within the first quarter after launch.',
+        body: 'A dental practice in Princeton or West Windsor, NJ with a slow or outdated website is harder for new patients to evaluate. A modern hand-coded site should make services, insurance context, reviews or proof, appointment requests, and urgent dental needs easy to understand on mobile.',
       },
       {
         heading: 'What Princeton patients expect before booking',
-        body: 'Patients searching for a dentist in Princeton, Ewing, or West Windsor expect to see a clean site that loads under two seconds, a visible list of services and accepted insurance plans, before-and-after photos or patient reviews, and a way to request an appointment without calling. Practices that make them dial are losing to practices that let them fill out a form at 10pm.',
+        body: 'Patients searching for a dentist in Princeton, Ewing, or West Windsor expect to see a clean mobile site, a visible list of services, insurance or payment context, patient reviews or other trust signals, and a way to request an appointment without calling during office hours.',
       },
       {
         heading: 'The Orbit Boyzz dental website build',
-        body: 'We build a hand-coded Next.js dental site with service pages (cleanings, fillings, implants, orthodontics), insurance and payment information, and an AI intake form that captures treatment interest, insurance carrier, and preferred appointment windows. The form auto-qualifies new vs. existing patients and routes urgent cases — like a toothache — to a same-day callback trigger. Setup takes three weeks. Starts at $5,000.',
+        body: 'We build a hand-coded dental site with service pages for cleanings, fillings, implants, orthodontics, insurance and payment information, and an AI intake form that captures treatment interest, insurance carrier, and preferred appointment windows. The form can separate new patients from existing patients and flag urgent issues such as tooth pain for faster follow-up.',
       },
     ],
   },
@@ -905,59 +905,84 @@ export const blogPosts = [
       },
     ],
   },
-
   {
-    slug: 'should-plumbing-company-have-website',
-    title: 'Should a plumbing company have its own website?',
+    slug: 'clinic-website-design-central-nj',
+    title: 'Clinic Website Design in Central NJ: What Should Be Included?',
     description:
-      'Yes—own site drives leads, builds trust, and outperforms competitors, especially in Central New Jersey.',
+      'A clinic website should include clear services, appointment paths, insurance or payment context, patient intake, local trust signals, and fast mobile performance.',
     updated: 'June 13, 2026',
-    audience: 'Plumbing business owners in Central New Jersey',
+    audience: 'Clinics, urgent care offices, therapy practices, med spas, and appointment-based healthcare providers in Central New Jersey',
     takeaways: [
-      '71% of homeowners search online for plumbers before calling, boosting lead potential for a dedicated site.',
-      'A professional plumbing website in Central NJ typically costs $2,500‑$5,000 and pays for itself within months.',
-      'Businesses that launch a SEO‑optimized site see a 30% increase in booked jobs within six months.',
+      'A clinic website should make services, location, appointments, payment context, and patient intake easy to understand on mobile.',
+      'Structured intake helps staff separate urgent requests, consultations, routine appointments, and unqualified inquiries.',
+      'Orbit Boyzz builds clinic websites for Central NJ practices with clear conversion paths and optional AI intake.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A dedicated website gives a plumbing company a 71% higher chance of being found online, and a professionally designed site in Central New Jersey typically costs $2,500‑$5,000. The site acts as a 24/7 sales channel, capturing leads when competitors are offline.',
+        body: 'A clinic website in Central New Jersey should include service pages, location details, appointment requests, insurance or payment guidance, patient intake, provider information, reviews or trust signals, accessibility basics, and a fast mobile layout. The goal is to help a patient understand what the clinic offers and request the right next step without calling for basic details.',
       },
       {
-        heading: 'SEO, credibility, and local reach',
-        body: 'Search engines show 86% of local service queries on the first page, so a well‑optimized site places your plumber business ahead of generic directories. Including customer reviews, service pages for Ewing, Princeton, and Middlesex, and fast loading speeds boosts trust and conversion rates. Orbit Boyzz combines web design with AI‑powered intake forms to turn traffic into booked jobs.',
+        heading: 'Core pages and sections',
+        body: 'Useful clinic website sections include services, conditions treated, providers, new patient information, appointment request, insurance or self-pay guidance, FAQ, location, hours, phone number, contact form, and emergency guidance when appropriate. A clinic should avoid vague "contact us" pages that make every patient start from zero.',
       },
       {
-        heading: 'How to get started',
-        body: 'Start by auditing your current online presence, then define the core services and geographic keywords you want to rank for. Contact Orbit Boyzz for a custom design that integrates AI scheduling, SEO, and mobile‑first layout. Launch the site, monitor Google Business insights, and adjust content monthly to sustain a 30% lift in booked appointments within six months.',
+        heading: 'Where AI intake helps',
+        body: 'AI intake helps when staff need to know appointment type, preferred location, urgency, insurance or payment context, symptoms or treatment interest, and preferred time window before responding. The system should summarize the request for staff; it should not replace medical judgment or emergency instructions.',
       },
     ],
   },
-
   {
-    slug: 'plumbing-company-website-benefits',
-    title: 'Why a plumbing company needs its own website',
+    slug: 'med-spa-website-design-new-jersey',
+    title: 'Med Spa Website Design in New Jersey: What Converts Visitors?',
     description:
-      'A dedicated website drives more qualified leads, boosts local SEO, and delivers a measurable ROI for plumbing firms in Central New Jersey.',
+      'A med spa website converts when treatment pages, before-and-after proof, consultation booking, pricing guidance, and intake questions are easy to find.',
     updated: 'June 13, 2026',
-    audience: 'Plumbing business owners and managers in Central New Jersey looking to grow online',
+    audience: 'Med spas, aesthetic clinics, injectors, skin care studios, and wellness practices in New Jersey',
     takeaways: [
-      '71% of homeowners in Central NJ start their plumbing search online, according to HomeAdvisor 2023.',
-      'Companies with a website receive 2.5 × more inbound calls than those without a site.',
-      'A $1,200‑$3,000 web investment typically generates $5,000‑$10,000 in annual revenue for NJ plumbing firms.',
+      'A med spa website needs treatment-specific pages, proof, consultation booking, and clear next steps.',
+      'Visitors compare trust, pricing context, photos, credentials, and convenience before booking.',
+      'AI intake can collect treatment interest, budget range, timing, and eligibility details before staff follow up.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'Yes, a plumbing company should own its own website. A 2023 HomeAdvisor survey shows 71% of homeowners start online research, and companies with a site receive 2.5 × more inbound calls. Investing $1,200‑$3,000 in a professional site typically yields $5,000‑$10,000 annual ROI.',
+        body: 'A med spa website in New Jersey converts visitors when it clearly explains treatments, shows trust signals, gives realistic pricing or consultation guidance, makes booking easy on mobile, and collects enough intake detail for staff to respond quickly. The website should reduce uncertainty before the first consultation.',
       },
       {
-        heading: 'Benefits beyond lead generation',
-        body: 'A dedicated site showcases certifications, service areas like Princeton and Ewing, and allows SEO targeting of “plumber in Central New Jersey”. It also provides 24/7 contact via AI chatbots, reducing missed calls by up to 30%. Reviews and project galleries build trust faster than flyers.',
+        heading: 'High-intent treatment pages',
+        body: 'Strong med spa websites usually need separate pages or sections for injectables, facials, laser treatments, body treatments, skin care, memberships, gift cards, and consultations. Each page should answer who the treatment is for, what to expect, how long it takes, and how to book.',
       },
       {
-        heading: 'Getting started with Orbit Boyzz',
-        body: 'Orbit Boyzz designs custom, mobile‑first sites for NJ plumbers, integrating AI intake forms that qualify leads before they reach the phone. The onboarding process takes 4‑6 weeks and includes local‑keyword research for Middlesex and Mercer counties. Once live, performance dashboards let owners track clicks, calls, and ROI in real time.',
+        heading: 'Lead quality and follow-up',
+        body: 'A structured consultation form can collect treatment interest, preferred date, budget range, prior experience, contraindication reminders, and location. That gives staff a cleaner starting point than a generic contact form and helps prioritize serious prospects.',
+      },
+    ],
+  },
+  {
+    slug: 'small-business-website-cost-plainsboro-nj',
+    title: 'How Much Does a Small Business Website Cost in Plainsboro, NJ?',
+    description:
+      'A small business website in Plainsboro usually costs a few thousand dollars for a focused custom build, with higher ranges for AI intake, booking, and automation.',
+    updated: 'June 13, 2026',
+    audience: 'Small businesses in Plainsboro, Princeton, West Windsor, and nearby Central New Jersey towns comparing website options',
+    takeaways: [
+      'A focused custom small business website usually starts in the low thousands.',
+      'AI intake, booking, proposal logic, and integrations increase cost because they replace manual admin work.',
+      'Orbit Boyzz offers starter website ranges, custom builds, and AI intake builds for Central NJ businesses.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. Orbit Boyzz starter website ranges begin around $1,500 to $3,500, while broader custom builds and AI workflows cost more.',
+      },
+      {
+        heading: 'What changes the price',
+        body: 'The biggest cost factors are page count, custom design quality, copywriting, local SEO structure, forms, booking tools, payment or CRM integrations, AI workflows, content migration, and launch timeline. A simple brochure site costs less than a site that qualifies leads and routes requests automatically.',
+      },
+      {
+        heading: 'How to choose the right budget',
+        body: 'A new business should usually start with a clear homepage, services, pricing or quote guidance, proof, FAQ, and contact path. A business that already gets leads should consider AI intake or automation if slow follow-up, missed calls, or repeated admin questions are costing more than the website investment.',
       },
     ],
   },
@@ -1624,7 +1649,7 @@ function Pricing() {
               A custom website for a local business usually ranges from $3,500 to $15,000. The price depends on design complexity, required features, number of pages, and whether AI-driven automation is included. Orbit Boyzz starts around $3,500 for a focused hand-coded Next.js site and around $5,000 when built-in AI lead intake is included.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
-              Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. Our AI intake system delivers qualified leads in under 15 seconds on average. We embed AI-driven lead intake directly into every custom website to automate qualification and routing.
+              Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. AI intake can be configured for fast qualification and routing when speed-to-lead is part of the business case.
             </p>
           </BentoCard>
         </div>
@@ -1637,13 +1662,13 @@ function Pricing() {
               How Much Does an AI-Powered Website Cost for Small Businesses?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              An AI-powered website for a small business typically costs between $5,000 and $15,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. Most owners see a full ROI within 6-12 months when the system captures leads faster or reduces admin costs.
+              An AI-powered website for a small business typically costs between $5,000 and $15,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. ROI depends on lead value, current response gaps, and the amount of manual admin work the system can reduce.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
               An AI Operations Website starts around $5,000 and can rise to $15,000+ based on custom integrations, data pipelines, and ongoing support. Most small businesses should start with the smallest workflow that can prove ROI, then expand automation after lead volume grows.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
-              The average AI-powered website for a small business costs between $5,000 and $15,000. Clients typically see a return on investment within 6-12 months thanks to faster lead capture. NJ admin salaries average $55,000 per year, which AI automation can reduce by up to 80% when it replaces repeatable intake work.
+              A useful AI website budget should be tied to the value of faster response, cleaner qualification, reduced admin back-and-forth, and recovered high-intent leads. If the workflow cannot point to a measurable business outcome, start smaller before expanding automation.
             </p>
           </BentoCard>
         </div>
@@ -2157,11 +2182,183 @@ function Blog() {
           intake systems, proposal automation, and measurable website ROI for Central New Jersey companies.{' '}
           <Link to="/web-design-central-nj" className="text-[#d6b36a] hover:text-[#f4efe6]">See our Central NJ web design work →</Link>
         </p>
+        <BlogTopicClusters />
         <div className="mt-14">
           <BlogGrid />
         </div>
       </div>
     </main>
+  )
+}
+
+const blogClusters = [
+  {
+    label: 'Local SEO',
+    description: 'Structure, checklists, town pages, and website ROI for service-area businesses.',
+    slugs: [
+      'local-business-website-checklist-2026',
+      'home-service-website-structure',
+      'local-seo-website-structure-service-business',
+      'website-roi-for-local-service-business',
+      'small-business-website-cost-plainsboro-nj',
+    ],
+    landing: ['/web-design-central-nj', 'Central NJ web design'],
+  },
+  {
+    label: 'AI intake',
+    description: 'AI receptionist, intake forms, dispatch, proposals, and operations websites.',
+    slugs: [
+      'what-is-an-ai-operations-website',
+      'ai-operations-website-vs-traditional-website',
+      'ai-intake-form-vs-contact-form',
+      'ai-receptionist-vs-answering-service',
+      'ai-receptionist-cost-small-business',
+      'ai-dispatch-system-for-hvac-and-plumbing',
+      'catering-proposal-automation',
+    ],
+    landing: ['/quote', 'Start a quote'],
+  },
+  {
+    label: 'Pricing',
+    description: 'Cost ranges for custom websites, AI websites, and local business builds.',
+    slugs: [
+      'how-much-does-a-website-cost-for-a-local-business',
+      'custom-website-cost-central-nj',
+      'custom-web-design-vs-wix-squarespace',
+    ],
+    landing: ['/pricing', 'See pricing'],
+  },
+  {
+    label: 'Industries',
+    description: 'Pages for trades, restaurants, dental practices, and other local operators.',
+    slugs: [
+      'plumbing-company-website-necessity',
+      'electrician-website-ewing-nj',
+      'landscaping-company-website-central-nj',
+      'hvac-contractor-website-mercer-county-nj',
+      'plumber-website-ewing-nj',
+      'dental-practice-website-princeton-nj',
+      'restaurant-website-central-nj-checklist',
+      'clinic-website-design-central-nj',
+      'med-spa-website-design-new-jersey',
+    ],
+    landing: ['/services', 'View services'],
+  },
+] as const
+
+const blogLandingLinks: Record<string, Array<[string, string]>> = {
+  'ai-dispatch-system-for-hvac-and-plumbing': [
+    ['/website-design-for-hvac-companies-nj', 'HVAC websites'],
+    ['/website-design-for-plumbers-nj', 'Plumber websites'],
+    ['/quote', 'Get an AI intake range'],
+  ],
+  'catering-proposal-automation': [
+    ['/services', 'AI proposal systems'],
+    ['/quote', 'Get an automation range'],
+    ['/pricing', 'See pricing'],
+  ],
+  'how-much-does-a-website-cost-for-a-local-business': [
+    ['/pricing', 'See pricing'],
+    ['/quote', 'Use the quote estimator'],
+    ['/web-design-central-nj', 'Central NJ web design'],
+  ],
+  'custom-website-cost-central-nj': [
+    ['/pricing', 'See pricing'],
+    ['/quote', 'Get a project range'],
+    ['/web-design-central-nj', 'Central NJ web design'],
+  ],
+  'plumbing-company-website-necessity': [
+    ['/website-design-for-plumbers-nj', 'Plumber websites'],
+    ['/web-design-ewing-nj', 'Ewing web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'electrician-website-ewing-nj': [
+    ['/website-design-for-electricians-nj', 'Electrician websites'],
+    ['/web-design-ewing-nj', 'Ewing web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'landscaping-company-website-central-nj': [
+    ['/website-design-for-landscaping-companies-nj', 'Landscaping websites'],
+    ['/web-design-central-nj', 'Central NJ web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'hvac-contractor-website-mercer-county-nj': [
+    ['/website-design-for-hvac-companies-nj', 'HVAC websites'],
+    ['/web-design-hamilton-nj', 'Hamilton web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'plumber-website-ewing-nj': [
+    ['/website-design-for-plumbers-nj', 'Plumber websites'],
+    ['/web-design-ewing-nj', 'Ewing web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'dental-practice-website-princeton-nj': [
+    ['/website-design-for-dental-practices-nj', 'Dental websites'],
+    ['/web-design-princeton-nj', 'Princeton web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'restaurant-website-central-nj-checklist': [
+    ['/services', 'Restaurant website services'],
+    ['/web-design-central-nj', 'Central NJ web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'clinic-website-design-central-nj': [
+    ['/website-design-for-clinics-nj', 'Clinic websites'],
+    ['/web-design-central-nj', 'Central NJ web design'],
+    ['/quote', 'Get a range'],
+  ],
+  'med-spa-website-design-new-jersey': [
+    ['/website-design-for-clinics-nj', 'Clinic and med spa websites'],
+    ['/pricing', 'See pricing'],
+    ['/quote', 'Get a range'],
+  ],
+  'small-business-website-cost-plainsboro-nj': [
+    ['/pricing', 'See pricing'],
+    ['/web-design-plainsboro-nj', 'Plainsboro web design'],
+    ['/quote', 'Use the quote estimator'],
+  ],
+}
+
+function getPostCluster(slug: string) {
+  return blogClusters.find((cluster) => cluster.slugs.some((clusterSlug) => clusterSlug === slug)) ?? blogClusters[0]
+}
+
+function getRelatedPosts(post: (typeof blogPosts)[number]) {
+  const cluster = getPostCluster(post.slug)
+  const clusterPosts = cluster.slugs
+    .filter((clusterSlug) => clusterSlug !== post.slug)
+    .map((clusterSlug) => blogPosts.find((item) => item.slug === clusterSlug))
+    .filter((item): item is (typeof blogPosts)[number] => Boolean(item))
+
+  const fallbackPosts = blogPosts.filter(
+    (item) => item.slug !== post.slug && !clusterPosts.some((relatedPost) => relatedPost.slug === item.slug),
+  )
+
+  return [...clusterPosts, ...fallbackPosts].slice(0, 3)
+}
+
+function BlogTopicClusters() {
+  return (
+    <section className="mt-12 grid gap-4 md:grid-cols-2">
+      {blogClusters.map((cluster) => (
+        <BentoCard key={cluster.label} className="p-6">
+          <div className="flex h-full flex-col justify-between gap-6">
+            <div>
+              <Label>{`[TOPIC // ${cluster.label.toUpperCase()}]`}</Label>
+              <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">{cluster.description}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+                Read cluster
+              </Link>
+              <Link to={cluster.landing[0]} className="font-mono text-xs uppercase tracking-widest text-[#b7afa3] hover:text-[#f4efe6]">
+                {cluster.landing[1]}
+              </Link>
+            </div>
+          </div>
+        </BentoCard>
+      ))}
+    </section>
   )
 }
 
@@ -2189,7 +2386,13 @@ function blogSchemaDate(displayDate: string) {
 function BlogPost() {
   const { slug } = useParams()
   const post = blogPosts.find((item) => item.slug === slug) ?? blogPosts[0]
-  const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2)
+  const related = getRelatedPosts(post)
+  const cluster = getPostCluster(post.slug)
+  const landingLinks = blogLandingLinks[post.slug] ?? [
+    [cluster.landing[0], cluster.landing[1]],
+    ['/quote', 'Get a project range'],
+    ['/pricing', 'See pricing'],
+  ]
   const schemaDate = blogSchemaDate(post.updated)
   const faqSchema =
     post.slug === 'custom-web-design-vs-wix-squarespace'
@@ -2202,15 +2405,15 @@ function BlogPost() {
               name: 'Is a custom website better for local SEO than Wix or Squarespace?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Yes. Custom sites let you fine-tune page speed, schema, and on-page content, which Google rewards for local searches, something Wix and Squarespace cannot fully control.',
+                text: 'Often, yes. Custom sites give more control over page speed, schema, service-area structure, copy, and conversion paths than a generic template, which can make them a better fit for serious local SEO work.',
               },
             },
             {
               '@type': 'Question',
-              name: 'What is the true 3-year cost of a Wix or Squarespace template?',
+              name: 'What is the true cost difference between a template and a custom website?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Wix averages $12-$24 per month plus add-ons, totaling $432-$864 over three years; Squarespace averages $14-$30 per month, totaling $504-$1080, not counting redesign or ecommerce fees.',
+                text: 'A template usually has a lower monthly platform cost, but the true cost depends on setup time, redesign work, add-ons, SEO limitations, integrations, and whether the site can create enough calls, quote requests, or bookings to justify a custom build.',
               },
             },
           ],
@@ -2278,7 +2481,15 @@ function BlogPost() {
       </article>
 
       <section className="mx-auto mt-16 max-w-7xl">
-        <Label>[RELATED ANSWERS]</Label>
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <Label>{`[RELATED ANSWERS // ${cluster.label.toUpperCase()}]`}</Label>
+            <p className="mt-3 max-w-2xl font-light leading-relaxed text-[#b7afa3]">{cluster.description}</p>
+          </div>
+          <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+            Open cluster
+          </Link>
+        </div>
         <div className="mt-6">
           <BlogCards posts={related} />
         </div>
@@ -2291,6 +2502,11 @@ function BlogPost() {
             Orbit Boyzz builds custom and AI-powered websites for local businesses across Central New Jersey, starting around $3,500.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
+            {landingLinks.map(([to, label]) => (
+              <Link key={to} to={to} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+                {label} -&gt;
+              </Link>
+            ))}
             <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
               See pricing →
             </Link>
@@ -2341,11 +2557,25 @@ function Footer() {
     ['Princeton, NJ', '/web-design-princeton-nj'],
     ['Hamilton, NJ', '/web-design-hamilton-nj'],
     ['Lawrence, NJ', '/web-design-lawrence-nj'],
+    ['Trenton, NJ', '/web-design-trenton-nj'],
+    ['Robbinsville, NJ', '/web-design-robbinsville-nj'],
+    ['Bordentown, NJ', '/web-design-bordentown-nj'],
+    ['East Windsor, NJ', '/web-design-east-windsor-nj'],
+  ]
+
+  const industryLinks = [
+    ['HVAC websites', '/website-design-for-hvac-companies-nj'],
+    ['Plumber websites', '/website-design-for-plumbers-nj'],
+    ['Electrician websites', '/website-design-for-electricians-nj'],
+    ['Landscaping websites', '/website-design-for-landscaping-companies-nj'],
+    ['Dental websites', '/website-design-for-dental-practices-nj'],
+    ['Restaurant websites', '/website-design-for-restaurants-nj'],
+    ['Clinic websites', '/website-design-for-clinics-nj'],
   ]
 
   return (
     <footer className="border-t border-white/[0.08] px-5 py-14 md:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.1fr_0.8fr_0.8fr_0.8fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.75fr_0.95fr_0.95fr_0.75fr]">
         <div>
           <div className="flex items-center gap-3">
             <img src="/orbit-logo.png" alt="Orbit Websites" className="h-14 w-auto rounded-sm object-contain" />
@@ -2356,11 +2586,12 @@ function Footer() {
         </div>
         <FooterColumn title="[PAGES]" links={[['Home', '/'], ['OrbitBoyzz', '/orbitboyzz'], ['About', '/about'], ['Services', '/services'], ['Pricing', '/pricing'], ['Web Design NJ', '/web-design-central-nj'], ['Quote', '/quote'], ['Contact', '/contact'], ['Projects', '/projects'], ['Blog', '/blog'], ['FAQ', '/faq']]} />
         <FooterColumn title="[AREAS]" links={areaLinks} />
+        <FooterColumn title="[INDUSTRIES]" links={industryLinks} />
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[CONTACT]</p>
           <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-            <a className="hover:text-[#d6b36a]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}>{phone}</a>
-            <a className="hover:text-[#d6b36a]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}>{email}</a>
+            <a className="inline-flex min-h-11 items-center hover:text-[#d6b36a]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}>{phone}</a>
+            <a className="inline-flex min-h-11 items-center hover:text-[#d6b36a]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}>{email}</a>
           </div>
         </div>
       </div>
@@ -2377,10 +2608,37 @@ function FooterColumn({ title, links }: { title: string; links: string[][] }) {
       <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{title}</p>
       <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
         {links.map(([label, to]) => (
-          <Link key={label} className="hover:text-[#d6b36a]" to={to}>
+          <Link key={label} className="inline-flex min-h-11 items-center hover:text-[#d6b36a]" to={to}>
             {label}
           </Link>
         ))}
+      </div>
+    </div>
+  )
+}
+
+function MobileActionBar() {
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.08] bg-[#060606]/92 px-3 py-3 text-[#f4efe6] shadow-2xl backdrop-blur-xl md:hidden">
+      <div className="mx-auto grid max-w-lg grid-cols-2 gap-2">
+        <a
+          href="tel:+16096628052"
+          data-conversion="call_click"
+          onClick={() => trackHrefConversion('tel:+16096628052', 'Mobile sticky call')}
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#d6b36a]/30 bg-[#d6b36a] px-3 font-mono text-[11px] uppercase tracking-widest text-[#12100d]"
+        >
+          <PhoneCall className="h-4 w-4" strokeWidth={1.8} />
+          Call
+        </a>
+        <Link
+          to="/quote"
+          data-conversion="quote_page_click"
+          onClick={() => trackHrefConversion('/quote', 'Mobile sticky quote')}
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.12] bg-white/[0.045] px-3 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6]"
+        >
+          <FileText className="h-4 w-4" strokeWidth={1.8} />
+          Quote
+        </Link>
       </div>
     </div>
   )
@@ -2480,6 +2738,26 @@ const industryWebDesignPages = {
     avgJob: '$800–$4,000/year per patient',
     aiUseCase: 'New patient intake captures insurance carrier, treatment interest, and preferred appointment window before any staff involvement. Urgent cases (toothache, broken crown) trigger a same-day callback flag automatically.',
     towns: 'Princeton, West Windsor, Plainsboro, Lawrence Township, East Windsor, and Central NJ',
+  },
+  restaurants: {
+    path: '/website-design-for-restaurants-nj',
+    label: '[WEB DESIGN // RESTAURANTS NJ]',
+    industry: 'restaurants, caterers, bakeries, and cafes',
+    industryShort: 'Restaurant',
+    jobType: 'orders, reservations, catering leads, and private event inquiries',
+    avgJob: '$500-$5,000+ per catering or event lead',
+    aiUseCase: 'AI catering intake collects guest count, date, service style, menu preferences, dietary notes, delivery location, and budget range so staff can respond with a clearer proposal instead of chasing details by phone.',
+    towns: 'Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Robbinsville, and Central NJ',
+  },
+  clinics: {
+    path: '/website-design-for-clinics-nj',
+    label: '[WEB DESIGN // CLINICS NJ]',
+    industry: 'clinics, med spas, and appointment-based healthcare practices',
+    industryShort: 'Clinic',
+    jobType: 'consultation requests, appointment bookings, and patient intake forms',
+    avgJob: '$250-$3,000+ per patient or treatment plan',
+    aiUseCase: 'AI intake collects appointment type, preferred location, urgency, insurance or payment context, and treatment interest so staff can prioritize qualified requests and reduce phone tag.',
+    towns: 'Princeton, Plainsboro, West Windsor, Hamilton, Lawrence Township, East Windsor, and Central NJ',
   },
 } as const
 
@@ -2856,7 +3134,7 @@ function IndustryWebDesignPage({ page }: { page: (typeof industryWebDesignPages)
             {[
               ['Local search visibility', `The site is structured to rank for service-specific and town-specific searches — "${page.industryShort.toLowerCase()} near me", "${page.industryShort.toLowerCase()} ${page.towns.split(',')[0]}", and job-type variations.`],
               ['AI-powered intake', page.aiUseCase],
-              ['Fast mobile performance', `Most ${page.industry.split(' ')[0]} searches happen on mobile. Hand-coded React and prerendered pages stay lightweight so a buyer comparing options doesn't bounce before calling.`],
+              ['Fast mobile performance', `Most local buyers compare options on mobile. Hand-coded React and prerendered pages stay lightweight so a buyer comparing ${page.industryShort.toLowerCase()} companies doesn't bounce before calling.`],
               ['Built to convert', `Every page is structured around ${page.jobType} — quote requests, click-to-call, booking, and contact forms — not generic brochure copy.`],
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
@@ -3026,7 +3304,7 @@ function Contact() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#060606] text-[#f4efe6]">
+    <div className="min-h-screen bg-[#060606] pb-20 text-[#f4efe6] md:pb-0">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -3050,6 +3328,8 @@ function App() {
         <Route path="/website-design-for-electricians-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.electrician} />} />
         <Route path="/website-design-for-landscaping-companies-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.landscaping} />} />
         <Route path="/website-design-for-dental-practices-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.dental} />} />
+        <Route path="/website-design-for-restaurants-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.restaurants} />} />
+        <Route path="/website-design-for-clinics-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.clinics} />} />
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
@@ -3059,6 +3339,7 @@ function App() {
       </Routes>
       <ContactCta />
       <Footer />
+      <MobileActionBar />
     </div>
   )
 }

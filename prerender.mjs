@@ -162,6 +162,16 @@ const pageMeta = {
     description:
       'Custom websites and AI new-patient intake for dental practices in New Jersey. Capture insurance, treatment interest, and appointment windows before staff involvement.',
   },
+  '/website-design-for-restaurants-nj': {
+    title: 'Restaurant Website Design in NJ | Catering & Cafe Websites | Orbit Websites',
+    description:
+      'Custom websites and AI catering intake for restaurants, cafes, bakeries, and caterers in New Jersey. Capture orders, reservations, private events, and catering leads.',
+  },
+  '/website-design-for-clinics-nj': {
+    title: 'Clinic Website Design in NJ | Med Spa & Healthcare Websites | Orbit Websites',
+    description:
+      'Custom websites and AI patient intake for clinics, med spas, and appointment-based healthcare practices in New Jersey. Capture consultation requests and bookings.',
+  },
   '/quote': {
     title: 'Get a Quote | Orbit Websites',
     description:
@@ -358,8 +368,33 @@ function breadcrumbGraph(route, name) {
   }
 }
 
+function topLevelBreadcrumbGraph(route, name) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name, item: `${ORIGIN}${route}` },
+    ],
+  }
+}
+
 function graphFor(route) {
   const graph = [organization, website]
+  const topLevelBreadcrumbs = {
+    '/about': 'About Orbit Websites',
+    '/services': 'Website Services',
+    '/pricing': 'Pricing',
+    '/quote': 'Quote Estimator',
+    '/contact': 'Contact',
+    '/projects': 'Projects',
+    '/blog': 'Blog',
+    '/faq': 'FAQ',
+    '/orbitboyzz': 'OrbitBoyzz',
+    '/web-design-central-nj': 'Web Design Central NJ',
+  }
+  if (topLevelBreadcrumbs[route]) {
+    graph.push(topLevelBreadcrumbGraph(route, topLevelBreadcrumbs[route]))
+  }
   if (route === '/' || route === '/faq') graph.push(faqPage)
   if (route === '/orbitboyzz') {
     graph.push({
@@ -597,6 +632,20 @@ function graphFor(route) {
       desc: 'Custom websites and AI new-patient intake for dental practices in New Jersey. Insurance capture, treatment interest, and appointment windows.',
       label: 'Website Design for Dental Practices in NJ',
     },
+    '/website-design-for-restaurants-nj': {
+      id: 'restaurant-web-design-nj',
+      name: 'Restaurant Website Design in NJ',
+      serviceType: 'Website design for restaurants and caterers',
+      desc: 'Custom websites and AI catering intake for restaurants, cafes, bakeries, and caterers in New Jersey. Capture orders, reservations, private events, and catering leads.',
+      label: 'Restaurant Website Design in NJ',
+    },
+    '/website-design-for-clinics-nj': {
+      id: 'clinic-web-design-nj',
+      name: 'Clinic Website Design in NJ',
+      serviceType: 'Website design for clinics and healthcare practices',
+      desc: 'Custom websites and AI patient intake for clinics, med spas, and appointment-based healthcare practices in New Jersey. Capture consultation requests, appointment bookings, and patient intake.',
+      label: 'Clinic Website Design in NJ',
+    },
   }
   if (industryServiceMap[route]) {
     const s = industryServiceMap[route]
@@ -726,11 +775,67 @@ ${items}
   writeFileSync(join(distDir, 'feed.xml'), feed, 'utf-8')
 }
 
+function sitemapLastMod(route) {
+  if (route.startsWith('/blog/')) {
+    const slug = route.replace('/blog/', '')
+    const post = blogPosts.find((item) => item.slug === slug)
+    return post ? isoDate(post.updated) : '2026-06-13'
+  }
+  if (
+    route === '/pricing' ||
+    route === '/quote' ||
+    route === '/blog' ||
+    route.startsWith('/web-design-') ||
+    route.startsWith('/website-design-for-')
+  ) {
+    return '2026-06-13'
+  }
+  return '2026-06-01'
+}
+
+function sitemapPriority(route) {
+  if (route === '/') return '1.0'
+  if (route === '/pricing' || route === '/quote' || route === '/contact') return '0.9'
+  if (route === '/blog' || route.startsWith('/web-design-') || route.startsWith('/website-design-for-')) return '0.8'
+  if (route.startsWith('/blog/')) return '0.7'
+  return '0.6'
+}
+
+function sitemapChangeFreq(route) {
+  if (route === '/' || route === '/blog') return 'weekly'
+  if (route.startsWith('/blog/')) return 'monthly'
+  return 'monthly'
+}
+
+function writeSitemap(routes) {
+  const urls = routes
+    .map((route) => {
+      const loc = route === '/' ? `${ORIGIN}/` : `${ORIGIN}${route}`
+      return `  <url>
+    <loc>${xmlEscape(loc)}</loc>
+    <lastmod>${sitemapLastMod(route)}</lastmod>
+    <changefreq>${sitemapChangeFreq(route)}</changefreq>
+    <priority>${sitemapPriority(route)}</priority>
+  </url>`
+    })
+    .join('\n')
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`
+
+  writeFileSync(join(distDir, 'sitemap.xml'), sitemap, 'utf-8')
+}
+
 // --- Run --------------------------------------------------------------------
 const staticRoutes = Object.keys(pageMeta)
+const prerenderedRoutes = []
 let count = 0
 for (const route of staticRoutes) {
   writePage(route, pageMeta[route], graphFor(route))
+  prerenderedRoutes.push(route)
   count++
 }
 for (const post of blogPosts) {
@@ -742,8 +847,10 @@ for (const post of blogPosts) {
     { title: post.title, description: post.description },
     [organization, website, ...blogPostingGraph(post)],
   )
+  prerenderedRoutes.push(route)
   count++
 }
 writeFeed()
+writeSitemap(prerenderedRoutes)
 
 console.log(`Prerendered ${count} routes to dist/.`)

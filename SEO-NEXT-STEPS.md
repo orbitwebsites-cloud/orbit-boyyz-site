@@ -1,98 +1,110 @@
-# Orbit Websites — How to Actually Rank on Google
+# Orbit Websites - Search Growth Next Steps
 
-Last updated: May 31, 2026
-Priority goal: **rank #1 for brand searches** ("Orbit Websites", "OrbitBoyzz", "orbitboyzz")
-Business type: **service-area business** (no public street address) serving Central NJ
+Last updated: June 13, 2026
 
-The site is now technically optimized (prerendered HTML, structured data, sitemap, robots,
-canonicals, brand alternateNames). On-site work is ~done. **Rankings now depend on the
-off-site steps below.** Do them in order — they're sorted by impact.
+Priority goal: grow qualified search clicks toward 1K+ per month while converting that traffic into 1-4 client conversations per month.
 
----
+Business type: service-area web design and AI operations studio serving Central New Jersey.
 
-## 1. Google Search Console — submit & index (DO TODAY, 10 min)
+## Current On-Site State
 
-You verified the property but that alone does nothing. You must tell Google about your pages.
+The site now has:
+
+- Prerendered static HTML for 53 routes.
+- Generated `dist/sitemap.xml` and `dist/feed.xml`.
+- `robots.txt`, `llms.txt`, and `pricing.md`.
+- Local town pages for Central NJ, Plainsboro, West Windsor, Princeton, Ewing, Hamilton, Lawrence, Trenton, Robbinsville, Bordentown, and East Windsor.
+- Industry pages for HVAC, plumbers, electricians, landscaping companies, dental practices, restaurants/caterers, and clinics/med spas.
+- Blog clusters for local SEO, AI intake, pricing, and industries, including clinic, med spa, and Plainsboro cost articles.
+- Breadcrumb, LocalBusiness, Service, FAQ, BlogPosting, and Blog schema.
+- Conversion tracking hooks for calls, quote clicks, pricing clicks, email clicks, and Calendly clicks.
+- A mobile sticky call/quote bar.
+- IndexNow helper script: `npm run submit:indexnow`.
+
+## 1. Submit The Current Site To Google Search Console
 
 1. Go to https://search.google.com/search-console and select `orbitboyzz.me`.
-2. Left menu → **Sitemaps**. In "Add a new sitemap" enter: `sitemap.xml` → **Submit**.
-   (Full URL is https://orbitboyzz.me/sitemap.xml — already linked in robots.txt.)
-3. Left menu → **URL Inspection** (top search bar). Paste `https://orbitboyzz.me/` →
-   press Enter → click **Request Indexing**. Repeat for these key URLs:
+2. Open **Sitemaps** and submit `sitemap.xml`.
+3. Use **URL Inspection** and request indexing for:
    - https://orbitboyzz.me/
-   - https://orbitboyzz.me/about
    - https://orbitboyzz.me/services
-   - https://orbitboyzz.me/web-design-central-nj  (your local web-design landing page)
-   - https://orbitboyzz.me/faq
-4. Come back in 3–7 days → **Pages** report. Confirm pages move to "Indexed".
+   - https://orbitboyzz.me/pricing
+   - https://orbitboyzz.me/quote
+   - https://orbitboyzz.me/web-design-central-nj
+   - https://orbitboyzz.me/website-design-for-hvac-companies-nj
+   - https://orbitboyzz.me/website-design-for-plumbers-nj
+   - https://orbitboyzz.me/website-design-for-restaurants-nj
+   - https://orbitboyzz.me/website-design-for-clinics-nj
+   - https://orbitboyzz.me/blog/local-business-website-checklist-2026
+   - https://orbitboyzz.me/blog/home-service-website-structure
+   - https://orbitboyzz.me/blog/clinic-website-design-central-nj
+   - https://orbitboyzz.me/blog/med-spa-website-design-new-jersey
+   - https://orbitboyzz.me/blog/small-business-website-cost-plainsboro-nj
+4. Check the **Pages** and **Performance** reports weekly.
 
-> Brand rankings ("Orbit Websites") usually appear within days of indexing because
-> competition for your exact name is near zero. This step is the single biggest unlock.
+## 2. Submit New URLs Through IndexNow After Deploys
 
----
+After a production deploy:
 
-## 2. Google Business Profile — service-area (DO THIS WEEK, ~20 min + verification)
+```bash
+npm run build
+npm run submit:indexnow
+npm run submit:indexnow -- --live
+```
 
-This is what puts you in the Google Maps / local "pack" and strengthens brand SERPs.
+The first command verifies the generated files. The second command is a dry run. The `--live` command submits the current `dist/sitemap.xml` URLs to the IndexNow endpoint.
 
-1. Go to https://business.google.com → **Manage now**.
-2. Business name: **Orbit Websites** (exactly — must match the website).
-3. When asked for an address: choose **"I deliver goods and services to my customers"**
-   and then **hide your address** → set **service areas**: Plainsboro, Princeton,
-   West Windsor Township, and Central New Jersey. (This is the service-area setup;
-   your home address stays private.)
-4. Category: **Website designer** (add secondary: "Marketing agency").
-5. Phone: **609-662-8052**. Website: **https://orbitboyzz.me/**.
-6. Verify (Google will offer video/phone/email verification for service-area businesses).
-7. After verification: add your logo, a short description (reuse the site's), and
-   business hours. Post one update/photo — active profiles rank better.
+## 3. Set Up Google Business Profile
 
-**Keep NAP identical everywhere** (Name / Phone / Website). Inconsistency hurts.
-- Name: Orbit Websites
-- Phone: 609-662-8052
-- Website: https://orbitboyzz.me/
+1. Go to https://business.google.com.
+2. Business name: `Orbit Websites`.
+3. Category: `Website designer`.
+4. Hide the street address and configure service areas.
+5. Use the same phone and website everywhere:
+   - Phone: 609-662-8052
+   - Website: https://orbitboyzz.me/
+6. Add logo, hours, services, and one launch/update post.
 
----
+## 4. Build Entity Profiles
 
-## 3. Build the brand entity — profiles & citations (THIS WEEK)
+Create the profiles below with the exact same name, phone, and website:
 
-Google trusts a brand more when the same name + details appear across the web.
-Create these, all using the exact NAP above, then **send me the URLs** so I can add a
-`sameAs` block to your structured data (the strongest brand-knowledge signal):
+- LinkedIn company page.
+- Instagram business profile.
+- Facebook business page.
+- Optional: YouTube, X/Twitter, Clutch, Bark, or local chamber profile.
 
-- [ ] LinkedIn company page
-- [ ] Instagram business profile
-- [ ] Facebook business page
-- [ ] (optional) X/Twitter, YouTube, a Clutch or Bark listing
+Once URLs exist, add them to the `sameAs` array in schema.
 
-Once you give me those links, I'll wire them into the site schema in ~2 minutes.
+## 5. Monthly Content Targets
 
----
+Use Search Console impressions to decide future pages. Good next targets:
 
-## 4. Reviews (ONGOING — high impact for brand + local)
+- More town-specific restaurant website design pages after the restaurant/catering industry page gets impressions.
+- Caterer proposal automation comparisons and cost pages.
+- Real estate website design in Princeton / Central NJ.
+- More town-specific clinic and med spa pages after the clinic page gets impressions.
+- Small business website cost articles for Princeton, West Windsor, and Hamilton after the Plainsboro cost page gets impressions.
 
-After GBP is live, ask every happy client for a Google review (send them the GBP review
-link). Even 5–10 real reviews dramatically strengthen brand SERP appearance and local rank.
-Do NOT fake reviews — Google detects and penalizes it.
+Each new page should have:
 
----
+- Direct answer intro.
+- Pricing or budget context.
+- Service-area relevance.
+- Proof or process section.
+- FAQ/schema-ready answers.
+- Quote CTA.
+- Internal links to `/pricing`, `/quote`, one town page, and one related blog post.
 
-## 5. What to expect (honest timeline)
+## 6. Conversion Review
 
-- **Brand terms** ("Orbit Websites", "OrbitBoyzz"): days–2 weeks after indexing → realistic #1.
-- **Local web design** ("web design Central NJ", "web designer Plainsboro/Princeton NJ"):
-  1–3 months. You now have a dedicated `/web-design-central-nj` page targeting these terms,
-  but ranking here depends heavily on an active Google Business Profile + reviews + a few
-  local citations/links. The page is necessary but not sufficient on its own.
-- **Broad head terms** ("web design"): not realistic for a new domain; ignore for now.
+Review these monthly:
 
-No legitimate method guarantees a ranking or an exact date. Anyone who promises that is lying.
+- Search Console clicks and queries.
+- Calls from mobile sticky CTA.
+- Quote page clicks.
+- Quote email clicks.
+- Pricing page clicks.
+- Calendly clicks.
 
----
-
-## 6. Optional on-site upgrades I can do on request
-
-- Add `sameAs` social links to schema (once you send URLs) — step 3.
-- Code-split routes to improve page-speed (Core Web Vitals — a minor ranking signal).
-- Add an OG share image so links unfurl with a custom graphic instead of the logo.
-- Add a `/contact` or location-focused page if you later decide to publish a service-area page.
+If a page gets impressions but no clicks, improve title/meta. If it gets clicks but no leads, improve above-the-fold offer and CTA.
