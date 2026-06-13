@@ -1,0 +1,61 @@
+name: GEO/SEO Audit Agent
+
+on:
+  # Every Monday at 7 AM ET
+  schedule:
+    - cron: "0 12 * * 1"
+  # Manual trigger with optional query override
+  workflow_dispatch:
+    inputs:
+      queries:
+        description: "Space-separated queries to run (leave blank for all)"
+        required: false
+        default: ""
+      skip_our_fetch:
+        description: "Skip live site fetch (true/false)"
+        required: false
+        default: "false"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit the report
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/seo-agent/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/seo-agent/requirements.txt
+
+      - name: Run SEO/GEO/AEO agent
+        working-directory: scripts/seo-agent
+        env:
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+        run: |
+          EXTRA_ARGS=""
+          if [ "${{ github.event.inputs.skip_our_fetch }}" = "true" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --skip-crawl"
+          fi
+          if [ -n "${{ github.event.inputs.queries }}" ]; then
+            python main.py --output-dir ../../reports $EXTRA_ARGS \
+              --queries ${{ github.event.inputs.queries }}
+          else
+            python main.py --output-dir ../../reports $EXTRA_ARGS
+          fi
+
+      - name: Commit report
+        run: |
+          git config user.name "geo-agent[bot]"
+          git config user.email "geo-agent@orbitboyzz.me"
+          git add reports/
+          git diff --cached --quiet || git commit -m "chore: weekly GEO audit $(date -u '+%Y-%m-%d')"
+          git push

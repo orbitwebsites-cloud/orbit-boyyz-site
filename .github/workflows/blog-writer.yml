@@ -1,0 +1,53 @@
+name: Blog Post Writer
+
+on:
+  # Monday 8 AM ET + Thursday 8 AM ET
+  schedule:
+    - cron: "0 13 * * 1"
+    - cron: "0 13 * * 4"
+  workflow_dispatch:
+    inputs:
+      backlog_index:
+        description: "Backlog topic index (0-11, used if no audit gap)"
+        required: false
+        default: "0"
+
+jobs:
+  publish-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/seo-agent/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/seo-agent/requirements.txt
+
+      - name: Derive backlog index from run number
+        id: idx
+        run: echo "index=$(( ${{ github.run_number }} % 12 ))" >> $GITHUB_OUTPUT
+
+      - name: Generate and publish blog post
+        working-directory: scripts/seo-agent
+        env:
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+        run: |
+          IDX=${{ github.event.inputs.backlog_index || steps.idx.outputs.index }}
+          python main.py --blog --backlog-index $IDX
+
+      - name: Commit and push
+        run: |
+          git config user.name "orbit-blog[bot]"
+          git config user.email "blog@orbitboyzz.me"
+          git add src/App.tsx public/sitemap.xml scripts/seo-agent/RECOVERY.md
+          git diff --cached --quiet || git commit -m "content: auto blog post $(date -u '+%Y-%m-%d')"
+          git push
