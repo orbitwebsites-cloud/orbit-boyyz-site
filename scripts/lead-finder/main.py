@@ -64,8 +64,7 @@ def main() -> None:
 
     yelp_key       = os.environ.get("YELP_API_KEY", "")
     cerebras_key   = os.environ.get("CEREBRAS_API_KEY", "")
-    gmail_user     = os.environ.get("GMAIL_USER", "")
-    gmail_password = os.environ.get("GMAIL_APP_PASSWORD", "")
+    brevo_key      = os.environ.get("BREVO_API_KEY", "")
     gh_token       = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
     gh_repo        = os.environ.get("GH_REPO", "")
 
@@ -105,8 +104,8 @@ def main() -> None:
 
     # ── 4. Send cold emails ──
     emailed: list[dict] = []
-    if not args.dry_run and gmail_user and gmail_password:
-        log.info("=== Step 3: Sending cold emails (cap=%d) ===", max_emails)
+    if not args.dry_run and brevo_key:
+        log.info("=== Step 3: Sending cold emails via Brevo (cap=%d) ===", max_emails)
         for lead in email_leads[:max_emails]:
             try:
                 generated = generate_email(lead, cerebras_key)
@@ -114,12 +113,11 @@ def main() -> None:
                     to_addr=lead["email"],
                     subject=generated["subject"],
                     body=generated["body"],
-                    gmail_user=gmail_user,
-                    gmail_password=gmail_password,
+                    brevo_api_key=brevo_key,
+                    to_name=lead["name"],
                 )
                 lead["email_subject"] = generated["subject"]
                 emailed.append(lead)
-                # Log to sent_log
                 log_data["contacted"][lead["yelp_id"]] = {
                     "name":     lead["name"],
                     "channel":  "email",
@@ -140,7 +138,7 @@ def main() -> None:
             except Exception as exc:
                 log.warning("Email generation preview failed: %s", exc)
     else:
-        log.warning("Gmail credentials not set — all email leads fall back to call sheet")
+        log.warning("BREVO_API_KEY not set — all email leads fall back to call sheet")
         call_leads.extend(email_leads)
         email_leads = []
 

@@ -1,13 +1,12 @@
 """
-Generates personalized cold emails with Cerebras, sends via Gmail SMTP.
+Generates personalized cold emails with Cerebras, sends via Brevo transactional API.
+Brevo gives open/click tracking + bounce handling + 300 emails/day free.
 """
 
 import json
 import logging
-import re
-import smtplib
-from email.mime.text import MIMEText
 
+import requests
 from cerebras.cloud.sdk import Cerebras
 
 from config import (
@@ -20,6 +19,9 @@ from config import (
 )
 
 log = logging.getLogger(__name__)
+
+BREVO_API_URL = "https://api.brevo.com/v3/smtp/email"
+SENDER_EMAIL  = "vkktask@gmail.com"   # must be verified in Brevo dashboard
 
 _PROMPT = """\
 You are writing a cold email for Orbit Websites (orbitboyzz.me), a web design studio in
@@ -73,12 +75,12 @@ def _extract_json(text: str) -> str:
     return text[start:end] if start != -1 and end > start else text
 
 
-def generate_email(lead: dict, api_key: str) -> dict:
+def generate_email(lead: dict, cerebras_key: str) -> dict:
     """Returns {'subject': str, 'body': str} or raises on failure."""
     town = lead.get("location", "").replace(", NJ", "")
-    industry_url = INDUSTRY_PAGE.get(lead["category"], f"https://orbitboyzz.me/web-design-central-nj")
+    industry_url = INDUSTRY_PAGE.get(lead["category"], "https://orbitboyzz.me/web-design-central-nj")
 
-    client = Cerebras(api_key=api_key)
+    client = Cerebras(api_key=cerebras_key)
     prompt = _PROMPT.format(
         sender_name=SENDER_NAME,
         business_name=lead["name"],
@@ -110,18 +112,31 @@ def send_email(
     to_addr: str,
     subject: str,
     body: str,
-    gmail_user: str,
-    gmail_password: str,
+    brevo_api_key: str,
+    to_name: str = "",
 ) -> None:
-    """Send plain-text email via Gmail SMTP."""
-    msg = MIMEText(body, "plain", "utf-8")
-    msg["Subject"] = subject
-    msg["From"]    = f"{SENDER_NAME} at Orbit Websites <{gmail_user}>"
-    msg["To"]      = to_addr
-    msg["Reply-To"] = gmail_user
+    """Send plain-text email via Brevo transactional API."""
+    payload = {
+        "sender": {
+            "name":  f"{SENDER_NAME} — Orbit Websites",
+            "email": SENDER_EMAIL,
+        },
+        "to": [{"email": to_addr, "name": to_name or to_addr}],
+        "replyTo": {"email": SENDER_EMAIL, "name": SENDER_NAME},
+        "subject": subject,
+        "textContent": body,
+    }
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-        smtp.login(gmail_user, gmail_password)
-        smtp.send_message(msg)
+    headers = {
+        "api-key":      brevo_api_key,
+        "Content-Type": "application/json",
+        "Accept":       "application/json",
+    }
 
-    log.info("Email sent → %s | Subject: %s", to_addr, subject)
+    r = requests.post(BREVO_API_URL, headers=headers, json=payload, timeout=15)
+
+    if r.status_code not in (200, 201):
+        raise RuntimeError(f"Brevo API error {r.status_code}: {r.text[:300]}")
+
+    msg_id = r.json().get("messageId", "?")
+    log.info("Email sent via Brevo → %s | Subject: %s | messageId: %s", to_addr, subject, msg_id)
