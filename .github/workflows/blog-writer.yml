@@ -47,8 +47,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "orbit-blog[bot]"
-          git config user.email "blog@orbitboyzz.me"
+          git config user.name "Ritvik Thakur"
+          git config user.email "orbitboyzz@gmail.com"
           git add src/App.tsx public/sitemap.xml scripts/seo-agent/RECOVERY.md
           git diff --cached --quiet || git commit -m "content: auto blog post $(date -u '+%Y-%m-%d')"
           git push

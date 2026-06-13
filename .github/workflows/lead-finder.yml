@@ -52,7 +52,7 @@ jobs:
 
       - name: Commit sent log and call sheet
         run: |
-          git config user.name  "orbit-lead-bot"
+          git config user.name  "Ritvik Thakur"
           git config user.email "orbitboyzz@gmail.com"
           git add scripts/lead-finder/leads/ || true
           git diff --staged --quiet || git commit -m "leads: weekly batch $(date +%Y-W%V) [skip ci]"
