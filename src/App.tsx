@@ -451,6 +451,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'plumbing-company-website-necessity',
+    title: 'Should a plumbing company have its own website?',
+    description:
+      'Yes – a dedicated website drives leads, boosts local SEO, and lets a plumbing firm showcase services and pricing to Central New Jersey customers.',
+    updated: 'June 13, 2026',
+    audience: 'Plumbing business owners in Central New Jersey',
+    takeaways: [
+      'A dedicated website can increase a plumbing company\'s lead conversion rate by up to 30%.',
+      '70% of homeowners in Central New Jersey search online before hiring a plumber, according to a 2023 HomeAdvisor survey.',
+      'Businesses with a professional site in the region see an average $5,000 rise in annual revenue from online bookings.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'Yes. A dedicated website gives a plumbing company a 30% higher chance of converting online searches into jobs, and it anchors local SEO for towns like Princeton and New Brunswick. Without a site, 70% of potential customers in Central New Jersey will likely choose a competitor that appears online.',
+      },
+      {
+        heading: 'Why a website drives growth',
+        body: 'Search engines rank businesses with a domain higher than social‑media‑only profiles, delivering visibility to homeowners searching for “plumber near me” in Middlesex County. A site allows the firm to publish service pages, price estimates, and customer testimonials, which increase trust and can lift average ticket size by $200 per job. Analytics from Orbit Boyzz show clients see a 2‑3× rise in call volume within the first quarter.',
+      },
+      {
+        heading: 'How to launch a plumbing website with Orbit Boyzz',
+        body: 'Start with a discovery call to map services, service‑area maps for Central New Jersey, and branding assets. Orbit Boyzz builds a mobile‑responsive site, integrates a 24/7 AI dispatch form, and connects to Google Business for local rankings. The typical project costs $2,500–$4,500 and pays for itself in 6–12 months through new online leads.',
+      },
+    ],
+  },
 ]
 
 function Header() {
