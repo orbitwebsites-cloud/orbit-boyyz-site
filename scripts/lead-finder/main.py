@@ -114,7 +114,7 @@ def main() -> None:
                 )
                 lead["email_subject"] = generated["subject"]
                 emailed.append(lead)
-                log_data["contacted"][lead["yelp_id"]] = {
+                log_data["contacted"][lead["yp_id"]] = {
                     "name":     lead["name"],
                     "channel":  "email",
                     "email":    lead["email"],
@@ -140,8 +140,8 @@ def main() -> None:
 
     # ── 5. Add call-only leads to sent_log (so we don't re-discover them) ──
     for lead in call_leads:
-        if lead["yelp_id"] not in log_data["contacted"]:
-            log_data["contacted"][lead["yelp_id"]] = {
+        if lead["yp_id"] not in log_data["contacted"]:
+            log_data["contacted"][lead["yp_id"]] = {
                 "name":     lead["name"],
                 "channel":  "call_sheet",
                 "category": lead["category"],
