@@ -933,6 +933,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'plumbing-company-website-benefits',
+    title: 'Why a plumbing company needs its own website',
+    description:
+      'A dedicated website drives more qualified leads, boosts local SEO, and delivers a measurable ROI for plumbing firms in Central New Jersey.',
+    updated: 'June 13, 2026',
+    audience: 'Plumbing business owners and managers in Central New Jersey looking to grow online',
+    takeaways: [
+      '71% of homeowners in Central NJ start their plumbing search online, according to HomeAdvisor 2023.',
+      'Companies with a website receive 2.5 × more inbound calls than those without a site.',
+      'A $1,200‑$3,000 web investment typically generates $5,000‑$10,000 in annual revenue for NJ plumbing firms.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'Yes, a plumbing company should own its own website. A 2023 HomeAdvisor survey shows 71% of homeowners start online research, and companies with a site receive 2.5 × more inbound calls. Investing $1,200‑$3,000 in a professional site typically yields $5,000‑$10,000 annual ROI.',
+      },
+      {
+        heading: 'Benefits beyond lead generation',
+        body: 'A dedicated site showcases certifications, service areas like Princeton and Ewing, and allows SEO targeting of “plumber in Central New Jersey”. It also provides 24/7 contact via AI chatbots, reducing missed calls by up to 30%. Reviews and project galleries build trust faster than flyers.',
+      },
+      {
+        heading: 'Getting started with Orbit Boyzz',
+        body: 'Orbit Boyzz designs custom, mobile‑first sites for NJ plumbers, integrating AI intake forms that qualify leads before they reach the phone. The onboarding process takes 4‑6 weeks and includes local‑keyword research for Middlesex and Mercer counties. Once live, performance dashboards let owners track clicks, calls, and ROI in real time.',
+      },
+    ],
+  },
 ]
 
 function Header() {
