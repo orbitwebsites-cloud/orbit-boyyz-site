@@ -905,6 +905,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'should-plumbing-company-have-website',
+    title: 'Should a plumbing company have its own website?',
+    description:
+      'Yes—own site drives leads, builds trust, and outperforms competitors, especially in Central New Jersey.',
+    updated: 'June 13, 2026',
+    audience: 'Plumbing business owners in Central New Jersey',
+    takeaways: [
+      '71% of homeowners search online for plumbers before calling, boosting lead potential for a dedicated site.',
+      'A professional plumbing website in Central NJ typically costs $2,500‑$5,000 and pays for itself within months.',
+      'Businesses that launch a SEO‑optimized site see a 30% increase in booked jobs within six months.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A dedicated website gives a plumbing company a 71% higher chance of being found online, and a professionally designed site in Central New Jersey typically costs $2,500‑$5,000. The site acts as a 24/7 sales channel, capturing leads when competitors are offline.',
+      },
+      {
+        heading: 'SEO, credibility, and local reach',
+        body: 'Search engines show 86% of local service queries on the first page, so a well‑optimized site places your plumber business ahead of generic directories. Including customer reviews, service pages for Ewing, Princeton, and Middlesex, and fast loading speeds boosts trust and conversion rates. Orbit Boyzz combines web design with AI‑powered intake forms to turn traffic into booked jobs.',
+      },
+      {
+        heading: 'How to get started',
+        body: 'Start by auditing your current online presence, then define the core services and geographic keywords you want to rank for. Contact Orbit Boyzz for a custom design that integrates AI scheduling, SEO, and mobile‑first layout. Launch the site, monitor Google Business insights, and adjust content monthly to sustain a 30% lift in booked appointments within six months.',
+      },
+    ],
+  },
 ]
 
 function Header() {
