@@ -1195,7 +1195,8 @@ function Services() {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            Our AI-enabled sites begin at $10,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed, saving the average NJ small business $35,000-$54,000 in annual admin labor.
+            Our AI-enabled sites begin at $10,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed, saving the average NJ small business $35,000-$54,000 in annual admin labor.{' '}
+            <Link to="/pricing" className="text-[#d6b36a] hover:text-[#f4efe6]">See full pricing breakdown →</Link>
           </p>
         </div>
       </section>
@@ -1768,7 +1769,8 @@ function Blog() {
         />
         <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
           Orbit Websites publishes direct, extractable answers about AI operations websites, local business automation,
-          intake systems, proposal automation, and measurable website ROI for Central New Jersey companies.
+          intake systems, proposal automation, and measurable website ROI for Central New Jersey companies.{' '}
+          <Link to="/web-design-central-nj" className="text-[#d6b36a] hover:text-[#f4efe6]">See our Central NJ web design work →</Link>
         </p>
         <div className="mt-14">
           <BlogGrid />
@@ -1873,6 +1875,26 @@ function BlogPost() {
         <div className="mt-6">
           <BlogCards posts={related} />
         </div>
+      </section>
+
+      <section className="mx-auto mt-10 max-w-7xl px-5 pb-8 md:px-0">
+        <BentoCard className="p-6 md:p-8">
+          <Label>[ORBIT BOYZZ // CENTRAL NEW JERSEY]</Label>
+          <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
+            Orbit Boyzz builds custom and AI-powered websites for local businesses across Central New Jersey — starting at $10,000.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+              See pricing →
+            </Link>
+            <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+              Our services →
+            </Link>
+            <Link to="/web-design-central-nj" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+              Web design in Central NJ →
+            </Link>
+          </div>
+        </BentoCard>
       </section>
     </main>
   )
