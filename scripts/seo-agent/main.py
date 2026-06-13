@@ -238,7 +238,7 @@ def main() -> None:
             print(f"  * {a['query']}")
             geo = a.get("geo", {})
             gap = geo.get("answerability_gap", a.get("priority_reason", ""))
-            print(f"    {str(gap)[:110]}")
+            print(str(gap)[:110].encode("ascii", "replace").decode())
 
 
 if __name__ == "__main__":
