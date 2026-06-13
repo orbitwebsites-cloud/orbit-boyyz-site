@@ -21,7 +21,7 @@ from config import (
 log = logging.getLogger(__name__)
 
 BREVO_API_URL = "https://api.brevo.com/v3/smtp/email"
-SENDER_EMAIL  = "vkktask@gmail.com"   # must be verified in Brevo dashboard
+SENDER_EMAIL  = "alex@orbitboyzz.me"
 
 _PROMPT = """\
 You are writing a cold email for Orbit Websites (orbitboyzz.me), a web design studio in
