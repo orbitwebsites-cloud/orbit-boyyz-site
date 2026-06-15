@@ -1997,9 +1997,309 @@
       "channel": "call_sheet",
       "category": "Contractor",
       "seen_at": "2026-06-13T22:23:12.639760+00:00"
+    },
+    "jmipaspendental576057264lid1002188395500": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-06-15T17:55:19.570136+00:00"
+    },
+    "hamiltonnjmipwalkerslawnservice573568998": {
+      "name": "Walker's Lawn Service",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570155+00:00"
+    },
+    "pnjmipdohertypaintingdecorating488294391": {
+      "name": "Doherty Painting & Decorating",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570161+00:00"
+    },
+    "nelectricalmechanicalcontractor451870180": {
+      "name": "Evolution Electrical Mechanical Contractor",
+      "channel": "call_sheet",
+      "category": "Electrician",
+      "seen_at": "2026-06-15T17:55:19.570166+00:00"
+    },
+    "scompenningtonnjmipsdrelectricinc2931533": {
+      "name": "SDR Electric Inc",
+      "channel": "call_sheet",
+      "category": "Electrician",
+      "seen_at": "2026-06-15T17:55:19.570172+00:00"
+    },
+    "comtrentonnjmipdrscottchanindmd561491160": {
+      "name": "DR Scott Chanin DMD",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-06-15T17:55:19.570177+00:00"
+    },
+    "lplumbingheatingcoolingelectric470296262": {
+      "name": "Gold Medal Plumbing Heating Cooling Electric",
+      "channel": "call_sheet",
+      "category": "Electrician",
+      "seen_at": "2026-06-15T17:55:19.570181+00:00"
+    },
+    "nationwidemipedisonheatingcooling6155983": {
+      "name": "Edison Heating & Cooling",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-06-15T17:55:19.570193+00:00"
+    },
+    "lancheheatingairconditioninginc473025670": {
+      "name": "Avalanche Heating & Air Conditioning, Inc.",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-06-15T17:55:19.570198+00:00"
+    },
+    "comcranburynjmipplumbersservice550676080": {
+      "name": "Plumbers Service",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570210+00:00"
+    },
+    "nnjmipemergencyplumbingplumbers550673522": {
+      "name": "Emergency Plumbing Plumbers",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570214+00:00"
+    },
+    "scommonroetownshipnjmipplumbers550663580": {
+      "name": "Plumbers",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570219+00:00"
+    },
+    "ommonroenjmipaceplumbingheating550669297": {
+      "name": "Ace Plumbing & Heating",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570224+00:00"
+    },
+    "etownshipnjmipemergencyplumbing550677086": {
+      "name": "Emergency Plumbing",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570228+00:00"
+    },
+    "knjmipemergencyplumbingplumbers550656474": {
+      "name": "Emergency Plumbing Plumbers",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570232+00:00"
+    },
+    "jmipbennetbrothersmechanicalinc462975432": {
+      "name": "Bennet Brothers Mechanical Inc",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570236+00:00"
+    },
+    "nswicknjmipcityplumbingplumbers550705592": {
+      "name": "City Plumbing Plumbers",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570240+00:00"
+    },
+    "lesexnjmipallwiredupelectricllc462537480": {
+      "name": "All Wired Up Electric LLC",
+      "channel": "call_sheet",
+      "category": "Electrician",
+      "seen_at": "2026-06-15T17:55:19.570245+00:00"
+    },
+    "iffnerlawncarelandscapingservice26946832": {
+      "name": "Shiffner Lawn Care Landscaping Service",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570250+00:00"
+    },
+    "unswicknjmipcompletelandscaping538637666": {
+      "name": "Complete Landscaping",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570255+00:00"
+    },
+    "thrivernjmipriteconstructionllc496232965": {
+      "name": "RITE CONSTRUCTION, LLC",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570259+00:00"
+    },
+    "onroetownshipnjmipthespeechtree544151756": {
+      "name": "The Speech Tree",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570264+00:00"
+    },
+    "miplandscapelightingelectrician550669420": {
+      "name": "Landscape Lighting Electrician",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570268+00:00"
+    },
+    "jmipaspendental563373458lid1002188403391": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-06-15T17:55:19.570273+00:00"
+    },
+    "jmipaspendental573238495lid1002188398993": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-06-15T17:55:19.570276+00:00"
+    },
+    "pagescomsouthrivernjmipbsggroup510466995": {
+      "name": "Bsg Group",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-06-15T17:55:19.570281+00:00"
+    },
+    "eastwindsornjmipdiamondpainting544305086": {
+      "name": "Diamond Painting",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570285+00:00"
+    },
+    "jmipfinelinepaintingwallcovering12039123": {
+      "name": "Fine Line Painting & Wall Covering",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570289+00:00"
+    },
+    "brunswicknjmipalljerseypainting531495099": {
+      "name": "All Jersey Painting",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570294+00:00"
+    },
+    "onroetownshipnjmipblerylofamily452916350": {
+      "name": "Blerylo Family",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570297+00:00"
+    },
+    "townshipnjmipfjrealepaintinginc541758852": {
+      "name": "F J Reale Painting Inc",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570300+00:00"
+    },
+    "mnewbrunswicknjmipthreepainters495235494": {
+      "name": "Three Painters",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570304+00:00"
+    },
+    "comsouthrivernjmipsofielddawnms469153985": {
+      "name": "Sofield Dawn MS",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570307+00:00"
+    },
+    "njmip1stcallpaintingcontractors560382410": {
+      "name": "1st Call Painting Contractors",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570311+00:00"
+    },
+    "sayrevillenjmiptopnotchpainting554337480": {
+      "name": "Top Notch Painting",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570314+00:00"
+    },
+    "gescomsayrevillenjmiporozcolors452905102": {
+      "name": "Oroz Colors",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570318+00:00"
+    },
+    "illenjmipapluspaintingwallcoverng6892756": {
+      "name": "A Plus Painting & Wall Coverng",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570321+00:00"
+    },
+    "scomedisonnjmiparispaintingcomp458557131": {
+      "name": "Aris Painting Comp",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570324+00:00"
+    },
+    "agescomedisonnjmipjapropainting577675512": {
+      "name": "J & A Pro Painting",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570327+00:00"
+    },
+    "ionnjmippsalonnasonconstruction463037833": {
+      "name": "P Salonna & Son Construction",
+      "channel": "call_sheet",
+      "category": "Contractor",
+      "seen_at": "2026-06-15T17:55:19.570331+00:00"
+    },
+    "ntonnjmipscheuermanindustriesinc19048094": {
+      "name": "Scheuerman Industries Inc",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-06-15T17:55:19.570335+00:00"
+    },
+    "gescomeastwindsornjmipnrpainting26853358": {
+      "name": "N & R Painting",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-15T17:55:19.570337+00:00"
+    },
+    "lynjmipfirstrateplumbingservice550720385": {
+      "name": "First Rate Plumbing Service",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570340+00:00"
+    },
+    "ynjmipfixtureinstallationrepair550723077": {
+      "name": "Fixture Installation & Repair",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570343+00:00"
+    },
+    "escomhainesportnjmipapcplumbing546065195": {
+      "name": "APC Plumbing",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570346+00:00"
+    },
+    "nnjmipfirstclassplumbingservice550704283": {
+      "name": "First Class Plumbing Service",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-15T17:55:19.570349+00:00"
+    },
+    "mipstraughenelectricalcontracting1819608": {
+      "name": "Straughen Electrical Contracting",
+      "channel": "call_sheet",
+      "category": "Electrician",
+      "seen_at": "2026-06-15T17:55:19.570352+00:00"
+    },
+    "omcookstownnjmipapluslawnservice26949085": {
+      "name": "A Plus Lawn Service",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-06-15T17:55:19.570356+00:00"
+    },
+    "jmipaspendental563373458lid1002188403434": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-06-15T17:55:19.570360+00:00"
+    },
+    "jmipaspendental578050475lid1002193356017": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-06-15T17:55:19.570363+00:00"
     }
   },
-  "weeks_active": 1,
+  "weeks_active": 2,
   "created_at": "2026-06-13T00:00:00Z",
-  "last_run": "2026-06-13T22:30:13.706295+00:00"
+  "last_run": "2026-06-15T18:03:17.318247+00:00"
 }
