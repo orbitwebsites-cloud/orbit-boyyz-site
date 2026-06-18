@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
+import { Link, NavLink, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { motion, type Variants } from 'framer-motion'
 import {
   Activity,
@@ -43,7 +43,7 @@ function conversionNameForHref(href: string) {
   if (href.startsWith('tel:')) return 'call_click'
   if (href.startsWith('mailto:')) return href.includes('Orbit%20project%20range') ? 'quote_email_click' : 'email_click'
   if (href.includes('calendly.com')) return 'calendly_click'
-  if (href === '/quote') return 'quote_page_click'
+  if (href === '/quote' || href.startsWith('/quote?')) return 'quote_page_click'
   if (href === '/pricing') return 'pricing_page_click'
   if (href === '/contact') return 'contact_page_click'
   return 'cta_click'
@@ -66,6 +66,10 @@ function trackConversion(eventName: string, props: Record<string, unknown> = {})
 
 function trackHrefConversion(href: string, label: string) {
   trackConversion(conversionNameForHref(href), { href, label })
+}
+
+function quoteHrefForSource(sourcePath: string) {
+  return `/quote?source=${encodeURIComponent(sourcePath)}`
 }
 
 const revealParent: Variants = {
@@ -252,7 +256,7 @@ export const faqs = [
   ['What kinds of businesses do you build websites for?', 'We build and refresh websites for real estate teams, restaurants, bakeries, contractors, clinics, retailers, and service providers.'],
   ['Can you add calls, email, booking, or quote forms?', 'Yes. We can add click-to-call links, mailto links, contact forms, booking buttons, and lead forms depending on what your business needs.'],
   ['Do you guarantee Google rankings?', 'No. We can set up local SEO basics and clean page structure, but we do not promise rankings or results that cannot be guaranteed.'],
-  ['What is the new premium offer?', 'The premium offer is a custom website or AI operations website for companies that need automated intake, pricing, booking, and routing. Starter websites begin around $3,500, with AI intake builds starting around $5,000.'],
+  ['What is the new premium offer?', 'The premium offer is a custom website or AI operations website for companies that need automated intake, pricing, booking, and routing. Starter websites usually range from $1,500 to $3,500, with AI intake builds starting around $5,000.'],
 ]
 
 type QuoteNeed = 'site' | 'refresh' | 'forms' | 'ai'
@@ -400,18 +404,18 @@ export const blogPosts = [
     slug: 'how-much-does-a-website-cost-for-a-local-business',
     title: 'How much does a website cost for a local business in New Jersey?',
     description:
-      'A premium custom small-business website typically starts around $3,500+, with AI operations systems and monthly retainers priced by the work they replace.',
+      'A starter small-business website usually ranges from $1,500 to $3,500, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.',
     updated: 'June 1, 2026',
     audience: 'Local business owners in New Jersey comparing website and AI build costs',
     takeaways: [
-      'Premium custom website builds at Orbit Websites start around $3,500+.',
+      'Starter website builds at Orbit Websites usually range from $1,500 to $3,500.',
       'AI operations websites are typically $5,000+ depending on workflow complexity.',
       'AI operations retainers run $750-$2,500 per month when they replace measurable labor.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'At Orbit Websites, a premium custom website for a local business starts around $3,500+. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work.',
+        body: 'At Orbit Websites, a starter website for a local business usually ranges from $1,500 to $3,500. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work.',
       },
       {
         heading: 'What changes the price',
@@ -463,18 +467,18 @@ export const blogPosts = [
     slug: 'custom-website-cost-central-nj',
     title: 'How much does a custom website cost for a local business in Central New Jersey?',
     description:
-      'A custom website for a Central New Jersey small business usually starts around $3,500 and can move into five figures when design, integrations, or AI intake are more complex.',
+      'A starter website for a Central New Jersey small business usually ranges from $1,500 to $3,500 and can move higher when design, integrations, or AI intake are more complex.',
     updated: 'June 12, 2026',
     audience: 'Local business owners and managers in Central New Jersey seeking a custom website.',
     takeaways: [
-      'Orbit Boyzz starts focused custom website builds around $3,500 for Central NJ businesses.',
+      'Orbit Boyzz offers starter website ranges around $1,500-$3,500 for Central NJ businesses.',
       'AI intake, ecommerce, booking logic, proposal workflows, and data integrations can move a project into the $5,000-$15,000+ range.',
       'The right budget depends on the revenue value of calls, quote requests, bookings, and admin time recovered.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'Custom website costs for a local business in Central New Jersey usually start around $3,500 for a focused hand-coded site. Projects with AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher because they require more planning, testing, and operational handoff.',
+        body: 'Website costs for a local business in Central New Jersey usually range from $1,500 to $3,500 for a focused starter site. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher because they require more planning, testing, and operational handoff.',
       },
       {
         heading: 'What factors drive the price?',
@@ -664,7 +668,7 @@ export const blogPosts = [
     takeaways: [
       'An electrician without a website gives local buyers less proof, fewer service details, and fewer ways to request urgent help.',
       'A hand-coded site with an AI intake form can qualify job type, location, and urgency quickly before the request gets buried in voicemail.',
-      'Orbit Boyzz builds electrician websites in Ewing, NJ starting at $3,500 with optional AI dispatch routing for after-hours calls.',
+      'Orbit Boyzz builds electrician websites in Ewing, NJ with starter ranges around $1,500-$3,500 and optional AI dispatch routing for after-hours calls.',
     ],
     sections: [
       {
@@ -677,7 +681,7 @@ export const blogPosts = [
       },
       {
         heading: 'How Orbit Boyzz helps',
-        body: 'We build a fast, hand-coded website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Setup takes two weeks and starts at $3,500.',
+        body: 'We build a fast website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Starter website ranges usually run $1,500-$3,500, with AI intake priced higher when the workflow is more complex.',
       },
     ],
   },
@@ -696,7 +700,7 @@ export const blogPosts = [
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A custom site starting around $3,500 is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects.',
+        body: 'A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A starter site in the $1,500-$3,500 range is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects.',
       },
       {
         heading: 'The seasonal search window is short',
@@ -750,7 +754,7 @@ export const blogPosts = [
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A plumber in Ewing, NJ without a website is harder to choose when a buyer needs leak repair, drain cleaning, water heater help, or emergency service. A $3,500+ hand-coded site can give that buyer a clearer service list, local proof, click-to-call path, and AI intake form for urgent or scheduled requests.',
+        body: 'A plumber in Ewing, NJ without a website is harder to choose when a buyer needs leak repair, drain cleaning, water heater help, or emergency service. A focused starter site can give that buyer a clearer service list, local proof, click-to-call path, and AI intake form for urgent or scheduled requests.',
       },
       {
         heading: 'Why Google Business Profile is not enough',
@@ -800,7 +804,7 @@ export const blogPosts = [
     takeaways: [
       'The best local business websites make the next step obvious: call, book, request a quote, or start intake.',
       'Service-area pages, direct-answer FAQs, and structured proof help both Google and AI assistants understand the business.',
-      'Orbit Boyzz builds checklist-complete sites starting around $3,500, with AI intake added when faster response can pay for itself.',
+      'Orbit Boyzz builds checklist-complete starter sites around $1,500-$3,500, with AI intake added when faster response can pay for itself.',
     ],
     sections: [
       {
@@ -817,7 +821,7 @@ export const blogPosts = [
       },
       {
         heading: 'How Orbit Boyzz builds against the checklist',
-        body: 'Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Starter builds begin around $3,500. AI-powered intake and routing usually start around $5,000 when the workflow can recover missed leads or reduce admin work.',
+        body: 'Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Starter builds usually range from $1,500 to $3,500. AI-powered intake and routing usually start around $5,000 when the workflow can recover missed leads or reduce admin work.',
       },
     ],
   },
@@ -986,7 +990,6 @@ export const blogPosts = [
       },
     ],
   },
-
   {
     slug: 'should-plumbing-company-have-website',
     title: 'Should a plumbing company have its own website?',
@@ -1014,7 +1017,6 @@ export const blogPosts = [
       },
     ],
   },
-
   {
     slug: 'handcoded-websites-local-seo',
     title: 'Why handcoded websites outperform template sites for local SEO',
@@ -1030,7 +1032,7 @@ export const blogPosts = [
     sections: [
       {
         heading: 'Direct answer',
-        body: 'Handcoded websites give you full control over HTML, CSS, and JavaScript, allowing SEO tweaks that template platforms often restrict. In Central New Jersey, businesses that switched from a template to a handcoded site saw a 35% lift in organic traffic, equating to roughly $4,500 extra annual revenue. Orbit Boyzz’s handcoded projects consistently rank higher in local SERPs for towns like Princeton and Ewing.',
+        body: "Handcoded websites give you full control over HTML, CSS, and JavaScript, allowing SEO tweaks that template platforms often restrict. In Central New Jersey, businesses that switched from a template to a handcoded site saw a 35% lift in organic traffic, equating to roughly $4,500 extra annual revenue. Orbit Boyzz’s handcoded projects consistently rank higher in local SERPs for towns like Princeton and Ewing.",
       },
       {
         heading: 'Technical edge of handcoding',
@@ -1038,7 +1040,126 @@ export const blogPosts = [
       },
       {
         heading: 'Implementing a handcoded SEO strategy in NJ',
-        body: 'Start with a local SEO audit to identify missing markup, speed issues, and duplicate content. Partner with Orbit Boyzz to build a clean, handcoded site that integrates city‑specific schema for places like Mercer\'s County and Middlesex. Deploy ongoing performance monitoring and adjust on‑page elements as Google’s local algorithms evolve.',
+        body: "Start with a local SEO audit to identify missing markup, speed issues, and duplicate content. Partner with Orbit Boyzz to build a clean, handcoded site that integrates city‑specific schema for places like Mercer’s County and Middlesex. Deploy ongoing performance monitoring and adjust on‑page elements as Google’s local algorithms evolve.",
+      },
+    ],
+  },
+  {
+    slug: 'web-design-cost-factors-mercer-county-nj',
+    title: 'What Factors Determine Web Design Cost in Mercer County, NJ?',
+    description:
+      'Web design cost in Mercer County depends on page count, design depth, content, local SEO, forms, booking, and whether AI intake is included.',
+    updated: 'June 13, 2026',
+    audience: 'Mercer County business owners comparing website quotes in Princeton, Ewing, Hamilton, Lawrence, Trenton, Robbinsville, and nearby towns',
+    takeaways: [
+      'A focused starter site usually stays around $1,500-$3,500 when the scope is clear.',
+      'AI intake, booking, quote routing, and proposal logic push pricing higher because they replace manual workflow steps.',
+      'The best quote defines the business action the website must create: calls, quote requests, bookings, or qualified intake.',
+    ],
+    faqs: [
+      [
+        'What factors determine the cost of a web design project in Mercer County, NJ?',
+        'The biggest factors are page count, design complexity, copywriting, service-area SEO, forms, booking tools, integrations, AI intake, content migration, and launch timeline.',
+      ],
+      [
+        'How much does a typical Mercer County business website cost?',
+        'A focused starter site often ranges from $1,500 to $3,500. Larger custom sites and AI-enabled workflows usually move into the $5,000 to $15,000 range depending on scope.',
+      ],
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'The cost of a web design project in Mercer County, NJ depends on scope, page count, custom design depth, local SEO content, forms, booking tools, integrations, AI intake, and launch timeline. A focused starter site often ranges from $1,500 to $3,500, while deeper custom builds and AI workflows usually cost more because they require planning, testing, and handoff.',
+      },
+      {
+        heading: 'The cost drivers',
+        body: 'The main cost drivers are how many services need pages, how many towns the business actually serves, whether new copy is needed, how much proof or project content must be organized, and whether the site needs quote forms, booking links, payments, CRM handoff, or AI lead qualification. Each item adds work beyond a simple visual refresh.',
+      },
+      {
+        heading: 'How to compare quotes',
+        body: 'Compare web design quotes by deliverables, ownership, performance, local SEO structure, conversion paths, and support. A lower quote may be fine for a simple brochure, but a business that needs booked consultations, service calls, or clean lead intake should judge the site by expected revenue and admin time saved.',
+      },
+    ],
+  },
+  {
+    slug: 'ai-chatbot-electrician-central-nj',
+    title: 'Should a Central NJ Electrician Invest in an AI Chatbot?',
+    description:
+      'An AI chatbot can help Central NJ electricians qualify electrical service leads, sort urgency, collect job details, and reduce missed after-hours requests.',
+    updated: 'June 13, 2026',
+    audience: 'Electricians and electrical contractors in Central New Jersey comparing AI chatbots, intake forms, and website automation',
+    takeaways: [
+      'AI chatbots make the most sense when an electrician misses calls, repeats the same qualification questions, or needs better after-hours intake.',
+      'The first workflow should collect service type, urgency, property type, town, photos, preferred timing, and contact details.',
+      'Orbit Boyzz can pair an electrician website with AI intake when faster response can justify the added cost.',
+    ],
+    faqs: [
+      [
+        'Should I invest in an AI chatbot for my electrician business?',
+        'Yes, if missed calls, after-hours requests, repeated qualification questions, or slow follow-up are costing real jobs. If lead volume is low, start with a stronger website and quote form first.',
+      ],
+      [
+        'What should an electrician AI chatbot ask?',
+        'It should ask for the electrical issue, urgency, property type, town, photos if available, preferred timing, contact details, and whether the request is residential or commercial.',
+      ],
+      [
+        'How much does AI intake cost for an electrician website?',
+        'A starter website can stay around $1,500-$3,500. AI intake and routing usually starts around $5,000 when it needs custom questions, alerts, summaries, or booking logic.',
+      ],
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A Central NJ electrician should invest in an AI chatbot when the business misses calls, receives after-hours requests, repeats the same qualification questions, or needs better lead details before dispatching a tech. If the website does not already explain services, towns served, and contact paths clearly, fix that foundation first.',
+      },
+      {
+        heading: 'Best electrician use cases',
+        body: 'Good AI chatbot use cases include emergency triage, panel upgrade inquiries, EV charger requests, lighting projects, commercial service calls, and general repair requests. The chatbot should collect the issue, urgency, property type, town, photos, preferred timing, and contact details so the electrician receives a cleaner lead summary.',
+      },
+      {
+        heading: 'Budget and ROI',
+        body: 'For Orbit Boyzz, AI chatbot work is usually part of a custom electrician website or AI intake build. A focused website can start around $1,500 to $3,500, while AI intake usually starts around $5,000 when the workflow needs custom questions, alerts, routing, summaries, or booking logic. The investment makes sense when one recovered job or faster callback materially changes revenue.',
+      },
+    ],
+  },
+  {
+    slug: 'automated-dental-website-no-monthly-fee',
+    title: 'Can a Dental Practice Get an Automated Website With No Monthly Fee?',
+    description:
+      'A dental practice can avoid some platform subscriptions with a custom automated website, but hosting, maintenance, updates, and AI support may still be separate.',
+    updated: 'June 13, 2026',
+    audience: 'Dental practices in New Jersey comparing automated websites, patient intake, booking tools, and monthly software fees',
+    takeaways: [
+      'A custom dental website can avoid many template-builder subscription limits, but responsible hosting and maintenance still have real costs.',
+      'Automation should focus on appointment requests, treatment interest, insurance context, urgency, and clean staff handoff.',
+      'The right pricing model depends on whether the practice wants a one-time build, ongoing care, or AI intake support.',
+    ],
+    faqs: [
+      [
+        'Can I get a fully automated dental practice website without paying a monthly fee?',
+        'Sometimes for the core website build, but not every operating cost disappears. Hosting, updates, security, booking tools, and AI support may still need either a monthly plan or separate maintenance agreement.',
+      ],
+      [
+        'What should dental website automation include?',
+        'It should collect appointment type, treatment interest, insurance or payment context, urgency, preferred location, preferred timing, and patient contact details for staff follow-up.',
+      ],
+      [
+        'How much does an automated dental website cost?',
+        'A focused dental website can start around $1,500-$3,500. Custom AI intake, booking logic, and staff handoff usually starts around $5,000 depending on workflow complexity.',
+      ],
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A dental practice can get a custom automated website without being locked into a template-builder subscription, but a true no-monthly-cost setup has limits. Hosting, security updates, booking tools, form delivery, analytics, maintenance, and AI support may still need either a monthly care plan or separate upkeep budget.',
+      },
+      {
+        heading: 'What automation should do',
+        body: 'Dental website automation should help new patients request appointments, identify treatment interest, share insurance or payment context, describe urgency, pick preferred times, and send staff a clean summary. It should reduce front-desk back-and-forth, not replace medical judgment or emergency instructions.',
+      },
+      {
+        heading: 'Pricing options',
+        body: 'A focused dental website can start around $1,500 to $3,500. A dental site with AI intake, appointment routing, multi-location logic, or deeper booking workflow usually starts around $5,000. Practices that want ongoing edits, monitoring, and automation support should budget for a care plan instead of assuming the website will need no future work.',
       },
     ],
   },
@@ -1067,7 +1188,7 @@ function Header() {
     >
       <div className="grid grid-cols-[1fr_auto] items-center gap-3 md:grid-cols-[1fr_auto_1fr]">
         <Link to="/" onClick={() => setMenuOpen(false)} className="flex min-w-0 items-center gap-3">
-          <img src="/orbit-logo.png" alt="Orbit Websites" className="h-9 w-auto shrink-0 rounded-sm object-contain sm:h-10" />
+          <img src="/orbit-logo.png" alt="Orbit Websites" width={40} height={40} className="h-9 w-auto shrink-0 rounded-sm object-contain sm:h-10" />
         </Link>
         <nav className="hidden items-center rounded-xl border border-white/[0.08] bg-white/[0.025] p-1 lg:flex">
           {navItems.map(([label, to]) => (
@@ -1218,6 +1339,9 @@ function Home() {
                 <img
                   src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1700&q=80"
                   alt="Local restaurant interior representing businesses served by Orbit Websites."
+                  width={1700}
+                  height={1133}
+                  fetchPriority="high"
                   className="absolute inset-0 h-full w-full object-cover opacity-70"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/30 to-transparent" />
@@ -1239,7 +1363,7 @@ function Home() {
               {[
                 ['03', 'Live project examples'],
                 ['04', 'Core website services'],
-                ['$3.5K+', 'Starter website builds'],
+                ['$1.5K-$3.5K', 'Starter website builds'],
               ].map(([metric, copy]) => (
                 <BentoCard key={copy} className="p-6">
                   <p className="font-editorial text-7xl leading-none tracking-wide text-[#f4efe6]">{metric}</p>
@@ -1254,6 +1378,7 @@ function Home() {
       <AboutSection />
       <ServicesPreview />
       <QuoteEstimator />
+      <BuyerIntentAnswers />
       <ROISection />
       <BlogPreview />
       <WorkPreview />
@@ -1288,6 +1413,58 @@ function BlogPreview() {
 function BlogGrid({ limit }: { limit?: number }) {
   const posts = typeof limit === 'number' ? blogPosts.slice(0, limit) : blogPosts
   return <BlogCards posts={posts} />
+}
+
+const buyerIntentAnswerSlugs = [
+  'how-much-does-a-website-cost-for-a-local-business',
+  'web-design-cost-factors-mercer-county-nj',
+  'custom-web-design-vs-wix-squarespace',
+  'ai-chatbot-electrician-central-nj',
+  'automated-dental-website-no-monthly-fee',
+] as const
+
+function postsBySlug(slugs: readonly string[]) {
+  return slugs
+    .map((slug) => blogPosts.find((post) => post.slug === slug))
+    .filter((post): post is (typeof blogPosts)[number] => Boolean(post))
+}
+
+function BuyerIntentAnswers({ compact = false }: { compact?: boolean }) {
+  const posts = postsBySlug(buyerIntentAnswerSlugs)
+
+  return (
+    <section className={compact ? 'mt-12' : 'px-5 py-24 md:px-8'}>
+      <div className={compact ? '' : 'mx-auto max-w-7xl'}>
+        <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <Label>[BUYER INTENT // COST + DECISION ANSWERS]</Label>
+            <h2 className="mt-5 max-w-4xl font-display text-[clamp(36px,5vw,78px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
+              Pages built for owners close to requesting a quote.
+            </h2>
+          </div>
+          <Link to={quoteHrefForSource(compact ? '/blog' : '/')} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+            Get a range
+          </Link>
+        </div>
+        <div className="grid gap-3">
+          {posts.map((post) => (
+            <BentoCard key={post.slug} className="p-5">
+              <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+                <div>
+                  <h3 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-[#f4efe6]">{post.title}</h3>
+                  <p className="mt-2 font-light leading-relaxed text-[#b7afa3]">{post.description}</p>
+                </div>
+                <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+                  Read answer
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </BentoCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 function BlogCards({ posts }: { posts: typeof blogPosts }) {
@@ -1422,7 +1599,7 @@ function ProjectGrid({ limit }: { limit?: number }) {
             index === 2 && 'md:col-span-2',
           )}
         >
-          <img src={project.image} alt={`${project.name} preview`} className="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105" />
+          <img src={project.image} alt={`${project.name} preview`} width={1200} height={800} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/35 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 grid gap-4 p-6 md:grid-cols-[1fr_auto] md:items-end">
             <div>
@@ -1452,6 +1629,9 @@ function Testimonial() {
           <img
             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80"
             alt="Portrait representing Orbit Websites customer Sorav Rana."
+            width={240}
+            height={240}
+            loading="lazy"
             className="h-16 w-16 rounded-2xl object-cover"
           />
           <div>
@@ -1647,7 +1827,7 @@ const pricingFaqSchema = {
       name: 'How much does a custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A custom website for a local business typically ranges from $3,500 to $15,000, based on design, features, and AI automation. Orbit Boyzz starts around $3,500 for a focused hand-coded site and around $5,000 when AI intake is included.',
+        text: 'A starter website for a local business typically ranges from $1,500 to $3,500, while broader custom websites often range from $3,500 to $15,000 based on design, features, and AI automation. Orbit Boyzz starts with a lower entry range and around $5,000 when AI intake is included.',
       },
     },
     {
@@ -1689,7 +1869,7 @@ function Pricing() {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            A custom website for a local business typically costs between $3,500 and $15,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz keeps the entry point lower so more local businesses can start with a serious hand-coded site and upgrade into automation when the ROI is clear.
+            A starter website for a local business usually ranges from $1,500 to $3,500, while broader custom builds often range from $3,500 to $15,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz keeps the entry point lower so more local businesses can start with a serious site and upgrade into automation when the ROI is clear.
           </p>
         </div>
       </section>
@@ -1702,7 +1882,7 @@ function Pricing() {
               Custom Website Pricing Breakdown for Local Businesses
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A custom website for a local business usually ranges from $3,500 to $15,000. The price depends on design complexity, required features, number of pages, and whether AI-driven automation is included. Orbit Boyzz starts around $3,500 for a focused hand-coded Next.js site and around $5,000 when built-in AI lead intake is included.
+              A starter website for a local business usually ranges from $1,500 to $3,500. Broader custom builds usually range from $3,500 to $15,000 depending on design complexity, features, page count, and whether AI-driven automation is included. Orbit Boyzz starts with the lower starter range and around $5,000 when built-in AI lead intake is included.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
               Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. AI intake can be configured for fast qualification and routing when speed-to-lead is part of the business case.
@@ -1936,11 +2116,17 @@ function ROISection() {
 }
 
 function QuoteEstimator() {
+  const location = useLocation()
   const [need, setNeed] = useState<QuoteNeed>('site')
   const [complexity, setComplexity] = useState<QuoteComplexity>('simple')
   const [urgency, setUrgency] = useState<QuoteUrgency>('normal')
   const [employee, setEmployee] = useState<AiEmployee>('none')
   const [automation, setAutomation] = useState(false)
+  const sourcePage = useMemo(() => {
+    const source = new URLSearchParams(location.search).get('source')?.trim()
+    if (!source || source.length > 120) return ''
+    return source.replace(/[^a-zA-Z0-9/?&=._#%-]/g, '')
+  }, [location.search])
 
   const estimate = useMemo(() => {
     let upfrontLow = 1500
@@ -2059,6 +2245,7 @@ function QuoteEstimator() {
       `Timeline: ${selectedUrgency}`,
       `AI employee: ${selectedEmployee}`,
       `Automation add-on: ${automation ? 'Yes' : 'No'}`,
+      ...(sourcePage ? [`Source page: ${sourcePage}`] : []),
       `Estimated upfront build: ${estimate.upfront}`,
       `Estimated monthly care / ops: ${estimate.monthly}`,
       '',
@@ -2086,6 +2273,12 @@ function QuoteEstimator() {
             pricing logic, dashboards, and operations automation push the project higher.
           </p>
         </div>
+
+        {sourcePage ? (
+          <div className="mb-6 rounded-2xl border border-[#d6b36a]/20 bg-[#d6b36a]/10 p-4 font-mono text-xs uppercase tracking-widest text-[#d6b36a]">
+            Estimate started from {sourcePage}
+          </div>
+        ) : null}
 
         <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <BentoCard className="p-6 md:p-8">
@@ -2239,6 +2432,7 @@ function Blog() {
           <Link to="/web-design-central-nj" className="text-[#d6b36a] hover:text-[#f4efe6]">See our Central NJ web design work →</Link>
         </p>
         <BlogTopicClusters />
+        <BuyerIntentAnswers compact />
         <div className="mt-14">
           <BlogGrid />
         </div>
@@ -2257,6 +2451,7 @@ const blogClusters = [
       'local-seo-website-structure-service-business',
       'website-roi-for-local-service-business',
       'small-business-website-cost-plainsboro-nj',
+      'web-design-cost-factors-mercer-county-nj',
     ],
     landing: ['/web-design-central-nj', 'Central NJ web design'],
   },
@@ -2269,6 +2464,7 @@ const blogClusters = [
       'ai-intake-form-vs-contact-form',
       'ai-receptionist-vs-answering-service',
       'ai-receptionist-cost-small-business',
+      'ai-chatbot-electrician-central-nj',
       'ai-dispatch-system-for-hvac-and-plumbing',
       'catering-proposal-automation',
     ],
@@ -2280,7 +2476,9 @@ const blogClusters = [
     slugs: [
       'how-much-does-a-website-cost-for-a-local-business',
       'custom-website-cost-central-nj',
+      'web-design-cost-factors-mercer-county-nj',
       'custom-web-design-vs-wix-squarespace',
+      'automated-dental-website-no-monthly-fee',
     ],
     landing: ['/pricing', 'See pricing'],
   },
@@ -2294,6 +2492,7 @@ const blogClusters = [
       'hvac-contractor-website-mercer-county-nj',
       'plumber-website-ewing-nj',
       'dental-practice-website-princeton-nj',
+      'automated-dental-website-no-monthly-fee',
       'restaurant-website-central-nj-checklist',
       'clinic-website-design-central-nj',
       'med-spa-website-design-new-jersey',
@@ -2373,6 +2572,21 @@ const blogLandingLinks: Record<string, Array<[string, string]>> = {
     ['/web-design-plainsboro-nj', 'Plainsboro web design'],
     ['/quote', 'Use the quote estimator'],
   ],
+  'web-design-cost-factors-mercer-county-nj': [
+    ['/pricing', 'See pricing'],
+    ['/web-design-princeton-nj', 'Princeton web design'],
+    ['/quote', 'Get a Mercer County range'],
+  ],
+  'ai-chatbot-electrician-central-nj': [
+    ['/website-design-for-electricians-nj', 'Electrician websites'],
+    ['/web-design-ewing-nj', 'Ewing web design'],
+    ['/quote', 'Get an AI intake range'],
+  ],
+  'automated-dental-website-no-monthly-fee': [
+    ['/website-design-for-dental-practices-nj', 'Dental websites'],
+    ['/pricing', 'See pricing'],
+    ['/quote', 'Get a dental website range'],
+  ],
 }
 
 function getPostCluster(slug: string) {
@@ -2449,32 +2663,35 @@ function BlogPost() {
     ['/quote', 'Get a project range'],
     ['/pricing', 'See pricing'],
   ]
+  const currentPostPath = `/blog/${post.slug}`
   const schemaDate = blogSchemaDate(post.updated)
-  const faqSchema =
-    post.slug === 'custom-web-design-vs-wix-squarespace'
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: [
-            {
-              '@type': 'Question',
-              name: 'Is a custom website better for local SEO than Wix or Squarespace?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Often, yes. Custom sites give more control over page speed, schema, service-area structure, copy, and conversion paths than a generic template, which can make them a better fit for serious local SEO work.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'What is the true cost difference between a template and a custom website?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'A template usually has a lower monthly platform cost, but the true cost depends on setup time, redesign work, add-ons, SEO limitations, integrations, and whether the site can create enough calls, quote requests, or bookings to justify a custom build.',
-              },
-            },
-          ],
-        }
-      : null
+  const fallbackFaqs: Record<string, Array<[string, string]>> = {
+    'custom-web-design-vs-wix-squarespace': [
+      [
+        'Is a custom website better for local SEO than Wix or Squarespace?',
+        'Often, yes. Custom sites give more control over page speed, schema, service-area structure, copy, and conversion paths than a generic template, which can make them a better fit for serious local SEO work.',
+      ],
+      [
+        'What is the true cost difference between a template and a custom website?',
+        'A template usually has a lower monthly platform cost, but the true cost depends on setup time, redesign work, add-ons, SEO limitations, integrations, and whether the site can create enough calls, quote requests, or bookings to justify a custom build.',
+      ],
+    ],
+  }
+  const postFaqs = (post as { faqs?: Array<[string, string]> }).faqs ?? fallbackFaqs[post.slug]
+  const faqSchema = postFaqs
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: postFaqs.map(([question, answer]) => ({
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer,
+          },
+        })),
+      }
+    : null
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -2555,14 +2772,17 @@ function BlogPost() {
         <BentoCard className="p-6 md:p-8">
           <Label>[ORBIT BOYZZ // CENTRAL NEW JERSEY]</Label>
           <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            Orbit Boyzz builds custom and AI-powered websites for local businesses across Central New Jersey, starting around $3,500.
+            Orbit Boyzz builds starter, custom, and AI-powered websites for local businesses across Central New Jersey, with starter ranges around $1,500-$3,500.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            {landingLinks.map(([to, label]) => (
-              <Link key={to} to={to} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
-                {label} -&gt;
-              </Link>
-            ))}
+            {landingLinks.map(([to, label]) => {
+              const trackedTo = to === '/quote' ? quoteHrefForSource(currentPostPath) : to
+              return (
+                <Link key={`${trackedTo}-${label}`} to={trackedTo} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+                  {label} -&gt;
+                </Link>
+              )
+            })}
             <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
               See pricing →
             </Link>
@@ -2586,7 +2806,7 @@ function ContactCta() {
         <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#d6b36a]/40 blur-[90px]" />
         <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#7f6332]">[COMMISSION // NEXT BUILD]</p>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#5c4520]">[COMMISSION // NEXT BUILD]</p>
             <h2 className="mt-6 max-w-4xl font-display text-[clamp(42px,6vw,92px)] font-extrabold leading-[0.9] tracking-tight">
               Ready to improve your local business website?
             </h2>
@@ -2629,12 +2849,20 @@ function Footer() {
     ['Clinic websites', '/website-design-for-clinics-nj'],
   ]
 
+  const buyerIntentLinks = [
+    ['Website cost guide', '/blog/how-much-does-a-website-cost-for-a-local-business'],
+    ['Mercer County cost factors', '/blog/web-design-cost-factors-mercer-county-nj'],
+    ['Custom vs Wix/Squarespace', '/blog/custom-web-design-vs-wix-squarespace'],
+    ['Electrician AI chatbot', '/blog/ai-chatbot-electrician-central-nj'],
+    ['Dental automation cost', '/blog/automated-dental-website-no-monthly-fee'],
+  ]
+
   return (
     <footer className="border-t border-white/[0.08] px-5 py-14 md:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.75fr_0.95fr_0.95fr_0.75fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.72fr_0.9fr_0.9fr_0.95fr_0.75fr]">
         <div>
           <div className="flex items-center gap-3">
-            <img src="/orbit-logo.png" alt="Orbit Websites" className="h-14 w-auto rounded-sm object-contain" />
+            <img src="/orbit-logo.png" alt="Orbit Websites" width={56} height={56} loading="lazy" className="h-14 w-auto rounded-sm object-contain" />
           </div>
           <p className="mt-5 max-w-xl font-light leading-relaxed text-[#b7afa3]">
             Orbit Websites (also known as OrbitBoyzz) is a Plainsboro, NJ website design agency evolving into a premium AI Operations Studio. No public office address.
@@ -2643,6 +2871,7 @@ function Footer() {
         <FooterColumn title="[PAGES]" links={[['Home', '/'], ['OrbitBoyzz', '/orbitboyzz'], ['About', '/about'], ['Services', '/services'], ['Pricing', '/pricing'], ['Web Design NJ', '/web-design-central-nj'], ['Quote', '/quote'], ['Contact', '/contact'], ['Projects', '/projects'], ['Blog', '/blog'], ['FAQ', '/faq']]} />
         <FooterColumn title="[AREAS]" links={areaLinks} />
         <FooterColumn title="[INDUSTRIES]" links={industryLinks} />
+        <FooterColumn title="[BUYER ANSWERS]" links={buyerIntentLinks} />
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[CONTACT]</p>
           <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
@@ -2674,6 +2903,9 @@ function FooterColumn({ title, links }: { title: string; links: string[][] }) {
 }
 
 function MobileActionBar() {
+  const location = useLocation()
+  const quoteHref = quoteHrefForSource(location.pathname)
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.08] bg-[#060606]/92 px-3 py-3 text-[#f4efe6] shadow-2xl backdrop-blur-xl md:hidden">
       <div className="mx-auto grid max-w-lg grid-cols-2 gap-2">
@@ -2687,9 +2919,9 @@ function MobileActionBar() {
           Call
         </a>
         <Link
-          to="/quote"
+          to={quoteHref}
           data-conversion="quote_page_click"
-          onClick={() => trackHrefConversion('/quote', 'Mobile sticky quote')}
+          onClick={() => trackHrefConversion(quoteHref, 'Mobile sticky quote')}
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.12] bg-white/[0.045] px-3 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6]"
         >
           <FileText className="h-4 w-4" strokeWidth={1.8} />
@@ -3020,7 +3252,73 @@ function LocalWebDesignLinks() {
   )
 }
 
-function TownWebDesignPage({ page }: { page: (typeof townWebDesignPages)[keyof typeof townWebDesignPages] }) {
+type TownWebDesignPageData = (typeof townWebDesignPages)[keyof typeof townWebDesignPages]
+type IndustryWebDesignPageData = (typeof industryWebDesignPages)[keyof typeof industryWebDesignPages]
+type LandingFaqItem = [string, string]
+
+function LandingFAQSection({ label, heading, items }: { label: string; heading: string; items: LandingFaqItem[] }) {
+  return (
+    <section className="px-5 py-16 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <Label>{label}</Label>
+        <h2 className="mt-6 mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          {heading}
+        </h2>
+        <div className="grid gap-4">
+          {items.map(([question, answer], index) => (
+            <motion.details
+              key={question}
+              {...cardMotion}
+              open={index === 0}
+              className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6"
+            >
+              <summary className="cursor-pointer list-none font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">
+                {question}
+              </summary>
+              <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">{answer}</p>
+            </motion.details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function townLandingFaqs(page: TownWebDesignPageData): LandingFaqItem[] {
+  return [
+    [
+      `How much does web design cost in ${page.town}?`,
+      `A focused starter website for a ${page.town} business usually ranges from $1,500 to $3,500. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
+    ],
+    [
+      `Do you work with businesses near ${page.town}?`,
+      `Yes. Orbit Websites serves ${page.town}, ${page.county}, and nearby areas including ${page.nearby}. Pages should only target towns where the business actually works.`,
+    ],
+    [
+      'What makes a local business website convert?',
+      'The highest-converting local websites make the next step obvious: call, request a quote, book a visit, or start intake. The page also needs clear services, proof, service-area context, fast mobile performance, and pricing or budget guidance.',
+    ],
+  ]
+}
+
+function industryLandingFaqs(page: IndustryWebDesignPageData): LandingFaqItem[] {
+  return [
+    [
+      `How much does a website cost for a ${page.industryShort.toLowerCase()} company in NJ?`,
+      `A focused starter site for a ${page.industryShort.toLowerCase()} company usually ranges from $1,500 to $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
+    ],
+    [
+      `What should a ${page.industryShort.toLowerCase()} website include?`,
+      `A strong ${page.industryShort.toLowerCase()} website should include service details, local service areas, trust signals, clear calls to action, mobile-first pages, and an intake path built around ${page.jobType}.`,
+    ],
+    [
+      'When does AI intake make sense?',
+      `AI intake makes sense when faster response or better qualification can recover revenue. For ${page.industryShort.toLowerCase()} businesses, it can collect the details staff need before calling back and route higher-value requests sooner.`,
+    ],
+  ]
+}
+
+function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
   return (
     <main className="pt-36 md:pt-44">
       <section className="px-5 py-20 md:px-8">
@@ -3031,10 +3329,11 @@ function TownWebDesignPage({ page }: { page: (typeof townWebDesignPages)[keyof t
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
-            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites begin around $3,500, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
+            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites usually range from $1,500 to $3,500, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
+            <PremiumButton href={`/quote?source=${encodeURIComponent(page.path)}`}>Get a range</PremiumButton>
             <PremiumButton href="/pricing">See pricing</PremiumButton>
           </div>
         </div>
@@ -3076,14 +3375,16 @@ function TownWebDesignPage({ page }: { page: (typeof townWebDesignPages)[keyof t
               How much does web design cost in {page.town}?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A custom website for a {page.town} local business usually starts around $3,500
-              for a focused hand-coded site. AI-powered lead intake, booking logic, routing,
+              A starter website for a {page.town} local business usually ranges from $1,500 to $3,500
+              for a focused site. AI-powered lead intake, booking logic, routing,
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
               depending on integrations and workflow complexity.
             </p>
           </BentoCard>
         </div>
       </section>
+
+      <LandingFAQSection label="[LOCAL FAQ]" heading={`Questions ${page.town} businesses ask before hiring.`} items={townLandingFaqs(page)} />
     </main>
   )
 }
@@ -3101,11 +3402,12 @@ function WebDesignEwingNJ() {
           <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
             Orbit Websites builds hand-coded websites and AI intake systems for Ewing Township
             businesses that need more calls, quote requests, bookings, and qualified leads from
-            local search. Starter website builds begin around $3,500, with AI intake upgrades
+            local search. Starter website builds usually range from $1,500 to $3,500, with AI intake upgrades
             starting around $5,000 when the workflow can prove ROI.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
+            <PremiumButton href="/quote?source=web-design-ewing-nj">Get a range</PremiumButton>
             <PremiumButton href="/pricing">See pricing</PremiumButton>
           </div>
         </div>
@@ -3147,19 +3449,38 @@ function WebDesignEwingNJ() {
               How much does web design cost in Ewing, NJ?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A custom website for an Ewing, NJ local business usually starts around $3,500
-              for a focused hand-coded site. AI-powered lead intake, booking logic, routing,
+              A starter website for an Ewing, NJ local business usually ranges from $1,500 to $3,500
+              for a focused site. AI-powered lead intake, booking logic, routing,
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
               depending on integrations and workflow complexity.
             </p>
           </BentoCard>
         </div>
       </section>
+
+      <LandingFAQSection
+        label="[LOCAL FAQ]"
+        heading="Questions Ewing businesses ask before hiring."
+        items={[
+          [
+            'How much does web design cost in Ewing, NJ?',
+            'A focused starter website for an Ewing business usually ranges from $1,500 to $3,500. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.',
+          ],
+          [
+            'Do you work with businesses near Ewing?',
+            'Yes. Orbit Websites serves Ewing Township, Mercer County, and nearby towns including Trenton, Lawrence, Hamilton, Princeton, and West Windsor.',
+          ],
+          [
+            'What makes an Ewing local business website convert?',
+            'The site needs clear services, local proof, fast mobile pages, direct click-to-call actions, quote or booking paths, and enough service-area context for buyers and search engines to understand the business quickly.',
+          ],
+        ]}
+      />
     </main>
   )
 }
 
-function IndustryWebDesignPage({ page }: { page: (typeof industryWebDesignPages)[keyof typeof industryWebDesignPages] }) {
+function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
   return (
     <main className="pt-36 md:pt-44">
       <section className="px-5 py-20 md:px-8">
@@ -3170,10 +3491,11 @@ function IndustryWebDesignPage({ page }: { page: (typeof industryWebDesignPages)
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
-            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds start around $3,500, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
+            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds usually range from $1,500 to $3,500, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
+            <PremiumButton href={`/quote?source=${encodeURIComponent(page.path)}`}>Get a range</PremiumButton>
             <PremiumButton href="/pricing">See pricing</PremiumButton>
           </div>
         </div>
@@ -3215,7 +3537,7 @@ function IndustryWebDesignPage({ page }: { page: (typeof industryWebDesignPages)
               How much does a website cost for a {page.industryShort.toLowerCase()} company in NJ?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A custom site for a {page.industryShort.toLowerCase()} company typically starts around $3,500 for a focused, hand-coded site.
+              A starter site for a {page.industryShort.toLowerCase()} company typically ranges from $1,500 to $3,500 for a focused site.
               Projects with AI intake, job-type routing, emergency alert logic, or proposal automation usually run $5,000 to $15,000
               depending on workflow complexity. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of jobs.
             </p>
@@ -3227,6 +3549,8 @@ function IndustryWebDesignPage({ page }: { page: (typeof industryWebDesignPages)
           </BentoCard>
         </div>
       </section>
+
+      <LandingFAQSection label="[INDUSTRY FAQ]" heading={`Questions ${page.industryShort.toLowerCase()} businesses ask before hiring.`} items={industryLandingFaqs(page)} />
     </main>
   )
 }

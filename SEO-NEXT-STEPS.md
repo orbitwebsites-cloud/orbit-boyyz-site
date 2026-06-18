@@ -10,12 +10,12 @@ Business type: service-area web design and AI operations studio serving Central 
 
 The site now has:
 
-- Prerendered static HTML for 53 routes.
+- Prerendered static HTML for 56 routes.
 - Generated `dist/sitemap.xml` and `dist/feed.xml`.
 - `robots.txt`, `llms.txt`, and `pricing.md`.
 - Local town pages for Central NJ, Plainsboro, West Windsor, Princeton, Ewing, Hamilton, Lawrence, Trenton, Robbinsville, Bordentown, and East Windsor.
 - Industry pages for HVAC, plumbers, electricians, landscaping companies, dental practices, restaurants/caterers, and clinics/med spas.
-- Blog clusters for local SEO, AI intake, pricing, and industries, including clinic, med spa, and Plainsboro cost articles.
+- Blog clusters for local SEO, AI intake, pricing, and industries, including clinic, med spa, Plainsboro cost, Mercer County cost factors, electrician AI chatbot, and dental automation pricing articles.
 - Breadcrumb, LocalBusiness, Service, FAQ, BlogPosting, and Blog schema.
 - Conversion tracking hooks for calls, quote clicks, pricing clicks, email clicks, and Calendly clicks.
 - A mobile sticky call/quote bar.
@@ -40,6 +40,9 @@ The site now has:
    - https://orbitboyzz.me/blog/clinic-website-design-central-nj
    - https://orbitboyzz.me/blog/med-spa-website-design-new-jersey
    - https://orbitboyzz.me/blog/small-business-website-cost-plainsboro-nj
+   - https://orbitboyzz.me/blog/web-design-cost-factors-mercer-county-nj
+   - https://orbitboyzz.me/blog/ai-chatbot-electrician-central-nj
+   - https://orbitboyzz.me/blog/automated-dental-website-no-monthly-fee
 4. Check the **Pages** and **Performance** reports weekly.
 
 ## 2. Submit New URLs Through IndexNow After Deploys
@@ -85,6 +88,7 @@ Use Search Console impressions to decide future pages. Good next targets:
 - Real estate website design in Princeton / Central NJ.
 - More town-specific clinic and med spa pages after the clinic page gets impressions.
 - Small business website cost articles for Princeton, West Windsor, and Hamilton after the Plainsboro cost page gets impressions.
+- Follow-up service pages for electrician AI intake and dental patient intake if the new blog posts get impressions.
 
 Each new page should have:
 
