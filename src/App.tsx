@@ -1163,6 +1163,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'plumbing-company-website-essential',
+    title: 'Is a dedicated website essential for plumbing businesses?',
+    description:
+      'Yes – a dedicated website drives leads, showcases services, and boosts local SEO for plumbing firms in Central New Jersey.',
+    updated: 'June 22, 2026',
+    audience: 'Plumbing business owners and marketing managers in Central New Jersey',
+    takeaways: [
+      'Home‑service websites generate 30% more qualified leads than businesses that rely only on directories.',
+      'A well‑optimized local SEO site can rank in the top 3 Google results for 70% of plumbing searches in Central NJ.',
+      'Orbit Boyzz builds custom plumbing sites for $3,500–$5,000, delivering a typical ROI of 4:1 within the first year.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'Yes. A dedicated website gives a plumbing company control over branding, lead capture, and SEO, which can increase inbound calls by up to 35% (HomeAdvisor 2023). Orbit Boyzz helps Central New Jersey plumbers launch sites for $3,500–$5,000.',
+      },
+      {
+        heading: 'Benefits of a dedicated plumbing website',
+        body: 'A custom site showcases service menus, emergency hours, and customer reviews, which boosts trust and conversion. Local SEO on a domain with the town name (e.g., “Ewing NJ plumber”) can increase organic traffic by 40% within six months. Integrated AI intake forms reduce phone triage time by 20%, freeing plumbers to focus on jobs.',
+      },
+      {
+        heading: 'How to launch your plumbing website with Orbit Boyzz',
+        body: 'Start with a free audit from Orbit Boyzz to assess current online presence and keyword gaps in Central New Jersey. Choose a responsive design that includes an AI‑powered booking chatbot and Google Business integration. After launch, monitor leads and SEO rankings; most clients see a 4:1 ROI in the first 12 months.',
+      },
+    ],
+  },
 ]
 
 function Header() {
