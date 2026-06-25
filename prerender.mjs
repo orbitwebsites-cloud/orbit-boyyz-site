@@ -58,144 +58,144 @@ const template = readFileSync(join(distDir, 'index.html'), 'utf-8')
 // --- Per-route metadata -----------------------------------------------------
 const pageMeta = {
   '/': {
-    title: 'OrbitBoyzz | Orbit Websites - Web Design & AI Systems in Central NJ',
+    title: 'Website Design for Local Businesses in Central NJ | Orbit Websites',
     description:
-      'OrbitBoyzz, also known as Orbit Websites, is a Plainsboro, NJ web design and AI operations studio for local business websites, booking, intake, and revenue systems.',
+      'Hand-coded, blazing-fast websites for local businesses in Central NJ. Starting at $150. We build your site and show you a live demo before you pay anything — free 15-min call.',
   },
   '/orbitboyzz': {
-    title: 'OrbitBoyzz | Official Orbit Websites Brand Page',
+    title: 'OrbitBoyzz | Orbit Websites — Web Design Studio in Plainsboro, NJ',
     description:
-      'OrbitBoyzz is the official domain and brand handle for Orbit Websites, a Plainsboro, NJ web design and AI operations studio.',
+      'OrbitBoyzz is the official brand handle for Orbit Websites, a hand-coded web design studio in Plainsboro, NJ building fast, conversion-focused sites for local businesses.',
   },
   '/about': {
-    title: 'About Orbit Websites | Plainsboro, NJ Web & AI Studio',
+    title: 'About Orbit Websites | Hand-Coded Web Design in Plainsboro, NJ',
     description:
-      'Orbit Websites is a Plainsboro, NJ studio building conversion-focused websites and AI operations systems for Central New Jersey local businesses.',
+      'Orbit Websites is a Plainsboro, NJ web design studio. We hand-code every site in Next.js — no templates, no plugins — so your site is fast, secure, and built to rank locally.',
   },
   '/services': {
-    title: 'Web Design, Local SEO & AI Automation | Orbit Websites',
+    title: 'Web Design Services for Local Businesses in NJ | Orbit Websites',
     description:
-      'Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.',
+      'New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.',
   },
   '/pricing': {
-    title: 'AI Website & Custom Website Cost for Local Business',
+    title: 'Website Design Pricing in NJ | Starting at $150 | Orbit Websites',
     description:
-      'Discover how much a custom or AI-powered website costs for a local business in Central NJ. Learn pricing factors, ROI, and get a free quote from Orbit Boyzz.',
+      'Transparent website pricing for local businesses. Starter builds from $150–$400 + $100–$300/mo. Custom enterprise builds from $3,500. See what you get before you pay.',
   },
   '/web-design-central-nj': {
-    title: 'Web Design Agency in Central New Jersey | Orbit Websites',
+    title: 'Web Design Agency Central NJ | Local Business Websites | Orbit Websites',
     description:
-      'Web design agency and AI automation for local businesses in Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Lawrence, Trenton, and across Central NJ.',
+      'Central NJ web design agency serving Plainsboro, Princeton, Ewing, Hamilton, Trenton, and surrounding towns. Hand-coded sites starting at $150. Free live demo.',
   },
   '/web-design-ewing-nj': {
-    title: 'Web Design in Ewing, NJ | Orbit Websites',
+    title: 'Web Design Ewing NJ | Fast, Hand-Coded Local Business Websites',
     description:
-      'Custom website design and AI automation for Ewing, NJ businesses. Starter sites usually range from $150-$400. Serving Ewing Township and Mercer County.',
+      'Website design for local businesses in Ewing, NJ. Hand-coded Next.js, mobile-first, built to rank in Ewing Township searches. Starting at $150 — free demo before you pay.',
   },
   '/web-design-plainsboro-nj': {
-    title: 'Web Design in Plainsboro, NJ | Orbit Websites',
+    title: 'Web Design Plainsboro NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Plainsboro, NJ businesses. Starter sites usually range from $150-$400. Serving Plainsboro and Middlesex County.',
+      'Website design for local businesses in Plainsboro, NJ. Fast, hand-coded, mobile-first sites that rank in Plainsboro and Middlesex County searches. Starting at $150.',
   },
   '/web-design-west-windsor-nj': {
-    title: 'Web Design in West Windsor, NJ | Orbit Websites',
+    title: 'Web Design West Windsor NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for West Windsor Township, NJ businesses. Starter sites usually range from $150-$400. Serving West Windsor and Mercer County.',
+      'Website design for local businesses in West Windsor Township, NJ. Hand-coded, fast, and built to bring in calls and bookings. Starting at $150 — free demo.',
   },
   '/web-design-princeton-nj': {
-    title: 'Web Design in Princeton, NJ | Orbit Websites',
+    title: 'Web Design Princeton NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Princeton, NJ businesses. Starter sites usually range from $150-$400. Serving Princeton and Mercer County.',
+      'Website design for local businesses in Princeton, NJ. Hand-coded Next.js sites that load fast and rank in Princeton searches. Starting at $150 — free live demo.',
   },
   '/web-design-hamilton-nj': {
-    title: 'Web Design in Hamilton, NJ | Orbit Websites',
+    title: 'Web Design Hamilton NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Hamilton, NJ businesses. Starter sites usually range from $150-$400. Serving Hamilton Township and Mercer County.',
+      'Website design for local businesses in Hamilton Township, NJ. Fast, hand-coded, mobile-first. Built to rank in Hamilton and Mercer County searches. Starting at $150.',
   },
   '/web-design-lawrence-nj': {
-    title: 'Web Design in Lawrence Township, NJ | Orbit Websites',
+    title: 'Web Design Lawrence Township NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Lawrence Township, NJ businesses. Starter sites usually range from $150-$400. Serving Lawrence and Mercer County.',
+      'Website design for local businesses in Lawrence Township, NJ. Hand-coded, blazing-fast, built to generate calls and bookings from local search. Starting at $150.',
   },
   '/web-design-trenton-nj': {
-    title: 'Web Design in Trenton, NJ | Orbit Websites',
+    title: 'Web Design Trenton NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Trenton, NJ businesses. Starter sites usually range from $150-$400. Serving Trenton, Mercer County, and surrounding areas.',
+      'Website design for local businesses in Trenton, NJ. Hand-coded Next.js sites that rank in Trenton and Mercer County searches. Starting at $150 — free demo call.',
   },
   '/web-design-robbinsville-nj': {
-    title: 'Web Design in Robbinsville, NJ | Orbit Websites',
+    title: 'Web Design Robbinsville NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Robbinsville, NJ businesses. Starter sites usually range from $150-$400. Serving Robbinsville and Mercer County.',
+      'Website design for local businesses in Robbinsville, NJ. Fast, hand-coded, mobile-first sites built to rank in Robbinsville and Mercer County searches. Starting at $150.',
   },
   '/web-design-bordentown-nj': {
-    title: 'Web Design in Bordentown, NJ | Orbit Websites',
+    title: 'Web Design Bordentown NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for Bordentown, NJ businesses. Starter sites usually range from $150-$400. Serving Bordentown, Burlington County, and Mercer County.',
+      'Website design for local businesses in Bordentown, NJ. Hand-coded Next.js sites that rank locally and convert visitors into calls. Starting at $150 — free demo.',
   },
   '/web-design-east-windsor-nj': {
-    title: 'Web Design in East Windsor, NJ | Orbit Websites',
+    title: 'Web Design East Windsor NJ | Local Business Websites | Orbit Websites',
     description:
-      'Custom website design and AI automation for East Windsor, NJ businesses. Starter sites usually range from $150-$400. Serving East Windsor and Mercer County.',
+      'Website design for local businesses in East Windsor, NJ. Fast, hand-coded, mobile-first sites built to generate calls and bookings from local search. Starting at $150.',
   },
   '/website-design-for-hvac-companies-nj': {
-    title: 'Website Design for HVAC Companies in NJ | Orbit Websites',
+    title: 'HVAC Website Design NJ | Capture Emergency Calls 24/7 | Orbit Websites',
     description:
-      'Custom websites and AI dispatch intake for HVAC companies in New Jersey. Capture emergency service calls 24/7, route by urgency, and grow in Mercer County local search.',
+      'Website design for HVAC companies in New Jersey. Capture emergency service calls after hours, rank in local search, and never lose a hot lead. Starting at $150 — free demo.',
   },
   '/website-design-for-plumbers-nj': {
-    title: 'Website Design for Plumbers in NJ | Orbit Websites',
+    title: 'Plumber Website Design NJ | Get More Emergency Jobs | Orbit Websites',
     description:
-      'Custom websites and AI intake for plumbing contractors in New Jersey. Emergency job routing, quote capture, and local SEO for Mercer County and Central NJ plumbers.',
+      'Website design for plumbers in New Jersey. Capture emergency calls overnight, rank in Mercer County searches, and get more booked jobs. Starting at $150 — free demo.',
   },
   '/website-design-for-electricians-nj': {
-    title: 'Website Design for Electricians in NJ | Orbit Websites',
+    title: 'Electrician Website Design NJ | Rank Locally & Get More Calls | Orbit Websites',
     description:
-      'Custom websites and AI intake for electricians in New Jersey. Separate residential and commercial leads automatically. Serving Mercer County and Central NJ electricians.',
+      'Website design for electricians in New Jersey. Hand-coded, fast, and built to rank in local searches. Residential and commercial lead capture. Starting at $150.',
   },
   '/website-design-for-landscaping-companies-nj': {
-    title: 'Website Design for Landscaping Companies in NJ | Orbit Websites',
+    title: 'Landscaping Company Website Design NJ | Get More Contracts | Orbit Websites',
     description:
-      'Custom websites and AI proposal intake for landscaping companies in New Jersey. Capture annual contract leads and grow in Central NJ local search.',
+      'Website design for landscaping companies in New Jersey. Capture seasonal and annual contract leads, rank in local search, and grow your client base. Starting at $150.',
   },
   '/website-design-for-dental-practices-nj': {
-    title: 'Website Design for Dental Practices in NJ | Orbit Websites',
+    title: 'Dental Website Design NJ | Attract New Patients | Orbit Websites',
     description:
-      'Custom websites and AI new-patient intake for dental practices in New Jersey. Capture insurance, treatment interest, and appointment windows before staff involvement.',
+      'Website design for dental practices in New Jersey. Capture new patient requests, show insurance info, and rank in local searches. Starting at $150 — free demo.',
   },
   '/website-design-for-restaurants-nj': {
-    title: 'Restaurant Website Design in NJ | Catering & Cafe Websites | Orbit Websites',
+    title: 'Restaurant Website Design NJ | Reservations, Menus & Catering | Orbit Websites',
     description:
-      'Custom websites and AI catering intake for restaurants, cafes, bakeries, and caterers in New Jersey. Capture orders, reservations, private events, and catering leads.',
+      'Website design for restaurants, cafes, and caterers in New Jersey. Online menus, reservation links, catering inquiry forms, and local SEO. Starting at $150 — free demo.',
   },
   '/website-design-for-clinics-nj': {
-    title: 'Clinic Website Design in NJ | Med Spa & Healthcare Websites | Orbit Websites',
+    title: 'Clinic & Med Spa Website Design NJ | Book More Patients | Orbit Websites',
     description:
-      'Custom websites and AI patient intake for clinics, med spas, and appointment-based healthcare practices in New Jersey. Capture consultation requests and bookings.',
+      'Website design for clinics and med spas in New Jersey. Capture appointment requests, showcase services, and rank in local searches. Starting at $150 — free demo.',
   },
   '/quote': {
-    title: 'Get a Quote | Orbit Websites',
+    title: 'Free Website Quote for NJ Local Businesses | Starting at $150 | Orbit Websites',
     description:
-      'Answer a few questions and get a rough Orbit build range for a new website, refresh, lead forms, or an AI operations engine.',
+      'Get a rough price range for your website in 60 seconds. Answer a few questions about your business and we\'ll show you what a build would cost — no commitment.',
   },
   '/contact': {
-    title: 'Contact Orbit Websites | Book a Call (Plainsboro, NJ)',
+    title: 'Book a Free Demo Call | Orbit Websites | Plainsboro, NJ',
     description:
-      'Book a free 30-minute call with Orbit Websites, or reach us by phone or email. Serving Plainsboro, Princeton, West Windsor Township, and Central New Jersey.',
+      'Book a free 15-minute call with Orbit Websites. We\'ll build a live demo of your site and show you before you pay a cent. Call 609-662-8052 or book online.',
   },
   '/projects': {
-    title: 'Projects | Orbit Websites',
+    title: 'Website Portfolio | Local Business Web Design Examples | Orbit Websites',
     description:
-      'Selected website and AI operations builds by Orbit Websites for local businesses in Central New Jersey.',
+      'See real websites built by Orbit Websites for local businesses in Central NJ — HVAC, catering, and more. Hand-coded, fast, and built to get calls.',
   },
   '/blog': {
-    title: 'Blog | AI Operations Websites for Local Business',
+    title: 'Web Design & Local Business Growth Blog | Orbit Websites | Central NJ',
     description:
-      'Guides on AI operations websites, HVAC and plumbing AI dispatch, and catering proposal automation for local service businesses.',
+      'Practical guides on website design, local SEO, and getting more calls for local businesses in Central NJ. Written by Orbit Websites in Plainsboro, NJ.',
   },
   '/faq': {
-    title: 'FAQ | Orbit Websites',
+    title: 'Website Design FAQ | Common Questions Answered | Orbit Websites NJ',
     description:
-      'Common buyer questions about Orbit Websites — location, business types, forms, SEO, and the premium AI operations offer.',
+      'Common questions about web design pricing, timelines, what\'s included, and how Orbit Websites builds sites for local businesses in Central NJ.',
   },
 }
 
@@ -237,13 +237,70 @@ const organization = {
   areaServed: SERVICE_AREA,
   knowsAbout: [
     'Website design',
-    'AI operations websites',
-    'AI intake systems',
+    'Local business website design',
+    'Hand-coded Next.js websites',
+    'Mobile-first web design',
     'Local SEO foundations',
-    'Lead forms',
-    'Booking forms',
-    'Catering proposal automation',
-    'HVAC dispatch automation',
+    'Lead capture forms',
+    'Booking and quote forms',
+    'HVAC company websites',
+    'Plumber websites',
+    'Electrician websites',
+    'Landscaping company websites',
+    'Restaurant websites',
+    'Dental practice websites',
+    'Clinic websites',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web Design Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Starter Website Build',
+        description: 'Hand-coded Next.js website for local businesses. Mobile-first, fast, with booking and quote forms built in.',
+        price: '150',
+        priceCurrency: 'USD',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          minPrice: '150',
+          maxPrice: '400',
+          priceCurrency: 'USD',
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Monthly Website Care Plan',
+        description: 'Global hosting, security updates, and unlimited text and photo changes.',
+        price: '100',
+        priceCurrency: 'USD',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          minPrice: '100',
+          maxPrice: '300',
+          priceCurrency: 'USD',
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Enterprise Custom Build',
+        description: 'Advanced custom systems — automated intake, proposal generation, CRM integrations, and AI-powered workflows.',
+        price: '3500',
+        priceCurrency: 'USD',
+      },
+    ],
+  },
+  potentialAction: [
+    {
+      '@type': 'ReserveAction',
+      name: 'Book a Free Demo Call',
+      target: 'https://calendly.com/orbitwebsites/30min',
+    },
+    {
+      '@type': 'CommunicateAction',
+      name: 'Call Orbit Websites',
+      target: 'tel:+16096628052',
+    },
   ],
   // Conditionally included so we never emit empty/placeholder entity signals.
   ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
