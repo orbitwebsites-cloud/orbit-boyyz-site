@@ -90,52 +90,52 @@ const pageMeta = {
   '/web-design-ewing-nj': {
     title: 'Web Design in Ewing, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Ewing, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Ewing Township and Mercer County.',
+      'Custom website design and AI automation for Ewing, NJ businesses. Starter sites usually range from $150-$400. Serving Ewing Township and Mercer County.',
   },
   '/web-design-plainsboro-nj': {
     title: 'Web Design in Plainsboro, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Plainsboro, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Plainsboro and Middlesex County.',
+      'Custom website design and AI automation for Plainsboro, NJ businesses. Starter sites usually range from $150-$400. Serving Plainsboro and Middlesex County.',
   },
   '/web-design-west-windsor-nj': {
     title: 'Web Design in West Windsor, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for West Windsor Township, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving West Windsor and Mercer County.',
+      'Custom website design and AI automation for West Windsor Township, NJ businesses. Starter sites usually range from $150-$400. Serving West Windsor and Mercer County.',
   },
   '/web-design-princeton-nj': {
     title: 'Web Design in Princeton, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Princeton, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Princeton and Mercer County.',
+      'Custom website design and AI automation for Princeton, NJ businesses. Starter sites usually range from $150-$400. Serving Princeton and Mercer County.',
   },
   '/web-design-hamilton-nj': {
     title: 'Web Design in Hamilton, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Hamilton, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Hamilton Township and Mercer County.',
+      'Custom website design and AI automation for Hamilton, NJ businesses. Starter sites usually range from $150-$400. Serving Hamilton Township and Mercer County.',
   },
   '/web-design-lawrence-nj': {
     title: 'Web Design in Lawrence Township, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Lawrence Township, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Lawrence and Mercer County.',
+      'Custom website design and AI automation for Lawrence Township, NJ businesses. Starter sites usually range from $150-$400. Serving Lawrence and Mercer County.',
   },
   '/web-design-trenton-nj': {
     title: 'Web Design in Trenton, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Trenton, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Trenton, Mercer County, and surrounding areas.',
+      'Custom website design and AI automation for Trenton, NJ businesses. Starter sites usually range from $150-$400. Serving Trenton, Mercer County, and surrounding areas.',
   },
   '/web-design-robbinsville-nj': {
     title: 'Web Design in Robbinsville, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Robbinsville, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Robbinsville and Mercer County.',
+      'Custom website design and AI automation for Robbinsville, NJ businesses. Starter sites usually range from $150-$400. Serving Robbinsville and Mercer County.',
   },
   '/web-design-bordentown-nj': {
     title: 'Web Design in Bordentown, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for Bordentown, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving Bordentown, Burlington County, and Mercer County.',
+      'Custom website design and AI automation for Bordentown, NJ businesses. Starter sites usually range from $150-$400. Serving Bordentown, Burlington County, and Mercer County.',
   },
   '/web-design-east-windsor-nj': {
     title: 'Web Design in East Windsor, NJ | Orbit Websites',
     description:
-      'Custom website design and AI automation for East Windsor, NJ businesses. Starter sites usually range from $1,500-$3,500. Serving East Windsor and Mercer County.',
+      'Custom website design and AI automation for East Windsor, NJ businesses. Starter sites usually range from $150-$400. Serving East Windsor and Mercer County.',
   },
   '/website-design-for-hvac-companies-nj': {
     title: 'Website Design for HVAC Companies in NJ | Orbit Websites',
@@ -279,7 +279,7 @@ const pricingFaqPage = {
       name: 'How much does a custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A starter website for a local business typically ranges from $1,500 to $3,500, while broader custom websites often range from $3,500 to $15,000 based on design, features, and AI automation. Orbit Boyzz starts with a lower entry range and around $5,000 when AI intake is included.',
+        text: 'A starter website for a local business typically ranges from $150 to $400, while broader custom websites often range from $3,500 to $15,000 based on design, features, and AI automation. Orbit Boyzz starts with a lower entry range and around $5,000 when AI intake is included.',
       },
     },
     {
@@ -454,7 +454,7 @@ function townLandingFaqGraph(route, page) {
   return faqGraph(route, 'local-faq', [
     [
       `How much does web design cost in ${page.town}?`,
-      `A focused starter website for a ${page.town} business usually ranges from $1,500 to $3,500. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
+      `A focused starter website for a ${page.town} business usually ranges from $150 to $400. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
     ],
     [
       `Do you work with businesses near ${page.town}?`,
@@ -503,7 +503,7 @@ function industryLandingFaqGraph(route, page) {
   return faqGraph(route, 'industry-faq', [
     [
       `How much does a website cost for a ${lower} company in NJ?`,
-      `A focused starter site for a ${lower} company usually ranges from $1,500 to $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
+      `A focused starter site for a ${lower} company usually ranges from $150 to $400. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
     ],
     [
       `What should a ${lower} website include?`,
@@ -600,7 +600,7 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Ewing Township, NJ. Starter sites usually range from $1,500-$3,500, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Ewing Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Ewing, NJ'))
   }
@@ -616,7 +616,7 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Middlesex County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Plainsboro, NJ. Starter sites usually range from $1,500-$3,500, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Plainsboro, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Plainsboro, NJ'))
   }
@@ -632,7 +632,7 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in West Windsor Township, NJ. Starter sites usually range from $1,500-$3,500, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in West Windsor Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in West Windsor Township, NJ'))
   }
@@ -648,7 +648,7 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Princeton, NJ. Starter sites usually range from $1,500-$3,500, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Princeton, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Princeton, NJ'))
   }
@@ -664,7 +664,7 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Hamilton Township, NJ. Starter sites usually range from $1,500-$3,500, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Hamilton Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Hamilton, NJ'))
   }
@@ -680,7 +680,7 @@ function graphFor(route) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Lawrence Township, NJ. Starter sites usually range from $1,500-$3,500, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Lawrence Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Lawrence Township, NJ'))
   }

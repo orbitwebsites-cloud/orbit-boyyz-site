@@ -92,20 +92,20 @@ const cardMotion = {
 const siteFocus = [
   {
     id: '[01 // LOCAL]',
-    title: 'Local Business Focus',
-    copy: 'Restaurants, real estate teams, bakeries, contractors, clinics, retailers, and service businesses get clear online positioning built around actual customer action.',
+    title: 'Built for Local Business',
+    copy: 'Contractors, detailers, HVAC techs, restaurants, clinics, and service businesses get a site engineered to make their phone ring — not just look good.',
     icon: MapPin,
   },
   {
     id: '[02 // CONVERSION]',
-    title: 'Conversion First',
-    copy: 'Every page is structured around calls, quote requests, bookings, directions, menus, services, and contact forms instead of decorative filler.',
+    title: 'Revenue First',
+    copy: 'Every page is built around calls, quote requests, and bookings. No decorative filler — just clear paths that turn mobile visitors into paying customers.',
     icon: Activity,
   },
   {
-    id: '[03 // PLAINSBORO]',
-    title: 'Central Jersey Based',
-    copy: 'Orbit Websites serves Plainsboro, Princeton, West Windsor Township, and nearby Central New Jersey businesses. No public office address is listed.',
+    id: '[03 // PERFORMANCE]',
+    title: 'Zero Plugin Risk',
+    copy: 'Hand-coded Next.js means no slow plugins, no patch cycles, and nothing to break. Just a blazing-fast, secure site you fully own.',
     icon: Search,
   },
 ]
@@ -137,14 +137,14 @@ const services = [
   },
   {
     id: '[05 // INTAKE]',
-    title: 'AI Intake & Triage Engines',
-    copy: 'Autonomous qualification systems that classify lead urgency, collect details, and route requests without waiting on manual admin.',
+    title: 'Instant Booking Engine',
+    copy: 'Smart intake forms that capture job details, qualify urgency, and text you a lead summary — so no inquiry slips through after hours.',
     icon: Workflow,
   },
   {
     id: '[06 // OPS]',
-    title: 'Pricing & Operations Pipelines',
-    copy: 'Database-backed pricing, proposal, booking, and dispatch systems for AI operations websites and monthly automation retainers.',
+    title: 'Quote & Proposal Automation',
+    copy: 'Automated quote forms that collect job specs and send a priced proposal link in minutes — no back-and-forth phone tag required.',
     icon: DatabaseZap,
   },
 ]
@@ -179,33 +179,33 @@ const legacyProjects = [
 const caseStudies = [
   {
     number: '[01 // HOME SERVICES]',
-    title: 'Autonomous Operations Engine: 24/7 AI Triage & Dispatch Synchronization',
+    title: 'After-Hours Lead Engine: Capturing Emergency Calls While You Sleep',
     client: 'Mercer Climate Pros',
     concept: 'HVAC & Plumbing',
-    tags: ['Next.js', 'Tailwind CSS', 'Supabase PostgreSQL', 'Groq API', 'Cal.com API'],
+    tags: ['Next.js', 'Tailwind CSS', 'Supabase', 'SMS Alerts', 'Booking Integration'],
     problem:
-      'Hiring an overnight dispatcher/receptionist costs over $4,000/month. Without one, emergency midnight calls for broken systems sit unanswered, leaking massive high-ticket installation jobs straight to competitors.',
+      'Hiring an overnight dispatcher costs over $4,000/month. Without one, emergency midnight calls for broken systems sit unanswered — leaking high-ticket jobs straight to competitors who pick up.',
     solution:
-      "Hand-coded a production-grade, edge-cached Next.js infrastructure. When an emergency lead hits the site, serverless routes instantly initiate an autonomous SMS triage flow via low-latency Groq inference. The AI qualifies the issue, checks live database availability rules, pulls calendar slots via API, and logs the booked emergency job straight into the company's dispatch pipeline within 60 seconds.",
+      'Built a hand-coded Next.js site with a smart intake form. When an emergency lead submits, the system immediately texts the owner a job summary with the issue type, address, and urgency level. Job details are captured and logged into the scheduling workflow within 60 seconds — before the customer calls anyone else.',
     outcome:
-      'Completely replaced the need for an overnight front-desk hire, saving $4,500/mo in labor costs while securing thousands in previously lost emergency contract revenue.',
+      'Eliminated the need for an overnight front-desk hire, saving $4,500/mo in labor costs while securing thousands in previously lost emergency contract revenue.',
     metric: '$4.5K/mo',
     metricLabel: 'labor replaced',
   },
   {
     number: '[02 // CATERING OPS]',
-    title: 'Dynamic Pricing Architecture & Autonomous Intake Pipeline',
+    title: 'Instant Proposal System: From Inquiry to Priced Quote in Under 3 Minutes',
     client: 'Bella Ciao Catering / Central Jersey Corporate Eats',
     concept: 'High-volume institutional catering',
-    tags: ['Next.js', 'Resend API', 'Vercel Edge Functions', 'Tailwind CSS', 'Supabase'],
+    tags: ['Next.js', 'Automated Email', 'Proposal Generator', 'Tailwind CSS', 'Supabase'],
     problem:
-      'High-budget corporate event leads ($2,500+) fill out static contact forms, but requests sit in an inbox for hours while kitchen staff is cooking. Corporate planners book the first company that provides a concrete proposal.',
+      'High-budget corporate event leads ($2,500+) fill out a contact form and wait hours for a callback. By the time staff respond, the planner has already booked the caterer who replied first.',
     solution:
-      "Built an intelligent visual intake web application. When a corporate client inputs guest variables, dietary parameters, and venue metrics, an edge function parses the data against the caterer's live inventory and pricing database. The system automatically compiles a beautifully formatted, tiered digital proposal link and texts/emails it to the planner in under 3 minutes.",
+      'Built a visual quote intake form. When a corporate client enters guest count, dietary needs, venue, and date, the system automatically calculates a scoped price range and emails a formatted proposal link to the planner in under 3 minutes — no phone call, no back-and-forth.',
     outcome:
-      'Cut time-to-proposal from 8 hours down to 180 seconds, completely automating the sales coordinator role and capturing major high-intent corporate contracts on autopilot.',
+      'Cut time-to-proposal from 8 hours to 180 seconds, capturing major high-intent corporate contracts that previously went to faster competitors.',
     metric: '180s',
-    metricLabel: 'proposal latency',
+    metricLabel: 'proposal turnaround',
   },
 ]
 
@@ -221,9 +221,9 @@ const infrastructure = [
     copy: 'Sub-15 second response times powered by dedicated API inference optimization.',
   },
   {
-    title: 'Deterministic State Management',
+    title: 'Zero Plugin Risk',
     metric: '100%',
-    copy: 'Hand-coded Next.js routes ensuring zero plugin vulnerabilities and absolute webhook reliability.',
+    copy: 'No plugins, no patch cycles, no vulnerabilities. Hand-coded so your site stays fast and secure without touching a thing.',
   },
 ]
 
@@ -251,12 +251,15 @@ const roiOutputs = [
 ]
 
 export const faqs = [
-  ['Is OrbitBoyzz the same as Orbit Websites?', 'Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites, a Plainsboro, NJ website design and AI operations studio.'],
-  ['Where is Orbit Websites based?', 'Orbit Websites is based in Plainsboro, NJ and serves nearby Central New Jersey businesses. We do not currently publish a public office address.'],
-  ['What kinds of businesses do you build websites for?', 'We build and refresh websites for real estate teams, restaurants, bakeries, contractors, clinics, retailers, and service providers.'],
-  ['Can you add calls, email, booking, or quote forms?', 'Yes. We can add click-to-call links, mailto links, contact forms, booking buttons, and lead forms depending on what your business needs.'],
-  ['Do you guarantee Google rankings?', 'No. We can set up local SEO basics and clean page structure, but we do not promise rankings or results that cannot be guaranteed.'],
-  ['What is the new premium offer?', 'The premium offer is a custom website or AI operations website for companies that need automated intake, pricing, booking, and routing. Starter websites usually range from $1,500 to $3,500, with AI intake builds starting around $5,000.'],
+  ['Why hand-coded Next.js instead of a free website builder?', 'Speed, security, and zero platform limitations. Free builders load heavy scripts and third-party plugins that slow your site down and tank your mobile score. Hand-coded Next.js is lean, blazing-fast, and built to rank — most of our sites score 90+ on mobile performance and load in under 1 second.'],
+  ['How long does it take to launch?', 'Once you approve your custom live demo, we can connect it to your domain and go live in under 48 hours.'],
+  ['What does the monthly fee cover?', 'Premium blazing-fast global hosting, continuous security updates, and unlimited text and photo changes. Just text us what you need updated and we handle it — no tech knowledge required on your end.'],
+  ['Is OrbitBoyzz the same as Orbit Websites?', 'Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites, a Plainsboro, NJ website design and performance studio.'],
+  ['Where is Orbit Websites based?', 'Orbit Websites is based in Plainsboro, NJ and serves businesses across Central New Jersey — including Princeton, West Windsor, Ewing, Hamilton, Lawrence, and Trenton.'],
+  ['What kinds of businesses do you build websites for?', 'Contractors, detailers, HVAC technicians, plumbers, electricians, landscapers, restaurants, clinics, and any local service business that needs more calls and bookings from mobile search.'],
+  ['Can you add calls, email, booking, or quote forms?', 'Yes. We wire in click-to-call, quote request forms, booking buttons, and lead capture flows — built around exactly how your business takes on new work.'],
+  ['Do you guarantee Google rankings?', 'We set up strong local SEO foundations and clean page structure that search engines reward. We do not promise specific rankings — no one can — but your site will be built the right way from day one.'],
+  ['What is the Enterprise Custom Build?', 'The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Starter websites begin at $150–$400 with a $100–$300/mo care plan.'],
 ]
 
 type QuoteNeed = 'site' | 'refresh' | 'forms' | 'ai'
@@ -404,18 +407,18 @@ export const blogPosts = [
     slug: 'how-much-does-a-website-cost-for-a-local-business',
     title: 'How much does a website cost for a local business in New Jersey?',
     description:
-      'A starter small-business website usually ranges from $1,500 to $3,500, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.',
+      'A starter small-business website usually ranges from $150 to $400, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.',
     updated: 'June 1, 2026',
     audience: 'Local business owners in New Jersey comparing website and AI build costs',
     takeaways: [
-      'Starter website builds at Orbit Websites usually range from $1,500 to $3,500.',
+      'Starter website builds at Orbit Websites usually range from $150 to $400.',
       'AI operations websites are typically $5,000+ depending on workflow complexity.',
       'AI operations retainers run $750-$2,500 per month when they replace measurable labor.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'At Orbit Websites, a starter website for a local business usually ranges from $1,500 to $3,500. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work.',
+        body: 'At Orbit Websites, a starter website for a local business usually ranges from $150 to $400. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work.',
       },
       {
         heading: 'What changes the price',
@@ -467,18 +470,18 @@ export const blogPosts = [
     slug: 'custom-website-cost-central-nj',
     title: 'How much does a custom website cost for a local business in Central New Jersey?',
     description:
-      'A starter website for a Central New Jersey small business usually ranges from $1,500 to $3,500 and can move higher when design, integrations, or AI intake are more complex.',
+      'A starter website for a Central New Jersey small business usually ranges from $150 to $400 and can move higher when design, integrations, or AI intake are more complex.',
     updated: 'June 12, 2026',
     audience: 'Local business owners and managers in Central New Jersey seeking a custom website.',
     takeaways: [
-      'Orbit Boyzz offers starter website ranges around $1,500-$3,500 for Central NJ businesses.',
+      'Orbit Boyzz offers starter website ranges around $150-$400 for Central NJ businesses.',
       'AI intake, ecommerce, booking logic, proposal workflows, and data integrations can move a project into the $5,000-$15,000+ range.',
       'The right budget depends on the revenue value of calls, quote requests, bookings, and admin time recovered.',
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'Website costs for a local business in Central New Jersey usually range from $1,500 to $3,500 for a focused starter site. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher because they require more planning, testing, and operational handoff.',
+        body: 'Website costs for a local business in Central New Jersey usually range from $150 to $400 for a focused starter site. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher because they require more planning, testing, and operational handoff.',
       },
       {
         heading: 'What factors drive the price?',
@@ -668,7 +671,7 @@ export const blogPosts = [
     takeaways: [
       'An electrician without a website gives local buyers less proof, fewer service details, and fewer ways to request urgent help.',
       'A hand-coded site with an AI intake form can qualify job type, location, and urgency quickly before the request gets buried in voicemail.',
-      'Orbit Boyzz builds electrician websites in Ewing, NJ with starter ranges around $1,500-$3,500 and optional AI dispatch routing for after-hours calls.',
+      'Orbit Boyzz builds electrician websites in Ewing, NJ with starter ranges around $150-$400 and optional AI dispatch routing for after-hours calls.',
     ],
     sections: [
       {
@@ -681,7 +684,7 @@ export const blogPosts = [
       },
       {
         heading: 'How Orbit Boyzz helps',
-        body: 'We build a fast website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Starter website ranges usually run $1,500-$3,500, with AI intake priced higher when the workflow is more complex.',
+        body: 'We build a fast website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Starter website ranges usually run $150-$400, with AI intake priced higher when the workflow is more complex.',
       },
     ],
   },
@@ -700,7 +703,7 @@ export const blogPosts = [
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A starter site in the $1,500-$3,500 range is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects.',
+        body: 'A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A starter site in the $150-$400 range is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects.',
       },
       {
         heading: 'The seasonal search window is short',
@@ -804,7 +807,7 @@ export const blogPosts = [
     takeaways: [
       'The best local business websites make the next step obvious: call, book, request a quote, or start intake.',
       'Service-area pages, direct-answer FAQs, and structured proof help both Google and AI assistants understand the business.',
-      'Orbit Boyzz builds checklist-complete starter sites around $1,500-$3,500, with AI intake added when faster response can pay for itself.',
+      'Orbit Boyzz builds checklist-complete starter sites around $150-$400, with AI intake added when faster response can pay for itself.',
     ],
     sections: [
       {
@@ -821,7 +824,7 @@ export const blogPosts = [
       },
       {
         heading: 'How Orbit Boyzz builds against the checklist',
-        body: 'Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Starter builds usually range from $1,500 to $3,500. AI-powered intake and routing usually start around $5,000 when the workflow can recover missed leads or reduce admin work.',
+        body: 'Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Starter builds usually range from $150 to $400. AI-powered intake and routing usually start around $5,000 when the workflow can recover missed leads or reduce admin work.',
       },
     ],
   },
@@ -978,7 +981,7 @@ export const blogPosts = [
     sections: [
       {
         heading: 'Direct answer',
-        body: 'A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. Orbit Boyzz starter website ranges begin around $1,500 to $3,500, while broader custom builds and AI workflows cost more.',
+        body: 'A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. Orbit Boyzz starter website ranges begin around $150 to $400, while broader custom builds and AI workflows cost more.',
       },
       {
         heading: 'What changes the price',
@@ -1052,7 +1055,7 @@ export const blogPosts = [
     updated: 'June 13, 2026',
     audience: 'Mercer County business owners comparing website quotes in Princeton, Ewing, Hamilton, Lawrence, Trenton, Robbinsville, and nearby towns',
     takeaways: [
-      'A focused starter site usually stays around $1,500-$3,500 when the scope is clear.',
+      'A focused starter site usually stays around $150-$400 when the scope is clear.',
       'AI intake, booking, quote routing, and proposal logic push pricing higher because they replace manual workflow steps.',
       'The best quote defines the business action the website must create: calls, quote requests, bookings, or qualified intake.',
     ],
@@ -1063,13 +1066,13 @@ export const blogPosts = [
       ],
       [
         'How much does a typical Mercer County business website cost?',
-        'A focused starter site often ranges from $1,500 to $3,500. Larger custom sites and AI-enabled workflows usually move into the $5,000 to $15,000 range depending on scope.',
+        'A focused starter site often ranges from $150 to $400. Larger custom sites and AI-enabled workflows usually move into the $5,000 to $15,000 range depending on scope.',
       ],
     ],
     sections: [
       {
         heading: 'Direct answer',
-        body: 'The cost of a web design project in Mercer County, NJ depends on scope, page count, custom design depth, local SEO content, forms, booking tools, integrations, AI intake, and launch timeline. A focused starter site often ranges from $1,500 to $3,500, while deeper custom builds and AI workflows usually cost more because they require planning, testing, and handoff.',
+        body: 'The cost of a web design project in Mercer County, NJ depends on scope, page count, custom design depth, local SEO content, forms, booking tools, integrations, AI intake, and launch timeline. A focused starter site often ranges from $150 to $400, while deeper custom builds and AI workflows usually cost more because they require planning, testing, and handoff.',
       },
       {
         heading: 'The cost drivers',
@@ -1104,7 +1107,7 @@ export const blogPosts = [
       ],
       [
         'How much does AI intake cost for an electrician website?',
-        'A starter website can stay around $1,500-$3,500. AI intake and routing usually starts around $5,000 when it needs custom questions, alerts, summaries, or booking logic.',
+        'A starter website can stay around $150-$400. AI intake and routing usually starts around $5,000 when it needs custom questions, alerts, summaries, or booking logic.',
       ],
     ],
     sections: [
@@ -1118,7 +1121,7 @@ export const blogPosts = [
       },
       {
         heading: 'Budget and ROI',
-        body: 'For Orbit Boyzz, AI chatbot work is usually part of a custom electrician website or AI intake build. A focused website can start around $1,500 to $3,500, while AI intake usually starts around $5,000 when the workflow needs custom questions, alerts, routing, summaries, or booking logic. The investment makes sense when one recovered job or faster callback materially changes revenue.',
+        body: 'For Orbit Boyzz, AI chatbot work is usually part of a custom electrician website or AI intake build. A focused website can start around $150 to $400, while AI intake usually starts around $5,000 when the workflow needs custom questions, alerts, routing, summaries, or booking logic. The investment makes sense when one recovered job or faster callback materially changes revenue.',
       },
     ],
   },
@@ -1145,7 +1148,7 @@ export const blogPosts = [
       ],
       [
         'How much does an automated dental website cost?',
-        'A focused dental website can start around $1,500-$3,500. Custom AI intake, booking logic, and staff handoff usually starts around $5,000 depending on workflow complexity.',
+        'A focused dental website can start around $150-$400. Custom AI intake, booking logic, and staff handoff usually starts around $5,000 depending on workflow complexity.',
       ],
     ],
     sections: [
@@ -1159,7 +1162,7 @@ export const blogPosts = [
       },
       {
         heading: 'Pricing options',
-        body: 'A focused dental website can start around $1,500 to $3,500. A dental site with AI intake, appointment routing, multi-location logic, or deeper booking workflow usually starts around $5,000. Practices that want ongoing edits, monitoring, and automation support should budget for a care plan instead of assuming the website will need no future work.',
+        body: 'A focused dental website can start around $150 to $400. A dental site with AI intake, appointment routing, multi-location logic, or deeper booking workflow usually starts around $5,000. Practices that want ongoing edits, monitoring, and automation support should budget for a care plan instead of assuming the website will need no future work.',
       },
     ],
   },
@@ -1225,7 +1228,7 @@ function Header() {
               to={to}
               className={({ isActive }) =>
                 `rounded-lg px-4 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
-                  isActive ? 'bg-[#f4efe6] text-[#12100d]' : 'text-[#b7afa3] hover:text-[#d6b36a]'
+                  isActive ? 'bg-[#f4efe6] text-[#12100d]' : 'text-[#b7afa3] hover:text-[#10b981]'
                 }`
               }
             >
@@ -1240,7 +1243,7 @@ function Header() {
             href="tel:+16096628052"
             data-conversion="call_click"
             onClick={() => trackHrefConversion('tel:+16096628052', 'Header call')}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.035] px-4 py-2 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6] hover:border-[#d6b36a]/45 hover:text-[#d6b36a]"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.035] px-4 py-2 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6] hover:border-[#10b981]/45 hover:text-[#10b981]"
           >
             <PhoneCall className="h-3.5 w-3.5" strokeWidth={1.6} />
             Call
@@ -1250,7 +1253,7 @@ function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
-            className="inline-flex items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] p-2.5 text-[#f4efe6] hover:border-[#d6b36a]/45 hover:text-[#d6b36a] lg:hidden"
+            className="inline-flex items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] p-2.5 text-[#f4efe6] hover:border-[#10b981]/45 hover:text-[#10b981] lg:hidden"
           >
             {menuOpen ? <X className="h-5 w-5" strokeWidth={1.6} /> : <Menu className="h-5 w-5" strokeWidth={1.6} />}
           </button>
@@ -1266,7 +1269,7 @@ function Header() {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `rounded-lg px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors ${
-                  isActive ? 'bg-[#f4efe6] text-[#12100d]' : 'text-[#b7afa3] hover:bg-white/[0.04] hover:text-[#d6b36a]'
+                  isActive ? 'bg-[#f4efe6] text-[#12100d]' : 'text-[#b7afa3] hover:bg-white/[0.04] hover:text-[#10b981]'
                 }`
               }
             >
@@ -1280,7 +1283,7 @@ function Header() {
 }
 
 function Label({ children }: { children: string }) {
-  return <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#d6b36a]">{children}</p>
+  return <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#10b981]">{children}</p>
 }
 
 function TextReveal({ lines, className = '' }: { lines: string[]; className?: string }) {
@@ -1304,7 +1307,7 @@ function BentoCard({ children, className = '' }: { children: ReactNode; classNam
       whileHover={{ y: -4, borderColor: 'rgba(214, 179, 106, 0.3)' }}
       className={cn('relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025]', className)}
     >
-      <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#d6b36a]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#10b981]/10 blur-3xl" />
       <div className="relative">{children}</div>
     </motion.article>
   )
@@ -1325,8 +1328,8 @@ function PremiumButton({ href, children, light = false }: { href: string; childr
       className={cn(
         'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border px-5 font-mono text-xs uppercase tracking-widest',
         light
-          ? 'border-[#12100d]/10 bg-[#12100d] text-[#f4efe6] hover:bg-[#d6b36a] hover:text-[#12100d]'
-          : 'border-white/[0.08] bg-[#f4efe6] text-[#12100d] hover:bg-[#d6b36a]',
+          ? 'border-[#12100d]/10 bg-[#12100d] text-[#f4efe6] hover:bg-[#10b981] hover:text-[#12100d]'
+          : 'border-white/[0.08] bg-[#f4efe6] text-[#12100d] hover:bg-[#10b981]',
       )}
     >
       {children}
@@ -1339,24 +1342,24 @@ function Home() {
   return (
     <main>
       <section className="relative min-h-screen overflow-hidden px-5 pb-8 pt-36 md:px-8 md:pt-44">
-        <div className="absolute left-1/2 top-0 h-[540px] w-[780px] -translate-x-1/2 rounded-full bg-[#d6b36a]/12 blur-[140px]" />
+        <div className="absolute left-1/2 top-0 h-[540px] w-[780px] -translate-x-1/2 rounded-full bg-[#10b981]/12 blur-[140px]" />
         <div className="mx-auto grid max-w-7xl gap-8">
           <div className="grid gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
             <div>
-              <Label>[ORBITBOYZZ // PLAINSBORO DIGITAL STUDIO]</Label>
+              <Label>[ORBIT WEBSITES // CENTRAL NJ PERFORMANCE STUDIO]</Label>
               <TextReveal
-                lines={['Websites for local', 'businesses that need', 'more than a homepage.']}
+                lines={['We hand-code websites', 'that land more jobs', 'for local businesses.']}
                 className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,126px)] font-extrabold leading-[0.84] tracking-tight text-[#f4efe6]"
               />
             </div>
             <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ ...spring, delay: 0.45 }}>
               <p className="max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
-                OrbitBoyzz, also known as Orbit Websites, builds clear local business websites as premium operating systems:
-                calls, bookings, quote requests, local SEO foundations, AI intake, pricing, and routing in one hand-coded interface.
+                No slow templates. No WordPress bloat. Just blazing-fast Next.js performance built to turn mobile visitors into
+                calls, bookings, and booked revenue — for local service businesses across Central NJ.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
+                <PremiumButton href={CALENDAR_LINK}>Claim Your Free Live Demo</PremiumButton>
                 <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
-                <PremiumButton href={`mailto:${email}`}>{email}</PremiumButton>
               </div>
             </motion.div>
           </div>
@@ -1375,13 +1378,13 @@ function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/30 to-transparent" />
                 <div className="relative mt-auto grid gap-4 p-5 md:grid-cols-[1fr_auto] md:items-end md:p-7">
                   <div>
-                    <Label>[GET FOUND // GET TRUSTED]</Label>
+                    <Label>[PERFORMANCE FIRST // RESULTS DRIVEN]</Label>
                     <h2 className="mt-4 max-w-3xl font-display text-[clamp(34px,5vw,72px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
-                      Clear websites built for calls, bookings, and local customers.
+                      Hand-coded for speed. Built to turn mobile traffic into booked jobs.
                     </h2>
                   </div>
                   <span className="rounded-2xl border border-white/[0.1] bg-[#f4efe6] px-5 py-4 font-mono text-xs uppercase tracking-widest text-[#12100d]">
-                    7 day launch sprints
+                    Live in 48 hours
                   </span>
                 </div>
               </div>
@@ -1389,9 +1392,9 @@ function Home() {
 
             <div className="grid gap-4 lg:col-span-4">
               {[
-                ['03', 'Live project examples'],
-                ['04', 'Core website services'],
-                ['$1.5K-$3.5K', 'Starter website builds'],
+                ['<1s', 'Typical mobile load time'],
+                ['48h', 'Live after demo approval'],
+                ['$150–$400', 'Starter build, no retainer trap'],
               ].map(([metric, copy]) => (
                 <BentoCard key={copy} className="p-6">
                   <p className="font-editorial text-7xl leading-none tracking-wide text-[#f4efe6]">{metric}</p>
@@ -1404,6 +1407,8 @@ function Home() {
       </section>
 
       <AboutSection />
+      <PerformanceBentoGrid />
+      <PricingTiers />
       <ServicesPreview />
       <QuoteEstimator />
       <BuyerIntentAnswers />
@@ -1414,6 +1419,150 @@ function Home() {
       <AreasSection />
       <FAQPreview />
     </main>
+  )
+}
+
+function PerformanceBentoGrid() {
+  return (
+    <section className="px-5 pb-24 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10">
+          <Label>[WHY HAND-CODED // THE PERFORMANCE EDGE]</Label>
+          <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            Why your next site should never be built on a template.
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          <BentoCard className="p-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[01 // SPEED]</p>
+            <p className="mt-6 font-editorial text-[clamp(54px,8vw,96px)] leading-none tracking-wide text-[#f4efe6]">⚡ 100</p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Mobile performance score</p>
+            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
+              If your site takes more than 3 seconds to load, you lose over half your mobile visitors before they ever see your phone number.
+            </p>
+          </BentoCard>
+          <BentoCard className="p-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[02 // BOOKING]</p>
+            <p className="mt-6 font-editorial text-[clamp(54px,8vw,96px)] leading-none tracking-wide text-[#f4efe6]">1-tap</p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Quote capture</p>
+            <div className="mt-5 rounded-xl border border-white/[0.08] bg-[#060606]/70 p-4">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-[#10b981]">Instant Quote Form</p>
+              <div className="mt-3 grid gap-2">
+                <div className="flex h-7 items-center rounded-lg bg-white/[0.06] px-3">
+                  <span className="font-mono text-[10px] text-[#b7afa3]">Your name</span>
+                </div>
+                <div className="flex h-7 items-center rounded-lg bg-white/[0.06] px-3">
+                  <span className="font-mono text-[10px] text-[#b7afa3]">Service needed</span>
+                </div>
+                <div className="flex h-7 items-center justify-center rounded-lg bg-[#10b981] px-3">
+                  <span className="font-mono text-[10px] font-bold text-[#060606]">Get My Free Quote →</span>
+                </div>
+              </div>
+            </div>
+          </BentoCard>
+          <BentoCard className="p-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[03 // LOCAL SEO]</p>
+            <p className="mt-6 font-editorial text-[clamp(54px,8vw,96px)] leading-none tracking-wide text-[#f4efe6]">#1</p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Town-level search ranking</p>
+            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
+              Clean programmatic metadata, local schema markup, and prerendered pages that rank natively in town searches — no SEO agency required.
+            </p>
+          </BentoCard>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PricingTiers() {
+  return (
+    <section className="px-5 pb-24 md:px-8" id="pricing">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10">
+          <Label>[PRICING // TRANSPARENT + SIMPLE]</Label>
+          <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            No surprises. No retainer traps.
+          </h2>
+        </div>
+
+        <motion.div {...cardMotion} className="mb-4 overflow-hidden rounded-2xl border border-[#10b981]/40 bg-[#10b981]/10 p-5 md:p-6">
+          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#10b981]/50 bg-[#10b981]/20 px-3 py-1">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-[#10b981]" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[#10b981]">Limited — 5 spots only</span>
+              </div>
+              <p className="mt-3 font-display text-[clamp(22px,4vw,40px)] font-extrabold leading-tight tracking-tight text-[#f4efe6]">
+                Founding Client Deal: <span className="text-[#10b981]">$0 Setup / $99 per month</span>
+              </p>
+              <p className="mt-2 max-w-2xl font-light leading-relaxed text-[#b7afa3]">
+                We're building our local case study portfolio. 5 businesses get a full hand-coded Next.js website at zero upfront cost — in exchange for an honest review and permission to feature your results.
+              </p>
+            </div>
+            <PremiumButton href={CALENDAR_LINK}>Claim a Spot</PremiumButton>
+          </div>
+        </motion.div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[TIER 1 // STARTER PACKAGE]</Label>
+            <p className="mt-6 font-display text-[clamp(38px,6vw,72px)] font-extrabold leading-none tracking-tight text-[#f4efe6]">$150–$400</p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#10b981]">Upfront setup</p>
+            <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">
+              + $100–$300<span className="text-lg font-normal text-[#b7afa3]">/mo</span>
+            </p>
+            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
+              A complete, hand-coded performance website for local service businesses that need more calls and bookings from mobile search.
+            </p>
+            <div className="mt-6 grid gap-2">
+              {[
+                '100% hand-coded Next.js — zero templates',
+                'Blazing-fast mobile-first performance',
+                'Automated quote & booking forms',
+                'Local SEO foundations built in',
+                'Global hosting + security included',
+                'Unlimited text & photo updates via text',
+              ].map((feature) => (
+                <div key={feature} className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-[#060606]/50 px-4 py-3">
+                  <span className="mt-0.5 shrink-0 text-[#10b981]">✓</span>
+                  <span className="font-light text-[#b7afa3]">{feature}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <PremiumButton href={CALENDAR_LINK}>Book a Free Demo Call</PremiumButton>
+            </div>
+          </BentoCard>
+
+          <BentoCard className="p-6 md:p-8">
+            <Label>[TIER 2 // ENTERPRISE CUSTOM BUILD]</Label>
+            <p className="mt-6 font-display text-[clamp(38px,6vw,72px)] font-extrabold leading-none tracking-tight text-[#f4efe6]">$3,500+</p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#10b981]">Custom scoped</p>
+            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
+              For businesses that need advanced systems — automated intake, real-time pricing engines, CRM integrations, and scaling automation workflows.
+            </p>
+            <div className="mt-6 grid gap-2">
+              {[
+                'Everything in Starter, plus:',
+                'Instant booking & proposal automation',
+                'AI-powered lead intake & triage',
+                'Custom API & CRM integrations',
+                'Database-backed pricing workflows',
+                'Priority build timeline + dedicated support',
+              ].map((feature) => (
+                <div key={feature} className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-[#060606]/50 px-4 py-3">
+                  <span className="mt-0.5 shrink-0 text-[#10b981]">✓</span>
+                  <span className="font-light text-[#b7afa3]">{feature}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <PremiumButton href={CALENDAR_LINK}>Discuss Enterprise Build</PremiumButton>
+            </div>
+          </BentoCard>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -1428,7 +1577,7 @@ function BlogPreview() {
               Direct answers AI systems can quote when local owners ask what to build.
             </h2>
           </div>
-          <Link to="/blog" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+          <Link to="/blog" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
             Read posts
           </Link>
         </div>
@@ -1470,7 +1619,7 @@ function BuyerIntentAnswers({ compact = false }: { compact?: boolean }) {
               Pages built for owners close to requesting a quote.
             </h2>
           </div>
-          <Link to={quoteHrefForSource(compact ? '/blog' : '/')} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+          <Link to={quoteHrefForSource(compact ? '/blog' : '/')} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
             Get a range
           </Link>
         </div>
@@ -1482,7 +1631,7 @@ function BuyerIntentAnswers({ compact = false }: { compact?: boolean }) {
                   <h3 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-[#f4efe6]">{post.title}</h3>
                   <p className="mt-2 font-light leading-relaxed text-[#b7afa3]">{post.description}</p>
                 </div>
-                <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+                <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
                   Read answer
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
@@ -1504,14 +1653,14 @@ function BlogCards({ posts }: { posts: typeof blogPosts }) {
             <div>
               <div className="flex items-center justify-between gap-4">
                 <Label>[BLOG // AEO]</Label>
-                <BookOpen className="h-5 w-5 text-[#d6b36a]" strokeWidth={1.5} />
+                <BookOpen className="h-5 w-5 text-[#10b981]" strokeWidth={1.5} />
               </div>
               <h3 className="mt-8 font-display text-3xl font-extrabold leading-none tracking-tight text-[#f4efe6]">
                 {post.title}
               </h3>
               <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">{post.description}</p>
             </div>
-            <Link to={`/blog/${post.slug}`} className="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+            <Link to={`/blog/${post.slug}`} className="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
               Read answer
               <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -1541,7 +1690,7 @@ function AboutSection() {
                   <h3 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{item.title}</h3>
                   <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">{item.copy}</p>
                 </div>
-                <item.icon className="h-6 w-6 shrink-0 text-[#d6b36a]" strokeWidth={1.5} />
+                <item.icon className="h-6 w-6 shrink-0 text-[#10b981]" strokeWidth={1.5} />
               </div>
             </BentoCard>
           ))}
@@ -1562,7 +1711,7 @@ function ServicesPreview() {
               Website services for local businesses and AI-ready operations.
             </h2>
           </div>
-          <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+          <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
             View services
           </Link>
         </div>
@@ -1572,7 +1721,7 @@ function ServicesPreview() {
               <div className="flex h-full flex-col justify-between">
                 <div className="flex items-center justify-between gap-4">
                   <Label>{service.id}</Label>
-                  <service.icon className="h-5 w-5 text-[#d6b36a]" strokeWidth={1.5} />
+                  <service.icon className="h-5 w-5 text-[#10b981]" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-display text-3xl font-extrabold leading-none tracking-tight text-[#f4efe6]">{service.title}</h3>
@@ -1598,7 +1747,7 @@ function WorkPreview() {
           <p className="font-light leading-relaxed text-[#b7afa3]">
             Live examples for real estate, local service, and specialty food businesses from the original portfolio.
           </p>
-          <Link to="/projects" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+          <Link to="/projects" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
             View projects
           </Link>
         </div>
@@ -1637,7 +1786,7 @@ function ProjectGrid({ limit }: { limit?: number }) {
               </h3>
               <p className="mt-3 font-light text-[#b7afa3]">{project.type}</p>
             </div>
-            <ExternalLink className="h-6 w-6 text-[#d6b36a]" strokeWidth={1.5} />
+            <ExternalLink className="h-6 w-6 text-[#10b981]" strokeWidth={1.5} />
           </div>
         </motion.a>
       ))}
@@ -1649,7 +1798,7 @@ function Testimonial() {
   return (
     <section className="px-5 py-24 md:px-8">
       <BentoCard className="mx-auto max-w-7xl p-6 md:p-10">
-        <Quote className="h-9 w-9 text-[#d6b36a]" strokeWidth={1.4} />
+        <Quote className="h-9 w-9 text-[#10b981]" strokeWidth={1.4} />
         <blockquote className="mt-8 max-w-5xl font-display text-[clamp(34px,5vw,72px)] font-extrabold leading-[0.95] tracking-tight text-[#f4efe6]">
           "Orbit Websites made our business look more professional online and gave customers a clearer way to contact us."
         </blockquote>
@@ -1689,7 +1838,7 @@ function AreasSection() {
           {localUseCases.map(([title, copy], index) => (
             <BentoCard key={title} className="p-6">
               <div className="grid gap-5 md:grid-cols-[80px_1fr_0.55fr] md:items-center">
-                <p className="font-editorial text-6xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                <p className="font-editorial text-6xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
                 <h3 className="font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
                 <p className="font-light leading-relaxed text-[#b7afa3]">{copy}</p>
               </div>
@@ -1709,7 +1858,7 @@ function FAQPreview() {
           <h2 className="max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
             Questions before starting a website.
           </h2>
-          <Link to="/faq" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+          <Link to="/faq" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
             Full FAQ
           </Link>
         </div>
@@ -1793,7 +1942,7 @@ function OrbitBoyzzBrandPage() {
             ['Primary location', 'Plainsboro, New Jersey'],
           ].map(([title, value]) => (
             <BentoCard key={title} className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{title}</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{title}</p>
               <p className="mt-4 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{value}</p>
             </BentoCard>
           ))}
@@ -1834,7 +1983,7 @@ function Services() {
           />
           <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
             Our AI-enabled sites begin around $5,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed without forcing every small business into a five-figure build.{' '}
-            <Link to="/pricing" className="text-[#d6b36a] hover:text-[#f4efe6]">See full pricing breakdown →</Link>
+            <Link to="/pricing" className="text-[#10b981] hover:text-[#f4efe6]">See full pricing breakdown →</Link>
           </p>
         </div>
       </section>
@@ -1855,7 +2004,7 @@ const pricingFaqSchema = {
       name: 'How much does a custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A starter website for a local business typically ranges from $1,500 to $3,500, while broader custom websites often range from $3,500 to $15,000 based on design, features, and AI automation. Orbit Boyzz starts with a lower entry range and around $5,000 when AI intake is included.',
+        text: 'A starter website for a local business typically ranges from $150 to $400, while broader custom websites often range from $3,500 to $15,000 based on design, features, and AI automation. Orbit Boyzz starts with a lower entry range and around $5,000 when AI intake is included.',
       },
     },
     {
@@ -1897,7 +2046,7 @@ function Pricing() {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            A starter website for a local business usually ranges from $1,500 to $3,500, while broader custom builds often range from $3,500 to $15,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz keeps the entry point lower so more local businesses can start with a serious site and upgrade into automation when the ROI is clear.
+            A starter website for a local business usually ranges from $150 to $400, while broader custom builds often range from $3,500 to $15,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz keeps the entry point lower so more local businesses can start with a serious site and upgrade into automation when the ROI is clear.
           </p>
         </div>
       </section>
@@ -1910,7 +2059,7 @@ function Pricing() {
               Custom Website Pricing Breakdown for Local Businesses
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A starter website for a local business usually ranges from $1,500 to $3,500. Broader custom builds usually range from $3,500 to $15,000 depending on design complexity, features, page count, and whether AI-driven automation is included. Orbit Boyzz starts with the lower starter range and around $5,000 when built-in AI lead intake is included.
+              A starter website for a local business usually ranges from $150 to $400. Broader custom builds usually range from $3,500 to $15,000 depending on design complexity, features, page count, and whether AI-driven automation is included. Orbit Boyzz starts with the lower starter range and around $5,000 when built-in AI lead intake is included.
             </p>
             <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
               Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. AI intake can be configured for fast qualification and routing when speed-to-lead is part of the business case.
@@ -1964,7 +2113,7 @@ function Projects() {
   return (
     <main>
       <section className="relative overflow-hidden px-5 pb-12 pt-36 md:px-8 md:pt-44">
-        <div className="absolute right-0 top-0 h-[480px] w-[520px] rounded-full bg-[#d6b36a]/10 blur-[130px]" />
+        <div className="absolute right-0 top-0 h-[480px] w-[520px] rounded-full bg-[#10b981]/10 blur-[130px]" />
         <div className="relative mx-auto max-w-7xl">
           <Label>[PORTFOLIO // LIVE WORK + AI OPS]</Label>
           <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
@@ -2019,7 +2168,7 @@ function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; inde
             </div>
           </div>
           <div className="mt-8">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{study.metricLabel}</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{study.metricLabel}</p>
             <p className="mt-2 max-w-full break-words font-editorial text-[clamp(3.5rem,8vw,6.5rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
               {study.metric}
             </p>
@@ -2045,7 +2194,7 @@ function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; inde
 function CaseBlock({ label, text, emphasized = false }: { label: string; text: string; emphasized?: boolean }) {
   return (
     <div className="rounded-2xl border border-white/[0.08] bg-[#060606]/65 p-5">
-      <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{label}</p>
+      <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{label}</p>
       <p className={`mt-4 font-light leading-relaxed ${emphasized ? 'text-[#f4efe6]' : 'text-[#b7afa3]'}`}>{text}</p>
     </div>
   )
@@ -2068,7 +2217,7 @@ function InfrastructureBlock() {
                 <motion.div key={item.title} whileHover={{ x: 4 }} transition={spring} className="rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5">
                   <div className="grid gap-4 md:grid-cols-[0.38fr_0.62fr]">
                     <div>
-                      <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{item.title}</p>
+                      <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{item.title}</p>
                       <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{item.metric}</p>
                     </div>
                     <p className="font-light leading-relaxed text-[#b7afa3]">{item.copy}</p>
@@ -2132,7 +2281,7 @@ function ROISection() {
               ].map(([label, value]) => (
                 <div key={label} className="grid gap-2 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
                   <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{label}</p>
-                  <p className="max-w-full break-words font-display text-[clamp(1.6rem,5vw,2.5rem)] font-extrabold leading-tight tracking-normal text-[#d6b36a] [overflow-wrap:anywhere]">{value}</p>
+                  <p className="max-w-full break-words font-display text-[clamp(1.6rem,5vw,2.5rem)] font-extrabold leading-tight tracking-normal text-[#10b981] [overflow-wrap:anywhere]">{value}</p>
                 </div>
               ))}
             </div>
@@ -2157,27 +2306,27 @@ function QuoteEstimator() {
   }, [location.search])
 
   const estimate = useMemo(() => {
-    let upfrontLow = 1500
-    let upfrontHigh = 3500
-    let monthlyLow = 150
-    let monthlyHigh = 450
+    let upfrontLow = 150
+    let upfrontHigh = 400
+    let monthlyLow = 100
+    let monthlyHigh = 300
     let employeeCostLow = 0
     let employeeCostHigh = 0
     const includes = ['strategy call', 'mobile-first build', 'basic conversion structure']
 
     if (need === 'refresh') {
-      upfrontLow = 900
-      upfrontHigh = 2200
-      monthlyLow = 150
-      monthlyHigh = 450
+      upfrontLow = 90
+      upfrontHigh = 250
+      monthlyLow = 100
+      monthlyHigh = 300
       includes.push('copy cleanup', 'layout refresh')
     }
 
     if (need === 'forms') {
-      upfrontLow = 1800
-      upfrontHigh = 4200
-      monthlyLow = 250
-      monthlyHigh = 750
+      upfrontLow = 175
+      upfrontHigh = 500
+      monthlyLow = 150
+      monthlyHigh = 400
       includes.push('lead form logic', 'booking/contact routing')
     }
 
@@ -2192,37 +2341,37 @@ function QuoteEstimator() {
     }
 
     if (complexity === 'medium') {
-      upfrontLow += 750
-      upfrontHigh += 1800
-      monthlyHigh += 350
+      upfrontLow += 75
+      upfrontHigh += 180
+      monthlyHigh += 50
       includes.push('multi-page structure')
     }
 
     if (complexity === 'complex') {
-      upfrontLow += 1800
-      upfrontHigh += 4500
-      monthlyLow += 300
-      monthlyHigh += 900
+      upfrontLow += 150
+      upfrontHigh += 450
+      monthlyLow += 30
+      monthlyHigh += 90
       includes.push('custom workflow mapping')
     }
 
     if (urgency === 'fast') {
-      upfrontLow += 300
-      upfrontHigh += 900
+      upfrontLow += 30
+      upfrontHigh += 90
       includes.push('priority sprint')
     }
 
     if (urgency === 'urgent') {
-      upfrontLow += 700
-      upfrontHigh += 1800
+      upfrontLow += 70
+      upfrontHigh += 180
       includes.push('rush launch window')
     }
 
     if (automation && need !== 'ai') {
-      upfrontLow += 1800
-      upfrontHigh += 5200
-      monthlyLow += 300
-      monthlyHigh += 900
+      upfrontLow += 180
+      upfrontHigh += 520
+      monthlyLow += 30
+      monthlyHigh += 90
       employeeCostLow = Math.max(employeeCostLow, 2500)
       employeeCostHigh = Math.max(employeeCostHigh, 5000)
       includes.push('starter automation layer')
@@ -2232,10 +2381,10 @@ function QuoteEstimator() {
       employeeCostLow = Math.max(employeeCostLow, 3000)
       employeeCostHigh = Math.max(employeeCostHigh, 6500)
       if (need !== 'ai') {
-        monthlyLow += 300
-        monthlyHigh += 900
-        upfrontLow += 1500
-        upfrontHigh += 4200
+        monthlyLow += 30
+        monthlyHigh += 90
+        upfrontLow += 150
+        upfrontHigh += 420
       }
       includes.push(quoteOptions.employee.find(([value]) => value === employee)?.[1] ?? 'AI employee')
     }
@@ -2303,7 +2452,7 @@ function QuoteEstimator() {
         </div>
 
         {sourcePage ? (
-          <div className="mb-6 rounded-2xl border border-[#d6b36a]/20 bg-[#d6b36a]/10 p-4 font-mono text-xs uppercase tracking-widest text-[#d6b36a]">
+          <div className="mb-6 rounded-2xl border border-[#10b981]/20 bg-[#10b981]/10 p-4 font-mono text-xs uppercase tracking-widest text-[#10b981]">
             Estimate started from {sourcePage}
           </div>
         ) : null}
@@ -2320,10 +2469,10 @@ function QuoteEstimator() {
                   type="checkbox"
                   checked={automation}
                   onChange={(event) => setAutomation(event.target.checked)}
-                  className="mt-1 h-5 w-5 accent-[#d6b36a]"
+                  className="mt-1 h-5 w-5 accent-[#10b981]"
                 />
                 <span>
-                  <span className="block font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[05 // AUTOMATION ADD-ON]</span>
+                  <span className="block font-mono text-xs uppercase tracking-widest text-[#10b981]">[05 // AUTOMATION ADD-ON]</span>
                   <span className="mt-2 block font-light leading-relaxed text-[#b7afa3]">
                     Include follow-up automation, quote routing, booking logic, or a starter AI workflow.
                   </span>
@@ -2345,7 +2494,7 @@ function QuoteEstimator() {
                   </div>
                   <div>
                     <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Monthly care / ops</p>
-                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.85rem,8vw,2.75rem)] font-extrabold leading-none tracking-normal text-[#d6b36a] [overflow-wrap:anywhere]">{estimate.monthly}</p>
+                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.85rem,8vw,2.75rem)] font-extrabold leading-none tracking-normal text-[#10b981] [overflow-wrap:anywhere]">{estimate.monthly}</p>
                     <p className="mt-2 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{estimate.savings}</p>
                   </div>
                   <div>
@@ -2354,8 +2503,8 @@ function QuoteEstimator() {
                   </div>
                 </div>
                 <p className="mt-6 font-light leading-relaxed text-[#b7afa3]">{estimate.note}</p>
-                <div className="mt-6 rounded-2xl border border-[#d6b36a]/20 bg-[#d6b36a]/10 p-5">
-                  <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[READY TO SEND]</p>
+                <div className="mt-6 rounded-2xl border border-[#10b981]/20 bg-[#10b981]/10 p-5">
+                  <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[READY TO SEND]</p>
                   <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">
                     Send this estimate with your business name, website, service area, and the problem the site needs to solve.
                   </p>
@@ -2363,7 +2512,7 @@ function QuoteEstimator() {
               </div>
 
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">Likely includes</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">Likely includes</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {estimate.includes.map((item) => (
                     <span key={item} className="rounded-xl border border-white/[0.08] bg-white/[0.025] px-3 py-2 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">
@@ -2416,8 +2565,8 @@ function QuoteSegment<T extends string>({
             className={cn(
               'rounded-2xl border p-4 text-left font-display text-lg font-extrabold tracking-tight',
               value === optionValue
-                ? 'border-[#d6b36a]/50 bg-[#d6b36a] text-[#12100d]'
-                : 'border-white/[0.08] bg-[#060606]/70 text-[#f4efe6] hover:border-[#d6b36a]/40',
+                ? 'border-[#10b981]/50 bg-[#10b981] text-[#12100d]'
+                : 'border-white/[0.08] bg-[#060606]/70 text-[#f4efe6] hover:border-[#10b981]/40',
             )}
           >
             {label}
@@ -2457,7 +2606,7 @@ function Blog() {
         <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
           Orbit Websites publishes direct, extractable answers about AI operations websites, local business automation,
           intake systems, proposal automation, and measurable website ROI for Central New Jersey companies.{' '}
-          <Link to="/web-design-central-nj" className="text-[#d6b36a] hover:text-[#f4efe6]">See our Central NJ web design work →</Link>
+          <Link to="/web-design-central-nj" className="text-[#10b981] hover:text-[#f4efe6]">See our Central NJ web design work →</Link>
         </p>
         <BlogTopicClusters />
         <BuyerIntentAnswers compact />
@@ -2646,7 +2795,7 @@ function BlogTopicClusters() {
               <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">{cluster.description}</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+              <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
                 Read cluster
               </Link>
               <Link to={cluster.landing[0]} className="font-mono text-xs uppercase tracking-widest text-[#b7afa3] hover:text-[#f4efe6]">
@@ -2773,7 +2922,7 @@ function BlogPost() {
           <ol className="mt-6 grid gap-4">
             {post.takeaways.map((takeaway, index) => (
               <li key={takeaway} className="grid gap-3 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5 md:grid-cols-[64px_1fr]">
-                <span className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</span>
+                <span className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</span>
                 <span className="text-lg font-light leading-relaxed text-[#b7afa3]">{takeaway}</span>
               </li>
             ))}
@@ -2787,7 +2936,7 @@ function BlogPost() {
             <Label>{`[RELATED ANSWERS // ${cluster.label.toUpperCase()}]`}</Label>
             <p className="mt-3 max-w-2xl font-light leading-relaxed text-[#b7afa3]">{cluster.description}</p>
           </div>
-          <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+          <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
             Open cluster
           </Link>
         </div>
@@ -2800,24 +2949,24 @@ function BlogPost() {
         <BentoCard className="p-6 md:p-8">
           <Label>[ORBIT BOYZZ // CENTRAL NEW JERSEY]</Label>
           <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
-            Orbit Boyzz builds starter, custom, and AI-powered websites for local businesses across Central New Jersey, with starter ranges around $1,500-$3,500.
+            Orbit Boyzz builds starter, custom, and AI-powered websites for local businesses across Central New Jersey, with starter ranges around $150-$400.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             {landingLinks.map(([to, label]) => {
               const trackedTo = to === '/quote' ? quoteHrefForSource(currentPostPath) : to
               return (
-                <Link key={`${trackedTo}-${label}`} to={trackedTo} className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+                <Link key={`${trackedTo}-${label}`} to={trackedTo} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
                   {label} -&gt;
                 </Link>
               )
             })}
-            <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+            <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
               See pricing →
             </Link>
-            <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+            <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
               Our services →
             </Link>
-            <Link to="/web-design-central-nj" className="font-mono text-xs uppercase tracking-widest text-[#d6b36a] hover:text-[#f4efe6]">
+            <Link to="/web-design-central-nj" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
               Web design in Central NJ →
             </Link>
           </div>
@@ -2831,20 +2980,20 @@ function ContactCta() {
   return (
     <section className="px-5 pb-24 md:px-8" id="contact">
       <motion.div {...cardMotion} className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#eee6d8] p-6 text-[#12100d] md:p-10">
-        <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#d6b36a]/40 blur-[90px]" />
+        <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#10b981]/40 blur-[90px]" />
         <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#5c4520]">[COMMISSION // NEXT BUILD]</p>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#5c4520]">[FREE DEMO // NO OBLIGATION]</p>
             <h2 className="mt-6 max-w-4xl font-display text-[clamp(42px,6vw,92px)] font-extrabold leading-[0.9] tracking-tight">
-              Ready to improve your local business website?
+              See your site live before you pay a cent.
             </h2>
             <p className="mt-5 max-w-2xl font-light leading-relaxed text-[#50483d]">
-              Tell us what you do, where you serve, and what customers should do when they land on your site.
+              Book a free 15-minute call. We'll build you a working demo — specific to your business — and you decide if it's right for you.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <PremiumButton href={CALENDAR_LINK} light>Claim Your Free Demo</PremiumButton>
             <PremiumButton href="tel:+16096628052" light>{phone}</PremiumButton>
-            <PremiumButton href={`mailto:${email}`} light>{email}</PremiumButton>
           </div>
         </div>
       </motion.div>
@@ -2901,10 +3050,10 @@ function Footer() {
         <FooterColumn title="[INDUSTRIES]" links={industryLinks} />
         <FooterColumn title="[BUYER ANSWERS]" links={buyerIntentLinks} />
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[CONTACT]</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[CONTACT]</p>
           <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-            <a className="inline-flex min-h-11 items-center hover:text-[#d6b36a]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}>{phone}</a>
-            <a className="inline-flex min-h-11 items-center hover:text-[#d6b36a]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}>{email}</a>
+            <a className="inline-flex min-h-11 items-center hover:text-[#10b981]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}>{phone}</a>
+            <a className="inline-flex min-h-11 items-center hover:text-[#10b981]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}>{email}</a>
           </div>
         </div>
       </div>
@@ -2918,10 +3067,10 @@ function Footer() {
 function FooterColumn({ title, links }: { title: string; links: string[][] }) {
   return (
     <div>
-      <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">{title}</p>
+      <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{title}</p>
       <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
         {links.map(([label, to]) => (
-          <Link key={label} className="inline-flex min-h-11 items-center hover:text-[#d6b36a]" to={to}>
+          <Link key={label} className="inline-flex min-h-11 items-center hover:text-[#10b981]" to={to}>
             {label}
           </Link>
         ))}
@@ -2941,7 +3090,7 @@ function MobileActionBar() {
           href="tel:+16096628052"
           data-conversion="call_click"
           onClick={() => trackHrefConversion('tel:+16096628052', 'Mobile sticky call')}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#d6b36a]/30 bg-[#d6b36a] px-3 font-mono text-[11px] uppercase tracking-widest text-[#12100d]"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#10b981]/30 bg-[#10b981] px-3 font-mono text-[11px] uppercase tracking-widest text-[#12100d]"
         >
           <PhoneCall className="h-4 w-4" strokeWidth={1.8} />
           Call
@@ -3186,7 +3335,7 @@ function WebDesignCentralNJ() {
             {webDesignIncludes.map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
                     <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
                     <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
@@ -3225,7 +3374,7 @@ function WebDesignCentralNJ() {
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[A strong fit if]</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[A strong fit if]</p>
               <ul className="mt-5 grid gap-3">
                 {webDesignFit.map((line) => (
                   <li key={line} className="font-light leading-relaxed text-[#b7afa3]">— {line}</li>
@@ -3265,7 +3414,7 @@ function LocalWebDesignLinks() {
           {localWebDesignLinks.map(([label, to]) => (
             <Link key={to} to={to} className="group block">
               <BentoCard className="h-full p-5">
-                <p className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6] group-hover:text-[#d6b36a]">
+                <p className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6] group-hover:text-[#10b981]">
                   {label}
                 </p>
                 <p className="mt-3 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">
@@ -3316,7 +3465,7 @@ function townLandingFaqs(page: TownWebDesignPageData): LandingFaqItem[] {
   return [
     [
       `How much does web design cost in ${page.town}?`,
-      `A focused starter website for a ${page.town} business usually ranges from $1,500 to $3,500. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
+      `A focused starter website for a ${page.town} business usually ranges from $150 to $400. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
     ],
     [
       `Do you work with businesses near ${page.town}?`,
@@ -3333,7 +3482,7 @@ function industryLandingFaqs(page: IndustryWebDesignPageData): LandingFaqItem[] 
   return [
     [
       `How much does a website cost for a ${page.industryShort.toLowerCase()} company in NJ?`,
-      `A focused starter site for a ${page.industryShort.toLowerCase()} company usually ranges from $1,500 to $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
+      `A focused starter site for a ${page.industryShort.toLowerCase()} company usually ranges from $150 to $400. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
     ],
     [
       `What should a ${page.industryShort.toLowerCase()} website include?`,
@@ -3357,7 +3506,7 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
-            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites usually range from $1,500 to $3,500, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
+            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites usually range from $150 to $400, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
@@ -3383,7 +3532,7 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
                     <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
                     <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
@@ -3403,7 +3552,7 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
               How much does web design cost in {page.town}?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A starter website for a {page.town} local business usually ranges from $1,500 to $3,500
+              A starter website for a {page.town} local business usually ranges from $150 to $400
               for a focused site. AI-powered lead intake, booking logic, routing,
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
               depending on integrations and workflow complexity.
@@ -3430,7 +3579,7 @@ function WebDesignEwingNJ() {
           <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
             Orbit Websites builds hand-coded websites and AI intake systems for Ewing Township
             businesses that need more calls, quote requests, bookings, and qualified leads from
-            local search. Starter website builds usually range from $1,500 to $3,500, with AI intake upgrades
+            local search. Starter website builds usually range from $150 to $400, with AI intake upgrades
             starting around $5,000 when the workflow can prove ROI.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -3457,7 +3606,7 @@ function WebDesignEwingNJ() {
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
                     <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
                     <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
@@ -3477,7 +3626,7 @@ function WebDesignEwingNJ() {
               How much does web design cost in Ewing, NJ?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A starter website for an Ewing, NJ local business usually ranges from $1,500 to $3,500
+              A starter website for an Ewing, NJ local business usually ranges from $150 to $400
               for a focused site. AI-powered lead intake, booking logic, routing,
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
               depending on integrations and workflow complexity.
@@ -3492,7 +3641,7 @@ function WebDesignEwingNJ() {
         items={[
           [
             'How much does web design cost in Ewing, NJ?',
-            'A focused starter website for an Ewing business usually ranges from $1,500 to $3,500. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.',
+            'A focused starter website for an Ewing business usually ranges from $150 to $400. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.',
           ],
           [
             'Do you work with businesses near Ewing?',
@@ -3519,7 +3668,7 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
             className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
           />
           <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
-            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds usually range from $1,500 to $3,500, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
+            {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds usually range from $150 to $400, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
@@ -3545,7 +3694,7 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#d6b36a]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
                     <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
                     <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
@@ -3565,12 +3714,12 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
               How much does a website cost for a {page.industryShort.toLowerCase()} company in NJ?
             </h2>
             <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
-              A starter site for a {page.industryShort.toLowerCase()} company typically ranges from $1,500 to $3,500 for a focused site.
+              A starter site for a {page.industryShort.toLowerCase()} company typically ranges from $150 to $400 for a focused site.
               Projects with AI intake, job-type routing, emergency alert logic, or proposal automation usually run $5,000 to $15,000
               depending on workflow complexity. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of jobs.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/pricing" className="font-display text-lg font-bold text-[#d6b36a] underline underline-offset-4 hover:text-[#f4efe6]">See pricing →</Link>
+              <Link to="/pricing" className="font-display text-lg font-bold text-[#10b981] underline underline-offset-4 hover:text-[#f4efe6]">See pricing →</Link>
               <Link to="/services" className="font-display text-lg font-bold text-[#b7afa3] underline underline-offset-4 hover:text-[#f4efe6]">Our services →</Link>
               <Link to="/web-design-central-nj" className="font-display text-lg font-bold text-[#b7afa3] underline underline-offset-4 hover:text-[#f4efe6]">Web design in Central NJ →</Link>
             </div>
@@ -3681,7 +3830,7 @@ function Contact() {
           <CalendlyEmbed />
           <div className="grid gap-4">
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[Book online]</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[Book online]</p>
               <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">
                 Schedule a free 30-minute consultation on Calendly.
               </p>
@@ -3690,14 +3839,14 @@ function Contact() {
               </div>
             </BentoCard>
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[Call or email]</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[Call or email]</p>
               <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-                <a className="hover:text-[#d6b36a]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Contact call')}>{phone}</a>
-                <a className="hover:text-[#d6b36a]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Contact email')}>{email}</a>
+                <a className="hover:text-[#10b981]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Contact call')}>{phone}</a>
+                <a className="hover:text-[#10b981]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Contact email')}>{email}</a>
               </div>
             </BentoCard>
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#d6b36a]">[Service area]</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[Service area]</p>
               <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">
                 Plainsboro, Princeton, West Windsor Township, and Central New Jersey. Service-area
                 business — no public office address.

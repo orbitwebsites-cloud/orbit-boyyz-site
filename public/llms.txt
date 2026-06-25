@@ -27,7 +27,7 @@ Orbit Websites builds custom local business websites and AI operations systems f
 
 ## Pricing Context
 
-- Starter website ranges commonly begin around $1,500-$3,500.
+- Starter website ranges commonly begin around $150-$400.
 - Premium custom website systems usually start around $3,500.
 - AI operations websites usually start around $5,000 and can rise toward $15,000+ depending on workflow complexity.
 - AI operations retainers are positioned around $750-$2,500 per month when the system replaces measurable administrative work.

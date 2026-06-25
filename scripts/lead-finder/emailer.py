@@ -41,7 +41,7 @@ Rules — follow exactly:
    - HVAC/Plumbing/Electrician: someone needing emergency service searches Google at night and calls whoever shows up first
    - Landscaping/Roofing/Painting: people search before calling for estimates, invisible without a site
    - Dental: new patients Google dentists before booking, can't find you without a site
-5. Sentence 3: The pitch. "I build hand-coded websites for [industry] companies in Central NJ — starts at $3,500, most rank in local search within 60 days."
+5. Sentence 3: The pitch. "I build hand-coded websites for [industry] companies in Central NJ — starts at $150, most rank in local search within 60 days."
 6. Sentence 4: Link only. "More details: {industry_url}"
 7. Sentence 5: Soft CTA. "Worth 15 minutes?" or "Worth a look?"
 8. Signature (exactly as shown, no changes):
