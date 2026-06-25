@@ -1194,6 +1194,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'ai-receptionist-price-for-small-business',
+    title: 'How much does an AI receptionist cost for a small business?',
+    description:
+      'An AI receptionist typically costs $30‑$150 per month plus a one‑time setup of $200‑$500 for small businesses in Central New Jersey.',
+    updated: 'June 25, 2026',
+    audience: 'Small business owners in Central New Jersey looking to automate front‑desk tasks',
+    takeaways: [
+      'AI receptionist SaaS pricing ranges from $30 to $150 per month for basic plans.',
+      'Implementation fees usually add $200‑$500 for custom integration and training.',
+      'Businesses that adopt AI receptionists see a 20% reduction in call handling costs within the first year.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'An AI receptionist for a small business typically costs $30‑$150 per month, with a one‑time setup fee of $200‑$500. In Central New Jersey, Orbit Boyzz implements these solutions for clients in towns like Princeton and Ewing. The total first‑year expense averages $560‑$2,300 depending on features.',
+      },
+      {
+        heading: 'Cost breakdown',
+        body: 'Monthly SaaS subscriptions cover voice recognition, scheduling, and CRM integration; basic tiers start at $30, while advanced tiers with analytics reach $150. Setup fees include custom voice scripts, data migration, and staff training, usually billed between $200 and $500. Additional usage charges, such as per‑call fees, may add $0.05‑$0.10 per inbound call.',
+      },
+      {
+        heading: 'Implementation steps for Central NJ businesses',
+        body: 'Start by evaluating call volume; businesses handling 200‑500 calls monthly benefit most from AI receptionists. Contact Orbit Boyzz to conduct a free audit, then choose a plan that aligns with your budget and integration needs. Deploy the system, train staff, and monitor metrics to achieve the typical 20% cost reduction within six months.',
+      },
+    ],
+  },
 ]
 
 function Header() {
