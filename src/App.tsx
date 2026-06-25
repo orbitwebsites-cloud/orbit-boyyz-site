@@ -26,7 +26,7 @@ import './App.css'
 
 const phone = '609 662 8052'
 const email = 'orbitboyzz@gmail.com'
-const CALENDAR_LINK = 'https://calendly.com/orbitwebsites/30min?back=1'
+const CALENDAR_LINK = 'https://calendly.com/orbitwebsites/30min'
 const spring = { type: 'spring' as const, stiffness: 150, damping: 20 }
 
 type AnalyticsWindow = Window & {
@@ -3795,13 +3795,23 @@ function CalendlyEmbed() {
       <div
         ref={widgetRef}
         className="calendly-inline-widget"
-        data-url={CALENDAR_LINK}
+        data-url="https://calendly.com/orbitwebsites/30min?hide_gdpr_banner=1&background_color=0b0b0b&text_color=f4efe6&primary_color=10b981"
         style={{ minWidth: '320px', height: '700px' }}
       >
-        {/* Calendly loads here client-side. Fallback link for no-JS / crawlers: */}
         <noscript>
           <a href={CALENDAR_LINK}>Book a 30-minute call with Orbit Websites on Calendly</a>
         </noscript>
+      </div>
+      {/* Fallback button in case embed fails to render */}
+      <div className="mt-4 text-center">
+        <a
+          href={CALENDAR_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]"
+        >
+          Open booking page directly →
+        </a>
       </div>
     </div>
   )
