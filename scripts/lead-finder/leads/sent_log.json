@@ -2381,9 +2381,45 @@
       "channel": "call_sheet",
       "category": "Painting",
       "seen_at": "2026-06-22T17:32:41.532169+00:00"
+    },
+    "trentonnjmipmustakascontracting488770010": {
+      "name": "Mustakas Contracting",
+      "channel": "call_sheet",
+      "category": "Contractor",
+      "seen_at": "2026-06-29T16:40:01.732046+00:00"
+    },
+    "enjmiptotalhardwaregardensupply558959869": {
+      "name": "Total Hardware & Garden Supply",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-29T16:40:01.732074+00:00"
+    },
+    "ipnjmiprosadohomeimprovementllc538298165": {
+      "name": "Rosado Home Improvement LLC",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-06-29T16:40:01.732080+00:00"
+    },
+    "kagelsheatingairconditioninginc549966194": {
+      "name": "Kagels Heating Air Conditioning Inc",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-06-29T16:40:01.732084+00:00"
+    },
+    "escomburlingtonnjmiptedspeersons19452177": {
+      "name": "Ted Speer & Sons",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-06-29T16:40:01.732087+00:00"
+    },
+    "scombrownsmillsnjmipplumbing247561214432": {
+      "name": "Plumbing 24 7",
+      "channel": "call_sheet",
+      "category": "Plumbing",
+      "seen_at": "2026-06-29T16:40:01.732091+00:00"
     }
   },
-  "weeks_active": 3,
+  "weeks_active": 4,
   "created_at": "2026-06-13T00:00:00Z",
-  "last_run": "2026-06-22T17:34:41.694870+00:00"
+  "last_run": "2026-06-29T16:41:00.777888+00:00"
 }
