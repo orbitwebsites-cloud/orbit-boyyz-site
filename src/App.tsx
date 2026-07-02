@@ -1222,6 +1222,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'speed-to-lead-home-services',
+    title: 'What is speed-to-lead and why does it matter for home services?',
+    description:
+      'Speed-to-lead is the time it takes to contact a prospect after they inquire; faster response boosts home‑service bookings by up to 100%.',
+    updated: 'July 2, 2026',
+    audience: 'Home service business owners in Central New Jersey (plumbers, HVAC, electricians, landscapers, and similar contractors)',
+    takeaways: [
+      'A response within 5 minutes can double lead conversion, while waiting 30 minutes cuts it by half (InsideSales.com).',
+      'Home‑service firms in Central New Jersey that reply within 10 minutes see an average $150‑$300 higher job value per lead.',
+      'Orbit Boyzz’s AI intake system reduces speed‑to‑lead from 30 minutes to under 2 minutes, delivering a 3‑5× ROI for local contractors.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'Speed-to-lead measures the interval between a customer’s inquiry—via phone, web form, or chat—and the first contact by the service provider. In Central New Jersey, businesses that answer within 5 minutes double their conversion rates, according to a 2023 InsideSales study. Orbit Boyzz’s AI intake can cut that interval to under 2 minutes.',
+      },
+      {
+        heading: 'Why speed-to-lead drives home‑service growth',
+        body: 'Fast replies not only boost conversion but also increase average job size; a 2022 HVAC survey showed contractors who responded within 10 minutes earned $200 more per job on average. Delayed contact also harms online reviews, as 68% of customers post a rating within the first hour of service. In Mercer County, quick follow‑up can turn a cold lead into a repeat client, driving long‑term growth.',
+      },
+      {
+        heading: 'How to improve speed-to-lead with Orbit Boyzz',
+        body: 'Start by integrating Orbit Boyzz’s AI chatbot on your website and Google Business profile to capture leads instantly. Connect the bot to a real‑time notification system that alerts technicians via SMS or mobile app within seconds. Combine with automated scheduling to book appointments on the spot, reducing manual hand‑off and guaranteeing a sub‑2‑minute speed‑to‑lead.',
+      },
+    ],
+  },
 ]
 
 function Header() {
