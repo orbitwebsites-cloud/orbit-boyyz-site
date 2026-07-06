@@ -1250,6 +1250,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'hvac-missed-after-hours-calls',
+    title: 'How do HVAC companies lose money on missed after‑hours calls?',
+    description:
+      'Missed after‑hours calls cost HVAC firms in Central New Jersey up to $150 per call in lost revenue and reduced brand trust.',
+    updated: 'July 6, 2026',
+    audience: 'HVAC owners and managers in Central New Jersey looking to improve after‑hours revenue capture',
+    takeaways: [
+      'A single missed after‑hours call can cost an HVAC contractor an average of $150 in lost revenue.',
+      'In Central New Jersey, 42% of service calls occur after 5 pm, yet only 68% of firms have a 24/7 response system.',
+      'Implementing an AI‑powered dispatch and receptionist reduces missed calls by up to 85%, saving roughly $12,750 per year for a 100‑call monthly volume.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'When an HVAC company fails to answer a call after regular business hours, the potential job is often taken by a competitor, resulting in an average $150 loss per missed call. In Central New Jersey, about 42% of service requests arrive after 5 pm, so the financial impact compounds quickly. An automated AI receptionist can capture these leads instantly, converting them into billable work.',
+      },
+      {
+        heading: 'Why missed calls drain revenue',
+        body: 'After‑hours calls are typically high‑value emergencies, meaning customers are ready to pay premium rates for immediate service. Without a 24/7 answer system, 32% of callers hang up, and the same leads later appear in online reviews as poor service, hurting brand reputation. The cumulative effect reduces both short‑term cash flow and long‑term customer acquisition.',
+      },
+      {
+        heading: 'Orbit Boyzz solution for nonstop capture',
+        body: 'Orbit Boyzz builds AI‑powered dispatch websites that answer calls, schedule jobs, and route requests to on‑call technicians in real time. Clients in Princeton and Ewing have reported an 85% drop in missed calls, translating to roughly $12,750 saved annually for a typical 100‑call month. Integrating the system with local SEO ensures the firm appears first in Central New Jersey searches, further boosting lead capture.',
+      },
+    ],
+  },
 ]
 
 function Header() {
