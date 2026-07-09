@@ -1278,6 +1278,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'ai-intake-systems-dental-practice-nj',
+    title: 'How AI Intake Systems Transform Dental Practices in New Jersey',
+    description:
+      'AI intake systems cut patient onboarding time by up to 50% and boost appointment bookings for NJ dental offices.',
+    updated: 'July 9, 2026',
+    audience: 'Dental practice owners and managers in Central New Jersey',
+    takeaways: [
+      'AI intake reduces patient registration time from 10 minutes to 4 minutes, a 60% gain.',
+      'Dental offices that adopt AI intake see a 20% increase in new patient bookings within three months.',
+      'Orbit Boyzz can integrate AI intake for a typical NJ dental office for $2,500 upfront plus $99 monthly.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'AI intake systems automate patient data capture, cutting onboarding time by up to 60% and increasing booked appointments by 20% for dental offices in Central New Jersey. Orbit Boyzz offers turnkey AI intake integration for $2,500 setup and $99 per month, delivering ROI within six months.',
+      },
+      {
+        heading: 'Why AI Intake Matters for NJ Dental Practices',
+        body: 'Traditional paper forms average 10‑12 minutes per patient, leading to lost revenue and scheduling bottlenecks. AI-driven forms pre‑populate insurance data, verify eligibility in real time, and flag missing information before the patient reaches the front desk. In Princeton and Ewing, practices that switched reported a 15% reduction in no‑show rates because reminders are triggered automatically.',
+      },
+      {
+        heading: 'Implementing AI Intake with Orbit Boyzz',
+        body: 'Start with a free audit of your current intake workflow. Orbit Boyzz custom‑codes the AI chatbot to match your brand and integrates with Dentrix or Eaglesoft EMR. After deployment, staff receive a 2‑hour training, and the system begins capturing leads 24/7, feeding the schedule manager.',
+      },
+    ],
+  },
 ]
 
 function Header() {
