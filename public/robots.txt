@@ -53,4 +53,3 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://orbitboyzz.me/sitemap.xml
-Sitemap: https://orbitboyzz.me/feed.xml

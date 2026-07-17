@@ -1,35 +1,24 @@
-# Pricing - Orbit Websites
+# Orbit Websites pricing and process
 
-Last updated: June 13, 2026
+Last updated: July 17, 2026
 
-## Starter Website Range
+## Website build
 
-- Price: Usually $150-$400 for focused starter websites and refreshes.
-- Best for: Local businesses that need a clean mobile site, clear service pages, contact paths, and basic local SEO foundations without a large automation build.
-- Includes: Strategy call, mobile-first build, basic conversion structure, service copy cleanup, contact links, launch support, and a path to upgrade into booking or AI intake later.
+Each website is quoted after a free project call because the scope depends on the number of pages, content, features, and design needs.
 
-## Premium Website System Build
+- 50% is due after the scope and design direction are approved.
+- Most focused business websites are ready for review within seven days after the first payment and receipt of the required content.
+- The remaining 50% is due after approval and before final handoff or launch.
+- Hosting with Orbit Websites is optional.
 
-- Price: Starts around $3,500 for focused local business sites.
-- Best for: Local businesses that need a website to drive calls, quote requests, bookings, and customer trust.
-- Includes: Custom design, mobile-first layout, conversion copy, service structure, contact paths, local SEO foundations, and launch support.
+## Optional monthly plans
 
-## AI Operations Website Build
+- Site Care: $300 per month for managed hosting, security, backups, and routine content updates.
+- Local Growth: $500 per month for Site Care plus local SEO maintenance and monthly site improvements.
+- Growth Partner: $700 per month for active SEO, content support, priority updates, and managed hosting.
 
-- Price: Custom, typically $5,000-$15,000+ depending on workflow complexity.
-- Best for: HVAC, plumbing, catering, clinics, real estate, and local service businesses with slow intake or high-value missed leads.
-- Includes: Intake logic, qualification flows, database-backed routing, booking/proposal workflows, API integrations, and operational handoff.
+Results depend on traffic, offer quality, service value, and the client's sales process. Orbit Websites does not guarantee revenue or search rankings.
 
-## AI Operations Retainer
+Book a free call: https://calendly.com/orbitwebsites/30min
 
-- Price: $750-$2,500 per month when there is measurable labor or revenue impact.
-- Best for: Businesses replacing administrative overhead or recovering high-intent leads.
-- Includes: Workflow monitoring, iteration, reporting, automation maintenance, routing improvements, and conversion optimization.
-
-## Business Case
-
-- Labor avoided: $35,000-$54,000 per year when replacing receptionist, dispatcher, data-entry, or sales coordinator work.
-- Revenue recovered: $8,000-$25,000 per month in possible upside for businesses with high-intent emergency or corporate leads.
-- Speed-to-lead target: sub-15 seconds for initial response or 180 seconds for proposal-style workflows.
-
-Contact: orbitboyzz@gmail.com or 609 662 8052.
+Email: orbitboyzz@gmail.com
