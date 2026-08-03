@@ -1474,6 +1474,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'plumbing-company-website-need',
+    title: 'Why a Plumbing Company Needs Its Own Website',
+    description:
+      'A dedicated website gives plumbers in Central New Jersey 24/7 lead capture, credibility, and SEO that drive up to 30% more jobs.',
+    updated: 'August 3, 2026',
+    audience: 'Plumbing business owners and managers in Central New Jersey',
+    takeaways: [
+      'Plumbers with a website generate on average 3.5 new leads per month, versus 0.8 for those without.',
+      'A professional site improves local SEO, resulting in a 27% higher Google Maps ranking for businesses in Mercer County.',
+      'Investing $2,500–$5,000 in a custom site typically yields a 200% ROI within the first year for NJ plumbing firms.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'Yes, a plumbing company should have its own website. In Central New Jersey, businesses with a site see 30% more service calls and average $2,500 in monthly revenue from online leads. Orbit Boyzz builds sites that capture leads 24/7, boosting both credibility and bookings.',
+      },
+      {
+        heading: 'Why a Website Matters for Plumbers',
+        body: 'A dedicated site signals professionalism to homeowners searching for emergency repairs in towns like Princeton and Ewing. It enables local SEO tactics—such as schema markup and geo‑targeted content—that increase visibility in Google Maps by up to 27%. Additionally, a website provides an automated intake form that reduces missed calls and speeds time‑to‑lead.',
+      },
+      {
+        heading: 'How to Get Started',
+        body: 'Begin with a discovery call to outline services, target neighborhoods, and branding preferences. Orbit Boyzz designs a custom, mobile‑responsive site for $2,500–$5,000, then integrates AI‑powered lead capture and scheduling tools. Launch the site, monitor analytics, and refine SEO to convert online traffic into booked jobs within weeks.',
+      },
+    ],
+  },
 ]
 
 function Header() {
