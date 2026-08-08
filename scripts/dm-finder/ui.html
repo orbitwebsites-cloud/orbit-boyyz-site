@@ -89,13 +89,13 @@ function renderNiches() {
 }
 
 function render() {
-  const counts = { new:0, messaged:0, replied:0, client:0, no:0 };
+  const counts = { new:0, messaged:0, replied:0, client:0, no:0, hassite:0 };
   state.leads.forEach(l => counts[l.status] = (counts[l.status]||0) + 1);
   document.getElementById('counts').innerHTML =
     Object.entries(counts).map(([k,v]) => `<span class="pill">${k} <b>${v}</b></span>`).join('');
 
   document.getElementById('filters').innerHTML =
-    ['new','messaged','replied','client','no','all'].map(f =>
+    ['new','messaged','replied','client','no','hassite','all'].map(f =>
       `<button class="ghost ${f===filter?'':''}" style="${f===filter?'background:var(--green);color:#fff;border-color:var(--green)':''}" data-f="${f}">${f}</button>`).join('');
   document.querySelectorAll('#filters button').forEach(b =>
     b.onclick = () => { filter = b.dataset.f; render(); });
@@ -106,12 +106,12 @@ function render() {
 
   tb.innerHTML = rows.map(l => `
     <tr class="${l.status!=='new'?'done':''}">
-      <td><div class="name">${esc(l.name)}</div><div class="sub">${esc(l.city||l.address||'')}</div></td>
+      <td><div class="name">${esc(l.name)}</div><div class="sub">${esc(l.city||l.address||'')}${l.possible_site?` · <a href="${l.possible_site}" target="_blank" rel="noreferrer" style="color:#b3261e">may have a site</a>`:''}</div></td>
       <td class="sub">${esc(l.niche)}</td>
       <td class="sub">${esc(l.phone||'')}</td>
       <td>
-        <a class="ig" href="${l.instagram_search}" target="_blank" rel="noreferrer">Instagram</a>
-        <a class="gl" href="${l.google_search}" target="_blank" rel="noreferrer">Google</a>
+        <a class="ig" href="${l.instagram_search}" target="_blank" rel="noreferrer">Open profile</a>
+        <a class="gl" href="${l.google_search}" target="_blank" rel="noreferrer">if wrong</a>
       </td>
       <td>
         <div class="acts">
@@ -119,6 +119,7 @@ function render() {
           <button data-k="${encodeURIComponent(l.key)}" data-s="messaged">Messaged</button>
           <button class="ghost" data-k="${encodeURIComponent(l.key)}" data-s="replied">Replied</button>
           <button class="ghost" data-k="${encodeURIComponent(l.key)}" data-s="no">No</button>
+          <button class="ghost" data-k="${encodeURIComponent(l.key)}" data-s="hassite">Has site</button>
           ${l.status!=='new'?`<span class="st ${l.status}">${l.status}</span>`:''}
         </div>
       </td>

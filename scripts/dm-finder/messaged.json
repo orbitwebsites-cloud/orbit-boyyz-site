@@ -1,1 +1,58 @@
-{}
+{
+  "a2z dental|": {
+    "name": "A2Z Dental",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "replied",
+    "updated": "2026-08-08"
+  },
+  "aladdin furniture|lawrence township": {
+    "name": "Aladdin Furniture",
+    "city": "Lawrence Township",
+    "niche": "Furniture / cabinetry / interiors",
+    "status": "replied",
+    "updated": "2026-08-08"
+  },
+  "acupressure|": {
+    "name": "Acupressure",
+    "city": "",
+    "niche": "Med spa / aesthetics / wellness",
+    "status": "no",
+    "updated": "2026-08-08"
+  },
+  "avanzato jewelers|hamilton": {
+    "name": "Avanzato Jewelers",
+    "city": "Hamilton",
+    "niche": "Jewelry",
+    "status": "messaged",
+    "updated": "2026-08-08"
+  },
+  "bayshore family & cosmetic dentistry|keyport": {
+    "name": "Bayshore Family & Cosmetic Dentistry",
+    "city": "Keyport",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-08"
+  },
+  "blissful bay wellness spa|": {
+    "name": "Blissful Bay Wellness Spa",
+    "city": "",
+    "niche": "Med spa / aesthetics / wellness",
+    "status": "messaged",
+    "updated": "2026-08-08"
+  },
+  "bucks county dry goods|lambertville": {
+    "name": "Bucks County Dry Goods",
+    "city": "Lambertville",
+    "niche": "Furniture / cabinetry / interiors",
+    "status": "messaged",
+    "updated": "2026-08-08"
+  },
+  "buxton's garden center|": {
+    "name": "Buxton's Garden Center",
+    "city": "",
+    "niche": "Landscaping / hardscape",
+    "status": "messaged",
+    "updated": "2026-08-08"
+  }
+}

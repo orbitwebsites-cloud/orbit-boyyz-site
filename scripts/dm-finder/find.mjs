@@ -136,6 +136,12 @@ for (const el of elements) {
   const lat = el.lat ?? el.center?.lat
   const lon = el.lon ?? el.center?.lon
 
+  // DuckDuckGo's !ducky bang jumps straight to the top result, and site: pins it
+  // to Instagram — so this lands on the actual profile, not a search page. The
+  // redirect happens in the browser, so there is nothing to scrape or rate-limit.
+  // Verified 2026-08-08: "Avanzato Jewelers Hamilton NJ" -> instagram.com/avanzatojewelers/
+  const jump = `https://duckduckgo.com/?q=${encodeURIComponent(`!ducky site:instagram.com ${t.name} ${city || 'NJ'}`)}`
+
   rows.push({
     name: t.name,
     niche: NICHES[nicheKey].label,
@@ -143,8 +149,8 @@ for (const el of elements) {
     city,
     address,
     phone: t.phone || t['contact:phone'] || '',
-    instagram_search: `https://www.instagram.com/explore/search/keyword/?q=${q}`,
-    google_search: `https://www.google.com/search?q=${q}+instagram`,
+    instagram_search: jump,
+    google_search: `https://www.google.com/search?q=site:instagram.com+${q}`,
     maps: lat && lon ? `https://www.google.com/maps/search/?api=1&query=${lat},${lon}` : '',
     key,
   })
@@ -153,7 +159,61 @@ for (const el of elements) {
 // High-value niches first, then ones with a phone number (easier to verify they're real)
 const rank = { high: 0, 'medium-high': 1, mixed: 2 }
 rows.sort((a, b) => (rank[a.value] - rank[b.value]) || (b.phone ? 1 : 0) - (a.phone ? 1 : 0) || a.name.localeCompare(b.name))
-const batch = rows.slice(0, limit)
+// OSM having no `website` tag does NOT mean the business has no website — the tag
+// is simply missing on most records. Measured 2026-08-08: of 14 "no website"
+// leads, 4 demonstrably had one. So verify before handing them over.
+//
+// Guessing a domain from the name is noisy in both directions: cannonball-pools.com
+// really is Cannonball Pools, while familydentist.com belongs to someone else
+// entirely. A guess is only trusted when the page carries the business's own phone
+// number or town. Anything weaker is surfaced for a human glance, never dropped.
+const digitsOf = (s) => String(s || '').replace(/\D/g, '').replace(/^1/, '')
+
+function domainGuesses(name) {
+  const clean = name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9 ]/g, '').trim()
+  const stop = new Set(['the', 'and', 'of', 'llc', 'inc', 'co'])
+  const core = clean.split(/\s+/).filter((w) => !stop.has(w))
+  const stems = new Set([core.join(''), core.join('-')])
+  if (core.length > 2) stems.add(core.slice(0, 2).join(''))
+  return [...stems].filter((s) => s.length > 3 && s.length < 40).flatMap((s) => [`${s}.com`, `${s}.net`])
+}
+
+async function siteFor(lead) {
+  for (const host of domainGuesses(lead.name)) {
+    try {
+      const ctrl = new AbortController()
+      const timer = setTimeout(() => ctrl.abort(), 8000)
+      const res = await fetch('https://' + host, { redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } })
+      clearTimeout(timer)
+      if (res.status >= 400) continue
+      const body = await res.text()
+      if (body.length < 600) continue
+      if (/domain (is )?for sale|buy this domain|parked (free|domain)/i.test(body.slice(0, 4000))) continue
+
+      const text = body.replace(/<[^>]+>/g, ' ')
+      const phoneHit = lead.phone && digitsOf(text).includes(digitsOf(lead.phone))
+      const townHit = lead.city && new RegExp(lead.city.replace(/[^a-z ]/gi, ''), 'i').test(body)
+      return { url: res.url, confirmed: Boolean(phoneHit || townHit) }
+    } catch { /* unreachable guess — keep trying */ }
+  }
+  return null
+}
+
+// Verify a bit more than we need, since confirmed ones get dropped.
+const toCheck = rows.slice(0, Math.min(rows.length, Math.ceil(limit * 1.8)))
+process.stdout.write(`Checking ${toCheck.length} for websites OSM doesn't know about`)
+const verified = []
+for (const lead of toCheck) {
+  const site = await siteFor(lead)
+  if (site?.confirmed) { process.stdout.write('x'); continue }   // has a site — not a prospect
+  if (site) lead.possible_site = site.url                        // ambiguous — flag, don't drop
+  process.stdout.write(site ? '?' : '.')
+  verified.push(lead)
+  if (verified.length >= limit) break
+}
+console.log(`\n  ${toCheck.length - verified.length} dropped (site confirmed), ${verified.filter((l) => l.possible_site).length} flagged for a look\n`)
+
+const batch = verified.slice(0, limit)
 
 if (!batch.length) {
   console.log('\nNo matching businesses found — leaving the previous batch untouched.')
@@ -163,7 +223,7 @@ if (!batch.length) {
 
 mkdirSync(OUT_DIR, { recursive: true })
 const date = new Date().toISOString().slice(0, 10)
-const cols = ['name', 'niche', 'city', 'address', 'phone', 'instagram_search', 'google_search', 'maps']
+const cols = ['name', 'niche', 'city', 'address', 'phone', 'possible_site', 'instagram_search', 'google_search', 'maps']
 const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`
 const csv = [cols.join(','), ...batch.map((r) => cols.map((c) => esc(r[c])).join(','))].join('\n')
 const file = join(OUT_DIR, `${date}-dm-batch.csv`)
