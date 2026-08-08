@@ -77,3 +77,16 @@ link as fallbacks. OSM undercounts newer businesses.
 
 `.github/workflows/dm-finder.yml` runs weekly and commits a fresh batch. Because the messaged
 log is committed too, each week's batch excludes everyone already contacted.
+
+## UI (no terminal)
+
+Double-click **`Orbit DM Finder.bat`** in the repo root. A browser opens at
+`http://localhost:4180`. Close the black window to stop it.
+
+- Pick niches as chips, set how many, optionally filter by town, hit **Find leads**
+- Each row has an **Instagram** button (opens their search) and a **Copy DM** button
+  that puts a personalised message on your clipboard
+- Mark **Messaged / Replied / No** — anything marked never reappears
+- Filter tabs across the top: new · messaged · replied · client · no · all
+
+State lives in `messaged.json`, so it survives restarts.

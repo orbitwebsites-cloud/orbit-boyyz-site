@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Orbit DM Finder</title>
+<style>
+  :root{--ink:#111b17;--muted:#66716c;--line:#dce2dd;--paper:#f7f8f4;--card:#fff;--green:#166534;--lime:#c8f56a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
+  header{border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:5}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  .bar{display:flex;align-items:center;gap:16px;padding:14px 0;flex-wrap:wrap}
+  h1{font-size:18px;margin:0;font-weight:800;letter-spacing:-.02em}
+  .counts{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;background:var(--paper)}
+  .pill b{font-weight:700}
+  main{padding:22px 0 60px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:20px}
+  .row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+  label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;font-weight:600}
+  input,select{border:1px solid var(--line);border-radius:8px;padding:9px 11px;font:inherit;background:var(--paper);color:inherit}
+  button{border:0;border-radius:8px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;background:var(--green);color:#fff}
+  button:hover{filter:brightness(1.1)}
+  button.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+  button:disabled{opacity:.5;cursor:default}
+  .niches{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .chip{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;user-select:none;background:var(--paper)}
+  .chip.on{background:var(--green);color:#fff;border-color:var(--green)}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:11px 12px;border-bottom:1px solid var(--line)}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+  tr:last-child td{border-bottom:0}
+  tr.done{opacity:.45}
+  .name{font-weight:600}
+  .sub{font-size:12px;color:var(--muted)}
+  a.ig{display:inline-block;background:var(--lime);color:var(--ink);padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none}
+  a.gl{font-size:12px;color:var(--muted);margin-left:8px}
+  .acts{display:flex;gap:6px;flex-wrap:wrap}
+  .acts button{padding:5px 10px;font-size:12px}
+  .st{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  .st.messaged{color:var(--muted)} .st.replied{color:var(--green)} .st.client{color:var(--green)} .st.no{color:#b3261e}
+  .empty{padding:40px;text-align:center;color:var(--muted)}
+  #log{white-space:pre-wrap;font:12px ui-monospace,monospace;color:var(--muted);margin-top:10px;max-height:130px;overflow:auto}
+  .filters{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="bar">
+  <h1>Orbit DM Finder</h1>
+  <div class="counts" id="counts"></div>
+</div></div></header>
+
+<main class="wrap">
+  <div class="panel">
+    <div class="row">
+      <div><label>How many</label><input id="limit" type="number" value="40" min="5" max="200" style="width:90px"></div>
+      <div><label>Town (optional)</label><input id="town" placeholder="e.g. Hamilton" style="width:170px"></div>
+      <button id="find">Find leads</button>
+      <button class="ghost" id="refresh">Refresh</button>
+    </div>
+    <div class="niches" id="niches"></div>
+    <div id="log"></div>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <table><thead><tr>
+    <th style="width:30%">Business</th><th>Niche</th><th>Phone</th><th style="width:22%">Find them</th><th style="width:26%">Status</th>
+  </tr></thead><tbody id="rows"></tbody></table>
+</main>
+
+<script>
+const DM = (n, c) => `hey — noticed ${n} doesn't have a website up. i build sites for local businesses around ${c || 'here'}, usually done in about a week. happy to mock up a homepage for you free so you can actually see it before deciding anything. want me to?`;
+
+let state = { leads: [], niches: [] };
+let filter = 'new';
+
+async function load() {
+  state = await (await fetch('/api/state')).json();
+  if (!document.querySelector('#niches .chip')) renderNiches();
+  render();
+}
+
+function renderNiches() {
+  document.getElementById('niches').innerHTML = state.niches
+    .map(n => `<span class="chip ${n.on?'on':''}" data-k="${n.key}">${n.label} <span style="opacity:.6">${n.volume}</span></span>`).join('');
+  document.querySelectorAll('#niches .chip').forEach(c =>
+    c.onclick = () => c.classList.toggle('on'));
+}
+
+function render() {
+  const counts = { new:0, messaged:0, replied:0, client:0, no:0 };
+  state.leads.forEach(l => counts[l.status] = (counts[l.status]||0) + 1);
+  document.getElementById('counts').innerHTML =
+    Object.entries(counts).map(([k,v]) => `<span class="pill">${k} <b>${v}</b></span>`).join('');
+
+  document.getElementById('filters').innerHTML =
+    ['new','messaged','replied','client','no','all'].map(f =>
+      `<button class="ghost ${f===filter?'':''}" style="${f===filter?'background:var(--green);color:#fff;border-color:var(--green)':''}" data-f="${f}">${f}</button>`).join('');
+  document.querySelectorAll('#filters button').forEach(b =>
+    b.onclick = () => { filter = b.dataset.f; render(); });
+
+  const rows = state.leads.filter(l => filter === 'all' || l.status === filter);
+  const tb = document.getElementById('rows');
+  if (!rows.length) { tb.innerHTML = `<tr><td colspan="5" class="empty">Nothing here. Hit “Find leads”.</td></tr>`; return; }
+
+  tb.innerHTML = rows.map(l => `
+    <tr class="${l.status!=='new'?'done':''}">
+      <td><div class="name">${esc(l.name)}</div><div class="sub">${esc(l.city||l.address||'')}</div></td>
+      <td class="sub">${esc(l.niche)}</td>
+      <td class="sub">${esc(l.phone||'')}</td>
+      <td>
+        <a class="ig" href="${l.instagram_search}" target="_blank" rel="noreferrer">Instagram</a>
+        <a class="gl" href="${l.google_search}" target="_blank" rel="noreferrer">Google</a>
+      </td>
+      <td>
+        <div class="acts">
+          <button class="ghost" data-copy="${encodeURIComponent(DM(l.name, l.city))}">Copy DM</button>
+          <button data-k="${encodeURIComponent(l.key)}" data-s="messaged">Messaged</button>
+          <button class="ghost" data-k="${encodeURIComponent(l.key)}" data-s="replied">Replied</button>
+          <button class="ghost" data-k="${encodeURIComponent(l.key)}" data-s="no">No</button>
+          ${l.status!=='new'?`<span class="st ${l.status}">${l.status}</span>`:''}
+        </div>
+      </td>
+    </tr>`).join('');
+
+  tb.querySelectorAll('[data-copy]').forEach(b => b.onclick = async () => {
+    await navigator.clipboard.writeText(decodeURIComponent(b.dataset.copy));
+    b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy DM', 1200);
+  });
+  tb.querySelectorAll('[data-s]').forEach(b => b.onclick = async () => {
+    await fetch('/api/status', { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ key: decodeURIComponent(b.dataset.k), status: b.dataset.s }) });
+    load();
+  });
+}
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById('find').onclick = async (e) => {
+  const btn = e.target; btn.disabled = true; btn.textContent = 'Searching…';
+  const niches = [...document.querySelectorAll('#niches .chip.on')].map(c => c.dataset.k);
+  const r = await (await fetch('/api/find', { method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ niches, limit: +document.getElementById('limit').value, town: document.getElementById('town').value.trim() }) })).json();
+  document.getElementById('log').textContent = r.output || '';
+  btn.disabled = false; btn.textContent = 'Find leads';
+  filter = 'new'; load();
+};
+document.getElementById('refresh').onclick = load;
+load();
+</script>
+</body>
+</html>
