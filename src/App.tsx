@@ -3,8 +3,10 @@ import { Link, NavLink, Route, Routes, useLocation, useParams } from 'react-rout
 import { motion, type Variants } from 'framer-motion'
 import {
   Activity,
+  ArrowRight,
   ArrowUpRight,
   BookOpen,
+  Check,
   CalendarClock,
   DatabaseZap,
   ExternalLink,
@@ -12,11 +14,10 @@ import {
   MapPin,
   Menu,
   PhoneCall,
-  Quote,
   Search,
   Sparkles,
+  TrendingUp,
   Workflow,
-  X,
 } from 'lucide-react'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
@@ -1504,92 +1505,165 @@ export const blogPosts = [
   },
 ]
 
+function trackClick(label: string, href: string) {
+  if (typeof window === 'undefined') return
+  const analyticsWindow = window as AnalyticsWindow
+  const payload = { event_category: 'lead', label, href, page_path: window.location.pathname }
+  analyticsWindow.dataLayer = analyticsWindow.dataLayer ?? []
+  analyticsWindow.dataLayer.push({ event: 'cta_click', ...payload })
+  analyticsWindow.gtag?.('event', 'cta_click', payload)
+}
+
+const showcaseProjects = [
+  {
+    name: 'Weichert Princeton Pages',
+    category: 'Real estate',
+    headline: 'Find your next home.',
+    description: 'A focused local property experience built to make listings and contact options easy to find.',
+    url: 'https://weichert-princeton-pages.vercel.app/',
+  },
+  {
+    name: 'Real Estate Website',
+    category: 'Property services',
+    headline: 'Move with confidence.',
+    description: 'A modern service website with clear navigation, trust signals, and direct lead paths.',
+    url: 'https://real-estate1-tau.vercel.app/',
+  },
+  {
+    name: 'Grand Treats by Tony',
+    category: 'Specialty food',
+    headline: 'Made for sweet moments.',
+    description: 'A warm, product-led website that helps customers understand the brand and get in touch.',
+    url: 'https://grandtreatsbytony.com/',
+  },
+]
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Book a call',
+    copy: 'Choose a time that works. The first conversation is free and focused on what your business needs.',
+  },
+  {
+    number: '02',
+    title: 'Talk directly with us',
+    copy: 'You speak personally with the people building your site—no sales handoff and no guessing.',
+  },
+  {
+    number: '03',
+    title: 'Choose the direction',
+    copy: 'Show us websites you like, choose from our previous work, or let us create a direction for you.',
+  },
+  {
+    number: '04',
+    title: 'Pay 50% to begin',
+    copy: 'Once the scope and direction are clear, the first half reserves your build and starts the seven-day sprint.',
+  },
+  {
+    number: '05',
+    title: 'Launch in 7 days',
+    copy: 'Approve the finished site, pay the remaining 50%, and receive your website. Hosting with us is optional.',
+  },
+]
+
+const carePlans = [
+  {
+    price: '$300',
+    name: 'Site Care',
+    copy: 'For businesses that want us to keep the website online, protected, and handled.',
+    features: ['Managed hosting', 'Security and backups', 'Routine content updates'],
+  },
+  {
+    price: '$500',
+    name: 'Local Growth',
+    copy: 'For businesses that also want steady improvements to local visibility and conversions.',
+    features: ['Everything in Site Care', 'Local SEO maintenance', 'Monthly site improvements'],
+    featured: true,
+  },
+  {
+    price: '$700',
+    name: 'Growth Partner',
+    copy: 'For businesses that want active SEO, content support, and closer ongoing attention.',
+    features: ['Everything in Local Growth', 'Ongoing SEO and content', 'Priority updates and support'],
+  },
+]
+
+function Logo() {
+  return (
+    <Link className="logo" to="/" aria-label="Orbit Websites home">
+      <img src="/orbit-logo.svg" alt="" width="38" height="38" />
+      <span>ORBIT<em>WEBSITES</em></span>
+    </Link>
+  )
+}
+
+function PrimaryLink({ href, children, label = 'Primary call to action' }: { href: string; children: ReactNode; label?: string }) {
+  const external = href.startsWith('http')
+  return (
+    <a
+      className="button button-primary"
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noreferrer' : undefined}
+      onClick={() => trackClick(label, href)}
+    >
+      {children}
+      <ArrowRight size={18} aria-hidden="true" />
+    </a>
+  )
+}
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const navItems = [
+  const close = () => setMenuOpen(false)
+
+  const navItems: Array<[string, string]> = [
     ['Home', '/'],
     ['About', '/about'],
     ['Services', '/services'],
     ['Pricing', '/pricing'],
-    ['Quote', '/quote'],
-    ['Contact', '/contact'],
     ['Projects', '/projects'],
     ['Blog', '/blog'],
     ['FAQ', '/faq'],
+    ['Contact', '/contact'],
   ]
 
   return (
-    <motion.header
-      initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={spring}
-      className="fixed left-1/2 top-4 z-50 w-[calc(100%-24px)] max-w-7xl -translate-x-1/2 rounded-2xl border border-white/[0.08] bg-[#060606]/76 px-3 py-3 text-[#f4efe6] backdrop-blur-2xl md:top-6 md:px-4"
-    >
-      <div className="grid grid-cols-[1fr_auto] items-center gap-3 md:grid-cols-[1fr_auto_1fr]">
-        <Link to="/" onClick={() => setMenuOpen(false)} className="flex min-w-0 items-center gap-3">
-          <img src="/orbit-logo.png" alt="Orbit Websites" width={40} height={40} className="h-9 w-auto shrink-0 rounded-sm object-contain sm:h-10" />
-        </Link>
-        <nav className="hidden items-center rounded-xl border border-white/[0.08] bg-white/[0.025] p-1 lg:flex">
+    <header className="site-header">
+      <div className="nav-wrap">
+        <Logo />
+        <button
+          className="menu-button"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((value) => !value)}
+        >
+          <Menu size={22} />
+        </button>
+        <nav className={menuOpen ? 'nav-links nav-links-open' : 'nav-links'} aria-label="Main navigation">
           {navItems.map(([label, to]) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                `rounded-lg px-4 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
-                  isActive ? 'bg-[#f4efe6] text-[#12100d]' : 'text-[#b7afa3] hover:text-[#10b981]'
-                }`
-              }
-            >
+            <NavLink key={to} to={to} end={to === '/'} onClick={close}>
               {label}
             </NavLink>
           ))}
+          <a
+            className="nav-cta"
+            href={CALENDAR_LINK}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => {
+              close()
+              trackClick('Header booking', CALENDAR_LINK)
+            }}
+          >
+            Book a call
+          </a>
         </nav>
-        <div className="flex items-center gap-2 justify-self-end">
-          <motion.a
-            whileTap={{ scale: 0.98 }}
-            transition={spring}
-            href="tel:+16096628052"
-            data-conversion="call_click"
-            onClick={() => trackHrefConversion('tel:+16096628052', 'Header call')}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.035] px-4 py-2 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6] hover:border-[#10b981]/45 hover:text-[#10b981]"
-          >
-            <PhoneCall className="h-3.5 w-3.5" strokeWidth={1.6} />
-            Call
-          </motion.a>
-          <button
-            type="button"
-            onClick={() => setMenuOpen((open) => !open)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            className="inline-flex items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] p-2.5 text-[#f4efe6] hover:border-[#10b981]/45 hover:text-[#10b981] lg:hidden"
-          >
-            {menuOpen ? <X className="h-5 w-5" strokeWidth={1.6} /> : <Menu className="h-5 w-5" strokeWidth={1.6} />}
-          </button>
-        </div>
       </div>
-
-      {menuOpen && (
-        <nav className="mt-3 grid gap-1 border-t border-white/[0.08] pt-3 lg:hidden">
-          {navItems.map(([label, to]) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => setMenuOpen(false)}
-              className={({ isActive }) =>
-                `rounded-lg px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors ${
-                  isActive ? 'bg-[#f4efe6] text-[#12100d]' : 'text-[#b7afa3] hover:bg-white/[0.04] hover:text-[#10b981]'
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
-      )}
-    </motion.header>
+    </header>
   )
 }
-
 function Label({ children }: { children: string }) {
   return <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#10b981]">{children}</p>
 }
@@ -1649,251 +1723,198 @@ function PremiumButton({ href, children, light = false }: { href: string; childr
 function Home() {
   return (
     <main>
-      <section className="relative min-h-screen overflow-hidden px-5 pb-8 pt-36 md:px-8 md:pt-44">
-        <div className="absolute left-1/2 top-0 h-[540px] w-[780px] -translate-x-1/2 rounded-full bg-[#10b981]/12 blur-[140px]" />
-        <div className="mx-auto grid max-w-7xl gap-8">
-          <div className="grid gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
-            <div>
-              <Label>[ORBIT WEBSITES // CENTRAL NJ PERFORMANCE STUDIO]</Label>
-              <TextReveal
-                lines={['We hand-code websites', 'that land more jobs', 'for local businesses.']}
-                className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,126px)] font-extrabold leading-[0.84] tracking-tight text-[#f4efe6]"
-              />
-            </div>
-            <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ ...spring, delay: 0.45 }}>
-              <p className="max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
-                No slow templates. No WordPress bloat. Just blazing-fast Next.js performance built to turn mobile visitors into
-                calls, bookings, and booked revenue — for local service businesses across Central NJ.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <PremiumButton href={CALENDAR_LINK}>Claim Your Free Live Demo</PremiumButton>
-                <PremiumButton href="tel:+16096628052">Call {phone}</PremiumButton>
-              </div>
-            </motion.div>
+      <section className="hero section-wrap">
+        <div className="hero-copy">
+          <div className="eyebrow"><span /> Custom websites for growing businesses</div>
+          <h1>A website you’re proud to send people to. <strong>Ready in 7 days.</strong></h1>
+          <p className="hero-lede">
+            Meet directly with our team, choose a direction you love, and receive a polished website built around your business—without paying the full price upfront.
+          </p>
+          <div className="hero-actions">
+            <PrimaryLink href={CALENDAR_LINK} label="Hero booking">Book your free call</PrimaryLink>
+            <a className="button button-secondary" href="#work">See previous work</a>
           </div>
+          <div className="hero-proof" aria-label="Service highlights">
+            <span><Check size={16} /> 50% to start</span>
+            <span><Check size={16} /> 7-day build</span>
+            <span><Check size={16} /> You approve before final payment</span>
+          </div>
+        </div>
 
-          <div className="grid gap-4 lg:grid-cols-12">
-            <BentoCard className="min-h-[500px] p-4 lg:col-span-8">
-              <div className="relative flex min-h-[468px] overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1700&q=80"
-                  alt="Local restaurant interior representing businesses served by Orbit Websites."
-                  width={1700}
-                  height={1133}
-                  fetchPriority="high"
-                  className="absolute inset-0 h-full w-full object-cover opacity-70"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/30 to-transparent" />
-                <div className="relative mt-auto grid gap-4 p-5 md:grid-cols-[1fr_auto] md:items-end md:p-7">
-                  <div>
-                    <Label>[PERFORMANCE FIRST // RESULTS DRIVEN]</Label>
-                    <h2 className="mt-4 max-w-3xl font-display text-[clamp(34px,5vw,72px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
-                      Hand-coded for speed. Built to turn mobile traffic into booked jobs.
-                    </h2>
-                  </div>
-                  <span className="rounded-2xl border border-white/[0.1] bg-[#f4efe6] px-5 py-4 font-mono text-xs uppercase tracking-widest text-[#12100d]">
-                    Live in 48 hours
-                  </span>
-                </div>
-              </div>
-            </BentoCard>
-
-            <div className="grid gap-4 lg:col-span-4">
-              {[
-                ['<1s', 'Typical mobile load time'],
-                ['48h', 'Live after demo approval'],
-                ['$150–$400', 'Starter build, no retainer trap'],
-              ].map(([metric, copy]) => (
-                <BentoCard key={copy} className="p-6">
-                  <p className="font-editorial text-7xl leading-none tracking-wide text-[#f4efe6]">{metric}</p>
-                  <p className="mt-3 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{copy}</p>
-                </BentoCard>
-              ))}
+        <div className="hero-card" aria-label="The Orbit Websites promise">
+          <div className="hero-card-top">
+            <span>THE ORBIT PROCESS</span>
+            <span className="status"><i /> Accepting projects</span>
+          </div>
+          <div className="browser-preview">
+            <div className="browser-bar"><i /><i /><i /></div>
+            <div className="preview-content">
+              <span>YOUR BUSINESS</span>
+              <h2>Clear. Credible.<br />Built to convert.</h2>
+              <div className="preview-line preview-line-long" />
+              <div className="preview-line" />
+              <div className="preview-button">Get a quote</div>
             </div>
+          </div>
+          <p>Designed personally. Built quickly. Owned by you.</p>
+        </div>
+      </section>
+
+      <section className="value-strip" aria-label="Project terms">
+        <div><strong>7 days</strong><span>Typical build sprint</span></div>
+        <div><strong>50 / 50</strong><span>Simple payment split</span></div>
+        <div><strong>$300–$700</strong><span>Optional monthly care</span></div>
+        <div><strong>1 team</strong><span>From first call to launch</span></div>
+      </section>
+
+      <section className="section section-wrap" id="savings">
+        <div className="section-heading split-heading">
+          <div>
+            <div className="eyebrow"><span /> The business case</div>
+            <h2>A clearer website can pay for itself.</h2>
+          </div>
+          <p>Your website should make it easier for customers to trust you, understand your offer, and take the next step.</p>
+        </div>
+        <div className="savings-card">
+          <div className="savings-example">
+            <TrendingUp size={26} />
+            <p>Simple example</p>
+            <strong>2 extra customers × $500</strong>
+            <span>= $1,000 in additional monthly revenue</span>
+          </div>
+          <div className="savings-copy">
+            <h3>Stop losing good customers to a confusing first impression.</h3>
+            <p>
+              A professional site can save staff time, reduce repeated questions, and help more visitors contact you. The exact return depends on your traffic, service value, and sales process—we never promise results we cannot prove.
+            </p>
+            <ul>
+              <li><Check size={17} /> Clear services and pricing direction</li>
+              <li><Check size={17} /> Faster quote, call, or booking paths</li>
+              <li><Check size={17} /> Less time explaining the basics manually</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <AboutSection />
-      <PerformanceBentoGrid />
-      <PricingTiers />
-      <ServicesPreview />
-      <QuoteEstimator />
-      <BuyerIntentAnswers />
-      <ROISection />
-      <BlogPreview />
-      <WorkPreview />
-      <Testimonial />
-      <AreasSection />
-      <FAQPreview />
+      <section className="section section-wrap" id="work">
+        <div className="section-heading split-heading">
+          <div>
+            <div className="eyebrow"><span /> Previous work</div>
+            <h2>Find a direction that feels like you.</h2>
+          </div>
+          <p>Use our previous projects as inspiration, bring examples you already love, or let us create a fresh direction from scratch.</p>
+        </div>
+        <div className="project-grid">
+          {showcaseProjects.map((project, index) => (
+            <a
+              className="project-card"
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              key={project.name}
+              onClick={() => trackClick('Project: ' + project.name, project.url)}
+            >
+              <div className={'project-visual project-visual-' + (index + 1)}>
+                <div className="mini-browser">
+                  <div className="mini-nav"><span>{project.name}</span><i /></div>
+                  <div className="mini-hero"><small>{project.category}</small><b>{project.headline}</b><i /></div>
+                </div>
+              </div>
+              <div className="project-meta">
+                <div><span>{project.category}</span><h3>{project.name}</h3></div>
+                <ExternalLink size={20} />
+              </div>
+              <p>{project.description}</p>
+            </a>
+          ))}
+        </div>
+        <p className="pricing-note">
+          <Link to="/projects">See every project and case study</Link>
+        </p>
+      </section>
+
+      <section className="section process-section" id="process">
+        <div className="section-wrap">
+          <div className="section-heading process-heading">
+            <div className="eyebrow light"><span /> How it works</div>
+            <h2>From first conversation to finished website.</h2>
+            <p>No confusing agency process. You know what happens, when you pay, and what you receive.</p>
+          </div>
+          <div className="process-list">
+            {processSteps.map((step) => (
+              <article className="process-step" key={step.number}>
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-wrap" id="care">
+        <div className="section-heading centered-heading">
+          <div className="eyebrow"><span /> After launch</div>
+          <h2>Own the site—or let us keep growing it.</h2>
+          <p>Hosting is optional. Choose ongoing support only if it makes sense for your business.</p>
+        </div>
+        <div className="plan-grid">
+          {carePlans.map((plan) => (
+            <article className={plan.featured ? 'plan-card plan-featured' : 'plan-card'} key={plan.name}>
+              {plan.featured ? <span className="popular">Most popular</span> : null}
+              <p className="plan-name">{plan.name}</p>
+              <div className="plan-price"><strong>{plan.price}</strong><span>/month</span></div>
+              <p>{plan.copy}</p>
+              <ul>
+                {plan.features.map((feature) => <li key={feature}><Check size={17} /> {feature}</li>)}
+              </ul>
+              <a
+                href={CALENDAR_LINK}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackClick('Plan: ' + plan.name, CALENDAR_LINK)}
+              >
+                Discuss this plan <ArrowRight size={16} />
+              </a>
+            </article>
+          ))}
+        </div>
+        <p className="pricing-note">
+          Your website build is quoted separately after the call. Monthly plans begin only after launch and only if you choose one. <Link to="/pricing">See full pricing</Link>
+        </p>
+      </section>
+
+      <section className="section section-wrap faq-section">
+        <div className="section-heading">
+          <div className="eyebrow"><span /> Common questions</div>
+          <h2>The important details, upfront.</h2>
+        </div>
+        <div className="faq-list">
+          {faqs.slice(0, 6).map(([question, answer]) => (
+            <details key={question}>
+              <summary>{question}<span>+</span></summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+        <p className="pricing-note">
+          <Link to="/faq">Read all questions</Link>
+        </p>
+      </section>
+
+      <section className="final-cta section-wrap">
+        <div>
+          <div className="eyebrow light"><span /> Start your project</div>
+          <h2>Let’s build a website your business deserves.</h2>
+          <p>Book a free call, tell us what you need, and speak directly with the team that will build it.</p>
+        </div>
+        <PrimaryLink href={CALENDAR_LINK} label="Final booking">Book your free call</PrimaryLink>
+      </section>
     </main>
   )
 }
 
-function PerformanceBentoGrid() {
-  return (
-    <section className="px-5 pb-24 md:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10">
-          <Label>[WHY HAND-CODED // THE PERFORMANCE EDGE]</Label>
-          <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
-            Why your next site should never be built on a template.
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          <BentoCard className="p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[01 // SPEED]</p>
-            <p className="mt-6 font-editorial text-[clamp(54px,8vw,96px)] leading-none tracking-wide text-[#f4efe6]">⚡ 100</p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Mobile performance score</p>
-            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
-              If your site takes more than 3 seconds to load, you lose over half your mobile visitors before they ever see your phone number.
-            </p>
-          </BentoCard>
-          <BentoCard className="p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[02 // BOOKING]</p>
-            <p className="mt-6 font-editorial text-[clamp(54px,8vw,96px)] leading-none tracking-wide text-[#f4efe6]">1-tap</p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Quote capture</p>
-            <div className="mt-5 rounded-xl border border-white/[0.08] bg-[#060606]/70 p-4">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-[#10b981]">Instant Quote Form</p>
-              <div className="mt-3 grid gap-2">
-                <div className="flex h-7 items-center rounded-lg bg-white/[0.06] px-3">
-                  <span className="font-mono text-[10px] text-[#b7afa3]">Your name</span>
-                </div>
-                <div className="flex h-7 items-center rounded-lg bg-white/[0.06] px-3">
-                  <span className="font-mono text-[10px] text-[#b7afa3]">Service needed</span>
-                </div>
-                <div className="flex h-7 items-center justify-center rounded-lg bg-[#10b981] px-3">
-                  <span className="font-mono text-[10px] font-bold text-[#060606]">Get My Free Quote →</span>
-                </div>
-              </div>
-            </div>
-          </BentoCard>
-          <BentoCard className="p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[03 // LOCAL SEO]</p>
-            <p className="mt-6 font-editorial text-[clamp(54px,8vw,96px)] leading-none tracking-wide text-[#f4efe6]">#1</p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Town-level search ranking</p>
-            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
-              Clean programmatic metadata, local schema markup, and prerendered pages that rank natively in town searches — no SEO agency required.
-            </p>
-          </BentoCard>
-        </div>
-      </div>
-    </section>
-  )
-}
 
-function PricingTiers() {
-  return (
-    <section className="px-5 pb-24 md:px-8" id="pricing">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10">
-          <Label>[PRICING // TRANSPARENT + SIMPLE]</Label>
-          <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
-            No surprises. No retainer traps.
-          </h2>
-        </div>
-
-        <motion.div {...cardMotion} className="mb-4 overflow-hidden rounded-2xl border border-[#10b981]/40 bg-[#10b981]/10 p-5 md:p-6">
-          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#10b981]/50 bg-[#10b981]/20 px-3 py-1">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-[#10b981]" />
-                <span className="font-mono text-[10px] uppercase tracking-widest text-[#10b981]">Limited — 5 spots only</span>
-              </div>
-              <p className="mt-3 font-display text-[clamp(22px,4vw,40px)] font-extrabold leading-tight tracking-tight text-[#f4efe6]">
-                Founding Client Deal: <span className="text-[#10b981]">$0 Setup / $99 per month</span>
-              </p>
-              <p className="mt-2 max-w-2xl font-light leading-relaxed text-[#b7afa3]">
-                We're building our local case study portfolio. 5 businesses get a full hand-coded Next.js website at zero upfront cost — in exchange for an honest review and permission to feature your results.
-              </p>
-            </div>
-            <PremiumButton href={CALENDAR_LINK}>Claim a Spot</PremiumButton>
-          </div>
-        </motion.div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          <BentoCard className="p-6 md:p-8">
-            <Label>[TIER 1 // STARTER PACKAGE]</Label>
-            <p className="mt-6 font-display text-[clamp(38px,6vw,72px)] font-extrabold leading-none tracking-tight text-[#f4efe6]">$150–$400</p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#10b981]">Upfront setup</p>
-            <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">
-              + $100–$300<span className="text-lg font-normal text-[#b7afa3]">/mo</span>
-            </p>
-            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
-              A complete, hand-coded performance website for local service businesses that need more calls and bookings from mobile search.
-            </p>
-            <div className="mt-6 grid gap-2">
-              {[
-                '100% hand-coded Next.js — zero templates',
-                'Blazing-fast mobile-first performance',
-                'Automated quote & booking forms',
-                'Local SEO foundations built in',
-                'Global hosting + security included',
-                'Unlimited text & photo updates via text',
-              ].map((feature) => (
-                <div key={feature} className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-[#060606]/50 px-4 py-3">
-                  <span className="mt-0.5 shrink-0 text-[#10b981]">✓</span>
-                  <span className="font-light text-[#b7afa3]">{feature}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <PremiumButton href={CALENDAR_LINK}>Book a Free Demo Call</PremiumButton>
-            </div>
-          </BentoCard>
-
-          <BentoCard className="p-6 md:p-8">
-            <Label>[TIER 2 // ENTERPRISE CUSTOM BUILD]</Label>
-            <p className="mt-6 font-display text-[clamp(38px,6vw,72px)] font-extrabold leading-none tracking-tight text-[#f4efe6]">$3,500+</p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[#10b981]">Custom scoped</p>
-            <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">
-              For businesses that need advanced systems — automated intake, real-time pricing engines, CRM integrations, and scaling automation workflows.
-            </p>
-            <div className="mt-6 grid gap-2">
-              {[
-                'Everything in Starter, plus:',
-                'Instant booking & proposal automation',
-                'AI-powered lead intake & triage',
-                'Custom API & CRM integrations',
-                'Database-backed pricing workflows',
-                'Priority build timeline + dedicated support',
-              ].map((feature) => (
-                <div key={feature} className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-[#060606]/50 px-4 py-3">
-                  <span className="mt-0.5 shrink-0 text-[#10b981]">✓</span>
-                  <span className="font-light text-[#b7afa3]">{feature}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <PremiumButton href={CALENDAR_LINK}>Discuss Enterprise Build</PremiumButton>
-            </div>
-          </BentoCard>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function BlogPreview() {
-  return (
-    <section className="px-5 py-24 md:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <div>
-            <Label>[AEO // ANSWER LIBRARY]</Label>
-            <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
-              Direct answers AI systems can quote when local owners ask what to build.
-            </h2>
-          </div>
-          <Link to="/blog" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
-            Read posts
-          </Link>
-        </div>
-        <BlogGrid limit={3} />
-      </div>
-    </section>
-  )
-}
 
 function BlogGrid({ limit }: { limit?: number }) {
   const posts = typeof limit === 'number' ? blogPosts.slice(0, limit) : blogPosts
@@ -2044,26 +2065,6 @@ function ServicesPreview() {
   )
 }
 
-function WorkPreview() {
-  return (
-    <section className="px-5 py-24 md:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_0.55fr_auto] lg:items-end">
-          <h2 className="font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
-            Previous Orbit Websites projects, upgraded for a premium studio.
-          </h2>
-          <p className="font-light leading-relaxed text-[#b7afa3]">
-            Live examples for real estate, local service, and specialty food businesses from the original portfolio.
-          </p>
-          <Link to="/projects" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
-            View projects
-          </Link>
-        </div>
-        <ProjectGrid limit={3} />
-      </div>
-    </section>
-  )
-}
 
 function ProjectGrid({ limit }: { limit?: number }) {
   const items = typeof limit === 'number' ? legacyProjects.slice(0, limit) : legacyProjects
@@ -2102,32 +2103,6 @@ function ProjectGrid({ limit }: { limit?: number }) {
   )
 }
 
-function Testimonial() {
-  return (
-    <section className="px-5 py-24 md:px-8">
-      <BentoCard className="mx-auto max-w-7xl p-6 md:p-10">
-        <Quote className="h-9 w-9 text-[#10b981]" strokeWidth={1.4} />
-        <blockquote className="mt-8 max-w-5xl font-display text-[clamp(34px,5vw,72px)] font-extrabold leading-[0.95] tracking-tight text-[#f4efe6]">
-          "Orbit Websites made our business look more professional online and gave customers a clearer way to contact us."
-        </blockquote>
-        <div className="mt-8 flex items-center gap-4">
-          <img
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80"
-            alt="Portrait representing Orbit Websites customer Sorav Rana."
-            width={240}
-            height={240}
-            loading="lazy"
-            className="h-16 w-16 rounded-2xl object-cover"
-          />
-          <div>
-            <p className="font-display text-xl font-extrabold tracking-tight text-[#f4efe6]">Sorav Rana</p>
-            <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Orbit Websites Customer</p>
-          </div>
-        </div>
-      </BentoCard>
-    </section>
-  )
-}
 
 function AreasSection() {
   return (
@@ -2158,23 +2133,6 @@ function AreasSection() {
   )
 }
 
-function FAQPreview() {
-  return (
-    <section className="px-5 py-24 md:px-8" id="faq">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <h2 className="max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
-            Questions before starting a website.
-          </h2>
-          <Link to="/faq" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
-            Full FAQ
-          </Link>
-        </div>
-        <FAQList limit={4} />
-      </div>
-    </section>
-  )
-}
 
 function FAQList({ limit }: { limit?: number }) {
   const items = typeof limit === 'number' ? faqs.slice(0, limit) : faqs
@@ -3342,47 +3300,71 @@ function Footer() {
     ['Dental automation cost', '/blog/automated-dental-website-no-monthly-fee'],
   ]
 
+  const pageLinks = [
+    ['Home', '/'],
+    ['OrbitBoyzz', '/orbitboyzz'],
+    ['About', '/about'],
+    ['Services', '/services'],
+    ['Pricing', '/pricing'],
+    ['Web Design NJ', '/web-design-central-nj'],
+    ['Quote', '/quote'],
+    ['Contact', '/contact'],
+    ['Projects', '/projects'],
+    ['Blog', '/blog'],
+    ['FAQ', '/faq'],
+  ]
+
   return (
-    <footer className="border-t border-white/[0.08] px-5 py-14 md:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.72fr_0.9fr_0.9fr_0.95fr_0.75fr]">
-        <div>
-          <div className="flex items-center gap-3">
-            <img src="/orbit-logo.png" alt="Orbit Websites" width={56} height={56} loading="lazy" className="h-14 w-auto rounded-sm object-contain" />
-          </div>
-          <p className="mt-5 max-w-xl font-light leading-relaxed text-[#b7afa3]">
-            Orbit Websites (also known as OrbitBoyzz) is a Plainsboro, NJ website design agency evolving into a premium AI Operations Studio. No public office address.
+    <footer>
+      <div className="footer-inner section-wrap">
+        <div className="footer-brand">
+          <Logo />
+          <p>
+            Orbit Websites (also known as OrbitBoyzz) builds custom business websites for local
+            companies across Central New Jersey. Designed personally. Built quickly. Owned by you.
           </p>
-        </div>
-        <FooterColumn title="[PAGES]" links={[['Home', '/'], ['OrbitBoyzz', '/orbitboyzz'], ['About', '/about'], ['Services', '/services'], ['Pricing', '/pricing'], ['Web Design NJ', '/web-design-central-nj'], ['Quote', '/quote'], ['Contact', '/contact'], ['Projects', '/projects'], ['Blog', '/blog'], ['FAQ', '/faq']]} />
-        <FooterColumn title="[AREAS]" links={areaLinks} />
-        <FooterColumn title="[INDUSTRIES]" links={industryLinks} />
-        <FooterColumn title="[BUYER ANSWERS]" links={buyerIntentLinks} />
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[CONTACT]</p>
-          <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-            <a className="inline-flex min-h-11 items-center hover:text-[#10b981]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}>{phone}</a>
-            <a className="inline-flex min-h-11 items-center hover:text-[#10b981]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}>{email}</a>
+          <div className="footer-contact">
+            <a
+              href="tel:+16096628052"
+              data-conversion="call_click"
+              onClick={() => trackHrefConversion('tel:+16096628052', 'Footer call')}
+            >
+              {phone}
+            </a>
+            <a
+              href={`mailto:${email}`}
+              data-conversion="email_click"
+              onClick={() => trackHrefConversion(`mailto:${email}`, 'Footer email')}
+            >
+              {email}
+            </a>
           </div>
         </div>
+
+        <div className="footer-grid">
+          <FooterColumn title="Pages" links={pageLinks} />
+          <FooterColumn title="Areas we serve" links={areaLinks} />
+          <FooterColumn title="Industries" links={industryLinks} />
+          <FooterColumn title="Buyer answers" links={buyerIntentLinks} />
+        </div>
+
+        <span className="footer-legal">© {new Date().getFullYear()} OrbitBoyzz / Orbit Websites. All rights reserved.</span>
       </div>
-      <p className="mx-auto mt-12 max-w-7xl font-mono text-xs uppercase tracking-widest text-[#756d63]">
-        Copyright 2026, OrbitBoyzz / Orbit Websites. All rights reserved.
-      </p>
     </footer>
   )
 }
 
 function FooterColumn({ title, links }: { title: string; links: string[][] }) {
   return (
-    <div>
-      <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{title}</p>
-      <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
+    <div className="footer-col">
+      <p className="footer-col-title">{title}</p>
+      <ul>
         {links.map(([label, to]) => (
-          <Link key={label} className="inline-flex min-h-11 items-center hover:text-[#10b981]" to={to}>
-            {label}
-          </Link>
+          <li key={label}>
+            <Link to={to}>{label}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

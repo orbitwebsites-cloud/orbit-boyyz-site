@@ -58,9 +58,9 @@ const template = readFileSync(join(distDir, 'index.html'), 'utf-8')
 // --- Per-route metadata -----------------------------------------------------
 const pageMeta = {
   '/': {
-    title: 'Website Design for Local Businesses in Central NJ | Orbit Websites',
+    title: 'Custom Business Websites Ready in 7 Days | Orbit Websites',
     description:
-      'Hand-coded, blazing-fast websites for local businesses in Central NJ. Starting at $150. We build your site and show you a live demo before you pay anything — free 15-min call.',
+      'Meet directly with Orbit Websites, choose a design direction, pay 50% to begin, and receive a custom business website ready for review in seven days.',
   },
   '/orbitboyzz': {
     title: 'OrbitBoyzz | Orbit Websites — Web Design Studio in Plainsboro, NJ',
