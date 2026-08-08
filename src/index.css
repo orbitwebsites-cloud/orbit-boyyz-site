@@ -11,13 +11,6 @@
 
 :root {
   color-scheme: light;
-  /* Legacy studio tokens kept for pages not yet ported to the new design system. */
-  --studio-black: #060606;
-  --studio-white: #f4efe6;
-  --studio-muted: #b7afa3;
-  --studio-accent: #10b981;
-  --studio-paper: #eee6d8;
-  --studio-ink: #12100d;
 }
 
 * {

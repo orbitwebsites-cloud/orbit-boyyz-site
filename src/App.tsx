@@ -1665,7 +1665,7 @@ function Header() {
   )
 }
 function Label({ children }: { children: string }) {
-  return <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#10b981]">{children}</p>
+  return <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#166534]">{children}</p>
 }
 
 function TextReveal({ lines, className = '' }: { lines: string[]; className?: string }) {
@@ -1687,9 +1687,9 @@ function BentoCard({ children, className = '' }: { children: ReactNode; classNam
     <motion.article
       {...cardMotion}
       whileHover={{ y: -4, borderColor: 'rgba(214, 179, 106, 0.3)' }}
-      className={cn('relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025]', className)}
+      className={cn('relative overflow-hidden rounded-2xl border border-[#dce2dd] bg-white', className)}
     >
-      <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#10b981]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#166534]/10 blur-3xl" />
       <div className="relative">{children}</div>
     </motion.article>
   )
@@ -1710,8 +1710,8 @@ function PremiumButton({ href, children, light = false }: { href: string; childr
       className={cn(
         'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border px-5 font-mono text-xs uppercase tracking-widest',
         light
-          ? 'border-[#12100d]/10 bg-[#12100d] text-[#f4efe6] hover:bg-[#10b981] hover:text-[#12100d]'
-          : 'border-white/[0.08] bg-[#f4efe6] text-[#12100d] hover:bg-[#10b981]',
+          ? 'border-[#ffffff]/10 bg-[#ffffff] text-[#111b17] hover:bg-[#166534] hover:text-[#ffffff]'
+          : 'border-[#dce2dd] bg-[#111b17] text-[#ffffff] hover:bg-[#166534]',
       )}
     >
       {children}
@@ -1944,11 +1944,11 @@ function BuyerIntentAnswers({ compact = false }: { compact?: boolean }) {
         <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <Label>[BUYER INTENT // COST + DECISION ANSWERS]</Label>
-            <h2 className="mt-5 max-w-4xl font-display text-[clamp(36px,5vw,78px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-5 max-w-4xl font-display text-[clamp(36px,5vw,78px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]">
               Pages built for owners close to requesting a quote.
             </h2>
           </div>
-          <Link to={quoteHrefForSource(compact ? '/blog' : '/')} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+          <Link to={quoteHrefForSource(compact ? '/blog' : '/')} className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
             Get a range
           </Link>
         </div>
@@ -1957,10 +1957,10 @@ function BuyerIntentAnswers({ compact = false }: { compact?: boolean }) {
             <BentoCard key={post.slug} className="p-5">
               <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div>
-                  <h3 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-[#f4efe6]">{post.title}</h3>
-                  <p className="mt-2 font-light leading-relaxed text-[#b7afa3]">{post.description}</p>
+                  <h3 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-[#111b17]">{post.title}</h3>
+                  <p className="mt-2 font-light leading-relaxed text-[#66716c]">{post.description}</p>
                 </div>
-                <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+                <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
                   Read answer
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
@@ -1982,14 +1982,14 @@ function BlogCards({ posts }: { posts: typeof blogPosts }) {
             <div>
               <div className="flex items-center justify-between gap-4">
                 <Label>[BLOG // AEO]</Label>
-                <BookOpen className="h-5 w-5 text-[#10b981]" strokeWidth={1.5} />
+                <BookOpen className="h-5 w-5 text-[#166534]" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-8 font-display text-3xl font-extrabold leading-none tracking-tight text-[#f4efe6]">
+              <h3 className="mt-8 font-display text-3xl font-extrabold leading-none tracking-tight text-[#111b17]">
                 {post.title}
               </h3>
-              <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">{post.description}</p>
+              <p className="mt-5 font-light leading-relaxed text-[#66716c]">{post.description}</p>
             </div>
-            <Link to={`/blog/${post.slug}`} className="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+            <Link to={`/blog/${post.slug}`} className="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
               Read answer
               <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -2006,7 +2006,7 @@ function AboutSection() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <Label>[01 // ABOUT]</Label>
-          <h2 className="mt-6 font-display text-[clamp(40px,6vw,92px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mt-6 font-display text-[clamp(40px,6vw,92px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Built for owners who need their website to do a clear job.
           </h2>
         </div>
@@ -2016,10 +2016,10 @@ function AboutSection() {
               <div className="flex items-start justify-between gap-5">
                 <div>
                   <Label>{item.id}</Label>
-                  <h3 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{item.title}</h3>
-                  <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">{item.copy}</p>
+                  <h3 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-[#111b17]">{item.title}</h3>
+                  <p className="mt-4 font-light leading-relaxed text-[#66716c]">{item.copy}</p>
                 </div>
-                <item.icon className="h-6 w-6 shrink-0 text-[#10b981]" strokeWidth={1.5} />
+                <item.icon className="h-6 w-6 shrink-0 text-[#166534]" strokeWidth={1.5} />
               </div>
             </BentoCard>
           ))}
@@ -2036,11 +2036,11 @@ function ServicesPreview() {
         <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <Label>[02 // SERVICES]</Label>
-            <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-5 max-w-4xl font-display text-[clamp(40px,6vw,90px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               Website services for local businesses and AI-ready operations.
             </h2>
           </div>
-          <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+          <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
             View services
           </Link>
         </div>
@@ -2050,11 +2050,11 @@ function ServicesPreview() {
               <div className="flex h-full flex-col justify-between">
                 <div className="flex items-center justify-between gap-4">
                   <Label>{service.id}</Label>
-                  <service.icon className="h-5 w-5 text-[#10b981]" strokeWidth={1.5} />
+                  <service.icon className="h-5 w-5 text-[#166534]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-display text-3xl font-extrabold leading-none tracking-tight text-[#f4efe6]">{service.title}</h3>
-                  <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">{service.copy}</p>
+                  <h3 className="font-display text-3xl font-extrabold leading-none tracking-tight text-[#111b17]">{service.title}</h3>
+                  <p className="mt-5 font-light leading-relaxed text-[#66716c]">{service.copy}</p>
                 </div>
               </div>
             </BentoCard>
@@ -2080,22 +2080,22 @@ function ProjectGrid({ limit }: { limit?: number }) {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            'group relative min-h-[390px] overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025]',
+            'group relative min-h-[390px] overflow-hidden rounded-2xl border border-[#dce2dd] bg-white',
             index === 0 && 'md:min-h-[520px]',
             index === 2 && 'md:col-span-2',
           )}
         >
           <img src={project.image} alt={`${project.name} preview`} width={1200} height={800} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff] via-[#ffffff]/35 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 grid gap-4 p-6 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               <Label>[LIVE WORK]</Label>
-              <h3 className="mt-3 font-display text-[clamp(30px,4vw,58px)] font-extrabold leading-none tracking-tight text-[#f4efe6]">
+              <h3 className="mt-3 font-display text-[clamp(30px,4vw,58px)] font-extrabold leading-none tracking-tight text-[#111b17]">
                 {project.name}
               </h3>
-              <p className="mt-3 font-light text-[#b7afa3]">{project.type}</p>
+              <p className="mt-3 font-light text-[#66716c]">{project.type}</p>
             </div>
-            <ExternalLink className="h-6 w-6 text-[#10b981]" strokeWidth={1.5} />
+            <ExternalLink className="h-6 w-6 text-[#166534]" strokeWidth={1.5} />
           </div>
         </motion.a>
       ))}
@@ -2109,10 +2109,10 @@ function AreasSection() {
     <section className="px-5 py-24 md:px-8" id="areas">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_0.55fr_auto] lg:items-end">
-          <h2 className="font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Local website help for Plainsboro and nearby areas.
           </h2>
-          <p className="font-light leading-relaxed text-[#b7afa3]">
+          <p className="font-light leading-relaxed text-[#66716c]">
             We work with businesses in Plainsboro, Princeton, West Windsor Township, and surrounding Central New Jersey communities.
           </p>
           <PremiumButton href="tel:+16096628052">Call now</PremiumButton>
@@ -2121,9 +2121,9 @@ function AreasSection() {
           {localUseCases.map(([title, copy], index) => (
             <BentoCard key={title} className="p-6">
               <div className="grid gap-5 md:grid-cols-[80px_1fr_0.55fr] md:items-center">
-                <p className="font-editorial text-6xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
-                <h3 className="font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
-                <p className="font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                <p className="font-editorial text-6xl leading-none text-[#166534]">{String(index + 1).padStart(2, '0')}</p>
+                <h3 className="font-display text-3xl font-extrabold tracking-tight text-[#111b17]">{title}</h3>
+                <p className="font-light leading-relaxed text-[#66716c]">{copy}</p>
               </div>
             </BentoCard>
           ))}
@@ -2143,12 +2143,12 @@ function FAQList({ limit }: { limit?: number }) {
           key={question}
           {...cardMotion}
           open={index === 0}
-          className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6"
+          className="rounded-2xl border border-[#dce2dd] bg-white p-6"
         >
-          <summary className="cursor-pointer list-none font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">
+          <summary className="cursor-pointer list-none font-display text-2xl font-extrabold tracking-tight text-[#111b17]">
             {question}
           </summary>
-          <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">{answer}</p>
+          <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#66716c]">{answer}</p>
         </motion.details>
       ))}
     </div>
@@ -2163,9 +2163,9 @@ function About() {
           <Label>[ABOUT // ORBIT WEBSITES]</Label>
           <TextReveal
             lines={['A Plainsboro studio', 'turning local websites', 'into business systems.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
             Orbit Websites — also known as OrbitBoyzz — is a Plainsboro, New Jersey web design
             and AI operations studio serving Plainsboro, Princeton, West Windsor Township, and
             Central New Jersey. If you found us searching "OrbitBoyzz," you're in the right place.
@@ -2186,9 +2186,9 @@ function OrbitBoyzzBrandPage() {
           <Label>[BRAND // ORBITBOYZZ]</Label>
           <TextReveal
             lines={['OrbitBoyzz is', 'Orbit Websites,', 'built in Plainsboro.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#66716c]">
             OrbitBoyzz is the domain and brand handle for Orbit Websites. The official site is orbitboyzz.me.
             We build premium local business websites and AI operations systems for Plainsboro, Princeton,
             West Windsor Township, and Central New Jersey.
@@ -2208,8 +2208,8 @@ function OrbitBoyzzBrandPage() {
             ['Primary location', 'Plainsboro, New Jersey'],
           ].map(([title, value]) => (
             <BentoCard key={title} className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{title}</p>
-              <p className="mt-4 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{value}</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">{title}</p>
+              <p className="mt-4 font-display text-3xl font-extrabold tracking-tight text-[#111b17]">{value}</p>
             </BentoCard>
           ))}
         </div>
@@ -2219,10 +2219,10 @@ function OrbitBoyzzBrandPage() {
         <div className="mx-auto max-w-7xl">
           <BentoCard className="p-6 md:p-8">
             <Label>[DIRECT ANSWER]</Label>
-            <h1 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
+            <h1 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]">
               Is OrbitBoyzz the same as Orbit Websites?
             </h1>
-            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#66716c]">
               Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business.
               OrbitBoyzz is the branded domain at orbitboyzz.me, while Orbit Websites is the service name used
               for custom websites, local SEO foundations, quote forms, booking flows, and AI employee systems.
@@ -2245,11 +2245,11 @@ function Services() {
           <Label>[SERVICES // LOCAL + AI OPS]</Label>
           <TextReveal
             lines={['Services that move', 'customers from search', 'to scheduled work.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#66716c]">
             Our AI-enabled sites begin around $5,000, delivering automated intake, instant proposal generation, and 15-second lead-to-booking speed without forcing every small business into a five-figure build.{' '}
-            <Link to="/pricing" className="text-[#10b981] hover:text-[#f4efe6]">See full pricing breakdown →</Link>
+            <Link to="/pricing" className="text-[#166534] hover:text-[#111b17]">See full pricing breakdown →</Link>
           </p>
         </div>
       </section>
@@ -2309,9 +2309,9 @@ function Pricing() {
           <Label>[PRICING // LOCAL BUSINESS WEBSITES]</Label>
           <TextReveal
             lines={['Custom website', 'and AI website', 'costs.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#66716c]">
             A starter website for a local business usually ranges from $150 to $400, while broader custom builds often range from $3,500 to $15,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz keeps the entry point lower so more local businesses can start with a serious site and upgrade into automation when the ROI is clear.
           </p>
         </div>
@@ -2321,13 +2321,13 @@ function Pricing() {
         <div className="mx-auto max-w-7xl">
           <BentoCard className="p-6 md:p-8">
             <Label>[CUSTOM WEBSITE COST]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               Custom Website Pricing Breakdown for Local Businesses
             </h2>
-            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#66716c]">
               A starter website for a local business usually ranges from $150 to $400. Broader custom builds usually range from $3,500 to $15,000 depending on design complexity, features, page count, and whether AI-driven automation is included. Orbit Boyzz starts with the lower starter range and around $5,000 when built-in AI lead intake is included.
             </p>
-            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#66716c]">
               Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton. AI intake can be configured for fast qualification and routing when speed-to-lead is part of the business case.
             </p>
           </BentoCard>
@@ -2337,16 +2337,16 @@ function Pricing() {
         <div className="mx-auto max-w-7xl">
           <BentoCard className="p-6 md:p-8">
             <Label>[AI WEBSITE COST]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               How Much Does an AI-Powered Website Cost for Small Businesses?
             </h2>
-            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#66716c]">
               An AI-powered website for a small business typically costs between $5,000 and $15,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. ROI depends on lead value, current response gaps, and the amount of manual admin work the system can reduce.
             </p>
-            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#66716c]">
               An AI Operations Website starts around $5,000 and can rise to $15,000+ based on custom integrations, data pipelines, and ongoing support. Most small businesses should start with the smallest workflow that can prove ROI, then expand automation after lead volume grows.
             </p>
-            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#66716c]">
               A useful AI website budget should be tied to the value of faster response, cleaner qualification, reduced admin back-and-forth, and recovered high-intent leads. If the workflow cannot point to a measurable business outcome, start smaller before expanding automation.
             </p>
           </BentoCard>
@@ -2366,7 +2366,7 @@ function QuotePage() {
           <Label>[QUOTE // PROJECT RANGE]</Label>
           <TextReveal
             lines={['Get a rough range', 'before the first', 'sales call.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
         </div>
       </section>
@@ -2379,15 +2379,15 @@ function Projects() {
   return (
     <main>
       <section className="relative overflow-hidden px-5 pb-12 pt-36 md:px-8 md:pt-44">
-        <div className="absolute right-0 top-0 h-[480px] w-[520px] rounded-full bg-[#10b981]/10 blur-[130px]" />
+        <div className="absolute right-0 top-0 h-[480px] w-[520px] rounded-full bg-[#166534]/10 blur-[130px]" />
         <div className="relative mx-auto max-w-7xl">
           <Label>[PORTFOLIO // LIVE WORK + AI OPS]</Label>
           <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <TextReveal
               lines={['Websites we built,', 'and engines priced', 'around ROI.']}
-              className="font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.84] tracking-tight text-[#f4efe6]"
+              className="font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.84] tracking-tight text-[#111b17]"
             />
-            <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ ...spring, delay: 0.36 }} className="max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
+            <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ ...spring, delay: 0.36 }} className="max-w-2xl text-lg font-light leading-relaxed text-[#66716c]">
               The original Orbit portfolio is preserved, then elevated with the new AI Operations Studio positioning: serverless routes,
               database state, inference, proposal delivery, calendar sync, and deterministic handoff.
             </motion.p>
@@ -2418,24 +2418,24 @@ function Projects() {
 
 function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; index: number }) {
   return (
-    <motion.article {...cardMotion} className="grid overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025] lg:grid-cols-12">
-      <div className={`relative min-h-[520px] border-white/[0.08] p-6 md:p-8 lg:col-span-5 ${index === 1 ? 'lg:order-2 lg:border-l' : 'lg:border-r'}`}>
+    <motion.article {...cardMotion} className="grid overflow-hidden rounded-2xl border border-[#dce2dd] bg-white lg:grid-cols-12">
+      <div className={`relative min-h-[520px] border-[#dce2dd] p-6 md:p-8 lg:col-span-5 ${index === 1 ? 'lg:order-2 lg:border-l' : 'lg:border-r'}`}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(214,179,106,0.18),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.045),transparent)]" />
         <div className="relative flex h-full flex-col justify-between">
           <div>
             <Label>{study.number}</Label>
-            <h2 className="mt-8 font-display text-[clamp(34px,4.5vw,68px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-8 font-display text-[clamp(34px,4.5vw,68px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]">
               {study.title}
             </h2>
-            <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Client concept</p>
-              <p className="mt-3 text-xl font-semibold tracking-tight text-[#f4efe6]">{study.client}</p>
-              <p className="mt-1 font-light text-[#b7afa3]">{study.concept}</p>
+            <div className="mt-8 rounded-2xl border border-[#dce2dd] bg-[#ffffff]/70 p-5">
+              <p className="font-mono text-xs uppercase tracking-widest text-[#66716c]">Client concept</p>
+              <p className="mt-3 text-xl font-semibold tracking-tight text-[#111b17]">{study.client}</p>
+              <p className="mt-1 font-light text-[#66716c]">{study.concept}</p>
             </div>
           </div>
           <div className="mt-8">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{study.metricLabel}</p>
-            <p className="mt-2 max-w-full break-words font-editorial text-[clamp(3.5rem,8vw,6.5rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">{study.metricLabel}</p>
+            <p className="mt-2 max-w-full break-words font-editorial text-[clamp(3.5rem,8vw,6.5rem)] leading-none tracking-normal text-[#111b17] [overflow-wrap:anywhere]">
               {study.metric}
             </p>
           </div>
@@ -2444,7 +2444,7 @@ function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; inde
       <div className="grid gap-6 p-6 md:p-8 lg:col-span-7">
         <div className="flex flex-wrap gap-2">
           {study.tags.map((tag) => (
-            <span key={tag} className="rounded-xl border border-white/[0.08] bg-white/[0.025] px-3 py-2 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">
+            <span key={tag} className="rounded-xl border border-[#dce2dd] bg-white px-3 py-2 font-mono text-xs uppercase tracking-widest text-[#66716c]">
               {tag}
             </span>
           ))}
@@ -2459,9 +2459,9 @@ function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; inde
 
 function CaseBlock({ label, text, emphasized = false }: { label: string; text: string; emphasized?: boolean }) {
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#060606]/65 p-5">
-      <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{label}</p>
-      <p className={`mt-4 font-light leading-relaxed ${emphasized ? 'text-[#f4efe6]' : 'text-[#b7afa3]'}`}>{text}</p>
+    <div className="rounded-2xl border border-[#dce2dd] bg-[#ffffff]/65 p-5">
+      <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">{label}</p>
+      <p className={`mt-4 font-light leading-relaxed ${emphasized ? 'text-[#111b17]' : 'text-[#66716c]'}`}>{text}</p>
     </div>
   )
 }
@@ -2474,19 +2474,19 @@ function InfrastructureBlock() {
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <Label>[03 // ENGINE INFRASTRUCTURE]</Label>
-              <h2 className="mt-6 font-display text-[clamp(38px,6vw,88px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
+              <h2 className="mt-6 font-display text-[clamp(38px,6vw,88px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]">
                 The retainer is justified by structural labor replacement.
               </h2>
             </div>
             <div className="grid gap-3">
               {infrastructure.map((item) => (
-                <motion.div key={item.title} whileHover={{ x: 4 }} transition={spring} className="rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5">
+                <motion.div key={item.title} whileHover={{ x: 4 }} transition={spring} className="rounded-2xl border border-[#dce2dd] bg-[#ffffff]/70 p-5">
                   <div className="grid gap-4 md:grid-cols-[0.38fr_0.62fr]">
                     <div>
-                      <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">{item.title}</p>
-                      <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{item.metric}</p>
+                      <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">{item.title}</p>
+                      <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-[#111b17]">{item.metric}</p>
                     </div>
-                    <p className="font-light leading-relaxed text-[#b7afa3]">{item.copy}</p>
+                    <p className="font-light leading-relaxed text-[#66716c]">{item.copy}</p>
                   </div>
                 </motion.div>
               ))}
@@ -2505,11 +2505,11 @@ function ROISection() {
         <div className="mb-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <Label>[OUTPUT // MONEY SAVED + MONEY MADE]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,92px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,92px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               The website has to pay for itself in labor removed and revenue captured.
             </h2>
           </div>
-          <p className="max-w-2xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="max-w-2xl font-light leading-relaxed text-[#66716c]">
             These ranges frame the business case for hiring Orbit: automate low-leverage admin work, respond while leads are hottest,
             and recover jobs that normally disappear into voicemail, inboxes, or slow follow-up.
           </p>
@@ -2521,10 +2521,10 @@ function ROISection() {
               <div className="flex h-full flex-col justify-between">
                 <Label>{item.label}</Label>
                 <div>
-                  <p className="max-w-full break-words font-editorial text-[clamp(3rem,6vw,5rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
+                  <p className="max-w-full break-words font-editorial text-[clamp(3rem,6vw,5rem)] leading-none tracking-normal text-[#111b17] [overflow-wrap:anywhere]">
                     {item.value}
                   </p>
-                  <p className="mt-5 font-light leading-relaxed text-[#b7afa3]">{item.copy}</p>
+                  <p className="mt-5 font-light leading-relaxed text-[#66716c]">{item.copy}</p>
                 </div>
               </div>
             </BentoCard>
@@ -2535,7 +2535,7 @@ function ROISection() {
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             <div>
               <Label>[SAMPLE PAYBACK MODEL]</Label>
-              <p className="mt-5 font-display text-[clamp(34px,5vw,72px)] font-extrabold leading-[0.9] tracking-tight text-[#f4efe6]">
+              <p className="mt-5 font-display text-[clamp(34px,5vw,72px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]">
                 If the engine saves one admin hire and captures two missed jobs, the build can justify itself fast.
               </p>
             </div>
@@ -2545,9 +2545,9 @@ function ROISection() {
                 ['Two recovered high-intent jobs', '+$5,000-$12,000'],
                 ['Estimated monthly operating impact', '$9,500-$16,500'],
               ].map(([label, value]) => (
-                <div key={label} className="grid gap-2 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
-                  <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{label}</p>
-                  <p className="max-w-full break-words font-display text-[clamp(1.6rem,5vw,2.5rem)] font-extrabold leading-tight tracking-normal text-[#10b981] [overflow-wrap:anywhere]">{value}</p>
+                <div key={label} className="grid gap-2 rounded-2xl border border-[#dce2dd] bg-[#ffffff]/70 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
+                  <p className="font-mono text-xs uppercase tracking-widest text-[#66716c]">{label}</p>
+                  <p className="max-w-full break-words font-display text-[clamp(1.6rem,5vw,2.5rem)] font-extrabold leading-tight tracking-normal text-[#166534] [overflow-wrap:anywhere]">{value}</p>
                 </div>
               ))}
             </div>
@@ -2707,18 +2707,18 @@ function QuoteEstimator() {
         <div className="mb-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <Label>[QUOTE // QUICK ESTIMATE]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,92px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,92px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               Answer a few questions and get a rough Orbit build range.
             </h2>
           </div>
-          <p className="max-w-2xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="max-w-2xl font-light leading-relaxed text-[#66716c]">
             This is intentionally a range, not a final invoice. A normal site can stay closer to the low end. AI agents,
             pricing logic, dashboards, and operations automation push the project higher.
           </p>
         </div>
 
         {sourcePage ? (
-          <div className="mb-6 rounded-2xl border border-[#10b981]/20 bg-[#10b981]/10 p-4 font-mono text-xs uppercase tracking-widest text-[#10b981]">
+          <div className="mb-6 rounded-2xl border border-[#166534]/20 bg-[#166534]/10 p-4 font-mono text-xs uppercase tracking-widest text-[#166534]">
             Estimate started from {sourcePage}
           </div>
         ) : null}
@@ -2730,16 +2730,16 @@ function QuoteEstimator() {
               <QuoteSegment title="[02 // COMPLEXITY]" options={quoteOptions.complexity} value={complexity} onChange={setComplexity} />
               <QuoteSegment title="[03 // TIMELINE]" options={quoteOptions.urgency} value={urgency} onChange={setUrgency} />
               <QuoteSegment title="[04 // WHICH AI EMPLOYEE?]" options={quoteOptions.employee} value={employee} onChange={setEmployee} />
-              <label className="flex cursor-pointer items-start gap-4 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5">
+              <label className="flex cursor-pointer items-start gap-4 rounded-2xl border border-[#dce2dd] bg-[#ffffff]/70 p-5">
                 <input
                   type="checkbox"
                   checked={automation}
                   onChange={(event) => setAutomation(event.target.checked)}
-                  className="mt-1 h-5 w-5 accent-[#10b981]"
+                  className="mt-1 h-5 w-5 accent-[#166534]"
                 />
                 <span>
-                  <span className="block font-mono text-xs uppercase tracking-widest text-[#10b981]">[05 // AUTOMATION ADD-ON]</span>
-                  <span className="mt-2 block font-light leading-relaxed text-[#b7afa3]">
+                  <span className="block font-mono text-xs uppercase tracking-widest text-[#166534]">[05 // AUTOMATION ADD-ON]</span>
+                  <span className="mt-2 block font-light leading-relaxed text-[#66716c]">
                     Include follow-up automation, quote routing, booking logic, or a starter AI workflow.
                   </span>
                 </span>
@@ -2753,35 +2753,35 @@ function QuoteEstimator() {
                 <Label>[ESTIMATED RANGE]</Label>
                 <div className="mt-8 grid gap-5">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Upfront build</p>
-                    <p className="mt-2 max-w-full break-words font-editorial text-[clamp(2.6rem,11vw,4.75rem)] leading-none tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">
+                    <p className="font-mono text-xs uppercase tracking-widest text-[#66716c]">Upfront build</p>
+                    <p className="mt-2 max-w-full break-words font-editorial text-[clamp(2.6rem,11vw,4.75rem)] leading-none tracking-normal text-[#111b17] [overflow-wrap:anywhere]">
                       {estimate.upfront}
                     </p>
                   </div>
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Monthly care / ops</p>
-                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.85rem,8vw,2.75rem)] font-extrabold leading-none tracking-normal text-[#10b981] [overflow-wrap:anywhere]">{estimate.monthly}</p>
-                    <p className="mt-2 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">{estimate.savings}</p>
+                    <p className="font-mono text-xs uppercase tracking-widest text-[#66716c]">Monthly care / ops</p>
+                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.85rem,8vw,2.75rem)] font-extrabold leading-none tracking-normal text-[#166534] [overflow-wrap:anywhere]">{estimate.monthly}</p>
+                    <p className="mt-2 font-mono text-xs uppercase tracking-widest text-[#66716c]">{estimate.savings}</p>
                   </div>
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-widest text-[#b7afa3]">Comparable employee cost</p>
-                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.65rem,7vw,2.25rem)] font-extrabold leading-tight tracking-normal text-[#f4efe6] [overflow-wrap:anywhere]">{estimate.employeeCost}</p>
+                    <p className="font-mono text-xs uppercase tracking-widest text-[#66716c]">Comparable employee cost</p>
+                    <p className="mt-2 max-w-full break-words font-display text-[clamp(1.65rem,7vw,2.25rem)] font-extrabold leading-tight tracking-normal text-[#111b17] [overflow-wrap:anywhere]">{estimate.employeeCost}</p>
                   </div>
                 </div>
-                <p className="mt-6 font-light leading-relaxed text-[#b7afa3]">{estimate.note}</p>
-                <div className="mt-6 rounded-2xl border border-[#10b981]/20 bg-[#10b981]/10 p-5">
-                  <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[READY TO SEND]</p>
-                  <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">
+                <p className="mt-6 font-light leading-relaxed text-[#66716c]">{estimate.note}</p>
+                <div className="mt-6 rounded-2xl border border-[#166534]/20 bg-[#166534]/10 p-5">
+                  <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">[READY TO SEND]</p>
+                  <p className="mt-3 font-light leading-relaxed text-[#66716c]">
                     Send this estimate with your business name, website, service area, and the problem the site needs to solve.
                   </p>
                 </div>
               </div>
 
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">Likely includes</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">Likely includes</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {estimate.includes.map((item) => (
-                    <span key={item} className="rounded-xl border border-white/[0.08] bg-white/[0.025] px-3 py-2 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">
+                    <span key={item} className="rounded-xl border border-[#dce2dd] bg-white px-3 py-2 font-mono text-xs uppercase tracking-widest text-[#66716c]">
                       {item}
                     </span>
                   ))}
@@ -2831,8 +2831,8 @@ function QuoteSegment<T extends string>({
             className={cn(
               'rounded-2xl border p-4 text-left font-display text-lg font-extrabold tracking-tight',
               value === optionValue
-                ? 'border-[#10b981]/50 bg-[#10b981] text-[#12100d]'
-                : 'border-white/[0.08] bg-[#060606]/70 text-[#f4efe6] hover:border-[#10b981]/40',
+                ? 'border-[#166534]/50 bg-[#166534] text-[#ffffff]'
+                : 'border-[#dce2dd] bg-[#ffffff]/70 text-[#111b17] hover:border-[#166534]/40',
             )}
           >
             {label}
@@ -2850,7 +2850,7 @@ function FAQ() {
         <Label>[FAQ // BUYER QUESTIONS]</Label>
         <TextReveal
           lines={['Questions before', 'starting a serious', 'business website.']}
-          className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+          className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
         />
         <div className="mt-14">
           <FAQList />
@@ -2867,12 +2867,12 @@ function Blog() {
         <Label>[BLOG // ANSWER ENGINE OPTIMIZATION]</Label>
         <TextReveal
           lines={['Answers for owners', 'asking AI what kind', 'of website to build.']}
-          className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+          className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
         />
-        <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#b7afa3]">
+        <p className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-[#66716c]">
           Orbit Websites publishes direct, extractable answers about AI operations websites, local business automation,
           intake systems, proposal automation, and measurable website ROI for Central New Jersey companies.{' '}
-          <Link to="/web-design-central-nj" className="text-[#10b981] hover:text-[#f4efe6]">See our Central NJ web design work →</Link>
+          <Link to="/web-design-central-nj" className="text-[#166534] hover:text-[#111b17]">See our Central NJ web design work →</Link>
         </p>
         <BlogTopicClusters />
         <BuyerIntentAnswers compact />
@@ -3058,13 +3058,13 @@ function BlogTopicClusters() {
           <div className="flex h-full flex-col justify-between gap-6">
             <div>
               <Label>{`[TOPIC // ${cluster.label.toUpperCase()}]`}</Label>
-              <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">{cluster.description}</p>
+              <p className="mt-4 font-light leading-relaxed text-[#66716c]">{cluster.description}</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+              <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
                 Read cluster
               </Link>
-              <Link to={cluster.landing[0]} className="font-mono text-xs uppercase tracking-widest text-[#b7afa3] hover:text-[#f4efe6]">
+              <Link to={cluster.landing[0]} className="font-mono text-xs uppercase tracking-widest text-[#66716c] hover:text-[#111b17]">
                 {cluster.landing[1]}
               </Link>
             </div>
@@ -3164,21 +3164,21 @@ function BlogPost() {
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <article className="mx-auto max-w-5xl">
         <Label>{`[ANSWER // LAST UPDATED ${post.updated.toUpperCase()}]`}</Label>
-        <h1 className="mt-6 font-display text-[clamp(46px,7vw,104px)] font-extrabold leading-[0.86] tracking-tight text-[#f4efe6]">
+        <h1 className="mt-6 font-display text-[clamp(46px,7vw,104px)] font-extrabold leading-[0.86] tracking-tight text-[#111b17]">
           {post.title}
         </h1>
-        <p className="mt-8 max-w-3xl text-xl font-light leading-relaxed text-[#b7afa3]">{post.description}</p>
+        <p className="mt-8 max-w-3xl text-xl font-light leading-relaxed text-[#66716c]">{post.description}</p>
 
         <BentoCard className="mt-12 p-6">
           <Label>[WHO THIS IS FOR]</Label>
-          <p className="mt-5 text-2xl font-light leading-relaxed text-[#f4efe6]">{post.audience}</p>
+          <p className="mt-5 text-2xl font-light leading-relaxed text-[#111b17]">{post.audience}</p>
         </BentoCard>
 
         <div className="mt-8 grid gap-4">
           {post.sections.map((section) => (
             <BentoCard key={section.heading} className="p-6 md:p-8">
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{section.heading}</h2>
-              <p className="mt-5 text-lg font-light leading-relaxed text-[#b7afa3]">{section.body}</p>
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-[#111b17]">{section.heading}</h2>
+              <p className="mt-5 text-lg font-light leading-relaxed text-[#66716c]">{section.body}</p>
             </BentoCard>
           ))}
         </div>
@@ -3187,9 +3187,9 @@ function BlogPost() {
           <Label>[EXTRACTABLE TAKEAWAYS]</Label>
           <ol className="mt-6 grid gap-4">
             {post.takeaways.map((takeaway, index) => (
-              <li key={takeaway} className="grid gap-3 rounded-2xl border border-white/[0.08] bg-[#060606]/70 p-5 md:grid-cols-[64px_1fr]">
-                <span className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</span>
-                <span className="text-lg font-light leading-relaxed text-[#b7afa3]">{takeaway}</span>
+              <li key={takeaway} className="grid gap-3 rounded-2xl border border-[#dce2dd] bg-[#ffffff]/70 p-5 md:grid-cols-[64px_1fr]">
+                <span className="font-editorial text-5xl leading-none text-[#166534]">{String(index + 1).padStart(2, '0')}</span>
+                <span className="text-lg font-light leading-relaxed text-[#66716c]">{takeaway}</span>
               </li>
             ))}
           </ol>
@@ -3200,9 +3200,9 @@ function BlogPost() {
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <Label>{`[RELATED ANSWERS // ${cluster.label.toUpperCase()}]`}</Label>
-            <p className="mt-3 max-w-2xl font-light leading-relaxed text-[#b7afa3]">{cluster.description}</p>
+            <p className="mt-3 max-w-2xl font-light leading-relaxed text-[#66716c]">{cluster.description}</p>
           </div>
-          <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+          <Link to={`/blog/${cluster.slugs[0]}`} className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
             Open cluster
           </Link>
         </div>
@@ -3214,25 +3214,25 @@ function BlogPost() {
       <section className="mx-auto mt-10 max-w-7xl px-5 pb-8 md:px-0">
         <BentoCard className="p-6 md:p-8">
           <Label>[ORBIT BOYZZ // CENTRAL NEW JERSEY]</Label>
-          <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-[#66716c]">
             Orbit Boyzz builds starter, custom, and AI-powered websites for local businesses across Central New Jersey, with starter ranges around $150-$400.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             {landingLinks.map(([to, label]) => {
               const trackedTo = to === '/quote' ? quoteHrefForSource(currentPostPath) : to
               return (
-                <Link key={`${trackedTo}-${label}`} to={trackedTo} className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+                <Link key={`${trackedTo}-${label}`} to={trackedTo} className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
                   {label} -&gt;
                 </Link>
               )
             })}
-            <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+            <Link to="/pricing" className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
               See pricing →
             </Link>
-            <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+            <Link to="/services" className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
               Our services →
             </Link>
-            <Link to="/web-design-central-nj" className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]">
+            <Link to="/web-design-central-nj" className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]">
               Web design in Central NJ →
             </Link>
           </div>
@@ -3245,15 +3245,15 @@ function BlogPost() {
 function ContactCta() {
   return (
     <section className="px-5 pb-24 md:px-8" id="contact">
-      <motion.div {...cardMotion} className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#eee6d8] p-6 text-[#12100d] md:p-10">
-        <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#10b981]/40 blur-[90px]" />
+      <motion.div {...cardMotion} className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-[#dce2dd] bg-[#f7f8f4] p-6 text-[#111b17] md:p-10">
+        <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#166534]/40 blur-[90px]" />
         <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#5c4520]">[FREE DEMO // NO OBLIGATION]</p>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#166534]">[FREE DEMO // NO OBLIGATION]</p>
             <h2 className="mt-6 max-w-4xl font-display text-[clamp(42px,6vw,92px)] font-extrabold leading-[0.9] tracking-tight">
               See your site live before you pay a cent.
             </h2>
-            <p className="mt-5 max-w-2xl font-light leading-relaxed text-[#50483d]">
+            <p className="mt-5 max-w-2xl font-light leading-relaxed text-[#66716c]">
               Book a free 15-minute call. We'll build you a working demo — specific to your business — and you decide if it's right for you.
             </p>
           </div>
@@ -3599,9 +3599,9 @@ function WebDesignCentralNJ() {
           <Label>[WEB DESIGN // CENTRAL NEW JERSEY]</Label>
           <TextReveal
             lines={['Premium web design', 'for Central New Jersey', 'local businesses.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
             Orbit Websites is a Plainsboro, NJ web design agency building custom websites and AI
             automation systems for local businesses across Central New Jersey — including Plainsboro,
             Princeton, West Windsor, Ewing, Hamilton, Lawrence, Hopewell, and Trenton. We design
@@ -3618,17 +3618,17 @@ function WebDesignCentralNJ() {
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             What our web design includes.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             {webDesignIncludes.map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#166534]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
-                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
-                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#111b17]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#66716c]">{copy}</p>
                   </div>
                 </div>
               </BentoCard>
@@ -3639,15 +3639,15 @@ function WebDesignCentralNJ() {
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Towns we design websites for.
           </h2>
           <div className="grid gap-4">
             {webDesignTowns.map(([town, copy]) => (
               <BentoCard key={town} className="p-6">
                 <div className="grid gap-5 md:grid-cols-[0.4fr_1fr] md:items-center">
-                  <h3 className="font-display text-3xl font-extrabold tracking-tight text-[#f4efe6]">{town}</h3>
-                  <p className="font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                  <h3 className="font-display text-3xl font-extrabold tracking-tight text-[#111b17]">{town}</h3>
+                  <p className="font-light leading-relaxed text-[#66716c]">{copy}</p>
                 </div>
               </BentoCard>
             ))}
@@ -3659,23 +3659,23 @@ function WebDesignCentralNJ() {
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Built for businesses that take growth seriously.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[A strong fit if]</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">[A strong fit if]</p>
               <ul className="mt-5 grid gap-3">
                 {webDesignFit.map((line) => (
-                  <li key={line} className="font-light leading-relaxed text-[#b7afa3]">— {line}</li>
+                  <li key={line} className="font-light leading-relaxed text-[#66716c]">— {line}</li>
                 ))}
               </ul>
             </BentoCard>
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#756d63]">[Probably not a fit if]</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#66716c]">[Probably not a fit if]</p>
               <ul className="mt-5 grid gap-3">
                 {webDesignNotFit.map((line) => (
-                  <li key={line} className="font-light leading-relaxed text-[#756d63]">— {line}</li>
+                  <li key={line} className="font-light leading-relaxed text-[#66716c]">— {line}</li>
                 ))}
               </ul>
             </BentoCard>
@@ -3685,7 +3685,7 @@ function WebDesignCentralNJ() {
 
       <section className="px-5 py-16 md:px-8" id="local-faq">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Common questions.
           </h2>
           <FAQList limit={3} />
@@ -3704,10 +3704,10 @@ function LocalWebDesignLinks() {
           {localWebDesignLinks.map(([label, to]) => (
             <Link key={to} to={to} className="group block">
               <BentoCard className="h-full p-5">
-                <p className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6] group-hover:text-[#10b981]">
+                <p className="font-display text-2xl font-extrabold tracking-tight text-[#111b17] group-hover:text-[#166534]">
                   {label}
                 </p>
-                <p className="mt-3 font-mono text-xs uppercase tracking-widest text-[#b7afa3]">
+                <p className="mt-3 font-mono text-xs uppercase tracking-widest text-[#66716c]">
                   Web design + AI intake
                 </p>
               </BentoCard>
@@ -3728,7 +3728,7 @@ function LandingFAQSection({ label, heading, items }: { label: string; heading: 
     <section className="px-5 py-16 md:px-8">
       <div className="mx-auto max-w-7xl">
         <Label>{label}</Label>
-        <h2 className="mt-6 mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+        <h2 className="mt-6 mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
           {heading}
         </h2>
         <div className="grid gap-4">
@@ -3737,12 +3737,12 @@ function LandingFAQSection({ label, heading, items }: { label: string; heading: 
               key={question}
               {...cardMotion}
               open={index === 0}
-              className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6"
+              className="rounded-2xl border border-[#dce2dd] bg-white p-6"
             >
-              <summary className="cursor-pointer list-none font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">
+              <summary className="cursor-pointer list-none font-display text-2xl font-extrabold tracking-tight text-[#111b17]">
                 {question}
               </summary>
-              <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#b7afa3]">{answer}</p>
+              <p className="mt-5 max-w-4xl font-light leading-relaxed text-[#66716c]">{answer}</p>
             </motion.details>
           ))}
         </div>
@@ -3793,9 +3793,9 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
           <Label>{page.label}</Label>
           <TextReveal
             lines={['Web design', `for ${page.town}`, 'local businesses.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
             {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites usually range from $150 to $400, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -3810,7 +3810,7 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Built for {page.town} businesses that need measurable leads.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -3822,10 +3822,10 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#166534]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
-                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
-                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#111b17]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#66716c]">{copy}</p>
                   </div>
                 </div>
               </BentoCard>
@@ -3838,10 +3838,10 @@ function TownWebDesignPage({ page }: { page: TownWebDesignPageData }) {
         <div className="mx-auto max-w-7xl">
           <BentoCard className="p-6 md:p-8">
             <Label>[DIRECT ANSWER]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               How much does web design cost in {page.town}?
             </h2>
-            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#66716c]">
               A starter website for a {page.town} local business usually ranges from $150 to $400
               for a focused site. AI-powered lead intake, booking logic, routing,
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
@@ -3864,9 +3864,9 @@ function WebDesignEwingNJ() {
           <Label>[WEB DESIGN // EWING NJ]</Label>
           <TextReveal
             lines={['Web design', 'for Ewing, NJ', 'local businesses.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
             Orbit Websites builds hand-coded websites and AI intake systems for Ewing Township
             businesses that need more calls, quote requests, bookings, and qualified leads from
             local search. Starter website builds usually range from $150 to $400, with AI intake upgrades
@@ -3884,7 +3884,7 @@ function WebDesignEwingNJ() {
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Built for Ewing service businesses competing on trust.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -3896,10 +3896,10 @@ function WebDesignEwingNJ() {
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#166534]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
-                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
-                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#111b17]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#66716c]">{copy}</p>
                   </div>
                 </div>
               </BentoCard>
@@ -3912,10 +3912,10 @@ function WebDesignEwingNJ() {
         <div className="mx-auto max-w-7xl">
           <BentoCard className="p-6 md:p-8">
             <Label>[DIRECT ANSWER]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               How much does web design cost in Ewing, NJ?
             </h2>
-            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#66716c]">
               A starter website for an Ewing, NJ local business usually ranges from $150 to $400
               for a focused site. AI-powered lead intake, booking logic, routing,
               and proposal workflows usually move the project into the $5,000 to $15,000 range,
@@ -3955,9 +3955,9 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
           <Label>{page.label}</Label>
           <TextReveal
             lines={['Web design', `for ${page.industryShort}`, 'companies in NJ.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
             {`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds usually range from $150 to $400, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -3972,7 +3972,7 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
 
       <section className="px-5 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+          <h2 className="mb-10 max-w-4xl font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
             Built for {page.industry} that need real leads.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -3984,10 +3984,10 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
             ].map(([title, copy], index) => (
               <BentoCard key={title} className="p-6">
                 <div className="grid gap-4 md:grid-cols-[64px_1fr] md:items-start">
-                  <p className="font-editorial text-5xl leading-none text-[#10b981]">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="font-editorial text-5xl leading-none text-[#166534]">{String(index + 1).padStart(2, '0')}</p>
                   <div>
-                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#f4efe6]">{title}</h3>
-                    <p className="mt-3 font-light leading-relaxed text-[#b7afa3]">{copy}</p>
+                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-[#111b17]">{title}</h3>
+                    <p className="mt-3 font-light leading-relaxed text-[#66716c]">{copy}</p>
                   </div>
                 </div>
               </BentoCard>
@@ -4000,18 +4000,18 @@ function IndustryWebDesignPage({ page }: { page: IndustryWebDesignPageData }) {
         <div className="mx-auto max-w-7xl">
           <BentoCard className="p-6 md:p-8">
             <Label>[DIRECT ANSWER]</Label>
-            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#f4efe6]">
+            <h2 className="mt-6 font-display text-[clamp(40px,6vw,88px)] font-extrabold leading-[0.88] tracking-tight text-[#111b17]">
               How much does a website cost for a {page.industryShort.toLowerCase()} company in NJ?
             </h2>
-            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#b7afa3]">
+            <p className="mt-6 max-w-4xl text-xl font-light leading-relaxed text-[#66716c]">
               A starter site for a {page.industryShort.toLowerCase()} company typically ranges from $150 to $400 for a focused site.
               Projects with AI intake, job-type routing, emergency alert logic, or proposal automation usually run $5,000 to $15,000
               depending on workflow complexity. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of jobs.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/pricing" className="font-display text-lg font-bold text-[#10b981] underline underline-offset-4 hover:text-[#f4efe6]">See pricing →</Link>
-              <Link to="/services" className="font-display text-lg font-bold text-[#b7afa3] underline underline-offset-4 hover:text-[#f4efe6]">Our services →</Link>
-              <Link to="/web-design-central-nj" className="font-display text-lg font-bold text-[#b7afa3] underline underline-offset-4 hover:text-[#f4efe6]">Web design in Central NJ →</Link>
+              <Link to="/pricing" className="font-display text-lg font-bold text-[#166534] underline underline-offset-4 hover:text-[#111b17]">See pricing →</Link>
+              <Link to="/services" className="font-display text-lg font-bold text-[#66716c] underline underline-offset-4 hover:text-[#111b17]">Our services →</Link>
+              <Link to="/web-design-central-nj" className="font-display text-lg font-bold text-[#66716c] underline underline-offset-4 hover:text-[#111b17]">Web design in Central NJ →</Link>
             </div>
           </BentoCard>
         </div>
@@ -4067,17 +4067,17 @@ function CalendlyEmbed() {
   }, [])
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/[0.08]" style={{ minHeight: '700px' }}>
+    <div className="relative overflow-hidden rounded-2xl border border-[#dce2dd]" style={{ minHeight: '700px' }}>
       {!loaded && (
-        <div className="absolute inset-0 z-10 flex flex-col gap-4 bg-[#0b0b0b] p-6">
-          <div className="h-5 w-40 animate-pulse rounded bg-white/[0.06]" />
-          <div className="h-3 w-56 animate-pulse rounded bg-white/[0.05]" />
+        <div className="absolute inset-0 z-10 flex flex-col gap-4 bg-[#f7f8f4] p-6">
+          <div className="h-5 w-40 animate-pulse rounded bg-white" />
+          <div className="h-3 w-56 animate-pulse rounded bg-white" />
           <div className="mt-2 grid flex-1 grid-cols-7 gap-2">
             {Array.from({ length: 35 }).map((_, i) => (
-              <div key={i} className="animate-pulse rounded-lg bg-white/[0.04]" style={{ animationDelay: `${(i % 7) * 60}ms` }} />
+              <div key={i} className="animate-pulse rounded-lg bg-white" style={{ animationDelay: `${(i % 7) * 60}ms` }} />
             ))}
           </div>
-          <p className="text-center font-mono text-[11px] uppercase tracking-widest text-[#756d63]">
+          <p className="text-center font-mono text-[11px] uppercase tracking-widest text-[#66716c]">
             Loading booking calendar…
           </p>
         </div>
@@ -4098,7 +4098,7 @@ function CalendlyEmbed() {
           href={CALENDAR_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-xs uppercase tracking-widest text-[#10b981] hover:text-[#f4efe6]"
+          className="font-mono text-xs uppercase tracking-widest text-[#166534] hover:text-[#111b17]"
         >
           Open booking page directly →
         </a>
@@ -4115,9 +4115,9 @@ function Contact() {
           <Label>[CONTACT // ORBIT WEBSITES]</Label>
           <TextReveal
             lines={['Book a call or', 'reach Orbit Websites', 'directly.']}
-            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#f4efe6]"
+            className="mt-6 max-w-6xl font-display text-[clamp(52px,8vw,120px)] font-extrabold leading-[0.85] tracking-tight text-[#111b17]"
           />
-          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#b7afa3]">
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
             The fastest way to start is to book a free 30-minute call. Pick a time that works and
             we'll talk through your website, where you serve, and what customers should do when
             they land on your site. Prefer phone or email? Those are below.
@@ -4130,8 +4130,8 @@ function Contact() {
           <CalendlyEmbed />
           <div className="grid gap-4">
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[Book online]</p>
-              <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">
+              <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">[Book online]</p>
+              <p className="mt-4 font-light leading-relaxed text-[#66716c]">
                 Schedule a free 30-minute consultation on Calendly.
               </p>
               <div className="mt-5">
@@ -4139,15 +4139,15 @@ function Contact() {
               </div>
             </BentoCard>
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[Call or email]</p>
-              <div className="mt-5 grid gap-3 font-light text-[#b7afa3]">
-                <a className="hover:text-[#10b981]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Contact call')}>{phone}</a>
-                <a className="hover:text-[#10b981]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Contact email')}>{email}</a>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">[Call or email]</p>
+              <div className="mt-5 grid gap-3 font-light text-[#66716c]">
+                <a className="hover:text-[#166534]" href="tel:+16096628052" data-conversion="call_click" onClick={() => trackHrefConversion('tel:+16096628052', 'Contact call')}>{phone}</a>
+                <a className="hover:text-[#166534]" href={`mailto:${email}`} data-conversion="email_click" onClick={() => trackHrefConversion(`mailto:${email}`, 'Contact email')}>{email}</a>
               </div>
             </BentoCard>
             <BentoCard className="p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#10b981]">[Service area]</p>
-              <p className="mt-4 font-light leading-relaxed text-[#b7afa3]">
+              <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">[Service area]</p>
+              <p className="mt-4 font-light leading-relaxed text-[#66716c]">
                 Plainsboro, Princeton, West Windsor Township, and Central New Jersey. Service-area
                 business — no public office address.
               </p>
