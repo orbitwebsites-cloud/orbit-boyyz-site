@@ -71,11 +71,43 @@ async function overpass(query, attempts = 3) {
   throw new Error(`Overpass unavailable after ${attempts} rounds (last: ${lastError})`)
 }
 
-const selectors = selected.flatMap((k) => NICHES[k].selectors).map((s) => `${s}(${bbox});`).join('\n  ')
+// OSM's addr:city is blank on most business records, so filtering on that string
+// throws away nearly everything. Resolve the town to a bounding box instead and
+// search geographically — that catches businesses regardless of tagging quality.
+async function townBbox(town) {
+  // featureType=settlement keeps Nominatim on towns/townships. Without it a query
+  // like "hamilton" can match a street and return a uselessly small box.
+  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(town + ', New Jersey, USA')}&format=json&featureType=settlement&limit=1`
+  const res = await fetch(url, { headers: { 'User-Agent': UA } })
+  if (res.status !== 200) return null
+  const hits = await res.json()
+  if (!hits.length || !hits[0].boundingbox) return null
+  const [s, n, w, e] = hits[0].boundingbox.map(Number) // Nominatim: south,north,west,east
+  // Pad slightly — businesses serving a town often sit just outside its border.
+  const pad = 0.02
+  return { bbox: `${s - pad},${w - pad},${n + pad},${e + pad}`, label: hits[0].display_name }
+}
+
+let searchBbox = bbox
+if (townFilter) {
+  const found = await townBbox(townFilter)
+  if (found) {
+    searchBbox = found.bbox
+    console.log(`Town "${townFilter}" resolved to ${found.label.split(',').slice(0, 3).join(',')}`)
+  } else {
+    // Falling back to the whole region would silently return the wrong leads for
+    // a typo, so stop instead and leave any existing batch alone.
+    console.error(`Could not find a town called "${townFilter}" in New Jersey.`)
+    console.error('Check the spelling, or clear the town box to search all of Central NJ.')
+    process.exit(1)
+  }
+}
+
+const selectors = selected.flatMap((k) => NICHES[k].selectors).map((s) => `${s}(${searchBbox});`).join('\n  ')
 const query = `[out:json][timeout:180];\n(\n  ${selectors}\n);\nout center tags;`
 
 console.log(`Searching ${selected.length} niches: ${selected.map((k) => NICHES[k].label).join(', ')}`)
-console.log(`Area ${bbox}${townFilter ? ` | town filter: ${townFilter}` : ''}\n`)
+console.log(`Area ${searchBbox}\n`)
 
 const elements = await overpass(query)
 
@@ -92,7 +124,6 @@ for (const el of elements) {
   if (!nicheKey) continue
 
   const city = t['addr:city'] || ''
-  if (townFilter && city.toLowerCase() !== townFilter) continue
 
   const street = [t['addr:housenumber'], t['addr:street']].filter(Boolean).join(' ')
   const address = [street, city, t['addr:state'], t['addr:postcode']].filter(Boolean).join(', ')
@@ -123,6 +154,12 @@ for (const el of elements) {
 const rank = { high: 0, 'medium-high': 1, mixed: 2 }
 rows.sort((a, b) => (rank[a.value] - rank[b.value]) || (b.phone ? 1 : 0) - (a.phone ? 1 : 0) || a.name.localeCompare(b.name))
 const batch = rows.slice(0, limit)
+
+if (!batch.length) {
+  console.log('\nNo matching businesses found — leaving the previous batch untouched.')
+  console.log('Try a wider area, more niches, or drop the town filter.')
+  process.exit(0)
+}
 
 mkdirSync(OUT_DIR, { recursive: true })
 const date = new Date().toISOString().slice(0, 10)
