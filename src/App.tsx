@@ -3374,13 +3374,13 @@ function MobileActionBar() {
   const quoteHref = quoteHrefForSource(location.pathname)
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.08] bg-[#060606]/92 px-3 py-3 text-[#f4efe6] shadow-2xl backdrop-blur-xl md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#dce2dd] bg-[#f7f8f4]/95 px-3 py-3 text-[#111b17] shadow-2xl backdrop-blur-xl md:hidden">
       <div className="mx-auto grid max-w-lg grid-cols-2 gap-2">
         <a
           href="tel:+16096628052"
           data-conversion="call_click"
           onClick={() => trackHrefConversion('tel:+16096628052', 'Mobile sticky call')}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#10b981]/30 bg-[#10b981] px-3 font-mono text-[11px] uppercase tracking-widest text-[#12100d]"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#166534] bg-[#166534] px-3 font-mono text-[11px] uppercase tracking-widest text-white"
         >
           <PhoneCall className="h-4 w-4" strokeWidth={1.8} />
           Call
@@ -3389,7 +3389,7 @@ function MobileActionBar() {
           to={quoteHref}
           data-conversion="quote_page_click"
           onClick={() => trackHrefConversion(quoteHref, 'Mobile sticky quote')}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.12] bg-white/[0.045] px-3 font-mono text-[11px] uppercase tracking-widest text-[#f4efe6]"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#dce2dd] bg-white px-3 font-mono text-[11px] uppercase tracking-widest text-[#111b17]"
         >
           <FileText className="h-4 w-4" strokeWidth={1.8} />
           Quote
@@ -4161,7 +4161,7 @@ function Contact() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#060606] pb-20 text-[#f4efe6] md:pb-0">
+    <div id="top" className="site-shell">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
