@@ -117,3 +117,35 @@ inside the new light header/footer, so they look mismatched. This is Phase 3.
 3. `Pricing`, `Services`, `About`, `Projects`, `FAQ`, `QuotePage`, `Contact`, `OrbitBoyzzBrandPage`
 
 Preview the current state with `npm run preview` in `D:/orbit boyyz site` → http://localhost:4173
+
+---
+
+## 2026-08-08 — DEPLOYED ✅
+
+Live at https://www.orbitboyzz.me — verified: 70-URL sitemap, per-route canonicals,
+current `llms.txt`, real 404s, homepage title matches the original design.
+
+### How to deploy (the only method that works)
+
+Vercel's Hobby-plan "commit author must have project access" check reads `.git` and stalls
+CLI deploys at status `UNKNOWN`. Deploy from a copy with **no** `.git`:
+
+```sh
+cd "D:/orbit boyyz site"
+npx vercel pull --yes --environment=production
+npx vercel build --prod
+# copy .vercel/output + .vercel/project.json to a temp dir WITHOUT .git, then:
+npx vercel deploy --prebuilt --prod
+```
+
+`.vercel/project.json` is now correctly pointed at **orbit-boyyz-site**
+(`prj_953oJNPAQ9gWI2eQDUw4FNgia4sg`) — the project that owns the domain. The old
+`deploy.yml` pointed at `orbit-websites-premium`, which no domain uses.
+
+### ⚠️ Still outstanding — Phase 3
+
+The homepage is fully ported. **The 28 sub-pages are live with dark bodies inside the
+light header/footer** and look broken. Deployed knowingly at the user's request.
+
+Order of work: 18 location/industry pages (4 shared components) → 43 blog pages
+(`Blog`, `BlogPost`) → Pricing, Services, About, Projects, FAQ, Quote, Contact, OrbitBoyzz.
