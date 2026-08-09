@@ -19,6 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUT_DIR = join(__dirname, 'leads')
 const LOG_PATH = join(__dirname, 'messaged.json')
 const UA = 'OrbitLeadFinder/0.1 (local business research; orbitboyzz@gmail.com)'
+const BRAND = 'Orbit Websites' // never send "OrbitBoyzz" to a stranger — reads as a scam handle
 
 const arg = (name, fallback) => {
   const hit = process.argv.find((a) => a.startsWith(`--${name}=`))
@@ -27,8 +28,15 @@ const arg = (name, fallback) => {
 
 const selected = arg('niches', DEFAULT_NICHES.join(',')).split(',').map((s) => s.trim()).filter((s) => NICHES[s])
 const bbox = arg('bbox', DEFAULT_BBOX)
-const limit = Number(arg('limit', '60'))
+// Quality over volume, per the actual math: 100 well-screened leads at a 10%
+// close is 10 clients. 1,000 cold ones at the same rate is the same 10 clients
+// for 10x the wasted sends and 10x the "does this even work" noise in results.
+const limit = Number(arg('limit', '100'))
 const townFilter = arg('town', '').toLowerCase()
+// Confirming real Instagram presence costs a rate-limited DDG lookup per lead
+// (it 202'd us after ~2 rapid requests last run), so it only runs on the
+// top-ranked candidates, throttled, not the whole pool.
+const igCheckCount = Number(arg('igcheck', '25'))
 
 if (!selected.length) {
   console.error('No valid niches. Available:', Object.keys(NICHES).join(', '))
@@ -142,6 +150,19 @@ for (const el of elements) {
   // Verified 2026-08-08: "Avanzato Jewelers Hamilton NJ" -> instagram.com/avanzatojewelers/
   const jump = `https://duckduckgo.com/?q=${encodeURIComponent(`!ducky site:instagram.com ${t.name} ${city || 'NJ'}`)}`
 
+  // Quality score, before any network check. This is a proxy for "a real,
+  // actively-maintained business" built from what OSM already gave us — no
+  // extra requests, so it runs on the full pool, not a sample.
+  //   +3  phone number listed         (someone answers; not an abandoned listing)
+  //   +2  opening_hours set           (maintained recently, not stale data)
+  //   +2  full street address         (a real location, not a name with no place)
+  //   +1  niche is high-ticket        (can support the price, per the niche table)
+  let score = 0
+  if (t.phone || t['contact:phone']) score += 3
+  if (t.opening_hours) score += 2
+  if (t['addr:housenumber'] && t['addr:street']) score += 2
+  if (NICHES[nicheKey].value === 'high') score += 1
+
   rows.push({
     name: t.name,
     niche: NICHES[nicheKey].label,
@@ -149,6 +170,7 @@ for (const el of elements) {
     city,
     address,
     phone: t.phone || t['contact:phone'] || '',
+    score,
     instagram_search: jump,
     google_search: `https://www.google.com/search?q=site:instagram.com+${q}`,
     maps: lat && lon ? `https://www.google.com/maps/search/?api=1&query=${lat},${lon}` : '',
@@ -156,9 +178,10 @@ for (const el of elements) {
   })
 }
 
-// High-value niches first, then ones with a phone number (easier to verify they're real)
+// Highest quality score first — this is the "100 good leads beat 1,000 cold
+// ones" ordering. Value and phone stay as tiebreakers for equal scores.
 const rank = { high: 0, 'medium-high': 1, mixed: 2 }
-rows.sort((a, b) => (rank[a.value] - rank[b.value]) || (b.phone ? 1 : 0) - (a.phone ? 1 : 0) || a.name.localeCompare(b.name))
+rows.sort((a, b) => (b.score - a.score) || (rank[a.value] - rank[b.value]) || (b.phone ? 1 : 0) - (a.phone ? 1 : 0) || a.name.localeCompare(b.name))
 // OSM having no `website` tag does NOT mean the business has no website — the tag
 // is simply missing on most records. Measured 2026-08-08: of 14 "no website"
 // leads, 4 demonstrably had one. So verify before handing them over.
@@ -213,7 +236,50 @@ for (const lead of toCheck) {
 }
 console.log(`\n  ${toCheck.length - verified.length} dropped (site confirmed), ${verified.filter((l) => l.possible_site).length} flagged for a look\n`)
 
-const batch = verified.slice(0, limit)
+let batch = verified.slice(0, limit)
+
+// Confirm real Instagram presence on the top-ranked leads only. A browser
+// following the !ducky bang gets redirected client-side (verified: this landed
+// on instagram.com/avanzatojewelers/ in a real browser tab). A plain fetch()
+// never runs that JS — DDG instead serves a static fallback page with a
+// <meta http-equiv="refresh"> and an obfuscated /l/?uddg=<encoded-target> link,
+// which fetch() does not follow either. Missing both of those was an earlier
+// bug here: it made every check register as "no profile found." Fixed by
+// pulling the real target out of the uddg param instead of trusting res.url.
+//
+// This confirms presence, not activity — no way to see post recency this way,
+// only that an account exists. Rate-limited hard after ~2 rapid requests in
+// testing (HTTP 202), so this stays capped and throttled.
+async function hasInstagramProfile(lead) {
+  try {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 9000)
+    const res = await fetch(lead.instagram_search, { redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } })
+    clearTimeout(timer)
+    if (new URL(res.url).hostname.includes('instagram.com')) return true
+
+    const body = await res.text()
+    const m = body.match(/uddg=([^&"']+)/)
+    if (!m) return false
+    const target = decodeURIComponent(m[1])
+    return new URL(target).hostname.includes('instagram.com')
+  } catch {
+    return null // inconclusive — network hiccup, not "no profile"
+  }
+}
+
+const toIgCheck = batch.slice(0, Math.min(igCheckCount, batch.length))
+if (toIgCheck.length) {
+  process.stdout.write(`Confirming Instagram presence on the top ${toIgCheck.length} (rate-limited, one at a time)`)
+  for (const lead of toIgCheck) {
+    const found = await hasInstagramProfile(lead)
+    lead.instagram_confirmed = found
+    process.stdout.write(found === true ? '.' : found === false ? 'x' : '?')
+    await sleep(4000) // stay well clear of the ~2-request limit seen earlier
+  }
+  const confirmed = toIgCheck.filter((l) => l.instagram_confirmed === true).length
+  console.log(`\n  ${confirmed}/${toIgCheck.length} have a confirmed Instagram profile\n`)
+}
 
 if (!batch.length) {
   console.log('\nNo matching businesses found — leaving the previous batch untouched.')
@@ -223,7 +289,7 @@ if (!batch.length) {
 
 mkdirSync(OUT_DIR, { recursive: true })
 const date = new Date().toISOString().slice(0, 10)
-const cols = ['name', 'niche', 'city', 'address', 'phone', 'possible_site', 'instagram_search', 'google_search', 'maps']
+const cols = ['name', 'niche', 'city', 'address', 'phone', 'score', 'instagram_confirmed', 'possible_site', 'instagram_search', 'google_search', 'maps']
 const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`
 const csv = [cols.join(','), ...batch.map((r) => cols.map((c) => esc(r[c])).join(','))].join('\n')
 const file = join(OUT_DIR, `${date}-dm-batch.csv`)

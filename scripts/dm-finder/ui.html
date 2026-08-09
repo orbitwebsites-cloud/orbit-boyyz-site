@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Orbit DM Finder</title>
+<title>Orbit Websites — Lead Finder</title>
 <style>
   :root{--ink:#111b17;--muted:#66716c;--line:#dce2dd;--paper:#f7f8f4;--card:#fff;--green:#166534;--lime:#c8f56a}
   *{box-sizing:border-box}
@@ -43,34 +43,43 @@
   .empty{padding:40px;text-align:center;color:var(--muted)}
   #log{white-space:pre-wrap;font:12px ui-monospace,monospace;color:var(--muted);margin-top:10px;max-height:130px;overflow:auto}
   .filters{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+  .score{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:20px;padding:0 6px;border-radius:6px;font-size:12px;font-weight:700}
+  .score.hi{background:#e6f2ea;color:var(--green)}
+  .score.mid{background:#fdf3e3;color:#b45309}
+  .score.lo{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:999px;margin-left:6px}
+  .badge.yes{background:#e6f2ea;color:var(--green)}
+  .badge.no{background:#fdeceb;color:#b3261e}
+  .hint{font-size:12px;color:var(--muted);margin-top:8px}
 </style>
 </head>
 <body>
 <header><div class="wrap"><div class="bar">
-  <h1>Orbit DM Finder</h1>
+  <h1>Orbit Websites — Lead Finder</h1>
   <div class="counts" id="counts"></div>
 </div></div></header>
 
 <main class="wrap">
   <div class="panel">
     <div class="row">
-      <div><label>How many</label><input id="limit" type="number" value="40" min="5" max="200" style="width:90px"></div>
+      <div><label>How many</label><input id="limit" type="number" value="100" min="5" max="300" style="width:90px"></div>
       <div><label>Town (optional)</label><input id="town" placeholder="e.g. Hamilton" style="width:170px"></div>
       <button id="find">Find leads</button>
       <button class="ghost" id="refresh">Refresh</button>
     </div>
     <div class="niches" id="niches"></div>
+    <div class="hint">Quality over volume: results are ranked by score (phone listed, hours set, real address, high-ticket niche) and the top 25 get a real Instagram-presence check. 100 well-screened leads at a 10% close beats 1,000 cold ones at the same rate.</div>
     <div id="log"></div>
   </div>
 
   <div class="filters" id="filters"></div>
   <table><thead><tr>
-    <th style="width:30%">Business</th><th>Niche</th><th>Phone</th><th style="width:22%">Find them</th><th style="width:26%">Status</th>
+    <th style="width:8%">Score</th><th style="width:26%">Business</th><th>Niche</th><th>Phone</th><th style="width:20%">Find them</th><th style="width:24%">Status</th>
   </tr></thead><tbody id="rows"></tbody></table>
 </main>
 
 <script>
-const DM = (n, c) => `hey — noticed ${n} doesn't have a website up. i build sites for local businesses around ${c || 'here'}, usually done in about a week. happy to mock up a homepage for you free so you can actually see it before deciding anything. want me to?`;
+const DM = (n, c) => `hey — this is Alex from Orbit Websites. noticed ${n} doesn't have a website up. i build sites for local businesses around ${c || 'here'}, usually done in about a week. happy to mock up a homepage for you free so you can actually see it before deciding anything. want me to?`;
 
 let state = { leads: [], niches: [] };
 let filter = 'new';
@@ -100,13 +109,16 @@ function render() {
   document.querySelectorAll('#filters button').forEach(b =>
     b.onclick = () => { filter = b.dataset.f; render(); });
 
-  const rows = state.leads.filter(l => filter === 'all' || l.status === filter);
+  const rows = state.leads.filter(l => filter === 'all' || l.status === filter)
+    .sort((a, b) => (b.score||0) - (a.score||0));
   const tb = document.getElementById('rows');
-  if (!rows.length) { tb.innerHTML = `<tr><td colspan="5" class="empty">Nothing here. Hit “Find leads”.</td></tr>`; return; }
+  if (!rows.length) { tb.innerHTML = `<tr><td colspan="6" class="empty">Nothing here. Hit “Find leads”.</td></tr>`; return; }
 
+  const scoreClass = s => s >= 6 ? 'hi' : s >= 3 ? 'mid' : 'lo';
   tb.innerHTML = rows.map(l => `
     <tr class="${l.status!=='new'?'done':''}">
-      <td><div class="name">${esc(l.name)}</div><div class="sub">${esc(l.city||l.address||'')}${l.possible_site?` · <a href="${l.possible_site}" target="_blank" rel="noreferrer" style="color:#b3261e">may have a site</a>`:''}</div></td>
+      <td><span class="score ${scoreClass(l.score||0)}" title="phone + hours + address + niche value">${l.score ?? '–'}</span></td>
+      <td><div class="name">${esc(l.name)}${l.instagram_confirmed===true?'<span class="badge yes">IG confirmed</span>':l.instagram_confirmed===false?'<span class="badge no">no IG found</span>':''}</div><div class="sub">${esc(l.city||l.address||'')}${l.possible_site?` · <a href="${l.possible_site}" target="_blank" rel="noreferrer" style="color:#b3261e">may have a site</a>`:''}</div></td>
       <td class="sub">${esc(l.niche)}</td>
       <td class="sub">${esc(l.phone||'')}</td>
       <td>

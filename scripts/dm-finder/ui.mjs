@@ -37,6 +37,7 @@ function runFinder(opts) {
     if (opts.niches?.length) args.push(`--niches=${opts.niches.join(',')}`)
     if (opts.limit) args.push(`--limit=${opts.limit}`)
     if (opts.town) args.push(`--town=${opts.town}`)
+    if (opts.igcheck != null) args.push(`--igcheck=${opts.igcheck}`)
     const child = spawn(process.execPath, args, { cwd: join(__dirname, '../..') })
     let out = ''
     child.stdout.on('data', (d) => (out += d))

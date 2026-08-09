@@ -54,5 +54,145 @@
     "niche": "Landscaping / hardscape",
     "status": "messaged",
     "updated": "2026-08-08"
+  },
+  "cannonball pools|pittstown": {
+    "name": "Cannonball Pools",
+    "city": "Pittstown",
+    "niche": "Pool / spa install",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "colts neck smiles|colts neck": {
+    "name": "Colts Neck Smiles",
+    "city": "Colts Neck",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "cranford smiles|": {
+    "name": "Cranford Smiles",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "dds craig abramowicz|": {
+    "name": "DDS Craig Abramowicz",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "edison plants and flowers|edison": {
+    "name": "Edison Plants and Flowers",
+    "city": "Edison",
+    "niche": "Landscaping / hardscape",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "elegant spa|": {
+    "name": "Elegant Spa",
+    "city": "",
+    "niche": "Med spa / aesthetics / wellness",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "family dentist cosmetic & implants|": {
+    "name": "Family Dentist Cosmetic & Implants",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "four season spa|": {
+    "name": "Four Season Spa",
+    "city": "",
+    "niche": "Med spa / aesthetics / wellness",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "garden state dental|": {
+    "name": "Garden State Dental",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "good earth nursery|cream ridge": {
+    "name": "Good Earth Nursery",
+    "city": "Cream Ridge",
+    "niche": "Landscaping / hardscape",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "great smiles of elizabeth|": {
+    "name": "Great Smiles of Elizabeth",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "greenhaus jewelers|south amboy": {
+    "name": "Greenhaus Jewelers",
+    "city": "South Amboy",
+    "niche": "Jewelry",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "h. ballal, d.d.s.|": {
+    "name": "H. Ballal, D.D.S.",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "hassite",
+    "updated": "2026-08-09"
+  },
+  "healthy smiles staten island|": {
+    "name": "Healthy Smiles Staten Island",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "hassite",
+    "updated": "2026-08-09"
+  },
+  "implant center of staten island|": {
+    "name": "Implant Center of Staten Island",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "john's tree service|levittown": {
+    "name": "John's Tree Service",
+    "city": "Levittown",
+    "niche": "Landscaping / hardscape",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "kay jewelers|holmdel": {
+    "name": "Kay Jewelers",
+    "city": "Holmdel",
+    "niche": "Jewelry",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "kelly mac interiorscapes|pittstown": {
+    "name": "Kelly Mac Interiorscapes",
+    "city": "Pittstown",
+    "niche": "Landscaping / hardscape",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "kitchen cabinets sales and installation|": {
+    "name": "Kitchen Cabinets Sales and Installation",
+    "city": "",
+    "niche": "Furniture / cabinetry / interiors",
+    "status": "messaged",
+    "updated": "2026-08-09"
+  },
+  "manville family dental|": {
+    "name": "Manville Family Dental",
+    "city": "",
+    "niche": "Dental practice",
+    "status": "messaged",
+    "updated": "2026-08-09"
   }
 }
