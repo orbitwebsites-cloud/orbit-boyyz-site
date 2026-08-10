@@ -2561,9 +2561,87 @@
       "channel": "call_sheet",
       "category": "Dental",
       "seen_at": "2026-08-03T15:44:08.188199+00:00"
+    },
+    "jmipaspendental573238495lid1002195727702": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-10T14:20:34.339508+00:00"
+    },
+    "eriorcontractor542487400lid1002195766359": {
+      "name": "Perfect Touch Interior & Exterior Contractor",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-08-10T14:20:34.339535+00:00"
+    },
+    "tonnjmipserviceorrepairwindowac550702208": {
+      "name": "Service or Repair Window AC",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-08-10T14:20:34.339539+00:00"
+    },
+    "ghtninglikeheatingcoolingrepair550676348": {
+      "name": "Lightninglike Heating & Cooling Repair",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-08-10T14:20:34.339542+00:00"
+    },
+    "omtrentonnjmiproofrepaircompany550708672": {
+      "name": "Roof Repair Company",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-10T14:20:34.339545+00:00"
+    },
+    "trentonnjmipcommercialroofingco550686181": {
+      "name": "Commercial Roofing Co",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-10T14:20:34.339550+00:00"
+    },
+    "scomtrentonnjmiproofingservices550698522": {
+      "name": "Roofing Services",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-10T14:20:34.339553+00:00"
+    },
+    "miprickyolebrickpaverslandscaping4199779": {
+      "name": "Ricky Ole Brick Pavers & Landscaping",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-08-10T14:20:34.339563+00:00"
+    },
+    "jmipaspendental573238495lid1002195727689": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-10T14:20:34.339566+00:00"
+    },
+    "jmipaspendental578050475lid1002195728945": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-10T14:20:34.339569+00:00"
+    },
+    "omjobstownnjmippatriotroofinginc17083719": {
+      "name": "Patriot Roofing Inc",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-10T14:20:34.339574+00:00"
+    },
+    "mmounthollynjmipfoundationbuilders764012": {
+      "name": "Foundation Builders",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-10T14:20:34.339577+00:00"
+    },
+    "thollynjmipmounthollyroofforyou543501055": {
+      "name": "Mount Holly Roof for You",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-10T14:20:34.339579+00:00"
     }
   },
-  "weeks_active": 7,
+  "weeks_active": 8,
   "created_at": "2026-06-13T00:00:00Z",
-  "last_run": "2026-08-03T15:45:09.286572+00:00"
+  "last_run": "2026-08-10T14:22:36.126437+00:00"
 }
