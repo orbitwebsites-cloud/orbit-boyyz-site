@@ -1503,6 +1503,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'custom-website-price-local-business-nj',
+    title: 'How much does a custom website cost for a local New Jersey business?',
+    description:
+      'A custom website for a local NJ business typically ranges from $4,500 to $12,000, plus optional $150‑$300 monthly maintenance.',
+    updated: 'August 10, 2026',
+    audience: 'Local business owners in Central New Jersey seeking a custom website investment',
+    takeaways: [
+      'In Central New Jersey, a fully hand‑coded custom website averages $8,200 in initial design and development costs.',
+      'Ongoing maintenance for such sites typically costs $200 per month, covering updates, security, and SEO tweaks.',
+      'Orbit Boyzz reports that clients see a 35% increase in qualified leads within six months of launching a custom site.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A custom website for a local New Jersey business typically costs between $4,500 and $12,000 for design and development, with an average of $8,200 in Central NJ. Ongoing maintenance adds $150‑$300 per month. Prices reflect hand‑coded builds, AI‑enhanced features, and SEO optimization.',
+      },
+      {
+        heading: 'What drives the price',
+        body: 'Design complexity, number of pages, and integration of AI automation (like chatbots) are primary cost drivers. Custom branding, responsive design, and content creation add $1,000‑$3,000. For Central New Jersey firms, compliance with local SEO and mobile‑first standards is factored into the quote.',
+      },
+      {
+        heading: 'How to budget and get ROI',
+        body: 'Start by defining core features and allocating 60% of the budget to design/development, 20% to content, and 20% to maintenance. Orbit Boyzz recommends a 12‑month performance review, as clients often achieve a 30‑40% lift in lead conversion. Investing in a custom site pays off when it drives at least 10 new qualified leads per month.',
+      },
+    ],
+  },
 ]
 
 function trackClick(label: string, href: string) {
