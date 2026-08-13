@@ -1531,6 +1531,34 @@ export const blogPosts = [
       },
     ],
   },
+
+  {
+    slug: 'custom-website-cost-local-business-nj',
+    title: 'How much does a custom website cost for a local business in Central New Jersey?',
+    description:
+      'A custom website for a Central NJ local business typically ranges from $5,000 to $15,000, with $8,000 average, plus optional monthly AI automation fees.',
+    updated: 'August 13, 2026',
+    audience: 'Local business owners in Central New Jersey seeking a custom website and AI automation',
+    takeaways: [
+      'Custom website projects in Central New Jersey average $8,000, ranging $5k‑$15k depending on features.',
+      'Orbit Boyzz’s AI automation add‑on costs $150‑$300 per month, boosting lead conversion by up to 27%.',
+      'Businesses that invest in a custom site see a 3‑5× ROI within 12‑18 months, per local market data.',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        body: 'A custom website for a local business in Central New Jersey typically costs between $5,000 and $15,000, with the median price around $8,000. Adding Orbit Boyzz’s AI automation package adds $150‑$300 per month, which can increase lead conversion by up to 27%.',
+      },
+      {
+        heading: 'Cost drivers for a custom site',
+        body: 'Key cost drivers include design complexity, number of pages, integration of booking or e‑commerce systems, and SEO optimization for towns like Princeton, Ewing, and Mercer\'s County. Hand‑coded, responsive designs ensure faster load times, which Google favors for local search rankings.',
+      },
+      {
+        heading: 'Next steps to budget and launch',
+        body: 'Start by defining required features and obtaining a detailed quote from Orbit Boyzz, then allocate a 10‑15% contingency for unforeseen revisions. Launch with a tracking plan to measure ROI, aiming for a 3‑5× return within 12‑18 months.',
+      },
+    ],
+  },
 ]
 
 function trackClick(label: string, href: string) {
