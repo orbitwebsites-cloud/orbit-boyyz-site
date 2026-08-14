@@ -456,6 +456,24 @@
 
 .brief-question-actions > span { color: #7f8982; font-size: .66rem; }
 
+.brief-na {
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid var(--brief-line);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 82%);
+  color: var(--brief-muted);
+  font: 700 .78rem var(--font-sans);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.brief-na:hover {
+  border-color: rgb(22 101 52 / 36%);
+  color: var(--brief-green);
+  transform: translateY(-1px);
+}
+
 .brief-question-actions kbd {
   padding: .16rem .28rem;
   border: 1px solid var(--brief-line);

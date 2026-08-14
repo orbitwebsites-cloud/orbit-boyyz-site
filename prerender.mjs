@@ -178,9 +178,9 @@ const pageMeta = {
       'Get a rough price range for your website in 60 seconds. Answer a few questions about your business and we\'ll show you what a build would cost — no commitment.',
   },
   '/project-brief': {
-    title: 'Project Information Brief | Orbit Websites',
+    title: 'Client Discovery Brief | Orbit Websites',
     description:
-      'Complete the Orbit Websites project information brief. Share company facts, project status, partnerships, roadmap, public claims, risks, and launch timeline.',
+      'Complete the inclusive Orbit Websites client discovery brief for a business, nonprofit, public initiative, personal brand, organization, or new project.',
   },
   '/contact': {
     title: 'Book a Free Demo Call | Orbit Websites | Plainsboro, NJ',

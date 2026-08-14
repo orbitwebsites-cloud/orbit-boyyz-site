@@ -24,123 +24,123 @@ type BriefQuestion = {
 const questions: BriefQuestion[] = [
   {
     category: 'Identity',
-    question: 'What is the exact public company/project name?',
-    helper: 'Use the spelling, capitalization, and styling that should appear publicly.',
-    placeholder: 'e.g. Northstar Energy Project',
+    question: 'What is the exact public name of your organization, brand, or project?',
+    helper: 'Use the spelling, capitalization, and styling that should appear publicly. If the name is still being decided, share the working name.',
+    placeholder: 'e.g. Northstar Studio, Community First, or Project Aurora',
   },
   {
-    category: 'Business',
-    question: 'What exactly is the company’s primary business?',
-    helper: 'Explain it plainly—as if you were introducing the company to someone for the first time.',
-    placeholder: 'The company exists to…',
+    category: 'Purpose',
+    question: 'What does your organization, brand, or project do?',
+    helper: 'Explain its primary purpose plainly, as if you were introducing it to someone for the first time.',
+    placeholder: 'We help, provide, create, or exist to...',
   },
   {
-    category: 'Launch',
-    question: 'What products or services will you provide at launch?',
-    helper: 'List only what will be available on day one. Add details, packages, or capacity where useful.',
-    placeholder: 'At launch, we will provide…',
+    category: 'Offer',
+    question: 'What products, services, programs, or experiences do you offer?',
+    helper: 'List what is available now and what will be available at launch. Include packages, formats, or capacity where useful.',
+    placeholder: 'Currently available:\n\nPlanned for launch:',
   },
   {
     category: 'Legal',
-    question: 'What is the exact legal entity name and business structure?',
-    helper: 'Include the registered name, entity type, jurisdiction, and registration status.',
-    placeholder: 'Legal name, LLC/corporation/partnership, jurisdiction…',
+    question: 'Is there a legal entity or formal structure we should reference?',
+    helper: 'If applicable, include the registered name, entity type, jurisdiction, and registration status. Personal brands and early-stage projects can mark this N/A.',
+    placeholder: 'Legal name / LLC, nonprofit, partnership, public body, or N/A',
   },
   {
-    category: 'Validation',
-    question: 'What government approvals, MoUs, partnerships, or official recognitions have already been received?',
-    helper: 'Name the issuing organization, date, status, and what the approval or agreement actually covers.',
-    placeholder: 'Approval / organization / date / scope…',
+    category: 'Credibility',
+    question: 'What approvals, certifications, agreements, partnerships, awards, or recognitions have you received?',
+    helper: 'Include anything that builds trust. Name the issuing organization, date, status, and scope when relevant, or mark this N/A.',
+    placeholder: 'Recognition / organization / date / status / scope, or N/A',
   },
   {
-    category: 'Certainty',
-    question: 'What aspects of the project are confirmed versus proposed/planned?',
-    helper: 'Clearly separate signed, funded, approved, or operational facts from future intentions.',
+    category: 'Clarity',
+    question: 'What is confirmed today, and what is still proposed or planned?',
+    helper: 'Separate live, signed, funded, approved, or operational facts from ideas and future intentions.',
     placeholder: 'Confirmed:\n\nProposed or planned:',
   },
   {
     category: 'Disclosure',
-    question: 'What things can be disclosed in the making of the product and what cannot be disclosed?',
-    helper: 'Flag confidential processes, locations, designs, partners, or technical details we must avoid.',
-    placeholder: 'Safe to disclose:\n\nConfidential / do not disclose:',
+    question: 'What can we share publicly, and what must remain private or confidential?',
+    helper: 'Flag sensitive people, processes, locations, designs, partners, client details, or technical information we must avoid.',
+    placeholder: 'Safe to disclose:\n\nPrivate / confidential / do not disclose:',
   },
   {
     category: 'Status',
-    question: 'What is the current status of the project?',
-    helper: 'Describe the stage today: concept, feasibility, approvals, fundraising, construction, testing, or operations.',
-    placeholder: 'Right now, the project is…',
+    question: 'What stage are you at right now?',
+    helper: 'For example: idea, planning, pre-launch, active, growing, rebranding, fundraising, testing, construction, or fully operational.',
+    placeholder: 'Right now, we are...',
   },
   {
     category: 'Infrastructure',
-    question: 'What facilities are planned?',
-    helper: 'Include facility types, proposed locations, scale, capacity, and whether sites are confirmed.',
-    placeholder: 'Facility / location / scale / status…',
+    question: 'What locations, facilities, platforms, or operational resources are involved?',
+    helper: 'Include physical locations, service areas, digital platforms, equipment, or planned infrastructure. Mark N/A if none apply.',
+    placeholder: 'Location / platform / resource / scale / status, or N/A',
   },
   {
-    category: 'Mission',
-    question: 'What is the target of this project?',
-    helper: 'Define the concrete commercial, technical, social, or environmental outcome.',
-    placeholder: 'The project is targeting…',
+    category: 'Outcomes',
+    question: 'What outcomes are you trying to achieve?',
+    helper: 'Define the commercial, creative, community, technical, social, or environmental result that matters most.',
+    placeholder: 'The most important outcome is...',
   },
   {
     category: 'Partners',
-    question: 'Who are the confirmed technology, manufacturing, EPC, supplier, or strategic partners?',
-    helper: 'Include only confirmed parties and state each partner’s role. Note any names that cannot be public yet.',
-    placeholder: 'Partner / role / confirmed status / disclosure status…',
+    question: 'Who are your confirmed collaborators, vendors, suppliers, technology providers, or strategic partners?',
+    helper: 'State each party\'s role and whether their name can be public. Solo operators or teams without partners can mark this N/A.',
+    placeholder: 'Name / role / confirmed status / public or confidential, or N/A',
   },
   {
     category: 'Audience',
-    question: 'Who is the primary target audience?',
-    helper: 'Describe the main buyers, stakeholders, investors, communities, or institutions we need to reach.',
-    placeholder: 'Our primary audience is…',
+    question: 'Who do you most need to reach?',
+    helper: 'Describe your primary customers, clients, users, supporters, members, donors, partners, communities, or stakeholders.',
+    placeholder: 'Our primary audience is...',
   },
   {
     category: 'Opportunity',
-    question: 'Is the company currently seeking investment or partnerships? If yes, what opportunities are available?',
-    helper: 'Describe the kind of capital, expertise, access, supply, or strategic relationship being sought.',
-    placeholder: 'We are seeking… / We are not currently seeking…',
+    question: 'Are you seeking customers, funding, grants, sponsors, talent, collaborators, or partnerships?',
+    helper: 'Describe the opportunity and the kind of support, capital, expertise, access, or relationship you want. Mark N/A if you are not seeking anything publicly.',
+    placeholder: 'We are seeking... / We are not currently seeking...',
   },
   {
     category: 'Positioning',
-    question: 'What makes the company/project different from competitors?',
-    helper: 'Focus on defensible differences: technology, economics, access, speed, expertise, IP, or delivery model.',
-    placeholder: 'Unlike alternatives, this project…',
+    question: 'What makes your organization, offer, or approach meaningfully different?',
+    helper: 'Consider your expertise, story, values, access, process, technology, pricing, community, intellectual property, or delivery model.',
+    placeholder: 'People choose or support us because...',
   },
   {
     category: 'Brand',
     question: 'What existing brand materials do you have?',
-    helper: 'List logos, brand guidelines, photos, videos, decks, renders, reports, websites, and source files.',
-    placeholder: 'We currently have… Include links where possible.',
+    helper: 'List logos, guidelines, colors, fonts, photos, videos, decks, reports, websites, social accounts, and source files.',
+    placeholder: 'We currently have... Include links where possible.',
   },
   {
     category: 'Roadmap',
-    question: 'What are the major goals and milestones for 2026–2030, 2030–2035, and 2035–2040?',
-    helper: 'Break the roadmap into the three time periods and include measurable targets where approved.',
-    placeholder: '2026–2030:\n\n2030–2035:\n\n2035–2040:',
+    question: 'What are your major goals and milestones over the next 12 months, 1-3 years, and 3-5 years?',
+    helper: 'Use the time horizons that fit your situation. Include measurable targets only when they are confirmed and approved.',
+    placeholder: 'Next 12 months:\n\n1-3 years:\n\n3-5 years:',
   },
   {
     category: 'Claims',
-    question: 'What claims, statistics, partnerships, projections, and financial/investment figures are officially approved for public use?',
-    helper: 'Give exact approved wording and cite the internal or public source for each claim when possible.',
-    placeholder: 'Approved claim / exact figure / source / restrictions…',
+    question: 'What claims, statistics, testimonials, results, partnerships, projections, or figures are approved for public use?',
+    helper: 'Give the exact approved wording and a source for each claim when possible. Mark N/A if nothing has been formally approved yet.',
+    placeholder: 'Approved claim / exact figure or quote / source / restrictions, or N/A',
   },
   {
-    category: 'Governance',
-    question: 'Who is responsible for providing information and who gives final approval before anything is published?',
-    helper: 'Include names, roles, contact details, and the order of the review process.',
-    placeholder: 'Information owner:\nFinal approver:\nReview process:',
+    category: 'Approvals',
+    question: 'Who provides information, feedback, and final approval?',
+    helper: 'Include the main contacts, their roles, and the order of review. If you are the only decision-maker, say so.',
+    placeholder: 'Main contact:\nContributors or reviewers:\nFinal approver:',
   },
   {
     category: 'Risk',
-    question: 'What are the biggest challenges, risks, or limitations facing the project right now?',
-    helper: 'Be candid. Include regulatory, technical, funding, supply, timeline, land, talent, or reputation risks.',
-    placeholder: 'The primary risks or limitations are…',
+    question: 'What are the biggest challenges, risks, or limitations right now?',
+    helper: 'Be candid. Consider time, budget, capacity, approvals, technology, supply, accessibility, staffing, reputation, or other constraints.',
+    placeholder: 'The primary risks or limitations are...',
   },
   {
     category: 'Timeline',
-    question: 'What is the expected timeline for the project, including the target launch/operational date?',
-    helper: 'List key dates, dependencies, decision points, and whether each date is committed or estimated.',
-    placeholder: 'Target date / milestone / dependency / confidence level…',
+    question: 'What is your expected timeline, including any target launch, campaign, event, or completion date?',
+    helper: 'List key dates, dependencies, decision points, and whether each date is fixed, preferred, or estimated.',
+    placeholder: 'Target date / milestone / dependency / fixed or flexible',
   },
 ]
 
@@ -159,8 +159,8 @@ function answerLabel(index: number) {
 
 function buildSummary(name: string, email: string, answers: string[]) {
   const lines = [
-    'ORBIT WEBSITES — PROJECT INFORMATION BRIEF',
-    '===========================================',
+    'ORBIT WEBSITES — CLIENT DISCOVERY BRIEF',
+    '========================================',
     `Prepared by: ${name}`,
     `Email: ${email}`,
     `Submitted: ${new Date().toLocaleString()}`,
@@ -288,7 +288,7 @@ export default function ProjectBrief() {
     const url = URL.createObjectURL(blob)
     const anchor = document.createElement('a')
     anchor.href = url
-    anchor.download = `orbit-project-brief-${new Date().toISOString().slice(0, 10)}.txt`
+    anchor.download = `orbit-client-brief-${new Date().toISOString().slice(0, 10)}.txt`
     anchor.click()
     URL.revokeObjectURL(url)
   }
@@ -300,7 +300,7 @@ export default function ProjectBrief() {
     setSubmitError('')
 
     const payload = new FormData()
-    payload.append('_subject', `New project brief from ${respondentName}`)
+    payload.append('_subject', `New client discovery brief from ${respondentName}`)
     payload.append('_template', 'table')
     payload.append('_captcha', 'false')
     payload.append('name', respondentName)
@@ -370,10 +370,10 @@ export default function ProjectBrief() {
             exit={{ opacity: 0, y: -24 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="brief-kicker"><span /> Project information brief</div>
-            <h1>Build the truth.<br /><em>Then tell the story.</em></h1>
+            <div className="brief-kicker"><span /> Client discovery brief</div>
+            <h1>Start with clarity.<br /><em>Build from there.</em></h1>
             <p className="brief-intro">
-              This focused brief gives our team the facts, boundaries, and ambition behind your project—before anything is designed or published.
+              Whether you represent a business, nonprofit, public initiative, personal brand, or new idea, this brief gives our team the context to do thoughtful work. If something does not apply, simply mark it N/A.
             </p>
 
             <form
@@ -402,7 +402,7 @@ export default function ProjectBrief() {
                     autoComplete="email"
                     value={respondentEmail}
                     onChange={(event) => setRespondentEmail(event.target.value)}
-                    placeholder="you@company.com"
+                    placeholder="you@example.com"
                   />
                 </label>
               </div>
@@ -456,6 +456,11 @@ export default function ProjectBrief() {
                 {step === questions.length - 1 ? 'Review answers' : 'Next question'}
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
+              {!answers[step].trim() && (
+                <button className="brief-na" type="button" onClick={() => updateAnswer('Not applicable')}>
+                  Not applicable
+                </button>
+              )}
               <span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> to continue</span>
             </div>
           </motion.section>
@@ -473,8 +478,8 @@ export default function ProjectBrief() {
             <div className="brief-kicker"><span /> Final review</div>
             <div className="brief-review-heading">
               <div>
-                <h1>Your project,<br /><em>clearly mapped.</em></h1>
-                <p>{answeredCount} of {questions.length} questions answered. Skipped questions can still be submitted.</p>
+                <h1>Your brief,<br /><em>clearly mapped.</em></h1>
+                <p>{answeredCount} of {questions.length} questions answered. You can edit, skip, or mark any question not applicable.</p>
               </div>
               <div className="brief-score" aria-label={`${answeredCount} of ${questions.length} answered`}>
                 <strong>{answeredCount}</strong><span>/ {questions.length}</span>
@@ -512,7 +517,7 @@ export default function ProjectBrief() {
               </div>
               <button className="brief-primary brief-submit-button" type="submit" disabled={submitting}>
                 {submitting ? <LoaderCircle className="brief-spinner" size={18} /> : <Send size={18} />}
-                {submitting ? 'Sending…' : 'Submit brief'}
+                {submitting ? 'Sending…' : 'Send my brief'}
               </button>
             </form>
             {submitError && <p className="brief-error" role="alert">{submitError}</p>}
@@ -538,7 +543,7 @@ export default function ProjectBrief() {
             <div className="brief-kicker"><span /> Transmission complete</div>
             <h1>Brief received.<br /><em>We’re in orbit.</em></h1>
             <p>
-              Thanks, {respondentName.split(' ')[0]}. Your project information has been sent to Orbit Websites. Keep a copy for your records below.
+              Thanks, {respondentName.split(' ')[0]}. Your discovery brief has been sent to Orbit Websites. Keep a copy for your records below.
             </p>
             <div className="brief-success-actions">
               <button className="brief-primary" type="button" onClick={downloadSummary}><Download size={18} /> Download my copy</button>
