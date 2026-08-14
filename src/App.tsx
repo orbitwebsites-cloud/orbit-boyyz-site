@@ -24,6 +24,7 @@ import { twMerge } from 'tailwind-merge'
 import type { ReactNode } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
+import ProjectBrief from './ProjectBrief'
 
 const phone = '609 662 8052'
 const email = 'orbitboyzz@gmail.com'
@@ -4216,6 +4217,13 @@ function Contact() {
 }
 
 function App() {
+  const location = useLocation()
+  const isProjectBrief = location.pathname === '/project-brief'
+
+  if (isProjectBrief) {
+    return <ProjectBrief />
+  }
+
   return (
     <div id="top" className="site-shell">
       <Header />
@@ -4244,6 +4252,7 @@ function App() {
         <Route path="/website-design-for-restaurants-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.restaurants} />} />
         <Route path="/website-design-for-clinics-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.clinics} />} />
         <Route path="/quote" element={<QuotePage />} />
+        <Route path="/project-brief" element={<ProjectBrief />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
@@ -4258,7 +4267,6 @@ function App() {
 }
 
 export default App
-
 
 
 
