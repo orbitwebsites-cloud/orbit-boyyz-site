@@ -142,6 +142,12 @@ const questions: BriefQuestion[] = [
     helper: 'List key dates, dependencies, decision points, and whether each date is fixed, preferred, or estimated.',
     placeholder: 'Target date / milestone / dependency / fixed or flexible',
   },
+  {
+    category: 'Open Floor',
+    question: 'Is there anything else you want us to know, and do you have any questions for us?',
+    helper: 'Share anything the questions above did not cover, plus anything you want us to answer or clarify. We will respond to every question here directly.',
+    placeholder: 'Anything else we should know:\n\nQuestions for Orbit:',
+  },
 ]
 
 type SavedBrief = {
@@ -411,7 +417,7 @@ export default function ProjectBrief() {
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
               <div className="brief-start-notes">
-                <span><strong>20</strong> focused questions</span>
+                <span><strong>{questions.length}</strong> focused questions</span>
                 <span><strong>~15</strong> minutes</span>
                 <span><strong>100%</strong> free</span>
               </div>
