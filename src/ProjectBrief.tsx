@@ -338,7 +338,8 @@ export default function ProjectBrief() {
 
       <header className="brief-header">
         <a className="brief-brand" href="https://orbitboyzz.me" aria-label="Orbit Websites home">
-          <img src="/orbit-logo.svg" alt="Orbit Websites" />
+          <img src="/orbit-logo.svg" alt="" width="38" height="38" />
+          <span>ORBIT<em>WEBSITES</em></span>
         </a>
         <div className="brief-header-meta">
           {step >= 0 && step <= questions.length && (
