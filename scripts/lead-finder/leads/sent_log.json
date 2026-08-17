@@ -2639,9 +2639,45 @@
       "channel": "call_sheet",
       "category": "Roofing",
       "seen_at": "2026-08-10T14:20:34.339579+00:00"
+    },
+    "jmipaspendental573427954lid1002195722010": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-17T13:39:04.005554+00:00"
+    },
+    "repairlyroofing582645296lid1002195774053": {
+      "name": "HomeRepairly Roofing",
+      "channel": "call_sheet",
+      "category": "Roofing",
+      "seen_at": "2026-08-17T13:39:04.005581+00:00"
+    },
+    "phenryjkelchelectricalcontractor13511957": {
+      "name": "Henry J Kelch Electrical Contractor",
+      "channel": "call_sheet",
+      "category": "Electrician",
+      "seen_at": "2026-08-17T13:39:04.005586+00:00"
+    },
+    "jmipaspendental573427954lid1002195721962": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-17T13:39:04.005590+00:00"
+    },
+    "jmipaspendental571896049lid1002195723595": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-17T13:39:04.005593+00:00"
+    },
+    "jmipaspendental562727447lid1002195718365": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-17T13:39:04.005597+00:00"
     }
   },
-  "weeks_active": 8,
+  "weeks_active": 9,
   "created_at": "2026-06-13T00:00:00Z",
-  "last_run": "2026-08-10T14:22:36.126437+00:00"
+  "last_run": "2026-08-17T13:40:05.215197+00:00"
 }
