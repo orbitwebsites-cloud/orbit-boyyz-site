@@ -1,0 +1,178 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OrbitBoyzz / Orbit Websites API",
+    "summary": "Public read-only API for the OrbitBoyzz (Orbit Websites) marketing site.",
+    "description": "Endpoints for programmatically requesting a project price range and checking service health. No authentication is required. Human-readable docs live at https://orbitboyzz.me/developers.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Orbit Websites",
+      "email": "orbitboyzz@gmail.com",
+      "url": "https://orbitboyzz.me/contact"
+    },
+    "license": {
+      "name": "Proprietary"
+    }
+  },
+  "servers": [
+    { "url": "https://orbitboyzz.me", "description": "Production" }
+  ],
+  "tags": [
+    { "name": "quote", "description": "Project price range estimation" },
+    { "name": "meta", "description": "Service status" }
+  ],
+  "paths": {
+    "/api/quote-estimate": {
+      "post": {
+        "operationId": "createQuoteEstimate",
+        "summary": "Estimate a website project price range",
+        "description": "Returns an upfront build range, a monthly care/ops range, and (when relevant) an AI employee monthly cost range, based on the same logic used by the /quote page's project range estimator.",
+        "tags": ["quote"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QuoteEstimateRequest" },
+              "examples": {
+                "aiIntake": {
+                  "summary": "AI intake build, complex, urgent",
+                  "value": { "need": "ai", "complexity": "complex", "urgency": "urgent", "employee": "dispatcher", "automation": true }
+                },
+                "starterSite": {
+                  "summary": "Simple starter website",
+                  "value": { "need": "site", "complexity": "simple", "urgency": "normal", "employee": "none", "automation": false }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Estimate computed successfully.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/QuoteEstimateResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "One or more fields were missing or invalid.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } }
+            }
+          },
+          "405": {
+            "description": "Method other than POST was used.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "getHealth",
+        "summary": "Check API service status",
+        "description": "Lightweight liveness check for the site's API. Returns status and server time.",
+        "tags": ["meta"],
+        "responses": {
+          "200": {
+            "description": "Service is healthy.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/HealthResponse" } }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QuoteEstimateRequest": {
+        "type": "object",
+        "properties": {
+          "need": {
+            "type": "string",
+            "description": "Primary type of work requested.",
+            "enum": ["site", "refresh", "forms", "ai"],
+            "default": "site"
+          },
+          "complexity": {
+            "type": "string",
+            "description": "Rough project complexity.",
+            "enum": ["simple", "medium", "complex"],
+            "default": "simple"
+          },
+          "urgency": {
+            "type": "string",
+            "description": "Desired timeline.",
+            "enum": ["normal", "fast", "urgent"],
+            "default": "normal"
+          },
+          "employee": {
+            "type": "string",
+            "description": "Which AI employee/workflow (if any) to include.",
+            "enum": ["none", "receptionist", "dispatcher", "sales", "proposal", "support"],
+            "default": "none"
+          },
+          "automation": {
+            "type": "boolean",
+            "description": "Whether to add a starter automation layer on top of a non-AI build.",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuoteEstimateResponse": {
+        "type": "object",
+        "properties": {
+          "input": { "$ref": "#/components/schemas/QuoteEstimateRequest" },
+          "estimate": {
+            "type": "object",
+            "properties": {
+              "upfront": { "type": "string", "description": "Formatted upfront build range, e.g. \"$150-$400\"." },
+              "upfrontLow": { "type": "integer" },
+              "upfrontHigh": { "type": "integer" },
+              "monthly": { "type": "string", "description": "Formatted monthly care/ops range, e.g. \"$100-$300/mo\"." },
+              "monthlyLow": { "type": "integer" },
+              "monthlyHigh": { "type": "integer" },
+              "employeeCost": { "type": "string", "description": "Formatted AI employee monthly cost range, or \"N/A\"." },
+              "employeeCostLow": { "type": "integer" },
+              "employeeCostHigh": { "type": "integer" },
+              "savings": { "type": "string", "description": "Human-readable comparison to hiring an employee." },
+              "includes": { "type": "array", "items": { "type": "string" } },
+              "note": { "type": "string" }
+            },
+            "required": ["upfront", "monthly", "employeeCost", "savings", "includes", "note"]
+          }
+        },
+        "required": ["input", "estimate"]
+      },
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["ok"] },
+          "service": { "type": "string" },
+          "time": { "type": "string", "format": "date-time" }
+        },
+        "required": ["status", "service", "time"]
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "string", "description": "Machine-readable error code." },
+              "message": { "type": "string", "description": "Human-readable explanation." },
+              "hint": { "type": "string", "description": "Suggested next step for resolving the error." }
+            },
+            "required": ["code", "message"]
+          }
+        },
+        "required": ["error"]
+      }
+    }
+  }
+}
