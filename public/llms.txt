@@ -70,6 +70,8 @@ A: Call 609 662 8052, email orbitboyzz@gmail.com, or request a range at https://
 - Projects: https://orbitboyzz.me/projects
 - FAQ: https://orbitboyzz.me/faq
 - Blog: https://orbitboyzz.me/blog
+- Privacy Policy: https://orbitboyzz.me/privacy
+- Developer / API docs: https://orbitboyzz.me/developers
 - Pricing file: https://orbitboyzz.me/pricing.md
 
 ## Local Web Design Pages
@@ -157,6 +159,10 @@ A: Call 609 662 8052, email orbitboyzz@gmail.com, or request a range at https://
 - RSS feed: https://orbitboyzz.me/feed.xml
 - Robots file: https://orbitboyzz.me/robots.txt
 - LLM index: https://orbitboyzz.me/llms.txt
+- OpenAPI spec (JSON API): https://orbitboyzz.me/openapi.json
+- Developer / API docs: https://orbitboyzz.me/developers
+- API quote estimate endpoint: POST https://orbitboyzz.me/api/quote-estimate
+- API health endpoint: GET https://orbitboyzz.me/api/health
 
 ## Contact
 

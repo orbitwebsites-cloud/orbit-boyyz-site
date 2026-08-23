@@ -202,6 +202,16 @@ const pageMeta = {
     description:
       'Common questions about web design pricing, timelines, what\'s included, and how Orbit Websites builds sites for local businesses in Central NJ.',
   },
+  '/privacy': {
+    title: 'Privacy Policy | Orbit Websites',
+    description:
+      'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.me, including forms, analytics, and third-party services.',
+  },
+  '/developers': {
+    title: 'Developer & API Docs | Orbit Websites',
+    description:
+      'Public OpenAPI 3.1 specification, endpoint reference, and example requests for the OrbitBoyzz / Orbit Websites project range estimator API.',
+  },
 }
 
 // --- JSON-LD builders -------------------------------------------------------
@@ -601,6 +611,8 @@ function graphFor(route) {
     '/faq': 'FAQ',
     '/orbitboyzz': 'OrbitBoyzz',
     '/web-design-central-nj': 'Web Design Central NJ',
+    '/privacy': 'Privacy Policy',
+    '/developers': 'Developers / API',
   }
   if (topLevelBreadcrumbs[route]) {
     graph.push(topLevelBreadcrumbGraph(route, topLevelBreadcrumbs[route]))
@@ -878,6 +890,29 @@ function graphFor(route) {
   }
   if (route === '/pricing') {
     graph.push(pricingFaqPage)
+  }
+  if (route === '/privacy') {
+    graph.push({
+      '@type': 'WebPage',
+      '@id': `${ORIGIN}/privacy#page`,
+      name: 'Privacy Policy',
+      url: `${ORIGIN}/privacy`,
+      about: { '@id': `${ORIGIN}/#organization` },
+      description:
+        'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.me.',
+    })
+  }
+  if (route === '/developers') {
+    graph.push({
+      '@type': 'WebAPI',
+      '@id': `${ORIGIN}/developers#api`,
+      name: 'OrbitBoyzz / Orbit Websites API',
+      url: `${ORIGIN}/developers`,
+      documentation: `${ORIGIN}/openapi.json`,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      description:
+        'Public, unauthenticated JSON API for computing website project price ranges, documented with an OpenAPI 3.1 specification.',
+    })
   }
   if (route === '/blog') {
     graph.push({

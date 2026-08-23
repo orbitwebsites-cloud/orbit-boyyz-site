@@ -25,6 +25,14 @@ import type { ReactNode } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import ProjectBrief from './ProjectBrief'
+import {
+  calculateQuoteEstimate,
+  quoteOptions,
+  type AiEmployee,
+  type QuoteComplexity,
+  type QuoteNeed,
+  type QuoteUrgency,
+} from './lib/quoteEstimate'
 
 const phone = '609 662 8052'
 const email = 'orbitboyzz@gmail.com'
@@ -263,38 +271,6 @@ export const faqs = [
   ['Do you guarantee Google rankings?', 'We set up strong local SEO foundations and clean page structure that search engines reward. We do not promise specific rankings — no one can — but your site will be built the right way from day one.'],
   ['What is the Enterprise Custom Build?', 'The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Starter websites begin at $150–$400 with a $100–$300/mo care plan.'],
 ]
-
-type QuoteNeed = 'site' | 'refresh' | 'forms' | 'ai'
-type QuoteUrgency = 'normal' | 'fast' | 'urgent'
-type QuoteComplexity = 'simple' | 'medium' | 'complex'
-type AiEmployee = 'none' | 'receptionist' | 'dispatcher' | 'sales' | 'proposal' | 'support'
-
-const quoteOptions = {
-  need: [
-    ['site', 'New website'],
-    ['refresh', 'Website refresh'],
-    ['forms', 'Lead forms / booking'],
-    ['ai', 'AI agents / ops engine'],
-  ] as Array<[QuoteNeed, string]>,
-  complexity: [
-    ['simple', 'Simple'],
-    ['medium', 'Moderate'],
-    ['complex', 'Complex'],
-  ] as Array<[QuoteComplexity, string]>,
-  urgency: [
-    ['normal', 'Normal timeline'],
-    ['fast', 'Fast sprint'],
-    ['urgent', 'Need it ASAP'],
-  ] as Array<[QuoteUrgency, string]>,
-  employee: [
-    ['none', 'Not sure yet'],
-    ['receptionist', 'AI Receptionist'],
-    ['dispatcher', 'AI Dispatcher'],
-    ['sales', 'AI Sales Qualifier'],
-    ['proposal', 'AI Proposal Builder'],
-    ['support', 'AI Follow-Up Assistant'],
-  ] as Array<[AiEmployee, string]>,
-}
 
 export const blogPosts = [
   {
@@ -2263,6 +2239,222 @@ function About() {
   )
 }
 
+function Privacy() {
+  return (
+    <main className="pt-36 md:pt-44">
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-4xl">
+          <Label>[LEGAL // PRIVACY POLICY]</Label>
+          <TextReveal
+            lines={['Privacy Policy']}
+            className="mt-6 max-w-4xl font-display text-[clamp(40px,7vw,80px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]"
+          />
+          <p className="mt-6 font-mono text-xs uppercase tracking-widest text-[#66716c]">Last updated: June 13, 2026</p>
+
+          <div className="mt-10 space-y-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
+            <p>
+              Orbit Websites (also known as OrbitBoyzz, "we," "us," or "our") operates orbitboyzz.me. This
+              policy explains what information we collect when you use this site, how we use it, and the
+              choices you have. We are a small web design studio based in Plainsboro, New Jersey — we do
+              not sell your personal information to third parties.
+            </p>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Information we collect</h2>
+              <p className="mt-3">
+                When you use the project range estimator, contact form, project brief, or booking links on
+                this site, we may collect information you voluntarily submit — such as your name, business
+                name, email address, phone number, service area, and project details. When you call or
+                email us directly, we retain that correspondence to respond to your inquiry.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Automatically collected data</h2>
+              <p className="mt-3">
+                Like most websites, we use privacy-respecting analytics (including Vercel Analytics) to
+                understand aggregate traffic patterns — such as which pages are viewed and which calls to
+                action are clicked. This data is used in aggregate and is not used to build individual
+                advertising profiles.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Third-party services</h2>
+              <p className="mt-3">
+                Booking a call uses Calendly (calendly.com), which has its own privacy policy governing
+                information you submit there. Email links open your default mail client and are sent
+                directly to orbitboyzz@gmail.com. We do not embed third-party advertising trackers.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">How we use your information</h2>
+              <p className="mt-3">
+                We use the information you provide to respond to inquiries, prepare project quotes and
+                proposals, schedule calls, and deliver the website or automation services you request. We
+                do not sell, rent, or trade your personal information to third parties for their marketing
+                purposes.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Data retention and your choices</h2>
+              <p className="mt-3">
+                We retain inquiry and project information for as long as needed to deliver services and
+                meet legitimate business and legal requirements. You can request that we delete your
+                personal information, correct it, or tell you what we hold by emailing
+                orbitboyzz@gmail.com. We will respond within a reasonable time.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Children's privacy</h2>
+              <p className="mt-3">
+                This site is intended for business owners and is not directed at children under 13. We do
+                not knowingly collect personal information from children.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Changes to this policy</h2>
+              <p className="mt-3">
+                We may update this policy as the site and services change. The "Last updated" date above
+                reflects the most recent revision. Continued use of the site after changes means you accept
+                the updated policy.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-[#111b17]">Contact us</h2>
+              <p className="mt-3">
+                Questions about this policy or your data can be sent to{' '}
+                <a href={`mailto:${email}`} className="text-[#166534] hover:text-[#111b17]">{email}</a> or
+                by calling <a href="tel:+16096628052" className="text-[#166534] hover:text-[#111b17]">{phone}</a>.
+                See also our <Link to="/about" className="text-[#166534] hover:text-[#111b17]">About page</Link>{' '}
+                and <Link to="/contact" className="text-[#166534] hover:text-[#111b17]">Contact page</Link>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function Developers() {
+  const curlExample = `curl -X POST https://orbitboyzz.me/api/quote-estimate \\
+  -H "Content-Type: application/json" \\
+  -d '{"need":"ai","complexity":"complex","urgency":"urgent","employee":"dispatcher","automation":true}'`
+
+  const endpoints: Array<[string, string, string]> = [
+    ['POST', '/api/quote-estimate', 'Compute a project price range from need, complexity, urgency, and AI employee selections.'],
+    ['GET', '/api/health', 'Lightweight liveness check for the site API.'],
+  ]
+
+  return (
+    <main className="pt-36 md:pt-44">
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>[DEVELOPERS // API DOCS]</Label>
+          <TextReveal
+            lines={['A small, public API', 'for the project', 'range estimator.']}
+            className="mt-6 max-w-6xl font-display text-[clamp(44px,7vw,100px)] font-extrabold leading-[0.9] tracking-tight text-[#111b17]"
+          />
+          <p className="mt-8 max-w-3xl font-light leading-relaxed text-[#66716c]">
+            OrbitBoyzz / Orbit Websites publishes a small, unauthenticated JSON API alongside this
+            marketing site. The full machine-readable definition is an{' '}
+            <a href="/openapi.json" className="text-[#166534] hover:text-[#111b17]">OpenAPI 3.1 spec at /openapi.json</a>{' '}
+            — every operation below has a stable <code>operationId</code>, typed request/response schemas,
+            and a description, so it works directly with LLM function-calling / tool-use.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <BentoCard className="p-6 md:p-8">
+            <Label>[AUTHENTICATION]</Label>
+            <p className="mt-4 font-light leading-relaxed text-[#66716c]">
+              No API key or authentication is required. All endpoints are public, read-only or
+              stateless-compute, and rate limits are enforced at the platform (Vercel) level. Every
+              response — success or error — is JSON with a <code>Content-Type: application/json</code>{' '}
+              header.
+            </p>
+          </BentoCard>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>[ENDPOINTS]</Label>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {endpoints.map(([method, path, desc]) => (
+              <BentoCard key={path} className="p-6">
+                <p className="font-mono text-xs uppercase tracking-widest text-[#166534]">{method}</p>
+                <p className="mt-2 font-display text-xl font-bold tracking-tight text-[#111b17]">{path}</p>
+                <p className="mt-3 font-light leading-relaxed text-[#66716c]">{desc}</p>
+              </BentoCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>[EXAMPLE REQUEST]</Label>
+          <BentoCard className="mt-6 overflow-x-auto p-6 md:p-8">
+            <pre className="font-mono text-sm leading-relaxed text-[#111b17]">
+              <code>{curlExample}</code>
+            </pre>
+          </BentoCard>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Label>[ERROR FORMAT]</Label>
+          <p className="mt-4 max-w-3xl font-light leading-relaxed text-[#66716c]">
+            Every error response uses the same JSON envelope, with an HTTP status code that matches the
+            failure (400 for invalid input, 405 for a wrong method, 404 for an unknown route):
+          </p>
+          <BentoCard className="mt-6 overflow-x-auto p-6 md:p-8">
+            <pre className="font-mono text-sm leading-relaxed text-[#111b17]">
+              <code>{`{
+  "error": {
+    "code": "invalid_field",
+    "message": "\\"need\\" must be one of: site, refresh, forms, ai.",
+    "hint": "Retry with a valid \\"need\\" value."
+  }
+}`}</code>
+            </pre>
+          </BentoCard>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 md:px-8 pb-24">
+        <div className="mx-auto max-w-7xl">
+          <Label>[MORE MACHINE-READABLE FILES]</Label>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {[
+              ['/openapi.json', 'Full OpenAPI 3.1 specification for this API.'],
+              ['/llms.txt', 'LLM-oriented index of the site, pricing, and content.'],
+              ['/sitemap.xml', 'Full sitemap of every page on the site.'],
+              ['/feed.xml', 'RSS feed of the Orbit Websites blog.'],
+              ['/pricing.md', 'Plain-markdown pricing reference.'],
+            ].map(([path, desc]) => (
+              <BentoCard key={path} className="p-6">
+                <a href={path} className="font-mono text-sm text-[#166534] hover:text-[#111b17]">{path}</a>
+                <p className="mt-2 font-light leading-relaxed text-[#66716c]">{desc}</p>
+              </BentoCard>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
 function OrbitBoyzzBrandPage() {
   return (
     <main className="pt-36 md:pt-44">
@@ -2656,107 +2848,10 @@ function QuoteEstimator() {
     return source.replace(/[^a-zA-Z0-9/?&=._#%-]/g, '')
   }, [location.search])
 
-  const estimate = useMemo(() => {
-    let upfrontLow = 150
-    let upfrontHigh = 400
-    let monthlyLow = 100
-    let monthlyHigh = 300
-    let employeeCostLow = 0
-    let employeeCostHigh = 0
-    const includes = ['strategy call', 'mobile-first build', 'basic conversion structure']
-
-    if (need === 'refresh') {
-      upfrontLow = 90
-      upfrontHigh = 250
-      monthlyLow = 100
-      monthlyHigh = 300
-      includes.push('copy cleanup', 'layout refresh')
-    }
-
-    if (need === 'forms') {
-      upfrontLow = 175
-      upfrontHigh = 500
-      monthlyLow = 150
-      monthlyHigh = 400
-      includes.push('lead form logic', 'booking/contact routing')
-    }
-
-    if (need === 'ai') {
-      upfrontLow = 5000
-      upfrontHigh = 15000
-      monthlyLow = 750
-      monthlyHigh = 2500
-      employeeCostLow = 3500
-      employeeCostHigh = 6500
-      includes.push('AI intake flow', 'database-backed routing', 'automation maintenance')
-    }
-
-    if (complexity === 'medium') {
-      upfrontLow += 75
-      upfrontHigh += 180
-      monthlyHigh += 50
-      includes.push('multi-page structure')
-    }
-
-    if (complexity === 'complex') {
-      upfrontLow += 150
-      upfrontHigh += 450
-      monthlyLow += 30
-      monthlyHigh += 90
-      includes.push('custom workflow mapping')
-    }
-
-    if (urgency === 'fast') {
-      upfrontLow += 30
-      upfrontHigh += 90
-      includes.push('priority sprint')
-    }
-
-    if (urgency === 'urgent') {
-      upfrontLow += 70
-      upfrontHigh += 180
-      includes.push('rush launch window')
-    }
-
-    if (automation && need !== 'ai') {
-      upfrontLow += 180
-      upfrontHigh += 520
-      monthlyLow += 30
-      monthlyHigh += 90
-      employeeCostLow = Math.max(employeeCostLow, 2500)
-      employeeCostHigh = Math.max(employeeCostHigh, 5000)
-      includes.push('starter automation layer')
-    }
-
-    if (employee !== 'none') {
-      employeeCostLow = Math.max(employeeCostLow, 3000)
-      employeeCostHigh = Math.max(employeeCostHigh, 6500)
-      if (need !== 'ai') {
-        monthlyLow += 30
-        monthlyHigh += 90
-        upfrontLow += 150
-        upfrontHigh += 420
-      }
-      includes.push(quoteOptions.employee.find(([value]) => value === employee)?.[1] ?? 'AI employee')
-    }
-
-    const savingsLow = employeeCostLow ? Math.max(0, employeeCostLow - monthlyHigh) : 0
-    const savingsHigh = employeeCostHigh ? Math.max(0, employeeCostHigh - monthlyLow) : 0
-
-    return {
-      upfront: `$${upfrontLow.toLocaleString()}-$${upfrontHigh.toLocaleString()}`,
-      monthly: `$${monthlyLow.toLocaleString()}-$${monthlyHigh.toLocaleString()}/mo`,
-      employeeCost:
-        employeeCostLow > 0 ? `$${employeeCostLow.toLocaleString()}-$${employeeCostHigh.toLocaleString()}/mo` : 'N/A',
-      savings:
-        savingsHigh > 0 ? `saving ~$${savingsLow.toLocaleString()}-$${savingsHigh.toLocaleString()}/mo compared to hiring an employee` : 'standard website work; savings depend on your current admin costs',
-      includes,
-      note:
-        need === 'ai' || employee !== 'none'
-          ? 'AI agent and operations builds vary the most because pricing depends on APIs, workflow complexity, and how much admin work the system replaces.'
-          : 'Standard site work stays accessible. Add-ons, booking flows, and automation increase both upfront build cost and monthly maintenance.',
-    }
-  }, [automation, complexity, employee, need, urgency])
+  const estimate = useMemo(
+    () => calculateQuoteEstimate({ need, complexity, urgency, employee, automation }),
+    [automation, complexity, employee, need, urgency],
+  )
 
   const selectedNeed = quoteOptions.need.find(([value]) => value === need)?.[1] ?? 'New website'
   const selectedComplexity = quoteOptions.complexity.find(([value]) => value === complexity)?.[1] ?? 'Simple'
@@ -3397,6 +3492,8 @@ function Footer() {
     ['Projects', '/projects'],
     ['Blog', '/blog'],
     ['FAQ', '/faq'],
+    ['Developers / API', '/developers'],
+    ['Privacy', '/privacy'],
   ]
 
   return (
@@ -4286,6 +4383,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/developers" element={<Developers />} />
       </Routes>
       <ContactCta />
       <Footer />
