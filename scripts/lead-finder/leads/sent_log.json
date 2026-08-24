@@ -2675,9 +2675,51 @@
       "channel": "call_sheet",
       "category": "Dental",
       "seen_at": "2026-08-17T13:39:04.005597+00:00"
+    },
+    "trentonnjmipkieferlandscapesinc462719045": {
+      "name": "Kiefer Landscapes Inc",
+      "channel": "call_sheet",
+      "category": "Landscaping",
+      "seen_at": "2026-08-24T13:48:07.884807+00:00"
+    },
+    "cnewarksexperts496671276lid1002195743649": {
+      "name": "Maverick Ambitions HVAC- Newark's Experts",
+      "channel": "call_sheet",
+      "category": "HVAC",
+      "seen_at": "2026-08-24T13:48:07.884833+00:00"
+    },
+    "jmipaspendental568352444lid1002195726300": {
+      "name": "Aspen Dental",
+      "channel": "call_sheet",
+      "category": "Dental",
+      "seen_at": "2026-08-24T13:48:07.884838+00:00"
+    },
+    "ingconstruction581390379lid1002195778126": {
+      "name": "Aisling Construction",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-08-24T13:48:07.884844+00:00"
+    },
+    "comriversidenjmipsantospainting569515258": {
+      "name": "Santos Painting",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-08-24T13:48:07.884849+00:00"
+    },
+    "beverlynjmipcolonialpaintingllc573493231": {
+      "name": "Colonial Painting LLC",
+      "channel": "call_sheet",
+      "category": "Painting",
+      "seen_at": "2026-08-24T13:48:07.884858+00:00"
+    },
+    "ingconstruction581390379lid1002195778122": {
+      "name": "Aisling Construction",
+      "channel": "call_sheet",
+      "category": "Contractor",
+      "seen_at": "2026-08-24T13:48:07.884862+00:00"
     }
   },
-  "weeks_active": 9,
+  "weeks_active": 10,
   "created_at": "2026-06-13T00:00:00Z",
-  "last_run": "2026-08-17T13:40:05.215197+00:00"
+  "last_run": "2026-08-24T13:48:08.874493+00:00"
 }
