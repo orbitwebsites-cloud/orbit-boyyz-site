@@ -25,6 +25,7 @@ import type { ReactNode } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import ProjectBrief from './ProjectBrief'
+import LeadForm from './LeadForm'
 import {
   calculateQuoteEstimate,
   quoteOptions,
@@ -4377,6 +4378,7 @@ function App() {
         <Route path="/website-design-for-restaurants-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.restaurants} />} />
         <Route path="/website-design-for-clinics-nj" element={<IndustryWebDesignPage page={industryWebDesignPages.clinics} />} />
         <Route path="/quote" element={<QuotePage />} />
+        <Route path="/form" element={<LeadForm />} />
         <Route path="/project-brief" element={<ProjectBrief />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />

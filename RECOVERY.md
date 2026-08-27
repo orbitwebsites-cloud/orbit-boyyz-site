@@ -149,3 +149,42 @@ light header/footer** and look broken. Deployed knowingly at the user's request.
 
 Order of work: 18 location/industry pages (4 shared components) → 43 blog pages
 (`Blog`, `BlogPost`) → Pricing, Services, About, Projects, FAQ, Quote, Contact, OrbitBoyzz.
+
+---
+
+## 2026-08-26 — /form lead-capture page (agent series CTA)
+
+**Goal:** the YouTube "AI agent" video series links to orbitboyzz.me/form so
+viewers can request the agent for their own business.
+
+Done:
+- `src/lib/leadForm.ts` — shared validators (mirrors `quoteEstimate.ts` pattern)
+- `src/LeadForm.tsx` — new `/form` page: business name, industry, contact name,
+  phone, email, details. Posts JSON to `/api/lead-form`.
+- `api/lead-form.ts` — serverless handler: validates, upserts a HubSpot
+  contact (property `lead_source = agent_form`, needs custom property —
+  see below), and sends an instant autoresponse email via formsubmit.co
+  (same service `ProjectBrief.tsx` already uses — no new account).
+- Route wired in `App.tsx`. `npm run build` passes: **76 routes** prerendered
+  (was 70), typecheck + lint clean.
+- `D:\reach\lead-watcher\watch_and_text.ps1` (outside this repo, local-only) —
+  polls HubSpot for `lead_source = agent_form` contacts every 30s and texts
+  them via Phone Link UI automation, reusing the exact AutomationIds proven
+  in `D:\OrbitBoyzz\agent_automation\realtor-scrape\send_sms.ps1`. Opt-in
+  leads only (form submitters), not the cold realtor list.
+
+### Blocked on user
+- [ ] Create a HubSpot **private app** (Settings → Integrations → Private
+      Apps) with `crm.objects.contacts.read` + `.write` scopes, give the
+      token to Claude to set as Vercel env var `HUBSPOT_PRIVATE_APP_TOKEN`
+      on the `orbit-boyyz-site` project, and paste into
+      `D:\reach\lead-watcher\config.json` (copy from `config.example.json`).
+- [ ] Add one custom contact property in HubSpot: internal name
+      `lead_source`, type single-line text (Settings → Properties → Contact
+      properties → Create property). `phone`, `company`, `industry`,
+      `message` already exist as standard properties — confirmed via the
+      HubSpot API, no other new properties needed.
+- [ ] **Deploy is manual** — remember Git integration is NOT connected (see
+      top of this file). Pushing to GitHub will NOT put `/form` live. Must
+      run the `vercel deploy --prebuilt --prod` no-`.git`-copy method
+      documented above, and only once the user confirms.
