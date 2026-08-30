@@ -67,6 +67,11 @@ const pageMeta = {
     description:
       'Orbit Growth Systems helps independent HVAC companies answer new leads faster, recover missed calls, automate follow-up, and book more qualified jobs.',
   },
+  '/india': {
+    title: 'Orbit Websites India | Custom Websites & AI Automation',
+    description:
+      'Orbit Websites India builds hand-coded websites and AI-powered lead automation for businesses across India, from the team behind Orbit Websites.',
+  },
   '/orbitboyzz': {
     title: 'OrbitBoyzz | Orbit Websites — Web Design Studio in Plainsboro, NJ',
     description:

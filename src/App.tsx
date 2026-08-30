@@ -27,6 +27,7 @@ import './App.css'
 import ProjectBrief from './ProjectBrief'
 import LeadForm from './LeadForm'
 import GrowthPage from './GrowthPage'
+import IndiaPage from './IndiaPage'
 import {
   calculateQuoteEstimate,
   quoteOptions,
@@ -4349,6 +4350,9 @@ function App() {
   const isGrowthSite =
     location.pathname === '/growth' ||
     (typeof window !== 'undefined' && window.location.hostname === 'growth.orbitboyzz.me')
+  const isIndiaSite =
+    location.pathname === '/india' ||
+    (typeof window !== 'undefined' && window.location.hostname === 'india.orbitboyzz.me')
 
   if (isProjectBrief) {
     return <ProjectBrief />
@@ -4356,6 +4360,10 @@ function App() {
 
   if (isGrowthSite) {
     return <GrowthPage />
+  }
+
+  if (isIndiaSite) {
+    return <IndiaPage />
   }
 
   return (
