@@ -6,7 +6,7 @@
 // 2. When a request sends `Accept: text/markdown` with equal-or-higher
 //    priority than `text/html`, serves a hand-maintained markdown variant of
 //    the page instead of the HTML shell, for pages listed in MARKDOWN_PAGES.
-import { next } from '@vercel/edge'
+import { next, rewrite } from '@vercel/edge'
 
 export const config = {
   matcher: [
@@ -165,6 +165,12 @@ function wantsMarkdown(accept: string | null): boolean {
 export default function middleware(request: Request) {
   const url = new URL(request.url)
   const accept = request.headers.get('accept')
+
+  if (url.hostname === 'growth.orbitboyzz.me' && url.pathname === '/') {
+    return rewrite(new URL('/growth', request.url), {
+      headers: { Vary: 'Accept, Accept-Encoding' },
+    })
+  }
 
   const renderMarkdown = MARKDOWN_PAGES[url.pathname]
   if (renderMarkdown && wantsMarkdown(accept)) {

@@ -26,6 +26,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import ProjectBrief from './ProjectBrief'
 import LeadForm from './LeadForm'
+import GrowthPage from './GrowthPage'
 import {
   calculateQuoteEstimate,
   quoteOptions,
@@ -4345,9 +4346,16 @@ function Contact() {
 function App() {
   const location = useLocation()
   const isProjectBrief = location.pathname === '/project-brief'
+  const isGrowthSite =
+    location.pathname === '/growth' ||
+    (typeof window !== 'undefined' && window.location.hostname === 'growth.orbitboyzz.me')
 
   if (isProjectBrief) {
     return <ProjectBrief />
+  }
+
+  if (isGrowthSite) {
+    return <GrowthPage />
   }
 
   return (
