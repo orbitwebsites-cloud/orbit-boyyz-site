@@ -85,34 +85,34 @@ export function calculateQuoteEstimate({
   employee,
   automation,
 }: QuoteEstimateInput): QuoteEstimateResult {
-  let upfrontLow = 150
-  let upfrontHigh = 400
-  let monthlyLow = 100
-  let monthlyHigh = 300
+  let upfrontLow = 750
+  let upfrontHigh = 750
+  let monthlyLow = 0
+  let monthlyHigh = 0
   let employeeCostLow = 0
   let employeeCostHigh = 0
   const includes = ['strategy call', 'mobile-first build', 'basic conversion structure']
 
   if (need === 'refresh') {
-    upfrontLow = 90
-    upfrontHigh = 250
-    monthlyLow = 100
-    monthlyHigh = 300
+    upfrontLow = 750
+    upfrontHigh = 750
+    monthlyLow = 0
+    monthlyHigh = 0
     includes.push('copy cleanup', 'layout refresh')
   }
 
   if (need === 'forms') {
-    upfrontLow = 175
-    upfrontHigh = 500
-    monthlyLow = 150
-    monthlyHigh = 400
+    upfrontLow = 750
+    upfrontHigh = 750
+    monthlyLow = 0
+    monthlyHigh = 0
     includes.push('lead form logic', 'booking/contact routing')
   }
 
   if (need === 'ai') {
     upfrontLow = 5000
     upfrontHigh = 15000
-    monthlyLow = 750
+    monthlyLow = 1500
     monthlyHigh = 2500
     employeeCostLow = 3500
     employeeCostHigh = 6500

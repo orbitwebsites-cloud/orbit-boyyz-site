@@ -200,7 +200,7 @@ const caseStudies = [
     solution:
       'Built a hand-coded Next.js site with a smart intake form. When an emergency lead submits, the system immediately texts the owner a job summary with the issue type, address, and urgency level. Job details are captured and logged into the scheduling workflow within 60 seconds — before the customer calls anyone else.',
     outcome:
-      'Eliminated the need for an overnight front-desk hire, saving $4,500/mo in labor costs while securing thousands in previously lost emergency contract revenue.',
+      'Concept demonstration: illustrates how after-hours intake and owner notifications could reduce response gaps. No client savings or recovered revenue are being reported.',
     metric: '$4.5K/mo',
     metricLabel: 'labor replaced',
   },
@@ -215,7 +215,7 @@ const caseStudies = [
     solution:
       'Built a visual quote intake form. When a corporate client enters guest count, dietary needs, venue, and date, the system automatically calculates a scoped price range and emails a formatted proposal link to the planner in under 3 minutes — no phone call, no back-and-forth.',
     outcome:
-      'Cut time-to-proposal from 8 hours to 180 seconds, capturing major high-intent corporate contracts that previously went to faster competitors.',
+      'Concept demonstration: illustrates how structured intake could prepare a proposal faster. No client turnaround improvement or contract revenue are being reported.',
     metric: '180s',
     metricLabel: 'proposal turnaround',
   },
@@ -2730,7 +2730,7 @@ function CaseStudy({ study, index }: { study: (typeof caseStudies)[number]; inde
         </div>
         <CaseBlock label="[PROBLEM]" text={study.problem} />
         <CaseBlock label="[SOLUTION]" text={study.solution} />
-        <CaseBlock label="[FINANCIAL OUTCOME]" text={study.outcome} emphasized />
+        <CaseBlock label="[ILLUSTRATIVE BUSINESS CASE]" text={study.outcome} emphasized />
       </div>
     </motion.article>
   )
@@ -3433,10 +3433,10 @@ function ContactCta() {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#166534]">[FREE DEMO // NO OBLIGATION]</p>
             <h2 className="mt-6 max-w-4xl font-display text-[clamp(42px,6vw,92px)] font-extrabold leading-[0.9] tracking-tight">
-              See your site live before you pay a cent.
+              See the approach before you commit.
             </h2>
             <p className="mt-5 max-w-2xl font-light leading-relaxed text-[#66716c]">
-              Book a free 15-minute call. We'll build you a working demo — specific to your business — and you decide if it's right for you.
+              Book a free 30-minute call. We’ll review your current website and walk you through a relevant example. No obligation to buy.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">

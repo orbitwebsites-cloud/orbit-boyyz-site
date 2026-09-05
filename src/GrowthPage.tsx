@@ -251,6 +251,13 @@ const tiers = [
   },
 ];
 
+const entryOffer = {
+  name: "HVAC inquiry setup",
+  price: "$750",
+  description: "A focused first workflow for independent HVAC companies before a managed monthly partnership.",
+  features: ["One mobile service page", "Quote form with job details", "Automatic owner notification", "Inquiry tracker and handover"],
+};
+
 const faqs = [
   ["Is there a setup fee?", "No. Your build is included with a three-month minimum engagement. Monthly service is paid at the beginning of each billing period."],
   ["How quickly can we go live?", "Most systems are designed, connected and tested within 15 days after we receive the required business information and account access."],
@@ -403,6 +410,15 @@ export default function GrowthPage() {
                 </article>
               ))}
             </div>
+            <article className="price-card entry-offer">
+              <span className="popular">Start with one workflow</span>
+              <h3>{entryOffer.name}</h3>
+              <p>{entryOffer.description}</p>
+              <div className="price"><strong>{entryOffer.price}</strong><span> one time</span></div>
+              <ul>{entryOffer.features.map((feature) => <li key={feature}><Check /> {feature}</li>)}</ul>
+              <a className="button button-primary" href={CALENDLY_URL} target="_blank" rel="noreferrer">Discuss the setup <ArrowUpRight /></a>
+              <p className="pricing-note">$375 to begin; $375 after approval. Managed monthly plans are separate and optional.</p>
+            </article>
             <p className="pricing-note">Advertising spend and unusually high phone or messaging usage are not included. We confirm your expected usage before launch.</p>
           </div>
         </section>
@@ -482,4 +498,3 @@ export default function GrowthPage() {
     </div>
   )
 }
-
