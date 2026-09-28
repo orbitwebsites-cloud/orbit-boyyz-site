@@ -10,7 +10,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 export function PricingPreview() {
   const from = carePlans[0].price
   return (
-    <section id="pricing" aria-labelledby="pricing-title" className="cv-auto relative py-24 md:py-36">
+    <section id="pricing" aria-labelledby="pricing-title" className="relative py-24 md:py-36">
       <div className="container-x">
         <div className="mb-14 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div>

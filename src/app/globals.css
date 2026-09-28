@@ -421,28 +421,99 @@ html.pt-nav [data-hero] {
   display: inline-block;
   animation: rise var(--d-lg) var(--ease-out) calc(var(--intro) + var(--i) * 14ms) both;
 }
-/* Phones: starting ~60 animations at first paint (per-character headline,
-   fades, 3D rings) delayed first paint by ~1s under mobile CPU budgets, and the
-   headline is the LCP element. Mobile ships a static hero — scroll motion,
-   marquee, calculator etc. are untouched — and the orbit starts after `load`. */
+/* Phones: ~60 masked per-character animations at first paint delayed the
+   headline (the LCP element). Mobile gets a cheaper intro instead — whole
+   words settle up on a stagger. Transform-only and unmasked, so the text is
+   painted (and counted for LCP) on the very first frame. */
 @media (max-width: 767px) {
-  .hero-char,
-  .hero-word,
-  .intro-fade {
+  .hero-char {
     animation: none;
   }
   .hero-word {
     overflow: visible;
+    animation: settle var(--d-md) var(--ease-out) calc(var(--w, 0) * 45ms) both;
+  }
+  .intro-fade {
+    animation: settle var(--d-md) var(--ease-out) calc(200ms + var(--delay, 0ms) * 0.5) both;
+  }
+}
+@keyframes settle {
+  from {
+    transform: translate3d(0, 0.45em, 0);
+  }
+  to {
+    transform: none;
   }
 }
 
-/* Below-the-fold, non-pinned sections skip style/layout/paint until they are
-   near the viewport (the homepage is ~1,100 DOM nodes; laying all of it out
-   before first paint cost ~0.7s on a throttled phone). Pinned sections stay
-   normal because paint containment would break position: fixed pinning. */
-.cv-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 900px;
+/* Scroll progress: a gold hairline under the nav, driven by the page scroll
+   itself (CSS scroll timeline — no JS, runs on the compositor). */
+.scroll-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    position: absolute;
+    inset: auto 0 -1px 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hi));
+    box-shadow: 0 0 12px var(--accent-glow);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: progress-grow linear both;
+    animation-timeline: scroll(root);
+  }
+  /* Background grid drifts slower than the content → depth. */
+  @media (prefers-reduced-motion: no-preference) {
+    body::before {
+      bottom: -480px;
+      animation: grid-drift linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+@keyframes progress-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes grid-drift {
+  to {
+    transform: translate3d(0, -480px, 0);
+  }
+}
+
+/* Primary buttons: a light sweep on hover; the hero CTA also glints on its
+   own every few seconds once the page has loaded. */
+.btn-primary {
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 250, 235, 0.55) 50%, transparent 70%);
+  transform: translate3d(-120%, 0, 0);
+  transition: transform var(--d-md) var(--ease-out);
+}
+.btn-primary:hover::after {
+  transform: translate3d(120%, 0, 0);
+}
+html.motion-go [data-hero] .btn-primary::after {
+  animation: glint 5.5s var(--ease-in-out) 1.5s infinite;
+}
+@keyframes glint {
+  0%,
+  78% {
+    transform: translate3d(-120%, 0, 0);
+  }
+  100% {
+    transform: translate3d(120%, 0, 0);
+  }
 }
 
 /* Decorative loops (orbit rings, pulses) start only once the page has loaded,
@@ -880,5 +951,34 @@ html.cursor-visible .cursor-ring {
   }
   .tilt {
     transform: none !important;
+  }
+
+  /* Reduced motion ≠ no life: nothing moves, but the hero dissolves in
+     (opacity only — the approach Apple's HIG recommends). Starts at 0.2 so the
+     headline still counts as painted for LCP on the first frame. */
+  [data-hero] h1,
+  [data-hero] .intro-fade {
+    animation-name: rm-fade !important;
+    animation-duration: var(--d-lg) !important;
+    animation-timing-function: var(--ease-out) !important;
+    animation-fill-mode: both !important;
+  }
+  [data-hero] .intro-fade {
+    animation-delay: calc(150ms + var(--delay, 0ms) * 0.4) !important;
+  }
+  .hero-word {
+    animation: none !important;
+  }
+  /* The progress bar only reflects position — it isn't motion. */
+  .scroll-progress {
+    animation-duration: auto !important;
+  }
+}
+@keyframes rm-fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
   }
 }

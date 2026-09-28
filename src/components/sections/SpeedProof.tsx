@@ -63,7 +63,7 @@ export function SpeedProof() {
   }, [])
 
   return (
-    <section ref={section} id="speed" aria-labelledby="speed-title" className="cv-auto relative border-y border-line bg-bg-2/50 py-24 md:py-32">
+    <section ref={section} id="speed" aria-labelledby="speed-title" className="relative border-y border-line bg-bg-2/50 py-24 md:py-32">
       <div className="container-x">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-6">

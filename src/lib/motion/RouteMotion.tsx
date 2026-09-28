@@ -3,6 +3,7 @@
 import { useRef, type ReactNode } from 'react'
 import { gsap, ScrollTrigger, SplitText } from './gsap'
 import { DUR, EASE, MQ, STAGGER } from './tokens'
+import { scramble } from './scramble'
 import { useIsoLayoutEffect } from './useIsoLayoutEffect'
 
 /**
@@ -24,9 +25,41 @@ export function RouteMotion({ children }: { children: ReactNode }) {
     if (!root) return
     const mm = gsap.matchMedia()
 
+    // Reduced motion: nothing moves, but blocks and headings still dissolve in
+    // (opacity only), so the page doesn't feel dead.
+    mm.add(MQ.reduce, () => {
+      const vh = window.innerHeight
+      const targets = gsap.utils
+        .toArray<HTMLElement>('[data-reveal], [data-split]', root)
+        .filter((el) => el.getBoundingClientRect().top > vh * 0.9)
+      gsap.set(targets, { autoAlpha: 0 })
+      ScrollTrigger.batch(targets, {
+        start: 'top 90%',
+        once: true,
+        onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, duration: DUR.md, ease: 'none', stagger: STAGGER.items, overwrite: true }),
+      })
+    })
+
     mm.add(MQ.motion, () => {
       const vh = window.innerHeight
       const below = (el: Element) => el.getBoundingClientRect().top > vh * 0.9
+
+      // Section labels decode like a terminal readout as they enter --------
+      // IntersectionObserver, not ScrollTrigger: ~60 labels would each force a
+      // layout measurement at startup (≈500ms of blocking time on mobile).
+      const undo: Array<() => void> = []
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue
+            io.unobserve(e.target)
+            undo.push(scramble(e.target as HTMLElement))
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px' },
+      )
+      root.querySelectorAll<HTMLElement>('[data-scramble]').forEach((el) => io.observe(el))
+      undo.push(() => io.disconnect())
 
       // Block reveals ----------------------------------------------------
       const blocks = gsap.utils.toArray<HTMLElement>('[data-reveal]', root).filter(below)
@@ -82,7 +115,10 @@ export function RouteMotion({ children }: { children: ReactNode }) {
         )
       })
 
-      return () => splits.forEach((s) => s.revert())
+      return () => {
+        splits.forEach((s) => s.revert())
+        undo.forEach((u) => u())
+      }
     })
 
     // Section-level triggers (pins) were created by child effects first; make

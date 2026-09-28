@@ -52,7 +52,7 @@ export function FinalCta() {
   }, [])
 
   return (
-    <section ref={section} id="launch" aria-labelledby="launch-title" className="cv-auto relative isolate overflow-hidden pb-28 pt-24 md:pb-40 md:pt-36">
+    <section ref={section} id="launch" aria-labelledby="launch-title" className="relative isolate overflow-hidden pb-28 pt-24 md:pb-40 md:pt-36">
       <div data-final-orbit className="pointer-events-none absolute left-1/2 top-[66%] -z-10 w-[150vw] max-w-[78rem] -translate-x-1/2 -translate-y-1/2 opacity-80 md:w-[92vw]">
         <OrbitSystem tilt={72} coreClassName="inset-[42%] opacity-80" />
       </div>

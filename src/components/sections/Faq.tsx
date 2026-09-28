@@ -6,7 +6,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 /** [08 // FAQ] Top six questions in a Motion height accordion. */
 export function Faq() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="cv-auto relative py-24 md:py-32">
+    <section id="faq" aria-labelledby="faq-title" className="relative py-24 md:py-32">
       <div className="container-x grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
           <SectionLabel>[08 // FAQ]</SectionLabel>

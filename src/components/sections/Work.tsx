@@ -14,7 +14,7 @@ const mobileShot = (src: string) => src.replace('.png', '-mobile.png')
  */
 export function Work() {
   return (
-    <section id="work" aria-labelledby="work-title" className="cv-auto relative py-24 md:pb-36 md:pt-20">
+    <section id="work" aria-labelledby="work-title" className="relative py-24 md:pb-36 md:pt-20">
       <div className="container-x">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>

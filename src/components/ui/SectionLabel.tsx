@@ -11,7 +11,10 @@ export function SectionLabel({ children, className }: { children: string; classN
             {p}
           </span>
         ) : (
-          <span key={i}>{p.trim()}</span>
+          // data-scramble: RouteMotion "decodes" this text when it scrolls in.
+          <span key={i} data-scramble>
+            {p.trim()}
+          </span>
         ),
       )}
     </p>

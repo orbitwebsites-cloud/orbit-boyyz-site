@@ -19,6 +19,9 @@ export function HeroScene() {
   useEffect(() => {
     if (window.matchMedia(MQ.reduce).matches) return
     if ((navigator.hardwareConcurrency ?? 0) <= 4) return
+    // Phones/tablets keep the CSS orbit: three.js (~240KB) plus a per-frame render
+    // loop costs battery and main-thread time a small screen doesn't pay back.
+    if (window.matchMedia('(max-width: 1023px), (pointer: coarse)').matches) return
     let idleId: number | undefined
     const timer = setTimeout(() => {
       if ('requestIdleCallback' in window) idleId = window.requestIdleCallback(() => setMount(true), { timeout: 2000 })

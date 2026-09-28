@@ -54,7 +54,10 @@ export function Hero() {
             <span aria-hidden="true">
               {words.map((w, wi) => (
                 <span key={wi}>
-                  <span className={w.accent ? 'hero-word is-accent serif-accent text-accent' : 'hero-word'}>
+                  <span
+                    className={w.accent ? 'hero-word is-accent serif-accent text-accent' : 'hero-word'}
+                    style={{ '--w': wi } as CSSProperties}
+                  >
                     {Array.from(w.text).map((ch, ci) => (
                       <span key={ci} className="hero-char" style={{ '--i': w.start + ci } as CSSProperties}>
                         {ch}

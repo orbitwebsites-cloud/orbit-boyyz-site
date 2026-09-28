@@ -13,7 +13,7 @@ export function Footer() {
   const pages = footerPages.filter((p) => BUILT.has(p.href))
 
   return (
-    <footer className="cv-auto relative border-t border-line bg-bg-2/60 pb-24 md:pb-0">
+    <footer className="relative border-t border-line bg-bg-2/60 pb-24 md:pb-0">
       <div className="container-x grid gap-12 pt-16 md:grid-cols-12 md:pt-20">
         <div className="md:col-span-5">
           <OrbitMark className="h-10 w-10" />

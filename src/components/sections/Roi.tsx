@@ -71,7 +71,7 @@ export function Roi() {
   }, [monthly, yearly])
 
   return (
-    <section id="roi" aria-labelledby="roi-title" className="cv-auto relative py-24 md:py-36">
+    <section id="roi" aria-labelledby="roi-title" className="relative py-24 md:py-36">
       <div className="container-x grid gap-12 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-5">
           <SectionLabel>{roi.label}</SectionLabel>

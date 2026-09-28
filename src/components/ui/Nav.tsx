@@ -49,6 +49,7 @@ export function Nav() {
     <>
       <header ref={headerRef} data-scrolled="false" className="fixed inset-x-0 top-0 z-[90]">
         <div className="nav-bg absolute inset-0 border-b border-line bg-bg/75 backdrop-blur-xl" />
+        <div className="scroll-progress" aria-hidden="true" />
         <div className="container-x relative flex h-[var(--nav-h)] items-center justify-between gap-4">
           <TransitionLink href="/" className="relative z-10" onClick={close}>
             <Wordmark />
