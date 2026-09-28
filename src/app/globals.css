@@ -1,0 +1,884 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens — "Mission Control"
+   Palette comes straight from the logo: black #060606 / cream #F4EFE6 / gold #D6B36A.
+   One cool secondary (--ion) is used only for glows.
+   ========================================================================== */
+:root {
+  --bg: #060606;
+  --bg-2: #0b0a09;
+  --panel: #100f0d;
+  --panel-2: #171512;
+  --fg: #f4efe6;
+  --muted: #b7afa3;
+  --dim: #8c857a;
+  --line: rgba(244, 239, 230, 0.1);
+  --line-strong: rgba(244, 239, 230, 0.2);
+  --accent: #d6b36a;
+  --accent-hi: #ecd29a;
+  --accent-ink: #1a1408;
+  --accent-glow: rgba(214, 179, 106, 0.35);
+  --ion: #7fb4ff;
+  --ion-glow: rgba(127, 180, 255, 0.22);
+
+  /* Motion system: 2 easings, 4 durations (mirrors src/lib/motion/tokens.ts) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* expo.out — entrances */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1); /* power2.inOut — transitions */
+  --d-xs: 200ms;
+  --d-sm: 400ms;
+  --d-md: 800ms;
+  --d-lg: 1200ms;
+
+  /* 8pt spacing scale */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-6: 3rem;
+  --s-8: 4rem;
+  --s-12: 6rem;
+  --s-16: 8rem;
+
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --nav-h: 4.5rem;
+  --radius: 1.25rem;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hi: var(--accent-hi);
+  --color-accent-ink: var(--accent-ink);
+  --color-ion: var(--ion);
+
+  --font-display: var(--ff-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--ff-body), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--ff-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: var(--ff-serif), ui-serif, Georgia, serif;
+}
+
+@layer base {
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html {
+  background: var(--bg);
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+}
+
+/* Faint grid, fixed behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(244, 239, 230, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244, 239, 230, 0.035) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 100%);
+}
+
+/* Film grain overlay (static — animated noise costs paint time) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+}
+
+/* ==========================================================================
+   Layout + type utilities
+   ========================================================================== */
+@utility container-x {
+  width: 100%;
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+@utility serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(244, 239, 230, 0.45);
+}
+
+@property --pl-n {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@layer components {
+/* Fluid type scale */
+.t-hero {
+  font-size: clamp(2.75rem, 8.4vw, 9rem);
+}
+.t-1 {
+  font-size: clamp(2.5rem, 6.4vw, 6.5rem);
+}
+.t-2 {
+  font-size: clamp(2rem, 4.4vw, 4.5rem);
+}
+.t-3 {
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+}
+.t-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+  line-height: 1.55;
+}
+
+/* Mask for line/word reveals (SplitText + CSS) */
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 3.5rem;
+  padding-inline: 1.6rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition:
+    background-color var(--d-sm) var(--ease-out),
+    color var(--d-sm) var(--ease-out),
+    border-color var(--d-sm) var(--ease-out),
+    box-shadow var(--d-sm) var(--ease-out);
+}
+.btn-sm {
+  height: 2.75rem;
+  padding-inline: 1.1rem 0.45rem;
+  font-size: 0.9rem;
+  gap: 0.6rem;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow:
+    0 0 0 1px rgba(236, 210, 154, 0.5) inset,
+    0 10px 40px -10px var(--accent-glow);
+}
+.btn-primary:hover {
+  background: var(--accent-hi);
+  box-shadow:
+    0 0 0 1px rgba(255, 240, 205, 0.7) inset,
+    0 14px 60px -8px var(--accent-glow);
+}
+.btn-ghost {
+  border: 1px solid var(--line-strong);
+  color: var(--fg);
+  background: rgba(244, 239, 230, 0.02);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent-hi);
+}
+.btn-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 999px;
+  background: var(--accent-ink);
+  color: var(--accent);
+  overflow: hidden;
+  flex: none;
+}
+.btn-sm .btn-arrow {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+.btn-ghost .btn-arrow {
+  background: rgba(244, 239, 230, 0.08);
+  color: var(--fg);
+}
+.btn-arrow svg {
+  transition: transform var(--d-sm) var(--ease-out);
+}
+.btn:hover .btn-arrow svg {
+  transform: rotate(-45deg);
+}
+
+.link-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--d-sm) var(--ease-out);
+}
+.link-u:hover {
+  background-size: 100% 1px;
+}
+
+/* ==========================================================================
+   Preloader — pure CSS so it never waits for hydration. First visit only:
+   the inline script in layout.tsx adds html.is-preloading.
+   ========================================================================== */
+
+
+.preloader {
+  display: none;
+}
+html.is-preloading .preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  animation: pl-out var(--d-sm) var(--ease-in-out) 780ms forwards;
+}
+.preloader__ring,
+.preloader__arc {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: pl-draw var(--d-md) var(--ease-out) forwards;
+}
+.preloader__arc {
+  animation-delay: 120ms;
+}
+.preloader__core,
+.preloader__planet {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: pl-pop var(--d-sm) var(--ease-out) 260ms forwards;
+}
+.preloader__planet {
+  animation-delay: 520ms;
+}
+.preloader__count {
+  counter-reset: pl var(--pl-n);
+  animation: pl-count var(--d-md) var(--ease-out) forwards;
+}
+.preloader__count::after {
+  content: counter(pl, decimal-leading-zero);
+}
+.preloader__bar > span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: pl-bar var(--d-md) var(--ease-out) forwards;
+}
+@keyframes pl-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pl-pop {
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes pl-count {
+  to {
+    --pl-n: 100;
+  }
+}
+@keyframes pl-bar {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes pl-out {
+  to {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
+
+/* ==========================================================================
+   Hero intro — CSS-driven so the headline paints with the HTML (protects LCP)
+   ========================================================================== */
+/* Process: sticky step counter (ported from v-fable) */
+.step-counter {
+  position: relative;
+  height: 1em;
+  overflow: hidden;
+}
+.step-counter > span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  transition:
+    transform var(--d-md) var(--ease-out),
+    opacity var(--d-md) var(--ease-out);
+}
+.step-counter > span[data-state="current"] {
+  opacity: 1;
+  transform: none;
+}
+.step-counter > span[data-state="past"] {
+  transform: translate3d(0, -100%, 0);
+}
+
+[data-hero] {
+  --intro: 120ms;
+}
+html.is-preloading [data-hero] {
+  --intro: 950ms;
+}
+html.pt-nav [data-hero] {
+  --intro: 380ms;
+}
+.hero-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.hero-word.is-accent {
+  padding-right: 0.1em;
+  margin-right: -0.06em;
+}
+.hero-char {
+  display: inline-block;
+  animation: rise var(--d-lg) var(--ease-out) calc(var(--intro) + var(--i) * 14ms) both;
+}
+/* Phones: starting ~60 animations at first paint (per-character headline,
+   fades, 3D rings) delayed first paint by ~1s under mobile CPU budgets, and the
+   headline is the LCP element. Mobile ships a static hero — scroll motion,
+   marquee, calculator etc. are untouched — and the orbit starts after `load`. */
+@media (max-width: 767px) {
+  .hero-char,
+  .hero-word,
+  .intro-fade {
+    animation: none;
+  }
+  .hero-word {
+    overflow: visible;
+  }
+}
+
+/* Below-the-fold, non-pinned sections skip style/layout/paint until they are
+   near the viewport (the homepage is ~1,100 DOM nodes; laying all of it out
+   before first paint cost ~0.7s on a throttled phone). Pinned sections stay
+   normal because paint containment would break position: fixed pinning. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* Decorative loops (orbit rings, pulses) start only once the page has loaded,
+   so they never compete with the first paint. `motion-go` is added on `load`. */
+html:not(.motion-go) .orbit-ring,
+html:not(.motion-go) .orbit-planet,
+html:not(.motion-go) .scroll-cue,
+html:not(.motion-go) .pulse-dot {
+  animation-name: none;
+}
+.intro-fade {
+  animation: fade-up var(--d-md) var(--ease-out) calc(var(--intro) + var(--delay, 0ms)) both;
+}
+.page-rise {
+  display: block;
+  animation: rise var(--d-lg) var(--ease-out) calc(250ms + var(--delay, 0ms)) both;
+}
+.page-fade {
+  animation: fade-up var(--d-md) var(--ease-out) calc(420ms + var(--delay, 0ms)) both;
+}
+@keyframes rise {
+  from {
+    transform: translate3d(0, 110%, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Orbit SVG (hero fallback + final CTA callback): gentle CSS rotation */
+.orbit-spin {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: spin var(--spin, 60s) linear infinite;
+}
+.orbit-spin.rev {
+  animation-direction: reverse;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.orbit-sys {
+  position: relative;
+  aspect-ratio: 1;
+  perspective: 1600px;
+}
+.orbit-plane {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tilt, 68deg)) rotateZ(-18deg);
+}
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 239, 230, 0.16);
+  transform-style: preserve-3d;
+  animation: orbit-z 40s linear infinite;
+}
+.orbit-ring:nth-child(2) {
+  border-color: rgba(214, 179, 106, 0.28);
+}
+.orbit-planet {
+  position: absolute;
+  top: -7px;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow:
+    0 0 14px 2px var(--c),
+    0 0 40px 6px color-mix(in srgb, var(--c) 35%, transparent);
+  transform-style: preserve-3d;
+  animation: orbit-counter 40s linear infinite;
+}
+.orbit-core {
+  position: absolute;
+  inset: 34%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #fff6df 0%, #ecd29a 18%, rgba(214, 179, 106, 0.55) 34%, rgba(214, 179, 106, 0.12) 58%, transparent 72%);
+  filter: saturate(1.05);
+}
+@keyframes orbit-z {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes orbit-counter {
+  from {
+    transform: rotateZ(0deg) rotateZ(18deg) rotateX(calc(var(--tilt, 68deg) * -1));
+  }
+  to {
+    transform: rotateZ(-360deg) rotateZ(18deg) rotateX(calc(var(--tilt, 68deg) * -1));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring,
+  .orbit-planet {
+    animation: none !important;
+  }
+}
+.orbit-fallback {
+  transition: opacity var(--d-lg) var(--ease-out);
+}
+[data-3d="ready"] .orbit-fallback {
+  opacity: 0;
+}
+.orbit-canvas {
+  opacity: 0;
+  transition: opacity var(--d-lg) var(--ease-out);
+}
+[data-3d="ready"] .orbit-canvas {
+  opacity: 1;
+}
+
+.pulse-dot {
+  animation: pulse 2.4s var(--ease-in-out) infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.scroll-cue {
+  animation: scroll-cue 2.4s var(--ease-in-out) infinite;
+}
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50.1% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* ==========================================================================
+   Services — horizontal mode is switched on by JS only (desktop + motion OK)
+   ========================================================================== */
+.svc-track {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .svc-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.is-h .svc-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.is-h .svc-card {
+  width: min(29rem, 33vw);
+  flex: none;
+}
+.is-h .svc-intro {
+  width: min(34rem, 36vw);
+  flex: none;
+  display: flex;
+}
+
+/* ==========================================================================
+   Work cards
+   ========================================================================== */
+.work-media img {
+  transition: transform var(--d-lg) var(--ease-out);
+}
+.work-card:hover .work-media img,
+.work-card:focus-within .work-media img {
+  transform: scale(1.035);
+}
+.work-phone {
+  transition: transform var(--d-md) var(--ease-out);
+  transform: translate3d(0, 12%, 0) rotate(5deg);
+}
+.work-card:hover .work-phone,
+.work-card:focus-within .work-phone {
+  transform: translate3d(0, 0, 0) rotate(0deg);
+}
+
+/* ==========================================================================
+   Range input (ROI calculator)
+   ========================================================================== */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2rem;
+  background: transparent;
+  cursor: pointer;
+}
+.range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 99px;
+  background: linear-gradient(to right, var(--accent) var(--p, 50%), rgba(244, 239, 230, 0.14) var(--p, 50%));
+}
+.range::-moz-range-track {
+  height: 4px;
+  border-radius: 99px;
+  background: linear-gradient(to right, var(--accent) var(--p, 50%), rgba(244, 239, 230, 0.14) var(--p, 50%));
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -9px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: 5px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(214, 179, 106, 0.15);
+}
+.range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: 5px solid var(--accent);
+}
+
+/* ==========================================================================
+   Tilt cards (pricing)
+   ========================================================================== */
+.tilt {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform var(--d-md) var(--ease-out);
+}
+.tilt-glare {
+  background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 0%), rgba(236, 210, 154, 0.13), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--d-sm) var(--ease-out);
+}
+.tilt:hover .tilt-glare {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Custom cursor (pointer: fine only — JS adds html.has-cursor)
+   ========================================================================== */
+.cursor {
+  display: none;
+}
+html.has-cursor .cursor {
+  display: block;
+}
+html.has-cursor,
+html.has-cursor body,
+html.has-cursor a,
+html.has-cursor button,
+html.has-cursor summary,
+html.has-cursor label {
+  cursor: none;
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 130;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--d-sm) var(--ease-out);
+}
+html.cursor-visible .cursor-dot,
+html.cursor-visible .cursor-ring {
+  opacity: 1;
+}
+.cursor-dot > span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.cursor-ring > span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 239, 230, 0.35);
+  transition:
+    transform var(--d-sm) var(--ease-out),
+    background-color var(--d-sm) var(--ease-out),
+    border-color var(--d-sm) var(--ease-out);
+}
+.cursor-ring b {
+  font: 600 0.62rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity var(--d-xs) var(--ease-out);
+}
+.cursor-ring[data-state="link"] > span {
+  transform: scale(1.5);
+  border-color: var(--accent);
+  background: rgba(214, 179, 106, 0.08);
+}
+.cursor-ring[data-state="view"] > span {
+  transform: scale(2.3);
+  border-color: transparent;
+  background: var(--accent);
+}
+.cursor-ring[data-state="view"] b {
+  opacity: 1;
+  font-size: 0.27rem;
+}
+.cursor-dot[data-state="view"] {
+  opacity: 0 !important;
+}
+
+/* ==========================================================================
+   Page transition overlay (hidden until JS drives it)
+   ========================================================================== */
+.pt-overlay {
+  visibility: hidden;
+}
+
+/* Mobile dock */
+.dock {
+  transform: translateY(140%);
+  transition: transform var(--d-md) var(--ease-out);
+}
+.dock[data-show="true"] {
+  transform: none;
+}
+
+/* Nav scrolled state */
+.nav-bg {
+  opacity: 0;
+  transition: opacity var(--d-sm) var(--ease-out);
+}
+[data-scrolled="true"] .nav-bg {
+  opacity: 1;
+}
+
+/* Mobile menu — clip-path wipe down, items rise in on a stagger. CSS only. */
+.mobile-menu {
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition:
+    clip-path var(--d-sm) var(--ease-in-out),
+    visibility 0s linear var(--d-sm);
+}
+.mobile-menu[data-open="true"] {
+  clip-path: inset(0 0 0 0);
+  visibility: visible;
+  transition-delay: 0s, 0s;
+}
+.mobile-menu__item {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity var(--d-md) var(--ease-out),
+    transform var(--d-md) var(--ease-out);
+}
+.mobile-menu[data-open="true"] .mobile-menu__item {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(100ms + var(--i, 0) * 50ms);
+}
+
+/* FAQ accordion — height animates via grid rows, no JS measuring. */
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--d-sm) var(--ease-in-out),
+    opacity var(--d-sm) var(--ease-in-out);
+}
+.acc-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.acc-panel > div {
+  overflow: hidden;
+}
+
+}
+
+/* ==========================================================================
+   Reduced motion — instant states everywhere
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .orbit-spin,
+  .pulse-dot,
+  .scroll-cue {
+    animation: none !important;
+  }
+  .tilt {
+    transform: none !important;
+  }
+}
