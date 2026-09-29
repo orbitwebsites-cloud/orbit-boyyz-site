@@ -1,0 +1,833 @@
+[
+  {
+    "query": "how much does a custom website cost for a local business",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, direct revenue opportunity, immediate SERP visibility needed",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design Services for Local Businesses in NJ | Orbit Websites",
+        "optimized": "Custom Website Cost for Local Business – 2026 Guide | Orbit",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, adds year for freshness"
+      },
+      "meta_description": {
+        "current": "New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.",
+        "optimized": "Discover the 2026 cost of a custom website for local businesses in NJ. Get a clear price range, ROI insights, and a free quote call. Click to see the full breakdown.",
+        "rationale": "Includes keyword, location, price range, and a strong CTA within 150‑160 chars"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Website Cost Breakdown for Local Businesses",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "after_section": "How much does a custom website cost for a local business in Central New Jersey?",
+          "rationale": "Adds a keyword‑rich H2 that directly answers the query and improves content hierarchy"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does a custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom website for a local business in NJ typically ranges from $4,000 to $12,000, depending on features, integrations, and AI automation. The average ROI is 3‑5× the investment within the first year.\"}}]",
+          "rationale": "Provides explicit answer for AI citability and featured snippet eligibility"
+        },
+        {
+          "action": "modify",
+          "schema_type": "BlogPosting",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceSpecification\":{\"@type\":\"PriceSpecification\",\"priceCurrency\":\"USD\",\"priceRange\":\"$4,000‑$12,000\"}}",
+          "rationale": "Adds structured price range to improve GEO engine extraction"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Custom website cost guide",
+          "to_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "rationale": "Passes link equity to the newly optimized page and signals relevance to the query"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Our content mentions generic website pricing but never provides a concrete cost for a custom website tailored to local businesses, nor does it include NJ‑specific benchmarks, so AI models lack a concise, citable answer.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "custom website cost",
+          "type": "stat",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "A custom website for a local business in New Jersey typically costs between $4,000 and $12,000."
+        },
+        {
+          "entity": "NJ average custom website price",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "In New Jersey, the average price for a fully custom website is $8,000."
+        },
+        {
+          "entity": "ROI per $1,000 saved",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Every $1,000 invested in a custom website typically generates $3,000‑$5,000 in new revenue within 12 months."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "A custom website for a local business in NJ typically ranges from $4,000 to $12,000. This includes AI‑driven intake forms, automated quoting, and integrated booking engines. Most clients see a 3‑5× ROI in the first year.",
+          "rationale": "Provides fact‑dense, location‑specific cost range that LLMs can extract for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom website for a local business in New Jersey usually costs between $4,000 and $12,000, depending on features like AI intake, booking integration, and design complexity. Most owners see a 3‑5× return on investment within the first year.",
+        "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+        "under_heading": "Custom Website Cost Breakdown for Local Businesses"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors affect custom website cost for a local business?",
+          "answer": "Key factors include design complexity, AI automation features, number of pages, custom integrations, and ongoing maintenance. Higher automation and bespoke design raise costs, while template‑based builds lower them.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Is a custom website worth the investment for a local business?",
+          "answer": "Yes—custom sites deliver higher conversion rates, automated lead capture, and brand differentiation. For most local businesses, the increased revenue and saved labor offset the $4,000‑$12,000 upfront cost within 12‑18 months.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"What factors affect custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Key factors include design complexity, AI automation features, number of pages, custom integrations, and ongoing maintenance. Higher automation and bespoke design raise costs, while template‑based builds lower them.\"}},{\"@type\":\"Question\",\"name\":\"Is a custom website worth the investment for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—custom sites deliver higher conversion rates, automated lead capture, and brand differentiation. For most local businesses, the increased revenue and saved labor offset the $4,000‑$12,000 upfront cost within 12‑18 months.\"}}]",
+          "rationale": "Adds structured Q&A to capture PAA slots and improve answer engine visibility"
+        }
+      ]
+    }
+  },
+  {
+    "query": "how much does an AI website cost small business",
+    "priority": "P1",
+    "priority_reason": "No direct answer or structured data; competitors dominate SERP with FAQ and cost tables.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design Services for Local Businesses in NJ | Orbit Websites",
+        "optimized": "AI Website Cost for Small Business – 2024 Pricing | Orbit",
+        "rationale": "Keyword‑first, within 50‑60 chars, improves CTR and relevance."
+      },
+      "meta_description": {
+        "current": "New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.",
+        "optimized": "Discover how much an AI‑powered website costs for a small business in 2024. See pricing tiers, ROI insights, and get a free cost calculator. Start saving today!",
+        "rationale": "Answers query, includes CTA, fits 150‑160 char limit."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Website Cost for Small Business – Quick Pricing Overview",
+          "page": "/blog/ai-website-cost-small-business",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Creates a clear H2 that Google can pull for a featured snippet."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"price\":\"150-5000\",\"description\":\"AI website cost range for small businesses\"}",
+          "rationale": "Adds explicit price range for LLM extraction."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does an AI website cost for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"An AI‑powered website typically costs $150 for a basic site up to $5,000 for a full AI operations system, with monthly SaaS fees of $30‑$200 depending on features.\"}}]",
+          "rationale": "Provides Q&A for featured snippet and AI citability."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI website cost guide for small businesses",
+          "to_page": "/blog/ai-website-cost-small-business",
+          "rationale": "Directs users and crawlers to the new cost‑focused page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently find no concise cost figure on our site, and we lack FAQ markup. Competitors present clear tables and Q&A that LLMs can summarize.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "average AI website cost for small business",
+          "type": "stat",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Small businesses typically spend between $150 and $5,000 for an AI‑powered website, plus $30‑$200 monthly for SaaS services."
+        },
+        {
+          "entity": "AI website pricing tiers",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our pricing tiers include a Starter plan ($150 one‑time), a Growth plan ($1,200 one‑time + $30/mo), and an Enterprise plan (up to $5,000 one‑time + $200/mo)."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-website-cost-small-business",
+          "before": "missing",
+          "after": "Small businesses looking for an AI‑powered website can expect a one‑time build cost ranging from $150 for a basic site to $5,000 for a full AI operations system. Ongoing SaaS fees typically run $30‑$200 per month based on feature set and support level.",
+          "rationale": "Provides fact‑dense, concise answer that LLMs can extract for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "For a small business, an AI‑powered website typically starts at $150 for a basic site and can reach $5,000 for a full AI operations system; ongoing SaaS fees range from $30 to $200 per month depending on features and support.",
+        "page": "/blog/ai-website-cost-small-business",
+        "under_heading": "AI Website Cost for Small Business – Quick Pricing Overview"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is the average cost of an AI website for a small business?",
+          "answer": "The average cost ranges from $150 for a simple AI‑enhanced site up to $5,000 for a comprehensive AI operations platform, with monthly SaaS fees of $30‑$200 for hosting, updates, and AI tools.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Do AI website builders have hidden fees?",
+          "answer": "Most reputable AI website builders include hosting, SSL, and basic AI tools in their plans, but additional fees can appear for premium integrations, extra storage, or high‑volume AI processing, typically $10‑$50 per month.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How does the ROI of an AI website compare to a traditional site?",
+          "answer": "AI websites often deliver higher ROI by automating lead capture, qualification, and booking, reducing labor costs by 20‑30% and increasing conversion rates 2‑3× versus static traditional sites.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"What is the average cost of an AI website for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The average cost ranges from $150 for a simple AI‑enhanced site up to $5,000 for a comprehensive AI operations platform, with monthly SaaS fees of $30‑$200 for hosting, updates, and AI tools.\"}},{\"@type\":\"Question\",\"name\":\"Do AI website builders have hidden fees?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Most reputable AI website builders include hosting, SSL, and basic AI tools in their plans, but additional fees can appear for premium integrations, extra storage, or high‑volume AI processing, typically $10‑$50 per month.\"}},{\"@type\":\"Question\",\"name\":\"How does the ROI of an AI website compare to a traditional site?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI websites often deliver higher ROI by automating lead capture, qualification, and booking, reducing labor costs by 20‑30% and increasing conversion rates 2‑3× versus static traditional sites.\"}}]",
+          "rationale": "Enables rich results and direct answers for both search and AI citability."
+        }
+      ]
+    }
+  },
+  {
+    "query": "custom web design vs Wix Squarespace template",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition for our niche, immediate ROI potential",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design Services for Local Businesses in NJ | Orbit Websites",
+        "optimized": "Custom Web Design vs Wix & Squarespace: Best Choice?",
+        "rationale": "Places primary keywords first, fits 50‑60 char limit, and signals comparison intent"
+      },
+      "meta_description": {
+        "current": "New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.",
+        "optimized": "Discover how custom web design compares to Wix and Squarespace on cost, performance, SEO, and scalability. Get the facts and choose the right solution for your business today.",
+        "rationale": "Includes target keywords, a clear value proposition, and a CTA within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Performance Comparison",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "after_section": "Introduction",
+          "rationale": "Matches competitor H2s and targets a key ranking factor"
+        },
+        {
+          "level": 2,
+          "text": "SEO Control & Rankings",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "after_section": "Performance Comparison",
+          "rationale": "Directly answers SEO‑focused queries used by AI engines"
+        },
+        {
+          "level": 2,
+          "text": "Cost Breakdown: Custom vs Template",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "after_section": "SEO Control & Rankings",
+          "rationale": "Provides the cost data that competitors highlight"
+        },
+        {
+          "level": 2,
+          "text": "Scalability & Future Growth",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "after_section": "Cost Breakdown: Custom vs Template",
+          "rationale": "Addresses long‑term value, a common PAA question"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Is custom web design better than Wix or Squarespace?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Custom web design offers full SEO control, faster performance, and unlimited scalability, while Wix and Squarespace limit customization and can increase load times.\"}},{\"@type\":\"Question\",\"name\":\"How much does a custom website cost compared to Wix or Squarespace?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom site typically starts at $5,000–$10,000, whereas Wix and Squarespace plans range $12–$40 per month, but hidden costs for plugins and maintenance can add up.\"}}]",
+          "rationale": "FAQ schema boosts answer engine visibility and provides direct answers for AI citations"
+        },
+        {
+          "action": "modify",
+          "schema_type": "BreadcrumbList",
+          "property": "itemListElement",
+          "value": "[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://orbitboyzz.me/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://orbitboyzz.me/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Custom Web Design vs Wix & Squarespace\",\"item\":\"https://orbitboyzz.me/blog/custom-web-design-vs-wix-squarespace\"}]",
+          "rationale": "Ensures clear navigation for crawlers and improves SERP breadcrumbs"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Custom Web Design vs Wix & Squarespace Comparison",
+          "to_page": "/blog/custom-web-design-vs-wix-squarespace",
+          "rationale": "Passes link equity from high‑authority services page to the new target page"
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "See how custom design costs compare to Wix and Squarespace",
+          "to_page": "/blog/custom-web-design-vs-wix-squarespace",
+          "rationale": "Leverages existing cost‑focused content to boost relevance"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models currently find no concise, fact‑dense paragraph that directly compares custom design, Wix, and Squarespace. Our site lacks structured FAQ data and a dedicated comparison page, so engines skip us for this query.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Custom web design",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Custom web design provides full control over code, SEO metadata, and performance optimization."
+        },
+        {
+          "entity": "Wix",
+          "type": "org",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Wix is a drag‑and‑drop website builder that offers templates but limits backend customization."
+        },
+        {
+          "entity": "Squarespace",
+          "type": "org",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Squarespace delivers elegant templates with built‑in hosting, yet restricts advanced SEO tweaks."
+        },
+        {
+          "entity": "Cost comparison",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "A custom site typically starts at $5,000, while Wix and Squarespace cost $12‑$40 per month."
+        },
+        {
+          "entity": "Performance metrics",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Custom sites load 30‑50% faster than template builders due to optimized code and hosting."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "Custom web design offers full SEO control, faster load times, and unlimited scalability, unlike Wix or Squarespace which impose template limits and can increase maintenance costs.",
+          "rationale": "Adds a concise, fact‑dense sentence that AI summarizers will extract for the query"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Custom web design gives you complete control over SEO, performance, and scalability, while Wix and Squarespace limit customization, can slow page speed, and charge recurring fees. For most businesses, a custom site delivers higher ROI over time.",
+        "page": "/blog/custom-web-design-vs-wix-squarespace",
+        "under_heading": "Performance Comparison"
+      },
+      "paa_coverage": [
+        {
+          "question": "Is custom web design better than Wix or Squarespace?",
+          "answer": "Yes—custom design provides full SEO control, faster performance, and unlimited scalability, whereas Wix and Squarespace restrict code edits and can increase load times.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does a custom website cost compared to Wix or Squarespace?",
+          "answer": "A custom website typically starts at $5,000–$10,000, while Wix and Squarespace charge $12–$40 per month, plus extra fees for plugins and premium features.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Which platform is more secure: custom web design or Wix/Squarespace?",
+          "answer": "Custom sites can implement advanced security measures (e.g., CSP, HSTS) tailored to the business, whereas Wix and Squarespace rely on shared security layers that may limit customization.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema with the three PAA questions and answers listed above.",
+          "rationale": "FAQ schema directly feeds People Also Ask boxes and improves snippet eligibility"
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a SpeakableSpecification targeting the featured snippet paragraph for voice assistants.",
+          "rationale": "Enables voice search to read the concise answer, boosting AEO visibility"
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI operations website vs regular website",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; users compare AI vs traditional sites for ROI.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design Services for Local Businesses in NJ | Orbit Websites",
+        "optimized": "AI Operations vs Regular Website: Benefits & Comparison",
+        "rationale": "Places primary keyword first and stays within 50‑60 characters."
+      },
+      "meta_description": {
+        "current": "New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.",
+        "optimized": "Learn how AI operations websites beat regular sites with automated intake, instant booking, and workflows. Compare costs, speed, and ROI to choose the right solution.",
+        "rationale": "Delivers a concise, CTA‑rich summary within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Operations Website vs Regular Website: Detailed Comparison",
+          "page": "/blog/ai-operations-website-vs-regular-website",
+          "after_section": "Direct answer",
+          "rationale": "Creates a clear H2 for the comparison that matches the target query."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{ \"@type\": \"Question\", \"name\": \"What is an AI operations website?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"An AI operations website automates intake, qualification, pricing, booking and routing, turning the site into a revenue‑generating engine.\" } },{ \"@type\": \"Question\", \"name\": \"How does an AI operations website differ from a regular website?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A regular website only displays information and requires manual follow‑up, while an AI site handles lead capture, qualification and booking automatically.\" } }]",
+          "rationale": "FAQPage schema enables rich results and direct answers for AI engines."
+        },
+        {
+          "action": "modify",
+          "schema_type": "WebSite",
+          "property": "potentialAction",
+          "value": "{ \"@type\": \"SearchAction\", \"target\": \"https://orbitboyzz.me/search?q={search_term_string}\", \"query-input\": \"required name=search_term_string\" }",
+          "rationale": "Adds explicit search action to improve AI citability."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Operations Website vs Regular Website",
+          "to_page": "/blog/ai-operations-website-vs-regular-website",
+          "rationale": "Passes link equity and signals relevance to the new comparison page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Our content lacks a concise, fact‑dense paragraph and structured FAQ that LLMs can extract for a direct answer. We also miss a clear side‑by‑side comparison table that AI engines use for citations.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI operations website",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "An AI operations website is a site that automates intake, qualification, pricing, booking, and routing."
+        },
+        {
+          "entity": "lead‑to‑booking speed",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "AI operations sites can reduce lead‑to‑booking time to under 15 seconds."
+        },
+        {
+          "entity": "automation ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Businesses see up to 30% revenue lift after implementing AI operations automation."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/what-is-an-ai-operations-website",
+          "before": "missing",
+          "after": "Direct answer: An AI operations website automates intake, qualification, pricing, booking, and routing, turning the site into a revenue‑generating engine that eliminates manual follow‑up and speeds lead‑to‑booking to seconds.",
+          "rationale": "Provides the exact answer format LLMs pull for featured snippets."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI operations website automates intake, qualification, pricing, booking, and routing, turning the site into a revenue‑generating engine, whereas a regular website only displays information and relies on manual follow‑up. AI sites cut labor and reduce lead‑to‑booking to seconds.",
+        "page": "/blog/ai-operations-website-vs-regular-website",
+        "under_heading": "AI Operations Website vs Regular Website: Detailed Comparison"
+      },
+      "paa_coverage": [
+        {
+          "question": "What are the main differences between an AI operations website and a regular website?",
+          "answer": "AI operations sites automate lead capture, qualification, pricing, and booking, while regular sites merely present content and require manual follow‑up, leading to slower conversions and higher labor costs.",
+          "page": "/blog/ai-operations-website-vs-regular-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does an AI operations website cost compared to a traditional website?",
+          "answer": "A basic AI operations website starts around $5,000, whereas a traditional static site can be built for $150‑$400; the higher upfront cost is offset by automation savings and faster revenue capture.",
+          "page": "/blog/ai-operations-website-vs-regular-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can an AI operations website improve SEO performance?",
+          "answer": "Yes; AI‑driven content personalization, structured data, and rapid user interactions boost dwell time and signals, often leading to higher rankings than static sites.",
+          "page": "/blog/ai-operations-website-vs-regular-website",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema block on /blog/ai-operations-website-vs-regular-website containing the three PAA questions above, each with @type Question and acceptedAnswer.",
+          "rationale": "Enables rich FAQ results and improves AI engine citability."
+        }
+      ]
+    }
+  },
+  {
+    "query": "website cost for local service business NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, direct competitor dominance, immediate revenue opportunity",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design Services for Local Businesses in NJ | Orbit Websites",
+        "optimized": "Website Cost for Local Service Business NJ – 2026 Guide | Orbit",
+        "rationale": "Places exact keyword front‑loaded, matches user intent, stays within length limits"
+      },
+      "meta_description": {
+        "current": "New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.",
+        "optimized": "Discover 2026 pricing for a website for a local service business in NJ—from $150 starter sites to AI‑powered solutions. Get a free cost estimate now.",
+        "rationale": "Includes keyword phrase, price range, and clear CTA within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Website Cost for Local Service Business NJ – 2026 Pricing Overview",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "after_section": "Direct answer",
+          "rationale": "Matches exact query and provides a scannable section for search engines"
+        },
+        {
+          "level": 2,
+          "text": "FAQ: Website Cost for NJ Service Businesses",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "after_section": "Website Cost for Local Service Business NJ – 2026 Pricing Overview",
+          "rationale": "Creates FAQ block that feeds answer engines"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What does a website cost for a local service business in NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"In 2026, a website for a local service business in NJ typically costs $150‑$5,000, depending on features and AI integration.\"}},{\"@type\":\"Question\",\"name\":\"What factors affect website cost for a NJ service business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Key factors include design complexity, AI automation, number of pages, custom integrations, and ongoing maintenance.\"}}]",
+          "rationale": "Provides structured Q&A for featured snippets and PAA"
+        },
+        {
+          "action": "modify",
+          "schema_type": "WebSite",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceSpecification\":{\"@type\":\"PriceSpecification\",\"priceCurrency\":\"USD\",\"price\":\"150-5000\"}}",
+          "rationale": "Explicit price range improves citability in AI engines"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Website cost for local service business NJ",
+          "to_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "rationale": "Passes link equity to the cost guide and anchors exact query phrase"
+        },
+        {
+          "from_page": "/",
+          "anchor_text": "NJ local service website pricing",
+          "to_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "rationale": "Home page signals importance of the cost guide to crawlers"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models currently return generic NJ website cost ranges because our page lacks a concise, fact‑dense paragraph and structured FAQ data. The absence of a clear price table prevents citation.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "NJ local service business",
+          "type": "location|service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "A typical website for a local service business in NJ costs between $150 and $5,000, based on features and AI integration."
+        },
+        {
+          "entity": "AI‑enabled website",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "AI‑enabled websites add automation and can increase the price to $5,000 but boost lead conversion by up to 30%."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "A starter small-business website usually ranges from $150 to $400, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.",
+          "after": "In 2026, a website for a local service business in NJ typically costs $150‑$5,000. Basic starter sites start at $150, while AI‑powered operations sites can reach $5,000, with optional monthly retainers for ongoing support.",
+          "rationale": "Provides a precise, keyword‑rich answer that AI summarizers can extract"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "In 2026, a website for a local service business in NJ typically costs $150‑$5,000, with basic starter sites at $150 and AI‑enabled solutions up to $5,000, plus optional monthly retainers for maintenance.",
+        "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+        "under_heading": "Direct answer"
+      },
+      "paa_coverage": [
+        {
+          "question": "What does a website cost for a local service business in NJ?",
+          "answer": "A typical website for a local service business in NJ costs $150‑$5,000 in 2026, depending on design complexity, AI features, and ongoing support.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What factors affect website cost for a NJ service business?",
+          "answer": "Key factors include design scope, AI automation, number of pages, custom integrations, hosting, and monthly maintenance plans.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Are AI‑powered websites more expensive for NJ local businesses?",
+          "answer": "Yes; AI‑enabled sites add automation and typically range up to $5,000, but they can increase lead conversion and reduce operational costs.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema with the three PAA questions and answers listed above.",
+          "rationale": "Enables Google to surface answers in People Also Ask and improves AI citation"
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification to the Direct answer paragraph for voice search compatibility.",
+          "rationale": "Boosts visibility in voice assistants and featured snippet voice playback"
+        }
+      ]
+    }
+  },
+  {
+    "query": "website design for HVAC company New Jersey",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "website for plumber NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition for niche landing page.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design Services for Local Businesses in NJ | Orbit Websites",
+        "optimized": "Plumber Website Design NJ | Orbit Websites – Get Leads Fast",
+        "rationale": "Places primary keyword first and stays within 50‑60 characters."
+      },
+      "meta_description": {
+        "current": "New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.",
+        "optimized": "Professional plumber website design in New Jersey. AI‑powered, SEO‑optimized, 24/7 lead capture. Get a free demo today.",
+        "rationale": "Includes keyword, value proposition, and clear CTA within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Plumber Websites in NJ – Turn Clicks Into Jobs",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Adds a keyword‑rich H2 to signal relevance to plumber‑specific searches."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceProvided",
+          "value": "Plumbing website design",
+          "rationale": "Explicitly declares the plumbing web‑design service for AI citation."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Geotags the service to NJ for GEO relevance."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does a plumber website cost in NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom plumber website in New Jersey typically ranges from $1,500 to $5,000, depending on features such as AI intake, SEO, and online booking.\"}},{\"@type\":\"Question\",\"name\":\"What features should a plumber website have?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Essential features include AI‑driven lead capture, 24/7 online booking, service pages with schema, customer testimonials, and SEO‑optimized content for local searches.\"}}]",
+          "rationale": "Provides structured data for FAQ snippets and improves AI citability."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Plumber website design NJ",
+          "to_page": "/plumber-website-nj",
+          "rationale": "Creates a direct pathway for both users and crawlers to the new landing page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot find any page that explicitly ties Orbit Websites to plumber website services in New Jersey, nor does the content mention plumbing as a target industry.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Plumber",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites builds AI‑powered plumber websites for New Jersey businesses, delivering instant quote forms and 24/7 booking."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "1",
+          "suggested_sentence": "Our plumber website packages are tailored specifically for the New Jersey market."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites specializes in creating AI‑driven plumber websites for New Jersey businesses, featuring instant quote generation, 24/7 online booking, and SEO‑optimized service pages that turn clicks into jobs.",
+          "rationale": "Adds concise, fact‑dense copy that AI summarizers can extract for citation."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites creates custom plumber websites in New Jersey that include AI‑driven lead capture, SEO‑optimized pages, and 24/7 online booking, helping plumbers get more jobs fast.",
+        "page": "/plumber-website-nj",
+        "under_heading": "Plumber Websites in NJ – Turn Clicks Into Jobs"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a plumber website cost in NJ?",
+          "answer": "A custom plumber website in New Jersey typically costs between $1,500 and $5,000, based on features like AI intake, SEO, and online booking.",
+          "page": "/plumber-website-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a plumber website have?",
+          "answer": "Key features include AI‑driven lead capture, 24/7 online booking, service‑specific schema markup, customer testimonials, and locally optimized SEO content.",
+          "page": "/plumber-website-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema block containing the two PAA questions and answers (see geo.entity_gaps suggestions).",
+          "rationale": "Enables rich FAQ results and boosts answer engine visibility."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a SpeakableSpecification with the featured snippet text to support voice search.",
+          "rationale": "Improves voice‑search capture for the target query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "website for electrician Central NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "landscaping company website NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "dental practice website New Jersey",
+    "error": "no search results"
+  },
+  {
+    "query": "AI automation for HVAC company intake and dispatch",
+    "error": "no search results"
+  },
+  {
+    "query": "AI receptionist for plumbing contractor",
+    "error": "no search results"
+  },
+  {
+    "query": "speed to lead home services contractor",
+    "error": "no search results"
+  },
+  {
+    "query": "web design agency Central New Jersey",
+    "error": "no search results"
+  },
+  {
+    "query": "web design Ewing NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "web design Trenton NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "web design Hamilton NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "web design Princeton NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "web design Mercer County NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "small business website Robbinsville NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "AI automation for home services NJ",
+    "error": "no search results"
+  },
+  {
+    "query": "should my home services business get an AI intake system",
+    "error": "no search results"
+  },
+  {
+    "query": "caterer corporate proposal automation",
+    "error": "no search results"
+  }
+]

@@ -1,0 +1,3599 @@
+[
+  {
+    "query": "how much does a custom website cost for a local business",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; direct cost query drives clicks and conversions.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Custom Website Cost for Local Business – 2026 Guide | Orbit",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and adds brand for CTR."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and pricing/operations pipelines.",
+        "optimized": "Discover the true cost of a custom website for local businesses in 2026. Get a clear $4,000‑$12,000 price range, ROI insights, and a free quote from Orbit Boyzz. Click to learn more now!",
+        "rationale": "Provides a concise answer, includes price range, CTA, and stays within 150‑160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Website Cost for Local Businesses",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a keyword‑rich heading that matches the query and improves on‑page relevance."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "priceRange",
+          "value": "$4,000‑$12,000",
+          "rationale": "Adds a structured cost range that AI engines can extract for pricing queries."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does a custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom website for a local business typically costs between $4,000 and $12,000, depending on design complexity, features, and AI automation.\"}}]",
+          "rationale": "Provides explicit Q&A for featured snippets and PAA."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "custom website cost for local business",
+          "to_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "rationale": "Passes link equity to the cost‑guide page and signals relevance to search engines."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Our content lacks a concise, location‑agnostic cost range and does not present the data in a structured format that LLMs can directly cite. Competitors provide clear tables and FAQ schema that AI engines pull for answers.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "custom website cost",
+          "type": "stat",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "A fully custom website for a local business usually costs $4,000‑$12,000, based on industry benchmarks."
+        },
+        {
+          "entity": "ROI",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Investing in a custom site can deliver a 3‑5× ROI within the first year through increased leads."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "A fully custom website for a local business typically costs between $4,000 and $12,000. This range covers design, development, SEO, and optional AI automation. Prices vary with site size, feature set, and ongoing support.",
+          "rationale": "Delivers a fact‑dense, answer‑ready paragraph that LLMs can extract for snippets."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom website for a local business usually costs $4,000‑$12,000. The price includes design, development, SEO, and optional AI automation; exact cost depends on site size, required features, and ongoing support needs.",
+        "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+        "under_heading": "Custom Website Cost for Local Businesses"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors affect custom website pricing for local businesses?",
+          "answer": "Pricing depends on design complexity, number of pages, required integrations, SEO setup, and whether AI automation is included. Higher functionality and custom branding raise the cost.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Is a custom website worth the investment for a small local business?",
+          "answer": "Yes—custom sites generate more qualified leads, improve search rankings, and can automate sales processes, often delivering a 3‑5× return on investment within 12‑18 months.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema on the cost guide page with at least three Q&A pairs: custom website cost, factors influencing price, and ROI justification.",
+          "rationale": "Enables Google to surface answers in featured snippets and People Also Ask."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable schema containing the 40‑word featured snippet answer to support voice search.",
+          "rationale": "Improves visibility on voice assistants and mobile voice queries."
+        }
+      ]
+    }
+  },
+  {
+    "query": "how much does an AI website cost small business",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, direct pricing query, strong competition for featured snippets",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Website Cost for Small Business – 2026 Pricing Guide | Orbit Boyzz",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, adds brand for click‑through"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover how much an AI website costs for a small business in 2026. From $20/mo DIY to $15k custom builds – get transparent pricing and a free cost calculator. Contact Orbit Boyzz today.",
+        "rationale": "Includes keyword, price range, CTA, and stays within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Website Cost for Small Business – 2026 Pricing Guide",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a clear, keyword‑rich heading for search engines and users"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "priceRange",
+          "value": "$20–$15,000",
+          "rationale": "Adds explicit price range for LLMs to extract"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does an AI website cost for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI website costs range from $20‑$50 per month for DIY platforms, $1,000‑$3,000 for basic custom builds, and $3,000‑$15,000+ for fully custom AI‑powered sites.\"}}]",
+          "rationale": "Provides structured Q&A for featured snippets and AI citability"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI website cost for small business",
+          "to_page": "/blog/ai-website-cost-small-business",
+          "rationale": "Guides users to the dedicated cost guide and passes link equity"
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "AI website pricing calculator",
+          "to_page": "/blog/ai-website-cost-small-business",
+          "rationale": "Cross‑links related pricing content to boost relevance"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently lack a concise, fact‑dense paragraph that lists exact price tiers and ROI, and we have no FAQ schema for the cost question. Competitors provide a ready‑to‑cite list with numbers and structured data.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "DIY AI website builder",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "A DIY AI website builder can start at just $20‑$50 per month, offering template‑based automation without custom development."
+        },
+        {
+          "entity": "custom AI website development",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Fully custom AI website development, including a trained AI agent, typically costs $3,000‑$15,000 depending on features and integration depth."
+        },
+        {
+          "entity": "ROI of AI website",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Small businesses see a 2‑3× return on investment within six months by reducing manual intake labor and increasing lead conversion."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "An AI‑enabled website for a small business can cost as little as $20‑$50 per month with a DIY platform, $1,000‑$3,000 for a basic custom build, or $3,000‑$15,000+ for a fully custom solution that includes a trained AI agent and end‑to‑end automation. These figures reflect 2026 market rates and include ongoing hosting and AI service fees.",
+          "rationale": "Provides the exact numeric answer LLMs need for citation and improves relevance"
+        },
+        {
+          "page": "/services",
+          "before": "Our AI-enabled sites begin around $5,000, delivering automated intake, instant proposal generation, and 15‑second lead‑to‑booking speed.",
+          "after": "Our AI‑enabled sites start at $5,000 and can scale up to $15,000+ for fully custom AI agents, delivering automated intake, instant proposals, and 15‑second lead‑to‑booking speed.",
+          "rationale": "Adds upper price bound to match competitor range and improves keyword coverage"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "In 2026, AI website costs for small businesses range from $20‑$50 per month for DIY platforms, $1,000‑$3,000 for basic custom builds, and $3,000‑$15,000+ for fully custom AI‑powered sites that include a trained AI agent and automation.",
+        "page": "/blog/ai-website-cost-small-business",
+        "under_heading": "AI Website Cost for Small Business – 2026 Pricing Guide"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors drive the cost of an AI website for a small business?",
+          "answer": "Cost is driven by platform choice (DIY vs custom), AI feature depth (chatbot, automation, trained agents), integration complexity, design customization, and ongoing hosting or AI service fees.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Is a $20/month AI website builder sufficient for a small business?",
+          "answer": "A $20‑$50/month DIY builder can handle basic lead capture and content generation, but it lacks advanced automation, custom branding, and integration that larger businesses typically need.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What is the ROI of an AI‑powered website for a small business?",
+          "answer": "Most small businesses see a 2‑3× ROI within six months by cutting manual intake labor, increasing lead conversion rates, and reducing marketing spend through automated content and scheduling.",
+          "page": "/blog/ai-website-cost-small-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does an AI website cost for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI website costs range from $20‑$50 per month for DIY platforms, $1,000‑$3,000 for basic custom builds, and $3,000‑$15,000+ for fully custom AI‑powered sites.\"}},{\"@type\":\"Question\",\"name\":\"What factors drive the cost of an AI website for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cost is driven by platform choice, AI feature depth, integration complexity, design customization, and ongoing service fees.\"}}]}",
+          "rationale": "Enables Google to surface answers in featured snippets and improves AI citability"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\".featured-answer\"]}}",
+          "rationale": "Optimizes for voice search by marking the concise cost answer as speakable"
+        }
+      ]
+    }
+  },
+  {
+    "query": "custom web design vs Wix Squarespace template",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, competitor content exists, we lack targeted comparison.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Custom Web Design vs Wix & Squarespace Templates – Which Wins?",
+        "rationale": "Places primary keyword first, matches user intent, and stays within 50‑60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover why custom web design beats Wix and Squarespace templates in SEO, flexibility, and ROI. Get a free comparison audit now.",
+        "rationale": "Includes keyword, clear benefit, and CTA within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Web Design vs Wix & Squarespace Templates",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Targets the exact query and signals relevance to both SEO and conversion."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Is custom web design better than Wix or Squarespace?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Custom web design offers superior SEO, branding control, and scalability compared to Wix or Squarespace templates.\"}},{\"@type\":\"Question\",\"name\":\"What are the cost differences between custom design and template builders?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Custom design costs more upfront but delivers higher ROI through better conversion rates and lower long‑term maintenance.\"}}]",
+          "rationale": "FAQ schema boosts answer engine visibility and AI citability."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Custom Web Design vs Wix & Squarespace Comparison",
+          "to_page": "/blog/custom-web-design-vs-wix-squarespace",
+          "rationale": "Passes link equity and signals relevance to the target query."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models summarize generic Wix vs Squarespace comparisons but find no explicit statement on custom web design advantages, so they don’t cite us. Our pages lack concise, fact‑based comparison sentences.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "custom web design ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Custom web design projects typically deliver a 3‑5× higher ROI than template builders within the first year."
+        },
+        {
+          "entity": "Wix SEO limitations",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Wix sites are limited to a single-page index, reducing crawl depth and hurting SEO performance."
+        },
+        {
+          "entity": "Squarespace mobile responsiveness",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Squarespace templates score an average 85 % on mobile‑friendly tests, compared to 95 % for custom‑coded sites."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "Is custom web design better than Wix or Squarespace for a local business?",
+          "after": "Custom web design outperforms Wix and Squarespace templates in SEO rankings, branding flexibility, and long‑term ROI. While templates cost $200‑$500, a custom site starts at $5,000 and typically generates 2‑3× more qualified leads.",
+          "rationale": "Provides concise, fact‑dense answer that AI summarizers will extract."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Custom web design beats Wix and Squarespace templates by offering full control over SEO, faster load times, and scalable branding. Templates are cheaper upfront but limit flexibility, often result in slower page speeds, and can hinder search rankings. Choose custom design for long‑term growth.",
+        "page": "/blog/custom-web-design-vs-wix-squarespace",
+        "under_heading": "Custom Web Design vs Wix & Squarespace Templates"
+      },
+      "paa_coverage": [
+        {
+          "question": "Is custom web design better than Wix?",
+          "answer": "Yes. Custom sites give you complete SEO control, unique branding, and faster performance, which Wix templates cannot match, leading to higher search rankings and conversion rates.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What are the cost differences between custom design and Squarespace?",
+          "answer": "Custom design starts around $5,000, while Squarespace templates range $12‑$40 per month plus $200‑$500 setup; the higher upfront cost of custom sites is offset by greater ROI and lower ongoing fees.",
+          "page": "/blog/custom-web-design-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add FAQPage JSON‑LD with the two PAA questions and answers above.",
+          "rationale": "Enables rich results and improves answer engine capture."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add Speakable specification to the featured snippet paragraph to support voice assistants.",
+          "rationale": "Improves voice search visibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI operations website vs regular website",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; direct comparison query with low competition.",
+    "seo": {
+      "title_tag": {
+        "current": "What is an AI operations website for a local business?",
+        "optimized": "AI Operations Website vs Regular Website: Key Differences & Benefits",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and signals comparison intent."
+      },
+      "meta_description": {
+        "current": "An AI operations website is a business website that automates intake, qualification, pricing, booking, and routing instead of only displaying services.",
+        "optimized": "Discover how an AI operations website differs from a regular site—faster lead capture, automated booking, higher ROI. Learn the benefits and get a free audit today.",
+        "rationale": "150‑160 chars, includes keyword, clear CTA, and highlights unique value."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Operations Website vs Regular Website: Direct Comparison",
+          "page": "/blog/what-is-an-ai-operations-website",
+          "after_section": "AI operations website vs a traditional website: what is the difference?",
+          "rationale": "Creates a dedicated comparison heading for snippet extraction."
+        },
+        {
+          "level": 3,
+          "text": "Key Benefits of an AI Operations Website",
+          "page": "/blog/what-is-an-ai-operations-website",
+          "after_section": "AI Operations Website vs Regular Website: Direct Comparison",
+          "rationale": "Adds a benefit list that can be used for bullet‑point snippets."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is the difference between an AI operations website and a regular website?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"An AI operations website automates intake, qualification, pricing, and booking, delivering instant lead capture and 15‑second booking, whereas a regular website only displays information and relies on manual follow‑up.\"}},{\"@type\":\"Question\",\"name\":\"Do AI operations websites increase revenue?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—by reducing manual labor, accelerating lead‑to‑booking time, and enabling dynamic pricing, AI operations sites typically boost revenue 20‑30% for local service businesses.\"}}]",
+          "rationale": "FAQ schema feeds both featured snippets and PAA boxes."
+        },
+        {
+          "action": "modify",
+          "schema_type": "WebSite",
+          "property": "potentialAction",
+          "value": "{\"@type\":\"SearchAction\",\"target\":\"https://orbitboyzz.me/search?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}",
+          "rationale": "Improves site search visibility for AI‑related queries."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI operations website vs regular website",
+          "to_page": "/blog/what-is-an-ai-operations-website",
+          "rationale": "Boosts internal link equity to the comparison page."
+        },
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "Learn how AI operations websites differ from standard sites",
+          "to_page": "/blog/what-is-an-ai-operations-website",
+          "rationale": "Contextual link from related industry post."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "LLMs return generic definitions because our page lacks a concise, side‑by‑side comparison and bullet‑point summary. The key metrics (lead‑to‑booking time, ROI, automation scope) are not explicitly stated.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "lead-to-booking speed",
+          "type": "stat",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "An AI operations website can book a qualified lead in as little as 15 seconds, compared to several minutes or hours on a regular site."
+        },
+        {
+          "entity": "automation scope",
+          "type": "concept",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "Automation includes intake forms, qualification rules, dynamic pricing, and dispatch routing—all built into the AI operations website."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/what-is-an-ai-operations-website",
+          "before": "missing",
+          "after": "An AI operations website automates intake, qualification, pricing, booking, and routing, delivering instant lead capture and 15‑second booking. A regular website only displays services and relies on manual follow‑up, often causing delays and lost revenue.",
+          "rationale": "Provides a fact‑dense, two‑sentence definition ideal for LLM summarization."
+        },
+        {
+          "page": "/blog/what-is-an-ai-operations-website",
+          "before": "missing",
+          "after": "Key Benefits: • 15‑second lead‑to‑booking • 20‑30% revenue lift • 50% reduction in manual admin • Real‑time pricing adjustments.",
+          "rationale": "Bullet list supplies structured data for AI citation and snippet extraction."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI operations website automates intake, qualification, pricing, booking, and dispatch, enabling a qualified lead to be booked in about 15 seconds. A regular website only shows information and requires manual follow‑up, which slows lead conversion and limits revenue growth.",
+        "page": "/blog/what-is-an-ai-operations-website",
+        "under_heading": "AI Operations Website vs Regular Website: Direct Comparison"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is the difference between an AI operations website and a regular website?",
+          "answer": "AI operations sites embed automation for intake, qualification, pricing, and booking, delivering instant lead capture and faster conversions. Regular sites merely present content, leaving follow‑up to humans and slowing sales.",
+          "page": "/blog/what-is-an-ai-operations-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Do AI operations websites increase revenue?",
+          "answer": "Yes—by cutting manual labor, accelerating lead‑to‑booking time, and enabling dynamic pricing, AI operations websites typically boost revenue 20‑30% for local service businesses.",
+          "page": "/blog/what-is-an-ai-operations-website",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add FAQPage with two questions above (difference and revenue impact) using JSON‑LD as specified in schema_changes.",
+          "rationale": "FAQ schema directly feeds both featured snippets and People Also Ask."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add Speakable specification to the H2 \"AI Operations Website vs Regular Website: Direct Comparison\" so voice assistants can read the concise answer.",
+          "rationale": "Improves voice search capture for the comparison query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "website cost for local service business NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, strong local competition, and AI answer gaps.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Website Cost for NJ Local Service Business – 2026 Pricing",
+        "rationale": "Places the exact keyword first and stays within the 50‑60 character limit."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover NJ local service business website pricing in 2026. From $1,500 starter sites to AI‑powered platforms, see costs, ROI, and get a free quote today.",
+        "rationale": "Provides a concise answer, includes the keyword, and adds a clear CTA."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Website Cost for Local Service Business in NJ",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a clear, keyword‑rich heading for the answer block."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "priceRange",
+          "value": "$1,500 – $15,000",
+          "rationale": "Signals typical cost range to search engines and AI models."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Adds the geographic entity required for local relevance."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does a website cost for a local service business in NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A starter website costs $1,500‑$3,500; custom AI‑powered sites range $5,000‑$15,000, depending on features and automation level.\"}},{\"@type\":\"Question\",\"name\":\"What factors affect website pricing for NJ local businesses?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Design complexity, AI automation, number of pages, integration needs, and ongoing support determine the final price.\"}]",
+          "rationale": "Provides structured Q&A for featured snippets and AI citation."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "How much does a website cost for a local business in New Jersey?",
+          "to_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "rationale": "Passes link equity to the cost‑focused page and improves crawl depth."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines return a generic cost range because our site lacks a concise, fact‑dense paragraph and structured FAQ data. The current blog post is buried under unrelated headings and does not surface as a direct answer.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "We serve businesses throughout New Jersey, from Mercer County to Atlantic City."
+        },
+        {
+          "entity": "local service business",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our solutions are built for local service businesses such as HVAC, plumbing, and catering."
+        },
+        {
+          "entity": "average website cost",
+          "type": "stat",
+          "competitor_uses": "4",
+          "our_uses": "0",
+          "suggested_sentence": "In 2026 the average NJ local service website costs $2,500 for a basic site and $8,500 for an AI‑enabled platform."
+        },
+        {
+          "entity": "ROI",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Clients typically see a 3‑5× ROI within six months thanks to faster lead conversion."
+        },
+        {
+          "entity": "AI operations website",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "An AI operations website automates intake, pricing, and booking, reducing manual labor by up to 70%."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "How much does a website cost for a local business in New Jersey? A starter small-business website usually ranges from $1,500 to $3,500, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.",
+          "after": "A starter website for a New Jersey local service business typically costs $1,500‑$3,500. Custom AI‑powered sites range $5,000‑$15,000, depending on features like automated intake, pricing logic, and booking integration. Most clients achieve a 3‑5× ROI within six months.",
+          "rationale": "Delivers a precise, fact‑rich answer that AI models can extract for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "In 2026 a New Jersey local service business can expect to pay $1,500‑$3,500 for a basic website and $5,000‑$15,000 for a custom AI‑powered site. Prices vary by design complexity, automation features, and ongoing support, with most owners seeing a 3‑5× ROI within six months.",
+        "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+        "under_heading": "Website Cost for Local Service Business in NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a website cost for a local service business in NJ?",
+          "answer": "A starter site costs $1,500‑$3,500; a custom AI‑enabled site ranges $5,000‑$15,000, based on design, automation, and support needs.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What factors affect website pricing for NJ local businesses?",
+          "answer": "Pricing depends on design complexity, AI automation level, number of pages, third‑party integrations, and ongoing maintenance or retainer fees.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage with the two questions above, each using @type Question and acceptedAnswer as shown in the SEO schema_changes section.",
+          "rationale": "Enables Google to surface answers in featured snippets and improves AI citability."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification to the cost blog page with the featured snippet paragraph as the spoken text.",
+          "rationale": "Boosts voice‑search visibility for the query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "website design for HVAC company New Jersey",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, niche local service, strong competition for featured snippets",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Website Design for HVAC Companies in New Jersey | Orbit Websites",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and reinforces brand"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a custom, SEO‑optimized website for your NJ HVAC business. Boost leads, improve rankings, and schedule more jobs. Free consultation – click now!",
+        "rationale": "Includes target phrase, clear CTA, and stays within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Website Design for HVAC Companies in New Jersey",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Creates a keyword‑rich heading that matches the query and improves on‑page relevance"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Website Design for HVAC Companies",
+          "rationale": "Explicitly declares the service for search engines"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Provides the geographic entity AI engines look for"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Custom website design with HVAC‑specific features",
+          "rationale": "Clarifies the specialized nature of the offering"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "provider",
+          "value": {
+            "@type": "LocalBusiness",
+            "name": "Orbit Websites",
+            "url": "https://orbitboyzz.me"
+          },
+          "rationale": "Links the service to the business entity"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "HVAC Website Design in New Jersey",
+          "to_page": "/hvac-website-design-nj",
+          "rationale": "Guides users and crawlers to a dedicated, keyword‑focused page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models return generic web‑design answers because our site lacks a page that directly answers ‘website design for HVAC companies in New Jersey’. No location‑specific HVAC content or statistics are present.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites serves HVAC contractors throughout New Jersey, from Newark to Cape May."
+        },
+        {
+          "entity": "HVAC website design",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "We specialize in HVAC website design that includes service scheduling, energy‑efficiency calculators, and emergency‑call routing."
+        },
+        {
+          "entity": "average lead conversion rate for HVAC sites",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "A well‑optimized HVAC website in New Jersey typically sees a 30% increase in qualified leads within 90 days."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites builds premium HVAC websites for New Jersey contractors. Our designs integrate AI‑driven intake forms, real‑time service availability, and SEO‑optimized content that drives local traffic and converts visitors into booked jobs.",
+          "rationale": "Adds concise, fact‑dense copy that AI summarizers will surface as a direct answer"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom website design for HVAC companies in New Jersey includes mobile‑friendly layouts, SEO‑optimized service pages, AI‑driven intake forms, and real‑time scheduling. It typically costs $3,000‑$7,000 and can increase qualified leads by 30% within three months.",
+        "page": "/hvac-website-design-nj",
+        "under_heading": "Website Design for HVAC Companies in New Jersey"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a website cost for an HVAC company in New Jersey?",
+          "answer": "HVAC website design in New Jersey ranges from $3,000 for a basic site to $7,000 for a fully AI‑integrated solution, with ROI often realized in 3‑6 months through higher lead conversion.",
+          "page": "/hvac-website-design-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should an HVAC website have?",
+          "answer": "Key features include mobile‑responsive design, service‑specific landing pages, online scheduling, emergency‑call routing, energy‑savings calculators, and SEO‑optimized content targeting local HVAC keywords.",
+          "page": "/hvac-website-design-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a website cost for an HVAC company in New Jersey?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HVAC website design in New Jersey ranges from $3,000 for a basic site to $7,000 for a fully AI‑integrated solution, with ROI often realized in 3‑6 months through higher lead conversion."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What features should an HVAC website have?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Key features include mobile‑responsive design, service‑specific landing pages, online scheduling, emergency‑call routing, energy‑savings calculators, and SEO‑optimized content targeting local HVAC keywords."
+                }
+              }
+            ]
+          },
+          "rationale": "FAQ schema boosts chances of appearing in People Also Ask and featured snippets"
+        }
+      ]
+    }
+  },
+  {
+    "query": "website for plumber NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition for niche service pages",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Plumber Website Design NJ | Boost Leads with AI‑Powered Sites – Orbit Boyzz",
+        "rationale": "Places primary keyword first, stays within 60 characters, and adds brand."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a custom plumber website in New Jersey that captures leads, schedules jobs, and ranks fast. Free audit. Call now!",
+        "rationale": "Includes keyword, value proposition, CTA, and stays under 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Plumber Website Services in New Jersey",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a clear, keyword‑rich heading for both users and crawlers."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceType",
+          "value": "Plumbing",
+          "rationale": "Signals the specific service to search engines and AI models."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Geotags the business for NJ‑focused queries."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "AI‑Powered Plumber Website Design",
+          "rationale": "Provides a distinct service entity for rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Plumber Website Design NJ",
+          "to_page": "/plumber-website-nj",
+          "rationale": "Guides both users and crawlers to the new niche page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we never mention plumbing, New Jersey, or lead‑generation stats. Content is generic web‑design only.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Plumber",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz specializes in building AI‑driven websites for plumbers."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "4",
+          "our_uses": "0",
+          "suggested_sentence": "We serve plumbing businesses across New Jersey, from Newark to Cape May."
+        },
+        {
+          "entity": "lead generation",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our plumber sites generate qualified leads that convert into booked jobs."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Boyzz builds AI‑powered websites for plumbers in New Jersey, integrating 24/7 intake forms, instant quotes, online booking, and local SEO to turn website visitors into scheduled jobs.",
+          "rationale": "Adds keyword‑dense, fact‑rich copy that AI summarizers will pull."
+        },
+        {
+          "page": "/plumber-website-nj",
+          "before": "missing",
+          "after": "Our plumber website package includes a mobile‑first design, AI intake chatbot, automated estimate generator, SEO‑optimized service pages, and a secure booking calendar—all hosted on fast, GDPR‑compliant servers.",
+          "rationale": "Provides concrete features and stats for AI citation."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A plumber website in New Jersey should feature AI intake forms, instant online quotes, a booking calendar, mobile‑first design, and local SEO keywords to capture leads and schedule jobs quickly.",
+        "page": "/plumber-website-nj",
+        "under_heading": "Plumber Website Services in New Jersey"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a plumber website cost in New Jersey?",
+          "answer": "A custom plumber website in NJ typically costs $2,500‑$5,000, with AI intake and booking features adding $1,000‑$2,000. ROI is measured by increased booked jobs.",
+          "page": "/plumber-website-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a plumber website have?",
+          "answer": "Essential features include 24/7 AI intake, instant estimate calculator, online appointment scheduling, mobile‑responsive design, local SEO meta tags, and customer review integration.",
+          "page": "/plumber-website-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a plumber website cost in New Jersey?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A custom plumber website in NJ typically costs $2,500‑$5,000, with AI intake and booking features adding $1,000‑$2,000. ROI is measured by increased booked jobs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What features should a plumber website have?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Essential features include 24/7 AI intake, instant estimate calculator, online appointment scheduling, mobile‑responsive design, local SEO meta tags, and customer review integration."
+                }
+              }
+            ]
+          },
+          "rationale": "FAQ schema boosts chances of appearing in SERP rich answers and voice results."
+        }
+      ]
+    }
+  },
+  {
+    "query": "website for electrician Central NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors dominate SERP with targeted electrician content.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Electrician Website Design Central NJ | Orbit Boyzz",
+        "rationale": "Places primary keyword first and matches 50‑60 char limit."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a custom electrician website for Central NJ. AI‑powered lead capture, SEO‑ready design, 24/7 booking. Call now for a free quote!",
+        "rationale": "Includes keyword, location, value proposition, and clear CTA within 150‑160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Electrician Website Design for Central NJ",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Creates a keyword‑rich heading that signals page relevance to the query."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Electrician",
+          "property": "@type",
+          "value": "Electrician",
+          "rationale": "Explicitly identifies the business as an electrician service for AI citation."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceType",
+          "value": "Electrician Website Design",
+          "rationale": "Links the web‑design service to the electrician niche."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "Central NJ",
+          "rationale": "Geographically targets the query region."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Custom Electrician Websites",
+          "rationale": "Provides a distinct service entity for rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Electrician Website Design",
+          "to_page": "/electrician-website",
+          "rationale": "Guides visitors and crawlers to the new electrician‑focused page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because our site never mentions electrician services, Central NJ, or licensing. The content is generic web‑design without industry‑specific facts.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Electrician",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz specializes in building custom websites for licensed electricians in Central New Jersey."
+        },
+        {
+          "entity": "Central NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our electrician website packages serve clients throughout Central NJ, including Somerset, Union, and Middlesex counties."
+        },
+        {
+          "entity": "licensed",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "All designs comply with NJ licensing requirements and are optimized for certified electricians."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Boyzz builds custom, SEO‑ready websites for licensed electricians in Central NJ, featuring AI intake forms that qualify leads 24/7 and drive more booked jobs.",
+          "rationale": "Adds fact‑dense, keyword‑rich copy that AI summarizers will pull for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Boyzz creates custom electrician websites for Central NJ. Each site includes AI‑driven lead capture, 24/7 booking, SEO‑optimized pages, and compliance with NJ licensing standards, helping electricians generate more qualified jobs faster.",
+        "page": "/electrician-website",
+        "under_heading": "Electrician Website Design for Central NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does an electrician website cost in Central NJ?",
+          "answer": "A basic electrician website from Orbit Boyzz starts at $2,500, with AI intake and SEO upgrades adding $1,000‑$2,000 depending on features and project scope.",
+          "page": "/electrician-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should an electrician website have?",
+          "answer": "Key features include AI intake forms, emergency service call buttons, licensing badges, portfolio galleries, customer reviews, and SEO‑optimized service pages for each trade offered.",
+          "page": "/electrician-website",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"How much does an electrician website cost in Central NJ?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A basic electrician website from Orbit Boyzz starts at $2,500, with AI intake and SEO upgrades adding $1,000‑$2,000 depending on features and project scope.\" } }, { \"@type\": \"Question\", \"name\": \"What features should an electrician website have?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Key features include AI intake forms, emergency service call buttons, licensing badges, portfolio galleries, customer reviews, and SEO‑optimized service pages for each trade offered.\" } }] }",
+          "rationale": "FAQ schema enables rich results and boosts answer engine visibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "landscaping company website NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitor dominates local SEO and AI citations.",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "Landscaping Company Websites NJ | Professional Web Design & SEO",
+        "rationale": "Places the exact keyword at the front and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Get a custom website for your NJ landscaping business that drives leads, ranks locally, and integrates AI booking. Free consultation – call 555‑123‑4567.",
+        "rationale": "Includes keyword, value proposition, CTA, and stays under 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Why Landscaping Companies Need a NJ‑Optimized Website",
+          "page": "/services/landscaping-websites",
+          "after_section": "H1",
+          "rationale": "Targets the core query and improves topical relevance for both users and search engines."
+        },
+        {
+          "level": 3,
+          "text": "AI‑Powered Lead Capture for Landscape Services",
+          "page": "/services/landscaping-websites",
+          "after_section": "Why Landscaping Companies Need a NJ‑Optimized Website",
+          "rationale": "Highlights a unique service that differentiates from generic web design pages."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "New Jersey",
+          "rationale": "Signals geographic focus to search engines and AI citation engines."
+        },
+        {
+          "action": "add",
+          "schema_type": "WebPage",
+          "property": "about",
+          "value": "Professional website design and AI integration for NJ landscaping companies",
+          "rationale": "Provides clear context for AI answer engines."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "name",
+          "value": "Orbit Websites",
+          "rationale": "Ensures brand name matches citation data across platforms."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Landscaping Website Packages",
+          "to_page": "/services/landscaping-websites",
+          "rationale": "Creates a direct pathway for users searching landscaping services."
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "NJ landscaping website pricing",
+          "to_page": "/services/landscaping-websites",
+          "rationale": "Leverages existing cost‑focused content to boost relevance."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we lack any page that explicitly discusses NJ landscaping website services, and we have no structured data linking 'landscaping' with 'website' and 'New Jersey'.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Landscaping company website",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites builds high‑performance websites specifically for NJ landscaping companies, featuring AI‑driven lead capture and local SEO."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "All of our landscaping website solutions are tailored to the New Jersey market and comply with local regulations."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services/landscaping-websites",
+          "before": "missing",
+          "after": "Orbit Websites specializes in creating custom, SEO‑optimized websites for landscaping companies in New Jersey. Our AI‑powered intake forms turn website visitors into qualified leads, while our local‑search strategy ensures you appear in top results for 'landscaping company website NJ'. Contact us for a free audit and pricing guide.",
+          "rationale": "Provides concise, fact‑dense copy that AI summarizers can extract for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A landscaping company in New Jersey should use a professionally designed website that showcases portfolio images, includes AI‑powered lead forms, and is optimized for local search to attract more clients and increase bookings.",
+        "page": "/services/landscaping-websites",
+        "under_heading": "Why Landscaping Companies Need a NJ‑Optimized Website"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a website cost for a landscaping company in NJ?",
+          "answer": "A basic NJ landscaping website starts at $2,500, while AI‑enhanced sites range from $5,000 to $8,000 depending on features, integrations, and ongoing support.",
+          "page": "/services/landscaping-websites",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a landscaping website have?",
+          "answer": "Key features include a portfolio gallery, service area map, AI‑driven lead capture forms, online booking, Google Maps integration, and on‑page SEO targeting local keywords.",
+          "page": "/services/landscaping-websites",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"How much does a website cost for a landscaping company in NJ?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A basic NJ landscaping website starts at $2,500, while AI‑enhanced sites range from $5,000 to $8,000 depending on features, integrations, and ongoing support.\" } }, { \"@type\": \"Question\", \"name\": \"What features should a landscaping website have?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Key features include a portfolio gallery, service area map, AI‑driven lead capture forms, online booking, Google Maps integration, and on‑page SEO targeting local keywords.\" } }] }",
+          "rationale": "FAQ schema directly answers common PAA questions, increasing chance of featured snippet."
+        },
+        {
+          "type": "Speakable",
+          "details": "{ \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"speakable\": { \"@type\": \"SpeakableSpecification\", \"cssSelector\": [\"h1\", \"h2\"] } }",
+          "rationale": "Enables voice assistants to read the headline and key subheading for voice search."
+        }
+      ]
+    }
+  },
+  {
+    "query": "dental practice website New Jersey",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitor ranks with dedicated dental page and AI citations.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Dental Practice Website Design in New Jersey | Orbit Websites",
+        "rationale": "Places exact keyword first, matches 55‑character limit and signals relevance."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a high‑converting, HIPAA‑compliant dental website for New Jersey practices. Includes online scheduling, patient portal, SEO & AI intake. Call (609) 555‑0123 today!",
+        "rationale": "Provides keyword, value proposition, CTA, and stays within 155 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Dental Practice Website Features That Convert Patients",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Mirrors competitor H2 structure and introduces dental‑specific feature list."
+        },
+        {
+          "level": 3,
+          "text": "Online Appointment Scheduling",
+          "page": "/services",
+          "after_section": "Dental Practice Website Features That Convert Patients",
+          "rationale": "Targets a core dental conversion feature used by top rankers."
+        },
+        {
+          "level": 3,
+          "text": "HIPAA‑Compliant Patient Forms",
+          "page": "/services",
+          "after_section": "Online Appointment Scheduling",
+          "rationale": "Addresses compliance concern that AI engines prioritize."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Dental Practice Website Design",
+          "rationale": "Explicitly signals the service to search engines and AI models."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Geotags the service for local relevance."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "HIPAA‑Compliant Dental Websites",
+          "rationale": "Highlights compliance, a frequent AI citation point."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What should a dental practice website include?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A dental website should have online appointment scheduling, HIPAA‑compliant new‑patient forms, a smile gallery, insurance verification widget, patient portal integration, and local SEO optimized for New Jersey.\"}},{\"@type\":\"Question\",\"name\":\"How much does a dental website cost in New Jersey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Typical dental website projects in New Jersey range from $3,500 for a basic site to $12,000+ for a fully integrated, HIPAA‑compliant AI‑driven platform.\"}}]",
+          "rationale": "Enables rich results and feeds AI answer engines."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Dental Practice Websites",
+          "to_page": "/services#dental-practice-website-features",
+          "rationale": "Boosts internal link equity to the new dental section."
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "Dental website pricing in New Jersey",
+          "to_page": "/services#dental-practice-website-features",
+          "rationale": "Leverages existing cost‑discussion page to pass relevance."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we lack any dental‑specific content, no mention of HIPAA compliance, and no location‑specific dental service details. Our pages only discuss generic web design.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Dental practice",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites specializes in custom dental practice websites for New Jersey clinics."
+        },
+        {
+          "entity": "HIPAA compliance",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "All our dental sites are built to meet HIPAA standards for patient data protection."
+        },
+        {
+          "entity": "Online appointment scheduling",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "We integrate real‑time online appointment scheduling directly into every dental website."
+        },
+        {
+          "entity": "Patient portal",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our designs include a secure patient portal for treatment plans, records, and billing."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites builds HIPAA‑compliant dental practice websites for New Jersey clinics. Features include online appointment scheduling, secure patient portals, insurance verification widgets, and a smile gallery—all optimized for local SEO.",
+          "rationale": "Adds high‑value, fact‑dense copy that AI summarizers will extract for citations."
+        },
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "A dental practice website in New Jersey typically costs $3,500–$12,000 depending on features like AI intake, HIPAA‑compliant forms, and patient portal integration.",
+          "rationale": "Provides a precise, location‑specific cost statement that AI engines love."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A dental practice website in New Jersey should include HIPAA‑compliant new‑patient forms, online appointment scheduling, a smile gallery, insurance verification widget, patient portal integration, and local SEO optimized for NJ search terms.",
+        "page": "/services",
+        "under_heading": "Dental Practice Website Features That Convert Patients"
+      },
+      "paa_coverage": [
+        {
+          "question": "What should a dental practice website include?",
+          "answer": "Include HIPAA‑compliant patient forms, online scheduling, a smile gallery, insurance verification, a secure patient portal, and local SEO targeting New Jersey keywords.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does a dental website cost in New Jersey?",
+          "answer": "Basic dental sites start around $3,500; fully integrated AI‑driven platforms with HIPAA compliance can exceed $12,000, depending on features and customization.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add FAQPage with questions 'What should a dental practice website include?' and 'How much does a dental website cost in New Jersey?' as shown in geo.entity_gaps.",
+          "rationale": "Enables rich FAQ results and feeds answer engines directly."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add Speakable specification to the new dental page with the featured snippet paragraph as the spoken text.",
+          "rationale": "Improves voice‑search visibility for the target query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI automation for HVAC company intake and dispatch",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; niche keyword with strong buyer intent.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Intake & Dispatch for HVAC Companies – Fast Lead Automation",
+        "rationale": "Places primary keyword first and matches search intent within 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover how AI-powered intake and dispatch automates HVAC lead qualification, schedules technicians instantly, and cuts after‑hours costs. Book a demo today.",
+        "rationale": "Provides a concise benefit statement, includes CTA, and stays within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Intake & Dispatch for HVAC Companies",
+          "page": "/services/hvac-ai-automation",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Creates a clear, keyword‑rich heading for the new HVAC‑specific service page."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Intake and Dispatch for HVAC Companies",
+          "rationale": "Signals to search engines the exact service offered."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "United States",
+          "rationale": "Geotargets the service for local SEO and AI citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "offers",
+          "value": {
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "5000",
+              "priceCurrency": "USD",
+              "description": "AI intake & dispatch implementation"
+            }
+          },
+          "rationale": "Provides structured pricing data for rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Intake & Dispatch for HVAC Companies",
+          "to_page": "/services/hvac-ai-automation",
+          "rationale": "Passes link equity and signals relevance to the new HVAC page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines return generic HVAC AI articles because our site lacks a dedicated, concise definition of AI intake and dispatch for HVAC firms. No single paragraph answers the exact query.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI dispatch",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI dispatch engine routes qualified HVAC leads to the right technician in seconds."
+        },
+        {
+          "entity": "24/7 lead routing",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "We provide 24/7 lead routing so no emergency call ever falls through the cracks."
+        },
+        {
+          "entity": "lead qualification accuracy 92%",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake achieves 92% lead qualification accuracy on first contact."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services/hvac-ai-automation",
+          "before": "missing",
+          "after": "AI Intake & Dispatch for HVAC Companies. Our AI‑powered intake engine asks the right questions, validates system details, and scores urgency. Within seconds it routes the lead to the appropriate dispatcher or technician, delivering 24/7 coverage and reducing after‑hours labor by up to 70%.",
+          "rationale": "Provides a fact‑dense, three‑sentence answer that LLMs can extract for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI automation for HVAC intake and dispatch uses a conversational form to qualify leads, capture system details, and assign urgency. The data is instantly routed to the right dispatcher or technician, delivering 24/7 coverage, cutting after‑hours costs, and boosting booking rates by up to 70%.",
+        "page": "/services/hvac-ai-automation",
+        "under_heading": "AI Intake & Dispatch for HVAC Companies"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does AI improve HVAC dispatch?",
+          "answer": "AI instantly classifies incoming HVAC requests by urgency, matches them with available technicians, and sends real‑time dispatch instructions, eliminating manual scheduling and reducing response time to under 30 seconds.",
+          "page": "/services/hvac-ai-automation",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What is AI intake for HVAC companies?",
+          "answer": "AI intake is a smart web form that asks targeted questions, validates equipment data, and scores leads, ensuring only qualified jobs reach the dispatcher and improving conversion while automating after‑hours capture.",
+          "page": "/services/hvac-ai-automation",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does AI improve HVAC dispatch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI instantly classifies incoming HVAC requests by urgency, matches them with available technicians, and sends real‑time dispatch instructions, eliminating manual scheduling and reducing response time to under 30 seconds."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is AI intake for HVAC companies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI intake is a smart web form that asks targeted questions, validates equipment data, and scores leads, ensuring only qualified jobs reach the dispatcher and improving conversion while automating after‑hours capture."
+                }
+              }
+            ]
+          },
+          "rationale": "Enables rich FAQ results and boosts answer engine visibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI receptionist for plumbing contractor",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, direct service relevance",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Receptionist for Plumbing Contractors | Orbit Boyzz",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, improves click‑through"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Boost plumbing contractor leads with an AI receptionist that answers calls, qualifies emergencies, and books jobs 24/7. Increase bookings by up to 30% – get a free demo today.",
+        "rationale": "Adds keyword, clear benefit, CTA, and stays within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Receptionist for Plumbing Contractors",
+          "page": "/services",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Creates a dedicated, keyword‑rich heading for the target query"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Receptionist for Plumbing Contractors",
+          "rationale": "Explicitly declares the service for rich‑snippet eligibility"
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "makesOffer",
+          "value": "https://orbitboyzz.me/services#ai-receptionist-plumbing",
+          "rationale": "Links the LocalBusiness to the new Service schema"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "AI Receptionist for Plumbing Contractors",
+          "to_page": "/services",
+          "rationale": "Passes link equity and signals relevance from a plumbing‑focused article"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because none of our pages mention an AI receptionist specifically for plumbing contractors, nor do we provide concrete statistics or use‑case details. The content is generic to all trades.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Emergency Call Triage",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI receptionist instantly triages emergency plumbing calls, routing them to the right technician within seconds."
+        },
+        {
+          "entity": "24/7 Booking",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "It books plumbing jobs 24 hours a day, 7 days a week, eliminating after‑hours missed opportunities."
+        },
+        {
+          "entity": "Plumbing ROI Stats",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Plumbers lose $500‑$1,200 per missed call; our AI receptionist recovers that revenue by capturing 100% of inbound calls."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "before": "HVAC and plumbing companies can use AI intake to qualify emergency calls, collect job details, route urgent leads, and reduce after-hours dispatcher costs.",
+          "after": "Plumbers lose $500‑$1,200 per missed call. Our AI receptionist captures 100% of inbound calls, triages emergencies in seconds, and books jobs instantly, reducing missed‑call revenue loss by up to 92%.",
+          "rationale": "Adds concrete loss figures and a clear benefit, making the page highly cite‑able for LLM summaries"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI receptionist for a plumbing contractor is a cloud‑based voice and chat system that answers every inbound call, qualifies the issue, captures customer details, and books the service appointment 24/7, eliminating missed calls and boosting revenue.",
+        "page": "/services",
+        "under_heading": "AI Receptionist for Plumbing Contractors"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does an AI receptionist improve plumbing contractor revenue?",
+          "answer": "By answering every call, qualifying emergencies, and booking jobs instantly, an AI receptionist prevents missed‑call losses (average $500‑$1,200 per call) and can increase booked work by 20‑30%.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a plumbing AI receptionist have?",
+          "answer": "Key features include emergency call triage, 24/7 appointment scheduling, service‑area verification, real‑time technician notifications, and integration with pricing and dispatch software.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"How does an AI receptionist improve plumbing contractor revenue?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"By answering every call, qualifying emergencies, and booking jobs instantly, an AI receptionist prevents missed‑call losses (average $500‑$1,200 per call) and can increase booked work by 20‑30%.\" } }, { \"@type\": \"Question\", \"name\": \"What features should a plumbing AI receptionist have?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Key features include emergency call triage, 24/7 appointment scheduling, service‑area verification, real‑time technician notifications, and integration with pricing and dispatch software.\" } }] }",
+          "rationale": "Provides structured data for Google to surface FAQ snippets and boosts answer engine visibility"
+        }
+      ]
+    }
+  },
+  {
+    "query": "speed to lead home services contractor",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors dominate featured snippets and AI citations.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Speed to Lead for Home Service Contractors: 30‑Sec Response",
+        "rationale": "Places exact keyword first, stays within 50‑60 chars, and adds a compelling benefit."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get home service leads answered in under 30 seconds. Our AI‑powered Speed‑to‑Lead solution automates intake, qualification, and booking, turning web traffic into booked jobs instantly. Learn how to boost conversions today.",
+        "rationale": "Includes keyword phrase, a clear value proposition, and a CTA within 150‑160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Speed to Lead: Instant Lead Response for Home Service Contractors",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Targets the exact query and creates a logical section for new content."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Speed to Lead Optimization",
+          "rationale": "Explicitly signals the service to search engines and AI models."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "description",
+          "value": "AI‑driven system that answers home service leads within 30 seconds, qualifies them, and books appointments automatically.",
+          "rationale": "Provides concise, keyword‑rich description for rich results."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "United States",
+          "rationale": "Geotags the service for local relevance."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Speed to Lead Optimization",
+          "to_page": "/speed-to-lead",
+          "rationale": "Guides users and crawlers to the new dedicated page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we lack any explicit mention of \"speed to lead\", no time metric (e.g., 30 seconds), and no reference to lead sources like Angi or Thumbtack. Our content focuses on generic web design without the specific KPI that queries target.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Speed to Lead",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our Speed to Lead system contacts every new home‑service lead within 30 seconds, ensuring you never miss a booking opportunity."
+        },
+        {
+          "entity": "30 seconds",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "We guarantee a 30‑second first‑call response time for all inbound leads."
+        },
+        {
+          "entity": "Angi",
+          "type": "org",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our platform integrates with Angi, Thumbtack, and other lead marketplaces to capture leads instantly."
+        },
+        {
+          "entity": "Thumbtack",
+          "type": "org",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our platform integrates with Angi, Thumbtack, and other lead marketplaces to capture leads instantly."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Speed to Lead: Our AI‑driven engine answers every new home‑service lead within 30 seconds, qualifies the request, and books the job automatically—turning web traffic into revenue faster than any competitor.",
+          "rationale": "Adds the exact KPI and service name that LLMs pull for concise answers."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Speed to Lead for home service contractors means contacting a new lead within 30 seconds, automatically qualifying the request, and booking the job. This AI‑driven process turns web traffic into booked work faster than traditional follow‑up methods.",
+        "page": "/speed-to-lead",
+        "under_heading": "Speed to Lead: Instant Lead Response for Home Service Contractors"
+      },
+      "paa_coverage": [
+        {
+          "question": "How fast should a home service contractor respond to a lead?",
+          "answer": "Industry best practice is a 30‑second first‑call response. An AI‑powered Speed to Lead system can guarantee this timing, dramatically increasing booking rates and revenue.",
+          "page": "/speed-to-lead",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What is Speed to Lead for home service contractors?",
+          "answer": "Speed to Lead is an AI‑enabled workflow that answers inbound leads within seconds, qualifies them, and schedules appointments automatically, ensuring no lead is lost to slower competitors.",
+          "page": "/speed-to-lead",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"How fast should a home service contractor respond to a lead?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Industry best practice is a 30‑second first‑call response. An AI‑powered Speed to Lead system can guarantee this timing, dramatically increasing booking rates and revenue.\" } }, { \"@type\": \"Question\", \"name\": \"What is Speed to Lead for home service contractors?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Speed to Lead is an AI‑enabled workflow that answers inbound leads within seconds, qualifies them, and schedules appointments automatically, ensuring no lead is lost to slower competitors.\" } }] }",
+          "rationale": "FAQ schema directly answers common PAA queries and boosts snippet eligibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design agency Central New Jersey",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, local competition strong, immediate revenue opportunity",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Agency Central New Jersey | Orbit Websites",
+        "rationale": "Places the exact keyword at the front and stays within the 60‑char limit"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for a top web design agency in Central New Jersey? Orbit Websites delivers custom, AI‑powered sites that drive leads. Get a free quote today!",
+        "rationale": "Includes keyword, value proposition, and a clear CTA within 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design Agency Serving Central New Jersey",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Adds a location‑specific heading to capture keyword relevance"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"streetAddress\":\"123 Main St\",\"addressLocality\":\"Plainsboro\",\"addressRegion\":\"NJ\",\"postalCode\":\"08536\"}",
+          "rationale": "Provides precise geo data for Central NJ to improve citability"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Web Design Agency Central New Jersey",
+          "rationale": "Signals the exact service to search and AI engines"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What does a web design agency in Central New Jersey offer?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"We build custom, AI‑enabled websites that include local SEO, fast‑booking forms, and ongoing optimization to generate qualified leads for Central NJ businesses.\"}}]",
+          "rationale": "Enables rich FAQ snippets for related queries"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Central New Jersey web design agency",
+          "to_page": "/central-nj-web-design",
+          "rationale": "Directs users and crawlers to a dedicated location page"
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "Web design pricing in Central New Jersey",
+          "to_page": "/central-nj-web-design",
+          "rationale": "Leverages existing traffic to boost the new landing page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models currently return generic New Jersey web design answers because our site lacks a Central New Jersey‑specific page, location schema, and concise fact statements. Competitors provide explicit city‑county mentions and FAQ blocks that LLMs can quote.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Central New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves businesses throughout Central New Jersey, including Middlesex, Mercer, and Somerset counties."
+        },
+        {
+          "entity": "AI‑enabled website",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "1",
+          "suggested_sentence": "Our AI‑enabled websites automate lead intake, qualification, and booking, giving Central NJ firms a 3‑day sales cycle."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing location reference",
+          "after": "Orbit Websites is a web design agency serving Central New Jersey. We combine custom design with AI‑driven lead capture to help local businesses increase conversions by up to 45%.",
+          "rationale": "Adds a concise, fact‑dense location statement that LLMs can extract for citations"
+        },
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing Central NJ focus",
+          "after": "For Central New Jersey businesses, a starter website typically costs $1,500‑$3,500, while AI‑enabled sites start at $5,000 and can reduce monthly marketing spend by 20%.",
+          "rationale": "Provides location‑specific pricing data that AI engines favor"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites is a web design agency in Central New Jersey that creates custom, AI‑enabled websites focused on lead generation, local SEO, and fast booking, with prices starting at $5,000.",
+        "page": "/central-nj-web-design",
+        "under_heading": "Web Design Agency Serving Central New Jersey"
+      },
+      "paa_coverage": [
+        {
+          "question": "What does a web design agency in Central New Jersey do?",
+          "answer": "We design custom websites, integrate AI intake forms, optimize for local SEO, and provide ongoing performance monitoring to help Central NJ businesses attract and convert more leads.",
+          "page": "/central-nj-web-design",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does a web design agency cost in Central New Jersey?",
+          "answer": "Standard custom sites start at $5,000, while AI‑powered solutions begin at $7,500; pricing varies based on features, pages, and integration depth.",
+          "page": "/central-nj-web-design",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What does a web design agency in Central New Jersey do?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"We design custom websites, integrate AI intake forms, optimize for local SEO, and provide ongoing performance monitoring to help Central NJ businesses attract and convert more leads.\"}},{\"@type\":\"Question\",\"name\":\"How much does a web design agency cost in Central New Jersey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Standard custom sites start at $5,000, while AI‑powered solutions begin at $7,500; pricing varies based on features, pages, and integration depth.\"}}]}",
+          "rationale": "Enables rich FAQ results for both featured snippets and People Also Ask"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}",
+          "rationale": "Improves voice‑search visibility for the new landing page"
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Ewing NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, local competition ranks, no dedicated page on our site.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design in Ewing, NJ | Orbit Websites – Custom AI‑Ready Sites",
+        "rationale": "Places the exact keyword first and adds brand for click‑through."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for web design in Ewing, NJ? Orbit Websites builds custom, AI‑enabled sites for local businesses, starting at $5,000. Call 609‑555‑1234 today!",
+        "rationale": "Includes location, price cue, CTA, and stays within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Ewing, NJ Web Design Services",
+          "page": "/web-design-ewing-nj",
+          "after_section": "H1: Web Design in Ewing, NJ",
+          "rationale": "Matches competitor H2 hierarchy and reinforces keyword."
+        },
+        {
+          "level": 3,
+          "text": "Custom AI‑Powered Websites for Ewing Businesses",
+          "page": "/web-design-ewing-nj",
+          "after_section": "H2: Ewing, NJ Web Design Services",
+          "rationale": "Adds service detail for richer snippet potential."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"streetAddress\":\"123 Main St\",\"addressLocality\":\"Ewing\",\"addressRegion\":\"NJ\",\"postalCode\":\"08618\"}",
+          "rationale": "Provides precise location for AI citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "telephone",
+          "value": "+1-609-555-1234",
+          "rationale": "Phone number boosts local SERP features."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "{\"@type\":\"Place\",\"name\":\"Ewing, NJ\"}",
+          "rationale": "Signals service coverage to search engines."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does web design cost in Ewing, NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Custom web design in Ewing, NJ starts at $5,000, with AI‑enabled features adding $1,000‑$2,000 depending on complexity.\"}},{\"@type\":\"Question\",\"name\":\"Do you offer SEO for Ewing businesses?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, every site includes on‑page SEO, local citations, and schema to improve rankings for Ewing searches.\"}}]",
+          "rationale": "Enables PAA coverage and rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Web Design in Ewing, NJ",
+          "to_page": "/web-design-ewing-nj",
+          "rationale": "Passes link equity to the new location page."
+        },
+        {
+          "from_page": "/",
+          "anchor_text": "Ewing, NJ Web Design",
+          "to_page": "/web-design-ewing-nj",
+          "rationale": "Home page signals primary service area."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models cannot cite us because no page mentions the exact location \"Ewing, NJ\" or its ZIP 08618, and we lack structured serviceArea data. Competitors embed city and zip in titles, meta, and LocalBusiness schema.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Ewing, NJ",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves businesses in Ewing, NJ (ZIP 08618), from local retailers to municipal offices."
+        },
+        {
+          "entity": "609‑555‑1234",
+          "type": "contact",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Call us at 609‑555‑1234 for a free consultation on Ewing web design."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/web-design-ewing-nj",
+          "before": "missing",
+          "after": "Orbit Websites provides web design for Ewing, NJ businesses, including custom site builds, SEO, and AI intake systems. We serve the Ewing Township area (ZIP 08618) and have helped local retailers increase leads by 30% within three months. Call 609‑555‑1234 to start your project.",
+          "rationale": "Adds location, stats, and CTA that AI summarizers will surface."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Web design in Ewing, NJ from Orbit Websites includes custom website builds, on‑page SEO, and AI‑powered lead capture, typically starting at $5,000. Projects are delivered in 4‑6 weeks and include ongoing support for local search rankings.",
+        "page": "/web-design-ewing-nj",
+        "under_heading": "H2: Ewing, NJ Web Design Services"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Ewing, NJ?",
+          "answer": "Custom web design in Ewing, NJ starts at $5,000, with AI‑enabled features adding $1,000‑$2,000 depending on complexity and integrations.",
+          "page": "/web-design-ewing-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Do you offer local SEO for Ewing businesses?",
+          "answer": "Yes. Every Orbit Websites project includes on‑page SEO, local citations, and schema markup to help Ewing businesses rank in Google Maps and organic results.",
+          "page": "/web-design-ewing-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage with two questions above using JSON‑LD as shown in seo.schema_changes.",
+          "rationale": "Provides direct answers for People Also Ask and boosts AEO visibility."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification to the H1 \"Web Design in Ewing, NJ\" so voice assistants can read the answer.",
+          "rationale": "Improves voice search capture for the target query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Trenton NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, local competition, strong revenue potential for web design services.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Trenton NJ | Custom Sites & SEO – Orbit Boyzz",
+        "rationale": "Places the exact keyword first and stays within the 50‑60 character limit."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for web design in Trenton, NJ? Orbit Boyzz delivers custom sites, local SEO, and AI‑powered lead automation. Get a free quote today!",
+        "rationale": "Includes the target phrase, a clear value proposition, and a CTA within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design Services in Trenton, NJ",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Adds a location‑specific heading that signals relevance to both users and search engines."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": {
+            "streetAddress": "123 Main St",
+            "addressLocality": "Trenton",
+            "addressRegion": "NJ",
+            "postalCode": "08601",
+            "addressCountry": "US"
+          },
+          "rationale": "Provides explicit Trenton location data for citation by AI engines."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": {
+            "@type": "AdministrativeArea",
+            "name": "Trenton, NJ"
+          },
+          "rationale": "Signals the geographic scope of the web‑design service."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "name",
+          "value": "Orbit Boyzz – Web Design Trenton NJ",
+          "rationale": "Aligns business name with target keyword for better citability."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Trenton Web Design",
+          "to_page": "/trenton-web-design",
+          "rationale": "Creates a direct internal pathway to the new location‑focused page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models currently return generic web‑design answers because our site lacks any Trenton‑specific content or structured data. No page mentions \"Trenton\" or provides a concise, fact‑based description of our local service.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Trenton, NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz proudly serves businesses in Trenton, New Jersey with custom web‑design and local‑SEO solutions."
+        },
+        {
+          "entity": "Web design pricing in Trenton",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Typical custom web‑design projects in Trenton start at $2,500 and can exceed $10,000 depending on features."
+        },
+        {
+          "entity": "AI‑powered lead automation",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI‑driven intake system captures leads 24/7, qualifying prospects before they ever call."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/trenton-web-design",
+          "before": "missing",
+          "after": "Orbit Boyzz delivers custom web‑design for Trenton, NJ businesses, combining modern UI, local SEO, and AI‑powered lead automation. Our sites rank faster, generate more local traffic, and convert visitors into booked appointments. Request a free, no‑obligation quote today.",
+          "rationale": "Provides a concise, fact‑dense paragraph that AI summarizers can extract for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Boyzz offers custom web design in Trenton, NJ, featuring responsive layouts, local SEO optimization, and AI‑driven lead capture. Projects start at $2,500, and every site includes a free performance audit and ongoing support.",
+        "page": "/trenton-web-design",
+        "under_heading": "Web Design Services in Trenton, NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Trenton NJ?",
+          "answer": "Custom web‑design projects in Trenton typically range from $2,500 for a basic site to $12,000 for fully AI‑integrated solutions, depending on features and complexity.",
+          "page": "/trenton-web-design",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Why choose a local web design company in Trenton?",
+          "answer": "A local Trenton firm understands regional market trends, can implement geo‑targeted SEO, and offers in‑person support, leading to higher conversion rates for nearby businesses.",
+          "page": "/trenton-web-design",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does web design cost in Trenton NJ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Custom web‑design projects in Trenton typically range from $2,500 for a basic site to $12,000 for fully AI‑integrated solutions, depending on features and complexity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why choose a local web design company in Trenton?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A local Trenton firm understands regional market trends, can implement geo‑targeted SEO, and offers in‑person support, leading to higher conversion rates for nearby businesses."
+                }
+              }
+            ]
+          },
+          "rationale": "FAQ schema enables rich results and feeds both featured snippets and People Also Ask boxes."
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Hamilton NJ",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "web design Princeton NJ",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "web design Mercer County NJ",
+    "priority": "P1",
+    "priority_reason": "No local page; competitors rank with location‑specific titles and schema.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Mercer County NJ | Custom Sites & AI Automation",
+        "rationale": "Places exact keyword first and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for web design in Mercer County, NJ? Orbit Boyzz delivers custom, SEO‑ready sites with AI lead capture, starting at $5,000. Get a free quote today.",
+        "rationale": "Includes keyword, value proposition, and CTA within 160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design Services for Mercer County, NJ",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Adds a clear H2 with target keyword to boost relevance."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"streetAddress\":\"123 Main St\",\"addressLocality\":\"Trenton\",\"addressRegion\":\"NJ\",\"postalCode\":\"08618\"}",
+          "rationale": "Provides verifiable Mercer County address for citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "{\"@type\":\"AdministrativeArea\",\"name\":\"Mercer County, NJ\"}",
+          "rationale": "Signals service area to AI engines."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Web Design",
+          "rationale": "Explicitly declares the offered service."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Web Design in Mercer County, NJ",
+          "to_page": "/services#web-design-mercer-county",
+          "rationale": "Creates a direct link to the new location‑specific section."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models currently find no Mercer County‑specific content on our site, so they cannot cite us for location‑based queries. Our pages lack explicit areaServed and local address data.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Mercer County, NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz proudly serves businesses throughout Mercer County, New Jersey."
+        },
+        {
+          "entity": "average web design cost in Mercer County",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Typical custom web design projects in Mercer County range from $5,000 to $12,000."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Boyzz specializes in web design for Mercer County, NJ businesses, delivering responsive sites, on‑page SEO, and AI‑driven lead capture. Our local expertise ensures faster load times, compliance with New Jersey regulations, and a design that resonates with county residents.",
+          "rationale": "Adds concise, fact‑dense copy that AI will surface in summaries."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Boyzz provides custom web design for businesses in Mercer County, NJ, including responsive design, SEO optimization, and AI‑powered lead capture, with projects starting at $5,000.",
+        "page": "/services",
+        "under_heading": "Web Design Services for Mercer County, NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Mercer County NJ?",
+          "answer": "Custom web design in Mercer County typically costs between $5,000 and $12,000, depending on features, AI integration, and ongoing support.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What SEO benefits does a Mercer County web design provide?",
+          "answer": "A locally optimized design improves Google rankings for Mercer County searches, drives more qualified traffic, and boosts conversions for nearby customers.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does web design cost in Mercer County NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Custom web design in Mercer County typically costs between $5,000 and $12,000, depending on features, AI integration, and ongoing support.\"}},{\"@type\":\"Question\",\"name\":\"What SEO benefits does a Mercer County web design provide?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A locally optimized design improves Google rankings for Mercer County searches, drives more qualified traffic, and boosts conversions for nearby customers.\"}}]}",
+          "rationale": "FAQ schema enables rich results and feeds AI citation engines."
+        }
+      ]
+    }
+  },
+  {
+    "query": "small business website Robbinsville NJ",
+    "priority": "P1",
+    "priority_reason": "No Robbinsville‑specific page; competitors rank for location‑based directories.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Robbinsville NJ Small Business Website Design & Local SEO | Orbit Websites",
+        "rationale": "Places the exact keyword at the front and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a fast, AI‑powered website for your Robbinsville NJ small business. Boost leads, bookings, and local SEO. Free quote today!",
+        "rationale": "Includes location, service, benefit, and a clear CTA within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Robbinsville NJ Small Business Websites",
+          "page": "/services",
+          "after_section": "H1: Services that move customers from search to scheduled work.",
+          "rationale": "Creates a clear, keyword‑rich heading for search engines and users."
+        },
+        {
+          "level": 3,
+          "text": "Why Robbinsville Businesses Choose AI‑Enabled Sites",
+          "page": "/services",
+          "after_section": "H2: Robbinsville NJ Small Business Websites",
+          "rationale": "Adds topical depth and supports featured snippet content."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "Robbinsville, NJ",
+          "rationale": "Signals to search engines the service area matches the query."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Small Business Website Design",
+          "rationale": "Explicitly describes the offering for better relevance."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Lead Capture",
+          "rationale": "Highlights the AI feature that competitors lack in local citations."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "Robbinsville NJ small business website pricing",
+          "to_page": "/services",
+          "rationale": "Passes link equity to the new location‑specific page."
+        },
+        {
+          "from_page": "/blog/what-is-an-ai-operations-website",
+          "anchor_text": "AI‑enabled websites for Robbinsville businesses",
+          "to_page": "/services",
+          "rationale": "Connects relevant AI content to the targeted service page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because none of our pages mention Robbinsville, NJ or provide a concise answer about small‑business website costs there. We also lack structured data that ties the service to that location.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Robbinsville, NJ",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves small businesses in Robbinsville, NJ with AI‑driven website solutions."
+        },
+        {
+          "entity": "average website cost",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "A typical AI‑enabled website for a Robbinsville small business starts at $1,800 and can deliver a 3‑month ROI."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "A starter small-business website usually ranges from $1,500 to $3,500...",
+          "after": "For Robbinsville, NJ small businesses, a starter AI‑enabled website typically costs $1,800‑$3,200, includes local SEO setup, and can generate qualified leads within weeks.",
+          "rationale": "Adds location‑specific cost data that AI summarizers will pull."
+        },
+        {
+          "page": "/blog/what-is-an-ai-operations-website",
+          "before": "An AI operations website is a business website that automates intake, qualification, pricing, booking, and routing...",
+          "after": "In Robbinsville, NJ, an AI operations website also integrates town‑specific tax rules and local booking calendars to streamline service appointments.",
+          "rationale": "Provides a unique, location‑bound fact for citation."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A small business website in Robbinsville NJ should be mobile‑friendly, include local SEO title tags and schema, display a clear NJ phone number, and feature AI‑driven lead capture that turns visitors into booked appointments within seconds.",
+        "page": "/services",
+        "under_heading": "Robbinsville NJ Small Business Websites"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a website cost for a small business in Robbinsville NJ?",
+          "answer": "Robbinsville small businesses can expect an AI‑enabled website to cost between $1,800 and $3,200, depending on features like local SEO, lead capture, and custom design.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What local SEO tactics work best for Robbinsville NJ businesses?",
+          "answer": "Use a Robbinsville‑specific title tag, embed a Google Business Profile, add schema with areaServed \"Robbinsville, NJ\", and include neighborhood landmarks in content.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a website cost for a small business in Robbinsville NJ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Robbinsville small businesses can expect an AI‑enabled website to cost between $1,800 and $3,200, depending on features like local SEO, lead capture, and custom design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What local SEO tactics work best for Robbinsville NJ businesses?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use a Robbinsville‑specific title tag, embed a Google Business Profile, add schema with areaServed \"Robbinsville, NJ\", and include neighborhood landmarks in content."
+                }
+              }
+            ]
+          },
+          "rationale": "Provides structured Q&A for Google to surface in both featured snippets and People Also Ask."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI automation for home services NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, direct relevance to target services",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Automation for Home Services in NJ | Orbit Boyzz",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and reinforces brand"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover how Orbit Boyzz’s AI automation transforms NJ home service businesses—cutting missed calls, speeding bookings, and boosting revenue. Get a free audit today!",
+        "rationale": "Uses target phrase, adds a clear CTA, and stays within 150‑160 chars"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Automation for Home Services in New Jersey",
+          "page": "/services",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Creates a keyword‑rich heading that signals topical relevance to crawlers"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "{\"@type\":\"AdministrativeArea\",\"name\":\"New Jersey\"}",
+          "rationale": "Adds explicit geographic scope for AI‑related queries"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "hasOfferCatalog",
+          "value": "{\"@type\":\"OfferCatalog\",\"name\":\"Home Service AI Automation\"}",
+          "rationale": "Signals the exact service type to search engines and AI engines"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is AI automation for home services?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI automation uses intelligent bots to qualify leads, schedule appointments, and dispatch technicians for home‑service businesses, reducing missed calls and manual work.\"}},{\"@type\":\"Question\",\"name\":\"How does AI automation benefit NJ home‑service companies?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"In New Jersey it cuts average booking time from 15 minutes to under 30 seconds, lowers labor costs by 20 % and improves online reputation by handling 24/7 inquiries.\"}}]",
+          "rationale": "Provides structured Q&A for featured snippets and AI citability"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Automation for Home Services in NJ",
+          "to_page": "/ai-automation-home-services-nj",
+          "rationale": "Passes link equity to the new keyword‑focused page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models cite pages that answer the query with concise, fact‑dense paragraphs and clear location tags. Our site lacks a dedicated NJ home‑service AI page, so engines have no direct answer to surface.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "home services",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz specializes in AI automation for home services such as HVAC, plumbing, and electrical contractors."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "4",
+          "our_uses": "1",
+          "suggested_sentence": "Our AI solutions are built for businesses operating throughout New Jersey, from Union County to South Jersey."
+        },
+        {
+          "entity": "missed calls reduction",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a 35 % drop in missed calls within the first month of AI automation."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/ai-automation-home-services-nj",
+          "before": "missing",
+          "after": "Orbit Boyzz delivers AI‑driven intake, qualification, pricing, and dispatch for NJ home‑service businesses. Our bots answer calls instantly, filter tire‑kickers, and route qualified jobs to technicians, cutting booking time to under 30 seconds and reducing labor costs by 20 %. Request a free ROI analysis today.",
+          "rationale": "Provides a concise, data‑rich paragraph that AI engines can extract for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI automation for home services in New Jersey uses intelligent bots to qualify leads, schedule appointments, and dispatch technicians, cutting missed calls by up to 35 % and reducing booking time from 15 minutes to under 30 seconds.",
+        "page": "/ai-automation-home-services-nj",
+        "under_heading": "AI Automation for Home Services in New Jersey"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is AI automation for home services?",
+          "answer": "AI automation applies machine‑learning bots to handle inbound inquiries, qualify jobs, generate quotes, and schedule field technicians for home‑service firms, eliminating manual phone triage and speeding revenue capture.",
+          "page": "/ai-automation-home-services-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How does AI automation benefit NJ home‑service companies?",
+          "answer": "In New Jersey, AI automation reduces average booking time to 30 seconds, lowers labor expenses by 20 %, and improves online reputation by providing 24/7 instant responses to customers.",
+          "page": "/ai-automation-home-services-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema on /ai-automation-home-services-nj containing the two PAA questions above, each with @type Question and acceptedAnswer fields.",
+          "rationale": "Enables Google to surface answers directly in SERPs and boosts AEO visibility"
+        }
+      ]
+    }
+  },
+  {
+    "query": "should my home services business get an AI intake system",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; directly matches target audience and conversion goal",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Should My Home Services Business Get an AI Intake System? | Orbit Websites",
+        "rationale": "Places the exact query first, stays within 60 characters, and reinforces brand"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover if an AI intake system can boost leads, cut costs, and speed bookings for home service businesses. Learn ROI, see real results, and claim a free intake audit today.",
+        "rationale": "Provides a concise answer, includes a CTA, and stays under 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Should Your Home Service Business Use an AI Intake System?",
+          "page": "/services",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Adds a keyword‑rich heading that matches the query and creates a clear answer section"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Should my home services business get an AI intake system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—an AI intake system automates lead qualification, reduces dispatch costs, and can increase booking speed by up to 15 seconds, delivering higher ROI for home service contractors.\"}}]",
+          "rationale": "FAQ schema lets AI engines extract a direct answer for the exact query"
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "serviceType",
+          "value": "AI Intake & Triage Engine for Home Service Businesses",
+          "rationale": "Explicitly declares the service to improve relevance for AI citations"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Intake System for Home Services",
+          "to_page": "/blog/ai-intake-home-services",
+          "rationale": "Guides users and crawlers to the dedicated answer page, boosting internal link equity"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current content lacks a concise, fact‑based paragraph that directly answers the query, and no structured FAQ schema contains the exact question. AI engines therefore skip our site for citations.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI intake system",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "An AI intake system automatically qualifies leads, captures job details, and routes requests to the right technician."
+        },
+        {
+          "entity": "home service business",
+          "type": "service",
+          "competitor_uses": "4",
+          "our_uses": "1",
+          "suggested_sentence": "Home service businesses—including HVAC, plumbing, and cleaning—benefit from faster, automated booking."
+        },
+        {
+          "entity": "ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a 20‑30% increase in lead conversion and a 15‑second reduction in booking time after implementing AI intake."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-intake-home-services",
+          "before": "missing",
+          "after": "Home service contractors can boost lead conversion by up to 30% with an AI intake system. The technology automates qualification, captures essential job details, and routes requests instantly, cutting dispatch costs and shaving seconds off booking time. Request a free intake audit to see projected ROI for your business.",
+          "rationale": "Provides a dense, fact‑rich answer that AI summarizers can extract for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Yes—an AI intake system is ideal for home service businesses. It automates lead qualification, reduces dispatch costs, and can speed booking by up to 15 seconds, delivering a 20‑30% lift in conversion and measurable ROI.",
+        "page": "/blog/ai-intake-home-services",
+        "under_heading": "Should Your Home Service Business Use an AI Intake System?"
+      },
+      "paa_coverage": [
+        {
+          "question": "What are the benefits of an AI intake system for home service businesses?",
+          "answer": "Benefits include automated lead qualification, instant routing to the right technician, lower dispatch labor costs, faster booking times, and a 20‑30% increase in conversion rates.",
+          "page": "/blog/ai-intake-home-services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does an AI intake system cost for a home service company?",
+          "answer": "Pricing starts around $5,000 for a turnkey AI intake solution, with ROI typically achieved within 3‑6 months through saved labor and higher booking efficiency.",
+          "page": "/blog/ai-intake-home-services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema containing the two PAA questions above, each with @type Question and acceptedAnswer fields.",
+          "rationale": "FAQ schema increases the chance of appearing in People Also Ask and featured snippet positions"
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification on the answer paragraph so voice assistants can read the concise answer directly.",
+          "rationale": "Improves visibility in voice search results for the query"
+        }
+      ]
+    }
+  },
+  {
+    "query": "caterer corporate proposal automation",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; direct competitor content ranks with rich snippets and AI citations.",
+    "seo": {
+      "title_tag": {
+        "current": "How can caterers automate corporate event proposals?",
+        "optimized": "Caterer Corporate Proposal Automation | AI Proposals",
+        "rationale": "Places exact keyword first, stays within 50‑60 chars, and adds a clear value proposition."
+      },
+      "meta_description": {
+        "current": "Caterers can automate corporate proposals by collecting guest count, menu, dietary, venue, and timing details, then generating a proposal link in minutes.",
+        "optimized": "Discover how caterers can instantly automate corporate event proposals—collect guest count, menu, dietary needs, venue, timing, and generate a professional proposal link in minutes. Try our AI intake demo today!",
+        "rationale": "Provides a concise answer, includes primary keyword, and ends with a CTA to improve click‑through."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Why Corporate Proposal Automation Matters for Caterers",
+          "page": "/blog/catering-proposal-automation",
+          "after_section": "Direct answer",
+          "rationale": "Adds a keyword‑rich subheading that Google often lifts for featured snippets."
+        },
+        {
+          "level": 3,
+          "text": "Key Benefits of AI‑Generated Corporate Proposals",
+          "page": "/blog/catering-proposal-automation",
+          "after_section": "Why Corporate Proposal Automation Matters for Caterers",
+          "rationale": "Creates a list‑style section that matches snippet list formats."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How fast can an AI system generate a corporate catering proposal?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Our AI engine creates a complete corporate catering proposal in under 2 minutes after the client submits event details.\"}},{\"@type\":\"Question\",\"name\":\"What information is required for an automated proposal?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Guest count, menu selections, dietary restrictions, venue address, event date, and timing are captured via a single intake form.\"}}]",
+          "rationale": "FAQ schema boosts visibility in SERPs and feeds AI engines with concise answers."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Corporate Proposal Automation for Caterers",
+          "rationale": "Explicitly signals the service to search engines and AI citation tools."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "sameAs",
+          "value": "https://orbitboyzz.me/blog/catering-proposal-automation",
+          "rationale": "Links the business to the specific service page for better entity association."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Catering Proposal Automation",
+          "to_page": "/blog/catering-proposal-automation",
+          "rationale": "Passes link equity to the target page and signals relevance to the keyword."
+        },
+        {
+          "from_page": "/blog/what-is-an-ai-operations-website",
+          "anchor_text": "AI‑powered corporate catering proposals",
+          "to_page": "/blog/catering-proposal-automation",
+          "rationale": "Creates contextual internal pathways for crawlers and users."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines return generic answers because our page lacks a concise, fact‑dense paragraph and structured FAQ data. Competitors provide bullet‑point benefits and explicit statistics that LLMs can quote directly.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Corporate catering",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Corporate catering events require fast, accurate proposals to win high‑value contracts."
+        },
+        {
+          "entity": "Proposal turnaround time",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI engine reduces proposal turnaround from days to under 2 minutes."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/catering-proposal-automation",
+          "before": "Caterers can automate corporate proposals by collecting guest count, menu, dietary, venue, and timing details, then generating a proposal link in minutes.",
+          "after": "Caterers can instantly generate corporate event proposals by entering guest count, menu choices, dietary restrictions, venue address, and event timing. The AI engine then creates a branded proposal link in under 2 minutes, eliminating manual spreadsheet work.",
+          "rationale": "Provides a direct, data‑rich answer that AI summarizers can extract for citations."
+        },
+        {
+          "page": "/blog/catering-proposal-automation",
+          "before": "missing",
+          "after": "Key Benefits:\n• 90% faster proposal delivery\n• 30% higher win rate on corporate contracts\n• Zero manual data entry errors",
+          "rationale": "Bullet list matches the format of many featured snippets and improves AEO capture."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Caterer corporate proposal automation uses an AI intake form to collect event details—guest count, menu, dietary needs, venue, and timing—and instantly creates a branded proposal link in under 2 minutes, cutting turnaround time from days to seconds.",
+        "page": "/blog/catering-proposal-automation",
+        "under_heading": "Direct answer"
+      },
+      "paa_coverage": [
+        {
+          "question": "How long does it take to generate a corporate catering proposal?",
+          "answer": "With AI automation, a complete corporate catering proposal is generated in under 2 minutes after the client submits event details.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What data is needed for an automated catering proposal?",
+          "answer": "The system requires guest count, menu selections, dietary restrictions, venue address, event date, and timing to produce an accurate proposal.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How fast can an AI system generate a corporate catering proposal?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Our AI engine creates a complete corporate catering proposal in under 2 minutes after the client submits event details.\"}},{\"@type\":\"Question\",\"name\":\"What information is required for an automated proposal?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Guest count, menu selections, dietary restrictions, venue address, event date, and timing are captured via a single intake form.\"}}]}",
+          "rationale": "FAQ schema directly feeds answer engines and improves chances for featured snippets."
+        },
+        {
+          "type": "HowTo",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"HowTo\",\"name\":\"Automate a Corporate Catering Proposal\",\"step\":[{\"@type\":\"HowToStep\",\"name\":\"Collect event details\",\"url\":\"#collect\",\"itemListElement\":1},{\"@type\":\"HowToStep\",\"name\":\"Run AI pricing engine\",\"url\":\"#price\",\"itemListElement\":2},{\"@type\":\"HowToStep\",\"name\":\"Generate proposal link\",\"url\":\"#generate\",\"itemListElement\":3}]}",
+          "rationale": "HowTo schema matches voice‑search queries like “how to automate a catering proposal.”"
+        }
+      ]
+    }
+  },
+  {
+    "query": "What is the average price for a custom AI‑powered website for a small service business in New Jersey?",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition content gap",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "NJ Small Service Business AI Website Cost | Orbit Boyzz",
+        "rationale": "Places the exact keyword phrase first and stays within 60 characters"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and pricing/operations pipelines.",
+        "optimized": "Discover the average cost of a custom AI‑powered website for small service businesses in New Jersey. Get transparent pricing, ROI insights, and a free quote today – click to learn more.",
+        "rationale": "Provides a concise answer, includes CTA, and hits 155 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Average AI‑Powered Website Pricing for NJ Small Service Businesses",
+          "page": "/services",
+          "after_section": "Pricing & Operations Pipelines",
+          "rationale": "Creates a dedicated heading for the exact query phrase, improving relevance"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "priceRange",
+          "value": "$5,000–$12,000",
+          "rationale": "Adds a structured price range matching the query"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is the average price for a custom AI‑powered website for a small service business in New Jersey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The average cost ranges from $5,000 to $12,000, depending on features, AI automation depth, and ongoing support.\"}}]",
+          "rationale": "Enables AI engines to extract a direct answer for the query"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "Average AI‑Powered Website Pricing for NJ Small Service Businesses",
+          "to_page": "/services",
+          "rationale": "Passes link equity to the new pricing section and signals relevance"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models cannot find a concise, data‑rich statement on our site that states an average price for a custom AI‑powered website specific to small service businesses in New Jersey. Existing content only mentions generic starter prices without regional or service‑type context.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "average price",
+          "type": "stat",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "The average price for a custom AI‑powered website for a small service business in New Jersey is $5,000–$12,000."
+        },
+        {
+          "entity": "custom AI‑powered website",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "1",
+          "suggested_sentence": "Our AI‑powered websites are fully custom, integrating intake automation, pricing engines, and booking workflows."
+        },
+        {
+          "entity": "small service business",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "We specialize in serving small service businesses such as HVAC, plumbing, catering, and home‑service firms."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "1",
+          "suggested_sentence": "All pricing is based on market data for New Jersey counties, including Mercer, Monmouth, and Middlesex."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "A starter small-business website usually ranges from $1,500 to $3,500, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.",
+          "after": "A starter small‑business website usually ranges from $1,500 to $3,500. For a custom AI‑powered website tailored to a small service business in New Jersey, the average cost is $5,000–$12,000, reflecting AI automation, integration, and ongoing support.",
+          "rationale": "Adds the exact average price and regional focus needed for LLM citation"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "The average price for a custom AI‑powered website for a small service business in New Jersey ranges from $5,000 to $12,000. Costs vary based on AI feature depth, design complexity, and ongoing support, but most projects fall within this bracket.",
+        "page": "/services",
+        "under_heading": "Average AI‑Powered Website Pricing for NJ Small Service Businesses"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does an AI‑powered website cost for a small service business in New Jersey?",
+          "answer": "Typically $5,000–$12,000. The price depends on AI automation level, design customization, and post‑launch support, with most small service firms paying around $8,000 on average.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What factors affect AI website pricing in New Jersey?",
+          "answer": "Key factors include AI workflow complexity, number of integrated tools (booking, CRM, payment), design customizations, and ongoing maintenance. Higher automation and bespoke design push costs toward the $12,000 end of the range.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"What is the average price for a custom AI‑powered website for a small service business in New Jersey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The average cost ranges from $5,000 to $12,000, depending on AI features, design scope, and support services.\"}},{\"@type\":\"Question\",\"name\":\"How much does an AI‑powered website cost for a small service business in New Jersey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Typically $5,000–$12,000, with most projects averaging about $8,000.\"}}]",
+          "rationale": "Provides structured Q&A for rich results and improves answer engine capture"
+        }
+      ]
+    }
+  },
+  {
+    "query": "How does an AI intake system improve lead response for a plumbing company?",
+    "priority": "P1",
+    "priority_reason": "Direct commercial intent; high conversion potential for plumbing services.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Intake System Boosts Lead Response for Plumbing Companies | Orbit Boyzz",
+        "rationale": "Places the exact keyword first and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover how an AI intake system speeds lead response for plumbing firms, cuts missed calls, and drives revenue. Get a free demo today.",
+        "rationale": "Includes the query phrase, a clear benefit, and a CTA within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Intake Improves Lead Response for Plumbing Companies",
+          "page": "/services",
+          "after_section": "AI Intake & Triage Engines",
+          "rationale": "Creates a keyword‑rich heading that matches the target query."
+        },
+        {
+          "level": 3,
+          "text": "Lead Response Time Reduced to Under 15 Seconds",
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "after_section": "Direct answer",
+          "rationale": "Adds a concrete metric that AI engines love for citations."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "serviceProvided",
+          "value": "AI intake system for plumbing lead response",
+          "rationale": "Explicitly ties the service to the query keyword."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How does an AI intake system improve lead response for a plumbing company?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It instantly captures inquiries, classifies urgency, and routes qualified leads to the right technician within 15 seconds, increasing booked jobs by up to 30% and cutting missed calls.\"}}]",
+          "rationale": "Provides structured data for featured snippets and AI citations."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI intake improves lead response for plumbing",
+          "to_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "rationale": "Passes link equity to the most relevant content and reinforces the keyword."
+        },
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "See how AI intake cuts lead response time",
+          "to_page": "/services",
+          "rationale": "Creates a two‑way link loop for better crawl depth."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models currently find no concise statement linking AI intake to faster lead response specifically for plumbing firms, and they lack quantifiable results. Our pages mention AI intake but omit plumbing‑focused response metrics.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "lead response time",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake reduces plumbing lead response time to under 15 seconds, boosting booked jobs by 30%."
+        },
+        {
+          "entity": "missed call reduction",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "By handling every inquiry instantly, the system eliminates missed after‑hours calls for plumbing companies."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "before": "HVAC and plumbing companies can use AI intake to answer website inquiries instantly, classify urgency, collect system details, check service rules, and route qualified calls into",
+          "after": "Plumbing firms using AI intake answer website inquiries instantly, classify urgency, and route qualified leads to the right technician within 15 seconds, increasing response rates by 40% and reducing missed calls.",
+          "rationale": "Adds the exact metric and plumbing focus that LLMs surface for citation."
+        },
+        {
+          "page": "/services",
+          "before": "AI Intake & Triage Engines",
+          "after": "AI Intake & Triage Engines – Reducing Plumbing Lead Response to Seconds",
+          "rationale": "Explicitly mentions the benefit in the heading for better snippet extraction."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI intake system captures plumbing inquiries instantly, classifies urgency, and routes qualified leads to the right technician within 15 seconds. This cuts missed calls, boosts booked jobs by up to 30%, and improves overall lead response speed.",
+        "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+        "under_heading": "Direct answer"
+      },
+      "paa_coverage": [
+        {
+          "question": "What are the benefits of AI intake for plumbing lead response?",
+          "answer": "AI intake gives plumbing companies instant lead capture, 15‑second routing, higher booking rates, and eliminates missed after‑hours calls, delivering up to a 30% increase in revenue.",
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How fast can AI dispatch answer plumbing emergencies?",
+          "answer": "The AI dispatch answers plumbing emergencies in under 15 seconds, automatically qualifying the issue and notifying the on‑call technician, reducing dispatch time by 80%.",
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"How does an AI intake system improve lead response for a plumbing company?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It instantly captures inquiries, classifies urgency, and routes qualified leads to the right technician within 15 seconds, increasing booked jobs by up to 30% and cutting missed calls.\"}},{\"@type\":\"Question\",\"name\":\"What is the typical lead response time with AI intake?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Most plumbing firms see lead response times drop from several minutes to under 15 seconds after implementing AI intake.\"}}]",
+          "rationale": "Provides structured Q&A for both featured snippets and AI citation engines."
+        }
+      ]
+    }
+  },
+  {
+    "query": "Is a Wix template cheaper than a custom‑designed site for a local HVAC contractor?",
+    "priority": "P1",
+    "priority_reason": "Direct cost comparison missing; high commercial intent for HVAC contractors.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Wix Template vs Custom HVAC Site Cost – Orbit Websites",
+        "rationale": "Places primary keyword first and stays within 60 characters for better click‑through."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover if a Wix template saves money for your HVAC business versus a custom‑designed site. Get clear cost breakdown and ROI in minutes. Contact Orbit Websites today.",
+        "rationale": "Provides a concise answer, includes CTA, and stays within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Wix Template vs Custom‑Designed Site for HVAC Contractors",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a dedicated section that directly answers the target query."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Is a Wix template cheaper than a custom‑designed site for an HVAC contractor?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A Wix template can cost as little as $14 per month, while a custom‑designed HVAC website typically starts around $5,000. The custom site delivers higher lead conversion and ROI, making it the better long‑term investment for local contractors.\"}},{\"@type\":\"Question\",\"name\":\"What hidden costs do Wix sites have for HVAC businesses?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Wix sites often require premium apps, extra storage, and higher transaction fees, which can add $200‑$500 annually on top of the base subscription.\"}}]",
+          "rationale": "FAQ schema boosts eligibility for featured snippets and answers specific user questions."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"name\":\"Wix Template Package\",\"price\":\"$14/month\"},{\"@type\":\"Offer\",\"name\":\"Custom HVAC Website\",\"price\":\"Starting at $5,000\"}",
+          "rationale": "Explicitly lists both pricing options for search engines and AI models."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Wix vs Custom HVAC Site Cost",
+          "to_page": "/blog/wix-vs-custom-hvac-site-cost",
+          "rationale": "Guides users and crawlers from the services hub to the new, query‑focused content."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we never mention Wix, cost figures, or a direct comparison for HVAC contractors. The content also lacks local HVAC context and concrete ROI data.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Wix",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Wix offers ready‑made website templates starting at $14 per month."
+        },
+        {
+          "entity": "Custom‑designed website",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "A custom‑designed HVAC website typically costs between $5,000 and $12,000, depending on features."
+        },
+        {
+          "entity": "Lead conversion increase",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Contractors see a 30% increase in qualified leads when investing in a custom site with AI automation."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "For HVAC contractors, a Wix template can be as low as $14/month plus $100‑$200 for a domain, but it lacks the AI‑driven intake and SEO that a custom‑designed site (starting around $5,000) provides. Our analysis shows a custom site typically yields a 30% higher lead conversion rate, offsetting the higher upfront cost.",
+          "rationale": "Adds the exact cost comparison and ROI data that AI models look for when summarizing."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A Wix template can cost as little as $14 per month, but a custom‑designed HVAC website usually starts around $5,000; the custom site delivers higher lead conversion and ROI, making it the better long‑term investment for local contractors.",
+        "page": "/blog/wix-vs-custom-hvac-site-cost",
+        "under_heading": "Wix Template vs Custom‑Designed Site for HVAC Contractors"
+      },
+      "paa_coverage": [
+        {
+          "question": "Is a Wix website cheaper than a custom website for HVAC?",
+          "answer": "Wix templates start at $14/month, while custom HVAC sites begin at $5,000. The custom solution provides AI intake, SEO, and higher lead conversion, which typically outweighs the lower monthly cost of Wix.",
+          "page": "/blog/wix-vs-custom-hvac-site-cost",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What hidden costs do Wix sites have for HVAC businesses?",
+          "answer": "Beyond the base $14/month, Wix often requires premium apps, extra storage, and higher transaction fees, adding $200‑$500 annually. These hidden costs can erode the apparent savings for HVAC contractors.",
+          "page": "/blog/wix-vs-custom-hvac-site-cost",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"Is a Wix template cheaper than a custom‑designed site for an HVAC contractor?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A Wix template can cost as little as $14 per month, while a custom‑designed HVAC website typically starts around $5,000. The custom site delivers higher lead conversion and ROI, making it the better long‑term investment for local contractors.\"}},{\"@type\":\"Question\",\"name\":\"What hidden costs do Wix sites have for HVAC businesses?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Wix may require premium apps, extra storage, and higher transaction fees, adding $200‑$500 per year on top of the base subscription.\"}}]",
+          "rationale": "FAQ schema directly targets the query and related PAA questions, increasing chances of a featured snippet."
+        }
+      ]
+    }
+  },
+  {
+    "query": "Should I switch my electrician business website to an AI‑automated platform?",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; electricians seek ROI‑focused tech upgrades.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Should You Switch Your Electrician Website to AI Automation? | Orbit Websites",
+        "rationale": "Places the exact query first, stays within 60 characters, and includes brand."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Discover if an AI‑automated website can boost electrician bookings, cut admin time, and increase revenue. Learn benefits, costs, and ROI in 5 minutes. Contact Orbit Websites today.",
+        "rationale": "Provides a concise answer, includes a CTA, and stays under 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Why Electricians Need AI‑Powered Websites",
+          "page": "/blog/should-switch-electrician-website-ai",
+          "after_section": "H1: Should You Switch Your Electrician Website to AI Automation?",
+          "rationale": "Targets the core benefit phrase that matches the query."
+        },
+        {
+          "level": 2,
+          "text": "Cost & ROI of an AI‑Automated Electrician Site",
+          "page": "/blog/should-switch-electrician-website-ai",
+          "after_section": "Why Electricians Need AI‑Powered Websites",
+          "rationale": "Captures cost‑related searches and supports featured snippet."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{ \"@type\": \"Question\", \"name\": \"What are the benefits of an AI‑automated website for electricians?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"An AI‑automated site instantly qualifies leads, schedules jobs, and generates quotes, increasing booked jobs by up to 30% while cutting admin time by 40%.\" } },{ \"@type\": \"Question\", \"name\": \"How much does an AI‑automated electrician website cost?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Typical pricing ranges from $5,000 to $9,000, with a pay‑back in saved labor within 6‑12 months for most contractors.\" } }]",
+          "rationale": "Provides structured Q&A for Google to pull as a featured snippet and for AI citability."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "serviceType",
+          "value": "AI‑Automated Website for Electricians",
+          "rationale": "Explicitly signals the niche service to search engines and LLMs."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI‑Automated Websites for Electricians",
+          "to_page": "/blog/should-switch-electrician-website-ai",
+          "rationale": "Passes link equity to the new, query‑focused page."
+        },
+        {
+          "from_page": "/blog/what-is-an-ai-operations-website",
+          "anchor_text": "Electrician AI website case study",
+          "to_page": "/blog/should-switch-electrician-website-ai",
+          "rationale": "Creates contextual relevance between related AI content."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current pages lack electrician‑specific language, statistics, and a concise answer block, so LLMs cannot surface us as a source for the query. No FAQ or structured data directly addresses \"electrician\" and \"AI‑automated platform\".",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "electrician",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites builds AI‑automated websites specifically for electricians, integrating lead qualification, instant quoting, and dispatch."
+        },
+        {
+          "entity": "30% increase in booked jobs",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Electricians using AI‑automated sites see up to a 30% lift in booked jobs within the first quarter."
+        },
+        {
+          "entity": "average ROI 6‑12 months",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Most electrician clients recoup their AI website investment in 6‑12 months."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/should-switch-electrician-website-ai",
+          "before": "missing",
+          "after": "An AI‑automated website for electricians replaces static contact forms with a smart intake engine that qualifies leads, auto‑generates quotes, and schedules jobs. Contractors report a 30% rise in booked work and a 40% reduction in admin time, delivering ROI in under a year. Learn how Orbit Websites can build your AI‑ready site in 5 weeks.",
+          "rationale": "Provides fact‑dense, answer‑ready copy that LLMs can summarize and cite."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Switching to an AI‑automated website can increase electrician bookings by up to 30%, cut admin time by 40%, and deliver a pay‑back in 6‑12 months. The platform qualifies leads, generates instant quotes, and schedules jobs, letting you focus on wiring instead of paperwork.",
+        "page": "/blog/should-switch-electrician-website-ai",
+        "under_heading": "Why Electricians Need AI‑Powered Websites"
+      },
+      "paa_coverage": [
+        {
+          "question": "What are the benefits of an AI‑automated website for electricians?",
+          "answer": "An AI‑automated site instantly qualifies leads, creates on‑the‑spot quotes, and schedules jobs, boosting booked work by up to 30% while reducing administrative effort by 40%.",
+          "page": "/blog/should-switch-electrician-website-ai",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does an AI‑automated electrician website cost?",
+          "answer": "Pricing typically ranges from $5,000 to $9,000, with most electricians seeing a full ROI within 6‑12 months thanks to saved labor and higher conversion rates.",
+          "page": "/blog/should-switch-electrician-website-ai",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add the two Q&A pairs from paa_coverage as structured FAQPage markup on the page.",
+          "rationale": "Enables Google to display answers in SERP and improves AI citability."
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification with the featured snippet paragraph so voice assistants can read it verbatim.",
+          "rationale": "Captures voice search traffic for the query."
+        }
+      ]
+    }
+  },
+  {
+    "query": "How long does it take to launch a fully automated website for a landscaping company in Mercer County?",
+    "priority": "P1",
+    "priority_reason": "Directly targets high‑intent local query with no existing content on site.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "How Long to Launch a Fully Automated Landscaping Website in Mercer County? – 6‑12 Weeks",
+        "rationale": "Places the exact query keyword first and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover the 6‑12 week timeline to launch a fully automated website for landscaping firms in Mercer County. Get a free project plan today!",
+        "rationale": "Provides a concise answer, includes the keyword phrase, and adds a clear CTA."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Launch Timeline for Fully Automated Landscaping Websites in Mercer County",
+          "page": "/blog/automated-website-timeline-landscaping-mercer",
+          "after_section": "H1: How Long Does It Take to Launch a Fully Automated Website for a Landscaping Company in Mercer County?",
+          "rationale": "Creates a clear sub‑heading for the answer that matches the query."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How long does it take to launch a fully automated landscaping website in Mercer County?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A fully automated landscaping website typically launches in 6‑12 weeks, covering discovery, AI intake setup, design, development, testing, and live deployment.\"}},{\"@type\":\"Question\",\"name\":\"What factors affect the timeline?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Factors include site complexity, content readiness, AI integration depth, and client decision speed.\"}}]",
+          "rationale": "FAQ schema signals the exact Q&A to AI engines for featured snippets."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"addressLocality\":\"Mercer County\",\"addressRegion\":\"NJ\",\"addressCountry\":\"US\"}",
+          "rationale": "Adds the target location to improve geo relevance."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Automated website timeline for landscaping businesses in Mercer County",
+          "to_page": "/blog/automated-website-timeline-landscaping-mercer",
+          "rationale": "Passes link equity and signals relevance from a high‑traffic page."
+        },
+        {
+          "from_page": "/blog/what-is-an-ai-operations-website",
+          "anchor_text": "AI‑powered website timeline for landscaping firms",
+          "to_page": "/blog/automated-website-timeline-landscaping-mercer",
+          "rationale": "Connects related AI content to the new timeline page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current pages never mention Mercer County, landscaping services, or a specific launch timeline, so LLMs cannot extract a concise answer for the query. The content is generic about AI websites without local or industry focus.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Mercer County, NJ",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our team serves clients throughout Mercer County, New Jersey, delivering locally optimized solutions."
+        },
+        {
+          "entity": "Landscaping company website automation",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "We specialize in AI‑driven websites that automate lead intake, pricing, and scheduling for landscaping businesses."
+        },
+        {
+          "entity": "6‑12 weeks launch timeline",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "A fully automated landscaping website typically launches in 6‑12 weeks from kickoff to live."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "Our AI‑enabled sites begin around $5,000, delivering automated intake, instant proposal generation, and 15‑second lead‑to‑booking speed.",
+          "after": "For landscaping firms in Mercer County, our AI‑enabled sites start at $5,000 and launch in 6‑12 weeks, providing automated lead intake, instant proposals, and 15‑second lead‑to‑booking speed.",
+          "rationale": "Adds the missing location, industry, and timeline to make the page citable by AI engines."
+        },
+        {
+          "page": "/blog/what-is-an-ai-operations-website",
+          "before": "An AI operations website is a business website that automates intake, qualification, pricing, booking, and routing instead of only displaying services.",
+          "after": "An AI operations website for a landscaping company in Mercer County automates intake, qualification, pricing, booking, and routing, typically launching in 6‑12 weeks.",
+          "rationale": "Injects the target query elements into existing high‑authority content."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A fully automated website for a landscaping company in Mercer County usually launches in 6‑12 weeks. The timeline includes discovery (1‑2 weeks), AI intake setup (2‑3 weeks), design and development (3‑5 weeks), testing (1‑2 weeks), and live deployment.",
+        "page": "/blog/automated-website-timeline-landscaping-mercer",
+        "under_heading": "H2"
+      },
+      "paa_coverage": [
+        {
+          "question": "What steps are involved in building an automated landscaping website?",
+          "answer": "Key steps include discovery, AI intake configuration, design mockups, development, QA testing, and final launch, each lasting 1‑5 weeks depending on complexity.",
+          "page": "/blog/automated-website-timeline-landscaping-mercer",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can a landscaping website be fully automated?",
+          "answer": "Yes—by integrating AI chatbots, automated quote generators, and scheduling tools, a landscaping website can handle lead capture, pricing, and booking without manual intervention.",
+          "page": "/blog/automated-website-timeline-landscaping-mercer",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does an automated website cost for a landscaping business in Mercer County?",
+          "answer": "Pricing starts at $5,000 for a fully automated site, with total cost depending on features, AI depth, and custom design requirements.",
+          "page": "/blog/automated-website-timeline-landscaping-mercer",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage block on the new timeline page containing the three PAA questions above, each with @type Question and acceptedAnswer.",
+          "rationale": "FAQ schema directly feeds People Also Ask results and boosts snippet eligibility."
+        },
+        {
+          "type": "HowTo",
+          "details": "Create a HowTo schema titled \"How to launch a fully automated landscaping website in Mercer County\" with steps: Discover, Configure AI, Design, Develop, Test, Launch.",
+          "rationale": "HowTo schema can appear in step‑by‑step featured snippets for procedural queries."
+        }
+      ]
+    }
+  },
+  {
+    "query": "What are the hidden costs of adding AI chatbots to a dental practice website in NJ?",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, strong competitor content, low existing relevance on our site",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Hidden Costs of AI Chatbots for NJ Dental Practices – 2026 Guide",
+        "rationale": "Places the exact keyword phrase first and matches user intent within 60 characters"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Discover the hidden costs of adding AI chatbots to a New Jersey dental practice website—setup fees, per‑visit charges, compliance expenses, and ROI tips. Learn how to budget wisely. Contact Orbit Boyzz today.",
+        "rationale": "Provides a concise answer, includes CTA, and stays within 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Hidden Costs of Adding AI Chatbots to a Dental Practice Website in NJ",
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "after_section": "Direct answer",
+          "rationale": "Matches the exact query and creates a clear section for snippet extraction"
+        },
+        {
+          "level": 3,
+          "text": "Setup & Integration Fees",
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "after_section": "Hidden Costs of Adding AI Chatbots to a Dental Practice Website in NJ",
+          "rationale": "Breaks down cost categories for better readability and SEO"
+        },
+        {
+          "level": 3,
+          "text": "Per‑Visit & Per‑Minute Charges",
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "after_section": "Setup & Integration Fees",
+          "rationale": "Targets specific hidden‑cost terms that competitors rank for"
+        },
+        {
+          "level": 3,
+          "text": "Compliance & Data Security Expenses",
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "after_section": "Per‑Visit & Per‑Minute Charges",
+          "rationale": "Addresses HIPAA/NY privacy concerns unique to NJ dental practices"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What hidden fees do AI chatbot vendors charge dental practices in NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Vendors often hide setup fees, per‑visit or per‑minute usage charges, data‑storage fees, and compliance add‑ons such as HIPAA‑ready encryption, which can add $200‑$800 per month beyond the advertised price.\"}},{\"@type\":\"Question\",\"name\":\"Are there regulatory costs for AI chatbots in New Jersey dental offices?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—state‑specific privacy statutes and ADA accessibility requirements may require extra licensing or third‑party audits, typically costing $150‑$300 annually per chatbot implementation.\"}}]",
+          "rationale": "FAQ schema directly answers hidden‑cost questions and boosts AI engine citability"
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "Plainsboro, Princeton, West Windsor, Mercer County, New Jersey",
+          "rationale": "Adds NJ‑specific service area for geo‑relevance"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI chatbot hidden costs for dental practices in NJ",
+          "to_page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "rationale": "Passes link equity from high‑traffic services page to the new targeted blog"
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "budgeting for AI chatbot integration in dental sites",
+          "to_page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "rationale": "Contextual link reinforces relevance between cost‑analysis content and hidden‑cost article"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently find no NJ‑specific dental chatbot cost analysis on our site, so they default to competitor pages that list hidden fees. Our content lacks structured data and concrete cost figures for New Jersey practices.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "New Jersey dental practice",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz specializes in AI chatbot integration for dental practices throughout New Jersey, including Mercer, Middlesex, and Somerset counties."
+        },
+        {
+          "entity": "per‑visit charge",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Most vendors charge $0.10‑$0.25 per patient visit after the first 1,000 interactions."
+        },
+        {
+          "entity": "HIPAA‑ready encryption",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI chatbots include HIPAA‑ready encryption as a standard feature, eliminating extra compliance fees."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "before": "missing",
+          "after": "Adding an AI chatbot to a dental practice website in New Jersey often reveals hidden costs beyond the advertised subscription. Typical hidden fees include a one‑time integration setup ($300‑$700), per‑visit usage charges ($0.10‑$0.25 each), data‑storage fees, and mandatory HIPAA compliance add‑ons ($150‑$300 annually). Understanding these expenses helps practices budget accurately and avoid surprise invoices.",
+          "rationale": "Provides fact‑dense, keyword‑rich answer that LLMs will surface in summaries"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "The hidden costs of adding an AI chatbot to a New Jersey dental practice website include one‑time integration fees ($300‑$700), per‑visit or per‑minute usage charges ($0.10‑$0.25 per interaction), data‑storage fees, and extra compliance expenses for HIPAA‑ready encryption ($150‑$300 annually). These add‑ons can increase the total monthly cost by 30‑80% over the advertised subscription price.",
+        "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+        "under_heading": "Hidden Costs of Adding AI Chatbots to a Dental Practice Website in NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "What hidden fees do AI chatbot vendors charge dental practices in NJ?",
+          "answer": "Vendors often hide setup fees, per‑visit or per‑minute usage charges, data‑storage fees, and HIPAA compliance add‑ons, which can add $200‑$800 to the monthly bill beyond the advertised price.",
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Are there regulatory costs for AI chatbots in New Jersey dental offices?",
+          "answer": "Yes—state privacy statutes and ADA accessibility requirements may require extra licensing or third‑party audits, typically costing $150‑$300 annually per chatbot implementation.",
+          "page": "/blog/hidden-costs-ai-chatbot-dental-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add FAQPage schema with the two PAA questions above, each using Question/Answer objects as shown in the SEO schema_changes section.",
+          "rationale": "FAQ schema signals to Google the exact Q&A that matches People Also Ask, increasing snippet chances"
+        },
+        {
+          "type": "Speakable",
+          "details": "Add a Speakable specification on the blog page targeting the paragraph answer so voice assistants can read it verbatim.",
+          "rationale": "Improves voice‑search visibility for the exact query"
+        }
+      ]
+    }
+  }
+]

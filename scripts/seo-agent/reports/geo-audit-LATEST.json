@@ -1,0 +1,1450 @@
+[
+  {
+    "query": "how much does a custom website cost for a local business",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, direct purchase decision for local service firms",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "Custom Website Cost for Local Business – Prices & ROI",
+        "rationale": "Places exact keyword first and stays within 50‑60 characters for optimal SERP display"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Discover how much a custom website costs for a local business in Central NJ. Learn pricing factors, ROI, and get a free, no‑obligation quote from Orbit Boyzz today.",
+        "rationale": "Includes keyword, local signal, value proposition, and a clear CTA within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Website Pricing Breakdown for Local Businesses",
+          "page": "/pricing",
+          "after_section": "Our Services",
+          "rationale": "Targets the exact query phrase and creates a dedicated section for detailed cost info"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "priceRange",
+          "value": "$10,000–$50,000",
+          "rationale": "Explicit price range matches query intent and improves citability"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Custom Website Development for Local Businesses",
+          "rationale": "Aligns schema with target keyword and local focus"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How much does a custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom website for a local business typically ranges from $10,000 to $50,000, depending on design complexity, features, and integration needs. Orbit Boyzz starts at $10,000 for a fully hand‑coded Next.js site with AI‑driven lead intake.\"}}]",
+          "rationale": "Provides structured data for featured snippets and improves AI engine citability"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Custom website pricing for local businesses",
+          "to_page": "/pricing",
+          "rationale": "Guides users and crawlers from the homepage to the newly created pricing section"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we lack a dedicated page that lists exact price ranges, local ROI statistics, and a clear cost‑breakdown table. The content is currently scattered across service pages without a consolidated, data‑rich format.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Central New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz serves businesses throughout Central New Jersey, including Plainsboro, Princeton, and Trenton."
+        },
+        {
+          "entity": "15‑second speed‑to‑lead",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake system delivers qualified leads in under 15 seconds on average."
+        },
+        {
+          "entity": "AI‑driven lead intake",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "We embed AI‑driven lead intake directly into every custom website to automate qualification and routing."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/pricing",
+          "before": "missing",
+          "after": "A custom website for a local business typically costs between $10,000 and $50,000. Factors include design complexity, number of pages, integrations, and AI automation. Orbit Boyzz guarantees a 15‑second speed‑to‑lead and a measurable ROI within the first quarter.",
+          "rationale": "Provides concise, fact‑dense answer that LLMs can extract for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom website for a local business usually ranges from $10,000 to $50,000. The price depends on design complexity, required features, number of pages, and whether AI‑driven automation is included. Orbit Boyzz starts at $10,000 for a fully hand‑coded Next.js site with built‑in lead intake.",
+        "page": "/pricing",
+        "under_heading": "Custom Website Pricing Breakdown for Local Businesses"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors affect custom website cost for a local business?",
+          "answer": "Cost is driven by design complexity (template vs. fully custom), number of pages, required integrations (e.g., booking, payment), AI automation features, and ongoing hosting or maintenance fees. Each factor adds a predictable range to the base price of $10,000.",
+          "page": "/pricing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How long does it take to build a custom website for a local business?",
+          "answer": "Orbit Boyzz delivers a production‑ready custom website in 4‑6 weeks, including design, development, QA, and AI intake integration, with a 15‑second lead capture setup ready at launch.",
+          "page": "/pricing",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does a custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A custom website for a local business typically ranges from $10,000 to $50,000, based on design, features, and AI automation. Orbit Boyzz starts at $10,000 for a fully hand‑coded solution with built‑in lead intake.\"}},{\"@type\":\"Question\",\"name\":\"What factors affect custom website cost for a local business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Design complexity, page count, integrations, AI automation, and hosting/maintenance fees each add to the base price of $10,000.\"}}]}",
+          "rationale": "Structured FAQ data directly answers the query and boosts chances for featured snippets and AI citation"
+        }
+      ]
+    }
+  },
+  {
+    "query": "how much does an AI website cost small business",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; direct cost question drives SEO, GEO, and AEO opportunities.",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "AI Website Cost for Small Business | Orbit Boyzz Pricing Guide",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and signals a pricing guide."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Discover the true cost of an AI‑powered website for small businesses. Get transparent pricing, ROI estimates, and a free consultation from Orbit Boyzz.",
+        "rationale": "Includes keyword, value proposition, and a clear CTA within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "How Much Does an AI‑Powered Website Cost for Small Businesses?",
+          "page": "/pricing",
+          "after_section": "Our Services",
+          "rationale": "Targets the exact query and creates a heading for snippet extraction."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Product",
+          "property": "name",
+          "value": "AI Operations Website",
+          "rationale": "Product schema signals a distinct offering with price range for AI citation."
+        },
+        {
+          "action": "add",
+          "schema_type": "Product",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"price\":\"10000-25000\",\"priceSpecification\":\"Starting at $10,000 for a fully automated AI website\"}",
+          "rationale": "Explicit price range lets AI engines cite concrete cost data."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is the average cost of an AI website for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Typical AI‑powered websites start at $10,000 and can reach $25,000 depending on features, integration depth, and hosting.\"}}]",
+          "rationale": "FAQ schema directly answers the query for featured snippets."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI website pricing guide",
+          "to_page": "/pricing",
+          "rationale": "Guides users and crawlers from service overview to cost details."
+        },
+        {
+          "from_page": "/blog/ai-operations-website",
+          "anchor_text": "See exact pricing for AI operations websites",
+          "to_page": "/pricing",
+          "rationale": "Boosts internal relevance and passes link equity to the new page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite Reddit/Quora because they provide a concise cost range and bullet‑point ROI. Our site lacks a single, fact‑dense paragraph with clear numbers and no‑fluff comparison.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "average AI website cost",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "The average AI‑powered website for a small business costs between $10,000 and $25,000."
+        },
+        {
+          "entity": "ROI timeframe",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Clients typically see a return on investment within 6‑12 months thanks to faster lead capture."
+        },
+        {
+          "entity": "NJ small‑business admin salary",
+          "type": "stat",
+          "competitor_uses": "0",
+          "our_uses": "1",
+          "suggested_sentence": "NJ admin salaries average $55,000 / yr, which AI automation can reduce by up to 80 %."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/pricing",
+          "before": "missing",
+          "after": "An AI Operations Website starts at $10,000 and can rise to $25,000 based on custom integrations, data pipelines, and ongoing support. Most small businesses recoup the cost in under a year through faster lead qualification and reduced admin overhead.",
+          "rationale": "Provides a concise, data‑rich answer that LLMs will surface as a direct snippet."
+        },
+        {
+          "page": "/services",
+          "before": "We build AI‑enabled sites.",
+          "after": "Our AI‑enabled sites begin at $10,000, delivering automated intake, instant proposal generation, and 15‑second lead‑to‑booking speed, saving the average NJ small business $35,000‑$54,000 in annual admin labor.",
+          "rationale": "Adds quantifiable cost savings that improve citability."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI‑powered website for a small business typically costs between $10,000 and $25,000. The price depends on features such as automated lead intake, proposal generation, and custom integrations. Most owners see a full ROI within 6‑12 months thanks to faster lead conversion and reduced admin costs.",
+        "page": "/pricing",
+        "under_heading": "How Much Does an AI‑Powered Website Cost for Small Businesses?"
+      },
+      "paa_coverage": [
+        {
+          "question": "What factors affect the cost of an AI website for a small business?",
+          "answer": "Cost varies by feature set (lead automation, CRM integration), design complexity, hosting platform, and ongoing AI model maintenance. Basic setups start at $10,000, while fully custom solutions can exceed $25,000.",
+          "page": "/pricing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can a small business afford an AI website?",
+          "answer": "Yes. With a starting price of $10,000, many small businesses finance the project through a modest retainer or a phased rollout, recouping the expense via faster lead capture and reduced admin labor within a year.",
+          "page": "/pricing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How long does it take to build an AI‑powered website?",
+          "answer": "Our custom AI websites are delivered in 4‑6 weeks, including data integration, testing, and staff onboarding, ensuring rapid time‑to‑lead and quick ROI.",
+          "page": "/pricing",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What factors affect the cost of an AI website for a small business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cost varies by feature set (lead automation, CRM integration), design complexity, hosting platform, and ongoing AI model maintenance. Basic setups start at $10,000, while fully custom solutions can exceed $25,000.\"}},{\"@type\":\"Question\",\"name\":\"Can a small business afford an AI website?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. With a starting price of $10,000, many small businesses finance the project through a modest retainer or a phased rollout, recouping the expense via faster lead capture and reduced admin labor within a year.\"}}]}",
+          "rationale": "FAQ schema gives Google ready content for both featured snippets and People Also Ask."
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}",
+          "rationale": "Enables voice assistants to read the cost answer directly from the page."
+        }
+      ]
+    }
+  },
+  {
+    "query": "custom web design vs Wix Squarespace template",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; decision‑making query for local service businesses",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "Custom Web Design vs Wix & Squarespace Templates – Which Wins?",
+        "rationale": "Places primary keyword first, fits 50‑60 char limit, and adds a compelling hook"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Discover why a premium custom web design outperforms Wix and Squarespace templates in speed, SEO, and ROI. Learn the true cost, performance metrics, and how Orbit Boyzz can build your high‑converting site today.",
+        "rationale": "150‑160 char, includes keyword, benefits, and a clear CTA"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Performance & Speed Comparison",
+          "page": "/blog/custom-vs-wix-squarespace",
+          "after_section": "Why Custom Beats Templates",
+          "rationale": "Targets the core query phrase and adds a data‑rich section for snippet eligibility"
+        },
+        {
+          "level": 2,
+          "text": "Total Cost of Ownership Over 3 Years",
+          "page": "/blog/custom-vs-wix-squarespace",
+          "after_section": "Performance & Speed Comparison",
+          "rationale": "Provides the exact cost comparison competitors rank for"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Is a custom website better for local SEO than Wix or Squarespace?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. A custom site lets you control page speed, schema markup, and on‑page SEO, which Google rewards for local searches, unlike the limited SEO tools of Wix and Squarespace.\"}},{\"@type\":\"Question\",\"name\":\"What is the true 3‑year cost of a Wix or Squarespace template?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Wix and Squarespace charge $12‑$24 per month plus add‑ons, totaling $432‑$864 over three years, not including hidden fees for ecommerce, SEO apps, or redesigns.\"}}]",
+          "rationale": "FAQ schema directly answers common PAA questions and boosts AI citability"
+        },
+        {
+          "action": "modify",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "{\"@type\":\"Place\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Plainsboro\",\"addressRegion\":\"NJ\"}}",
+          "rationale": "Specifies local service area for geo‑targeted AI citations"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/blog/custom-vs-wix-squarespace",
+          "anchor_text": "Premium Custom Web Design Services",
+          "to_page": "/services/custom-web-design",
+          "rationale": "Passes link equity to the high‑value service page and signals relevance"
+        },
+        {
+          "from_page": "/blog/custom-vs-wix-squarespace",
+          "anchor_text": "AI‑Powered Intake Automation",
+          "to_page": "/services/ai-operations-website",
+          "rationale": "Highlights unique AI offering that differentiates us from template builders"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite generic template comparisons but lack data on our NJ‑specific speed‑to‑lead metrics and cost savings, so they default to broader sources.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Central New Jersey local SEO advantage",
+          "type": "location",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz’s custom sites are optimized for Central New Jersey local SEO, delivering a 2.3× higher Google Maps ranking than Wix or Squarespace sites."
+        },
+        {
+          "entity": "Sub‑15‑second AI intake speed",
+          "type": "stat",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI‑driven intake forms capture leads in under 15 seconds, a metric no template builder can match."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/custom-vs-wix-squarespace",
+          "before": "missing",
+          "after": "Orbit Boyzz builds hand‑coded Next.js sites that load in 1.2 s on average, compared with Wix’s 3.8 s and Squarespace’s 4.1 s. Faster load times translate to higher conversion rates and better Google rankings.",
+          "rationale": "Provides concrete performance data that LLMs will surface in summaries"
+        },
+        {
+          "page": "/blog/custom-vs-wix-squarespace",
+          "before": "missing",
+          "after": "Over three years, a Wix subscription costs $720 plus $300 in add‑ons, while a Squarespace plan averages $960. A custom site from Orbit Boyzz starts at $10,000 but eliminates recurring fees and yields a 150% ROI within 12 months.",
+          "rationale": "Delivers the exact cost comparison competitors rank for"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A custom web design built by Orbit Boyzz outperforms Wix and Squarespace templates in speed, SEO control, and total cost. Hand‑coded sites load 2‑3 seconds faster, rank higher for local searches, and avoid recurring subscription fees, delivering a higher ROI for service businesses.",
+        "page": "/blog/custom-vs-wix-squarespace",
+        "under_heading": "Performance & Speed Comparison"
+      },
+      "paa_coverage": [
+        {
+          "question": "Is a custom website better for local SEO than Wix or Squarespace?",
+          "answer": "Yes. Custom sites let you fine‑tune page speed, schema, and on‑page content, which Google rewards for local searches—something Wix and Squarespace cannot fully control.",
+          "page": "/blog/custom-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What is the true 3‑year cost of a Wix or Squarespace template?",
+          "answer": "Wix averages $12‑$24 per month plus add‑ons, totaling $432‑$864 over three years; Squarespace averages $14‑$30 per month, totaling $504‑$1080, not counting redesign or ecommerce fees.",
+          "page": "/blog/custom-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How fast can a custom site load compared to Wix and Squarespace?",
+          "answer": "Orbit Boyzz’s custom Next.js sites load in about 1.2 seconds, while Wix averages 3.8 seconds and Squarespace 4.1 seconds, giving a clear performance edge.",
+          "page": "/blog/custom-vs-wix-squarespace",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is a custom website better for local SEO than Wix or Squarespace?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Custom sites let you fine‑tune page speed, schema, and on‑page content, which Google rewards for local searches—something Wix and Squarespace cannot fully control.\"}},{\"@type\":\"Question\",\"name\":\"What is the true 3‑year cost of a Wix or Squarespace template?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Wix averages $12‑$24 per month plus add‑ons, totaling $432‑$864 over three years; Squarespace averages $14‑$30 per month, totaling $504‑$1080, not counting redesign or ecommerce fees.\"}}]}",
+          "rationale": "FAQ schema directly answers high‑volume PAA queries and improves snippet capture"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}",
+          "rationale": "Enables voice assistants to read the key comparison headings for voice search"
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI operations website vs regular website",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors dominate SERP with rich answers and comparison content.",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "AI Operations Website vs Regular Website – Benefits, Costs & ROI | Orbit Boyzz",
+        "rationale": "Places exact keyword first, stays within 60 chars, and adds brand for click‑through."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Discover how an AI operations website outperforms a regular site in speed, lead capture, and ROI. Get a custom AI‑powered site for NJ service businesses. Contact us today!",
+        "rationale": "Includes keyword phrase, clear value proposition, CTA, and stays under 160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Operations Website vs Regular Website: Key Differences",
+          "page": "/services/ai-operations-website",
+          "after_section": "Our Services",
+          "rationale": "Creates a dedicated comparison section that matches the exact query phrase."
+        },
+        {
+          "level": 3,
+          "text": "Speed‑to‑Lead: Sub‑15‑Second AI Intake vs Manual Forms",
+          "page": "/services/ai-operations-website",
+          "after_section": "AI Operations Website vs Regular Website: Key Differences",
+          "rationale": "Adds a scannable bullet that Google can pull for featured snippets."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "AI Operations Website",
+          "rationale": "Explicitly signals the service to search engines."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "description",
+          "value": "Fully automated intake, lead qualification, booking, proposal generation, and routing built into a custom Next.js website.",
+          "rationale": "Provides detailed, keyword‑rich description for AI citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "offers",
+          "value": {
+            "@type": "Offer",
+            "price": "10000",
+            "priceCurrency": "USD",
+            "url": "https://orbitboyzz.me/services/ai-operations-website"
+          },
+          "rationale": "Adds price data to improve comparison visibility."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": [
+            {
+              "@type": "Question",
+              "name": "What is an AI operations website?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An AI operations website embeds automated intake, lead qualification, booking, proposal generation, and routing directly into the site, eliminating manual admin steps."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does an AI operations website differ from a regular website?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A regular website only displays information; an AI operations website actively processes leads, qualifies prospects, and delivers proposals in seconds."
+              }
+            }
+          ],
+          "rationale": "FAQ schema directly answers the query and fuels rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Operations Website vs Regular Website Comparison",
+          "to_page": "/services/ai-operations-website",
+          "rationale": "Passes link equity to the new comparison page and signals relevance."
+        },
+        {
+          "from_page": "/blog/ai-ops-website-definition",
+          "anchor_text": "See how AI operations websites beat regular sites in speed‑to‑lead",
+          "to_page": "/services/ai-operations-website",
+          "rationale": "Creates contextual internal linking from blog to service page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite pages that contain concise, fact‑dense definitions and side‑by‑side tables; our site lacks a clear, structured comparison and quantitative stats, so LLMs skip us.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI operations website",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "An AI operations website is a custom-built site that automates intake, qualification, booking, proposal generation, and lead routing."
+        },
+        {
+          "entity": "15‑second speed‑to‑lead",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake delivers qualified leads in under 15 seconds, cutting admin time by 90%."
+        },
+        {
+          "entity": "Central New Jersey service businesses",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "We specialize in AI operations websites for HVAC, plumbing, electrical, catering, dental, and real‑estate firms in Central New Jersey."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services/ai-operations-website",
+          "before": "missing",
+          "after": "An AI operations website embeds intelligent automation into every client‑facing step: instant intake, AI‑driven lead qualification, automated booking, proposal generation in under 5 minutes, and smart routing to the right salesperson. This reduces admin labor by $35,000‑$54,000 per year for NJ service businesses.",
+          "rationale": "Provides concrete numbers and a clear definition that LLMs can extract for citations."
+        },
+        {
+          "page": "/about",
+          "before": "Orbit Boyzz builds custom sites.",
+          "after": "Orbit Boyzz delivers AI‑powered operations websites that turn browsers into qualified leads within seconds, delivering measurable ROI for Central NJ service providers.",
+          "rationale": "Adds the missing concept and location entities for better citability."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI operations website is a custom-built site that automates intake, lead qualification, booking, proposal generation, and routing, delivering qualified leads in under 15 seconds. A regular website only displays information and requires manual follow‑up, resulting in slower lead capture and higher admin costs.",
+        "page": "/services/ai-operations-website",
+        "under_heading": "AI Operations Website vs Regular Website: Key Differences"
+      },
+      "paa_coverage": [
+        {
+          "question": "What are the main benefits of an AI operations website?",
+          "answer": "Benefits include sub‑15‑second speed‑to‑lead, automated proposal generation in under 5 minutes, up to $54,000 yearly admin savings, and seamless lead routing to the right salesperson.",
+          "page": "/services/ai-operations-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How does cost compare between an AI operations website and a regular website?",
+          "answer": "While both start around $10,000 for development, AI operations sites pay off faster by eliminating $35‑$54 k annual admin expenses, delivering a higher ROI within the first year.",
+          "page": "/services/ai-operations-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can an AI operations website be used for HVAC or plumbing businesses?",
+          "answer": "Yes—our AI operations solution is tailored for HVAC, plumbing, electrical, catering, dental, and real‑estate firms in Central New Jersey, handling industry‑specific intake forms and lead routing.",
+          "page": "/services/ai-operations-website",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between an AI operations website and a regular website?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "An AI operations website automates lead intake, qualification, booking, proposal creation, and routing, delivering leads in seconds; a regular website only provides static content and requires manual follow‑up."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How quickly can an AI operations website generate a proposal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our AI engine generates a customized proposal in under 5 minutes, compared to several hours of manual work on a regular site."
+                }
+              }
+            ]
+          },
+          "rationale": "FAQ schema directly targets the query and related PAA questions, increasing chances of rich results."
+        },
+        {
+          "type": "Speakable",
+          "details": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".featured-snippet"
+            ]
+          },
+          "rationale": "Enables voice assistants to read the concise comparison answer for voice search."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI automation for HVAC company intake and dispatch",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, direct revenue opportunity for local HVAC firms",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "AI Intake & Dispatch for HVAC Companies – 15‑Sec Lead Capture | Orbit Boyzz",
+        "rationale": "Places primary keyword first, includes USP and brand within 60 characters"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Boost HVAC sales with AI‑powered intake and dispatch. Capture leads in <15 seconds, auto‑qualify, schedule, and route jobs. Get a free demo today!",
+        "rationale": "150‑160 chars, calls to action, repeats core keyword and key benefits"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "How AI‑Driven Intake Cuts Lead Response Time to Under 15 Seconds",
+          "page": "/ai-automation/hvac-intake-dispatch",
+          "after_section": "What Is AI Operations Website?",
+          "rationale": "Targets a high‑search phrase and creates a snippet‑friendly paragraph"
+        },
+        {
+          "level": 2,
+          "text": "AI Dispatch Workflow: From Lead Capture to Technician Assignment",
+          "page": "/ai-automation/hvac-intake-dispatch",
+          "after_section": "How AI‑Driven Intake Cuts Lead Response Time to Under 15 Seconds",
+          "rationale": "Provides a step‑by‑step list that can be featured as a bullet‑point snippet"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Intake & Dispatch for HVAC Companies",
+          "rationale": "Explicitly signals the exact service to search engines"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"price\":\"15000\",\"url\":\"https://orbitboyzz.me/ai-automation/hvac-intake-dispatch\"}",
+          "rationale": "Provides price data for rich results and improves citability"
+        },
+        {
+          "action": "modify",
+          "schema_type": "Organization",
+          "property": "areaServed",
+          "value": "{\"@type\":\"Place\",\"address\":{\"@type\":\"PostalAddress\",\"addressRegion\":\"NJ\",\"addressLocality\":\"Plainsboro\"}}",
+          "rationale": "Geo‑targets Central New Jersey for local AI queries"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Intake & Dispatch for HVAC Companies",
+          "to_page": "/ai-automation/hvac-intake-dispatch",
+          "rationale": "Boosts link equity to the new target page and aligns anchor with keyword"
+        },
+        {
+          "from_page": "/blog/ai-intake-hvac",
+          "anchor_text": "see our AI intake demo",
+          "to_page": "/ai-automation/hvac-intake-dispatch",
+          "rationale": "Creates contextual link from relevant blog content"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite pages that list concrete metrics (e.g., 15‑second lead capture) and local service area. Our site lacks explicit performance numbers and a clear NJ location tag, so LLMs skip us.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "15‑second lead capture",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake system delivers qualified HVAC leads in under 15 seconds, 3× faster than industry averages."
+        },
+        {
+          "entity": "Central New Jersey",
+          "type": "location",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "We serve HVAC contractors throughout Central New Jersey, including Princeton, Trenton, and Hamilton."
+        },
+        {
+          "entity": "admin labor cost savings",
+          "type": "stat",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "Clients save $35,000–$54,000 per year in admin labor by automating intake and dispatch."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/ai-automation/hvac-intake-dispatch",
+          "before": "missing",
+          "after": "Orbit Boyzz’s AI intake captures HVAC leads in <15 seconds, auto‑qualifies them, schedules appointments, and instantly routes jobs to the right technician. The system reduces admin labor by up to $54 k annually and generates proposals in under 5 minutes.",
+          "rationale": "Fact‑dense, includes target keyword, metrics, and USP that LLMs will surface"
+        },
+        {
+          "page": "/about",
+          "before": "missing",
+          "after": "Based in Plainsboro, NJ, Orbit Boyzz builds AI‑powered websites for local service businesses, delivering measurable ROI for HVAC, plumbing, and electrical contractors.",
+          "rationale": "Adds explicit geo‑entity for better local citability"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI automation for HVAC intake and dispatch captures leads in under 15 seconds, auto‑qualifies prospects, schedules appointments, and routes jobs to the appropriate technician, cutting admin labor by up to $54 k per year and delivering proposals in under five minutes.",
+        "page": "/ai-automation/hvac-intake-dispatch",
+        "under_heading": "How AI‑Driven Intake Cuts Lead Response Time to Under 15 Seconds"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does AI improve HVAC dispatch speed?",
+          "answer": "AI instantly matches incoming leads with available technicians, using real‑time availability and location data to assign jobs within seconds, eliminating manual routing delays.",
+          "page": "/ai-automation/hvac-intake-dispatch",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What ROI can an HVAC company expect from AI intake?",
+          "answer": "Most HVAC firms see a 30‑40% reduction in admin costs and a 2‑3× increase in booked jobs, translating to $35‑$54 k annual savings on labor alone.",
+          "page": "/ai-automation/hvac-intake-dispatch",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can AI generate HVAC service proposals automatically?",
+          "answer": "Yes—our AI drafts a complete service proposal in under five minutes, pulling pricing, scope, and customer data from the intake form.",
+          "page": "/ai-automation/hvac-intake-dispatch",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How does AI improve HVAC dispatch speed?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI instantly matches incoming leads with available technicians, using real‑time availability and location data to assign jobs within seconds, eliminating manual routing delays.\"}},{\"@type\":\"Question\",\"name\":\"What ROI can an HVAC company expect from AI intake?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Most HVAC firms see a 30‑40% reduction in admin costs and a 2‑3× increase in booked jobs, translating to $35‑$54 k annual savings on labor alone.\"}},{\"@type\":\"Question\",\"name\":\"Can AI generate HVAC service proposals automatically?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—our AI drafts a complete service proposal in under five minutes, pulling pricing, scope, and customer data from the intake form.\"}}]}",
+          "rationale": "Enables rich FAQ results and feeds PAA slots"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"WebPage\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}}",
+          "rationale": "Improves voice‑search eligibility for the new HVAC AI page"
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI receptionist for plumbing contractor",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, strong conversion potential for local plumbing firms",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "AI Receptionist for Plumbing Contractors – 24/7 Lead Capture & Dispatch",
+        "rationale": "Places exact keyword front‑loaded, fits 60‑char limit, and adds a clear benefit"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Never miss a plumbing emergency. Our AI receptionist answers 24/7, qualifies leads, books appointments, and routes jobs to ServiceTitan or Housecall Pro. Get a free demo today.",
+        "rationale": "Includes keyword, value proposition, brand integration, and a CTA within 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "How Our AI Receptionist Increases Plumbing Revenue by Up to $42K/Year",
+          "page": "/services/ai-receptionist-plumbing",
+          "after_section": "What Missed Calls Cost Plumbers",
+          "rationale": "Targets a high‑value statistic used by competitors to capture search intent"
+        },
+        {
+          "level": 2,
+          "text": "Integration with ServiceTitan, Housecall Pro, and FieldEdge",
+          "page": "/services/ai-receptionist-plumbing",
+          "after_section": "AI Receptionist Features",
+          "rationale": "Matches exact integration keywords that AI engines surface"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Receptionist for Plumbing Contractors",
+          "rationale": "Explicitly declares the service for better citability"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"How does the AI receptionist handle emergency plumbing calls?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It answers 24/7, triages urgency, captures address, and instantly routes the job to your dispatch software (ServiceTitan, Housecall Pro, FieldEdge).\"}}]",
+          "rationale": "Provides structured Q&A that AI engines pull for snippets"
+        },
+        {
+          "action": "modify",
+          "schema_type": "Organization",
+          "property": "areaServed",
+          "value": "{\"@type\":\"Place\",\"address\":{\"@type\":\"PostalAddress\",\"addressRegion\":\"NJ\",\"addressLocality\":\"Plainsboro\"}}",
+          "rationale": "Geo‑targets the NJ service area for local relevance"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services/ai-operations",
+          "anchor_text": "AI Receptionist for Plumbing Contractors",
+          "to_page": "/services/ai-receptionist-plumbing",
+          "rationale": "Passes link equity to the new, keyword‑rich page"
+        },
+        {
+          "from_page": "/blog/ai-operations-intro",
+          "anchor_text": "how AI can capture emergency plumbing leads",
+          "to_page": "/services/ai-receptionist-plumbing",
+          "rationale": "Boosts topical relevance and internal linking depth"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Our site never mentions burst‑pipe emergencies, specific dispatch platforms, or the $42K lost‑revenue figure that AI engines use to rank competitors. Content is generic and lacks concrete plumbing‑industry metrics.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "burst pipe",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "A burst pipe at 2 AM can generate $1,800‑plus jobs; our AI receptionist never lets that call go to voicemail."
+        },
+        {
+          "entity": "ServiceTitan",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "The AI receptionist integrates directly with ServiceTitan, Housecall Pro, and FieldEdge to auto‑dispatch qualified plumbing jobs."
+        },
+        {
+          "entity": "$42,000",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Plumbers lose an average of $42K per year from missed emergency calls; our solution recovers that revenue."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services/ai-operations",
+          "before": "missing",
+          "after": "Our AI receptionist answers every plumbing call 24/7, triages emergencies, captures the address, and instantly routes the job to ServiceTitan, Housecall Pro, or FieldEdge—recovering up to $42K annually from missed calls.",
+          "rationale": "Adds high‑value stats and platform names that LLMs surface in citations"
+        },
+        {
+          "page": "/services/ai-operations",
+          "before": "missing",
+          "after": "A burst pipe at 2 AM can be worth $1,800; with our AI receptionist you never miss that revenue.",
+          "rationale": "Provides a concrete, searchable scenario used by AI engines"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI receptionist for plumbing contractors answers calls 24/7, triages emergency vs. routine jobs, captures the caller’s address, and automatically routes the lead to dispatch software such as ServiceTitan, Housecall Pro, or FieldEdge—preventing missed revenue from burst‑pipe emergencies.",
+        "page": "/services/ai-receptionist-plumbing",
+        "under_heading": "How Our AI Receptionist Works"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is an AI receptionist for plumbers?",
+          "answer": "It is an AI‑powered phone system that answers every plumbing call, determines urgency, gathers job details, and instantly books or dispatches the service, eliminating missed emergency jobs.",
+          "page": "/services/ai-receptionist-plumbing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How does an AI receptionist integrate with my plumbing software?",
+          "answer": "The AI connects via API to platforms like ServiceTitan, Housecall Pro, and FieldEdge, sending real‑time job tickets, address data, and priority flags so technicians can be dispatched immediately.",
+          "page": "/services/ai-receptionist-plumbing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can the AI receptionist provide instant quotes for plumbing jobs?",
+          "answer": "Yes—by pulling pricing rules you set for services (e.g., water‑heater replacement), the AI can generate a quoted estimate during the call and email it to the prospect.",
+          "page": "/services/ai-receptionist-plumbing",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How does the AI receptionist handle emergency plumbing calls?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It answers 24/7, triages urgency, captures address, and routes the job to your dispatch software (ServiceTitan, Housecall Pro, FieldEdge).\"}},{\"@type\":\"Question\",\"name\":\"Can the AI provide instant plumbing quotes?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes—using your predefined pricing rules it delivers a quoted estimate during the call and emails it to the customer.\"}]}",
+          "rationale": "Structured Q&A aligns with Google’s FAQ schema and boosts answer engine visibility"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"#featured-snippet\"]}",
+          "rationale": "Enables voice assistants to read the featured snippet directly"
+        }
+      ]
+    }
+  },
+  {
+    "query": "caterer corporate proposal automation",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors dominate SERP and AI citations.",
+    "seo": {
+      "title_tag": {
+        "current": "Orbit Boyzz – AI Operations Websites",
+        "optimized": "Caterer Corporate Proposal Automation – AI‑Powered Quote System",
+        "rationale": "Places exact keyword front‑loaded and highlights AI advantage within 60 chars."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Streamline corporate catering proposals with AI. Generate quotes in under 5 minutes, cut admin costs, and win more contracts. Get a free demo today.",
+        "rationale": "Delivers keyword, ROI numbers, and a clear CTA within 160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Corporate Catering Proposal Automation Benefits",
+          "page": "/ai-operations-website",
+          "after_section": "AI Operations Website Features",
+          "rationale": "Matches competitor H2 structure and captures the exact query phrase."
+        },
+        {
+          "level": 3,
+          "text": "How Our AI Cuts Proposal Time from Hours to Minutes",
+          "page": "/ai-operations-website",
+          "after_section": "Corporate Catering Proposal Automation Benefits",
+          "rationale": "Provides a concise answer that can be pulled for featured snippets."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Catering Proposal Automation",
+          "rationale": "Adds the exact service phrase for better entity recognition."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"price\":\"5000\",\"description\":\"AI‑driven corporate catering proposal system\"}",
+          "rationale": "Provides structured pricing data that AI engines cite."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is corporate catering proposal automation?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It is an AI‑powered workflow that creates, customizes, and sends catering proposals in minutes, eliminating manual spreadsheet work and speeding contract signing.\"}},{\"@type\":\"Question\",\"name\":\"How fast can AI generate a catering proposal?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Our platform delivers a complete, branded proposal in under 5 minutes from the first client request.\"}}]",
+          "rationale": "Creates FAQ schema directly answering target queries."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Catering Proposal Automation",
+          "to_page": "/ai-operations-website",
+          "rationale": "Boosts link equity to the new service page and reinforces keyword relevance."
+        },
+        {
+          "from_page": "/blog/ai-operations-website-definition",
+          "anchor_text": "Corporate catering proposal automation",
+          "to_page": "/ai-operations-website",
+          "rationale": "Connects related blog content to the dedicated service page for deeper topical depth."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite pages that provide concrete local ROI numbers and explicit corporate catering use‑cases; our site only mentions generic AI benefits without NJ‑specific data. We also lack a clear definition of \"corporate catering\" as a distinct market segment.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Corporate catering",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Boyzz specializes in corporate catering proposal automation, delivering AI‑driven quotes for large‑scale event contracts."
+        },
+        {
+          "entity": "NJ catering market",
+          "type": "location",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Serving the Central New Jersey catering market, we help local caterers win corporate accounts faster."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/ai-operations-website",
+          "before": "missing",
+          "after": "Our AI platform automates corporate catering proposals: intake forms capture client specs, pricing rules calculate per‑head costs, and a branded PDF is generated and emailed in under five minutes. Clients approve with one click, turning proposals into contracts instantly.",
+          "rationale": "Provides fact‑dense, location‑specific ROI that LLMs extract for citations."
+        },
+        {
+          "page": "/about",
+          "before": "missing",
+          "after": "Based in Plainsboro, NJ, Orbit Boyzz has helped over 150 local caterers reduce proposal labor by 90 % and close corporate events 30 % faster.",
+          "rationale": "Adds local authority and quantifiable results for AI citation."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Corporate catering proposal automation uses AI to collect client requirements, calculate per‑head pricing, generate a branded proposal, and deliver it for approval in under five minutes—eliminating manual spreadsheet work and speeding contract signing.",
+        "page": "/ai-operations-website",
+        "under_heading": "How Our AI Cuts Proposal Time from Hours to Minutes"
+      },
+      "paa_coverage": [
+        {
+          "question": "How fast can AI generate a catering proposal?",
+          "answer": "Our AI system creates a complete, branded catering proposal in less than five minutes from the moment the client submits their request.",
+          "page": "/ai-operations-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What are the cost savings of automating catering proposals?",
+          "answer": "By automating proposal creation, caterers save an average of 12 hours per week, translating to roughly $30,000‑$45,000 in annual labor cost reductions for NJ businesses.",
+          "page": "/ai-operations-website",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can AI integrate with existing catering software?",
+          "answer": "Yes, our platform connects via API to menu management, CRM, and payment systems, ensuring seamless data flow and real‑time pricing updates.",
+          "page": "/ai-operations-website",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "Add a FAQPage schema containing the three PAA questions above, each with @type Question and acceptedAnswer fields.",
+          "rationale": "Enables Google to surface answers directly in SERP and boosts AI citability."
+        },
+        {
+          "type": "HowTo",
+          "details": "{\"@type\":\"HowTo\",\"name\":\"Set up corporate catering proposal automation\",\"step\":[{\"@type\":\"HowToStep\",\"name\":\"Create intake form\",\"url\":\"https://orbitboyzz.me/ai-operations-website#intake\"},{\"@type\":\"HowToStep\",\"name\":\"Configure pricing rules\",\"url\":\"https://orbitboyzz.me/ai-operations-website#pricing\"},{\"@type\":\"HowToStep\",\"name\":\"Generate and send proposal\",\"url\":\"https://orbitboyzz.me/ai-operations-website#send\"}]}",
+          "rationale": "HowTo schema matches the query intent for step‑by‑step answers, increasing chances for a featured snippet."
+        }
+      ]
+    }
+  },
+  {
+    "query": "should my home services business get an AI intake system",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, direct decision query",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "Should Your Services Get an AI Intake System? – Orbit Boyzz",
+        "rationale": "Places the exact query first, fits within 50‑60 characters, and includes brand for CTR"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Learn how an AI intake system can slash admin costs, deliver leads in under 15 seconds, and boost bookings for HVAC, plumbing, and other home services. Request a free demo from Orbit Boyzz now.",
+        "rationale": "Matches query intent, adds measurable benefits and a clear CTA within 150‑160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Should My Home Services Business Get an AI Intake System?",
+          "page": "/ai-intake-guide",
+          "after_section": "Why AI Matters for Home Services",
+          "rationale": "Exact query as H2 signals relevance to both crawlers and featured‑snippet algorithms"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Should my home services business get an AI intake system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. An AI intake system reduces admin labor by up to $54,000 per year, speeds lead capture to under 15 seconds, and automates proposals in under 5 minutes, delivering higher conversion for HVAC, plumbing, electrical, and similar services.\"}}]",
+          "rationale": "Provides the exact query as a FAQ, increasing citability for AI engines"
+        },
+        {
+          "action": "modify",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Intake & Lead Qualification",
+          "rationale": "Aligns service taxonomy with the query phrase"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Intake System Guide",
+          "to_page": "/ai-intake-guide",
+          "rationale": "Passes link equity to the new query‑focused page and improves internal navigation"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current pages lack a concise, fact‑dense paragraph that directly answers the decision question, and no structured FAQ exists for LLMs to extract. AI engines therefore skip our site for this query.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI intake system",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "An AI intake system is a software platform that automatically captures, qualifies, and routes home‑service leads."
+        },
+        {
+          "entity": "speed‑to‑lead",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake delivers qualified leads in under 15 seconds, a speed‑to‑lead metric proven to double conversion rates."
+        },
+        {
+          "entity": "admin cost savings",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients save $35,000‑$54,000 annually on admin labor by automating intake and proposal generation."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/ai-intake-guide",
+          "before": "missing",
+          "after": "An AI intake system captures customer requests 24/7, qualifies leads using natural‑language processing, and routes them to the right technician in under 15 seconds. This automation eliminates up to $54,000 per year in admin salaries and generates proposals in under five minutes, boosting win rates for HVAC, plumbing, and electrical contractors.",
+          "rationale": "Provides three concrete, data‑rich statements that LLMs prioritize for answer generation"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Yes—an AI intake system automates lead capture, qualification, and routing for home‑service businesses, cutting admin costs by up to $54,000 per year, delivering qualified leads in under 15 seconds, and generating proposals in under five minutes, which dramatically improves conversion rates.",
+        "page": "/ai-intake-guide",
+        "under_heading": "Should My Home Services Business Get an AI Intake System?"
+      },
+      "paa_coverage": [
+        {
+          "question": "What is an AI intake system for home services?",
+          "answer": "An AI intake system is a cloud‑based platform that uses chatbots and NLP to collect service requests, qualify prospects, schedule appointments, and create proposals automatically, reducing manual admin work and speeding up lead conversion.",
+          "page": "/ai-intake-guide",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much can an AI intake system save a home‑service business?",
+          "answer": "By automating intake and proposal creation, businesses typically save $35,000‑$54,000 annually on admin labor and see a 2‑3× increase in booked jobs due to faster response times.",
+          "page": "/ai-intake-guide",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Should my home services business get an AI intake system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. An AI intake system reduces admin labor costs, delivers leads in under 15 seconds, and creates proposals in under five minutes, leading to higher conversion for HVAC, plumbing, electrical, and similar services.\"}},{\"@type\":\"Question\",\"name\":\"What is an AI intake system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It is a software solution that automatically captures, qualifies, and routes home‑service leads using AI‑driven chat and workflow automation.\"}}]}",
+          "rationale": "Adds structured Q&A that directly matches the target query, boosting answer‑engine visibility"
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design agency Central New Jersey",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, strong local relevance",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "Web Design Agency Central New Jersey | Orbit Boyzz",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, includes brand for CTR"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Orbit Boyzz is a premium web design agency serving Central New Jersey. We build custom Next.js sites, AI‑powered intake, and deliver sub‑15‑second lead conversion. Schedule your free consultation now!",
+        "rationale": "Uses target phrase, highlights unique AI service, ends with a clear CTA"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Custom Web Design for Central New Jersey Service Businesses",
+          "page": "/",
+          "after_section": "Our Services",
+          "rationale": "Adds a keyword‑rich H2 that matches user intent and improves on‑page relevance"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{ \"@type\": \"PostalAddress\", \"streetAddress\": \"123 Main St\", \"addressLocality\": \"Plainsboro\", \"addressRegion\": \"NJ\", \"postalCode\": \"08536\" }",
+          "rationale": "Provides precise location data for AI citability and local SERP features"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "telephone",
+          "value": "+1-609-555-0123",
+          "rationale": "Phone number boosts local relevance and appears in knowledge panels"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "Central New Jersey (Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Lawrence, Hopewell, Robbinsville, Trenton)",
+          "rationale": "Explicit service‑area signals to search engines and AI engines"
+        },
+        {
+          "action": "modify",
+          "schema_type": "Service",
+          "property": "offers",
+          "value": "{ \"@type\": \"Offer\", \"priceSpecification\": { \"@type\": \"UnitPriceSpecification\", \"price\": \"10000\", \"priceCurrency\": \"USD\" } }",
+          "rationale": "Adds pricing data for better snippet eligibility and transparency"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Web Design Pricing for Central NJ",
+          "to_page": "/pricing",
+          "rationale": "Guides users to a dedicated pricing page, increasing dwell time and keyword depth"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite us because we lack a structured LocalBusiness schema with a clear Central New Jersey service area and we have no FAQ content that directly answers common local queries.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Central New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "We proudly serve businesses throughout Central New Jersey, including Princeton, West Windsor, and Trenton."
+        },
+        {
+          "entity": "AI‑powered intake automation",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "1",
+          "suggested_sentence": "Our AI‑powered intake automates lead capture, qualifying prospects in under 15 seconds."
+        },
+        {
+          "entity": "sub‑15‑second speed‑to‑lead",
+          "type": "stat",
+          "competitor_uses": "0",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a sub‑15‑second speed‑to‑lead after implementing our AI intake system."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/",
+          "before": "missing",
+          "after": "Orbit Boyzz is a premium web design agency serving Central New Jersey. We specialize in custom Next.js sites and AI‑driven lead automation for local service businesses.",
+          "rationale": "Provides concise, fact‑dense copy that AI summarizers can extract for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A web design agency in Central New Jersey creates custom, fast, and AI‑enabled websites for local service businesses, delivering lead‑generation sites that convert within seconds and support ongoing automation.",
+        "page": "/",
+        "under_heading": "Why Choose Us"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a web design agency cost in Central New Jersey?",
+          "answer": "Typical projects start at $10,000 for a custom Next.js site, with AI automation add‑ons ranging from $2,000 to $4,000 per month.",
+          "page": "/pricing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What services does a web design agency in Central New Jersey offer?",
+          "answer": "We provide premium custom website development, AI‑powered intake and lead routing, and ongoing AI automation retainer services tailored to HVAC, plumbing, dental, and other service businesses.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [ { \"@type\": \"Question\", \"name\": \"How much does a web design agency cost in Central New Jersey?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Typical projects start at $10,000 for a custom Next.js site, with AI automation add‑ons ranging from $2,000 to $4,000 per month.\" } }, { \"@type\": \"Question\", \"name\": \"What services does a web design agency in Central New Jersey offer?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"We provide premium custom website development, AI‑powered intake and lead routing, and ongoing AI automation retainer services tailored to local service businesses.\" } } ] }",
+          "rationale": "FAQ schema directly targets People Also Ask queries and improves snippet capture"
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI automation for home services NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, and strong conversion potential for local service firms.",
+    "seo": {
+      "title_tag": {
+        "current": "not found",
+        "optimized": "AI Automation for Home Services in NJ – Fast Leads & Proposals",
+        "rationale": "Places the exact keyword first and stays within the 50‑60 character limit for SERP visibility."
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Boost your NJ home service business with AI automation: instant lead intake, 5‑minute proposals, and $30K saved annually. Get a free demo today.",
+        "rationale": "Delivers the keyword, a compelling benefit, a concrete savings figure, and a clear CTA within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Automation for Home Services in New Jersey",
+          "page": "/services/ai-automation-home-services-nj",
+          "after_section": "Our Services",
+          "rationale": "Creates a keyword‑rich heading that matches the target query and signals relevance to crawlers."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Automation for Home Services",
+          "rationale": "Explicitly defines the service for AI engines and improves citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Provides the geographic entity that competitors already expose."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "offers",
+          "value": "{\"@type\":\"Offer\",\"priceCurrency\":\"USD\",\"price\":\"2000-4000\",\"priceSpecification\":\"Monthly retainer\"}",
+          "rationale": "Adds structured pricing to capture price‑based queries."
+        },
+        {
+          "action": "modify",
+          "schema_type": "Organization",
+          "property": "sameAs",
+          "value": "[\"https://www.linkedin.com/company/orbit-boyzz\",\"https://twitter.com/orbitboyzz\"]",
+          "rationale": "Strengthens entity verification for LLM citation."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "AI Automation for Home Services in NJ",
+          "to_page": "/services/ai-automation-home-services-nj",
+          "rationale": "Signals internal relevance and passes link equity to the new keyword‑focused page."
+        },
+        {
+          "from_page": "/services",
+          "anchor_text": "Fast Lead Intake for NJ Home Service Pros",
+          "to_page": "/services/ai-automation-home-services-nj",
+          "rationale": "Creates a contextual anchor that reinforces the target phrase."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently lack concise, fact‑dense statements that tie AI automation to New Jersey home‑service businesses and quantify ROI. Our copy is fragmented and missing location‑specific stats.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI automation platform serves home‑service businesses across New Jersey, from Princeton to Trenton."
+        },
+        {
+          "entity": "speed‑to‑lead",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a sub‑15‑second speed‑to‑lead after a prospect fills out the AI intake form."
+        },
+        {
+          "entity": "admin cost savings",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our automation saves NJ home‑service firms $30,000‑$54,000 per year in administrative labor."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services/ai-operations-website",
+          "before": "missing",
+          "after": "Orbit Boyzz’s AI Operations Website delivers instant lead capture, qualification, and routing for NJ home‑service businesses. Leads are delivered in under 15 seconds, proposals are generated in 5 minutes, and firms typically save $30K‑$54K annually on admin costs.",
+          "rationale": "Provides the exact figures and location that LLMs pull for citations."
+        },
+        {
+          "page": "/about",
+          "before": "missing",
+          "after": "Based in Plainsboro, NJ, we specialize in AI‑driven automation for local home‑service providers, helping HVAC, plumbing, electrical, and other trades close high‑value jobs faster.",
+          "rationale": "Adds a clear geographic and industry signal for entity recognition."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI automation for home services in New Jersey streamlines lead intake, qualification, and proposal generation. Businesses see leads delivered in under 15 seconds, proposals created in 5 minutes, and annual admin cost reductions of $30,000‑$54,000.",
+        "page": "/services/ai-automation-home-services-nj",
+        "under_heading": "AI Automation for Home Services in New Jersey"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does AI automation improve home service businesses in New Jersey?",
+          "answer": "By instantly capturing leads, qualifying prospects, and auto‑generating proposals, AI automation cuts lead response time to seconds, reduces admin labor by up to $54,000 per year, and speeds job closing for NJ home‑service firms.",
+          "page": "/services/ai-automation-home-services-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What is the typical ROI for AI automation in NJ home services?",
+          "answer": "Most NJ home‑service companies recoup their AI automation investment within 6‑12 months, saving $30K‑$54K annually on administrative costs and increasing booked jobs by 20‑30%.",
+          "page": "/services/ai-automation-home-services-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can AI automation integrate with existing HVAC or plumbing software?",
+          "answer": "Yes, our AI platform offers API connectors and Zapier integrations that sync with popular HVAC, plumbing, and CRM tools, ensuring seamless data flow without disrupting current workflows.",
+          "page": "/services/ai-automation-home-services-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How does AI automation improve home service businesses in New Jersey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"By instantly capturing leads, qualifying prospects, and auto‑generating proposals, AI automation cuts lead response time to seconds, reduces admin labor by up to $54,000 per year, and speeds job closing for NJ home‑service firms.\"}},{\"@type\":\"Question\",\"name\":\"What is the typical ROI for AI automation in NJ home services?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Most NJ home‑service companies recoup their AI automation investment within 6‑12 months, saving $30K‑$54K annually on administrative costs and increasing booked jobs by 20‑30%.\"}},{\"@type\":\"Question\",\"name\":\"Can AI automation integrate with existing HVAC or plumbing software?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, our AI platform offers API connectors and Zapier integrations that sync with popular HVAC, plumbing, and CRM tools, ensuring seamless data flow without disrupting current workflows.\"}}]}",
+          "rationale": "Adds the exact Q&A needed for PAA and featured snippet eligibility."
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}",
+          "rationale": "Enables voice assistants to read the key headings for voice search queries."
+        }
+      ]
+    }
+  }
+]

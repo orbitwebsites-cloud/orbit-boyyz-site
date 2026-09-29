@@ -1,0 +1,66 @@
+name: Blog Post Writer
+
+on:
+  # Monday 8 AM ET + Thursday 8 AM ET
+  schedule:
+    - cron: "0 13 * * 1"
+    - cron: "0 13 * * 4"
+  workflow_dispatch:
+    inputs:
+      backlog_index:
+        description: "Backlog topic index (0-11, used if no audit gap)"
+        required: false
+        default: "0"
+
+jobs:
+  publish-post:
+    # PAUSED 2026-09-28: this writer injects posts into the old Vite site's
+    # src/App.tsx, which no longer exists. Retarget it to src/content/blog.ts
+    # (new Next.js site) before re-enabling.
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    environment: Vercel
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/seo-agent/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/seo-agent/requirements.txt
+
+      - name: Derive backlog index from run number
+        id: idx
+        run: echo "index=$(( ${{ github.run_number }} % 12 ))" >> $GITHUB_OUTPUT
+
+      - name: Generate and publish blog post
+        working-directory: scripts/seo-agent
+        env:
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+        run: |
+          IDX=${{ github.event.inputs.backlog_index || steps.idx.outputs.index }}
+          python main.py --blog --backlog-index $IDX
+
+      - name: Commit and push
+        run: |
+          git config user.name "orbitboyzz-ai"
+          git config user.email "263449023+orbitboyzz-ai@users.noreply.github.com"
+          git add src/App.tsx public/sitemap.xml scripts/seo-agent/RECOVERY.md
+          git diff --cached --quiet && { echo "Nothing to commit"; exit 0; }
+          git commit -m "content: auto blog post $(date -u '+%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin master \
+              && git push origin master && exit 0
+            echo "Push attempt $i lost the race, retrying..."
+            sleep 5
+          done
+          echo "Push failed after 5 attempts"; exit 1
+

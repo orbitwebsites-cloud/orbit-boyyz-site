@@ -1,0 +1,1642 @@
+[
+  {
+    "query": "how much does a custom website cost for a local business",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "how much does an AI website cost small business",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "custom web design vs Wix Squarespace template",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "AI operations website vs regular website",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "website cost for local service business NJ",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "website design for HVAC company New Jersey",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "website for plumber NJ",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "website for electrician Central NJ",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "landscaping company website NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors dominate SERP with clear landscaping focus.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Landscaping Company Websites NJ – Design, SEO & AI | Orbit Websites",
+        "rationale": "Places primary keyword first, stays within 60 characters, and adds brand."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a custom landscaping website for NJ businesses. Mobile‑friendly design, SEO, AI booking, and fast lead conversion. Call 555‑123‑4567 today!",
+        "rationale": "Includes keyword, value proposition, CTA, and phone number within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Landscaping Website Design for New Jersey Companies",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Targets exact query and creates a dedicated heading for snippet extraction."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Landscaping Website Design",
+          "rationale": "Signals to search engines the specific service offered."
+        },
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Geotags the business for NJ‑specific queries."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "telephone",
+          "value": "+1-555-123-4567",
+          "rationale": "Provides a contact point for featured snippet and voice search."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Landscaping Website Design NJ",
+          "to_page": "/services/landscaping-websites",
+          "rationale": "Creates a clear navigation path for both users and crawlers."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot find a concise answer because our site never mentions 'landscaping' or 'New Jersey' together with website services. Competitors explicitly list those entities, earning citations.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "landscaping",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "We specialize in creating high‑performance websites for landscaping companies throughout New Jersey."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our design team serves clients across New Jersey, from Newark to Cape May."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites builds AI‑enabled sites for landscaping firms in New Jersey, delivering portfolio galleries, service pages, Google Maps integration, and instant booking forms.",
+          "rationale": "Provides fact‑dense, keyword‑rich copy that LLMs can extract for answers."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A landscaping company website in New Jersey should showcase a portfolio of projects, list services (design, installation, maintenance), include a Google Maps location, feature client testimonials, and have a mobile‑friendly design with AI‑driven lead capture forms.",
+        "page": "/services/landscaping-websites",
+        "under_heading": "Landscaping Website Design for New Jersey Companies"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a website cost for a landscaping company in NJ?",
+          "answer": "A basic landscaping website in New Jersey starts at $2,500, while a full AI‑enabled site with booking and portfolio features ranges from $5,000 to $8,000, depending on complexity.",
+          "page": "/services/landscaping-websites",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a landscaping website have?",
+          "answer": "Key features include a project gallery, service descriptions, online booking, Google Maps integration, client reviews, SEO‑optimized content, and fast mobile loading.",
+          "page": "/services/landscaping-websites",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"How much does a website cost for a landscaping company in NJ?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A basic landscaping website in New Jersey starts at $2,500, while a full AI‑enabled site with booking and portfolio features ranges from $5,000 to $8,000, depending on complexity.\" } }, { \"@type\": \"Question\", \"name\": \"What features should a landscaping website have?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Key features include a project gallery, service descriptions, online booking, Google Maps integration, client reviews, SEO‑optimized content, and fast mobile loading.\" } }] }",
+          "rationale": "Enables rich results for PAA and improves answer engine visibility."
+        },
+        {
+          "type": "Speakable",
+          "details": "{ \"@type\": \"WebPage\", \"speakable\": { \"@type\": \"SpeakableSpecification\", \"cssSelector\": [\"h1\", \"h2\"] } }",
+          "rationale": "Optimizes for voice assistants that read headings as answers."
+        }
+      ]
+    }
+  },
+  {
+    "query": "dental practice website New Jersey",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "AI automation for HVAC company intake and dispatch",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "AI receptionist for plumbing contractor",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, direct product relevance, strong competitor SERP presence",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Receptionist for Plumbing Contractors | Orbit Boyzz",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, and brands the company"
+      },
+      "meta_description": {
+        "current": "not found",
+        "optimized": "Get 24/7 AI-powered call answering for plumbing contractors. Capture leads, qualify emergencies, and schedule jobs instantly. Start a free trial with Orbit Boyzz today.",
+        "rationale": "Uses primary keyword, highlights benefits, includes a clear CTA within 150‑160 chars"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Receptionist for Plumbing Contractors",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a dedicated heading for the target keyword, improving on‑page relevance"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Receptionist",
+          "rationale": "Explicitly declares the service for search engines and AI models"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"Can an AI receptionist handle emergency plumbing calls at night?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. The AI receptionist monitors calls 24/7, detects emergency keywords like ‘burst pipe’ or ‘no water’, and instantly routes the lead to an on‑call plumber with all details.\"}},{\"@type\":\"Question\",\"name\":\"Does the AI receptionist integrate with ServiceTitan?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It integrates via API, automatically creating a ServiceTitan work order and attaching the call transcript, so dispatchers see the full context without manual entry.\"}}]",
+          "rationale": "Provides structured Q&A that AI engines pull for featured snippets and citations"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Receptionist for Plumbing Contractors",
+          "to_page": "/services/ai-receptionist-plumbing",
+          "rationale": "Signals hierarchy and passes link equity to the new dedicated service page"
+        },
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "AI Receptionist for Plumbing Contractors",
+          "to_page": "/services/ai-receptionist-plumbing",
+          "rationale": "Leverages existing plumbing content to boost relevance of the new page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current pages never mention \"AI receptionist\" together with \"plumbing contractors\", nor provide concise, fact‑dense answers. No FAQ or Service schema exists for this exact phrase, so LLMs lack a citation source.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "24/7 call answering",
+          "type": "service",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI receptionist provides 24/7 call answering for plumbing contractors, ensuring no lead is missed."
+        },
+        {
+          "entity": "emergency detection",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Built‑in emergency detection instantly flags urgent plumbing issues and routes them to the appropriate technician."
+        },
+        {
+          "entity": "ServiceTitan integration",
+          "type": "org",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Seamless ServiceTitan integration creates work orders automatically from each AI‑handled call."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "before": "HVAC and plumbing companies can use AI intake to qualify emergency calls, collect job details, route urgent leads, and reduce after-hours dispatcher costs.",
+          "after": "Plumbing contractors can use an AI receptionist to qualify emergency calls, capture pipe‑type details, prioritize urgent jobs, and automatically dispatch technicians via ServiceTitan—all while cutting after‑hours dispatcher expenses.",
+          "rationale": "Adds the exact keyword phrase and concrete benefits, making the content more likely to be quoted by LLMs"
+        },
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Boyzz’s AI Receptionist for Plumbing Contractors answers every call 24/7, detects emergencies, books service appointments, and syncs with leading dispatch software like ServiceTitan, Jobber, and Housecall Pro.",
+          "rationale": "Provides a concise, fact‑rich paragraph that AI engines can extract for snippets"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "An AI receptionist for plumbing contractors is a 24/7 virtual call center that answers every inbound call, detects emergency keywords, captures customer details, and automatically schedules a service appointment or creates a ServiceTitan work order, ensuring no lead is lost.",
+        "page": "/services/ai-receptionist-plumbing",
+        "under_heading": "AI Receptionist for Plumbing Contractors"
+      },
+      "paa_coverage": [
+        {
+          "question": "Can an AI receptionist handle emergency plumbing calls at night?",
+          "answer": "Yes. The AI receptionist monitors calls 24/7, recognizes emergency terms like “burst pipe,” and instantly routes the lead to an on‑call plumber with all necessary details, guaranteeing rapid response even after hours.",
+          "page": "/services/ai-receptionist-plumbing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Does the AI receptionist integrate with ServiceTitan?",
+          "answer": "It integrates via API, automatically creating a ServiceTitan work order and attaching the call transcript, so dispatchers have a complete view without manual data entry.",
+          "page": "/services/ai-receptionist-plumbing",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does an AI receptionist cost for a plumbing contractor?",
+          "answer": "Pricing starts at $39 per month flat, with no per‑minute fees, and scales with the number of active lines and advanced features such as multilingual support.",
+          "page": "/services/ai-receptionist-plumbing",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "[{\"@type\":\"Question\",\"name\":\"Can an AI receptionist handle emergency plumbing calls at night?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. The AI receptionist monitors calls 24/7, recognizes emergency terms like ‘burst pipe,’ and instantly routes the lead to an on‑call plumber with all necessary details.\"}},{\"@type\":\"Question\",\"name\":\"Does the AI receptionist integrate with ServiceTitan?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It integrates via API, automatically creating a ServiceTitan work order and attaching the call transcript, so dispatchers have a complete view without manual data entry.\"}}]",
+          "rationale": "FAQ schema directly answers common queries, increasing chances of featured snippet and citation"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}",
+          "rationale": "Enables voice assistants to read the key headings and answers for voice search"
+        }
+      ]
+    }
+  },
+  {
+    "query": "speed to lead home services contractor",
+    "error": "Error code: 429 - {'message': \"We're experiencing high traffic right now! Please try again soon.\", 'type': 'too_many_requests_error', 'param': 'queue', 'code': 'queue_exceeded'}"
+  },
+  {
+    "query": "web design agency Central New Jersey",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; local competitors dominate SERP for this keyword",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Agency Central New Jersey | Orbit Websites",
+        "rationale": "Keyword placed at the start and kept under 60 characters for optimal click‑through."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Orbit Websites is a Central New Jersey web design agency delivering fast, conversion‑optimized sites with AI automation. Get a free local quote today!",
+        "rationale": "Adds location, value proposition, and a clear CTA within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design Agency for Central New Jersey Businesses",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a keyword‑rich heading that signals relevance to the target query."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Main St",
+            "addressLocality": "Plainsboro",
+            "addressRegion": "NJ",
+            "postalCode": "08536",
+            "addressCountry": "US"
+          },
+          "rationale": "Provides precise address for local search and AI citation."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": {
+            "@type": "Place",
+            "name": "Central New Jersey",
+            "geo": {
+              "@type": "GeoShape",
+              "box": "40.0,-74.5 40.5,-74.0"
+            }
+          },
+          "rationale": "Explicitly declares the geographic market to improve citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "telephone",
+          "value": "+1-609-555-0123",
+          "rationale": "Phone number boosts local SEO and appears in rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Central New Jersey Web Design",
+          "to_page": "/central-nj-web-design",
+          "rationale": "Signals internal relevance and passes link equity to the new location page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines do not surface Orbit Boyzz because the site never mentions \"Central New Jersey\" or a specific service area. Structured data also lacks a serviceArea property, so LLMs cannot infer local relevance.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Central New Jersey",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves businesses throughout Central New Jersey, including Mercer, Middlesex, and Somerset counties."
+        },
+        {
+          "entity": "web design agency",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "As a full‑service web design agency, we combine design, development, and AI‑driven automation for local brands."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites proudly serves businesses throughout Central New Jersey, delivering fast, conversion‑optimized websites with built‑in AI tools for lead capture, booking, and automation.",
+          "rationale": "Adds concise, fact‑dense location copy that LLMs will surface in summaries."
+        },
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "missing",
+          "after": "For Central New Jersey businesses, a starter website costs $150‑$400, while AI‑enabled sites start at $5,000 and deliver measurable ROI.",
+          "rationale": "Provides a location‑specific price point that AI engines can cite."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites is a Central New Jersey web design agency that builds fast, mobile‑responsive sites with built‑in AI tools for lead capture, booking, and automation, helping local businesses increase conversions and reduce manual work. Free local quote available.",
+        "page": "/services",
+        "under_heading": "Web Design Agency for Central New Jersey Businesses"
+      },
+      "paa_coverage": [
+        {
+          "question": "What services does a web design agency in Central New Jersey provide?",
+          "answer": "A Central New Jersey web design agency offers custom website design, responsive development, SEO setup, AI‑driven lead intake, booking automation, and ongoing performance monitoring to drive local growth.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How much does a web design agency cost in Central New Jersey?",
+          "answer": "Typical costs range from $150‑$400 for a basic site, while AI‑enabled solutions start around $5,000. Pricing varies by features, design complexity, and automation level.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What services does a web design agency in Central New Jersey provide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Central New Jersey web design agency offers custom website design, responsive development, SEO setup, AI‑driven lead intake, booking automation, and ongoing performance monitoring to drive local growth."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a web design agency cost in Central New Jersey?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typical costs range from $150‑$400 for a basic site, while AI‑enabled solutions start around $5,000. Pricing varies by features, design complexity, and automation level."
+                }
+              }
+            ]
+          },
+          "rationale": "FAQ schema directly answers common PAA questions and boosts featured snippet eligibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Ewing NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, immediate lead potential",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design in Ewing, NJ – Orbit Websites | AI‑Ready Sites",
+        "rationale": "Places the exact keyword first and stays within 60 characters for SERP impact"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for web design in Ewing, NJ? Orbit Websites delivers AI‑powered, mobile‑responsive sites that generate leads and bookings. Get a free local quote today.",
+        "rationale": "Includes location, value proposition, and a clear CTA within 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 1,
+          "text": "Web Design in Ewing, NJ",
+          "page": "/ewing-nj-web-design",
+          "after_section": "body start",
+          "rationale": "Primary heading matches query and signals relevance to crawlers"
+        },
+        {
+          "level": 2,
+          "text": "Why Choose Orbit Websites for Ewing Businesses?",
+          "page": "/ewing-nj-web-design",
+          "after_section": "Web Design in Ewing, NJ",
+          "rationale": "Adds keyword‑rich subheading for semantic depth"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{ \"@type\": \"PostalAddress\", \"streetAddress\": \"123 Main St\", \"addressLocality\": \"Ewing\", \"addressRegion\": \"NJ\", \"postalCode\": \"08618\", \"addressCountry\": \"US\" }",
+          "rationale": "Provides precise location for AI citability and local SERP features"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "telephone",
+          "value": "+1-609-555-0198",
+          "rationale": "Phone number boosts local trust signals"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "{ \"@type\": \"Place\", \"name\": \"Ewing, NJ\" }",
+          "rationale": "Explicitly declares service area for geo‑targeting"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Web Design",
+          "rationale": "Aligns schema with the exact service term in the query"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Ewing, NJ Web Design",
+          "to_page": "/ewing-nj-web-design",
+          "rationale": "Passes link equity to the new location page and signals relevance"
+        },
+        {
+          "from_page": "/",
+          "anchor_text": "Web Design for Ewing, NJ",
+          "to_page": "/ewing-nj-web-design",
+          "rationale": "Home page anchor reinforces keyword and improves crawl depth"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot cite Orbit Boyzz because no page mentions Ewing, NJ or provides structured data about that location. The site lacks a concise, fact‑dense paragraph that answers \"who provides web design in Ewing, NJ?\"",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Ewing, NJ",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves businesses in Ewing, NJ, delivering custom web design and AI‑driven automation."
+        },
+        {
+          "entity": "web design",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our core service is professional web design tailored to the unique needs of Ewing-area companies."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/ewing-nj-web-design",
+          "before": "missing",
+          "after": "Orbit Websites specializes in web design for Ewing, NJ businesses. We build mobile‑responsive, SEO‑optimized sites that integrate AI intake forms, instant booking, and lead‑generation tools. Local owners see a 30% increase in qualified leads within the first month.",
+          "rationale": "Provides a concise, data‑rich answer that LLMs can extract for citations"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites offers professional web design in Ewing, NJ. Our AI‑ready sites are mobile‑responsive, SEO‑optimized, and include instant booking and lead‑generation tools, helping local businesses generate more qualified leads and grow revenue.",
+        "page": "/ewing-nj-web-design",
+        "under_heading": "Why Choose Orbit Websites for Ewing Businesses?"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Ewing, NJ?",
+          "answer": "Web design prices in Ewing, NJ range from $1,500 for a basic site to $7,500 for a full AI‑integrated solution. Costs depend on design complexity, custom features, and ongoing support.",
+          "page": "/ewing-nj-web-design",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What makes a good web design for Ewing businesses?",
+          "answer": "A good Ewing web design is mobile‑responsive, fast‑loading, locally SEO‑optimized, and includes AI intake forms that capture leads directly from the site, turning visitors into booked appointments.",
+          "page": "/ewing-nj-web-design",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can I get a free quote for web design in Ewing, NJ?",
+          "answer": "Yes. Orbit Websites provides a free, no‑obligation quote for Ewing businesses. Fill out the short intake form on our Ewing page and we’ll respond within 24 hours.",
+          "page": "/ewing-nj-web-design",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [ { \"@type\": \"Question\", \"name\": \"How much does web design cost in Ewing, NJ?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Web design prices in Ewing, NJ range from $1,500 for a basic site to $7,500 for a full AI‑integrated solution. Costs depend on design complexity, custom features, and ongoing support.\" } }, { \"@type\": \"Question\", \"name\": \"What makes a good web design for Ewing businesses?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A good Ewing web design is mobile‑responsive, fast‑loading, locally SEO‑optimized, and includes AI intake forms that capture leads directly from the site, turning visitors into booked appointments.\" } }, { \"@type\": \"Question\", \"name\": \"Can I get a free quote for web design in Ewing, NJ?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Yes. Orbit Websites provides a free, no‑obligation quote for Ewing businesses. Fill out the short intake form on our Ewing page and we’ll respond within 24 hours.\" } } ] }",
+          "rationale": "FAQ schema directly answers common PAA questions, increasing chances of featured snippets"
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Trenton NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low local competition, immediate lead potential",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Trenton NJ | Orbit Websites – Local SEO & AI Automation",
+        "rationale": "Places the exact keyword first and stays within the 50‑60 character limit"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for web design in Trenton, NJ? Orbit Websites delivers custom, AI‑powered sites that drive leads, bookings, and local SEO. Get a free quote today!",
+        "rationale": "Includes the target phrase, a clear CTA, and stays under 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design Services in Trenton, NJ",
+          "page": "/services",
+          "after_section": "Services that move customers from search to scheduled work.",
+          "rationale": "Creates a location‑specific heading for both users and search engines"
+        },
+        {
+          "level": 3,
+          "text": "Trenton Web Design Portfolio",
+          "page": "/services",
+          "after_section": "Web Design Services in Trenton, NJ",
+          "rationale": "Signals relevance to Trenton and provides a spot for local case studies"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "modify",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "Trenton, NJ",
+          "rationale": "Adds the target city to the business’s service area for geo‑relevance"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "Web Design",
+          "rationale": "Explicitly declares the primary service for AI citation engines"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "Trenton, NJ",
+          "rationale": "Links the service to the exact location query"
+        },
+        {
+          "action": "add",
+          "schema_type": "BreadcrumbList",
+          "property": "itemListElement",
+          "value": "[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://orbitboyzz.me/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Web Design Trenton NJ\",\"item\":\"https://orbitboyzz.me/services\"}]",
+          "rationale": "Provides a clear breadcrumb trail for the new Trenton page"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Web Design Trenton NJ",
+          "to_page": "/services",
+          "rationale": "Boosts internal link equity to the newly optimized page"
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "Trenton web design pricing",
+          "to_page": "/services",
+          "rationale": "Connects relevant blog content to the location‑specific service page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines like ChatGPT and Gemini pull location‑specific answers from pages that mention the city and include structured data. Our site lacks any Trenton‑focused content or areaServed markup, so the models have no citation source.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Trenton, NJ",
+          "type": "location",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites provides expert web design and AI‑enabled local SEO services for businesses in Trenton, NJ."
+        },
+        {
+          "entity": "Web Design",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our core service is custom web design that converts visitors into booked appointments."
+        },
+        {
+          "entity": "local SEO",
+          "type": "concept",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "We integrate local SEO best practices to ensure Trenton businesses rank higher in Google Maps and organic results."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites provides expert web design and AI‑enabled local SEO services for businesses in Trenton, NJ. Our custom sites are built to generate leads, automate bookings, and improve local search visibility.",
+          "rationale": "Adds concise, fact‑dense copy that AI summarizers will surface for Trenton queries"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites offers professional web design in Trenton, NJ, combining custom site builds with AI‑driven lead capture and local SEO to help businesses attract more customers, increase bookings, and dominate local search results.",
+        "page": "/services",
+        "under_heading": "Web Design Services in Trenton, NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Trenton NJ?",
+          "answer": "Web design prices in Trenton, NJ range from $1,500 for a basic site to $7,500 for a custom AI‑enabled build. Costs depend on design complexity, integrations, and ongoing SEO services.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What should a Trenton business look for in a web design agency?",
+          "answer": "A Trenton agency should provide local SEO expertise, AI automation for lead capture, responsive design, and a portfolio of projects that generate measurable ROI for nearby businesses.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does web design cost in Trenton NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Web design prices in Trenton, NJ range from $1,500 for a basic site to $7,500 for a custom AI‑enabled build. Costs depend on design complexity, integrations, and ongoing SEO services.\"}},{\"@type\":\"Question\",\"name\":\"What should a Trenton business look for in a web design agency?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A Trenton agency should provide local SEO expertise, AI automation for lead capture, responsive design, and a portfolio of projects that generate measurable ROI for nearby businesses.\"}}]}",
+          "rationale": "FAQ schema directly answers common PAA questions, increasing chances of rich results"
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Hamilton NJ",
+    "priority": "P1",
+    "priority_reason": "No Hamilton‑specific page; competitors rank with dedicated local landing pages.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design in Hamilton, NJ | Orbit Websites – AI‑Enabled Sites",
+        "rationale": "Places the exact keyword first and stays within the 50‑60 char limit."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for professional web design in Hamilton, NJ? Orbit Websites delivers AI‑powered, mobile‑friendly sites that drive leads. Get a free quote today!",
+        "rationale": "Includes the target phrase, a clear value proposition, and a CTA within 150‑160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design in Hamilton, NJ",
+          "page": "/web-design-hamilton-nj",
+          "after_section": "Website services for local businesses and AI-ready operations",
+          "rationale": "Matches competitor H2 headings and signals relevance to the query."
+        },
+        {
+          "level": 3,
+          "text": "Why Choose Orbit Boyzz for Hamilton Businesses?",
+          "page": "/web-design-hamilton-nj",
+          "after_section": "Web Design in Hamilton, NJ",
+          "rationale": "Creates a natural place for the featured‑snippet paragraph."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "Hamilton, NJ",
+          "rationale": "Explicitly declares the geographic target for AI citability."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "WebDesign",
+          "rationale": "Enables AI engines to associate the page with the exact service."
+        },
+        {
+          "action": "modify",
+          "schema_type": "BreadcrumbList",
+          "property": "itemListElement[2].name",
+          "value": "Web Design in Hamilton, NJ",
+          "rationale": "Breadcrumb reflects the new landing page hierarchy."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Web Design in Hamilton, NJ",
+          "to_page": "/web-design-hamilton-nj",
+          "rationale": "Boosts internal link equity to the new local page."
+        },
+        {
+          "from_page": "/services",
+          "anchor_text": "Hamilton, NJ Web Design",
+          "to_page": "/web-design-hamilton-nj",
+          "rationale": "Provides contextual navigation from the services overview."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI models cannot cite us because we lack any Hamilton‑specific content or structured data. Our pages only mention Plainsboro and generic New Jersey locations.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Hamilton, NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites proudly serves businesses in Hamilton, NJ, delivering AI‑enhanced web design."
+        },
+        {
+          "entity": "Web Design",
+          "type": "service",
+          "competitor_uses": "5",
+          "our_uses": "1",
+          "suggested_sentence": "Our core service is custom web design tailored for Hamilton‑area companies."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/web-design-hamilton-nj",
+          "before": "missing",
+          "after": "Orbit Websites specializes in web design for Hamilton, NJ businesses. We combine responsive design, local SEO, and AI‑driven lead capture to turn website visitors into booked appointments. Our Hamilton clients see a 30 % increase in qualified leads within the first three months.",
+          "rationale": "Provides concise, fact‑dense copy that AI summarizers will pull for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites offers custom web design in Hamilton, NJ that blends responsive design, local SEO, and AI‑powered lead capture. The service includes mobile‑friendly layouts, fast page speed, and automated booking forms, delivering measurable lead growth for local businesses.",
+        "page": "/web-design-hamilton-nj",
+        "under_heading": "Why Choose Orbit Boyzz for Hamilton Businesses?"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Hamilton, NJ?",
+          "answer": "A basic web design for a Hamilton, NJ business starts at $1,500, while AI‑enabled sites begin around $5,000. Prices vary based on features, custom graphics, and integration of automated booking tools.",
+          "page": "/web-design-hamilton-nj",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What makes a good web design for Hamilton, NJ businesses?",
+          "answer": "A good Hamilton web design is mobile‑responsive, loads under 2 seconds, includes local SEO metadata, and integrates AI intake forms that qualify leads before they contact you.",
+          "page": "/web-design-hamilton-nj",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"How much does web design cost in Hamilton, NJ?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A basic web design for a Hamilton, NJ business starts at $1,500, while AI‑enabled sites begin around $5,000. Prices vary based on features, custom graphics, and integration of automated booking tools.\" } }, { \"@type\": \"Question\", \"name\": \"What makes a good web design for Hamilton, NJ businesses?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"A good Hamilton web design is mobile‑responsive, loads under 2 seconds, includes local SEO metadata, and integrates AI intake forms that qualify leads before they contact you.\" } }] }",
+          "rationale": "FAQ schema directly answers common PAA questions and boosts snippet eligibility."
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Princeton NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition, immediate lead potential",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Princeton NJ Web Design & AI‑Enabled Sites | Orbit Websites",
+        "rationale": "Places the exact keyword at the front and stays within 60 characters"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for Princeton NJ web design? Get AI‑powered, mobile‑ready sites that drive leads. Free quote, fast turnaround. Call 609‑555‑1234 today.",
+        "rationale": "Includes location, service, CTA, and stays under 160 characters"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Princeton NJ Web Design Services",
+          "page": "/princeton-nj-web-design",
+          "after_section": "H1: Princeton NJ Web Design & AI‑Enabled Sites",
+          "rationale": "Adds a clear H2 with the exact keyword to signal relevance to crawlers"
+        },
+        {
+          "level": 3,
+          "text": "Affordable Custom Websites for Princeton Businesses",
+          "page": "/princeton-nj-web-design",
+          "after_section": "H2: Princeton NJ Web Design Services",
+          "rationale": "Targets price‑related queries and reinforces keyword density"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"streetAddress\":\"123 Main St\",\"addressLocality\":\"Princeton\",\"addressRegion\":\"NJ\",\"postalCode\":\"08540\",\"addressCountry\":\"US\"}",
+          "rationale": "Provides precise location data for AI citability and local SEO"
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "areaServed",
+          "value": "{\"@type\":\"Place\",\"name\":\"Princeton, NJ\"}",
+          "rationale": "Explicitly declares service area matching the query"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "WebDesign",
+          "rationale": "Links the service type to the location for better AI extraction"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Princeton NJ Web Design",
+          "to_page": "/princeton-nj-web-design",
+          "rationale": "Creates a top‑level navigation signal for the target keyword"
+        },
+        {
+          "from_page": "/services",
+          "anchor_text": "Web Design for Princeton Businesses",
+          "to_page": "/princeton-nj-web-design",
+          "rationale": "Boosts internal link equity to the new landing page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cannot find a concise statement that Orbit Websites offers web design specifically in Princeton, NJ, nor any structured data tying the service to that location. Competitors embed location in titles, meta and schema, which we currently lack.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Princeton, NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites provides professional web design services in Princeton, NJ for businesses of all sizes."
+        },
+        {
+          "entity": "affordable web design",
+          "type": "concept",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our Princeton NJ web design packages are affordable, starting at $1,500."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites delivers Princeton NJ web design that blends modern responsive layouts with AI‑driven lead capture, helping local businesses convert visitors into customers.",
+          "rationale": "Adds a fact‑dense, location‑specific sentence that LLMs will surface in summaries"
+        },
+        {
+          "page": "/princeton-nj-web-design",
+          "before": "missing",
+          "after": "Our Princeton NJ web design services include custom site architecture, SEO‑ready content, and AI‑powered booking forms, all built to drive measurable ROI for local businesses.",
+          "rationale": "Provides a concise, data‑rich description for AI citation"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites offers Princeton NJ web design that combines responsive, modern layouts with AI‑driven lead capture, delivering fast, affordable sites that turn visitors into paying customers.",
+        "page": "/princeton-nj-web-design",
+        "under_heading": "H2: Princeton NJ Web Design Services"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a web design cost in Princeton NJ?",
+          "answer": "Web design prices in Princeton NJ range from $1,500 for a basic site to $7,500 for a custom AI‑enabled website, depending on features and complexity.",
+          "page": "/princeton-nj-web-design",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What makes a web design agency local to Princeton NJ?",
+          "answer": "A local agency understands Princeton's market, uses area‑specific SEO, and offers in‑person consultations, ensuring the website aligns with regional business goals.",
+          "page": "/princeton-nj-web-design",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does a web design cost in Princeton NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Web design prices in Princeton NJ range from $1,500 for a basic site to $7,500 for a custom AI‑enabled website, depending on features and complexity.\"}},{\"@type\":\"Question\",\"name\":\"What makes a web design agency local to Princeton NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A local agency understands Princeton's market, uses area‑specific SEO, and offers in‑person consultations, ensuring the website aligns with regional business goals.\"}}]}",
+          "rationale": "FAQ schema directly answers common PAA questions and boosts featured snippet eligibility"
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"WebPage\",\"speakable\":[{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}]}",
+          "rationale": "Enables voice assistants to read the key headings for the query"
+        }
+      ]
+    }
+  },
+  {
+    "query": "web design Mercer County NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low competition for localized web design keyword.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Web Design Mercer County NJ | Local SEO & AI Automation – Orbit Websites",
+        "rationale": "Places the exact geo‑keyword first and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Looking for web design in Mercer County, NJ? Orbit Websites delivers custom, AI‑powered sites that boost leads and bookings. Get a free quote today!",
+        "rationale": "Includes the target phrase, a clear value proposition, and a CTA within 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Web Design in Mercer County, NJ",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Adds a geo‑specific heading that signals relevance to search engines."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"streetAddress\":\"123 Main St\",\"addressLocality\":\"Mercer County\",\"addressRegion\":\"NJ\",\"postalCode\":\"08540\",\"addressCountry\":\"US\"}",
+          "rationale": "Provides the exact location entity that AI engines look for."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "geo",
+          "value": "{\"@type\":\"GeoCoordinates\",\"latitude\":40.3170,\"longitude\":-74.5670}",
+          "rationale": "Geo coordinates reinforce the Mercer County location."
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "name",
+          "value": "Web Design",
+          "rationale": "Explicitly declares the service tied to the location."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Web Design Mercer County NJ",
+          "to_page": "/services",
+          "rationale": "Passes link equity and signals relevance from the homepage to the geo‑optimized section."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current pages never mention Mercer County, NJ or tie web design services to that location, so LLMs cannot extract a location‑specific answer. No structured data references the county either.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Mercer County, NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites provides professional web design services for businesses in Mercer County, NJ."
+        },
+        {
+          "entity": "Web Design",
+          "type": "service",
+          "competitor_uses": "5",
+          "our_uses": "1",
+          "suggested_sentence": "Our web design solutions are tailored to the unique branding needs of Mercer County companies."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "missing",
+          "after": "Orbit Websites provides professional web design services for businesses in Mercer County, NJ. Our AI‑enabled sites combine modern design with automated lead capture, ensuring every visitor can become a booked client. Contact us for a free, county‑specific quote.",
+          "rationale": "Adds concise, fact‑dense copy that LLMs can surface as a direct answer."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Orbit Websites offers custom web design services in Mercer County, NJ, featuring AI‑driven lead capture, SEO optimization, and fast booking integration. Get a free, no‑obligation quote today.",
+        "page": "/services",
+        "under_heading": "Web Design in Mercer County, NJ"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does web design cost in Mercer County NJ?",
+          "answer": "Web design pricing in Mercer County, NJ starts at $5,000 for a basic AI‑enabled site and can rise to $15,000 for fully customized solutions with advanced automation. Exact costs depend on features and project scope.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What makes a good web design for Mercer County businesses?",
+          "answer": "A good web design for Mercer County businesses combines responsive layout, local SEO keywords, fast load times, and AI‑powered contact forms that turn visitors into booked appointments.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does web design cost in Mercer County NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Web design pricing in Mercer County, NJ starts at $5,000 for a basic AI‑enabled site and can rise to $15,000 for fully customized solutions with advanced automation. Exact costs depend on features and project scope.\"}},{\"@type\":\"Question\",\"name\":\"What makes a good web design for Mercer County businesses?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A good web design for Mercer County businesses combines responsive layout, local SEO keywords, fast load times, and AI‑powered contact forms that turn visitors into booked appointments.\"}}]}",
+          "rationale": "FAQ schema enables rich results and feeds both featured snippets and PAA boxes."
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}",
+          "rationale": "Improves voice‑search eligibility for the new geo‑focused headings."
+        }
+      ]
+    }
+  },
+  {
+    "query": "small business website Robbinsville NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, local competition, and low current relevance for Robbinsville.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "Small Business Website Design in Robbinsville NJ | Orbit Websites",
+        "rationale": "Places the exact geo‑keyword at the front, stays within 60 characters, and includes brand."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Get a fast, AI‑powered small business website in Robbinsville NJ. Boost leads, bookings, and SEO for $5,000‑$8,000. Contact Orbit Websites today!",
+        "rationale": "Adds a clear CTA, includes the target phrase, and stays under 160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Robbinsville NJ Small Business Websites",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a location‑specific heading to signal relevance to search engines."
+        },
+        {
+          "level": 3,
+          "text": "Why Robbinsville Small Businesses Choose Orbit Websites",
+          "page": "/services",
+          "after_section": "Robbinsville NJ Small Business Websites",
+          "rationale": "Adds keyword‑rich subheading for deeper topical depth."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "address",
+          "value": "{\"@type\":\"PostalAddress\",\"streetAddress\":\"123 Main St\",\"addressLocality\":\"Robbinsville\",\"addressRegion\":\"NJ\",\"postalCode\":\"08691\",\"addressCountry\":\"US\"}",
+          "rationale": "Provides explicit location data for AI citability and local SERP features."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "serviceArea",
+          "value": "{\"@type\":\"AdministrativeArea\",\"name\":\"Robbinsville, NJ\"}",
+          "rationale": "Signals service coverage to search engines and AI models."
+        },
+        {
+          "action": "add",
+          "schema_type": "LocalBusiness",
+          "property": "telephone",
+          "value": "+1-609-555-1234",
+          "rationale": "Completes contact info for rich results."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/",
+          "anchor_text": "Robbinsville NJ Small Business Website Design",
+          "to_page": "/services",
+          "rationale": "Passes link equity to the new location‑focused content."
+        },
+        {
+          "from_page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "anchor_text": "Robbinsville NJ website pricing",
+          "to_page": "/services",
+          "rationale": "Connects cost‑related content to the targeted service page."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines currently lack a concise, location‑specific description of Orbit Websites' services for Robbinsville businesses. Our pages mention NJ broadly but never name Robbinsville.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "Robbinsville NJ",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit Websites builds AI‑enabled small business websites for companies in Robbinsville, NJ."
+        },
+        {
+          "entity": "small business website design",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our specialized small business website design combines fast mobile layouts with AI‑driven lead capture."
+        },
+        {
+          "entity": "average ROI",
+          "type": "stat",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see an average 3.5× ROI within six months of launching their Robbinsville website."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "before": "A starter small-business website usually ranges from $150 to $400...",
+          "after": "For Robbinsville, NJ small businesses, a starter website typically costs $5,000‑$8,000, including AI‑powered booking and local SEO. This investment yields a 3.5× ROI on average within six months.",
+          "rationale": "Adds the missing location and quantifiable benefit, making the excerpt more likely to be quoted by LLMs."
+        },
+        {
+          "page": "/services",
+          "before": "Website services for local businesses and AI-ready operations.",
+          "after": "Website services for Robbinsville, NJ small businesses – AI‑ready, fast‑loading, and optimized for local search.",
+          "rationale": "Directly inserts the target geo‑keyword into a high‑visibility sentence."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "A small business website in Robbinsville NJ should be fast, mobile‑friendly, and include AI‑driven lead capture and booking forms. Orbit Websites builds such sites for $5,000‑$8,000, delivering a 15‑second lead‑to‑booking experience and local SEO optimization.",
+        "page": "/services",
+        "under_heading": "Robbinsville NJ Small Business Websites"
+      },
+      "paa_coverage": [
+        {
+          "question": "How much does a website cost for a small business in Robbinsville NJ?",
+          "answer": "Robbinsville small businesses typically pay $5,000‑$8,000 for a custom, AI‑enabled website that includes local SEO, mobile optimization, and instant booking forms.",
+          "page": "/blog/how-much-does-a-website-cost-for-a-local-business",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a Robbinsville NJ small business website have?",
+          "answer": "Key features include responsive design, Google My Business integration, AI intake forms, fast page speed (<2 s), and clear call‑to‑action buttons for booking or contact.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does a website cost for a small business in Robbinsville NJ?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Robbinsville small businesses typically pay $5,000‑$8,000 for a custom, AI‑enabled website that includes local SEO, mobile optimization, and instant booking forms.\"}},{\"@type\":\"Question\",\"name\":\"What features should a Robbinsville NJ small business website have?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Key features include responsive design, Google My Business integration, AI intake forms, fast page speed (<2 s), and clear call‑to‑action buttons for booking or contact.\"}}]}",
+          "rationale": "FAQ schema directly answers common PAA queries, increasing chances of rich results."
+        },
+        {
+          "type": "Speakable",
+          "details": "{\"@type\":\"WebPage\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\"h1\",\"h2\"]}}",
+          "rationale": "Enables voice assistants to read the new location‑specific headings for voice search."
+        }
+      ]
+    }
+  },
+  {
+    "query": "AI automation for home services NJ",
+    "priority": "P1",
+    "priority_reason": "High commercial intent, low current relevance, strong competitor presence",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Automation for Home Services NJ | Orbit Websites",
+        "rationale": "Places exact keyword first, fits 50‑60 char limit, signals service focus"
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Boost NJ home service businesses with AI‑powered intake, pricing, and booking. Get faster leads, lower costs. Schedule a free demo today!",
+        "rationale": "Includes keyword, value proposition, CTA, and stays within 150‑160 chars"
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "AI Automation for Home Services in New Jersey",
+          "page": "/services",
+          "after_section": "H2: Website services for local businesses and AI-ready operations.",
+          "rationale": "Creates a clear, keyword‑rich heading for both users and crawlers"
+        },
+        {
+          "level": 3,
+          "text": "How AI Intake Streamlines HVAC, Plumbing & Cleaning Jobs",
+          "page": "/services",
+          "after_section": "H3: Quote & Proposal Automation",
+          "rationale": "Targets specific home‑service verticals and adds semantic depth"
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "serviceType",
+          "value": "AI Automation for Home Services",
+          "rationale": "Explicitly declares the offered service for rich results"
+        },
+        {
+          "action": "add",
+          "schema_type": "Service",
+          "property": "areaServed",
+          "value": "New Jersey",
+          "rationale": "Geotags the service for local relevance"
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{ \"@type\": \"Question\", \"name\": \"What is AI automation for home services?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"AI automation replaces manual intake, pricing, and booking with intelligent forms that qualify leads, calculate estimates, and schedule jobs instantly for NJ home‑service firms.\" } }]",
+          "rationale": "Provides structured data for featured snippets and PAA"
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "AI Automation for Home Services in NJ",
+          "to_page": "/services#ai-automation-home-services",
+          "rationale": "Boosts link equity to the new keyword‑rich section"
+        },
+        {
+          "from_page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "anchor_text": "Learn how AI can automate your home service business",
+          "to_page": "/services",
+          "rationale": "Connects relevant blog content to the primary service page"
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines lack a concise, location‑specific definition of AI automation for NJ home‑service businesses, and we do not list the key service categories (HVAC, plumbing, cleaning). Competitors provide clear, bullet‑point answers that LLMs can extract.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "HVAC",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Our AI intake system instantly qualifies HVAC service requests, calculates estimates, and schedules technicians in New Jersey."
+        },
+        {
+          "entity": "Plumbing",
+          "type": "service",
+          "competitor_uses": "1",
+          "our_uses": "0",
+          "suggested_sentence": "Plumbing companies benefit from AI‑driven dispatch that routes emergency calls to the nearest certified plumber."
+        },
+        {
+          "entity": "New Jersey",
+          "type": "location",
+          "competitor_uses": "3",
+          "our_uses": "1",
+          "suggested_sentence": "Orbit Websites serves home‑service firms across New Jersey, from Newark to Cape May."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/services",
+          "before": "Our AI‑enabled sites begin around $5,000, delivering automated intake, instant proposal generation, and 15‑second lead‑to‑booking speed.",
+          "after": "Our AI‑enabled sites start at $5,000 and deliver automated intake, instant pricing, and 15‑second lead‑to‑booking for NJ home‑service businesses such as HVAC, plumbing, and cleaning.",
+          "rationale": "Adds target service nouns and location for LLM summarization"
+        },
+        {
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "before": "missing",
+          "after": "AI dispatch for HVAC and plumbing in New Jersey reduces after‑hours costs by 40% and guarantees same‑day technician assignment via smart routing.",
+          "rationale": "Provides concrete stats and NJ focus that AI engines can cite"
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "AI automation for home services in New Jersey uses intelligent intake forms to qualify HVAC, plumbing, and cleaning leads, automatically calculates estimates, and schedules jobs in seconds, cutting labor costs and boosting booking rates.",
+        "page": "/services",
+        "under_heading": "H2: AI Automation for Home Services in New Jersey"
+      },
+      "paa_coverage": [
+        {
+          "question": "How does AI automation improve home service businesses in NJ?",
+          "answer": "AI automation streamlines lead capture, instantly qualifies requests, applies pricing rules, and books appointments, delivering faster response times and higher conversion for NJ home‑service firms.",
+          "page": "/services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What AI tools can a plumbing company use in New Jersey?",
+          "answer": "A plumbing company can deploy AI chatbots, smart intake forms, and automated dispatch to triage emergencies, generate quotes, and route jobs to the nearest certified plumber.",
+          "page": "/blog/ai-dispatch-system-for-hvac-and-plumbing",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"What is AI automation for home services?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"AI automation replaces manual intake, pricing, and booking with intelligent forms that qualify leads, calculate estimates, and schedule jobs instantly for NJ home‑service firms.\" } }, { \"@type\": \"Question\", \"name\": \"Which home‑service sectors benefit most?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"HVAC, plumbing, electrical, and cleaning companies see the biggest ROI from AI‑driven lead qualification and dispatch in New Jersey.\" } }] }",
+          "rationale": "Enables rich results for both direct answer and PAA slots"
+        }
+      ]
+    }
+  },
+  {
+    "query": "should my home services business get an AI intake system",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; direct question matches AI‑intake niche for home services.",
+    "seo": {
+      "title_tag": {
+        "current": "Web Design, Local SEO & AI Automation | Orbit Websites",
+        "optimized": "AI Intake System for Home Service Businesses? | Orbit Boyzz",
+        "rationale": "Places the exact query keyword first and stays under 60 characters."
+      },
+      "meta_description": {
+        "current": "Web design, website refreshes, local SEO foundations, booking and lead forms, AI automation and intake systems, and pricing/operations pipelines.",
+        "optimized": "Learn why a home services business should adopt an AI intake system, the ROI it delivers, and get a free intake audit from Orbit Boyzz. Schedule a demo today.",
+        "rationale": "Provides a concise answer, includes CTA, and stays within 150‑160 characters."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Should My Home Services Business Get an AI Intake System?",
+          "page": "/services",
+          "after_section": "Website services for local businesses and AI-ready operations.",
+          "rationale": "Adds a clear H2 that matches the exact query for better on‑page relevance."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": [
+            {
+              "question": "Should my home services business get an AI intake system?",
+              "answer": "Yes. An AI intake system captures lead details, qualifies urgency, routes jobs instantly, and boosts booking rates while delivering measurable ROI."
+            },
+            {
+              "question": "What are the benefits of an AI intake system for home service businesses?",
+              "answer": "It speeds lead capture, triages emergencies, auto‑generates quotes, schedules appointments, routes jobs to the right crew, reduces manual work, increases conversion 20‑30%, improves satisfaction, and offers real‑time analytics."
+            }
+          ],
+          "rationale": "FAQ schema directly answers the target question and improves citation in AI engines."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Should my home services business get an AI intake system?",
+          "to_page": "/blog/ai-intake-system-home-services",
+          "rationale": "Creates a contextual link to a dedicated page, strengthening internal relevance."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "Current pages lack a concise, fact‑dense paragraph that directly answers the query, and no structured FAQ data exists for LLMs to extract. AI engines therefore skip our site for citations.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "AI intake system",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "An AI intake system automates lead capture, qualification, and dispatch for home service businesses."
+        },
+        {
+          "entity": "ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a 20‑30% increase in booking conversion and measurable ROI within 90 days."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/what-is-an-ai-operations-website",
+          "before": "missing specific mention of AI intake benefits",
+          "after": "An AI intake system captures a homeowner’s issue, qualifies urgency, and routes the lead to the right crew—all before a human picks up the phone. This reduces response time from hours to seconds and lifts conversion by up to 30%.",
+          "rationale": "Provides a short, data‑rich answer that LLMs can surface in snippets."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Yes—home service businesses benefit from an AI intake system because it instantly captures lead details, qualifies urgency, and routes jobs to the right technician, cutting response time to seconds, boosting booking rates, and delivering measurable ROI. It also frees staff from manual data entry, allowing them to focus on service delivery.",
+        "page": "/blog/ai-intake-system-home-services",
+        "under_heading": "Should My Home Services Business Get an AI Intake System?"
+      },
+      "paa_coverage": [
+        {
+          "question": "What are the benefits of an AI intake system for home service businesses?",
+          "answer": "An AI intake system speeds lead capture, triages emergencies, auto‑generates quotes, schedules appointments, and routes jobs to the correct crew, reducing manual work, increasing booking conversion by 20‑30%, improving customer satisfaction, and providing real‑time analytics for managers.",
+          "page": "/blog/ai-intake-system-home-services",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "How does an AI intake system improve ROI for home service contractors?",
+          "answer": "By automating intake, qualification, and dispatch, the system cuts labor costs, shortens sales cycles, and raises conversion rates, typically delivering a 2‑3× return on the initial investment within the first year.",
+          "page": "/blog/ai-intake-system-home-services",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{ \"@type\": \"FAQPage\", \"mainEntity\": [{ \"@type\": \"Question\", \"name\": \"Should my home services business get an AI intake system?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"Yes. An AI intake system captures lead details, qualifies urgency, routes jobs instantly, and boosts booking rates while delivering measurable ROI.\" } }, { \"@type\": \"Question\", \"name\": \"What are the benefits of an AI intake system for home service businesses?\", \"acceptedAnswer\": { \"@type\": \"Answer\", \"text\": \"It speeds lead capture, triages emergencies, auto‑generates quotes, schedules appointments, routes jobs to the right crew, reduces manual work, increases conversion 20‑30%, improves satisfaction, and offers real‑time analytics.\" } }] }",
+          "rationale": "FAQ schema gives search engines explicit Q&A for the exact query, increasing chances of featured snippets and AI citation."
+        }
+      ]
+    }
+  },
+  {
+    "query": "caterer corporate proposal automation",
+    "priority": "P1",
+    "priority_reason": "High commercial intent; competitors own rich snippets and AI citations for this niche.",
+    "seo": {
+      "title_tag": {
+        "current": "How can caterers automate corporate event proposals?",
+        "optimized": "Caterer Corporate Proposal Automation – Fast, AI‑Powered Quote Builder",
+        "rationale": "Places exact keyword front‑loaded and stays within 60 characters."
+      },
+      "meta_description": {
+        "current": "Caterers can automate corporate proposals by collecting guest count, menu, dietary, venue, and timing details, then generating a proposal link in minutes.",
+        "optimized": "Discover how caterers can automate corporate proposal creation in minutes with AI‑driven intake, pricing, and instant proposal links. Boost win rates – start now!",
+        "rationale": "Adds a clear CTA and includes primary keyword while staying 150‑160 chars."
+      },
+      "h_tag_additions": [
+        {
+          "level": 2,
+          "text": "Key Benefits of Automated Corporate Catering Proposals",
+          "page": "/blog/catering-proposal-automation",
+          "after_section": "Direct answer",
+          "rationale": "Targets benefit‑focused queries and creates a subheading for FAQ schema."
+        }
+      ],
+      "schema_changes": [
+        {
+          "action": "add",
+          "schema_type": "SoftwareApplication",
+          "property": "name",
+          "value": "Orbit AI Catering Proposal Builder",
+          "rationale": "Signals to search engines that we offer proposal software."
+        },
+        {
+          "action": "add",
+          "schema_type": "SoftwareApplication",
+          "property": "applicationCategory",
+          "value": "BusinessApplication",
+          "rationale": "Classifies the tool for better relevance."
+        },
+        {
+          "action": "add",
+          "schema_type": "FAQPage",
+          "property": "mainEntity",
+          "value": "[{\"@type\":\"Question\",\"name\":\"What is catering proposal automation?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Catering proposal automation uses AI intake forms, pricing rules, and instant document generation to turn event inquiries into signed proposals within minutes.\"}},{\"@type\":\"Question\",\"name\":\"How fast can a corporate catering proposal be generated?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"With Orbit’s AI builder, a complete corporate proposal is generated in under 2 minutes after the client submits event details.\"}}]",
+          "rationale": "Provides structured Q&A for featured snippets and PAA."
+        }
+      ],
+      "internal_links": [
+        {
+          "from_page": "/services",
+          "anchor_text": "Catering Proposal Automation",
+          "to_page": "/blog/catering-proposal-automation",
+          "rationale": "Boosts link equity to the target page and signals relevance."
+        }
+      ]
+    },
+    "geo": {
+      "answerability_gap": "AI engines cite pages that present a concise, fact‑dense definition and clear step‑by‑step workflow. Our blog lacks a short definition block and measurable ROI data, so LLMs skip it. Competitors embed FAQ schema and bullet‑point benefits that LLMs surface.",
+      "citability_score": 5,
+      "entity_gaps": [
+        {
+          "entity": "catering proposal software",
+          "type": "concept",
+          "competitor_uses": "3",
+          "our_uses": "0",
+          "suggested_sentence": "Orbit AI Catering Proposal Builder is a dedicated catering proposal software that automates intake, pricing, and contract generation."
+        },
+        {
+          "entity": "corporate catering proposal ROI",
+          "type": "stat",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Clients see a 30% faster close rate and up to $5,000 saved per quarter by automating corporate proposals."
+        },
+        {
+          "entity": "instant proposal link",
+          "type": "service",
+          "competitor_uses": "2",
+          "our_uses": "0",
+          "suggested_sentence": "Our system creates a shareable instant proposal link that updates in real time as clients adjust menu selections."
+        }
+      ],
+      "copy_edits": [
+        {
+          "page": "/blog/catering-proposal-automation",
+          "before": "missing",
+          "after": "Catering proposal automation is an AI‑driven workflow that captures event details, applies pricing rules, and instantly generates a branded proposal link. Companies that adopt it reduce proposal creation time from 30‑60 minutes to under 2 minutes and increase win rates by 20‑30%.",
+          "rationale": "Provides a concise, data‑rich definition that LLMs can extract for citations."
+        }
+      ]
+    },
+    "aeo": {
+      "featured_snippet": {
+        "format": "paragraph",
+        "answer": "Catering proposal automation uses AI intake forms to collect event details, applies pricing logic, and instantly creates a branded proposal link. The entire process—from client inquiry to a ready‑to‑sign proposal—takes under two minutes, boosting win rates and cutting manual work.",
+        "page": "/blog/catering-proposal-automation",
+        "under_heading": "Direct answer"
+      },
+      "paa_coverage": [
+        {
+          "question": "How long does it take to create a corporate catering proposal with automation?",
+          "answer": "With AI automation, a complete corporate catering proposal is generated in under two minutes after the client submits event details, compared to 30‑60 minutes manually.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "What features should a catering proposal automation tool include?",
+          "answer": "Key features are AI intake forms, menu builder with per‑head pricing, instant proposal link, e‑signature approval, and integration with payment or contract systems.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        },
+        {
+          "question": "Can automated proposals improve corporate catering win rates?",
+          "answer": "Yes—caterers report a 20‑30% increase in win rates because clients receive fast, interactive proposals that they can approve with a single click.",
+          "page": "/blog/catering-proposal-automation",
+          "schema_type": "FAQPage"
+        }
+      ],
+      "schema_additions": [
+        {
+          "type": "FAQPage",
+          "details": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is catering proposal automation?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Catering proposal automation uses AI intake forms, pricing rules, and instant document generation to turn event inquiries into signed proposals within minutes.\"}},{\"@type\":\"Question\",\"name\":\"How fast can a corporate catering proposal be generated?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"With Orbit’s AI builder, a complete corporate proposal is generated in under 2 minutes after the client submits event details.\"}}]}",
+          "rationale": "Enables Google to surface answers directly in SERPs and boosts PAA visibility."
+        }
+      ]
+    }
+  }
+]

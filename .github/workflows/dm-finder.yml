@@ -1,0 +1,47 @@
+name: DM Lead Finder
+
+on:
+  schedule:
+    - cron: '0 13 * * 1' # Mondays 13:00 UTC (~9am ET)
+  workflow_dispatch:
+    inputs:
+      niches:
+        description: 'Comma-separated niche keys (blank = defaults)'
+        required: false
+      limit:
+        description: 'How many leads to output'
+        required: false
+        default: '60'
+
+permissions:
+  contents: write
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Find leads
+        run: |
+          ARGS="--limit=${{ github.event.inputs.limit || '60' }}"
+          if [ -n "${{ github.event.inputs.niches }}" ]; then
+            ARGS="$ARGS --niches=${{ github.event.inputs.niches }}"
+          fi
+          node scripts/dm-finder/find.mjs $ARGS
+
+      - name: Commit the batch
+        run: |
+          git config user.name  "orbitboyzz-ai"
+          git config user.email "orbitboyzz@gmail.com"
+          git add scripts/dm-finder/leads scripts/dm-finder/messaged.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No new leads this week."
+          else
+            git commit -m "leads: DM batch $(date -u +%Y-%m-%d) [skip ci]"
+            git push
+          fi

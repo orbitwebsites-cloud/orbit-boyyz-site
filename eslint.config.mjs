@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Business automation kept from the old repo — not part of the website.
+    "scripts/**",
+    "client-acquisition/**",
+    "reports/**",
+    "prerender-expected.mjs",
   ]),
 ]);
 
