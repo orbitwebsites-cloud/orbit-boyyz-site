@@ -27,16 +27,16 @@ export const blogPosts: BlogPost[] = [
     "title": "Is OrbitBoyzz the same as Orbit Websites?",
     "description": "Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites, a Plainsboro, NJ web design and AI operations studio.",
     "updated": "June 1, 2026",
-    "audience": "People searching for OrbitBoyzz, Orbit Websites, or the orbitboyzz.me website",
+    "audience": "People searching for OrbitBoyzz, Orbit Websites, or the orbitboyzz.com website",
     "takeaways": [
       "OrbitBoyzz and Orbit Websites refer to the same business.",
-      "The official website is orbitboyzz.me.",
+      "The official website is orbitboyzz.com.",
       "OrbitBoyzz builds local business websites and AI operations systems in Plainsboro and Central New Jersey."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites. The official website is orbitboyzz.me, and the business serves Plainsboro, Princeton, West Windsor Township, and Central New Jersey."
+        "body": "Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites. The official website is orbitboyzz.com, and the business serves Plainsboro, Princeton, West Windsor Township, and Central New Jersey."
       },
       {
         "heading": "What OrbitBoyzz does",

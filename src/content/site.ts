@@ -5,7 +5,7 @@ export const site = {
   name: 'Orbit Websites',
   handle: 'OrbitBoyzz',
   tagline: 'Designed personally. Built quickly. Owned by you.',
-  url: 'https://orbitboyzz.me',
+  url: 'https://orbitboyzz.com',
   phone: '609-662-8052',
   phoneDisplay: '609 662 8052',
   phoneHref: 'tel:+16096628052',

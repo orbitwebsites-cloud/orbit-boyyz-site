@@ -52,5 +52,5 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://orbitboyzz.me/sitemap.xml
-Sitemap: https://orbitboyzz.me/feed.xml
+Sitemap: https://orbitboyzz.com/sitemap.xml
+Sitemap: https://orbitboyzz.com/feed.xml

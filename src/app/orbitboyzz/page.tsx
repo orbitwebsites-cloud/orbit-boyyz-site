@@ -22,7 +22,7 @@ export default function OrbitBoyzzPage() {
             OrbitBoyzz is Orbit Websites, <span className="serif-accent text-accent">built in Plainsboro.</span>
           </>
         }
-        lead="OrbitBoyzz is the domain and brand handle for Orbit Websites. The official site is orbitboyzz.me. We build premium local business websites and AI operations systems for Plainsboro, Princeton, West Windsor Township, and Central New Jersey."
+        lead="OrbitBoyzz is the domain and brand handle for Orbit Websites. The official site is orbitboyzz.com. We build premium local business websites and AI operations systems for Plainsboro, Princeton, West Windsor Township, and Central New Jersey."
       >
         <div className="flex flex-wrap gap-3">
           <Button href={site.phoneHref} icon="phone">
@@ -38,7 +38,7 @@ export default function OrbitBoyzzPage() {
         <dl className="grid gap-px overflow-hidden rounded-[var(--radius)] border border-line bg-line md:grid-cols-3">
           {[
             ['Official brand', 'OrbitBoyzz / Orbit Websites'],
-            ['Official domain', 'orbitboyzz.me'],
+            ['Official domain', 'orbitboyzz.com (formerly orbitboyzz.me)'],
             ['Primary location', 'Plainsboro, New Jersey'],
           ].map(([title, value]) => (
             <div key={title} className="bg-bg p-6 md:p-8">
@@ -57,7 +57,7 @@ export default function OrbitBoyzzPage() {
           <SectionLabel>[DIRECT ANSWER]</SectionLabel>
           <h2 className="display t-2 mt-6 max-w-[20ch]">Is OrbitBoyzz the same as Orbit Websites?</h2>
           <p className="t-lead mt-6 max-w-[68ch] text-muted">
-            Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business. OrbitBoyzz is the branded domain at orbitboyzz.me, while Orbit
+            Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business. OrbitBoyzz is the branded domain at orbitboyzz.com, while Orbit
             Websites is the service name used for custom websites, local SEO foundations, quote forms, booking flows, and AI employee systems.
           </p>
         </div>

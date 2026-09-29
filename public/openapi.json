@@ -3,19 +3,19 @@
   "info": {
     "title": "OrbitBoyzz / Orbit Websites API",
     "summary": "Public read-only API for the OrbitBoyzz (Orbit Websites) marketing site.",
-    "description": "Endpoints for programmatically requesting a project price range and checking service health. No authentication is required. Human-readable docs live at https://orbitboyzz.me/developers.",
+    "description": "Endpoints for programmatically requesting a project price range and checking service health. No authentication is required. Human-readable docs live at https://orbitboyzz.com/developers.",
     "version": "1.1.0",
     "contact": {
       "name": "Orbit Websites",
       "email": "orbitboyzz@gmail.com",
-      "url": "https://orbitboyzz.me/contact"
+      "url": "https://orbitboyzz.com/contact"
     },
     "license": {
       "name": "Proprietary"
     }
   },
   "servers": [
-    { "url": "https://orbitboyzz.me", "description": "Production" }
+    { "url": "https://orbitboyzz.com", "description": "Production" }
   ],
   "tags": [
     { "name": "quote", "description": "Project price range estimation" },

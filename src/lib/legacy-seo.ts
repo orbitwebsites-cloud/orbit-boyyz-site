@@ -5,7 +5,7 @@
 import { blogPosts, type BlogPost } from '@/content/blog'
 import { legacyFaqs as faqs } from '@/content/landing'
 
-export const ORIGIN = 'https://orbitboyzz.me'
+export const ORIGIN = 'https://orbitboyzz.com'
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
 
 // --- Brand entity signals (fill these in as off-site profiles go live) -------
@@ -205,7 +205,7 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   '/privacy': {
     title: 'Privacy Policy | Orbit Websites',
     description:
-      'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.me, including forms, analytics, and third-party services.',
+      'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.com, including forms, analytics, and third-party services.',
   },
   '/developers': {
     title: 'Developer & API Docs | Orbit Websites',
@@ -924,7 +924,7 @@ export function graphFor(route: string) {
       url: `${ORIGIN}/privacy`,
       about: { '@id': `${ORIGIN}/#organization` },
       description:
-        'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.me.',
+        'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.com.',
     })
   }
   if (route === '/developers') {

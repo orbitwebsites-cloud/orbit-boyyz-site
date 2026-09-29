@@ -6,7 +6,7 @@
 // 2. When a request sends `Accept: text/markdown` with equal-or-higher
 //    priority than `text/html`, serves a hand-maintained markdown variant of
 //    the page instead of the HTML, for pages listed in MARKDOWN_PAGES.
-// 3. growth.orbitboyzz.me/ is served the /growth page.
+// 3. growth.orbitboyzz.com/ is served the /growth page.
 // MARKDOWN_PAGES and wantsMarkdown() are copied verbatim from the old file.
 import { NextResponse, type NextRequest } from 'next/server'
 
@@ -32,7 +32,7 @@ function withVary(existing: string | null) {
   return [...tokens.values()].join(', ')
 }
 
-const ORIGIN = 'https://orbitboyzz.me'
+const ORIGIN = 'https://orbitboyzz.com'
 
 const MARKDOWN_PAGES: Record<string, () => string> = {
   '/': () => `# OrbitBoyzz / Orbit Websites
@@ -88,7 +88,7 @@ We'll build a live demo of your site and show you before you pay a cent.
 
 Last updated: June 13, 2026
 
-Orbit Websites (OrbitBoyzz) operates orbitboyzz.me. We collect information
+Orbit Websites (OrbitBoyzz) operates orbitboyzz.com. We collect information
 you voluntarily submit through our forms (quote estimator, contact, project
 brief) — such as name, business name, email, phone, and project details —
 and use privacy-respecting aggregate analytics (Vercel Analytics). We do not
@@ -192,7 +192,7 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl
   const accept = request.headers.get('accept')
 
-  if (url.hostname === 'growth.orbitboyzz.me' && url.pathname === '/') {
+  if (url.hostname === 'growth.orbitboyzz.com' && url.pathname === '/') {
     const res = NextResponse.rewrite(new URL('/growth', request.url))
     res.headers.set('Vary', withVary(res.headers.get('Vary')))
     return res

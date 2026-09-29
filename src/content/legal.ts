@@ -3,7 +3,7 @@
 // with its links in app/privacy/page.tsx (its text is kept here for reference).
 export const privacyUpdated = "June 13, 2026"
 
-export const privacyIntro = "Orbit Websites (also known as OrbitBoyzz, \"we,\" \"us,\" or \"our\") operates orbitboyzz.me. This policy explains what information we collect when you use this site, how we use it, and the choices you have. We are a small web design studio based in Plainsboro, New Jersey — we do not sell your personal information to third parties."
+export const privacyIntro = "Orbit Websites (also known as OrbitBoyzz, \"we,\" \"us,\" or \"our\") operates orbitboyzz.com. This policy explains what information we collect when you use this site, how we use it, and the choices you have. We are a small web design studio based in Plainsboro, New Jersey — we do not sell your personal information to third parties."
 
 export const privacySections: Array<{ heading: string; body: string }> = [
   {

@@ -10,7 +10,7 @@ import { calculateQuoteEstimate, type QuoteEstimateInput } from '@/lib/quoteEsti
 export const metadata = legacyMetadata('/developers')
 
 // Old Developers component (App.tsx) — copy verbatim.
-const curlExample = `curl -X POST https://orbitboyzz.me/api/quote-estimate \\
+const curlExample = `curl -X POST https://orbitboyzz.com/api/quote-estimate \\
   -H "Content-Type: application/json" \\
   -d '{"need":"ai","complexity":"complex","urgency":"urgent","employee":"dispatcher","automation":true}'`
 
