@@ -33,6 +33,7 @@ export const nav = [
   { label: 'Work', href: '/projects' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ] as const
@@ -49,6 +50,8 @@ export const footerPages = [
   { label: 'Web Design NJ', href: '/web-design-central-nj' },
   { label: 'Blog', href: '/blog' },
   { label: 'OrbitBoyzz', href: '/orbitboyzz' },
+  { label: 'Developers / API', href: '/developers' },
+  { label: 'Privacy', href: '/privacy' },
 ] as const
 
 export const industries = [

@@ -65,7 +65,7 @@ export function Nav() {
                       href={item.href}
                       aria-current={active ? 'page' : undefined}
                       className={cn(
-                        'relative flex items-center gap-1.5 rounded-full px-4 py-2 text-[0.88rem] transition-colors duration-[var(--d-sm)]',
+                        'relative flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-[0.88rem] transition-colors duration-[var(--d-sm)] xl:px-4',
                         active ? 'bg-fg/[0.07] text-fg' : 'text-muted hover:text-fg',
                       )}
                     >
@@ -81,7 +81,7 @@ export function Nav() {
           <div className="relative z-10 flex items-center gap-2 sm:gap-3">
             <a
               href={site.phoneHref}
-              className="hidden items-center gap-2 font-mono text-[0.8rem] tracking-[0.04em] text-fg transition-colors hover:text-accent md:flex"
+              className="hidden items-center gap-2 whitespace-nowrap font-mono text-[0.8rem] tracking-[0.04em] text-fg transition-colors hover:text-accent md:flex"
             >
               <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
               {site.phoneDisplay}

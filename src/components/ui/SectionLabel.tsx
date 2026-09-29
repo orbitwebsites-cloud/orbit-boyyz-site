@@ -4,7 +4,7 @@ import { cn } from '@/lib/cn'
 export function SectionLabel({ children, className }: { children: string; className?: string }) {
   const parts = children.split(/(\[|\]|\/\/)/g).filter(Boolean)
   return (
-    <p className={cn('label flex items-center gap-[0.35em]', className)}>
+    <p className={cn('label flex flex-wrap items-center gap-[0.35em]', className)}>
       {parts.map((p, i) =>
         p === '[' || p === ']' || p === '//' ? (
           <span key={i} className="text-accent">
