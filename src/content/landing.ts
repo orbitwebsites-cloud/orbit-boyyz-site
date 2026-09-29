@@ -290,11 +290,11 @@ export const legacyFaqs: Array<[question: string, answer: string]> = [
   ],
   [
     "How long does it take to launch?",
-    "Once you approve your custom live demo, we can connect it to your domain and go live in under 48 hours."
+    "A launch build runs on a seven-day sprint once scope and direction are clear. You approve the finished site before the final payment, then we connect it to your domain."
   ],
   [
-    "What does the monthly fee cover?",
-    "Premium blazing-fast global hosting, continuous security updates, and unlimited text and photo changes. Just text us what you need updated and we handle it — no tech knowledge required on your end."
+    "What does a monthly care plan cover?",
+    "Care plans are optional and start only after launch. They cover fast managed hosting, security updates, backups and content changes — just text us what you need updated and we handle it, no tech knowledge required on your end."
   ],
   [
     "Is OrbitBoyzz the same as Orbit Websites?",
