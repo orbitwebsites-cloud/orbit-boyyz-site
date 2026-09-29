@@ -229,15 +229,30 @@ export default function GrowthPage() {
       </Section>
 
       {/* Pricing */}
-      <Section id="pricing" label="Simple monthly partnership" className="scroll-mt-24">
-        <SectionLabel>[Simple monthly partnership]</SectionLabel>
+      <Section id="pricing" label="Simple build, optional retainer" className="scroll-mt-24">
+        <SectionLabel>[Simple build, optional retainer]</SectionLabel>
         <h2 data-split className="display t-2 mt-6 max-w-[18ch]">
-          No setup fee. <span className="serif-accent text-accent">One system that keeps working.</span>
+          One build. <span className="serif-accent text-accent">One system that keeps working.</span>
         </h2>
         <p data-reveal className="mt-5 max-w-2xl text-muted">
-          Choose a starting point after your free lead-response audit. Every plan has a three-month minimum and fair-use limits.
+          Choose a starting point after your free lead-response audit. Every plan is an AI operations build scoped on that audit, with an optional monthly retainer for
+          monitoring, fixes and improvements. Retainers have a three-month minimum and fair-use limits.
         </p>
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <dl data-reveal className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-[var(--radius)] border border-accent/40 bg-panel/60 p-6 md:p-7">
+            <dt className="label text-accent">One-time build</dt>
+            <dd className="display mt-3 text-[clamp(2.2rem,5vw,3rem)] leading-none">$5,000–$15,000+</dd>
+            <dd className="mt-3 text-sm text-muted">Depends on scope, integrations and how many workflows you automate.</dd>
+          </div>
+          <div className="rounded-[var(--radius)] border border-line bg-panel/60 p-6 md:p-7">
+            <dt className="label text-accent">Optional retainer</dt>
+            <dd className="display mt-3 text-[clamp(2.2rem,5vw,3rem)] leading-none">
+              $750–$2,500<span className="text-muted text-[0.5em]"> / month</span>
+            </dd>
+            <dd className="mt-3 text-sm text-muted">Only when it replaces measurable admin labor or recovers high-intent leads.</dd>
+          </div>
+        </dl>
+        <div className="mt-4 grid gap-4 lg:grid-cols-3">
           {growthTiers.map((tier) => (
             <article
               key={tier.name}
@@ -250,10 +265,6 @@ export default function GrowthPage() {
               {tier.featured && <span className="label mb-4 text-accent">Best fit for growing teams</span>}
               <h3 className="display text-3xl">{tier.name}</h3>
               <p className="mt-3 text-muted">{tier.description}</p>
-              <p className="mt-8">
-                <strong className="display text-5xl">{tier.price}</strong>
-                <span className="text-muted"> / month</span>
-              </p>
               <ul className="mt-8 grid flex-1 gap-3 text-[0.95rem]">
                 {tier.features.map((f) => (
                   <li key={f} className="flex gap-3">
@@ -276,8 +287,8 @@ export default function GrowthPage() {
             <h3 className="display mt-4 text-3xl">{growthEntryOffer.name}</h3>
             <p className="mt-3 text-muted">{growthEntryOffer.description}</p>
             <p className="mt-6">
-              <strong className="display text-5xl">{growthEntryOffer.price}</strong>
-              <span className="text-muted"> one time</span>
+              <strong className="display block text-[clamp(2rem,4.6vw,2.8rem)] leading-[1.05]">{growthEntryOffer.price}</strong>
+              <span className="mt-2 block text-muted">One-time build</span>
             </p>
           </div>
           <div className="md:col-span-6 md:col-start-7">
@@ -293,7 +304,7 @@ export default function GrowthPage() {
                 Discuss the setup
               </Button>
             </div>
-            <p className="mt-5 text-sm text-dim">$375 to begin; $375 after approval. Managed monthly plans are separate and optional.</p>
+            <p className="mt-5 text-sm text-dim">50% to begin; 50% after approval. Managed monthly plans are separate and optional.</p>
           </div>
         </article>
         <p className="mt-6 text-sm text-dim">Advertising spend and unusually high phone or messaging usage are not included. We confirm your expected usage before launch.</p>
@@ -309,7 +320,7 @@ export default function GrowthPage() {
             <SectionLabel>[Founding partner offer]</SectionLabel>
             <h2 className="display t-2 mt-5">Help shape the system. Keep founding pricing.</h2>
             <p className="mt-5 max-w-2xl text-muted">
-              We&apos;re accepting three independent HVAC companies at $1,500 per month in exchange for direct feedback and permission to document the results. No inflated
+              We&apos;re accepting three independent HVAC companies at founding-partner pricing in exchange for direct feedback and permission to document the results. No inflated
               promises—just a system we can measure together.
             </p>
             <div className="mt-8">

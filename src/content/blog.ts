@@ -129,18 +129,18 @@ export const blogPosts: BlogPost[] = [
   {
     "slug": "how-much-does-a-website-cost-for-a-local-business",
     "title": "How much does a website cost for a local business in New Jersey?",
-    "description": "A starter small-business website usually ranges from $150 to $400, with custom websites, AI operations systems, and monthly retainers priced by the work they replace.",
+    "description": "A launch small-business website is quoted on a free call, premium websites start at $3,500, and AI operations systems run $5,000–$15,000+, with retainers priced by the work they replace.",
     "updated": "June 1, 2026",
     "audience": "Local business owners in New Jersey comparing website and AI build costs",
     "takeaways": [
-      "Starter website builds at Orbit Websites usually range from $150 to $400.",
-      "AI operations websites are typically $5,000+ depending on workflow complexity.",
+      "Launch builds at Orbit Websites are quoted on a free call after a quick look at your needs; premium builds start at $3,500.",
+      "AI operations websites are typically $5,000–$15,000+ depending on workflow complexity.",
       "AI operations retainers run $750-$2,500 per month when they replace measurable labor."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "At Orbit Websites, a starter website for a local business usually ranges from $150 to $400. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work."
+        "body": "At Orbit Websites, a launch website for a local business is quoted on a free call after a quick look at your needs; it is built in a 7-day sprint, with 50% to start and 50% when you approve the finished site. Premium builds start at $3,500. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000–$15,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work, and optional care plans are $300–$700 per month after launch."
       },
       {
         "heading": "What changes the price",
@@ -189,22 +189,22 @@ export const blogPosts: BlogPost[] = [
   {
     "slug": "custom-website-cost-central-nj",
     "title": "How much does a custom website cost for a local business in Central New Jersey?",
-    "description": "A starter website for a Central New Jersey small business usually ranges from $150 to $400 and can move higher when design, integrations, or AI intake are more complex.",
+    "description": "A launch website for a Central New Jersey small business is quoted on a free call; premium builds start at $3,500 and AI intake runs $5,000–$15,000+ when design, integrations, or workflows are more complex.",
     "updated": "June 12, 2026",
     "audience": "Local business owners and managers in Central New Jersey seeking a custom website.",
     "takeaways": [
-      "Orbit Boyzz offers starter website ranges around $150-$400 for Central NJ businesses.",
+      "Orbit Boyzz quotes launch builds for Central NJ businesses on a free call; premium builds start at $3,500.",
       "AI intake, ecommerce, booking logic, proposal workflows, and data integrations can move a project into the $5,000-$15,000+ range.",
       "The right budget depends on the revenue value of calls, quote requests, bookings, and admin time recovered."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "Website costs for a local business in Central New Jersey usually range from $150 to $400 for a focused starter site. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher because they require more planning, testing, and operational handoff."
+        "body": "At Orbit Boyzz, a focused launch site for a Central New Jersey business is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher (AI systems run $5,000–$15,000+) because they require more planning, testing, and operational handoff. Optional care plans are $300–$700/mo."
       },
       {
         "heading": "What factors drive the price?",
-        "body": "Design complexity, page count, copywriting, service-area content, accessibility work, booking tools, payments, CRM connections, and AI workflows are the main cost drivers. A simple conversion site can stay near the starter range; a multi-page system with intake, routing, or inventory logic belongs in a larger custom quote."
+        "body": "Design complexity, page count, copywriting, service-area content, accessibility work, booking tools, payments, CRM connections, and AI workflows are the main cost drivers. A simple conversion site can stay a launch build; a multi-page system with intake, routing, or inventory logic belongs in a larger custom quote."
       },
       {
         "heading": "How to budget and choose a provider",
@@ -377,7 +377,7 @@ export const blogPosts: BlogPost[] = [
     "takeaways": [
       "An electrician without a website gives local buyers less proof, fewer service details, and fewer ways to request urgent help.",
       "A hand-coded site with an AI intake form can qualify job type, location, and urgency quickly before the request gets buried in voicemail.",
-      "Orbit Boyzz builds electrician websites in Ewing, NJ with starter ranges around $150-$400 and optional AI dispatch routing for after-hours calls."
+      "Orbit Boyzz builds electrician websites in Ewing, NJ as launch builds quoted on a free call, with optional AI dispatch routing for after-hours calls."
     ],
     "sections": [
       {
@@ -390,7 +390,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "How Orbit Boyzz helps",
-        "body": "We build a fast website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Starter website ranges usually run $150-$400, with AI intake priced higher when the workflow is more complex."
+        "body": "We build a fast website listing your services, service area (Ewing, Trenton, Lawrence, Hamilton), and an AI intake form that captures job type, urgency, and address. After-hours requests get routed automatically so you wake up to a qualified lead instead of a missed call. Launch builds are quoted on a free call, premium builds start at $3,500, and AI intake runs $5,000–$15,000+ when the workflow is more complex."
       }
     ]
   },
@@ -408,7 +408,7 @@ export const blogPosts: BlogPost[] = [
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A starter site in the $150-$400 range is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects."
+        "body": "A landscaping company in Central New Jersey needs a website because buyers often compare services, service areas, photos, seasonal availability, and quote options before calling. A launch build (quoted on a free call) is easiest to justify when it supports recurring maintenance, cleanups, commercial work, or high-value property projects."
       },
       {
         "heading": "The seasonal search window is short",
@@ -507,7 +507,7 @@ export const blogPosts: BlogPost[] = [
     "takeaways": [
       "The best local business websites make the next step obvious: call, book, request a quote, or start intake.",
       "Service-area pages, direct-answer FAQs, and structured proof help both Google and AI assistants understand the business.",
-      "Orbit Boyzz builds checklist-complete starter sites around $150-$400, with AI intake added when faster response can pay for itself."
+      "Orbit Boyzz builds checklist-complete launch sites, quoted on a free call, with AI intake added when faster response can pay for itself."
     ],
     "sections": [
       {
@@ -524,7 +524,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "How Orbit Boyzz builds against the checklist",
-        "body": "Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Starter builds usually range from $150 to $400. AI-powered intake and routing usually start around $5,000 when the workflow can recover missed leads or reduce admin work."
+        "body": "Orbit Boyzz starts with a hand-coded, crawlable site and then adds local SEO structure, answer-friendly content, visible calls to action, and optional AI intake. Launch builds are quoted on a free call and premium builds start at $3,500. AI-powered intake and routing usually runs $5,000–$15,000+ when the workflow can recover missed leads or reduce admin work."
       }
     ]
   },
@@ -667,12 +667,12 @@ export const blogPosts: BlogPost[] = [
     "takeaways": [
       "A focused custom small business website usually starts in the low thousands.",
       "AI intake, booking, proposal logic, and integrations increase cost because they replace manual admin work.",
-      "Orbit Boyzz offers starter website ranges, custom builds, and AI intake builds for Central NJ businesses."
+      "Orbit Boyzz offers launch builds (quoted on a free call), premium builds from $3,500, and AI intake builds at $5,000–$15,000+ for Central NJ businesses."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. Orbit Boyzz starter website ranges begin around $150 to $400, while broader custom builds and AI workflows cost more."
+        "body": "A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. At Orbit Boyzz, launch builds are quoted on a free call after a quick look at your needs, premium builds start at $3,500, AI workflows run $5,000–$15,000+, and optional care plans are $300–$700/mo."
       },
       {
         "heading": "What changes the price",
@@ -692,13 +692,13 @@ export const blogPosts: BlogPost[] = [
     "audience": "Plumbing business owners and managers in Central New Jersey",
     "takeaways": [
       "71% of homeowners in Central New Jersey start a plumbing search online, and 55% prefer companies with a professional website.",
-      "A custom plumbing website built by Orbit Boyzz averages $3,200 in upfront cost and can generate $10,000–$15,000 in new revenue within the first year.",
+      "A custom plumbing website from Orbit Boyzz (a launch build quoted on a free call, or a premium build from $3,500) can generate $10,000–$15,000 in new revenue within the first year.",
       "Businesses that add a website see a 30% increase in qualified leads and a 20% higher conversion rate compared to relying solely on directories."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "A plumbing company that operates without its own website misses out on the 71% of local homeowners who begin their search online. A dedicated site, built by Orbit Boyzz, costs $2,500–$5,000 but typically yields a 30% lift in qualified leads within six months. The site also establishes credibility and enables AI‑driven scheduling that outperforms phone‑only intake."
+        "body": "A plumbing company that operates without its own website misses out on the 71% of local homeowners who begin their search online. A dedicated site built by Orbit Boyzz, a launch build quoted on a free call or a premium build from $3,500, typically yields a 30% lift in qualified leads within six months. The site also establishes credibility and enables AI‑driven scheduling that outperforms phone‑only intake."
       },
       {
         "heading": "Why a dedicated site beats directory listings",
@@ -743,14 +743,14 @@ export const blogPosts: BlogPost[] = [
     "updated": "June 13, 2026",
     "audience": "Mercer County business owners comparing website quotes in Princeton, Ewing, Hamilton, Lawrence, Trenton, Robbinsville, and nearby towns",
     "takeaways": [
-      "A focused starter site usually stays around $150-$400 when the scope is clear.",
+      "At Orbit Boyzz, a focused launch build is quoted on a free call once the scope is clear; premium builds start at $3,500.",
       "AI intake, booking, quote routing, and proposal logic push pricing higher because they replace manual workflow steps.",
       "The best quote defines the business action the website must create: calls, quote requests, bookings, or qualified intake."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "The cost of a web design project in Mercer County, NJ depends on scope, page count, custom design depth, local SEO content, forms, booking tools, integrations, AI intake, and launch timeline. A focused starter site often ranges from $150 to $400, while deeper custom builds and AI workflows usually cost more because they require planning, testing, and handoff."
+        "body": "The cost of a web design project in Mercer County, NJ depends on scope, page count, custom design depth, local SEO content, forms, booking tools, integrations, AI intake, and launch timeline. At Orbit Boyzz, a focused launch build is quoted on a free call after a quick look at your needs, premium builds start at $3,500, and AI workflows run $5,000–$15,000+ because they require planning, testing, and handoff."
       },
       {
         "heading": "The cost drivers",
@@ -768,7 +768,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "How much does a typical Mercer County business website cost?",
-        "A focused starter site often ranges from $150 to $400. Larger custom sites and AI-enabled workflows usually move into the $5,000 to $15,000 range depending on scope."
+        "At Orbit Boyzz, a focused launch build is quoted on a free call, and premium sites start at $3,500. AI-enabled workflows run $5,000 to $15,000+ depending on scope, and optional care plans are $300–$700/mo."
       ]
     ]
   },
@@ -794,7 +794,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "Budget and ROI",
-        "body": "For Orbit Boyzz, AI chatbot work is usually part of a custom electrician website or AI intake build. A focused website can start around $150 to $400, while AI intake usually starts around $5,000 when the workflow needs custom questions, alerts, routing, summaries, or booking logic. The investment makes sense when one recovered job or faster callback materially changes revenue."
+        "body": "For Orbit Boyzz, AI chatbot work is usually part of a custom electrician website or AI intake build. A focused launch website is quoted on a free call, while AI intake usually runs $5,000–$15,000+ when the workflow needs custom questions, alerts, routing, summaries, or booking logic. The investment makes sense when one recovered job or faster callback materially changes revenue."
       }
     ],
     "faqs": [
@@ -808,7 +808,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "How much does AI intake cost for an electrician website?",
-        "A starter website can stay around $150-$400. AI intake and routing usually starts around $5,000 when it needs custom questions, alerts, summaries, or booking logic."
+        "A launch website is quoted on a free call. AI intake and routing usually runs $5,000–$15,000+ when it needs custom questions, alerts, summaries, or booking logic, with an optional $750–$2,500/mo retainer."
       ]
     ]
   },
@@ -834,7 +834,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "Pricing options",
-        "body": "A focused dental website can start around $150 to $400. A dental site with AI intake, appointment routing, multi-location logic, or deeper booking workflow usually starts around $5,000. Practices that want ongoing edits, monitoring, and automation support should budget for a care plan instead of assuming the website will need no future work."
+        "body": "A focused dental launch website is quoted on a free call, and premium builds start at $3,500. A dental site with AI intake, appointment routing, multi-location logic, or deeper booking workflow usually runs $5,000–$15,000+. Practices that want ongoing edits, monitoring, and automation support should budget for an optional care plan ($300–$700/mo) instead of assuming the website will need no future work."
       }
     ],
     "faqs": [
@@ -848,7 +848,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "How much does an automated dental website cost?",
-        "A focused dental website can start around $150-$400. Custom AI intake, booking logic, and staff handoff usually starts around $5,000 depending on workflow complexity."
+        "A focused dental launch website is quoted on a free call; premium builds start at $3,500. Custom AI intake, booking logic, and staff handoff usually runs $5,000–$15,000+ depending on workflow complexity, and care plans are optional at $300–$700/mo."
       ]
     ]
   },
@@ -861,12 +861,12 @@ export const blogPosts: BlogPost[] = [
     "takeaways": [
       "Home‑service websites generate 30% more qualified leads than businesses that rely only on directories.",
       "A well‑optimized local SEO site can rank in the top 3 Google results for 70% of plumbing searches in Central NJ.",
-      "Orbit Boyzz builds custom plumbing sites for $3,500–$5,000, delivering a typical ROI of 4:1 within the first year."
+      "Orbit Boyzz builds custom plumbing sites (launch builds quoted on a free call, premium builds from $3,500), delivering a typical ROI of 4:1 within the first year."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "Yes. A dedicated website gives a plumbing company control over branding, lead capture, and SEO, which can increase inbound calls by up to 35% (HomeAdvisor 2023). Orbit Boyzz helps Central New Jersey plumbers launch sites for $3,500–$5,000."
+        "body": "Yes. A dedicated website gives a plumbing company control over branding, lead capture, and SEO, which can increase inbound calls by up to 35% (HomeAdvisor 2023). Orbit Boyzz helps Central New Jersey plumbers launch sites: launch builds are quoted on a free call and premium builds start at $3,500."
       },
       {
         "heading": "Benefits of a dedicated plumbing website",
@@ -892,7 +892,7 @@ export const blogPosts: BlogPost[] = [
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "An AI receptionist for a small business typically costs $30‑$150 per month, with a one‑time setup fee of $200‑$500. In Central New Jersey, Orbit Boyzz implements these solutions for clients in towns like Princeton and Ewing. The total first‑year expense averages $560‑$2,300 depending on features."
+        "body": "An AI receptionist for a small business typically costs $30‑$150 per month, with a one‑time setup fee of $200‑$500. The total first‑year expense for an off-the-shelf tool averages $560‑$2,300 depending on features. When a business in towns like Princeton or Ewing needs a custom AI receptionist wired into its own intake and routing, Orbit Boyzz builds it for $5,000–$15,000+, with an optional $750–$2,500/mo retainer."
       },
       {
         "heading": "Cost breakdown",
@@ -965,12 +965,12 @@ export const blogPosts: BlogPost[] = [
     "takeaways": [
       "AI intake reduces patient registration time from 10 minutes to 4 minutes, a 60% gain.",
       "Dental offices that adopt AI intake see a 20% increase in new patient bookings within three months.",
-      "Orbit Boyzz can integrate AI intake for a typical NJ dental office for $2,500 upfront plus $99 monthly."
+      "Orbit Boyzz builds custom AI intake for NJ dental offices for $5,000–$15,000+, with an optional $750–$2,500/mo retainer."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "AI intake systems automate patient data capture, cutting onboarding time by up to 60% and increasing booked appointments by 20% for dental offices in Central New Jersey. Orbit Boyzz offers turnkey AI intake integration for $2,500 setup and $99 per month, delivering ROI within six months."
+        "body": "AI intake systems automate patient data capture, cutting onboarding time by up to 60% and increasing booked appointments by 20% for dental offices in Central New Jersey. Orbit Boyzz builds custom AI intake integrations for $5,000–$15,000+, with an optional $750–$2,500/mo retainer when the system replaces measurable front-desk work."
       },
       {
         "heading": "Why AI Intake Matters for NJ Dental Practices",
@@ -1093,18 +1093,18 @@ export const blogPosts: BlogPost[] = [
     "updated": "July 27, 2026",
     "audience": "Contractors and service businesses in Central New Jersey looking to reduce front‑desk expenses.",
     "takeaways": [
-      "An AI receptionist from Orbit Boyzz starts at $30 per month, delivering 24/7 call handling.",
+      "Off-the-shelf AI receptionist tools start at $30 per month; a custom AI receptionist system from Orbit Boyzz runs $5,000–$15,000+ with an optional $750–$2,500/mo retainer.",
       "A full‑time human receptionist in Princeton, NJ costs roughly $40,000 annually, including benefits.",
       "AI reduces missed calls by up to 85% for HVAC and plumbing firms, according to Orbit Boyzz data."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "For a typical contractor in Central New Jersey, an AI receptionist from Orbit Boyzz costs $30‑$50 per month, equating to $360‑$600 annually. A full‑time human receptionist averages $40,000 per year, including salary, benefits, and training. The AI option saves roughly 99% on front‑desk expenses."
+        "body": "For a typical contractor in Central New Jersey, an off-the-shelf AI receptionist tool costs $30‑$50 per month, equating to $360‑$600 annually. A full‑time human receptionist averages $40,000 per year, including salary, benefits, and training. The AI option saves roughly 99% on front‑desk expenses."
       },
       {
         "heading": "AI receptionist cost breakdown",
-        "body": "Orbit Boyzz offers a subscription that includes 24/7 call answering, AI‑driven scheduling, and integration with CRM tools for $30‑$50 per month. No hiring, payroll, or overtime costs apply, and the system scales without additional fees. For a contractor handling 150 calls per week, the AI can process up to 90% automatically, reducing labor hours."
+        "body": "Off-the-shelf subscriptions include 24/7 call answering and basic scheduling for $30‑$50 per month. When a contractor needs AI‑driven scheduling, custom routing, and CRM integration, Orbit Boyzz builds the system for $5,000–$15,000+ with an optional $750–$2,500/mo retainer. No hiring, payroll, or overtime costs apply, and the system scales without additional fees. For a contractor handling 150 calls per week, the AI can process up to 90% automatically, reducing labor hours."
       },
       {
         "heading": "Human receptionist cost breakdown",
@@ -1160,7 +1160,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "How to Get Started",
-        "body": "Begin with a discovery call to outline services, target neighborhoods, and branding preferences. Orbit Boyzz designs a custom, mobile‑responsive site for $2,500–$5,000, then integrates AI‑powered lead capture and scheduling tools. Launch the site, monitor analytics, and refine SEO to convert online traffic into booked jobs within weeks."
+        "body": "Begin with a discovery call to outline services, target neighborhoods, and branding preferences. Orbit Boyzz designs a custom, mobile‑responsive site (a launch build quoted on that call, or a premium build from $3,500), then integrates AI‑powered lead capture and scheduling tools (AI systems run $5,000–$15,000+). Launch the site, monitor analytics, and refine SEO to convert online traffic into booked jobs within weeks."
       }
     ]
   },
@@ -1198,13 +1198,13 @@ export const blogPosts: BlogPost[] = [
     "audience": "Local business owners in Central New Jersey seeking a custom website and AI automation",
     "takeaways": [
       "Custom website projects in Central New Jersey average $8,000, ranging $5k‑$15k depending on features.",
-      "Orbit Boyzz’s AI automation add‑on costs $150‑$300 per month, boosting lead conversion by up to 27%.",
+      "Orbit Boyzz’s AI automation builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer, boosting lead conversion by up to 27%.",
       "Businesses that invest in a custom site see a 3‑5× ROI within 12‑18 months, per local market data."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "A custom website for a local business in Central New Jersey typically costs between $5,000 and $15,000, with the median price around $8,000. Adding Orbit Boyzz’s AI automation package adds $150‑$300 per month, which can increase lead conversion by up to 27%."
+        "body": "A custom website for a local business in Central New Jersey typically costs between $5,000 and $15,000, with the median price around $8,000. At Orbit Boyzz, launch builds are quoted on a free call and premium builds start at $3,500; adding an AI automation system runs $5,000–$15,000+ with an optional $750–$2,500/mo retainer, which can increase lead conversion by up to 27%."
       },
       {
         "heading": "Cost drivers for a custom site",
@@ -1223,14 +1223,14 @@ export const blogPosts: BlogPost[] = [
     "updated": "August 17, 2026",
     "audience": "Local business owners in Central New Jersey seeking a custom website solution.",
     "takeaways": [
-      "Custom website projects in Central NJ average $8,250, based on Orbit Boyzz’s 2023 portfolio.",
+      "At Orbit Boyzz, launch builds are quoted on a free call and premium builds start at $3,500.",
       "Monthly maintenance for a custom site in the region costs $150‑$300, covering security updates and SEO tweaks.",
       "Businesses that invest in a custom site see a 35% increase in lead conversions within six months, per local case studies."
     ],
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "A custom website for a local business in Central New Jersey typically costs between $4,500 and $12,000. Orbit Boyzz’s standard packages start at $5,000, with additional features adding $1,000‑$3,000. Ongoing maintenance averages $150‑$300 per month."
+        "body": "A custom website for a local business in Central New Jersey typically costs between $4,500 and $12,000. At Orbit Boyzz, launch builds are quoted on a free call after a quick look at your needs, premium builds start at $3,500, and AI systems run $5,000–$15,000+. Across the region, ongoing maintenance averages $150‑$300 per month; Orbit’s optional care plans are $300–$700/mo."
       },
       {
         "heading": "Key price drivers",

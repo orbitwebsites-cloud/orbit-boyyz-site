@@ -32,10 +32,9 @@ export const growthServices: Array<{ number: string; title: string; body: string
   }
 ]
 
-export const growthTiers: Array<{ name: string; price: string; description: string; featured?: boolean; features: string[] }> = [
+export const growthTiers: Array<{ name: string; description: string; featured?: boolean; features: string[] }> = [
   {
     "name": "Launch",
-    "price": "$1,500",
     "description": "For smaller HVAC teams that need every new lead handled consistently.",
     "features": [
       "Instant lead response",
@@ -48,7 +47,6 @@ export const growthTiers: Array<{ name: string; price: string; description: stri
   },
   {
     "name": "Growth",
-    "price": "$2,500",
     "description": "For busy teams losing calls and opportunities after hours.",
     "featured": true,
     "features": [
@@ -62,7 +60,6 @@ export const growthTiers: Array<{ name: string; price: string; description: stri
   },
   {
     "name": "Scale",
-    "price": "$5,000",
     "description": "For established operators with multiple teams, campaigns or locations.",
     "features": [
       "Everything in Growth",
@@ -77,7 +74,7 @@ export const growthTiers: Array<{ name: string; price: string; description: stri
 
 export const growthEntryOffer: { name: string; price: string; description: string; features: string[] } = {
   "name": "HVAC inquiry setup",
-  "price": "$750",
+  "price": "Quoted on a free call",
   "description": "A focused first workflow for independent HVAC companies before a managed monthly partnership.",
   "features": [
     "One mobile service page",
@@ -90,7 +87,7 @@ export const growthEntryOffer: { name: string; price: string; description: strin
 export const growthFaqs: Array<[question: string, answer: string]> = [
   [
     "Is there a setup fee?",
-    "No. Your build is included with a three-month minimum engagement. Monthly service is paid at the beginning of each billing period."
+    "Yes. The system is a one-time AI operations build, typically $5,000–$15,000+ depending on scope. The monthly retainer ($750–$2,500/mo) is optional, has a three-month minimum, and is paid at the beginning of each billing period."
   ],
   [
     "How quickly can we go live?",

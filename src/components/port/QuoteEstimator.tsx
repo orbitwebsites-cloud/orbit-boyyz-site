@@ -7,6 +7,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { cn } from '@/lib/cn'
 import {
   calculateQuoteEstimate,
+  isAiSelection,
   quoteOptions,
   type AiEmployee,
   type QuoteComplexity,
@@ -32,6 +33,8 @@ export function QuoteEstimator() {
   }, [])
 
   const estimate = useMemo(() => calculateQuoteEstimate({ need, complexity, urgency, employee, automation }), [automation, complexity, employee, need, urgency])
+  const quotedOnCall = estimate.upfrontLow === null
+  const aiSelected = isAiSelection({ need, employee, automation })
 
   const selectedNeed = quoteOptions.need.find(([value]) => value === need)?.[1] ?? 'New website'
   const selectedComplexity = quoteOptions.complexity.find(([value]) => value === complexity)?.[1] ?? 'Simple'
@@ -50,7 +53,7 @@ export function QuoteEstimator() {
       `Automation add-on: ${automation ? 'Yes' : 'No'}`,
       ...(sourcePage ? [`Source page: ${sourcePage}`] : []),
       `Estimated upfront build: ${estimate.upfront}`,
-      `Estimated monthly care / ops: ${estimate.monthly}`,
+      `Estimated monthly (optional ${aiSelected ? 'AI retainer' : 'care plan'}): ${estimate.monthly}`,
       '',
       'Business name:',
       'Website:',
@@ -71,8 +74,8 @@ export function QuoteEstimator() {
           </h2>
         </div>
         <p className="max-w-xl leading-relaxed text-muted md:col-span-5">
-          This is intentionally a range, not a final invoice. A normal site can stay closer to the low end. AI agents, pricing logic, dashboards, and operations automation
-          push the project higher.
+          This is a rough range, not a quote. A simple launch build is quoted on a free call, premium sites start at $3,500, and AI agents, pricing logic, dashboards, and
+          operations automation run $5,000–$15,000+.
         </p>
       </div>
 
@@ -108,13 +111,35 @@ export function QuoteEstimator() {
         >
           <div>
             <SectionLabel>[ESTIMATED RANGE]</SectionLabel>
-            <dl className="mt-8 grid gap-6">
+            <p className="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-dim">Rough range, not a quote</p>
+            <dl className="mt-6 grid gap-6">
               <div>
                 <dt className="label">Upfront build</dt>
-                <dd className="display mt-2 text-[clamp(2.4rem,6vw,4rem)] leading-none [overflow-wrap:anywhere]">{estimate.upfront}</dd>
+                <dd
+                  className={cn(
+                    'display mt-2 leading-none [overflow-wrap:anywhere]',
+                    quotedOnCall ? 'text-[clamp(2rem,4.6vw,3rem)] leading-[1.05]' : 'text-[clamp(2.4rem,6vw,4rem)]',
+                  )}
+                >
+                  {estimate.upfront}
+                </dd>
+                {quotedOnCall ? (
+                  <dd className="mt-4">
+                    <ul className="flex flex-wrap gap-2">
+                      {['7-day sprint', '50% to start', '50% on approval'].map((fact) => (
+                        <li key={fact} className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-accent">
+                          {fact}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-5">
+                      <Button href={site.booking}>Book the free call</Button>
+                    </div>
+                  </dd>
+                ) : null}
               </div>
               <div>
-                <dt className="label">Monthly care / ops</dt>
+                <dt className="label">{aiSelected ? 'Optional AI retainer' : 'Optional care plan'}</dt>
                 <dd className="display mt-2 text-[clamp(1.7rem,4vw,2.4rem)] leading-none text-accent [overflow-wrap:anywhere]">{estimate.monthly}</dd>
                 <dd className="mt-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-dim">{estimate.savings}</dd>
               </div>
@@ -140,10 +165,14 @@ export function QuoteEstimator() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href={quoteMailto}>Send this range</Button>
-              <Button href={site.booking} variant="ghost">
-                Book a 30-min call
+              <Button href={quoteMailto} variant={quotedOnCall ? 'ghost' : 'primary'}>
+                {quotedOnCall ? 'Send your answers' : 'Send this range'}
               </Button>
+              {quotedOnCall ? null : (
+                <Button href={site.booking} variant="ghost">
+                  Book a 30-min call
+                </Button>
+              )}
               <Button href="/contact" variant="ghost" size="sm">
                 Contact options
               </Button>

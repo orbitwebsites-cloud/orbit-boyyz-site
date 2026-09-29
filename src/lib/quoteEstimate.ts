@@ -1,6 +1,12 @@
 // Pure project-range calculator shared by the /quote page (src/App.tsx) and the
 // public JSON API (api/quote-estimate.ts). Keep this the single source of truth
 // so the UI and the API never drift apart.
+//
+// Pricing model (src/content/site.ts `tiers` + `carePlans`):
+// - Launch build: no published price, quoted on a free call (7-day sprint, 50/50).
+// - Premium build: from $3,500.
+// - AI operations: $5,000–$15,000+ build, optional $750–$2,500/mo retainer.
+// - Care plans (optional, after launch): $300 / $500 / $700 per month.
 
 export type QuoteNeed = 'site' | 'refresh' | 'forms' | 'ai'
 export type QuoteUrgency = 'normal' | 'fast' | 'urgent'
@@ -43,9 +49,12 @@ export interface QuoteEstimateInput {
 }
 
 export interface QuoteEstimateResult {
+  /** "Quoted on a free call", "From $3,500" or "$5,000–$15,000+". */
   upfront: string
-  upfrontLow: number
-  upfrontHigh: number
+  /** null when the build is quoted on a free call (launch build). */
+  upfrontLow: number | null
+  /** null when there is no published upper figure (launch build, or "From $3,500"). */
+  upfrontHigh: number | null
   monthly: string
   monthlyLow: number
   monthlyHigh: number
@@ -56,6 +65,13 @@ export interface QuoteEstimateResult {
   includes: string[]
   note: string
 }
+
+export const LAUNCH_QUOTE_LABEL = 'Quoted on a free call'
+
+const PREMIUM_FROM = 3500
+const AI_BUILD = { low: 5000, high: 15000 }
+const AI_RETAINER = { low: 750, high: 2500 }
+const CARE = { low: 300, high: 700 }
 
 const NEED_VALUES = new Set(quoteOptions.need.map(([value]) => value))
 const COMPLEXITY_VALUES = new Set(quoteOptions.complexity.map(([value]) => value))
@@ -78,6 +94,14 @@ export function isAiEmployee(value: unknown): value is AiEmployee {
   return typeof value === 'string' && EMPLOYEE_VALUES.has(value as AiEmployee)
 }
 
+/** Any AI or automation selection is priced as an AI operations build. */
+export function isAiSelection({ need, employee, automation }: Pick<QuoteEstimateInput, 'need' | 'employee' | 'automation'>): boolean {
+  return need === 'ai' || employee !== 'none' || automation
+}
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`
+const range = (low: number, high: number) => `${usd(low)}–${usd(high)}`
+
 export function calculateQuoteEstimate({
   need,
   complexity,
@@ -85,111 +109,88 @@ export function calculateQuoteEstimate({
   employee,
   automation,
 }: QuoteEstimateInput): QuoteEstimateResult {
-  let upfrontLow = 750
-  let upfrontHigh = 750
-  let monthlyLow = 0
-  let monthlyHigh = 0
   let employeeCostLow = 0
   let employeeCostHigh = 0
   const includes = ['strategy call', 'mobile-first build', 'basic conversion structure']
 
-  if (need === 'refresh') {
-    upfrontLow = 750
-    upfrontHigh = 750
-    monthlyLow = 0
-    monthlyHigh = 0
-    includes.push('copy cleanup', 'layout refresh')
-  }
-
-  if (need === 'forms') {
-    upfrontLow = 750
-    upfrontHigh = 750
-    monthlyLow = 0
-    monthlyHigh = 0
-    includes.push('lead form logic', 'booking/contact routing')
-  }
-
+  if (need === 'refresh') includes.push('copy cleanup', 'layout refresh')
+  if (need === 'forms') includes.push('lead form logic', 'booking/contact routing')
   if (need === 'ai') {
-    upfrontLow = 5000
-    upfrontHigh = 15000
-    monthlyLow = 1500
-    monthlyHigh = 2500
     employeeCostLow = 3500
     employeeCostHigh = 6500
     includes.push('AI intake flow', 'database-backed routing', 'automation maintenance')
   }
-
-  if (complexity === 'medium') {
-    upfrontLow += 75
-    upfrontHigh += 180
-    monthlyHigh += 50
-    includes.push('multi-page structure')
-  }
-
-  if (complexity === 'complex') {
-    upfrontLow += 150
-    upfrontHigh += 450
-    monthlyLow += 30
-    monthlyHigh += 90
-    includes.push('custom workflow mapping')
-  }
-
-  if (urgency === 'fast') {
-    upfrontLow += 30
-    upfrontHigh += 90
-    includes.push('priority sprint')
-  }
-
-  if (urgency === 'urgent') {
-    upfrontLow += 70
-    upfrontHigh += 180
-    includes.push('rush launch window')
-  }
-
+  if (complexity === 'medium') includes.push('multi-page structure')
+  if (complexity === 'complex') includes.push('custom workflow mapping')
+  if (urgency === 'fast') includes.push('priority sprint')
+  if (urgency === 'urgent') includes.push('rush launch window')
   if (automation && need !== 'ai') {
-    upfrontLow += 180
-    upfrontHigh += 520
-    monthlyLow += 30
-    monthlyHigh += 90
     employeeCostLow = Math.max(employeeCostLow, 2500)
     employeeCostHigh = Math.max(employeeCostHigh, 5000)
-    includes.push('starter automation layer')
+    includes.push('automation layer')
   }
-
   if (employee !== 'none') {
     employeeCostLow = Math.max(employeeCostLow, 3000)
     employeeCostHigh = Math.max(employeeCostHigh, 6500)
-    if (need !== 'ai') {
-      monthlyLow += 30
-      monthlyHigh += 90
-      upfrontLow += 150
-      upfrontHigh += 420
-    }
     includes.push(quoteOptions.employee.find(([value]) => value === employee)?.[1] ?? 'AI employee')
+  }
+
+  const ai = isAiSelection({ need, employee, automation })
+  const launchLevel = complexity === 'simple'
+  const websitePart = launchLevel ? 'the website itself is quoted on the same free call' : `the website itself is a premium build from ${usd(PREMIUM_FROM)}`
+
+  let upfront: string
+  let upfrontLow: number | null
+  let upfrontHigh: number | null
+  let monthlyLow: number
+  let monthlyHigh: number
+  let note: string
+
+  if (ai) {
+    upfront = `${range(AI_BUILD.low, AI_BUILD.high)}+`
+    upfrontLow = AI_BUILD.low
+    upfrontHigh = AI_BUILD.high
+    monthlyLow = AI_RETAINER.low
+    monthlyHigh = AI_RETAINER.high
+    note =
+      (need === 'ai' ? '' : `This range covers the AI or automation layer; ${websitePart}. `) +
+      'AI agent and operations builds vary the most because pricing depends on APIs, workflow complexity, and how much admin work the system replaces. ' +
+      `The ${range(AI_RETAINER.low, AI_RETAINER.high)}/mo retainer is optional and only makes sense when it replaces measurable admin labor or recovers high-intent leads.`
+  } else if (launchLevel) {
+    upfront = LAUNCH_QUOTE_LABEL
+    upfrontLow = null
+    upfrontHigh = null
+    monthlyLow = CARE.low
+    monthlyHigh = CARE.high
+    note =
+      'Launch builds are quoted on a free call after a quick look at your needs. The build runs as a 7-day sprint: 50% to start, 50% when you approve the finished site. Care plans are optional, month to month, and start only after launch.'
+  } else {
+    upfront = `From ${usd(PREMIUM_FROM)}`
+    upfrontLow = PREMIUM_FROM
+    upfrontHigh = null
+    monthlyLow = CARE.low
+    monthlyHigh = CARE.high
+    note = `Moderate and complex sites are premium builds, which start at ${usd(PREMIUM_FROM)}; the exact number comes from a free call. Care plans are optional, month to month, and start only after launch.`
   }
 
   const savingsLow = employeeCostLow ? Math.max(0, employeeCostLow - monthlyHigh) : 0
   const savingsHigh = employeeCostHigh ? Math.max(0, employeeCostHigh - monthlyLow) : 0
 
   return {
-    upfront: `$${upfrontLow.toLocaleString()}-$${upfrontHigh.toLocaleString()}`,
+    upfront,
     upfrontLow,
     upfrontHigh,
-    monthly: `$${monthlyLow.toLocaleString()}-$${monthlyHigh.toLocaleString()}/mo`,
+    monthly: `${range(monthlyLow, monthlyHigh)}/mo`,
     monthlyLow,
     monthlyHigh,
-    employeeCost:
-      employeeCostLow > 0 ? `$${employeeCostLow.toLocaleString()}-$${employeeCostHigh.toLocaleString()}/mo` : 'N/A',
+    employeeCost: employeeCostLow > 0 ? `${range(employeeCostLow, employeeCostHigh)}/mo` : 'N/A',
     employeeCostLow,
     employeeCostHigh,
     savings:
       savingsHigh > 0
-        ? `saving ~$${savingsLow.toLocaleString()}-$${savingsHigh.toLocaleString()}/mo compared to hiring an employee`
+        ? `saving ~${range(savingsLow, savingsHigh)}/mo compared to hiring an employee`
         : 'standard website work; savings depend on your current admin costs',
     includes,
-    note:
-      need === 'ai' || employee !== 'none'
-        ? 'AI agent and operations builds vary the most because pricing depends on APIs, workflow complexity, and how much admin work the system replaces.'
-        : 'Standard site work stays accessible. Add-ons, booking flows, and automation increase both upfront build cost and monthly maintenance.',
+    note,
   }
 }

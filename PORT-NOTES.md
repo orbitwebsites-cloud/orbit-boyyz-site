@@ -107,3 +107,55 @@ New pricing (`src/content/site.ts`): Launch build "Quoted after the call" · Pre
 - `src/lib/quoteEstimate.ts` — new website flat $750 (88, 97, 105) vs "Quoted after the call"; AI monthly $1,500–$2,500 (115) vs $750–$2,500 retainer.
 - `public/pricing.md:7`, `public/llms.txt:30`, `public/openapi.json:134` — "$150-$400".
 - `/growth` (`src/content/growth.ts`) has its own HVAC plans ($1,500/$2,500/$5,000 per month, $750 setup) — a separate product, listed for awareness.
+
+## Pricing sweep (branch `pricing-sweep`)
+
+Every place Orbit Websites states its own prices now matches one model (source of truth `src/content/site.ts` `tiers` + `carePlans`): **Launch build** = no published price, quoted on a free call (7-day sprint, 50% to start / 50% on approval) · **Premium** = from $3,500 · **AI operations** = $5,000–$15,000+ build, optional $750–$2,500/mo retainer · **Care plans** = optional, month to month, after launch: $300 / $500 / $700 per month. This resolves the section above and open item 2.
+
+### Files changed (15)
+- `src/content/blog.ts` — 37 claims rewritten across 17 posts (Orbit-attributed $150–$400, $3,200, $2,500–$5,000, $3,500–$5,000, "$2,500 + $99/mo", "$30–$50/mo subscription", "$150–$300/mo AI add-on", "packages start at $5,000", "$8,250 portfolio average").
+- `src/app/blog/[slug]/page.tsx` — the "Orbit Boyzz // Central New Jersey" box under all 45 posts.
+- `src/components/port/LandingPages.tsx` (9 town + 7 industry pages: hero lead, direct answer, FAQ) and `src/app/web-design-ewing-nj/page.tsx` (hero, direct answer, FAQ) — 9 claims.
+- `src/lib/legacy-seo.ts` — 34: meta titles/descriptions; organization `hasOfferCatalog` (Launch = no price; Premium from 3500; AI build from 5000; AI retainer 750–2500/MON; Care 300–700/MON — emitted on every ported page); /pricing FAQ JSON-LD; town + industry FAQ JSON-LD (identical to the visible FAQs); 6 town `Service` descriptions.
+- `src/content/landing.ts` — old "Enterprise Custom Build" FAQ answer.
+- `src/proxy.ts` — markdown for `/` and `/pricing` (Launch / Premium / AI + retainer / Care plans).
+- `public/llms.txt`, `public/pricing.md` (new Launch + Care sections, date bumped), `public/openapi.json` (v1.1.0).
+- `/growth`: `src/content/growth.ts` + `src/app/growth/page.tsx` — the $1,500/$2,500/$5,000 per-month plans, "No setup fee", $750 entry setup ($375/$375) and "$1,500 per month" founding offer are gone. The pricing section now shows the AI operations build ($5,000–$15,000+) and optional retainer ($750–$2,500/mo); the three plans stay as scope levels without prices; the HVAC inquiry setup is "Quoted on a free call", 50% / 50%; founding partners get "founding-partner pricing" (no number); FAQ "Is there a setup fee?" now answers with the build + optional retainer (three-month retainer minimum kept).
+- Quote calculator: `src/lib/quoteEstimate.ts`, `src/components/port/QuoteEstimator.tsx`, `src/app/developers/page.tsx`, `public/openapi.json` (`src/app/api/quote-estimate/route.ts` needed no change — it calls the shared function).
+
+**Count:** ~95 text claims rewritten (82 scripted literal replacements, each asserted to match exactly once/N times, + proxy 2, llms.txt 1, pricing.md 2, growth 8), plus the calculator/API logic.
+
+### Quote calculator / API
+- Simple website (site/refresh/forms, complexity `simple`, no AI) → `upfront: "Quoted on a free call"`, `upfrontLow/upfrontHigh: null`, `monthly: "$300–$700/mo"` (optional care). UI shows 7-day sprint / 50% to start / 50% on approval chips and a "Book the free call" CTA, plus "Rough range, not a quote".
+- Moderate/complex website → `"From $3,500"` (`upfrontLow: 3500`, `upfrontHigh: null`).
+- Any AI selection (`need: ai`, an AI employee, or `automation: true`) → `"$5,000–$15,000+"` (5000/15000) + `"$750–$2,500/mo"` optional retainer; for website + AI the note says the website part is quoted on the same call / starts at $3,500.
+- Urgency no longer changes the numbers (the model has no rush fee); it still adds "priority sprint"/"rush launch window" to `includes`. Employee-cost comparison figures (labor market, not Orbit prices) unchanged. Ranges now use an en dash.
+- **Response shape change (unavoidable):** `upfrontLow`/`upfrontHigh` are now `integer | null`. `openapi.json` updated (descriptions, `launchSite` example, version 1.1.0); `/developers` gained an "Example response" block computed from the same function the API uses.
+- Verified on `next start -p 3120`: 78/78 routes (live-routes.txt + `/form`) 200; `POST /api/quote-estimate` AI payload → 200 `$5,000–$15,000+` / `$750–$2,500/mo`; simple site → 200 `Quoted on a free call` / null / `$300–$700/mo`; medium → `From $3,500`; site + receptionist → AI range. `npm run lint`: 0 errors (1 warning in the untracked `prerender-expected.mjs`, not part of this change). `npm run build`: pass.
+- `scripts/port/check.mjs` expectations (verbatim old text, old JSON-LD, old estimator numbers, live markdown bodies) will now report differences on the changed pricing copy — intentional.
+
+### Titles / descriptions changed (old → new)
+- `/pricing` title (legacy table; the live /pricing page uses its own new metadata): "Website Design Pricing in NJ | Starting at $150 | Orbit Websites" → "Website Design Pricing in NJ | Orbit Websites".
+- `/quote` title: "Free Website Quote for NJ Local Businesses | Starting at $150 | Orbit Websites" → "Free Website Quote for NJ Local Businesses | Orbit Websites".
+- `/pricing` description (legacy table): "…Starter builds from $150–$400 + $100–$300/mo. Custom enterprise builds from $3,500…" → "…Launch builds quoted on a free call, premium builds from $3,500, AI systems $5,000–$15,000+, optional care $300–$700/mo…".
+- `/services` description (legacy table): dropped "Starting at $150.".
+- `/web-design-central-nj`: "Hand-coded sites starting at $150. Free live demo." → "Hand-coded sites with a free live demo."
+- 9 town + 7 industry pages: dropped "Starting at $150" (e.g. "…Starting at $150 — free demo." → "…Free demo."; "…searches. Starting at $150." → "…searches."). Rest of each description unchanged.
+- Blog `how-much-does-a-website-cost-for-a-local-business`: "A starter small-business website usually ranges from $150 to $400, with custom websites, AI operations systems, and monthly retainers priced by the work they replace." → "A launch small-business website is quoted on a free call, premium websites start at $3,500, and AI operations systems run $5,000–$15,000+, with retainers priced by the work they replace."
+- Blog `custom-website-cost-central-nj`: "A starter website for a Central New Jersey small business usually ranges from $150 to $400 and can move higher when design, integrations, or AI intake are more complex." → "A launch website for a Central New Jersey small business is quoted on a free call; premium builds start at $3,500 and AI intake runs $5,000–$15,000+ when design, integrations, or workflows are more complex."
+- No blog-post or landing-page `<title>` contained a price.
+
+### Remaining grep hits — all intentional
+- `$750–$2,500/mo` AI retainer — correct: `site.ts:188`, `blog.ts:138,143`, `proxy.ts:117`, `llms.txt:33`, `pricing.md:26` (and the other retainer mentions added by this sweep).
+- `blog.ts:884,888,895,899` — market SaaS pricing for off-the-shelf AI receptionists ($30–$150/mo, $200–$500 setup); Orbit's custom build is now stated separately.
+- `blog.ts:915` ($150–$300 higher job value), `936/940/947` ($150 lost per missed call), `1003` ($150 per lost lead) — lost-revenue statistics, not prices.
+- `blog.ts:1170,1181,1222,1227,1233` — regional market figures ("typically" $4,500–$12,000 custom sites, $150–$300/mo maintenance); 1233 now states Orbit's own model next to it. `blog.ts:1092` $30–$50/mo is framed as off-the-shelf; `1150` ("Investing $2,500–$5,000 in a custom site…") is a generic market ROI statement.
+- "starter" remains only as non-price wording: `blog.ts:274` (Wix "simple starter site"), `blog.ts:463` ("a focused starter site can give that buyer…"), `QuoteEstimator.tsx:103` ("a starter AI workflow" option text).
+- Untouched on purpose: "$300 template" (`blog.ts:150`, `landing.ts:232`), $35K–$54K labor, industry `avgJob` values, ROI/revenue examples.
+
+### Left for the owner (outside pricing)
+- `/web-design-central-nj` FAQ (`landing.ts:293`) still says "go live in under 48 hours" after demo approval; the new process says 7-day sprint. Timeline, not price — not changed.
+- `landing.ts` old FAQ "What does the monthly fee cover?" implies a required fee (care is optional); it has no number — not changed.
+
+### Screenshots (`shots/pricing/`, git-ignored)
+`quote-simple-1440.png`, `quote-simple-390.png`, `quote-simple-panel-1440.png`, `quote-simple-panel-390.png`, `quote-ai-{1440,390}.png` (+ panels), `blog-cost-1440.png`, `blog-cost-390.png`, `blog-cost-answer-1440.png`, `growth-{1440,390}.png`, `growth-pricing-{1440,390}.png`, `town-princeton-{1440,390}.png`, `developers-{1440,390}.png`. 12 full-page loads, zero console errors, no horizontal overflow. (The nav bar mid-page in full-page shots is the fixed header captured at the scroll position.)

@@ -20,7 +20,7 @@ const CARDS: Array<[string, string]> = [
 const FAQS: Array<[string, string]> = [
   [
     'How much does web design cost in Ewing, NJ?',
-    'A focused starter website for an Ewing business usually ranges from $150 to $400. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.',
+    'Launch builds for Ewing businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional care plans are $300–$700/mo.',
   ],
   [
     'Do you work with businesses near Ewing?',
@@ -43,7 +43,7 @@ export default function WebDesignEwingPage() {
             Web design for <span className="serif-accent text-accent">Ewing, NJ</span> local businesses.
           </>
         }
-        lead="Orbit Websites builds hand-coded websites and AI intake systems for Ewing Township businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter website builds usually range from $150 to $400, with AI intake upgrades starting around $5,000 when the workflow can prove ROI."
+        lead="Orbit Websites builds hand-coded websites and AI intake systems for Ewing Township businesses that need more calls, quote requests, bookings, and qualified leads from local search. Launch builds are quoted on a free call, premium builds start at $3,500, and AI intake upgrades run $5,000–$15,000+ when the workflow can prove ROI."
       >
         <HeroActions quoteHref="/quote?source=web-design-ewing-nj" />
       </PageHero>
@@ -56,8 +56,9 @@ export default function WebDesignEwingPage() {
       </Section>
 
       <DirectAnswer question="How much does web design cost in Ewing, NJ?">
-        A starter website for an Ewing, NJ local business usually ranges from $150 to $400 for a focused site. AI-powered lead intake, booking logic, routing, and proposal
-        workflows usually move the project into the $5,000 to $15,000 range, depending on integrations and workflow complexity.
+        A launch website for an Ewing, NJ local business is quoted on a free call after a quick look at your needs: a 7-day sprint, 50% to start and 50% on approval.
+        Premium builds start at $3,500. AI-powered lead intake, booking logic, routing, and proposal workflows run $5,000 to $15,000+, depending on integrations and
+        workflow complexity, and optional care plans are $300–$700/mo.
       </DirectAnswer>
 
       <LandingFaq label="[LOCAL FAQ]" heading="Questions Ewing businesses ask before hiring." items={FAQS} />

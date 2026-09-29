@@ -45,7 +45,8 @@ automation for Central New Jersey service businesses.
 
 Orbit Websites builds custom websites and AI operations systems for local
 businesses that need more calls, quote requests, bookings, and qualified
-leads. Starter website builds usually range from $150-$400.
+leads. Launch builds are quoted on a free call, premium builds start at
+$3,500, and AI operations systems run $5,000-$15,000+.
 
 ## Learn more
 
@@ -101,17 +102,24 @@ Full policy: ${ORIGIN}/privacy
 `,
   '/pricing': () => `# Pricing — Orbit Websites
 
-## Starter Website Range
-$150-$400. Best for local businesses that need a clean mobile site, clear
-service pages, and basic local SEO foundations.
+## Launch Build
+Quoted on a free call after a quick look at your needs. 7-day sprint, 50% to
+start and 50% on approval. Best for local businesses that need a clean mobile
+site, clear service pages, and basic local SEO foundations.
 
 ## Premium Website System Build
-Starts around $3,500. Custom design, conversion copy, and local SEO
-foundations for businesses that need calls, quote requests, and bookings.
+From $3,500. Custom design, conversion copy, and local SEO foundations for
+businesses that need calls, quote requests, and bookings.
 
 ## AI Operations Website Build
 Typically $5,000-$15,000+. For businesses with high-value or after-hours
-leads that need AI intake, routing, and booking automation.
+leads that need AI intake, routing, and booking automation. Optional
+retainer: $750-$2,500/mo, only when it replaces measurable admin labor or
+recovers high-intent leads.
+
+## Care Plans (optional)
+Month to month, only after launch: $300 Site Care, $500 Local Growth,
+$700 Growth Partner per month.
 
 Full pricing reference: ${ORIGIN}/pricing.md
 Estimate your own project: ${ORIGIN}/quote (or POST ${ORIGIN}/api/quote-estimate)

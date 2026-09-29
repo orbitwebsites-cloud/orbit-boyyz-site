@@ -5,6 +5,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Section } from '@/components/port/Blocks'
 import { legacyJsonLd } from '@/lib/legacy-seo'
 import { JsonLd, legacyMetadata } from '@/lib/legacy-meta'
+import { calculateQuoteEstimate, type QuoteEstimateInput } from '@/lib/quoteEstimate'
 
 export const metadata = legacyMetadata('/developers')
 
@@ -12,6 +13,10 @@ export const metadata = legacyMetadata('/developers')
 const curlExample = `curl -X POST https://orbitboyzz.me/api/quote-estimate \\
   -H "Content-Type: application/json" \\
   -d '{"need":"ai","complexity":"complex","urgency":"urgent","employee":"dispatcher","automation":true}'`
+
+// Computed with the same function the API uses, so the example can never drift from it.
+const exampleInput: QuoteEstimateInput = { need: 'ai', complexity: 'complex', urgency: 'urgent', employee: 'dispatcher', automation: true }
+const responseExample = JSON.stringify({ input: exampleInput, estimate: calculateQuoteEstimate(exampleInput) }, null, 2)
 
 const errorExample = `{
   "error": {
@@ -94,6 +99,16 @@ export default function DevelopersPage() {
       <Section label="Example request">
         <SectionLabel>[EXAMPLE REQUEST]</SectionLabel>
         <Pre>{curlExample}</Pre>
+      </Section>
+
+      <Section label="Example response">
+        <SectionLabel>[EXAMPLE RESPONSE]</SectionLabel>
+        <p className="mt-4 max-w-[72ch] leading-relaxed text-muted">
+          Figures are a rough range, not a quote. For a simple website with no AI selections, <Code>upfront</Code> is <Code>&quot;Quoted on a free call&quot;</Code> and{' '}
+          <Code>upfrontLow</Code> / <Code>upfrontHigh</Code> are <Code>null</Code>; moderate or complex websites return <Code>&quot;From $3,500&quot;</Code>. The monthly
+          figure is an optional care plan ($300–$700/mo) or, for AI builds, an optional retainer ($750–$2,500/mo).
+        </p>
+        <Pre>{responseExample}</Pre>
       </Section>
 
       <Section label="Error format">

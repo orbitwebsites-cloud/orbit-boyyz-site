@@ -75,105 +75,105 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   '/services': {
     title: 'Web Design Services for Local Businesses in NJ | Orbit Websites',
     description:
-      'New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Starting at $150. Free demo call — no commitment.',
+      'New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Free demo call — no commitment.',
   },
   '/pricing': {
-    title: 'Website Design Pricing in NJ | Starting at $150 | Orbit Websites',
+    title: 'Website Design Pricing in NJ | Orbit Websites',
     description:
-      'Transparent website pricing for local businesses. Starter builds from $150–$400 + $100–$300/mo. Custom enterprise builds from $3,500. See what you get before you pay.',
+      'Transparent website pricing for local businesses. Launch builds quoted on a free call, premium builds from $3,500, AI systems $5,000–$15,000+, optional care $300–$700/mo. See what you get before you pay.',
   },
   '/web-design-central-nj': {
     title: 'Web Design Agency Central NJ | Local Business Websites | Orbit Websites',
     description:
-      'Central NJ web design agency serving Plainsboro, Princeton, Ewing, Hamilton, Trenton, and surrounding towns. Hand-coded sites starting at $150. Free live demo.',
+      'Central NJ web design agency serving Plainsboro, Princeton, Ewing, Hamilton, Trenton, and surrounding towns. Hand-coded sites with a free live demo.',
   },
   '/web-design-ewing-nj': {
     title: 'Web Design Ewing NJ | Fast, Hand-Coded Local Business Websites',
     description:
-      'Website design for local businesses in Ewing, NJ. Hand-coded Next.js, mobile-first, built to rank in Ewing Township searches. Starting at $150 — free demo before you pay.',
+      'Website design for local businesses in Ewing, NJ. Hand-coded Next.js, mobile-first, built to rank in Ewing Township searches. Free demo before you pay.',
   },
   '/web-design-plainsboro-nj': {
     title: 'Web Design Plainsboro NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Plainsboro, NJ. Fast, hand-coded, mobile-first sites that rank in Plainsboro and Middlesex County searches. Starting at $150.',
+      'Website design for local businesses in Plainsboro, NJ. Fast, hand-coded, mobile-first sites that rank in Plainsboro and Middlesex County searches.',
   },
   '/web-design-west-windsor-nj': {
     title: 'Web Design West Windsor NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in West Windsor Township, NJ. Hand-coded, fast, and built to bring in calls and bookings. Starting at $150 — free demo.',
+      'Website design for local businesses in West Windsor Township, NJ. Hand-coded, fast, and built to bring in calls and bookings. Free demo.',
   },
   '/web-design-princeton-nj': {
     title: 'Web Design Princeton NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Princeton, NJ. Hand-coded Next.js sites that load fast and rank in Princeton searches. Starting at $150 — free live demo.',
+      'Website design for local businesses in Princeton, NJ. Hand-coded Next.js sites that load fast and rank in Princeton searches. Free live demo.',
   },
   '/web-design-hamilton-nj': {
     title: 'Web Design Hamilton NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Hamilton Township, NJ. Fast, hand-coded, mobile-first. Built to rank in Hamilton and Mercer County searches. Starting at $150.',
+      'Website design for local businesses in Hamilton Township, NJ. Fast, hand-coded, mobile-first. Built to rank in Hamilton and Mercer County searches.',
   },
   '/web-design-lawrence-nj': {
     title: 'Web Design Lawrence Township NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Lawrence Township, NJ. Hand-coded, blazing-fast, built to generate calls and bookings from local search. Starting at $150.',
+      'Website design for local businesses in Lawrence Township, NJ. Hand-coded, blazing-fast, built to generate calls and bookings from local search.',
   },
   '/web-design-trenton-nj': {
     title: 'Web Design Trenton NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Trenton, NJ. Hand-coded Next.js sites that rank in Trenton and Mercer County searches. Starting at $150 — free demo call.',
+      'Website design for local businesses in Trenton, NJ. Hand-coded Next.js sites that rank in Trenton and Mercer County searches. Free demo call.',
   },
   '/web-design-robbinsville-nj': {
     title: 'Web Design Robbinsville NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Robbinsville, NJ. Fast, hand-coded, mobile-first sites built to rank in Robbinsville and Mercer County searches. Starting at $150.',
+      'Website design for local businesses in Robbinsville, NJ. Fast, hand-coded, mobile-first sites built to rank in Robbinsville and Mercer County searches.',
   },
   '/web-design-bordentown-nj': {
     title: 'Web Design Bordentown NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in Bordentown, NJ. Hand-coded Next.js sites that rank locally and convert visitors into calls. Starting at $150 — free demo.',
+      'Website design for local businesses in Bordentown, NJ. Hand-coded Next.js sites that rank locally and convert visitors into calls. Free demo.',
   },
   '/web-design-east-windsor-nj': {
     title: 'Web Design East Windsor NJ | Local Business Websites | Orbit Websites',
     description:
-      'Website design for local businesses in East Windsor, NJ. Fast, hand-coded, mobile-first sites built to generate calls and bookings from local search. Starting at $150.',
+      'Website design for local businesses in East Windsor, NJ. Fast, hand-coded, mobile-first sites built to generate calls and bookings from local search.',
   },
   '/website-design-for-hvac-companies-nj': {
     title: 'HVAC Website Design NJ | Capture Emergency Calls 24/7 | Orbit Websites',
     description:
-      'Website design for HVAC companies in New Jersey. Capture emergency service calls after hours, rank in local search, and never lose a hot lead. Starting at $150 — free demo.',
+      'Website design for HVAC companies in New Jersey. Capture emergency service calls after hours, rank in local search, and never lose a hot lead. Free demo.',
   },
   '/website-design-for-plumbers-nj': {
     title: 'Plumber Website Design NJ | Get More Emergency Jobs | Orbit Websites',
     description:
-      'Website design for plumbers in New Jersey. Capture emergency calls overnight, rank in Mercer County searches, and get more booked jobs. Starting at $150 — free demo.',
+      'Website design for plumbers in New Jersey. Capture emergency calls overnight, rank in Mercer County searches, and get more booked jobs. Free demo.',
   },
   '/website-design-for-electricians-nj': {
     title: 'Electrician Website Design NJ | Rank Locally & Get More Calls | Orbit Websites',
     description:
-      'Website design for electricians in New Jersey. Hand-coded, fast, and built to rank in local searches. Residential and commercial lead capture. Starting at $150.',
+      'Website design for electricians in New Jersey. Hand-coded, fast, and built to rank in local searches. Residential and commercial lead capture.',
   },
   '/website-design-for-landscaping-companies-nj': {
     title: 'Landscaping Company Website Design NJ | Get More Contracts | Orbit Websites',
     description:
-      'Website design for landscaping companies in New Jersey. Capture seasonal and annual contract leads, rank in local search, and grow your client base. Starting at $150.',
+      'Website design for landscaping companies in New Jersey. Capture seasonal and annual contract leads, rank in local search, and grow your client base.',
   },
   '/website-design-for-dental-practices-nj': {
     title: 'Dental Website Design NJ | Attract New Patients | Orbit Websites',
     description:
-      'Website design for dental practices in New Jersey. Capture new patient requests, show insurance info, and rank in local searches. Starting at $150 — free demo.',
+      'Website design for dental practices in New Jersey. Capture new patient requests, show insurance info, and rank in local searches. Free demo.',
   },
   '/website-design-for-restaurants-nj': {
     title: 'Restaurant Website Design NJ | Reservations, Menus & Catering | Orbit Websites',
     description:
-      'Website design for restaurants, cafes, and caterers in New Jersey. Online menus, reservation links, catering inquiry forms, and local SEO. Starting at $150 — free demo.',
+      'Website design for restaurants, cafes, and caterers in New Jersey. Online menus, reservation links, catering inquiry forms, and local SEO. Free demo.',
   },
   '/website-design-for-clinics-nj': {
     title: 'Clinic & Med Spa Website Design NJ | Book More Patients | Orbit Websites',
     description:
-      'Website design for clinics and med spas in New Jersey. Capture appointment requests, showcase services, and rank in local searches. Starting at $150 — free demo.',
+      'Website design for clinics and med spas in New Jersey. Capture appointment requests, showcase services, and rank in local searches. Free demo.',
   },
   '/quote': {
-    title: 'Free Website Quote for NJ Local Businesses | Starting at $150 | Orbit Websites',
+    title: 'Free Website Quote for NJ Local Businesses | Orbit Websites',
     description:
       'Get a rough price range for your website in 60 seconds. Answer a few questions about your business and we\'ll show you what a build would cost — no commitment.',
   },
@@ -272,36 +272,61 @@ export const organization = {
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Starter Website Build',
-        description: 'Hand-coded Next.js website for local businesses. Mobile-first, fast, with booking and quote forms built in.',
-        price: '150',
+        name: 'Launch Website Build',
+        description:
+          'Hand-coded Next.js website for local businesses. Mobile-first, fast, with booking and quote forms built in. Quoted on a free call; 7-day sprint, 50% to start and 50% on approval.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Premium Website Build',
+        description: 'Premium hand-coded website system with deeper strategy and copy, service and area pages, structured data, analytics, and booking and lead flows.',
+        price: '3500',
         priceCurrency: 'USD',
         priceSpecification: {
           '@type': 'PriceSpecification',
-          minPrice: '150',
-          maxPrice: '400',
+          minPrice: '3500',
           priceCurrency: 'USD',
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: 'AI Operations Build',
+        description: 'Advanced custom systems — automated intake, proposal generation, CRM integrations, and AI-powered workflows. Typically $5,000–$15,000+.',
+        price: '5000',
+        priceCurrency: 'USD',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          minPrice: '5000',
+          priceCurrency: 'USD',
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: 'AI Operations Retainer',
+        description: 'Optional monthly retainer for workflow monitoring, maintenance and improvements, when it replaces measurable admin labor or recovers high-intent leads.',
+        price: '750',
+        priceCurrency: 'USD',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          minPrice: '750',
+          maxPrice: '2500',
+          priceCurrency: 'USD',
+          unitCode: 'MON',
         },
       },
       {
         '@type': 'Offer',
         name: 'Monthly Website Care Plan',
-        description: 'Global hosting, security updates, and unlimited text and photo changes.',
-        price: '100',
+        description: 'Optional, month-to-month after launch: Site Care $300, Local Growth $500, Growth Partner $700 per month. Managed hosting, security, backups and content updates.',
+        price: '300',
         priceCurrency: 'USD',
         priceSpecification: {
-          '@type': 'PriceSpecification',
-          minPrice: '100',
-          maxPrice: '300',
+          '@type': 'UnitPriceSpecification',
+          minPrice: '300',
+          maxPrice: '700',
           priceCurrency: 'USD',
+          unitCode: 'MON',
         },
-      },
-      {
-        '@type': 'Offer',
-        name: 'Enterprise Custom Build',
-        description: 'Advanced custom systems — automated intake, proposal generation, CRM integrations, and AI-powered workflows.',
-        price: '3500',
-        priceCurrency: 'USD',
       },
     ],
   },
@@ -351,7 +376,7 @@ const pricingFaqPage = {
       name: 'How much does a custom website cost for a local business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A starter website for a local business typically ranges from $150 to $400, while broader custom websites often range from $3,500 to $15,000 based on design, features, and AI automation. Orbit Boyzz starts with a lower entry range and around $5,000 when AI intake is included.',
+        text: 'At Orbit Boyzz, a launch website is quoted on a free call after a quick look at your needs, premium websites start at $3,500, and AI operations systems run $5,000–$15,000+ based on design, features, and AI automation. Optional care plans are $300–$700/mo.',
       },
     },
     {
@@ -367,7 +392,7 @@ const pricingFaqPage = {
       name: 'What factors affect the cost of an AI website for a small business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. Starter AI intake builds begin around $5,000, while fully custom operations systems can exceed $15,000.',
+        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. AI intake builds start at $5,000, while fully custom operations systems can exceed $15,000.',
       },
     },
     {
@@ -375,7 +400,7 @@ const pricingFaqPage = {
       name: 'Can a small business afford an AI website?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. With phased builds starting in the low thousands, many small businesses can start with a focused site and add AI intake once lead volume justifies the upgrade.',
+        text: 'Yes. Many small businesses start with a focused launch site, quoted on a free call, and add AI intake ($5,000–$15,000+) once lead volume justifies the upgrade.',
       },
     },
   ],
@@ -526,7 +551,7 @@ function townLandingFaqGraph(route: string, page: { town: string; county: string
   return faqGraph(route, 'local-faq', [
     [
       `How much does web design cost in ${page.town}?`,
-      `A focused starter website for a ${page.town} business usually ranges from $150 to $400. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
+      `Launch builds for ${page.town} businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
     ],
     [
       `Do you work with businesses near ${page.town}?`,
@@ -575,7 +600,7 @@ function industryLandingFaqGraph(route: string, page: { short: string; jobType: 
   return faqGraph(route, 'industry-faq', [
     [
       `How much does a website cost for a ${lower} company in NJ?`,
-      `A focused starter site for a ${lower} company usually ranges from $150 to $400. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
+      `A focused launch site for a ${lower} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
     ],
     [
       `What should a ${lower} website include?`,
@@ -674,7 +699,7 @@ export function graphFor(route: string) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Ewing Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Ewing Township, NJ. Launch builds are quoted on a free call, premium builds start at $3,500, and AI lead intake builds run $5,000–$15,000+.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Ewing, NJ'))
   }
@@ -690,7 +715,7 @@ export function graphFor(route: string) {
         { '@type': 'AdministrativeArea', name: 'Middlesex County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Plainsboro, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Plainsboro, NJ. Launch builds are quoted on a free call, premium builds start at $3,500, and AI lead intake builds run $5,000–$15,000+.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Plainsboro, NJ'))
   }
@@ -706,7 +731,7 @@ export function graphFor(route: string) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in West Windsor Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in West Windsor Township, NJ. Launch builds are quoted on a free call, premium builds start at $3,500, and AI lead intake builds run $5,000–$15,000+.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in West Windsor Township, NJ'))
   }
@@ -722,7 +747,7 @@ export function graphFor(route: string) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Princeton, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Princeton, NJ. Launch builds are quoted on a free call, premium builds start at $3,500, and AI lead intake builds run $5,000–$15,000+.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Princeton, NJ'))
   }
@@ -738,7 +763,7 @@ export function graphFor(route: string) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Hamilton Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Hamilton Township, NJ. Launch builds are quoted on a free call, premium builds start at $3,500, and AI lead intake builds run $5,000–$15,000+.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Hamilton, NJ'))
   }
@@ -754,7 +779,7 @@ export function graphFor(route: string) {
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:
-        'Custom website design and AI operations for local businesses in Lawrence Township, NJ. Starter sites usually range from $150-$400, with AI lead intake builds starting around $5,000.',
+        'Custom website design and AI operations for local businesses in Lawrence Township, NJ. Launch builds are quoted on a free call, premium builds start at $3,500, and AI lead intake builds run $5,000–$15,000+.',
     })
     graph.push(breadcrumbGraph(route, 'Web Design in Lawrence Township, NJ'))
   }

@@ -12,7 +12,7 @@ export function townLandingFaqs(page: TownPage): Faq[] {
   return [
     [
       `How much does web design cost in ${page.town}?`,
-      `A focused starter website for a ${page.town} business usually ranges from $150 to $400. AI intake, booking logic, quote routing, and deeper custom design can move the project into the $5,000 to $15,000 range.`,
+      `Launch builds for ${page.town} businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
     ],
     [
       `Do you work with businesses near ${page.town}?`,
@@ -31,7 +31,7 @@ export function industryLandingFaqs(page: IndustryPage): Faq[] {
   return [
     [
       `How much does a website cost for a ${lower} company in NJ?`,
-      `A focused starter site for a ${lower} company usually ranges from $150 to $400. AI intake, routing, booking, proposal logic, and deeper custom workflows usually move the project into the $5,000 to $15,000 range.`,
+      `A focused launch site for a ${lower} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
     ],
     [
       `What should a ${lower} website include?`,
@@ -77,7 +77,7 @@ export function TownLanding({ page }: { page: TownPage }) {
             Web design for <span className="serif-accent text-accent">{page.town}</span> local businesses.
           </>
         }
-        lead={`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Starter websites usually range from $150 to $400, with AI intake builds starting around $5,000 when faster response can pay for itself.`}
+        lead={`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Launch builds are quoted on a free call, premium builds start at $3,500, and AI intake builds run $5,000–$15,000+ when faster response can pay for itself.`}
       >
         <HeroActions quoteHref={`/quote?source=${encodeURIComponent(page.path)}`} />
       </PageHero>
@@ -90,8 +90,9 @@ export function TownLanding({ page }: { page: TownPage }) {
       </Section>
 
       <DirectAnswer question={`How much does web design cost in ${page.town}?`}>
-        A starter website for a {page.town} local business usually ranges from $150 to $400 for a focused site. AI-powered lead intake, booking logic, routing, and
-        proposal workflows usually move the project into the $5,000 to $15,000 range, depending on integrations and workflow complexity.
+        A launch website for a {page.town} local business is quoted on a free call after a quick look at your needs: a 7-day sprint, 50% to start and 50% on approval.
+        Premium builds start at $3,500. AI-powered lead intake, booking logic, routing, and proposal workflows run $5,000 to $15,000+, depending on integrations and
+        workflow complexity, and optional care plans are $300–$700/mo.
       </DirectAnswer>
 
       <LandingFaq label="[LOCAL FAQ]" heading={`Questions ${page.town} businesses ask before hiring.`} items={townLandingFaqs(page)} />
@@ -119,7 +120,7 @@ export function IndustryLanding({ page }: { page: IndustryPage }) {
             Web design for <span className="serif-accent text-accent">{page.industryShort}</span> companies in NJ.
           </>
         }
-        lead={`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Starter builds usually range from $150 to $400, with AI-powered lead intake starting around $5,000 when faster response can pay for itself.`}
+        lead={`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Launch builds are quoted on a free call, premium builds start at $3,500, and AI-powered lead intake runs $5,000–$15,000+ when faster response can pay for itself.`}
       >
         <HeroActions quoteHref={`/quote?source=${encodeURIComponent(page.path)}`} />
       </PageHero>
@@ -145,8 +146,8 @@ export function IndustryLanding({ page }: { page: IndustryPage }) {
           </>
         }
       >
-        A starter site for a {lower} company typically ranges from $150 to $400 for a focused site. Projects with AI intake, job-type routing, emergency alert logic, or
-        proposal automation usually run $5,000 to $15,000 depending on workflow complexity. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of
+        A launch site for a {lower} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. Projects with AI intake,
+        job-type routing, emergency alert logic, or proposal automation run $5,000 to $15,000+ depending on workflow complexity, and optional care plans are $300–$700/mo. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of
         jobs.
       </DirectAnswer>
 

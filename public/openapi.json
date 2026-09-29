@@ -4,7 +4,7 @@
     "title": "OrbitBoyzz / Orbit Websites API",
     "summary": "Public read-only API for the OrbitBoyzz (Orbit Websites) marketing site.",
     "description": "Endpoints for programmatically requesting a project price range and checking service health. No authentication is required. Human-readable docs live at https://orbitboyzz.me/developers.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "contact": {
       "name": "Orbit Websites",
       "email": "orbitboyzz@gmail.com",
@@ -26,7 +26,7 @@
       "post": {
         "operationId": "createQuoteEstimate",
         "summary": "Estimate a website project price range",
-        "description": "Returns an upfront build range, a monthly care/ops range, and (when relevant) an AI employee monthly cost range, based on the same logic used by the /quote page's project range estimator.",
+        "description": "Returns a rough upfront build figure (not a quote), an optional monthly care plan or AI retainer range, and (when relevant) an AI employee monthly cost range, based on the same logic used by the /quote page's project range estimator. Pricing model: a simple (launch-level) website has no published price and is quoted on a free call (upfront = \"Quoted on a free call\", upfrontLow/upfrontHigh = null; 7-day sprint, 50% to start and 50% on approval); a moderate or complex website is a premium build from $3,500 (upfrontLow = 3500, upfrontHigh = null); any AI selection (need = ai, an AI employee, or automation = true) is an AI operations build of $5,000–$15,000+ with an optional $750–$2,500/mo retainer; website care plans are optional at $300–$700/mo.",
         "tags": ["quote"],
         "requestBody": {
           "required": true,
@@ -38,8 +38,8 @@
                   "summary": "AI intake build, complex, urgent",
                   "value": { "need": "ai", "complexity": "complex", "urgency": "urgent", "employee": "dispatcher", "automation": true }
                 },
-                "starterSite": {
-                  "summary": "Simple starter website",
+                "launchSite": {
+                  "summary": "Simple launch website (quoted on a free call)",
                   "value": { "need": "site", "complexity": "simple", "urgency": "normal", "employee": "none", "automation": false }
                 }
               }
@@ -118,7 +118,7 @@
           },
           "automation": {
             "type": "boolean",
-            "description": "Whether to add a starter automation layer on top of a non-AI build.",
+            "description": "Whether to add an automation layer (follow-up, routing, booking logic, or an AI workflow) on top of a non-AI build. Priced as an AI operations build.",
             "default": false
           }
         },
@@ -131,10 +131,10 @@
           "estimate": {
             "type": "object",
             "properties": {
-              "upfront": { "type": "string", "description": "Formatted upfront build range, e.g. \"$150-$400\"." },
-              "upfrontLow": { "type": "integer" },
-              "upfrontHigh": { "type": "integer" },
-              "monthly": { "type": "string", "description": "Formatted monthly care/ops range, e.g. \"$100-$300/mo\"." },
+              "upfront": { "type": "string", "description": "Formatted upfront build figure: \"Quoted on a free call\" (launch build), \"From $3,500\" (premium build) or \"$5,000–$15,000+\" (AI operations build)." },
+              "upfrontLow": { "type": ["integer", "null"], "description": "Lowest published upfront figure in USD, or null when the build is quoted on a free call." },
+              "upfrontHigh": { "type": ["integer", "null"], "description": "Typical upper upfront figure in USD (15000 for AI builds, which can run higher), or null when there is no published upper figure." },
+              "monthly": { "type": "string", "description": "Formatted optional monthly range: \"$300–$700/mo\" (website care plans) or \"$750–$2,500/mo\" (AI operations retainer)." },
               "monthlyLow": { "type": "integer" },
               "monthlyHigh": { "type": "integer" },
               "employeeCost": { "type": "string", "description": "Formatted AI employee monthly cost range, or \"N/A\"." },

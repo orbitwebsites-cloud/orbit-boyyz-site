@@ -318,7 +318,7 @@ export const legacyFaqs: Array<[question: string, answer: string]> = [
   ],
   [
     "What is the Enterprise Custom Build?",
-    "The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Starter websites begin at $150–$400 with a $100–$300/mo care plan."
+    "The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Launch websites are quoted on a free call, AI operations systems run $5,000–$15,000+, and optional care plans are $300–$700/mo."
   ]
 ]
 

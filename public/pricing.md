@@ -1,16 +1,17 @@
 # Pricing - Orbit Websites
 
-Last updated: June 13, 2026
+Last updated: September 28, 2026
 
-## Starter Website Range
+## Launch Build
 
-- Price: Usually $150-$400 for focused starter websites and refreshes.
+- Price: No published price. Quoted on a free call after a quick look at your needs.
+- Terms: 7-day sprint; 50% to start, 50% when you approve the finished site.
 - Best for: Local businesses that need a clean mobile site, clear service pages, contact paths, and basic local SEO foundations without a large automation build.
-- Includes: Strategy call, mobile-first build, basic conversion structure, service copy cleanup, contact links, launch support, and a path to upgrade into booking or AI intake later.
+- Includes: Strategy call, custom hand-coded mobile-first build, basic conversion structure, service copy cleanup, contact links, launch support, and a path to upgrade into booking or AI intake later.
 
 ## Premium Website System Build
 
-- Price: Starts around $3,500 for focused local business sites.
+- Price: From $3,500.
 - Best for: Local businesses that need a website to drive calls, quote requests, bookings, and customer trust.
 - Includes: Custom design, mobile-first layout, conversion copy, service structure, contact paths, local SEO foundations, and launch support.
 
@@ -25,6 +26,12 @@ Last updated: June 13, 2026
 - Price: $750-$2,500 per month when there is measurable labor or revenue impact.
 - Best for: Businesses replacing administrative overhead or recovering high-intent leads.
 - Includes: Workflow monitoring, iteration, reporting, automation maintenance, routing improvements, and conversion optimization.
+
+## Care Plans (optional)
+
+- Price: $300/mo Site Care, $500/mo Local Growth, $700/mo Growth Partner.
+- Terms: Month to month; starts only after launch.
+- Includes: Managed hosting, security and backups, and routine content updates (Site Care); local SEO maintenance and monthly improvements (Local Growth); ongoing SEO, content and priority support (Growth Partner).
 
 ## Business Case
 
