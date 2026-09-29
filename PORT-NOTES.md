@@ -49,7 +49,7 @@ Contract: the 77 URLs in the live sitemap (`live-routes.txt`) + `/form`. All exi
 
 ## Could not port 1:1 / open items
 
-1. **`Vary: Accept` on HTML pages under `next start`.** The proxy sets `Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept, Accept-Encoding`, but Next 16's app-page renderer overwrites `Vary` (`res.setHeader('Vary', …)` in `app-page-runtime.js`) for prerendered pages when self-hosted. Markdown responses and `/api/*` do carry `Accept, Accept-Encoding`. Verify the header on the Vercel preview (see results section); if Vercel also drops it, the options are a Vercel-level header rule or accepting it (markdown is only served when explicitly requested).
+1. **`Vary: Accept` on HTML pages under `next start`.** The proxy sets `Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept, Accept-Encoding`, but Next 16's app-page renderer overwrites `Vary` (`res.setHeader('Vary', …)` in `app-page-runtime.js`) for prerendered pages when self-hosted. Markdown responses and `/api/*` do carry `Accept, Accept-Encoding`. Could not verify on the Vercel preview: it is behind Vercel Authentication (302 to login for unauthenticated requests). Check with `curl -sI -H "Accept: text/html" <preview>/blog` while logged in / with a bypass token; if Vercel also drops it, the options are a Vercel-level header rule or accepting it (markdown is only served when explicitly requested).
 2. **Quote estimator numbers: old source ≠ current production.** Ported logic is the old repo HEAD (`be7b953`): new website = **$750–$750, $0/mo**; AI = $5,000–$15,000 + **$1,500–$2,500/mo**. The live production API/page still returns an older build ($150–$400 + $100–$300/mo; AI $750+/mo). The page copy/metadata all match live; only these computed numbers differ. Owner should confirm which pricing the estimator should show.
 3. `/api/<unknown>` message: live says `No API endpoint exists at /api/nope?...notfound=nope.` (a Vercel catch-all artifact); new says `…at /api/nope.` Same status, code and hint.
 4. The old `BlogPost` component also injected duplicate in-body `BlogPosting`/`FAQPage` scripts; only the canonical prerender graph is emitted now (one JSON-LD block per page, identical to the old head block).
@@ -83,6 +83,10 @@ Descriptions differ too. These pages were left as they are per instructions (the
 - API: 11/11 PASS — `POST /api/quote-estimate` with the Developers curl example → 200 and equals the old source calculation; defaults; mixed inputs; bad `need` → 400 (same body as live); GET → 405 + `Allow: POST`; `GET /api/health` → 200 `{status:"ok",service:"orbitboyzz-site",time}`; POST health → 405; `GET /api/nope` → 404 JSON; lead-form GET → 405, invalid bodies → 400 (identical to live).
 - Markdown: `Accept: text/markdown` on `/`, `/pricing`, `/developers` → `text/markdown`, body identical to live; browser Accept stays HTML.
 - **1 FAIL (known, item 1 above):** `Vary` on prerendered HTML pages lacks `Accept` under `next start`.
+
+## Preview deployment
+
+Pushed `port-old-pages` @ `d8b7943` → Vercel Preview deployment 6723984132, GitHub status **success**: https://orbitboyzz-site-alqfi45ie-orbitboyzz-4697s-projects.vercel.app (protected by Vercel Authentication). Production (`main`) untouched.
 
 ## Browser check (`scripts/port/port-shots.mjs`, puppeteer-core + Chrome, prefers-reduced-motion: no-preference)
 
