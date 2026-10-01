@@ -42,7 +42,7 @@ export function QuoteEstimator() {
   const selectedEmployee = quoteOptions.employee.find(([value]) => value === employee)?.[1] ?? 'Not sure yet'
   const quoteMailto = `mailto:${site.email}?subject=${encodeURIComponent(`Orbit project range: ${selectedNeed}`)}&body=${encodeURIComponent(
     [
-      'Hi Orbit Boyzz,',
+      'Hi Orbit Websites,',
       '',
       'I used the project range estimator and want to talk about this build.',
       '',

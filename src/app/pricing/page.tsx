@@ -7,12 +7,12 @@ import { PricingTiers } from '@/components/ui/PricingTiers'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { TiltCard } from '@/components/ui/TiltCard'
 import { cn } from '@/lib/cn'
-import { pageMeta } from '@/lib/seo'
+import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'Pricing — Launch builds, premium sites from $3,500 & AI operations',
   description:
-    'Transparent website pricing for Central NJ businesses: 7-day launch builds (50% to start), premium Next.js builds from $3,500, AI operations from $5,000, and optional care plans from $300/mo.',
+    'Website pricing for Central NJ businesses: launch builds quoted on a call, premium builds from $3,500, AI operations from $5,000, monthly plans from $300.',
   path: '/pricing',
 })
 
@@ -50,6 +50,8 @@ function CellMark({ v }: { v: Cell }) {
 export default function PricingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(pageSchema('/pricing'))} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema(PRICING_FAQ, '/pricing'))} />
       <PageHero
         label="[PRICING]"
         title={

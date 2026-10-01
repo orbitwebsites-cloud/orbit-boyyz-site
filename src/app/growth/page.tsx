@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
+import Link from 'next/link'
 import { growthEntryOffer, growthFaqs, growthServices, growthTiers } from '@/content/growth'
-import { site } from '@/content/site'
+import { carePlans, site } from '@/content/site'
 import { Accordion } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -63,6 +64,8 @@ function MetricCard() {
     </div>
   )
 }
+
+const leadsPlan = carePlans.find((plan) => plan.name === 'Website + Leads Plan') ?? carePlans[1]
 
 export default function GrowthPage() {
   return (
@@ -252,6 +255,15 @@ export default function GrowthPage() {
             <dd className="mt-3 text-sm text-muted">Only when it replaces measurable admin labor or recovers high-intent leads.</dd>
           </div>
         </dl>
+        <p data-reveal className="mt-4 rounded-[var(--radius)] border border-line px-6 py-5 text-sm text-muted md:px-7">
+          <span className="text-fg">
+            Not ready for a full AI build? The {leadsPlan.name} is {leadsPlan.price}/mo
+          </span>{' '}
+          — for established home-service shops that want steady local SEO and site improvements aimed at more calls and quote requests.{' '}
+          <Link href="/pricing" className="link-u text-fg">
+            See all pricing
+          </Link>
+        </p>
         <div className="mt-4 grid gap-4 lg:grid-cols-3">
           {growthTiers.map((tier) => (
             <article
@@ -349,7 +361,7 @@ export default function GrowthPage() {
               </a>{' '}
               or email{' '}
               <a href={`mailto:${site.email}`} className="link-u text-fg">
-                orbitboyzz@gmail.com
+                alex@orbitboyzz.me
               </a>
               .
             </p>

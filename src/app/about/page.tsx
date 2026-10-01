@@ -3,12 +3,12 @@ import { CtaBand } from '@/components/ui/CtaBand'
 import { OrbitSystem } from '@/components/ui/OrbitSystem'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { pageMeta } from '@/lib/seo'
+import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'About — A Plainsboro, NJ web design & AI operations studio',
   description:
-    'Orbit Websites (OrbitBoyzz) is a small Plainsboro, NJ studio that hand-codes fast, conversion-first websites on Next.js, Tailwind and Vercel for Central New Jersey businesses.',
+    'Orbit Websites (OrbitBoyzz) is a small Plainsboro, NJ studio hand-coding fast, conversion-first websites for Central New Jersey businesses.',
   path: '/about',
 })
 
@@ -23,6 +23,7 @@ const PRINCIPLES = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(pageSchema('/about'))} />
       <PageHero label={about.label} title={about.title} lead={site.tagline} />
 
       <section aria-label="Our story" className="container-x grid gap-12 pb-16 md:grid-cols-12 md:pb-24">

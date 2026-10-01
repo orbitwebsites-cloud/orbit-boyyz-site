@@ -1,4 +1,4 @@
-import type { IndustryPage, TownPage } from '@/content/landing'
+import { townLandingFaqs, type IndustryPage, type TownPage } from '@/content/landing'
 import { site } from '@/content/site'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
@@ -6,24 +6,6 @@ import { PageHero } from '@/components/ui/PageHero'
 import { ArrowLink, DirectAnswer, LandingFaq, LocalPagesGrid, NumberedCards, Section, SectionTitle } from './Blocks'
 
 type Faq = [string, string]
-
-/** Old townLandingFaqs() — verbatim. */
-export function townLandingFaqs(page: TownPage): Faq[] {
-  return [
-    [
-      `How much does web design cost in ${page.town}?`,
-      `Launch builds for ${page.town} businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
-    ],
-    [
-      `Do you work with businesses near ${page.town}?`,
-      `Yes. Orbit Websites serves ${page.town}, ${page.county}, and nearby areas including ${page.nearby}. Pages should only target towns where the business actually works.`,
-    ],
-    [
-      'What makes a local business website convert?',
-      'The highest-converting local websites make the next step obvious: call, request a quote, book a visit, or start intake. The page also needs clear services, proof, service-area context, fast mobile performance, and pricing or budget guidance.',
-    ],
-  ]
-}
 
 /** Old industryLandingFaqs() — verbatim. */
 export function industryLandingFaqs(page: IndustryPage): Faq[] {
@@ -62,10 +44,9 @@ export function HeroActions({ quoteHref }: { quoteHref: string }) {
 
 export function TownLanding({ page }: { page: TownPage }) {
   const cards: Array<[string, string]> = [
-    ['Local SEO structure', `Service, town, FAQ, and proof sections help search engines understand that your business serves ${page.town}, ${page.county}, and nearby areas like ${page.nearby}.`],
-    ['Lead-focused pages', 'The site is structured around calls, quote requests, booking paths, and forms instead of generic brochure sections.'],
-    ['Fast mobile performance', 'Hand-coded React and prerendered pages keep the experience lightweight for local buyers comparing options from a phone.'],
-    ['AI intake when it makes sense', 'AI qualification, routing, and proposal workflows are added when lead value and response speed justify the investment.'],
+    ...page.local,
+    ['Service-area structure', `Clear service, town, and FAQ sections tell customers and search engines that you work in ${page.town}, ${page.county}, and nearby ${page.nearby}.`],
+    ['Built around calls and quotes', 'Click-to-call, quote requests, and booking paths come first, with AI intake added only when lead value and response speed justify it.'],
   ]
 
   return (
@@ -74,10 +55,10 @@ export function TownLanding({ page }: { page: TownPage }) {
         label={page.label}
         title={
           <>
-            Web design for <span className="serif-accent text-accent">{page.town}</span> local businesses.
+            Web design for <span className="serif-accent text-accent">{page.town}</span> home-service businesses.
           </>
         }
-        lead={`Orbit Websites builds hand-coded websites and AI intake systems for ${page.town} businesses that need more calls, quote requests, bookings, and qualified leads from local search. Launch builds are quoted on a free call, premium builds start at $3,500, and AI intake builds run $5,000–$15,000+ when faster response can pay for itself.`}
+        lead={page.intro}
       >
         <HeroActions quoteHref={`/quote?source=${encodeURIComponent(page.path)}`} />
       </PageHero>
@@ -85,14 +66,14 @@ export function TownLanding({ page }: { page: TownPage }) {
       <LocalPagesGrid current={page.path} />
 
       <Section label="What you get">
-        <SectionTitle>Built for {page.town} businesses that need measurable leads.</SectionTitle>
+        <SectionTitle>Built for {page.audience} in {page.town}.</SectionTitle>
         <NumberedCards items={cards} />
       </Section>
 
       <DirectAnswer question={`How much does web design cost in ${page.town}?`}>
         A launch website for a {page.town} local business is quoted on a free call after a quick look at your needs: a 7-day sprint, 50% to start and 50% on approval.
         Premium builds start at $3,500. AI-powered lead intake, booking logic, routing, and proposal workflows run $5,000 to $15,000+, depending on integrations and
-        workflow complexity, and optional care plans are $300–$700/mo.
+        workflow complexity, and optional monthly plans are $300–$700/mo.
       </DirectAnswer>
 
       <LandingFaq label="[LOCAL FAQ]" heading={`Questions ${page.town} businesses ask before hiring.`} items={townLandingFaqs(page)} />
@@ -117,7 +98,7 @@ export function IndustryLanding({ page }: { page: IndustryPage }) {
         label={page.label}
         title={
           <>
-            Web design for <span className="serif-accent text-accent">{page.industryShort}</span> companies in NJ.
+            Web design for <span className="serif-accent text-accent">{page.industry}</span> in NJ.
           </>
         }
         lead={`Orbit Websites builds hand-coded websites and AI intake systems for ${page.industry} in ${page.towns}. We build around ${page.jobType} — not vanity traffic. Launch builds are quoted on a free call, premium builds start at $3,500, and AI-powered lead intake runs $5,000–$15,000+ when faster response can pay for itself.`}

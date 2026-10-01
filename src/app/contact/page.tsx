@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { process, site } from '@/content/site'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { pageMeta } from '@/lib/seo'
+import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'Contact — Book a free call with Orbit Websites',
@@ -35,6 +35,7 @@ function Channel({ href, label, value, note, external, icon }: { href: string; l
 export default function ContactPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(pageSchema('/contact'))} />
       <PageHero
         label="[CONTACT]"
         title={

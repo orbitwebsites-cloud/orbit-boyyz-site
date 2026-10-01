@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
-import { faqs, services, site, tiers } from '@/content/site'
+import { services, site } from '@/content/site'
+import { graphFor, organization, website } from '@/lib/legacy-seo'
 
 export function pageMeta({ title, description, path }: { title: string; description: string; path: string }): Metadata {
   return {
     title,
     description,
     alternates: { canonical: path },
+    robots: { index: true, follow: true },
     openGraph: { title: `${title} · ${site.name}`, description, url: path, type: 'website', siteName: site.name },
     twitter: { card: 'summary_large_image', title: `${title} · ${site.name}`, description },
   }
@@ -16,64 +18,30 @@ export function jsonLd(data: unknown) {
   return { __html: JSON.stringify(data).replace(/</g, '\\u003c') }
 }
 
+// One business entity everywhere: the `#organization` node from legacy-seo is
+// the same @id the town, industry and blog graphs reference.
+const ORG_ID = `${site.url}/#organization`
+
 export function localBusinessSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'ProfessionalService'],
-    '@id': `${site.url}/#business`,
-    name: site.name,
-    alternateName: site.handle,
-    url: site.url,
-    logo: `${site.url}/orbit-logo.png`,
-    image: `${site.url}/orbit-logo.png`,
-    slogan: site.tagline,
-    description:
-      'Website design and AI operations studio in Plainsboro, NJ building hand-coded, conversion-first websites and AI intake & booking systems for Central New Jersey businesses.',
-    telephone: '+1-609-662-8052',
-    email: site.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Plainsboro',
-      addressRegion: 'NJ',
-      addressCountry: 'US',
-    },
-    areaServed: site.towns.map((town) => ({ '@type': 'City', name: `${town}, NJ` })),
-    knowsAbout: services.map((s) => s.title),
-    makesOffer: tiers.map((t) => ({
-      '@type': 'Offer',
-      name: t.name,
-      description: t.copy,
-      ...(t.id === 'premium'
-        ? { priceSpecification: { '@type': 'PriceSpecification', minPrice: 3500, priceCurrency: 'USD' } }
-        : t.id === 'ai'
-          ? { priceSpecification: { '@type': 'PriceSpecification', minPrice: 5000, maxPrice: 15000, priceCurrency: 'USD' } }
-          : {}),
-    })),
-    potentialAction: {
-      '@type': 'ReserveAction',
-      name: 'Book a free call',
-      target: site.booking,
-    },
-  }
+  return { '@context': 'https://schema.org', ...organization }
 }
 
 export function websiteSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    '@id': `${site.url}/#website`,
-    url: site.url,
-    name: site.name,
-    alternateName: site.handle,
-    publisher: { '@id': `${site.url}/#business` },
-  }
+  return { '@context': 'https://schema.org', ...website }
 }
 
-export function faqSchema() {
+/** Organization + WebSite + breadcrumb (+ ContactPage etc.) for a top-level route. */
+export function pageSchema(route: string) {
+  return { '@context': 'https://schema.org', '@graph': graphFor(route) }
+}
+
+/** FAQPage for the questions a page actually shows. */
+export function faqSchema(items: ReadonlyArray<{ readonly q: string; readonly a: string }>, path = '/faq') {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
+    '@id': `${site.url}${path === '/' ? '' : path}#faq`,
+    mainEntity: items.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -92,7 +60,7 @@ export function servicesSchema() {
         '@type': 'Service',
         name: s.title,
         description: s.copy,
-        provider: { '@id': `${site.url}/#business` },
+        provider: { '@id': ORG_ID },
         areaServed: site.serviceArea,
         url: `${site.url}/services#${s.slug}`,
       },

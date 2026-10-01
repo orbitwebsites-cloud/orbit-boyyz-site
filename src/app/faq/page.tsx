@@ -3,7 +3,7 @@ import { Accordion } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
-import { faqSchema, jsonLd, pageMeta } from '@/lib/seo'
+import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'FAQ — Websites, pricing, timelines & AI operations',
@@ -15,7 +15,8 @@ export const metadata = pageMeta({
 export default function FaqPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema())} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(pageSchema('/faq'))} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema(faqs, '/faq'))} />
       <PageHero
         label="[FAQ]"
         title={

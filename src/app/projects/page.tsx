@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { projects } from '@/content/site'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
-import { pageMeta } from '@/lib/seo'
+import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'Projects — Real websites for local businesses',
@@ -14,6 +14,7 @@ export const metadata = pageMeta({
 export default function ProjectsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(pageSchema('/projects'))} />
       <PageHero
         label="[SELECTED WORK]"
         title={

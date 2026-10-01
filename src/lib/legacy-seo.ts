@@ -3,7 +3,7 @@
 // same code, so every ported route emits exactly what the old prerender did.
 // Copied programmatically — keep in sync with PORT-NOTES.md if edited.
 import { blogPosts, type BlogPost } from '@/content/blog'
-import { legacyFaqs as faqs } from '@/content/landing'
+import { legacyFaqs as faqs, townLandingFaqs, townPages } from '@/content/landing'
 
 export const ORIGIN = 'https://orbitboyzz.com'
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
@@ -65,7 +65,7 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   '/orbitboyzz': {
     title: 'OrbitBoyzz | Orbit Websites — Web Design Studio in Plainsboro, NJ',
     description:
-      'OrbitBoyzz is the official brand handle for Orbit Websites, a hand-coded web design studio in Plainsboro, NJ building fast, conversion-focused sites for local businesses.',
+      'OrbitBoyzz is the brand handle for Orbit Websites, a Plainsboro, NJ studio hand-coding fast, conversion-focused websites for local businesses.',
   },
   '/about': {
     title: 'About Orbit Websites | Hand-Coded Web Design in Plainsboro, NJ',
@@ -157,21 +157,6 @@ export const legacyPageMeta: Record<string, { title: string; description: string
     description:
       'Website design for landscaping companies in New Jersey. Capture seasonal and annual contract leads, rank in local search, and grow your client base.',
   },
-  '/website-design-for-dental-practices-nj': {
-    title: 'Dental Website Design NJ | Attract New Patients | Orbit Websites',
-    description:
-      'Website design for dental practices in New Jersey. Capture new patient requests, show insurance info, and rank in local searches. Free demo.',
-  },
-  '/website-design-for-restaurants-nj': {
-    title: 'Restaurant Website Design NJ | Reservations, Menus & Catering | Orbit Websites',
-    description:
-      'Website design for restaurants, cafes, and caterers in New Jersey. Online menus, reservation links, catering inquiry forms, and local SEO. Free demo.',
-  },
-  '/website-design-for-clinics-nj': {
-    title: 'Clinic & Med Spa Website Design NJ | Book More Patients | Orbit Websites',
-    description:
-      'Website design for clinics and med spas in New Jersey. Capture appointment requests, showcase services, and rank in local searches. Free demo.',
-  },
   '/quote': {
     title: 'Free Website Quote for NJ Local Businesses | Orbit Websites',
     description:
@@ -218,15 +203,15 @@ export const legacyPageMeta: Record<string, { title: string; description: string
 export const organization = {
   '@type': ['LocalBusiness', 'ProfessionalService'],
   '@id': `${ORIGIN}/#organization`,
-  name: 'OrbitBoyzz',
-  alternateName: ['Orbit Websites', 'Orbit Boyzz', 'ORBIT Websites', 'OrbitBoyzz Websites'],
+  name: 'Orbit Websites',
+  alternateName: ['OrbitBoyzz', 'Orbit Boyzz', 'ORBIT Websites', 'OrbitBoyzz Websites'],
   description:
-    'OrbitBoyzz, also known as Orbit Websites, is a Plainsboro, New Jersey web design and AI operations studio building premium websites and automated intake, pricing, booking, and lead-routing systems for Central New Jersey local businesses.',
+    'Orbit Websites, also known as OrbitBoyzz, is a Plainsboro, New Jersey web design and AI operations studio building premium websites and automated intake, pricing, booking, and lead-routing systems for Central New Jersey local businesses.',
   url: `${ORIGIN}/`,
   logo: OG_IMAGE,
   image: OG_IMAGE,
   telephone: '+1-609-662-8052',
-  email: 'orbitboyzz@gmail.com',
+  email: 'alex@orbitboyzz.me',
   priceRange: '$$-$$$',
   address: {
     '@type': 'PostalAddress',
@@ -244,7 +229,7 @@ export const organization = {
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+1-609-662-8052',
-    email: 'orbitboyzz@gmail.com',
+    email: 'alex@orbitboyzz.me',
     contactType: 'customer support',
     areaServed: 'US',
     availableLanguage: 'English',
@@ -262,9 +247,6 @@ export const organization = {
     'Plumber websites',
     'Electrician websites',
     'Landscaping company websites',
-    'Restaurant websites',
-    'Dental practice websites',
-    'Clinic websites',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -317,7 +299,7 @@ export const organization = {
       {
         '@type': 'Offer',
         name: 'Monthly Website Care Plan',
-        description: 'Optional, month-to-month after launch: Site Care $300, Local Growth $500, Growth Partner $700 per month. Managed hosting, security, backups and content updates.',
+        description: 'Optional, month-to-month after launch: Site Care $300, Website + Leads Plan $500, Growth Partner $700 per month. Managed hosting, security, backups and content updates.',
         price: '300',
         priceCurrency: 'USD',
         priceSpecification: {
@@ -351,60 +333,13 @@ export const organization = {
 export const website = {
   '@type': 'WebSite',
   '@id': `${ORIGIN}/#website`,
-  name: 'OrbitBoyzz',
-  alternateName: 'Orbit Websites',
+  name: 'Orbit Websites',
+  alternateName: 'OrbitBoyzz',
   url: `${ORIGIN}/`,
   publisher: { '@id': `${ORIGIN}/#organization` },
 }
 
-const faqPage = {
-  '@type': 'FAQPage',
-  '@id': `${ORIGIN}/#faq`,
-  mainEntity: faqs.map(([q, a]) => ({
-    '@type': 'Question',
-    name: q,
-    acceptedAnswer: { '@type': 'Answer', text: a },
-  })),
-}
 
-const pricingFaqPage = {
-  '@type': 'FAQPage',
-  '@id': `${ORIGIN}/pricing#faq`,
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How much does a custom website cost for a local business?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'At Orbit Boyzz, a launch website is quoted on a free call after a quick look at your needs, premium websites start at $3,500, and AI operations systems run $5,000–$15,000+ based on design, features, and AI automation. Optional care plans are $300–$700/mo.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What factors affect custom website cost for a local business?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Design complexity, page count, integrations, AI automation, and hosting or maintenance fees each add to the base price of a custom build.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What factors affect the cost of an AI website for a small business?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Cost varies by feature set such as lead automation, CRM integration, design complexity, hosting platform, and ongoing AI model maintenance. AI intake builds start at $5,000, while fully custom operations systems can exceed $15,000.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can a small business afford an AI website?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Many small businesses start with a focused launch site, quoted on a free call, and add AI intake ($5,000–$15,000+) once lead volume justifies the upgrade.',
-      },
-    },
-  ],
-}
 
 export function blogPostingGraph(post: BlogPost) {
   const url = `${ORIGIN}/blog/${post.slug}`
@@ -494,56 +429,12 @@ function faqGraph(route: string, id: string, entries: ReadonlyArray<readonly [st
   }
 }
 
+// Ewing has its own page; the other towns' FAQs come from content/landing townLandingFaqs().
 const townFaqMap: Record<string, { town: string; county: string; nearby: string }> = {
   '/web-design-ewing-nj': {
     town: 'Ewing, NJ',
     county: 'Mercer County',
     nearby: 'Trenton, Lawrence, Hamilton, Princeton, and West Windsor',
-  },
-  '/web-design-plainsboro-nj': {
-    town: 'Plainsboro, NJ',
-    county: 'Middlesex County',
-    nearby: 'Princeton, West Windsor, Cranbury, Monroe, and South Brunswick',
-  },
-  '/web-design-west-windsor-nj': {
-    town: 'West Windsor, NJ',
-    county: 'Mercer County',
-    nearby: 'Princeton, Plainsboro, Hamilton, Lawrence Township, and Robbinsville',
-  },
-  '/web-design-princeton-nj': {
-    town: 'Princeton, NJ',
-    county: 'Mercer County',
-    nearby: 'Plainsboro, West Windsor, Lawrence Township, Hamilton, and Hopewell',
-  },
-  '/web-design-hamilton-nj': {
-    town: 'Hamilton, NJ',
-    county: 'Mercer County',
-    nearby: 'Trenton, Lawrence Township, Robbinsville, Bordentown, and Ewing',
-  },
-  '/web-design-lawrence-nj': {
-    town: 'Lawrence Township, NJ',
-    county: 'Mercer County',
-    nearby: 'Princeton, Ewing, Hamilton, Trenton, and West Windsor',
-  },
-  '/web-design-trenton-nj': {
-    town: 'Trenton, NJ',
-    county: 'Mercer County',
-    nearby: 'Ewing, Hamilton, Lawrence Township, Bordentown, and Morrisville',
-  },
-  '/web-design-robbinsville-nj': {
-    town: 'Robbinsville, NJ',
-    county: 'Mercer County',
-    nearby: 'Hamilton, East Windsor, West Windsor, Allentown, and Bordentown',
-  },
-  '/web-design-bordentown-nj': {
-    town: 'Bordentown, NJ',
-    county: 'Burlington County',
-    nearby: 'Hamilton, Trenton, Robbinsville, Florence, and Chesterfield',
-  },
-  '/web-design-east-windsor-nj': {
-    town: 'East Windsor, NJ',
-    county: 'Mercer County',
-    nearby: 'Hightstown, Robbinsville, West Windsor, Cranbury, and Monroe',
   },
 }
 
@@ -580,18 +471,6 @@ const industryFaqMap: Record<string, { short: string; jobType: string }> = {
   '/website-design-for-landscaping-companies-nj': {
     short: 'Landscaping',
     jobType: 'landscaping and lawn maintenance contracts',
-  },
-  '/website-design-for-dental-practices-nj': {
-    short: 'Dental',
-    jobType: 'new patient appointments',
-  },
-  '/website-design-for-restaurants-nj': {
-    short: 'Restaurant',
-    jobType: 'orders, reservations, catering leads, and private event inquiries',
-  },
-  '/website-design-for-clinics-nj': {
-    short: 'Clinic',
-    jobType: 'consultation requests, appointment bookings, and patient intake forms',
   },
 }
 
@@ -642,7 +521,6 @@ export function graphFor(route: string) {
   if (topLevelBreadcrumbs[route]) {
     graph.push(topLevelBreadcrumbGraph(route, topLevelBreadcrumbs[route]))
   }
-  if (route === '/' || route === '/faq') graph.push(faqPage)
   if (route === '/orbitboyzz') {
     graph.push({
       '@type': 'AboutPage',
@@ -843,7 +721,10 @@ export function graphFor(route: string) {
     })
     graph.push(breadcrumbGraph(route, 'Web Design in East Windsor, NJ'))
   }
-  if (townFaqMap[route]) {
+  const townPage = Object.values(townPages).find((p) => p.path === route)
+  if (townPage) {
+    graph.push(faqGraph(route, 'local-faq', townLandingFaqs(townPage)))
+  } else if (townFaqMap[route]) {
     graph.push(townLandingFaqGraph(route, townFaqMap[route]))
   }
   const industryServiceMap: Record<string, { id: string; name: string; serviceType: string; desc: string; label: string }> = {
@@ -875,27 +756,6 @@ export function graphFor(route: string) {
       desc: 'Custom websites and AI proposal intake for landscaping companies in New Jersey. Capture annual contracts and grow in Central NJ local search.',
       label: 'Website Design for Landscaping Companies in NJ',
     },
-    '/website-design-for-dental-practices-nj': {
-      id: 'dental-web-design-nj',
-      name: 'Website Design for Dental Practices in NJ',
-      serviceType: 'Website design for dental practices',
-      desc: 'Custom websites and AI new-patient intake for dental practices in New Jersey. Insurance capture, treatment interest, and appointment windows.',
-      label: 'Website Design for Dental Practices in NJ',
-    },
-    '/website-design-for-restaurants-nj': {
-      id: 'restaurant-web-design-nj',
-      name: 'Restaurant Website Design in NJ',
-      serviceType: 'Website design for restaurants and caterers',
-      desc: 'Custom websites and AI catering intake for restaurants, cafes, bakeries, and caterers in New Jersey. Capture orders, reservations, private events, and catering leads.',
-      label: 'Restaurant Website Design in NJ',
-    },
-    '/website-design-for-clinics-nj': {
-      id: 'clinic-web-design-nj',
-      name: 'Clinic Website Design in NJ',
-      serviceType: 'Website design for clinics and healthcare practices',
-      desc: 'Custom websites and AI patient intake for clinics, med spas, and appointment-based healthcare practices in New Jersey. Capture consultation requests, appointment bookings, and patient intake.',
-      label: 'Clinic Website Design in NJ',
-    },
   }
   if (industryServiceMap[route]) {
     const s = industryServiceMap[route]
@@ -912,9 +772,6 @@ export function graphFor(route: string) {
     if (industryFaqMap[route]) {
       graph.push(industryLandingFaqGraph(route, industryFaqMap[route]))
     }
-  }
-  if (route === '/pricing') {
-    graph.push(pricingFaqPage)
   }
   if (route === '/privacy') {
     graph.push({

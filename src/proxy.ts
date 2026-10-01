@@ -76,7 +76,7 @@ automation for local service businesses.
 Book a free 15-minute call, or reach us directly:
 
 - Phone: 609 662 8052 (tel:+16096628052)
-- Email: orbitboyzz@gmail.com
+- Email: alex@orbitboyzz.me
 - Book a call: https://calendly.com/orbitwebsites/30min
 
 We'll build a live demo of your site and show you before you pay a cent.
@@ -96,7 +96,7 @@ sell your personal information to third parties.
 
 Booking a call uses Calendly, which has its own privacy policy. You can
 request deletion or correction of your data, or ask what we hold, by
-emailing orbitboyzz@gmail.com.
+emailing alex@orbitboyzz.me.
 
 Full policy: ${ORIGIN}/privacy
 `,
@@ -118,7 +118,7 @@ retainer: $750-$2,500/mo, only when it replaces measurable admin labor or
 recovers high-intent leads.
 
 ## Care Plans (optional)
-Month to month, only after launch: $300 Site Care, $500 Local Growth,
+Month to month, only after launch: $300 Site Care, $500 Website + Leads Plan,
 $700 Growth Partner per month.
 
 Full pricing reference: ${ORIGIN}/pricing.md

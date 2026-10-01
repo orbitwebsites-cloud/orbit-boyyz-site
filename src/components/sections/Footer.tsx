@@ -19,16 +19,13 @@ const INDUSTRY_LABELS: Record<string, string> = {
   plumbing: 'Plumber websites',
   electrician: 'Electrician websites',
   landscaping: 'Landscaping websites',
-  dental: 'Dental websites',
-  restaurants: 'Restaurant websites',
-  clinics: 'Clinic websites',
 }
 const BUYER_ANSWERS: Array<[string, string]> = [
   ['Website cost guide', '/blog/how-much-does-a-website-cost-for-a-local-business'],
   ['Mercer County cost factors', '/blog/web-design-cost-factors-mercer-county-nj'],
   ['Custom vs Wix/Squarespace', '/blog/custom-web-design-vs-wix-squarespace'],
   ['Electrician AI chatbot', '/blog/ai-chatbot-electrician-central-nj'],
-  ['Dental automation cost', '/blog/automated-dental-website-no-monthly-fee'],
+  ['HVAC after-hours calls', '/blog/hvac-missed-after-hours-calls'],
 ]
 
 const linkCls = 'link-u text-muted transition-colors hover:text-fg'

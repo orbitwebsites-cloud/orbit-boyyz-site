@@ -6,7 +6,7 @@ import { JsonLd, legacyMetadata } from '@/lib/legacy-meta'
 
 // Root-level landing pages ported from the old site:
 //   /web-design-<town>-nj            (9 generic towns — Ewing + Central NJ have their own folders)
-//   /website-design-for-<industry>-nj (7 industries)
+//   /website-design-for-<industry>-nj (4 home-service industries)
 // Static folders always win over this dynamic segment, and dynamicParams=false
 // makes every other root path 404.
 export const dynamicParams = false

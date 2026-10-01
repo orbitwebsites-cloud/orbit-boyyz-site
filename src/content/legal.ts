@@ -16,7 +16,7 @@ export const privacySections: Array<{ heading: string; body: string }> = [
   },
   {
     "heading": "Third-party services",
-    "body": "Booking a call uses Calendly (calendly.com), which has its own privacy policy governing information you submit there. Email links open your default mail client and are sent directly to orbitboyzz@gmail.com. We do not embed third-party advertising trackers."
+    "body": "Booking a call uses Calendly (calendly.com), which has its own privacy policy governing information you submit there. Email links open your default mail client and are sent directly to alex@orbitboyzz.me. We do not embed third-party advertising trackers."
   },
   {
     "heading": "How we use your information",
@@ -24,7 +24,7 @@ export const privacySections: Array<{ heading: string; body: string }> = [
   },
   {
     "heading": "Data retention and your choices",
-    "body": "We retain inquiry and project information for as long as needed to deliver services and meet legitimate business and legal requirements. You can request that we delete your personal information, correct it, or tell you what we hold by emailing orbitboyzz@gmail.com. We will respond within a reasonable time."
+    "body": "We retain inquiry and project information for as long as needed to deliver services and meet legitimate business and legal requirements. You can request that we delete your personal information, correct it, or tell you what we hold by emailing alex@orbitboyzz.me. We will respond within a reasonable time."
   },
   {
     "heading": "Children's privacy",
@@ -36,6 +36,6 @@ export const privacySections: Array<{ heading: string; body: string }> = [
   },
   {
     "heading": "Contact us",
-    "body": "Questions about this policy or your data can be sent to orbitboyzz@gmail.com or by calling 609 662 8052. See also our About page and Contact page."
+    "body": "Questions about this policy or your data can be sent to alex@orbitboyzz.me or by calling 609 662 8052. See also our About page and Contact page."
   }
 ]

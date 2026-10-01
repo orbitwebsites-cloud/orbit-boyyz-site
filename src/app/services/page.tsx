@@ -4,18 +4,19 @@ import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
-import { jsonLd, pageMeta, servicesSchema } from '@/lib/seo'
+import { jsonLd, pageMeta, pageSchema, servicesSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'Services — Websites, refreshes, AI intake & care plans',
   description:
-    'Custom hand-coded websites, website refreshes, AI intake & booking automation and care plans for local businesses in Plainsboro, Princeton and Central New Jersey.',
+    'Hand-coded websites, refreshes, AI intake & booking automation and monthly plans for home-service businesses in Plainsboro, Princeton and Central NJ.',
   path: '/services',
 })
 
 export default function ServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(pageSchema('/services'))} />
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(servicesSchema())} />
       <PageHero
         label="[SERVICES]"

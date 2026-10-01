@@ -2,19 +2,19 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/content/blog'
 import { ORIGIN, isoDate, legacyPageMeta } from '@/lib/legacy-seo'
 
-// Same URL set, order, lastmod, changefreq and priority as the old site's
-// prerender.mjs writeSitemap() — i.e. the 77 URLs Google already knows.
+// Same URL set and order as the old site's prerender.mjs writeSitemap(), minus
+// the pages redirected in next.config.ts.
 // (/form was never in the sitemap and stays out.)
+
+// Every non-post page changed in the 2026-10-01 SEO cleanup (schema, offer, town copy).
+const PAGES_UPDATED = '2026-10-01'
 
 function lastMod(route: string) {
   if (route.startsWith('/blog/')) {
     const post = blogPosts.find((item) => item.slug === route.replace('/blog/', ''))
-    return post ? isoDate(post.updated) : '2026-06-13'
+    return post ? isoDate(post.updated) : PAGES_UPDATED
   }
-  if (route === '/pricing' || route === '/quote' || route === '/blog' || route.startsWith('/web-design-') || route.startsWith('/website-design-for-')) {
-    return '2026-06-13'
-  }
-  return '2026-06-01'
+  return PAGES_UPDATED
 }
 
 function priority(route: string) {
@@ -32,7 +32,7 @@ function changeFrequency(route: string): 'weekly' | 'monthly' {
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [...Object.keys(legacyPageMeta), ...blogPosts.map((p) => `/blog/${p.slug}`)]
   return routes.map((route) => ({
-    url: route === '/' ? `${ORIGIN}/` : `${ORIGIN}${route}`,
+    url: route === '/' ? ORIGIN : `${ORIGIN}${route}`,
     lastModified: lastMod(route),
     changeFrequency: changeFrequency(route),
     priority: priority(route),

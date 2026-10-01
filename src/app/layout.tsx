@@ -37,33 +37,15 @@ const mono = JetBrains_Mono({
   preload: false,
 })
 
-const description =
-  'Orbit Websites designs hand-coded, conversion-first websites and AI intake & booking systems for local businesses in Plainsboro, Princeton and across Central New Jersey.'
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: 'Orbit Websites — Custom websites & AI systems for Central NJ businesses',
+    default: 'Page not found · Orbit Websites',
     template: '%s · Orbit Websites',
   },
-  description,
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
-  alternates: { canonical: '/' },
-  openGraph: {
-    type: 'website',
-    siteName: site.name,
-    locale: 'en_US',
-    url: '/',
-    title: 'Orbit Websites — Your website should book jobs, not just sit there.',
-    description,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Orbit Websites — Your website should book jobs, not just sit there.',
-    description,
-  },
-  robots: { index: true, follow: true },
+  openGraph: { type: 'website', siteName: site.name, locale: 'en_US' },
   formatDetection: { telephone: true },
 }
 

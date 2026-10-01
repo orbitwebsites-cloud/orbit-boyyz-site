@@ -9,7 +9,7 @@ export const site = {
   phone: '609-662-8052',
   phoneDisplay: '609 662 8052',
   phoneHref: 'tel:+16096628052',
-  email: 'orbitboyzz@gmail.com',
+  email: 'alex@orbitboyzz.me',
   booking: 'https://calendly.com/orbitwebsites/30min',
   location: 'Plainsboro, NJ',
   serviceArea: 'Central New Jersey',
@@ -58,15 +58,15 @@ export const industries = [
   'HVAC',
   'Plumbing',
   'Electrical',
-  'Catering',
-  'Restaurants',
-  'Dental',
-  'Clinics & med spas',
-  'Real estate',
-  'Contractors',
+  'Roofing',
   'Landscaping',
-  'Auto detailing',
-  'Professional services',
+  'Contractors',
+  'Remodeling',
+  'Painting',
+  'Tree service',
+  'Pest control',
+  'Garage doors',
+  'Pressure washing',
 ] as const
 
 export const hero = {
@@ -194,8 +194,8 @@ export const tiers = [
 
 export const carePlans = [
   { price: '$300', name: 'Site Care', copy: 'We keep the website online, protected and handled.', features: ['Managed hosting', 'Security and backups', 'Routine content updates'] },
-  { price: '$500', name: 'Local Growth', copy: 'Steady improvements to local visibility and conversions.', features: ['Everything in Site Care', 'Local SEO maintenance', 'Monthly site improvements'], featured: true },
-  { price: '$700', name: 'Growth Partner', copy: 'Active SEO, content support and closer attention.', features: ['Everything in Local Growth', 'Ongoing SEO and content', 'Priority updates and support'] },
+  { price: '$500', name: 'Website + Leads Plan', copy: 'For established home-service shops: steady local SEO and site improvements aimed at more calls and quote requests.', features: ['Everything in Site Care', 'Local SEO maintenance', 'Monthly site improvements'], featured: true },
+  { price: '$700', name: 'Growth Partner', copy: 'Active SEO, content support and closer attention.', features: ['Everything in Website + Leads Plan', 'Ongoing SEO and content', 'Priority updates and support'] },
 ] as const
 
 export const roi = {
@@ -213,7 +213,7 @@ export const faqs = [
   { q: 'What does a monthly care plan cover?', a: 'Fast managed hosting, security updates, backups and content changes — just text us what you need updated. Higher plans add local SEO maintenance and ongoing improvements.' },
   { q: 'Is OrbitBoyzz the same as Orbit Websites?', a: 'Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites, a Plainsboro, NJ website design and AI operations studio.' },
   { q: 'Where is Orbit Websites based?', a: 'Plainsboro, NJ. We serve businesses across Central New Jersey, including Princeton, West Windsor, Ewing, Hamilton, Lawrence, Robbinsville and Trenton.' },
-  { q: 'What kinds of businesses do you build for?', a: 'HVAC, plumbers, electricians, caterers, restaurants, clinics, dental practices, real estate teams, contractors and any local service business that needs more calls and bookings from mobile search.' },
+  { q: 'What kinds of businesses do you build for?', a: 'Established home-service businesses: HVAC, plumbing, electrical, roofing, landscaping, remodeling and other contractors where one booked job is worth hundreds or thousands of dollars.' },
   { q: 'Do you guarantee Google rankings?', a: 'No one can honestly promise rankings. We build strong local SEO foundations and clean structure that search engines reward, so your site is built the right way from day one.' },
   { q: 'What is the AI operations tier?', a: 'A build ($5,000–$15,000+) plus an optional retainer ($750–$2,500/mo) for businesses that want automated intake, lead qualification, instant proposals, booking and routing. We recommend it only when it replaces measurable admin labor or recovers high-intent leads.' },
 ] as const

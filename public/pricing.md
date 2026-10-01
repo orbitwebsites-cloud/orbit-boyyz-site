@@ -18,7 +18,7 @@ Last updated: September 28, 2026
 ## AI Operations Website Build
 
 - Price: Custom, typically $5,000-$15,000+ depending on workflow complexity.
-- Best for: HVAC, plumbing, catering, clinics, real estate, and local service businesses with slow intake or high-value missed leads.
+- Best for: HVAC, plumbing, electrical, roofing, and other home-service businesses with slow intake or high-value missed leads.
 - Includes: Intake logic, qualification flows, database-backed routing, booking/proposal workflows, API integrations, and operational handoff.
 
 ## AI Operations Retainer
@@ -29,9 +29,9 @@ Last updated: September 28, 2026
 
 ## Care Plans (optional)
 
-- Price: $300/mo Site Care, $500/mo Local Growth, $700/mo Growth Partner.
+- Price: $300/mo Site Care, $500/mo Website + Leads Plan, $700/mo Growth Partner.
 - Terms: Month to month; starts only after launch.
-- Includes: Managed hosting, security and backups, and routine content updates (Site Care); local SEO maintenance and monthly improvements (Local Growth); ongoing SEO, content and priority support (Growth Partner).
+- Includes: Managed hosting, security and backups, and routine content updates (Site Care); local SEO maintenance and monthly improvements (Website + Leads Plan); ongoing SEO, content and priority support (Growth Partner).
 
 ## Business Case
 
@@ -39,4 +39,4 @@ Last updated: September 28, 2026
 - Revenue recovered: $8,000-$25,000 per month in possible upside for businesses with high-intent emergency or corporate leads.
 - Speed-to-lead target: sub-15 seconds for initial response or 180 seconds for proposal-style workflows.
 
-Contact: orbitboyzz@gmail.com or 609 662 8052.
+Contact: alex@orbitboyzz.me or 609 662 8052.

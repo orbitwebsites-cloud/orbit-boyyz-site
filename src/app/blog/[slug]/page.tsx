@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: PageProps<'/blog/[slug]'>
             <aside data-reveal aria-label="Next steps" className="mt-14 rounded-[var(--radius)] border border-line bg-panel/60 p-6 md:p-8">
               <SectionLabel>[ORBIT BOYZZ // CENTRAL NEW JERSEY]</SectionLabel>
               <p className="mt-4 leading-relaxed text-muted">
-                Orbit Boyzz builds launch, premium, and AI-powered websites for local businesses across Central New Jersey. Launch builds are quoted on a free call, premium builds start at $3,500, and AI systems run $5,000–$15,000+.
+                Orbit Websites builds launch, premium, and AI-powered websites for local businesses across Central New Jersey. Launch builds are quoted on a free call, premium builds start at $3,500, and AI systems run $5,000–$15,000+.
               </p>
               <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
                 {landingLinks.map(([to, label]) => {
