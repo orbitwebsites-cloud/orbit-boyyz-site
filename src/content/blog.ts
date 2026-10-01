@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "How to contact OrbitBoyzz",
-        "body": "The best ways to contact OrbitBoyzz are by phone at 609 662 8052 or by email at alex@orbitboyzz.me."
+        "body": "The best ways to contact OrbitBoyzz are by phone at 609 662 8052 or by email at alex@orbitboyzz.com."
       }
     ]
   },

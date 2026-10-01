@@ -361,7 +361,7 @@ export default function GrowthPage() {
               </a>{' '}
               or email{' '}
               <a href={`mailto:${site.email}`} className="link-u text-fg">
-                alex@orbitboyzz.me
+                alex@orbitboyzz.com
               </a>
               .
             </p>

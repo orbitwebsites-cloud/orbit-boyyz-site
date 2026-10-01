@@ -39,4 +39,4 @@ Last updated: September 28, 2026
 - Revenue recovered: $8,000-$25,000 per month in possible upside for businesses with high-intent emergency or corporate leads.
 - Speed-to-lead target: sub-15 seconds for initial response or 180 seconds for proposal-style workflows.
 
-Contact: alex@orbitboyzz.me or 609 662 8052.
+Contact: alex@orbitboyzz.com or 609 662 8052.

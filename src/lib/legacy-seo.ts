@@ -211,7 +211,7 @@ export const organization = {
   logo: OG_IMAGE,
   image: OG_IMAGE,
   telephone: '+1-609-662-8052',
-  email: 'alex@orbitboyzz.me',
+  email: 'alex@orbitboyzz.com',
   priceRange: '$$-$$$',
   address: {
     '@type': 'PostalAddress',
@@ -229,7 +229,7 @@ export const organization = {
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+1-609-662-8052',
-    email: 'alex@orbitboyzz.me',
+    email: 'alex@orbitboyzz.com',
     contactType: 'customer support',
     areaServed: 'US',
     availableLanguage: 'English',

@@ -57,7 +57,7 @@ Q: How should a local business website be structured in 2026?
 A: A strong local business website should include a clear homepage, service pages, service-area pages, proof, pricing or budget context, FAQ answers, click-to-call actions, quote or booking paths, schema, analytics, sitemap, and fast mobile pages.
 
 Q: How do I contact Orbit Websites?
-A: Call 609 662 8052, email alex@orbitboyzz.me, or request a range at https://orbitboyzz.com/quote.
+A: Call 609 662 8052, email alex@orbitboyzz.com, or request a range at https://orbitboyzz.com/quote.
 
 ## Key Service Pages
 
@@ -150,4 +150,4 @@ A: Call 609 662 8052, email alex@orbitboyzz.me, or request a range at https://or
 ## Contact
 
 - Phone: 609 662 8052
-- Email: alex@orbitboyzz.me
+- Email: alex@orbitboyzz.com

@@ -9,7 +9,7 @@ export const site = {
   phone: '609-662-8052',
   phoneDisplay: '609 662 8052',
   phoneHref: 'tel:+16096628052',
-  email: 'alex@orbitboyzz.me',
+  email: 'alex@orbitboyzz.com',
   booking: 'https://calendly.com/orbitwebsites/30min',
   location: 'Plainsboro, NJ',
   serviceArea: 'Central New Jersey',
