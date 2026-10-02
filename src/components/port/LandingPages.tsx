@@ -85,7 +85,7 @@ function CostTiers({ cost }: { cost: NonNullable<IndustryPage['cost']> }) {
             <ArrowLink href="/pricing">Full pricing →</ArrowLink>
           </p>
         </div>
-        <div data-reveal className="lg:col-span-7">
+        <div data-reveal className="min-w-0 lg:col-span-7">
           <div className="overflow-x-auto rounded-[var(--radius)] border border-line" data-lenis-prevent>
             <table className="w-full min-w-[34rem] border-collapse text-left text-[0.93rem]">
               <caption className="sr-only">Orbit Websites build tiers and prices</caption>
