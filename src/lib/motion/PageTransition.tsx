@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 import { createContext, useCallback, useContext, useEffect, useRef, type ReactNode } from 'react'
+import { isDemoPath } from '@/lib/demoPath'
 import { gsap } from './gsap'
 import { useLenis } from './LenisProvider'
 import { DUR, EASE, MQ } from './tokens'
@@ -76,13 +77,16 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
   return (
     <TransitionContext.Provider value={{ navigate }}>
       {children}
-      <div ref={overlayRef} aria-hidden="true" className="pt-overlay pointer-events-none fixed inset-0 z-[110] flex items-end bg-panel">
-        <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
-        <div className="container-x flex w-full items-center justify-between pb-8">
-          <span className="label">[ ORBIT // NAVIGATING ]</span>
-          <span ref={labelRef} className="label text-accent" />
+      {/* Lead demo previews (/demo/*) carry no Orbit UI; navigate() falls back to router.push without it. */}
+      {!isDemoPath(pathname) && (
+        <div ref={overlayRef} aria-hidden="true" className="pt-overlay pointer-events-none fixed inset-0 z-[110] flex items-end bg-panel">
+          <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
+          <div className="container-x flex w-full items-center justify-between pb-8">
+            <span className="label">[ ORBIT // NAVIGATING ]</span>
+            <span ref={labelRef} className="label text-accent" />
+          </div>
         </div>
-      </div>
+      )}
     </TransitionContext.Provider>
   )
 }

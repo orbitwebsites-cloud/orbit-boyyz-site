@@ -7,6 +7,7 @@ import { Preloader } from '@/components/sections/Preloader'
 import { Cursor } from '@/components/ui/Cursor'
 import { MobileDock } from '@/components/ui/MobileDock'
 import { Nav } from '@/components/ui/Nav'
+import { SiteChrome } from '@/components/ui/SiteChrome'
 import { LenisProvider } from '@/lib/motion/LenisProvider'
 import { PageTransitionProvider } from '@/lib/motion/PageTransition'
 
@@ -75,16 +76,25 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         >
           Skip to content
         </a>
-        <Preloader />
+        {/* SiteChrome drops Orbit's chrome on /demo/* lead previews so they read as the lead's own site. */}
+        <SiteChrome>
+          <Preloader />
+        </SiteChrome>
         <LenisProvider>
           <PageTransitionProvider>
-            <Nav />
+            <SiteChrome>
+              <Nav />
+            </SiteChrome>
             <main id="main">{children}</main>
-            <Footer />
-            <MobileDock />
+            <SiteChrome>
+              <Footer />
+              <MobileDock />
+            </SiteChrome>
           </PageTransitionProvider>
         </LenisProvider>
-        <Cursor />
+        <SiteChrome>
+          <Cursor />
+        </SiteChrome>
       </body>
     </html>
   )

@@ -1,0 +1,32 @@
+/* Lead demo previews (/demo/<slug>) — loaded on this route only.
+   Swaps Orbit's dark page canvas for the preview's light one. Unlayered, so it
+   beats globals.css's @layer base rules without !important. */
+html:has(.demo-site) {
+  background: #ffffff;
+  color-scheme: light;
+}
+
+html:has(.demo-site) body {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Orbit's fixed grid + film-grain overlays */
+html:has(.demo-site) body::before,
+html:has(.demo-site) body::after {
+  content: none;
+}
+
+.demo-site {
+  --demo-tint: color-mix(in srgb, var(--demo-accent) 7%, #ffffff);
+  --demo-tint-strong: color-mix(in srgb, var(--demo-accent) 14%, #ffffff);
+}
+
+.demo-site ::selection {
+  background: color-mix(in srgb, var(--demo-accent) 22%, #ffffff);
+  color: #0f172a;
+}
+
+.demo-site :focus-visible {
+  outline-color: var(--demo-accent-text);
+}
