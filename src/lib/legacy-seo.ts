@@ -3,7 +3,7 @@
 // same code, so every ported route emits exactly what the old prerender did.
 // Copied programmatically — keep in sync with PORT-NOTES.md if edited.
 import { blogPosts, type BlogPost } from '@/content/blog'
-import { ewingFaqs, legacyFaqs as faqs, townLandingFaqs, townPages } from '@/content/landing'
+import { ewingFaqs, industryLandingFaqs, industryPages, legacyFaqs as faqs, townLandingFaqs, townPages } from '@/content/landing'
 
 export const ORIGIN = 'https://orbitboyzz.com'
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
@@ -52,15 +52,17 @@ const SERVICE_AREA = [
 
 // --- Per-route metadata -----------------------------------------------------
 export const legacyPageMeta: Record<string, { title: string; description: string }> = {
+  // The homepage is the single owner of "home service website design" (SEO plan 2026-10-02).
   '/': {
-    title: 'Custom Business Websites Ready in 7 Days | Orbit Websites',
+    title: 'Website Design for NJ Home-Service Businesses | Orbit Websites',
     description:
-      'Meet directly with Orbit Websites, choose a design direction, pay 50% to begin, and receive a custom business website ready for review in seven days.',
+      'Custom website design for New Jersey home-service businesses: HVAC, plumbing, electrical and roofing sites built to book jobs. Plainsboro, NJ studio.',
   },
+  // Single owner of "hvac lead generation nj" / missed-call recovery / AI receptionist intent.
   '/growth': {
-    title: 'Orbit Growth Systems | Lead Response Systems for HVAC',
+    title: 'HVAC Lead Generation & Missed-Call Recovery in New Jersey',
     description:
-      'Orbit Growth Systems helps independent HVAC companies answer new leads faster, recover missed calls, automate follow-up, and book more qualified jobs.',
+      'Missed-call text-back, instant follow-up and booking for NJ HVAC companies. Orbit answers every lead so more calls become booked jobs. Free lead audit.',
   },
   '/orbitboyzz': {
     title: 'OrbitBoyzz | Orbit Websites — Web Design Studio in Plainsboro, NJ',
@@ -148,9 +150,9 @@ export const legacyPageMeta: Record<string, { title: string; description: string
       'Website design for plumbers in New Jersey. Capture emergency calls overnight, rank in Mercer County searches, and get more booked jobs. Free demo.',
   },
   '/website-design-for-electricians-nj': {
-    title: 'Electrician Website Design NJ | Rank Locally & Get More Calls | Orbit Websites',
+    title: 'Electrician Website Design NJ | Panel, EV & Generator Leads',
     description:
-      'Website design for electricians in New Jersey. Hand-coded, fast, and built to rank in local searches. Residential and commercial lead capture.',
+      'Electrician websites for NJ contractors: separate lead paths for panel upgrades, EV chargers and generators, home vs. business routing, license shown.',
   },
   '/website-design-for-landscaping-companies-nj': {
     title: 'Landscaping Company Website Design NJ | Get More Contracts | Orbit Websites',
@@ -204,6 +206,11 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   },
 }
 
+// Routes that keep working (and keep their metadata above) but are not search
+// landing pages: a client intake form and API docs. They get robots
+// "noindex, follow" and are left out of sitemap.xml.
+export const NOINDEX_ROUTES: ReadonlySet<string> = new Set(['/project-brief', '/developers'])
+
 // --- JSON-LD builders -------------------------------------------------------
 export const organization = {
   '@type': ['LocalBusiness', 'ProfessionalService'],
@@ -218,18 +225,14 @@ export const organization = {
   telephone: '+1-609-662-8052',
   email: 'alex@orbitboyzz.com',
   priceRange: '$$-$$$',
+  // Service-area business: town-level address only. No street address or geo
+  // pin — the studio does not publish one (see public/llms.txt).
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '641 Plainsboro Rd',
     addressLocality: 'Plainsboro',
     addressRegion: 'NJ',
     postalCode: '08536',
     addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '40.3329',
-    longitude: '-74.5840',
   },
   contactPoint: {
     '@type': 'ContactPoint',
@@ -435,43 +438,6 @@ function faqGraph(route: string, id: string, entries: ReadonlyArray<readonly [st
 }
 
 
-
-const industryFaqMap: Record<string, { short: string; jobType: string }> = {
-  '/website-design-for-hvac-companies-nj': {
-    short: 'HVAC',
-    jobType: 'heating and cooling service calls',
-  },
-  '/website-design-for-plumbers-nj': {
-    short: 'Plumbing',
-    jobType: 'plumbing service and repair calls',
-  },
-  '/website-design-for-electricians-nj': {
-    short: 'Electrical',
-    jobType: 'electrical service and installation jobs',
-  },
-  '/website-design-for-landscaping-companies-nj': {
-    short: 'Landscaping',
-    jobType: 'landscaping and lawn maintenance contracts',
-  },
-}
-
-function industryLandingFaqGraph(route: string, page: { short: string; jobType: string }) {
-  const lower = page.short.toLowerCase()
-  return faqGraph(route, 'industry-faq', [
-    [
-      `How much does a website cost for a ${lower} company in NJ?`,
-      `A focused launch site for a ${lower} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
-    ],
-    [
-      `What should a ${lower} website include?`,
-      `A strong ${lower} website should include service details, local service areas, trust signals, clear calls to action, mobile-first pages, and an intake path built around ${page.jobType}.`,
-    ],
-    [
-      'When does AI intake make sense?',
-      `AI intake makes sense when faster response or better qualification can recover revenue. For ${lower} businesses, it can collect the details staff need before calling back and route higher-value requests sooner.`,
-    ],
-  ])
-}
 
 function topLevelBreadcrumbGraph(route: string, name: string) {
   return {
@@ -751,8 +717,10 @@ export function graphFor(route: string) {
       description: s.desc,
     })
     graph.push(breadcrumbGraph(route, s.label))
-    if (industryFaqMap[route]) {
-      graph.push(industryLandingFaqGraph(route, industryFaqMap[route]))
+    // Same FAQs the page shows (content/landing), so markup never drifts from the visible text.
+    const industryPage = Object.values(industryPages).find((p) => p.path === route)
+    if (industryPage) {
+      graph.push(faqGraph(route, 'industry-faq', industryLandingFaqs(industryPage)))
     }
   }
   if (route === '/privacy') {

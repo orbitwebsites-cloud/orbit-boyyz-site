@@ -80,11 +80,17 @@ export default function GrowthPage() {
             <p className="page-fade inline-flex items-center gap-3 rounded-full border border-accent/30 px-4 py-2 text-sm text-accent" style={{ '--delay': '-300ms' } as CSSProperties}>
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" aria-hidden="true" /> Now accepting 3 founding HVAC partners
             </p>
-            <h1 className="display t-1 mt-7 max-w-[14ch] text-balance">
-              <span className="mask">
+            <h1 className="display mt-7 text-balance">
+              <span className="mask t-1 max-w-[14ch]">
                 <span className="page-rise">
-                  Every lead answered. <span className="serif-accent text-accent">Every follow-up handled.</span>
+                  Every HVAC lead <span className="serif-accent text-accent">answered.</span>
                 </span>
+              </span>{' '}
+              <span
+                className="page-fade mt-6 block max-w-[30ch] font-sans text-[clamp(1.2rem,2vw,1.65rem)] font-medium leading-snug tracking-normal text-fg/90"
+                style={{ '--delay': '-100ms' } as CSSProperties}
+              >
+                Missed-call text-back, follow-up and booking for NJ HVAC companies.
               </span>
             </h1>
             <p className="page-fade t-lead mt-8 max-w-[56ch] text-muted" style={{ '--delay': '0ms' } as CSSProperties}>

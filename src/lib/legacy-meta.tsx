@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ORIGIN, legacyPageMeta } from './legacy-seo'
+import { NOINDEX_ROUTES, ORIGIN, legacyPageMeta } from './legacy-seo'
 import { jsonLd } from './seo'
 
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
@@ -27,7 +27,9 @@ export function legacyMetadata(
       canonical: url,
       types: { 'application/rss+xml': [{ url: `${ORIGIN}/feed.xml`, title: 'Orbit Websites Blog' }] },
     },
-    robots: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+    robots: NOINDEX_ROUTES.has(route)
+      ? { index: false, follow: true }
+      : { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     openGraph: {
       type: article ? 'article' : 'website',
       siteName: 'OrbitBoyzz / Orbit Websites',

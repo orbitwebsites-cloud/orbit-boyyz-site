@@ -107,6 +107,11 @@ export function Footer() {
                 </TransitionLink>
               </li>
             ))}
+            <li>
+              <TransitionLink href="/growth" className={linkCls}>
+                HVAC Lead System
+              </TransitionLink>
+            </li>
           </ul>
           <p className="label mb-5 mt-10">Buyer answers</p>
           <ul className="space-y-2 text-sm">

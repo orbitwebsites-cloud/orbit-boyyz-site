@@ -1,13 +1,15 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/content/blog'
-import { ORIGIN, isoDate, legacyPageMeta } from '@/lib/legacy-seo'
+import { NOINDEX_ROUTES, ORIGIN, isoDate, legacyPageMeta } from '@/lib/legacy-seo'
 
 // Same URL set and order as the old site's prerender.mjs writeSitemap(), minus
-// the pages redirected in next.config.ts.
+// the pages redirected in next.config.ts and the noindex routes
+// (/project-brief, /developers: still live, just not search landing pages).
 // (/form was never in the sitemap and stays out.)
 
-// Every non-post page changed in the 2026-10-01 SEO cleanup (schema, offer, town copy).
-const PAGES_UPDATED = '2026-10-01'
+// Every non-post page changed in the 2026-10-02 SEO pass (organization schema
+// address on every page; homepage, /growth and trade-page copy).
+const PAGES_UPDATED = '2026-10-02'
 
 function lastMod(route: string) {
   if (route.startsWith('/blog/')) {
@@ -30,7 +32,8 @@ function changeFrequency(route: string): 'weekly' | 'monthly' {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [...Object.keys(legacyPageMeta), ...blogPosts.map((p) => `/blog/${p.slug}`)]
+  const pages = Object.keys(legacyPageMeta).filter((route) => !NOINDEX_ROUTES.has(route))
+  const routes = [...pages, ...blogPosts.map((p) => `/blog/${p.slug}`)]
   return routes.map((route) => ({
     url: route === '/' ? ORIGIN : `${ORIGIN}${route}`,
     lastModified: lastMod(route),

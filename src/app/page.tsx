@@ -11,14 +11,15 @@ import { SpeedProof } from '@/components/sections/SpeedProof'
 import { Work } from '@/components/sections/Work'
 import type { Metadata } from 'next'
 import { faqs } from '@/content/site'
+import { legacyPageMeta } from '@/lib/legacy-seo'
 import { faqSchema, jsonLd, localBusinessSchema, websiteSchema } from '@/lib/seo'
 
-const description =
-  'Hand-coded websites and AI intake & booking systems for home-service businesses in Plainsboro, Princeton and Central New Jersey.'
+// Title + description live in the shared per-route table (lib/legacy-seo).
+const { title, description } = legacyPageMeta['/']
 const social = 'Orbit Websites — Your website should book jobs, not just sit there.'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Orbit Websites — Custom websites & AI systems for Central NJ' },
+  title: { absolute: title },
   description,
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },

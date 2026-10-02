@@ -879,9 +879,18 @@ export const blogClusters: BlogCluster[] = [
   }
 ]
 
-/** Per-post "next step" links shown under each article. */
+/**
+ * Per-post "next step" links shown under each article; the label is the link's anchor text.
+ * 2026-10-02 SEO plan: every post links the money page it supports (trade pages, /growth,
+ * homepage, pricing, town pages) with a descriptive anchor. Posts not listed fall back to
+ * their cluster's landing page in app/blog/[slug].
+ */
 export const blogLandingLinks: Record<string, Array<[href: string, label: string]>> = {
   "ai-dispatch-system-for-hvac-and-plumbing": [
+    [
+      "/growth",
+      "AI intake and dispatch for HVAC companies"
+    ],
     [
       "/website-design-for-hvac-companies-nj",
       "HVAC websites"
@@ -897,16 +906,20 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
   ],
   "how-much-does-a-website-cost-for-a-local-business": [
     [
+      "/website-design-for-hvac-companies-nj",
+      "HVAC website cost"
+    ],
+    [
+      "/website-design-for-plumbers-nj",
+      "plumbing website cost"
+    ],
+    [
       "/pricing",
-      "See pricing"
+      "website pricing"
     ],
     [
       "/quote",
       "Use the quote estimator"
-    ],
-    [
-      "/web-design-central-nj",
-      "Central NJ web design"
     ]
   ],
   "custom-website-cost-central-nj": [
@@ -926,7 +939,7 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
   "electrician-website-ewing-nj": [
     [
       "/website-design-for-electricians-nj",
-      "Electrician websites"
+      "electrician website design in NJ"
     ],
     [
       "/web-design-ewing-nj",
@@ -940,7 +953,7 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
   "landscaping-company-website-central-nj": [
     [
       "/website-design-for-landscaping-companies-nj",
-      "Landscaping websites"
+      "website design for landscaping businesses in NJ"
     ],
     [
       "/web-design-central-nj",
@@ -954,7 +967,7 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
   "hvac-contractor-website-mercer-county-nj": [
     [
       "/website-design-for-hvac-companies-nj",
-      "HVAC websites"
+      "HVAC website design for NJ contractors"
     ],
     [
       "/web-design-hamilton-nj",
@@ -968,11 +981,11 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
   "plumber-website-ewing-nj": [
     [
       "/website-design-for-plumbers-nj",
-      "Plumber websites"
+      "plumber website design in NJ"
     ],
     [
       "/web-design-ewing-nj",
-      "Ewing web design"
+      "web design in Ewing"
     ],
     [
       "/quote",
@@ -999,6 +1012,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "See pricing"
     ],
     [
+      "/web-design-hamilton-nj",
+      "web design in Hamilton Township"
+    ],
+    [
       "/web-design-princeton-nj",
       "Princeton web design"
     ],
@@ -1010,7 +1027,7 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
   "ai-chatbot-electrician-central-nj": [
     [
       "/website-design-for-electricians-nj",
-      "Electrician websites"
+      "websites for NJ electricians"
     ],
     [
       "/web-design-ewing-nj",
@@ -1019,6 +1036,84 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
     [
       "/quote",
       "Get an AI intake range"
+    ]
+  ],
+  "hvac-missed-after-hours-calls": [
+    [
+      "/growth",
+      "HVAC missed-call recovery system"
+    ],
+    [
+      "/website-design-for-hvac-companies-nj",
+      "HVAC website design in NJ"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "speed-to-lead-home-services": [
+    [
+      "/growth",
+      "speed-to-lead system for HVAC"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "ai-receptionist-cost-small-business": [
+    [
+      "/growth",
+      "AI receptionist and missed-call system for NJ HVAC companies"
+    ],
+    [
+      "/quote",
+      "Start a quote"
+    ]
+  ],
+  "ai-receptionist-vs-answering-service": [
+    [
+      "/growth",
+      "done-for-you AI intake for NJ HVAC"
+    ],
+    [
+      "/quote",
+      "Start a quote"
+    ]
+  ],
+  "should-plumbing-company-have-website": [
+    [
+      "/website-design-for-plumbers-nj",
+      "website design for plumbers in NJ"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "home-service-website-structure": [
+    [
+      "/",
+      "website design for NJ home-service businesses"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "custom-web-design-vs-wix-squarespace": [
+    [
+      "/services#refresh",
+      "redesigning a Wix or GoDaddy site"
+    ],
+    [
+      "/pricing",
+      "See pricing"
+    ],
+    [
+      "/quote",
+      "Get a range"
     ]
   ]
 }

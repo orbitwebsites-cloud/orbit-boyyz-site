@@ -73,6 +73,8 @@ export const industries = [
 export const hero = {
   eyebrow: 'Custom websites & AI systems · Central NJ',
   headline: 'Your website should book jobs, not just sit there.',
+  // The H1's accessible (and indexed) text; the visual headline above stays as designed.
+  srHeadline: 'Custom website design for New Jersey home-service businesses that books jobs',
   sub: 'Hand-coded, conversion-first websites for local businesses — designed with you on a call, launched in days, and fully yours.',
   primaryCta: 'Book a free call',
   secondaryCta: 'See the work',

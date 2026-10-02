@@ -25,7 +25,49 @@ export type IndustryPage = {
   avgJob: string
   aiUseCase: string
   towns: string
+  // Optional per-trade blocks (SEO plan 2026-10-02). A trade without them
+  // renders the shared template exactly as before; add them one trade at a time.
+  /** Cost H2 phrased the way people ask it + a 40–60 word direct answer, shown above the shared tier table. */
+  cost?: { question: string; answer: string }
+  /** Prominent link to the lead-response / AI intake offer for this trade. */
+  leadSystem?: { title: string; copy: string; href: string; anchor: string }
+  /** Trade-specific page that replaces the shared template body. */
+  rewrite?: IndustryRewrite
 }
+
+/** A trade page written for that trade only (the model for de-templating the others). */
+export type IndustryRewrite = {
+  /** H1 as [before, accent, after]; the accent renders in the serif gold. */
+  h1: [before: string, accent: string, after: string]
+  lead: string
+  leadPathsIntro: string
+  /** One H2 per job type the trade wants more of, each with its own intake questions. */
+  leadPaths: Array<{ id: string; title: string; body: string; intake: string[] }>
+  routing: { title: string; body: string; lanes: Array<{ name: string; items: string[] }>; note: string }
+  license: { title: string; body: string; placements: string[] }
+  areas: string
+  faqHeading: string
+  /** Shown on the page and marked up as its FAQPage (lib/legacy-seo). */
+  faqs: Array<[question: string, answer: string]>
+  cta: { title: string; copy: string }
+}
+
+/** "a" or "an" by sound: acronyms are read letter by letter ("an HVAC"), words by their first vowel ("an electrical"). */
+export function aOrAn(word: string) {
+  if (/^[A-Z]{2,}\b/.test(word)) return /^[AEFHILMNORSX]/.test(word) ? 'an' : 'a'
+  return /^[aeiou]/i.test(word) && !/^(?:one|uni|use|usu|eu)/i.test(word) ? 'an' : 'a'
+}
+
+/** Lowercase for mid-sentence use, but keep acronyms like HVAC as-is. */
+export const inlineName = (s: string) => (/^[A-Z]{2,}$/.test(s) ? s : s.toLowerCase())
+
+/** Shared tier table under each trade's cost answer. Real Orbit tiers: keep in step with content/site tiers + carePlans. */
+export const websiteCostTiers: Array<[tier: string, price: string, covers: string]> = [
+  ['Launch build', 'Quoted on a free call', '7-day sprint, 50% to start. A custom mobile site with call, quote and booking paths.'],
+  ['Premium build', 'From $3,500', 'Deeper strategy and copy, service and area pages, structured data and analytics.'],
+  ['AI operations', '$5,000–$15,000+', 'AI intake, urgency routing, booking and follow-up. Optional retainer $750–$2,500/mo.'],
+  ['Monthly plans (optional)', '$300–$700/mo', 'Site Care $300, Website + Leads Plan $500, Growth Partner $700. Month to month, after launch.'],
+]
 
 /** Generic town landing pages. Ewing and Central NJ have custom pages (see landing-custom.ts). */
 export const townPages: Record<string, TownPage> = {
@@ -301,7 +343,17 @@ export const industryPages: Record<string, IndustryPage> = {
     "jobType": "heating and cooling service calls",
     "avgJob": "$450–$1,200",
     "aiUseCase": "After-hours emergency requests are captured by AI intake, qualified by equipment type and urgency, and texted to your phone as a scoped summary — so no emergency call slips through overnight.",
-    "towns": "Ewing, Hamilton, Lawrence Township, Trenton, Mercer County, and Central New Jersey"
+    "towns": "Ewing, Hamilton, Lawrence Township, Trenton, Mercer County, and Central New Jersey",
+    "cost": {
+      "question": "How much does an HVAC website cost?",
+      "answer": "An HVAC website with Orbit falls into one of three build tiers. A launch build is quoted on a free call and ships in a 7-day sprint. Premium builds start at $3,500. AI operations builds, with after-hours intake, urgency routing and booking, run $5,000–$15,000+. Optional monthly plans are $300–$700, and you own the site."
+    },
+    "leadSystem": {
+      "title": "Pair the website with a lead response system.",
+      "copy": "The website brings the calls in. Orbit Growth Systems answers the ones your crew can't pick up: missed-call text-back, follow-up on open estimates, and booking straight onto your calendar.",
+      "href": "/growth",
+      "anchor": "HVAC lead response system"
+    }
   },
   "plumbing": {
     "path": "/website-design-for-plumbers-nj",
@@ -311,7 +363,17 @@ export const industryPages: Record<string, IndustryPage> = {
     "jobType": "plumbing service and repair calls",
     "avgJob": "$300–$1,500",
     "aiUseCase": "AI intake sorts emergency from scheduled jobs the moment a form is submitted — emergency requests fire a text to your phone in under 30 seconds, scheduled ones collect job description, address, and timing so you quote without a call.",
-    "towns": "Ewing, Trenton, Hamilton, Lawrence, Princeton, Mercer County, and Central New Jersey"
+    "towns": "Ewing, Trenton, Hamilton, Lawrence, Princeton, Mercer County, and Central New Jersey",
+    "cost": {
+      "question": "How much does a plumbing website cost?",
+      "answer": "A plumbing website with Orbit falls into one of three build tiers. A launch build is quoted on a free call and ships in a 7-day sprint. Premium builds start at $3,500. AI operations builds that sort emergency leaks from scheduled jobs and text you the details run $5,000–$15,000+. Optional monthly plans are $300–$700."
+    },
+    "leadSystem": {
+      "title": "Catch the emergency calls you can't answer.",
+      "copy": "Burst pipes and backed-up drains don't wait for a callback. AI intake sorts emergencies from scheduled work, texts you the address and details, and tells the customer what happens next.",
+      "href": "/services#ai-operations",
+      "anchor": "AI intake for plumbing emergency calls"
+    }
   },
   "electrician": {
     "path": "/website-design-for-electricians-nj",
@@ -321,7 +383,117 @@ export const industryPages: Record<string, IndustryPage> = {
     "jobType": "electrical service and installation jobs",
     "avgJob": "$350–$2,000",
     "aiUseCase": "AI intake captures job type (panel upgrade, outlet repair, EV charger install), address, and urgency level. Residential and commercial requests are routed separately so you prioritize correctly without triaging a full voicemail box.",
-    "towns": "Ewing, Princeton, Lawrence Township, Hamilton, West Windsor, Mercer County, and Central NJ"
+    "towns": "Ewing, Princeton, Lawrence Township, Hamilton, West Windsor, Mercer County, and Central NJ",
+    "cost": {
+      "question": "How much does an electrician website cost?",
+      "answer": "An electrician website runs from a launch build quoted on a free call to $5,000–$15,000+ for AI intake and routing. Premium builds with separate panel upgrade, EV charger and generator pages start at $3,500. The launch tier ships in a 7-day sprint. Optional monthly plans run $300–$700, month to month."
+    },
+    // Rewritten 2026-10-02 (the page did not rank, so it was safe to replace the template).
+    "rewrite": {
+      "h1": ["Website design for New Jersey ", "electricians", "."],
+      "lead": "Panel upgrades, EV charger installs and standby generators bring in three different customers with three different questions. We build electrician websites that give each of those jobs its own page and intake form, keep commercial requests apart from homeowner calls, and put your New Jersey license number where people check it.",
+      "leadPathsIntro": "A single \"electrical services\" page with a bullet list asks every visitor the same thing. The jobs that pay best don't work that way. Each one below gets its own page, its own answers and its own form, so the request that reaches you already has what you need to quote.",
+      "leadPaths": [
+        {
+          "id": "panel-upgrades",
+          "title": "Panel upgrade and service change leads",
+          "body": "Most panel work starts with a trigger. A home inspection flags an old Federal Pacific or Zinsco panel, an insurer asks questions, or the owner wants central air, an induction range or a car charger the 100-amp service can't carry. These buyers are researching, not panicking, so the page explains why the upgrade matters, what the permit and inspection involve, and how long the power will be off.",
+          "intake": [
+            "Current service size and panel brand, if they know it",
+            "A photo of the panel with the cover on",
+            "What's driving it: inspection, new appliance, EV charger or addition",
+            "Owner or landlord, and the town",
+            "When they want the work done"
+          ]
+        },
+        {
+          "id": "ev-chargers",
+          "title": "EV charger installation leads",
+          "body": "EV charger buyers usually arrive with the car ordered and a charger already in the cart. Their questions are specific: can my panel handle it, how far is the garage from the panel, do I need a permit. A dedicated EV charger page with a photo-based quote form answers those before the call, and it catches the panel upgrades that come along when a load calculation says the service is too small.",
+          "intake": [
+            "Vehicle and charger model, or a request for a recommendation",
+            "Mounting spot: garage, driveway or outside wall",
+            "Rough distance from the panel to that spot",
+            "Photos of the panel and the mounting spot",
+            "House, condo or townhouse, since HOA approval may apply"
+          ]
+        },
+        {
+          "id": "generators",
+          "title": "Standby generator and transfer switch leads",
+          "body": "Generator demand in New Jersey follows the weather. After a nor'easter or a summer storm takes the power out for days, searches jump and people want an install date, not a brochure. The generator page explains standby units versus a portable with an inlet and interlock, asks the sizing questions up front, and offers a maintenance plan sign-up so one install becomes a yearly service visit. If you are a factory-authorized dealer, the page says so.",
+          "intake": [
+            "Whole-home backup or essential circuits only",
+            "Fuel on site: natural gas or propane",
+            "Any existing transfer switch or inlet",
+            "Must-run loads such as a well pump, sump pump or medical equipment",
+            "Planning ahead, or calling right after an outage"
+          ]
+        }
+      ],
+      "routing": {
+        "title": "Residential and commercial requests, routed separately",
+        "body": "A homeowner with a breaker that keeps tripping and a property manager pricing a tenant fit-out need different answers at different speeds. The form asks one question first, home or business, then sends each request down its own path to the inbox or phone you choose, with the details that kind of job needs.",
+        "lanes": [
+          {
+            "name": "Residential",
+            "items": [
+              "Job type, address and photos",
+              "Urgency: no power, partial outage or planned work",
+              "A callback window that fits a workday"
+            ]
+          },
+          {
+            "name": "Commercial",
+            "items": [
+              "Company, site contact and building access hours",
+              "Scope: fit-out, lighting retrofit, service call or maintenance contract",
+              "Billing contact, PO number or bid due date"
+            ]
+          }
+        ],
+        "note": "Requests that mention a burning smell, sparking or a full outage are flagged and sent to your phone first."
+      },
+      "license": {
+        "title": "Your NJ electrical license, shown where customers check",
+        "body": "New Jersey licenses electrical contractors through the Board of Examiners of Electrical Contractors, and anyone can look up a license online in a minute. Plenty of homeowners do before they let someone open a panel or wire in a generator. We put your license number where that check happens, so the answer is already on the page.",
+        "placements": [
+          "In the header or footer on every page",
+          "Next to every quote form",
+          "On each service page",
+          "On the about page, with your insurance details",
+          "In the site's structured data"
+        ]
+      },
+      "areas": "We build for electrical contractors across Mercer and Middlesex counties, including Plainsboro, Princeton, West Windsor, Hamilton, Ewing, Lawrence Township and Trenton. The studio is in Plainsboro, so you deal directly with the people building the site.",
+      "faqHeading": "What NJ electricians ask before hiring us.",
+      "faqs": [
+        [
+          "Should panel upgrades, EV chargers and generators each get their own page?",
+          "Yes, if you want more of each. They are separate searches from different customers, and each needs its own answers and its own form. One \"electrical services\" page with a bullet list rarely ranks for any of them. Start with the two or three jobs you most want to grow."
+        ],
+        [
+          "Can the site keep commercial requests away from homeowner calls?",
+          "Yes. The form asks home or business first, then only the questions that matter for that kind of job. Commercial requests can go to a different email, phone number or person, so a bid request doesn't sit behind a stack of outlet repairs."
+        ],
+        [
+          "Where should my NJ license number appear?",
+          "Anywhere a customer is deciding whether to trust you: the header or footer, next to the quote form, on each service page and on the about page. It costs nothing and answers the question before they go looking."
+        ],
+        [
+          "Should an electrician show prices on the website?",
+          "For jobs you quote often, like a standard EV charger install, a \"starting at\" price can filter out poor fits, if you are comfortable publishing one. For panel upgrades and generators, explain what changes the price and ask for photos instead. Either way you get fewer calls that go nowhere."
+        ],
+        [
+          "How long does an electrician website take?",
+          "A launch build runs on a seven-day sprint once scope and direction are clear. Premium builds with a page per job type and routed intake get a timeline you agree to on the call, before you pay anything."
+        ]
+      ],
+      "cta": {
+        "title": "Let's build your electrician website.",
+        "copy": "Book a free call and tell us which jobs you want more of. You talk directly with the people who build the site."
+      }
+    }
   },
   "landscaping": {
     "path": "/website-design-for-landscaping-companies-nj",
@@ -555,6 +727,30 @@ export function townLandingFaqs(page: TownPage): Array<[string, string]> {
     [
       `Do you work with businesses near ${page.town}?`,
       `Yes. Orbit Websites serves ${page.town}, ${page.county}, and nearby areas including ${page.nearby}.`,
+    ],
+  ]
+}
+
+/**
+ * Industry FAQ: shown on the trade page and marked up as its FAQPage (lib/legacy-seo).
+ * A rewritten trade page uses its own FAQs; the others keep the old template set.
+ */
+export function industryLandingFaqs(page: IndustryPage): Array<[string, string]> {
+  if (page.rewrite) return page.rewrite.faqs
+  const name = inlineName(page.industryShort)
+  const a = aOrAn(name)
+  return [
+    [
+      `How much does a website cost for ${a} ${name} company in NJ?`,
+      `A focused launch site for ${a} ${name} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
+    ],
+    [
+      `What should ${a} ${name} website include?`,
+      `A strong ${name} website should include service details, local service areas, trust signals, clear calls to action, mobile-first pages, and an intake path built around ${page.jobType}.`,
+    ],
+    [
+      'When does AI intake make sense?',
+      `AI intake makes sense when faster response or better qualification can recover revenue. For ${name} businesses, it can collect the details staff need before calling back and route higher-value requests sooner.`,
     ],
   ]
 }

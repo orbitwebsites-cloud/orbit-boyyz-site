@@ -50,7 +50,7 @@ export function Hero() {
 
         <div className="flex flex-1 flex-col justify-center py-12 md:py-16">
           <h1 className="display t-hero max-w-[12.5ch] text-balance">
-            <span className="sr-only">{hero.headline}</span>
+            <span className="sr-only">{hero.srHeadline}</span>
             <span aria-hidden="true">
               {words.map((w, wi) => (
                 <span key={wi}>
