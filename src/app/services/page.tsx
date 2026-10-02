@@ -32,6 +32,9 @@ export default function ServicesPage() {
           <Button href="/pricing" variant="ghost">
             See pricing
           </Button>
+          <Button href="/free-website-check" variant="ghost">
+            Free website check
+          </Button>
         </div>
       </PageHero>
 

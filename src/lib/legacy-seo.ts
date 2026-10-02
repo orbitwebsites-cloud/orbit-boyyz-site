@@ -162,6 +162,11 @@ export const legacyPageMeta: Record<string, { title: string; description: string
     description:
       'Get a rough price range for your website in 60 seconds. Answer a few questions about your business and we\'ll show you what a build would cost — no commitment.',
   },
+  '/free-website-check': {
+    title: 'Free Website Check for Small Business NJ | Orbit Websites',
+    description:
+      'Free website & Google check for NJ small businesses: an instant score on mobile speed, Google basics, tap-to-call and quote forms, plus plain-English fixes.',
+  },
   '/project-brief': {
     title: 'Client Discovery Brief | Orbit Websites',
     description:
@@ -485,6 +490,7 @@ export function graphFor(route: string) {
     '/services': 'Website Services',
     '/pricing': 'Pricing',
     '/quote': 'Quote Estimator',
+    '/free-website-check': 'Free Website Check',
     '/contact': 'Contact',
     '/projects': 'Projects',
     '/blog': 'Blog',
@@ -758,6 +764,21 @@ export function graphFor(route: string) {
       about: { '@id': `${ORIGIN}/#organization` },
       description:
         'How Orbit Websites (OrbitBoyzz) collects, uses, and protects information submitted through orbitboyzz.com.',
+    })
+  }
+  if (route === '/free-website-check') {
+    graph.push({
+      '@type': 'WebApplication',
+      '@id': `${ORIGIN}/free-website-check#app`,
+      name: 'Free Website & Google Check',
+      url: `${ORIGIN}/free-website-check`,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Any (web browser)',
+      isAccessibleForFree: true,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      provider: { '@id': `${ORIGIN}/#organization` },
+      description:
+        'Free tool for local businesses: checks a homepage for HTTPS, mobile setup, page title and description, tap-to-call, quote forms, LocalBusiness structured data and Google PageSpeed mobile score, then lists plain-English fixes.',
     })
   }
   if (route === '/developers') {

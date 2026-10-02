@@ -47,6 +47,7 @@ export const footerPages = [
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
   { label: 'Quote', href: '/quote' },
+  { label: 'Free website check', href: '/free-website-check' },
   { label: 'Web Design NJ', href: '/web-design-central-nj' },
   { label: 'Blog', href: '/blog' },
   { label: 'OrbitBoyzz', href: '/orbitboyzz' },
