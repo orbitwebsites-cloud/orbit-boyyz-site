@@ -2,6 +2,7 @@ import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { DirectAnswer, LandingFaq, LocalPagesGrid, NumberedCards, Section, SectionTitle } from '@/components/port/Blocks'
 import { HeroActions } from '@/components/port/LandingPages'
+import { ewingFaqs } from '@/content/landing'
 import { legacyJsonLd } from '@/lib/legacy-seo'
 import { JsonLd, legacyMetadata } from '@/lib/legacy-meta'
 
@@ -17,20 +18,7 @@ const CARDS: Array<[string, string]> = [
   ['Automation when it pays', 'AI lead intake, routing, and proposal workflows are added when faster response can recover missed revenue or reduce admin work.'],
 ]
 
-const FAQS: Array<[string, string]> = [
-  [
-    'How much does web design cost in Ewing, NJ?',
-    'Launch builds for Ewing businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional care plans are $300–$700/mo.',
-  ],
-  [
-    'Do you work with businesses near Ewing?',
-    'Yes. Orbit Websites serves Ewing Township, Mercer County, and nearby towns including Trenton, Lawrence, Hamilton, Princeton, and West Windsor.',
-  ],
-  [
-    'What makes an Ewing local business website convert?',
-    'The site needs clear services, local proof, fast mobile pages, direct click-to-call actions, quote or booking paths, and enough service-area context for buyers and search engines to understand the business quickly.',
-  ],
-]
+const FAQS = ewingFaqs
 
 export default function WebDesignEwingPage() {
   return (

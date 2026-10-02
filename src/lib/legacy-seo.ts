@@ -3,7 +3,7 @@
 // same code, so every ported route emits exactly what the old prerender did.
 // Copied programmatically — keep in sync with PORT-NOTES.md if edited.
 import { blogPosts, type BlogPost } from '@/content/blog'
-import { legacyFaqs as faqs, townLandingFaqs, townPages } from '@/content/landing'
+import { ewingFaqs, legacyFaqs as faqs, townLandingFaqs, townPages } from '@/content/landing'
 
 export const ORIGIN = 'https://orbitboyzz.com'
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
@@ -429,31 +429,7 @@ function faqGraph(route: string, id: string, entries: ReadonlyArray<readonly [st
   }
 }
 
-// Ewing has its own page; the other towns' FAQs come from content/landing townLandingFaqs().
-const townFaqMap: Record<string, { town: string; county: string; nearby: string }> = {
-  '/web-design-ewing-nj': {
-    town: 'Ewing, NJ',
-    county: 'Mercer County',
-    nearby: 'Trenton, Lawrence, Hamilton, Princeton, and West Windsor',
-  },
-}
 
-function townLandingFaqGraph(route: string, page: { town: string; county: string; nearby: string }) {
-  return faqGraph(route, 'local-faq', [
-    [
-      `How much does web design cost in ${page.town}?`,
-      `Launch builds for ${page.town} businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
-    ],
-    [
-      `Do you work with businesses near ${page.town}?`,
-      `Yes. Orbit Websites serves ${page.town}, ${page.county}, and nearby areas including ${page.nearby}. Pages should only target towns where the business actually works.`,
-    ],
-    [
-      'What makes a local business website convert?',
-      'The highest-converting local websites make the next step obvious: call, request a quote, book a visit, or start intake. The page also needs clear services, proof, service-area context, fast mobile performance, and pricing or budget guidance.',
-    ],
-  ])
-}
 
 const industryFaqMap: Record<string, { short: string; jobType: string }> = {
   '/website-design-for-hvac-companies-nj': {
@@ -724,8 +700,8 @@ export function graphFor(route: string) {
   const townPage = Object.values(townPages).find((p) => p.path === route)
   if (townPage) {
     graph.push(faqGraph(route, 'local-faq', townLandingFaqs(townPage)))
-  } else if (townFaqMap[route]) {
-    graph.push(townLandingFaqGraph(route, townFaqMap[route]))
+  } else if (route === '/web-design-ewing-nj') {
+    graph.push(faqGraph(route, 'local-faq', ewingFaqs))
   }
   const industryServiceMap: Record<string, { id: string; name: string; serviceType: string; desc: string; label: string }> = {
     '/website-design-for-hvac-companies-nj': {

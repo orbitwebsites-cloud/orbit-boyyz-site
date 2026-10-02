@@ -558,3 +558,19 @@ export function townLandingFaqs(page: TownPage): Array<[string, string]> {
     ],
   ]
 }
+
+/** Ewing FAQ: shown on /web-design-ewing-nj and marked up as its FAQPage (lib/legacy-seo). */
+export const ewingFaqs: Array<[string, string]> = [
+  [
+    'How much does web design cost in Ewing, NJ?',
+    'Launch builds for Ewing businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional monthly plans are $300–$700/mo.',
+  ],
+  [
+    'Do you work with businesses near Ewing?',
+    'Yes. Orbit Websites serves Ewing Township, Mercer County, and nearby towns including Trenton, Lawrence, Hamilton, Princeton, and West Windsor.',
+  ],
+  [
+    'What makes an Ewing local business website convert?',
+    'The site needs clear services, local proof, fast mobile pages, direct click-to-call actions, quote or booking paths, and enough service-area context for buyers and search engines to understand the business quickly.',
+  ],
+]

@@ -7,9 +7,12 @@ import { ArrowLink, DirectAnswer, LandingFaq, LocalPagesGrid, NumberedCards, Sec
 
 type Faq = [string, string]
 
+/** Lowercase for mid-sentence use, but keep acronyms like HVAC as-is. */
+const inlineName = (s: string) => (/^[A-Z]{2,}$/.test(s) ? s : s.toLowerCase())
+
 /** Old industryLandingFaqs() — verbatim. */
 export function industryLandingFaqs(page: IndustryPage): Faq[] {
-  const lower = page.industryShort.toLowerCase()
+  const lower = inlineName(page.industryShort)
   return [
     [
       `How much does a website cost for a ${lower} company in NJ?`,
@@ -84,7 +87,7 @@ export function TownLanding({ page }: { page: TownPage }) {
 }
 
 export function IndustryLanding({ page }: { page: IndustryPage }) {
-  const lower = page.industryShort.toLowerCase()
+  const lower = inlineName(page.industryShort)
   const cards: Array<[string, string]> = [
     ['Local search visibility', `The site is structured to rank for service-specific and town-specific searches — "${lower} near me", "${lower} ${page.towns.split(',')[0]}", and job-type variations.`],
     ['AI-powered intake', page.aiUseCase],
