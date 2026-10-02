@@ -663,7 +663,7 @@ export const blogPosts: BlogPost[] = [
     "updated": "October 1, 2026",
     "audience": "Home service business owners in Central New Jersey (plumbers, HVAC, electricians, landscapers, and similar contractors)",
     "takeaways": [
-      "A response within 5 minutes can double lead conversion, while waiting 30 minutes cuts it by half (InsideSales.com).",
+      "A fast first response matters: home-service customers often book whichever company gets back to them first.",
       "Home-service customers often book whoever replies first, so a reply within minutes matters more than a perfect quote hours later.",
       "AI intake can reply to a new inquiry within moments and collect the job details, so your first callback is informed instead of rushed."
     ],
@@ -715,7 +715,7 @@ export const blogPosts: BlogPost[] = [
     "updated": "October 1, 2026",
     "audience": "Real estate teams and brokerages operating in Central New Jersey",
     "takeaways": [
-      "Agents who reply within 5 minutes are 2.5 times more likely to close a buyer.",
+      "Buyers often contact several agents at once, so replying within minutes instead of hours gives an agent a real edge.",
       "An AI follow-up workflow can take routine first replies and reminders off agents’ plates, so their time goes to conversations that need a person.",
       "A centralized CRM with automated email and SMS sequences keeps every inquiry on a schedule instead of relying on memory."
     ],

@@ -153,8 +153,8 @@ export function LeadForm() {
       <section className="container-x pb-24">
         <form onSubmit={submit} noValidate className="page-fade mx-auto grid max-w-3xl gap-5 rounded-[var(--radius)] border border-line bg-panel/70 p-6 md:p-8">
           <div className="grid gap-5 sm:grid-cols-2">
-            <Field label="Business name" name="businessName" value={input.businessName} onChange={update} error={errors.businessName} placeholder="e.g. Princeton Family Dental" autoComplete="organization" />
-            <Field label="What kind of business" name="industry" value={input.industry} onChange={update} error={errors.industry} placeholder="e.g. HVAC, salon, dental, contractor" />
+            <Field label="Business name" name="businessName" value={input.businessName} onChange={update} error={errors.businessName} placeholder="e.g. Princeton Heating & Cooling" autoComplete="organization" />
+            <Field label="What kind of business" name="industry" value={input.industry} onChange={update} error={errors.industry} placeholder="e.g. HVAC, plumbing, roofing, contractor" />
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
             <Field label="Your name" name="contactName" value={input.contactName} onChange={update} error={errors.contactName} placeholder="Your full name" autoComplete="name" />
