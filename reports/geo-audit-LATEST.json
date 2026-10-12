@@ -1,7 +1,7 @@
 [
   {
     "query": "how much does a custom website cost for a local business",
-    "error": "no search results"
+    "error": "Error code: 402 - {'message': 'Payment required to access this resource. Visit your billing tab.', 'type': 'payment_required_error', 'param': 'quota', 'code': 'payment_required'}"
   },
   {
     "query": "how much does an AI website cost small business",
@@ -69,7 +69,7 @@
   },
   {
     "query": "web design Princeton NJ",
-    "error": "no search results"
+    "error": "Error code: 402 - {'message': 'Payment required to access this resource. Visit your billing tab.', 'type': 'payment_required_error', 'param': 'quota', 'code': 'payment_required'}"
   },
   {
     "query": "web design Mercer County NJ",
