@@ -1,6 +1,7 @@
 // Server-side email deliverability check for POST /api/verify-email (used by
 // the /qualify and /book booking flows). Free checks only:
-//   syntax -> known-typo domains -> junk local parts / placeholder domains ->
+//   syntax -> typo domains (known list, plus one-key slips of Gmail, Yahoo,
+//   Hotmail, Outlook, iCloud) -> junk local parts / placeholder domains ->
 //   disposable domains -> provider local-part rules (Gmail, Outlook, Yahoo) ->
 //   DNS (MX, or an A/AAAA fallback) -> optional paid mailbox check (Treg, only
 //   when TREG_TOKEN and TREG_ORG are set).
@@ -9,6 +10,8 @@
 // Never import this into client code: it uses node:dns.
 
 import { Resolver } from 'node:dns/promises'
+// Same syntax rule and normalisation (lowercase, punycode domain) as the forms.
+import { EMAIL_RE, normalizeEmail } from '@/lib/emailCheck'
 
 export type EmailVerdict = {
   ok: boolean
@@ -20,10 +23,6 @@ export type EmailVerdict = {
 
 /** Internal result: `final` false means "don't cache, a retry could differ". */
 type Checked = EmailVerdict & { final: boolean }
-
-// Same dot-atom rule as the forms' client-side check.
-const EMAIL_RE =
-  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/
 
 // ---------------------------------------------------------------------------
 // Typos
@@ -154,12 +153,57 @@ function closestPopularDomain(domain: string) {
   return bestDistance > 0 && bestDistance <= allowed ? best : ''
 }
 
+// Nearly every one-key slip of these five (gmil.com, gmsil.com, outlool.com,
+// yhaoo.com, icloud.co...) is registered by a typo-squatter with working MX
+// records, so DNS alone waves them through. Measured 2026-10-15: 807 of the
+// 3,341 one-edit variants of these domains accept mail.
+const SLIP_PROVIDERS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com']
+
+// QWERTY neighbours (same row, plus the keys above and below).
+const KEY_NEIGHBOURS: Record<string, string> = {
+  '1': '2q', '2': '13qw', '3': '24we', '4': '35er', '5': '46rt', '6': '57ty', '7': '68yu', '8': '79ui', '9': '80io', '0': '9op',
+  q: '12wa', w: '23qeas', e: '34wrsd', r: '45etdf', t: '56ryfg', y: '67tugh', u: '78yihj', i: '89uojk', o: '90ipkl', p: '0ol',
+  a: 'qwsz', s: 'weadzx', d: 'erfsxc', f: 'rtdgcv', g: 'tyfhvb', h: 'yugjbn', j: 'uihknm', k: 'iojlm', l: 'opk.',
+  z: 'asx', x: 'zsdc', c: 'xdfv', v: 'cfgb', b: 'vghn', n: 'bhjm', m: 'njk', '.': 'l',
+}
+
+function nearKeys(a: string, b: string) {
+  return a === b || Boolean(KEY_NEIGHBOURS[a]?.includes(b) || KEY_NEIGHBOURS[b]?.includes(a))
+}
+
+/**
+ * True when `typed` is `intended` with one slip of the finger: two letters
+ * swapped, one key missed, one key doubled or hit next to the right one.
+ * Edits to the first letter don't count: mail.com, email.com, ymail.com,
+ * cloud.com, pcloud.com and wahoo.com are real domains, not typos. Neither
+ * does a wrong key that isn't next to the right one (grail.com, yazoo.com).
+ */
+function isSlipOf(typed: string, intended: string) {
+  if (typed === intended) return false
+  let i = 0
+  while (i < typed.length && i < intended.length && typed[i] === intended[i]) i++
+  if (typed.length === intended.length) {
+    const swapped =
+      i + 1 < typed.length && typed[i] === intended[i + 1] && typed[i + 1] === intended[i] && typed.slice(i + 2) === intended.slice(i + 2)
+    if (swapped) return true
+    return i >= 1 && nearKeys(typed[i], intended[i]) && typed.slice(i + 1) === intended.slice(i + 1)
+  }
+  if (typed.length === intended.length + 1) {
+    // One extra key, a double tap or a neighbour of a letter it sits beside.
+    if (i < 1 || typed.slice(i + 1) !== intended.slice(i)) return false
+    return nearKeys(typed[i], typed[i - 1]) || (i < intended.length && nearKeys(typed[i], intended[i]))
+  }
+  if (typed.length === intended.length - 1) return i >= 1 && typed.slice(i) === intended.slice(i + 1)
+  return false
+}
+
 function typoSuggestion(domain: string) {
   if (TYPO_DOMAINS[domain]) return TYPO_DOMAINS[domain]
   const dot = domain.lastIndexOf('.')
   const tld = domain.slice(dot + 1)
   if (TLD_TYPOS[tld]) return `${domain.slice(0, dot)}.${TLD_TYPOS[tld]}`
-  return ''
+  if (KNOWN_MAIL_DOMAINS.has(domain)) return ''
+  return SLIP_PROVIDERS.find((provider) => isSlipOf(domain, provider)) ?? ''
 }
 
 // ---------------------------------------------------------------------------
@@ -439,11 +483,38 @@ async function checkDomain(domain: string): Promise<DnsResult> {
 const TREG_URL = 'https://treg.to/call/treg.people.email.verify'
 const TREG_TIMEOUT_MS = 4000
 
-/** 'invalid' rejects; anything else (valid, catch-all, unknown, errors) passes. */
+// Treg passes each provider's own verdict word through. Same reading as the
+// agency-leads checker (agency-leads/checkmail.mjs): these mean the mailbox
+// can't take mail (or is a throwaway / trap); valid/ok/deliverable mean it
+// can; anything else (accept_all, unknown...) can't be confirmed and passes.
+const MAILBOX_GONE =
+  /^(?:invalid|undeliverable|bounced?|rejected|does_not_exist|not_found|mailbox_not_found|no_mailbox|syntax_error|invalid_syntax|invalid_domain|no_mx)$/
+const MAILBOX_JUNK = /^(?:disposable|spam_?trap)$/
+const MAILBOX_OK = /^(?:valid|ok|deliverable|verified|safe)$/
+
+// Process-wide ceiling on paid lookups. The per-IP limit in the route doesn't
+// stop many IPs (or one rotating) running up the bill with fresh addresses;
+// past the ceiling the paid check is skipped, never the form.
+const TREG_MAX_PER_MINUTE = 30
+const tregWindow = { start: 0, calls: 0 }
+
+function tregBudgetLeft() {
+  const now = Date.now()
+  if (now - tregWindow.start >= 60_000) {
+    tregWindow.start = now
+    tregWindow.calls = 0
+  }
+  if (tregWindow.calls >= TREG_MAX_PER_MINUTE) return false
+  tregWindow.calls++
+  return true
+}
+
+/** 'invalid' and 'junk' reject; 'valid' and 'skipped' pass silently; 'error' passes uncached; anything else passes with a note. */
 async function mailboxStatus(email: string): Promise<string> {
   const token = process.env.TREG_TOKEN
   const org = process.env.TREG_ORG
   if (!token || !org) return 'skipped'
+  if (!tregBudgetLeft()) return 'error'
   try {
     const response = await fetch(TREG_URL, {
       method: 'POST',
@@ -451,8 +522,8 @@ async function mailboxStatus(email: string): Promise<string> {
         'Content-Type': 'application/json',
         'X-Treg-Token': token,
         'X-Treg-Org': org,
-        // Cap what one lookup may cost.
-        'X-Treg-Route-Max-Cost': '0.01',
+        // Cap what one lookup may cost (the agency-leads scripts use the same).
+        'X-Treg-Route-Max-Cost': '0.006',
       },
       body: JSON.stringify({ email }),
       signal: AbortSignal.timeout(TREG_TIMEOUT_MS),
@@ -463,10 +534,11 @@ async function mailboxStatus(email: string): Promise<string> {
     const output = data && typeof data === 'object' && 'output' in data ? (data as { output: unknown }).output : null
     if (!output || typeof output !== 'object') return 'error'
     const { status, valid } = output as { status?: unknown; valid?: unknown }
-    if (typeof status === 'string' && status) return status.toLowerCase()
-    if (valid === true) return 'valid'
-    if (valid === false) return 'invalid'
-    return 'unknown'
+    const word = typeof status === 'string' ? status.toLowerCase().trim().replace(/[\s-]+/g, '_').replace(/[^a-z0-9_]/g, '').slice(0, 30) : ''
+    if (MAILBOX_GONE.test(word) || (!word && valid === false)) return 'invalid'
+    if (MAILBOX_JUNK.test(word)) return 'junk'
+    if (MAILBOX_OK.test(word) || (!word && valid === true)) return 'valid'
+    return word || 'unknown'
   } catch {
     return 'error'
   }
@@ -488,10 +560,6 @@ function remember<T>(cache: Map<string, T>, key: string, value: T) {
 }
 
 const emailCache = new Map<string, EmailVerdict>()
-
-export function normalizeEmail(raw: string) {
-  return raw.trim().toLowerCase()
-}
 
 /** A corrected address worth offering: only one that would itself pass the local checks. */
 function suggestion(local: string, domain: string) {
@@ -543,6 +611,7 @@ async function runChecks(email: string): Promise<Checked> {
 
   const mailbox = await mailboxStatus(email)
   if (mailbox === 'invalid') return { ok: false, reason: 'mailbox does not exist', final: true }
+  if (mailbox === 'junk') return { ok: false, reason: 'disposable mailbox', final: true }
   if (mailbox === 'error') return { ok: true, ...(note ? { reason: note } : {}), final: false }
   if (mailbox !== 'valid' && mailbox !== 'skipped') note = note ? `${note}; mailbox ${mailbox}` : `mailbox ${mailbox}`
   return { ok: true, ...(note ? { reason: note } : {}), final: true }

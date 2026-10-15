@@ -22,7 +22,6 @@ import {
   CalendarClock,
   CalendlyInline,
   Check,
-  EMAIL_RE,
   EmailSuggestion,
   KEY_LETTERS,
   LoaderCircle,
@@ -32,6 +31,7 @@ import {
   focusSoon,
   isTypingTarget,
   keyToIndex,
+  looksLikeEmail,
   scrollToTop,
   useEmailCheck,
   useIsPresent,
@@ -823,7 +823,7 @@ function validateContact(contact: Contact): ContactErrors {
   const phone = phoneError(contact.phone)
   if (phone) errors.phone = phone
   if (!contact.email.trim()) errors.email = 'Add your email so we can send the invite.'
-  else if (!EMAIL_RE.test(contact.email.trim())) errors.email = 'That email doesn’t look right. Check for typos.'
+  else if (!looksLikeEmail(contact.email)) errors.email = 'That email doesn’t look right. Check for typos.'
   return errors
 }
 
@@ -886,6 +886,7 @@ function ContactScreen({
   }
 
   function applySuggestion(email: string) {
+    if (busy) return
     onChange('email', email)
     setErrors((current) => ({ ...current, email: undefined }))
     precheck(email)
@@ -932,6 +933,7 @@ function ContactScreen({
             placeholder="609 555 0142"
             autoComplete="tel"
             maxLength={30}
+            readOnly={busy}
             required
             aria-required="true"
             aria-invalid={phoneErr ? true : undefined}
@@ -961,6 +963,9 @@ function ContactScreen({
             autoCapitalize="off"
             spellCheck={false}
             maxLength={160}
+            // Frozen while the address is checked and sent: an edit made then
+            // would skip the check and go to Calendly as typed.
+            readOnly={busy}
             required
             aria-required="true"
             aria-invalid={emailErr ? true : undefined}
@@ -973,7 +978,15 @@ function ContactScreen({
                 {emailErr}
               </p>
             )}
-            {emailCheck.rejected && <EmailSuggestion suggestion={emailCheck.suggestion} onUse={applySuggestion} />}
+            {emailCheck.rejected && (
+              <>
+                <EmailSuggestion suggestion={emailCheck.suggestion} disabled={busy} onUse={applySuggestion} />
+                {/* The check can be wrong about a real address; don't leave that person stuck. */}
+                <p className="qf-email-help">
+                  Sure it’s right? Call or text <a href={site.phoneHref}>{site.phoneDisplay}</a> and we’ll book it with you.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -989,6 +1002,7 @@ function ContactScreen({
           onChange={(event) => onChange('notes', event.target.value)}
           onKeyDown={handleNotesKeyDown}
           maxLength={2000}
+          readOnly={busy}
           placeholder="A deadline, what’s not working, pages you need…"
         />
       </div>

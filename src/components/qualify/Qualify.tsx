@@ -19,7 +19,6 @@ import {
   CalendarClock,
   CalendlyInline,
   Check,
-  EMAIL_RE,
   EmailSuggestion,
   KEY_LETTERS,
   LoaderCircle,
@@ -30,6 +29,7 @@ import {
   focusSoon,
   isTypingTarget,
   keyToIndex,
+  looksLikeEmail,
   scrollToTop,
   useEmailCheck,
   useIsPresent,
@@ -911,7 +911,7 @@ function validateContact(contact: Contact) {
   if (!contact.name.trim()) errors.name = 'Add your first name.'
   if (!contact.agency.trim()) errors.agency = 'Add your agency’s name.'
   if (!contact.email.trim()) errors.email = 'Add your work email.'
-  else if (!EMAIL_RE.test(contact.email.trim())) errors.email = 'That email doesn’t look right. Check for typos.'
+  else if (!looksLikeEmail(contact.email)) errors.email = 'That email doesn’t look right. Check for typos.'
   return errors
 }
 
@@ -942,6 +942,9 @@ function ContactScreen({
   const emailCheck = useEmailCheck(contact.email)
   const { precheck, verify } = emailCheck
   const checkingRef = useRef(false)
+  // Fields are read-only while the address is checked and sent: an edit made
+  // then would skip the check and go to Calendly as typed.
+  const busy = submitting || emailCheck.checking
   // A prefilled (or restored) address is checked as soon as the step opens.
   const [emailOnOpen] = useState(contact.email)
   useEffect(() => {
@@ -983,6 +986,7 @@ function ContactScreen({
   }
 
   function applySuggestion(email: string) {
+    if (busy) return
     onChange('email', email)
     setErrors((current) => ({ ...current, email: undefined }))
     precheck(email)
@@ -1026,6 +1030,7 @@ function ContactScreen({
               autoCapitalize={field === 'email' ? 'off' : 'words'}
               spellCheck={field === 'email' ? false : undefined}
               maxLength={field === 'agency' ? 120 : field === 'email' ? 160 : 80}
+              readOnly={busy}
               required
               aria-required="true"
               aria-invalid={error ? true : undefined}
@@ -1038,7 +1043,7 @@ function ContactScreen({
                   {error}
                 </p>
               )}
-              {field === 'email' && emailCheck.rejected && <EmailSuggestion suggestion={emailCheck.suggestion} onUse={applySuggestion} />}
+              {field === 'email' && emailCheck.rejected && <EmailSuggestion suggestion={emailCheck.suggestion} disabled={busy} onUse={applySuggestion} />}
             </div>
           </div>
         )
@@ -1059,6 +1064,7 @@ function ContactScreen({
         onChange={(event) => onChange('notes', event.target.value)}
         onKeyDown={handleNotesKeyDown}
         maxLength={2000}
+        readOnly={busy}
         placeholder="Wrong titles, dead emails, the same lists every competitor has…"
       />
     </div>

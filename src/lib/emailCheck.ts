@@ -12,9 +12,35 @@ const ENDPOINT = '/api/verify-email'
 const TIMEOUT_MS = 9000
 
 // Dot-atom local part + dotted hostname: rejects spaces, commas, "a@b..co",
-// leading/trailing dots and hyphen-edged labels.
+// leading/trailing dots and hyphen-edged labels. Test it against
+// normalizeEmail(raw), so an internationalised domain arrives as punycode
+// (the xn-- TLD branch covers .рф and similar).
 export const EMAIL_RE =
-  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i
+  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,}|xn--[a-z0-9-]*[a-z0-9])$/i
+
+/**
+ * Trimmed and lowercased, with an internationalised domain (müller.de) in the
+ * ASCII form mail servers use (xn--mller-kva.de). Shared with the server
+ * check (lib/verifyEmail.ts) so both sides judge the same string.
+ */
+export function normalizeEmail(raw: string) {
+  const email = raw.trim().toLowerCase()
+  const at = email.lastIndexOf('@')
+  const domain = email.slice(at + 1)
+  // Only a plain non-ASCII hostname is converted; anything URL-like is left
+  // as typed so it still fails the syntax check.
+  if (at < 1 || !/[^\x00-\x7f]/.test(domain) || /[\s/\\?#@:[\]%]/.test(domain)) return email
+  try {
+    return `${email.slice(0, at)}@${new URL(`http://${domain}`).hostname}`
+  } catch {
+    return email
+  }
+}
+
+/** Syntax only: true when the address is shaped like a deliverable one. */
+export function looksLikeEmail(raw: string) {
+  return EMAIL_RE.test(normalizeEmail(raw))
+}
 
 const checks = new Map<string, Promise<EmailCheck>>()
 
@@ -45,7 +71,7 @@ async function request(email: string): Promise<EmailCheck> {
 
 /** Checks an address once per page load; repeat calls share the same answer. */
 export function checkEmail(raw: string): Promise<EmailCheck> {
-  const email = raw.trim().toLowerCase()
+  const email = normalizeEmail(raw)
   let check = checks.get(email)
   if (!check) {
     check = request(email)

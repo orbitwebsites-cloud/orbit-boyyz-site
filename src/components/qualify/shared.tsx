@@ -15,9 +15,9 @@ import {
   type ReactNode,
 } from 'react'
 import { CALENDLY_SCRIPT_SRC } from '@/content/qualifyConfig'
-import { EMAIL_RE, checkEmail, type EmailCheck } from '@/lib/emailCheck'
+import { checkEmail, looksLikeEmail, normalizeEmail, type EmailCheck } from '@/lib/emailCheck'
 
-export { EMAIL_RE }
+export { looksLikeEmail }
 
 export const KEY_LETTERS = 'ABCDEFGHIJ'
 
@@ -238,15 +238,16 @@ export function StageScreen({ stage, screenKey, children }: { stage: StageMotion
 
 type Rejection = { email: string; suggestion?: string }
 
-function emailKey(value: string) {
-  return value.trim().toLowerCase()
-}
+const emailKey = normalizeEmail
 
 /**
  * Runs /api/verify-email for an email field. `precheck` warms the answer on
  * blur (and shows a rejection early); `verify` is awaited on submit and
  * resolves to null when the address is rejected. A rejection only shows while
  * the field still holds the address it was about, so editing clears it.
+ * Callers keep their fields read-only while `checking` (and while sending):
+ * an edit made during the check would otherwise skip it and reach the
+ * Calendly prefill unverified.
  */
 export function useEmailCheck(email: string) {
   const [rejection, setRejection] = useState<Rejection | null>(null)
@@ -254,7 +255,7 @@ export function useEmailCheck(email: string) {
 
   const precheck = useCallback((value: string) => {
     const key = emailKey(value)
-    if (!EMAIL_RE.test(key)) return
+    if (!looksLikeEmail(key)) return
     void checkEmail(key).then((result) => {
       if (result.status === 'rejected') setRejection({ email: key, suggestion: result.suggestion })
     })
@@ -280,10 +281,10 @@ export function useEmailCheck(email: string) {
 }
 
 /** One-click fix for a mistyped domain, shown under the email error. */
-export function EmailSuggestion({ suggestion, onUse }: { suggestion: string; onUse: (email: string) => void }) {
+export function EmailSuggestion({ suggestion, disabled, onUse }: { suggestion: string; disabled?: boolean; onUse: (email: string) => void }) {
   if (!suggestion) return null
   return (
-    <button type="button" className="qf-suggest" onClick={() => onUse(suggestion)}>
+    <button type="button" className="qf-suggest" disabled={disabled} onClick={() => onUse(suggestion)}>
       Did you mean <strong>{suggestion}</strong>?
     </button>
   )

@@ -490,6 +490,17 @@ a.qf-brand {
 
 .qf-suggest strong { color: var(--qf-accent); font-weight: 700; }
 .qf-suggest:hover { border-color: var(--qf-accent); }
+.qf-suggest:disabled { cursor: default; opacity: .6; }
+
+/* /book: a way forward when the check rejects an address that is real */
+.qf-email-help {
+  margin: .5rem 0 0;
+  color: var(--qf-muted);
+  font-size: .85rem;
+  line-height: 1.4;
+}
+
+.qf-email-help a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Optional website link under the /book website question */
 .qf-url { max-width: 30rem; margin-top: .25rem; }
