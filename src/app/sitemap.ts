@@ -6,6 +6,9 @@ import { NOINDEX_ROUTES, ORIGIN, isoDate, legacyPageMeta } from '@/lib/legacy-se
 // the pages redirected in next.config.ts and the noindex routes
 // (/project-brief, /developers: still live, just not search landing pages).
 // (/form was never in the sitemap and stays out.)
+// /qualify, the noindex,nofollow agency booking step, must never be listed:
+// IndexNow (scripts/submit-indexnow.mjs) submits exactly what this file lists.
+const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify'])
 
 // Every non-post page changed in the 2026-10-02 SEO pass (organization schema
 // address on every page; homepage, /growth and trade-page copy).
@@ -33,7 +36,7 @@ function changeFrequency(route: string): 'weekly' | 'monthly' {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = Object.keys(legacyPageMeta).filter((route) => !NOINDEX_ROUTES.has(route))
-  const routes = [...pages, ...blogPosts.map((p) => `/blog/${p.slug}`)]
+  const routes = [...pages, ...blogPosts.map((p) => `/blog/${p.slug}`)].filter((route) => !NEVER_LISTED.has(route))
   return routes.map((route) => ({
     url: route === '/' ? ORIGIN : `${ORIGIN}${route}`,
     lastModified: lastMod(route),
