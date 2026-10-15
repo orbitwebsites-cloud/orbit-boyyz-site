@@ -200,6 +200,8 @@ type QualifyState = {
   result: Evaluation | null
   /** The n/a/e/d values of the link this draft started from. */
   link: string
+  /** Channel the visitor came from: ?src=, else utm_source, else referrer host, else 'direct'. */
+  source: string
 }
 
 function emptyState(): QualifyState {
@@ -211,6 +213,7 @@ function emptyState(): QualifyState {
     prefilled: [],
     result: null,
     link: '',
+    source: '',
   }
 }
 
@@ -268,7 +271,7 @@ function restoreState(raw: unknown): QualifyState {
     ? saved.prefilled.filter((field): field is ContactField => field === 'name' || field === 'agency' || field === 'email')
     : []
 
-  return { step, answers, contact, domain: asText(saved.domain, 160), prefilled, result, link: asText(saved.link, 600) }
+  return { step, answers, contact, domain: asText(saved.domain, 160), prefilled, result, link: asText(saved.link, 600), source: asText(saved.source, 80) }
 }
 
 /** Identifies which personalised link the page was opened from ('' when it has no prefill params). */
@@ -305,13 +308,33 @@ function applyPrefill(state: QualifyState, search: string): QualifyState {
   return { ...state, contact, domain, prefilled: [...prefilled], link: linkSignature(search) || state.link }
 }
 
+/** First-touch source for this tab: ?src=, then utm_source, then the referring site, else 'direct'. */
+function detectSource(search: string) {
+  const params = new URLSearchParams(search)
+  const tagged = cleanParam(params.get('src'), 60) || cleanParam(params.get('utm_source'), 60)
+  if (tagged) return tagged.toLowerCase()
+  try {
+    if (document.referrer) {
+      const host = new URL(document.referrer).hostname.replace(/^www\./i, '')
+      if (host && host !== window.location.hostname.replace(/^www\./i, '')) return `referrer:${host}`.slice(0, 80)
+    }
+  } catch {
+    // Malformed referrer: fall through.
+  }
+  return 'direct'
+}
+
 /** Loads this tab's draft. A different personalised link starts a fresh draft
  *  instead of mixing two people's answers (or reopening someone else's result). */
 function loadInitialState(search: string): QualifyState {
   const saved = readSaved()
   const link = linkSignature(search)
   const base = link && saved.link && saved.link !== link ? emptyState() : saved
-  return applyPrefill(base, search)
+  const state = applyPrefill(base, search)
+  // Keep the first-touch source for this tab unless a new tagged link was opened.
+  const detected = detectSource(search)
+  const tagged = detected !== 'direct' && !detected.startsWith('referrer:')
+  return { ...state, source: tagged || !state.source ? detected : state.source }
 }
 
 function readSaved(): QualifyState {
@@ -383,7 +406,7 @@ function buildPayload(state: QualifyState, evaluation: Evaluation, honey: string
   const { contact, answers } = state
   const agency = contact.agency.trim() || 'Unknown agency'
   const fields: Record<string, string> = {
-    _subject: `Qualify: ${agency} (${answerLabel('spend', answers)}, ${answerLabel('leads', answers)}/mo)`,
+    _subject: `Qualify: ${agency} (${answerLabel('spend', answers)}, ${answerLabel('leads', answers)}/mo) [src: ${state.source || 'direct'}]`,
     _template: 'table',
     _captcha: 'false',
     qualified: evaluation.qualified ? 'yes' : 'no',
@@ -397,6 +420,7 @@ function buildPayload(state: QualifyState, evaluation: Evaluation, honey: string
     // Lets you hit Reply in the notification and land in their inbox.
     _replyto: contact.email.trim(),
     domain: state.domain || '(not in link)',
+    source: state.source || 'direct',
   }
 
   QUESTIONS.forEach((question, index) => {
