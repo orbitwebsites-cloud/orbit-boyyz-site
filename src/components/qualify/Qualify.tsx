@@ -1307,7 +1307,7 @@ function ResultScreen({
         {name ? `Nice, ${name}` : 'Nice'}
       </p>
       <h1 ref={titleRef} tabIndex={-1} className="qf-title-xl">
-        You’re a fit. <em>Pick a time for a 15-minute call.</em>
+        You’re a fit. <em>Pick a time for your call.</em>
       </h1>
 
       {calendlyUrl ? (

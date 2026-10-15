@@ -1,11 +1,11 @@
 // Settings for the /qualify flow (src/components/qualify/Qualify.tsx).
 // Edit values here; the page reads everything from this file.
 
-// Calendly event link for the 15-minute call, e.g.
+// Calendly event link for the call, e.g.
 // 'https://calendly.com/your-handle/15min'.
 // Leave it empty and qualified agencies are asked to reply to the email
 // with a weekday time after 5 PM ET instead of seeing the embed.
-export const CALENDLY_URL = ''
+export const CALENDLY_URL = 'https://calendly.com/orbitwebsites/30min'
 
 export const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js'
 
