@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Qualify from '@/components/qualify/Qualify'
-import './qualify.css'
+import '@/components/qualify/qualify.css'
 
 // /qualify — private booking step linked from agency outreach replies
 // (prefill: ?n=<first name>&a=<agency>&e=<email>&d=<domain>).

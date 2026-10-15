@@ -95,12 +95,12 @@ export function Nav() {
             </a>
             <span className="hidden sm:inline-flex">
               <Magnetic>
-                <a href={site.booking} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+                <TransitionLink href={site.booking} className="btn btn-primary btn-sm">
                   <span>Book a free call</span>
                   <span className="btn-arrow">
                     <ArrowIcon />
                   </span>
-                </a>
+                </TransitionLink>
               </Magnetic>
             </span>
             <button
@@ -161,12 +161,12 @@ export function Nav() {
           ))}
         </ul>
         <div className="mobile-menu__item mt-auto flex flex-col gap-3 pt-10" style={{ '--i': nav.length + 2 } as CSSProperties}>
-          <a href={site.booking} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full justify-between">
+          <TransitionLink href={site.booking} onClick={close} className="btn btn-primary w-full justify-between">
             <span>Book a free call</span>
             <span className="btn-arrow">
               <ArrowIcon />
             </span>
-          </a>
+          </TransitionLink>
           <a href={site.phoneHref} className="btn btn-ghost w-full justify-between">
             <span>Call {site.phoneDisplay}</span>
             <span className="btn-arrow">

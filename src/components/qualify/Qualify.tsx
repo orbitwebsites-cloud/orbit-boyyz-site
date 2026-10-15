@@ -2,32 +2,44 @@
 
 import Image from 'next/image'
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useRef,
   useState,
-  type CSSProperties,
   type FormEvent,
   type KeyboardEvent as ReactKeyboardEvent,
-  type ReactNode,
   type RefObject,
 } from 'react'
+import { CALENDLY_URL, FORM_ENDPOINT, INSIGHT_MS, QUALIFY_STORAGE_KEY, QUALIFY_THRESHOLDS } from '@/content/qualifyConfig'
+import { emailCheckLabel } from '@/lib/emailCheck'
 import {
-  CALENDLY_SCRIPT_SRC,
-  CALENDLY_URL,
-  FORM_ENDPOINT,
-  INSIGHT_MS,
-  QUALIFY_STORAGE_KEY,
-  QUALIFY_THRESHOLDS,
-} from '@/content/qualifyConfig'
+  ArrowLeft,
+  ArrowRight,
+  CalendarClock,
+  CalendlyInline,
+  Check,
+  EMAIL_RE,
+  EmailSuggestion,
+  KEY_LETTERS,
+  LoaderCircle,
+  Send,
+  StageScreen,
+  buildCalendlyUrl,
+  firstName,
+  focusSoon,
+  isTypingTarget,
+  keyToIndex,
+  scrollToTop,
+  useEmailCheck,
+  useIsPresent,
+  useScreenStage,
+} from './shared'
 
 // Ported from the old Vite site's src/Qualify.tsx. Same questions, copy,
 // scoring, prefill, payload and Calendly logic. framer-motion and
-// lucide-react are replaced by CSS animations (app/qualify/qualify.css) and
-// inline SVG icons, so the Next app gains no dependencies.
+// lucide-react are replaced by CSS animations (./qualify.css) and inline SVG
+// icons (./shared.tsx), so the Next app gains no dependencies.
 
 // ---------------------------------------------------------------------------
 // Questions
@@ -166,17 +178,6 @@ const QUESTIONS: Question[] = [
 const INTRO_STEP = -1
 const CONTACT_STEP = QUESTIONS.length
 const RESULT_STEP = QUESTIONS.length + 1
-const KEY_LETTERS = 'ABCDEFGHIJ'
-// Dot-atom local part + dotted hostname: rejects spaces, commas, "a@b..co",
-// leading/trailing dots and hyphen-edged labels.
-const EMAIL_RE =
-  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i
-
-// Screen transition timing (was framer-motion: 0.34s, or 0.12s opacity-only
-// under reduced motion). The CSS keyframes in qualify.css use the same values.
-const SCREEN_MS = 340
-const SCREEN_MS_REDUCED = 120
-
 // ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
@@ -379,7 +380,7 @@ function evaluate(answers: QualifyState['answers']): Evaluation {
   return { qualified: reasons.length > 0, score: Math.min(score, 100), reasons }
 }
 
-function buildPayload(state: QualifyState, evaluation: Evaluation, honey: string) {
+function buildPayload(state: QualifyState, evaluation: Evaluation, honey: string, emailCheck: string) {
   const { contact, answers } = state
   const agency = contact.agency.trim() || 'Unknown agency'
   const fields: Record<string, string> = {
@@ -396,6 +397,8 @@ function buildPayload(state: QualifyState, evaluation: Evaluation, honey: string
     email: contact.email.trim(),
     // Lets you hit Reply in the notification and land in their inbox.
     _replyto: contact.email.trim(),
+    // ok, ok (<note>) or unverified (the check timed out or failed).
+    email_check: emailCheck,
     domain: state.domain || '(not in link)',
   }
 
@@ -411,154 +414,6 @@ function buildPayload(state: QualifyState, evaluation: Evaluation, honey: string
   return fields
 }
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function isTypingTarget(target: EventTarget | null) {
-  return target instanceof HTMLElement && Boolean(target.closest('input, textarea, select, [contenteditable="true"]'))
-}
-
-function keyToIndex(key: string) {
-  if (key.length !== 1) return -1
-  if (key >= '1' && key <= '9') return Number(key) - 1
-  const lower = key.toLowerCase()
-  if (lower >= 'a' && lower <= 'z') return lower.charCodeAt(0) - 97
-  return -1
-}
-
-/** Jump to the top between steps. 'instant' so no inherited smooth
- *  scroll-behavior turns it into an animation. */
-function scrollToTop() {
-  window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-}
-
-function focusSoon(element: HTMLElement | null) {
-  if (!element) return
-  // Wait one frame so the entering screen is in the DOM before focus moves.
-  window.requestAnimationFrame(() => element.focus({ preventScroll: true }))
-}
-
-function firstName(name: string) {
-  return name.trim().split(/\s+/)[0] ?? ''
-}
-
-function prefersReducedMotion() {
-  return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-}
-
-function buildCalendlyUrl(base: string, name: string, email: string, niche: string) {
-  if (!base.trim()) return ''
-  try {
-    const url = new URL(base.trim())
-    // Only a real https booking link goes into the iframe and the fallback href.
-    if (url.protocol !== 'https:') return ''
-    if (name.trim()) url.searchParams.set('name', name.trim())
-    if (email.trim()) url.searchParams.set('email', email.trim())
-    if (niche.trim()) url.searchParams.set('a1', niche.trim())
-    // Calendly re-encodes these values; a '+' for a space would reach the
-    // booking form literally, so spaces go out as %20.
-    url.search = url.searchParams.toString().replace(/\+/g, '%20')
-    return url.toString()
-  } catch {
-    return ''
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Icons (lucide paths, inline so the app needs no icon package)
-// ---------------------------------------------------------------------------
-
-type IconProps = { size?: number; className?: string }
-
-function Icon({ size = 24, className, children }: IconProps & { children: ReactNode }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-      focusable="false"
-    >
-      {children}
-    </svg>
-  )
-}
-
-function ArrowLeft(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="m12 19-7-7 7-7" />
-      <path d="M19 12H5" />
-    </Icon>
-  )
-}
-
-function ArrowRight(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
-    </Icon>
-  )
-}
-
-function Check(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M20 6 9 17l-5-5" />
-    </Icon>
-  )
-}
-
-function LoaderCircle(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-    </Icon>
-  )
-}
-
-function Send(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
-      <path d="m21.854 2.147-10.94 10.939" />
-    </Icon>
-  )
-}
-
-function CalendarClock(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" />
-      <path d="M16 2v4" />
-      <path d="M8 2v4" />
-      <path d="M3 10h5" />
-      <path d="M17.5 17.5 16 16.3V14" />
-      <circle cx="16" cy="16" r="6" />
-    </Icon>
-  )
-}
-
-// ---------------------------------------------------------------------------
-// Screen transitions
-// ---------------------------------------------------------------------------
-
-/** false while a screen is animating out (replaces framer-motion's useIsPresent). */
-const PresenceContext = createContext(true)
-
-function useIsPresent() {
-  return useContext(PresenceContext)
-}
-
 /** Everything a screen renders from. Frozen for the outgoing screen while it
  *  animates away, the way AnimatePresence kept the last element it saw. */
 type View = {
@@ -567,6 +422,8 @@ type View = {
   submitting: boolean
   submitError: string
 }
+
+const viewStep = (view: View) => view.state.step
 
 // ---------------------------------------------------------------------------
 // Page
@@ -657,7 +514,7 @@ export default function Qualify() {
     setState((current) => ({ ...current, contact: { ...current.contact, [field]: value } }))
   }, [])
 
-  async function submit() {
+  async function submit(emailCheck: string) {
     if (submittingRef.current) return
     // Every question must be answered before anything is sent.
     const missing = firstUnanswered(state.answers)
@@ -673,7 +530,7 @@ export default function Qualify() {
       const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(buildPayload(state, evaluation, honeyRef.current?.value ?? '')),
+        body: JSON.stringify(buildPayload(state, evaluation, honeyRef.current?.value ?? '', emailCheck)),
       })
       const data: unknown = await response.json().catch(() => null)
       const rejected =
@@ -690,33 +547,9 @@ export default function Qualify() {
     }
   }
 
-  // --- Stage: mode="wait" transitions -------------------------------------
-  // When the step changes, the previous screen is kept on stage (frozen, inert,
-  // keyboard handlers off) while it animates out; then the new screen mounts
-  // and animates in. The very first render does not animate.
+  // --- Stage: mode="wait" transitions (shared.tsx useScreenStage) ---------
   const view = useMemo<View>(() => ({ state, pending, submitting, submitError }), [state, pending, submitting, submitError])
-  const [shown, setShown] = useState<View>(view)
-  const [exiting, setExiting] = useState<{ view: View; dir: number } | null>(null)
-  const [animateIn, setAnimateIn] = useState(false)
-
-  if (shown !== view) {
-    // Adjusting state from the previous render (react.dev "storing information
-    // from previous renders"): `shown` is what was on screen for its step.
-    setShown(view)
-    if (!exiting && shown.state.step !== view.state.step) setExiting({ view: shown, dir: direction })
-  }
-
-  useEffect(() => {
-    if (!exiting) return
-    const timer = window.setTimeout(
-      () => {
-        setExiting(null)
-        setAnimateIn(true)
-      },
-      prefersReducedMotion() ? SCREEN_MS_REDUCED : SCREEN_MS,
-    )
-    return () => window.clearTimeout(timer)
-  }, [exiting])
+  const { stageView, stage } = useScreenStage(view, viewStep, direction)
 
   function renderScreen({ state: screenState, pending: screenPending, submitting: screenSubmitting, submitError: screenError }: View) {
     const { step: screenStep } = screenState
@@ -776,9 +609,6 @@ export default function Qualify() {
   const { step } = state
   const inFlow = step >= 0 && step <= CONTACT_STEP
   const progress = step === RESULT_STEP ? 100 : inFlow ? Math.round(((step + 1) / (CONTACT_STEP + 2)) * 100) : 0
-  const stageView = exiting ? exiting.view : view
-  const motion = exiting ? 'exit' : animateIn ? 'enter' : undefined
-  const motionStyle = { '--qf-dir': exiting ? exiting.dir : direction } as CSSProperties
 
   return (
     // data-lenis-prevent: the site's Lenis smooth scroll leaves this page (and
@@ -815,13 +645,9 @@ export default function Qualify() {
       </header>
 
       <div className={`qf-stage${step === RESULT_STEP ? ' qf-stage-wide' : ''}`}>
-        <PresenceContext.Provider value={!exiting}>
-          <section key={`step-${stageView.state.step}`} className="qf-screen" data-motion={motion} style={motionStyle}>
-            {/* The outgoing screen is inert while it animates away, so keystrokes
-                can't land in its inputs or buttons after the step has changed. */}
-            <div inert={Boolean(exiting)}>{renderScreen(stageView)}</div>
-          </section>
-        </PresenceContext.Provider>
+        <StageScreen stage={stage} screenKey={`step-${stageView.state.step}`}>
+          {renderScreen(stageView)}
+        </StageScreen>
       </div>
     </div>
   )
@@ -1089,6 +915,10 @@ function validateContact(contact: Contact) {
   return errors
 }
 
+// Shown when /api/verify-email rejects the address (typo domain, no mail
+// server, disposable inbox, impossible Gmail name...).
+const EMAIL_UNDELIVERABLE = 'That email doesn’t look deliverable — use your work email.'
+
 function ContactScreen({
   contact,
   prefilled,
@@ -1104,10 +934,19 @@ function ContactScreen({
   submitError: string
   honeyRef: RefObject<HTMLInputElement | null>
   onChange: (field: keyof Contact, value: string) => void
-  onSubmit: () => void
+  /** Called once the email passed the deliverability check (or the check couldn't run). */
+  onSubmit: (emailCheck: string) => void
 }) {
   const formRef = useRef<HTMLFormElement>(null)
   const [errors, setErrors] = useState<Partial<Record<ContactField, string>>>({})
+  const emailCheck = useEmailCheck(contact.email)
+  const { precheck, verify } = emailCheck
+  const checkingRef = useRef(false)
+  // A prefilled (or restored) address is checked as soon as the step opens.
+  const [emailOnOpen] = useState(contact.email)
+  useEffect(() => {
+    precheck(emailOnOpen)
+  }, [precheck, emailOnOpen])
   // Decide the layout once, from what was already known when the step opened,
   // so the screen doesn't rearrange itself while someone is typing.
   const [missingOnOpen] = useState(() => CONTACT_FIELDS.filter(({ field }) => !contact[field].trim()).map(({ field }) => field))
@@ -1122,8 +961,9 @@ function ContactScreen({
     focusSoon(target)
   }, [allKnown, missingOnOpen])
 
-  function handleSubmit(event: FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault()
+    if (checkingRef.current || submitting) return
     const nextErrors = validateContact(contact)
     setErrors(nextErrors)
     const firstInvalid = CONTACT_FIELDS.find(({ field }) => nextErrors[field])
@@ -1131,7 +971,22 @@ function ContactScreen({
       formRef.current?.querySelector<HTMLElement>(`#qf-${firstInvalid.field}`)?.focus()
       return
     }
-    onSubmit()
+    // Nothing is sent until the address passes (fails open if the check can't run).
+    checkingRef.current = true
+    const result = await verify(contact.email)
+    checkingRef.current = false
+    if (!result) {
+      formRef.current?.querySelector<HTMLElement>('#qf-email')?.focus()
+      return
+    }
+    onSubmit(emailCheckLabel(result))
+  }
+
+  function applySuggestion(email: string) {
+    onChange('email', email)
+    setErrors((current) => ({ ...current, email: undefined }))
+    precheck(email)
+    formRef.current?.querySelector<HTMLElement>('#qf-email')?.focus()
   }
 
   function handleNotesKeyDown(event: ReactKeyboardEvent<HTMLTextAreaElement>) {
@@ -1148,7 +1003,7 @@ function ContactScreen({
   const detailFields = (
     <div className="qf-fields">
       {CONTACT_FIELDS.map(({ field, label, type, autoComplete, placeholder, inputMode }) => {
-        const error = errors[field]
+        const error = errors[field] || (field === 'email' && emailCheck.rejected ? EMAIL_UNDELIVERABLE : '')
         const fromLink = prefilled.includes(field) && contact[field].trim()
         return (
           <div key={field} className={`qf-field${field === 'email' ? ' qf-field-full' : ''}`}>
@@ -1163,8 +1018,9 @@ function ContactScreen({
               value={contact[field]}
               onChange={(event) => {
                 onChange(field, event.target.value)
-                if (error) setErrors((current) => ({ ...current, [field]: undefined }))
+                if (errors[field]) setErrors((current) => ({ ...current, [field]: undefined }))
               }}
+              onBlur={field === 'email' ? (event) => precheck(event.target.value) : undefined}
               placeholder={placeholder}
               autoComplete={autoComplete}
               autoCapitalize={field === 'email' ? 'off' : 'words'}
@@ -1175,11 +1031,15 @@ function ContactScreen({
               aria-invalid={error ? true : undefined}
               aria-describedby={error ? `qf-${field}-error` : undefined}
             />
-            {error && (
-              <p className="qf-field-error" id={`qf-${field}-error`}>
-                {error}
-              </p>
-            )}
+            {/* aria-live: the deliverability error can arrive after blur. */}
+            <div aria-live={field === 'email' ? 'polite' : undefined}>
+              {error && (
+                <p className="qf-field-error" id={`qf-${field}-error`}>
+                  {error}
+                </p>
+              )}
+              {field === 'email' && emailCheck.rejected && <EmailSuggestion suggestion={emailCheck.suggestion} onUse={applySuggestion} />}
+            </div>
           </div>
         )
       })}
@@ -1205,7 +1065,7 @@ function ContactScreen({
   )
 
   return (
-    <form ref={formRef} className="qf-question qf-contact" onSubmit={handleSubmit} noValidate aria-busy={submitting}>
+    <form ref={formRef} className="qf-question qf-contact" onSubmit={handleSubmit} noValidate aria-busy={submitting || emailCheck.checking}>
       <p className="qf-meta">
         <span className="qf-meta-num">
           <Check size={14} />
@@ -1247,9 +1107,9 @@ function ContactScreen({
       )}
 
       <div className="qf-actions">
-        <button type="submit" className="qf-primary" disabled={submitting}>
-          {submitting ? <LoaderCircle className="qf-spin" size={18} /> : <Send size={17} />}
-          {submitting ? 'Sending…' : submitError ? 'Try again' : 'Submit'}
+        <button type="submit" className="qf-primary" disabled={submitting || emailCheck.checking}>
+          {submitting || emailCheck.checking ? <LoaderCircle className="qf-spin" size={18} /> : <Send size={17} />}
+          {emailCheck.checking ? 'Checking email…' : submitting ? 'Sending…' : submitError ? 'Try again' : 'Submit'}
         </button>
         <span className="qf-hint">
           press <kbd>Enter ↵</kbd> to send, <kbd>Shift</kbd> + <kbd>Enter ↵</kbd> for a new line
@@ -1271,7 +1131,7 @@ function ResultScreen({
   const titleRef = useRef<HTMLHeadingElement>(null)
   const name = firstName(contact.name)
   const niche = (answers.niche ?? '').trim()
-  const calendlyUrl = result.qualified ? buildCalendlyUrl(CALENDLY_URL, contact.name, contact.email, niche) : ''
+  const calendlyUrl = result.qualified ? buildCalendlyUrl(CALENDLY_URL, { name: contact.name, email: contact.email, a1: niche }) : ''
 
   useEffect(() => {
     focusSoon(titleRef.current)
@@ -1313,7 +1173,7 @@ function ResultScreen({
       {calendlyUrl ? (
         <>
           <p className="qf-result-copy">Calls are weekdays, 5 PM ET or later.</p>
-          <CalendlyInline url={calendlyUrl} />
+          <CalendlyInline url={calendlyUrl} fallback="or reply to my email with a weekday after 5 PM ET that works." />
         </>
       ) : (
         <div className="qf-fallback">
@@ -1334,98 +1194,6 @@ function ResultScreen({
           <Check size={15} /> Month-to-month. 10 agencies max, one per niche
         </li>
       </ul>
-    </div>
-  )
-}
-
-type CalendlyWindow = Window & {
-  Calendly?: { initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void }
-}
-
-function CalendlyInline({ url }: { url: string }) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [failed, setFailed] = useState(false)
-  const [booked, setBooked] = useState(false)
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-    const calendlyWindow = window as CalendlyWindow
-
-    // widget.js auto-initialises .calendly-inline-widget on load; only init
-    // by hand when that didn't happen (e.g. the script was already loaded).
-    const ensureWidget = () => {
-      if (!container.querySelector('iframe') && calendlyWindow.Calendly) {
-        container.replaceChildren()
-        calendlyWindow.Calendly.initInlineWidget({ url, parentElement: container })
-      }
-    }
-
-    if (calendlyWindow.Calendly) {
-      ensureWidget()
-      return
-    }
-
-    let script = document.querySelector<HTMLScriptElement>(`script[src="${CALENDLY_SCRIPT_SRC}"]`)
-    if (!script) {
-      script = document.createElement('script')
-      script.src = CALENDLY_SCRIPT_SRC
-      script.async = true
-      document.body.appendChild(script)
-    }
-    let timer = 0
-    const onLoad = () => {
-      timer = window.setTimeout(ensureWidget, 80)
-    }
-    const onError = () => setFailed(true)
-    script.addEventListener('load', onLoad)
-    script.addEventListener('error', onError)
-    return () => {
-      window.clearTimeout(timer)
-      script?.removeEventListener('load', onLoad)
-      script?.removeEventListener('error', onError)
-    }
-  }, [url])
-
-  useEffect(() => {
-    const onMessage = (event: MessageEvent) => {
-      if (event.origin !== 'https://calendly.com') return
-      const data = event.data as { event?: unknown } | null
-      if (data && data.event === 'calendly.event_scheduled') setBooked(true)
-    }
-    window.addEventListener('message', onMessage)
-    return () => window.removeEventListener('message', onMessage)
-  }, [])
-
-  return (
-    <div className="qf-calendly-wrap">
-      {booked && (
-        <p className="qf-booked" role="status">
-          <Check size={16} /> Booked. Calendly is emailing you the invite.
-        </p>
-      )}
-      {failed ? (
-        <div className="qf-fallback">
-          <CalendarClock size={22} />
-          <p>
-            The scheduler didn’t load here.{' '}
-            <a href={url} target="_blank" rel="noreferrer">
-              Open the booking page
-            </a>{' '}
-            or reply to my email with a weekday after 5 PM ET that works.
-          </p>
-        </div>
-      ) : (
-        <div ref={containerRef} className="calendly-inline-widget qf-calendly" data-url={url} />
-      )}
-      {!failed && (
-        <p className="qf-calendly-link">
-          Scheduler not showing?{' '}
-          <a href={url} target="_blank" rel="noreferrer">
-            Open it in a new tab
-          </a>
-        </p>
-      )}
     </div>
   )
 }

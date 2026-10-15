@@ -77,7 +77,7 @@ Book a free 15-minute call, or reach us directly:
 
 - Phone: 609 662 8052 (tel:+16096628052)
 - Email: alex@orbitboyzz.com
-- Book a call: https://calendly.com/orbitwebsites/30min
+- Book a call: ${ORIGIN}/book
 
 We'll build a live demo of your site and show you before you pay a cent.
 

@@ -324,7 +324,7 @@ export const organization = {
     {
       '@type': 'ReserveAction',
       name: 'Book a Free Demo Call',
-      target: 'https://calendly.com/orbitwebsites/30min',
+      target: `${ORIGIN}/book`,
     },
     {
       '@type': 'CommunicateAction',

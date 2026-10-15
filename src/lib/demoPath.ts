@@ -10,8 +10,8 @@ export function isDemoPath(pathname: string | null) {
 /**
  * Pages that render on their own, without Orbit's preloader, nav, footer,
  * dock, cursor or route-transition panel: the /demo/* lead previews and the
- * /qualify booking flow (it brings its own minimal header).
+ * /qualify and /book booking flows (they bring their own minimal header).
  */
 export function isStandalonePath(pathname: string | null) {
-  return isDemoPath(pathname) || pathname === '/qualify'
+  return isDemoPath(pathname) || pathname === '/qualify' || pathname === '/book'
 }

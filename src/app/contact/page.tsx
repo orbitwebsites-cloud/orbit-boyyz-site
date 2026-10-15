@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { process, site } from '@/content/site'
+import { Button } from '@/components/ui/Button'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
@@ -49,10 +50,9 @@ export default function ContactPage() {
       <section aria-label="Ways to reach us" className="container-x grid gap-4 md:grid-cols-3">
         <Channel
           href={site.booking}
-          external
           label="Book"
           value="Free 30-min call"
-          note="Pick a time on Calendly"
+          note="A few quick questions, then pick a time"
           icon={
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <rect x="3.5" y="5" width="17" height="15" rx="3" stroke="currentColor" strokeWidth="1.6" />
@@ -88,23 +88,22 @@ export default function ContactPage() {
         />
       </section>
 
-      {/* Inline booking (ported from v-fable): themed Calendly embed so nobody has to leave the page. */}
+      {/* Booking goes through the /book questionnaire (site.booking), which
+          shows the Calendly scheduler once the answers are in. */}
       <section aria-labelledby="book-title" className="container-x pt-6">
-        <div data-reveal className="overflow-hidden rounded-[calc(var(--radius)+0.25rem)] border border-line bg-panel/70">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-6 py-4">
-            <p id="book-title" className="label">
+        <div
+          data-reveal
+          className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.25rem)] border border-line bg-panel/70 px-6 py-8 md:flex-row md:items-center md:justify-between md:px-10"
+        >
+          <div>
+            <h2 id="book-title" className="label">
               Book a free 30-min call
+            </h2>
+            <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted">
+              Five quick questions about your business, then pick a weekday time from 5 PM ET. It takes about a minute.
             </p>
-            <a href={site.booking} target="_blank" rel="noopener noreferrer" className="text-sm text-muted transition-colors hover:text-accent">
-              Open in Calendly ↗
-            </a>
           </div>
-          <iframe
-            title="Book a call with Orbit Websites"
-            src={`${site.booking}?hide_gdpr_banner=1&background_color=100f0d&text_color=f4efe6&primary_color=d6b36a`}
-            loading="lazy"
-            className="h-[720px] w-full"
-          />
+          <Button href={site.booking}>Pick a time</Button>
         </div>
       </section>
 

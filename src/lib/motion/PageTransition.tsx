@@ -46,7 +46,9 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
 
   const navigate = (href: string) => {
     const el = overlayRef.current
-    if (!el || window.matchMedia(MQ.reduce).matches) {
+    // Standalone pages (/book, /qualify, /demo/*) unmount this panel, so it
+    // could never lift again: go there without the wipe.
+    if (!el || window.matchMedia(MQ.reduce).matches || isStandalonePath(href.split(/[?#]/)[0])) {
       router.push(href)
       return
     }
@@ -77,7 +79,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
   return (
     <TransitionContext.Provider value={{ navigate }}>
       {children}
-      {/* Standalone pages (/demo/* lead previews, /qualify) carry no Orbit UI; navigate() falls back to router.push without it. */}
+      {/* Standalone pages (/demo/* lead previews, /qualify, /book) carry no Orbit UI; navigate() goes there with a plain router.push. */}
       {!isStandalonePath(pathname) && (
         <div ref={overlayRef} aria-hidden="true" className="pt-overlay pointer-events-none fixed inset-0 z-[110] flex items-end bg-panel">
           <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />

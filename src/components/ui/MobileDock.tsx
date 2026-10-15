@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { site } from '@/content/site'
 import { PhoneIcon } from './Button'
+import { TransitionLink } from './TransitionLink'
 
 /** Phone-width action bar: Call + Book stay one thumb away once you scroll. */
 export function MobileDock() {
@@ -32,14 +33,12 @@ export function MobileDock() {
       >
         <PhoneIcon /> Call
       </a>
-      <a
+      <TransitionLink
         href={site.booking}
-        target="_blank"
-        rel="noopener noreferrer"
         className="flex h-12 flex-[1.6] items-center justify-center rounded-full bg-accent text-[0.92rem] font-semibold text-accent-ink"
       >
         Book a free call
-      </a>
+      </TransitionLink>
     </div>
   )
 }

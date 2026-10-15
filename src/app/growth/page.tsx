@@ -5,6 +5,7 @@ import { carePlans, site } from '@/content/site'
 import { Accordion } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { TransitionLink } from '@/components/ui/TransitionLink'
 import { FlowDemo } from '@/components/port/FlowDemo'
 import { Section } from '@/components/port/Blocks'
 import { cn } from '@/lib/cn'
@@ -215,9 +216,9 @@ export default function GrowthPage() {
             <p data-reveal className="mt-6 max-w-md text-muted">
               No software maze and no six-week discovery phase. You give us the facts about your business; we build, test and monitor the workflow.
             </p>
-            <a href={site.booking} target="_blank" rel="noopener noreferrer" className="link-u mt-6 inline-block text-accent hover:text-accent-hi">
-              Talk through your workflow ↗
-            </a>
+            <TransitionLink href={site.booking} className="link-u mt-6 inline-block text-accent hover:text-accent-hi">
+              Talk through your workflow →
+            </TransitionLink>
           </div>
           <ol className="grid gap-4 md:col-span-6 md:col-start-7">
             {[
