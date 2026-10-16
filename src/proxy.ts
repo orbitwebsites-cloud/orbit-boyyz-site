@@ -20,7 +20,7 @@ import { LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
 
 export const config = {
   matcher: [
-    '/((?!api/|_next/|_vercel/|favicon|orbit-|robots\\.txt|sitemap\\.xml|feed\\.xml|llms\\.txt|openapi\\.json|.*\\.md|.*\\.(?:png|svg|jpg|jpeg|webp|ico|txt|xml|json|js|css|map|woff2?)$).*)',
+    '/((?!api/|ingest/|_next/|_vercel/|favicon|orbit-|robots\\.txt|sitemap\\.xml|feed\\.xml|llms\\.txt|openapi\\.json|.*\\.md|.*\\.(?:png|svg|jpg|jpeg|webp|ico|txt|xml|json|js|css|map|woff2?)$).*)',
   ],
 }
 

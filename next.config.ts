@@ -58,6 +58,15 @@ const nextConfig: NextConfig = {
       ...MOVED.map(([source, destination]) => ({ source, destination, permanent: true })),
     ];
   },
+  // PostHog goes through our own domain so ad blockers don't drop events.
+  // proxy.ts skips /ingest/ (matcher) so leads.orbitboyzz.com keeps it too.
+  async rewrites() {
+    return [
+      { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
+      { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
+    ];
+  },
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

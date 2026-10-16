@@ -17,7 +17,9 @@ if (!token) {
   }
 } else {
   posthog.init(token, {
-    api_host: host,
+    // same-origin proxy (next.config.ts rewrites); ui_host keeps toolbar links on PostHog
+    api_host: '/ingest',
+    ui_host: host.replace('.i.posthog.com', '.posthog.com'),
     defaults: '2025-05-24',
     capture_exceptions: true,
     debug: process.env.NODE_ENV === 'development',
