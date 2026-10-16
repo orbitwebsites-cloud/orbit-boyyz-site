@@ -7,8 +7,12 @@
 //    priority than `text/html`, serves a hand-maintained markdown variant of
 //    the page instead of the HTML, for pages listed in MARKDOWN_PAGES.
 // 3. growth.orbitboyzz.com/ is served the /growth page.
+// 4. x402 bot paywall (src/lib/x402-bot-paywall.ts): AI crawlers / scrapers
+//    get HTTP 402 + x402 payment requirements unless they pay; humans and
+//    search engines are untouched. Fails open.
 // MARKDOWN_PAGES and wantsMarkdown() are copied verbatim from the old file.
 import { NextResponse, type NextRequest } from 'next/server'
+import { runBotPaywall } from '@/lib/x402-bot-paywall'
 
 export const config = {
   matcher: [
@@ -188,7 +192,21 @@ function wantsMarkdown(accept: string | null): boolean {
   return markdown.q >= html.q
 }
 
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
+  const paywall = await runBotPaywall(request)
+  if (paywall.kind === 'block') return paywall.response
+
+  const response = route(request)
+  if (paywall.kind === 'paid') {
+    paywall.headers.forEach((value, key) => {
+      // Keep the Vary merge from route(); add settlement headers (PAYMENT-RESPONSE, Cache-Control, ...).
+      if (key.toLowerCase() !== 'vary') response.headers.set(key, value)
+    })
+  }
+  return response
+}
+
+function route(request: NextRequest) {
   const url = request.nextUrl
   const accept = request.headers.get('accept')
 
