@@ -4,6 +4,7 @@
 // Copied programmatically — keep in sync with PORT-NOTES.md if edited.
 import { blogPosts, type BlogPost } from '@/content/blog'
 import { centralNjFaqs, ewingFaqs, industryLandingFaqs, industryPages, orbitboyzzBrandFaq, townLandingFaqs, townPages } from '@/content/landing'
+import { DRAFT_KEYWORD_PATHS, keywordRouteByPath, keywordRoutes, type KeywordRoute } from '@/content/keyword-pages'
 
 export const ORIGIN = 'https://orbitboyzz.com'
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
@@ -26,7 +27,7 @@ const FOUNDED = '2026'
 // No published hours. Add only alongside a visible Hours line on /contact.
 const OPENING_HOURS: Array<Record<string, unknown>> = []
 // areaServed as structured City objects — clearer entity signal than bare strings.
-const SERVICE_AREA = [
+export const SERVICE_AREA = [
   { '@type': 'City', name: 'Plainsboro', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'Princeton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'West Windsor Township', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
@@ -48,7 +49,8 @@ const SERVICE_AREA = [
 
 // --- Per-route metadata -----------------------------------------------------
 export const legacyPageMeta: Record<string, { title: string; description: string }> = {
-  // The homepage is the single owner of "home service website design" (SEO plan 2026-10-02).
+  // The homepage owned "home service website design" (SEO plan 2026-10-02). Since 2026-10-16 the
+  // /home-service-website-design hub (trade by trade) targets the generic phrase; the homepage keeps the NJ brand angle.
   '/': {
     title: 'Home-Service Website Design in NJ | Orbit Websites',
     description:
@@ -206,13 +208,17 @@ export const legacyPageMeta: Record<string, { title: string; description: string
     description:
       'Public OpenAPI 3.1 specification, endpoint reference, and example requests for the OrbitBoyzz / Orbit Websites project range estimator API.',
   },
+  // Keyword landing pages (2026-10-16): title + description live in each page's
+  // content file (src/content/keyword-pages), so the copy and the <head> stay together.
+  ...Object.fromEntries(keywordRoutes.map((r) => [r.path, { title: r.page.title, description: r.page.description }])),
 }
 
 // Routes that keep working but are not search landing pages: a client intake
 // form, API docs and /form, the unlinked AI-agent lead form. They get robots
 // "noindex, follow" and are left out of sitemap.xml (/form has no legacyPageMeta
 // entry, so the sitemap never listed it anyway).
-export const NOINDEX_ROUTES: ReadonlySet<string> = new Set(['/project-brief', '/developers', '/form'])
+// Keyword pages still marked `draft: true` (placeholder copy) join them until they are written.
+export const NOINDEX_ROUTES: ReadonlySet<string> = new Set(['/project-brief', '/developers', '/form', ...DRAFT_KEYWORD_PATHS])
 
 // --- JSON-LD builders -------------------------------------------------------
 export const organization = {
@@ -443,6 +449,37 @@ function faqGraph(route: string, id: string, entries: ReadonlyArray<readonly [st
 }
 
 
+
+/**
+ * Keyword landing page (src/content/keyword-pages): Service + BreadcrumbList +
+ * FAQPage, all built from the same content the page renders, and tied to the
+ * one #organization / #website entity. The New Jersey page serves the state;
+ * the trade, hub and SEO pages use the studio's Central NJ service area.
+ */
+export function keywordPageGraph({ path, kind, page }: KeywordRoute) {
+  const url = `${ORIGIN}${path}`
+  const crumbs: Array<[string, string]> = [['Home', `${ORIGIN}/`], ...page.breadcrumbs.map(([name, href]): [string, string] => [name, `${ORIGIN}${href}`]), [page.name, url]]
+  const newJersey = { '@type': 'State', name: 'New Jersey', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } }
+  return [
+    {
+      '@type': 'Service',
+      '@id': `${url}#service`,
+      name: page.name,
+      serviceType: page.serviceType,
+      url,
+      description: page.directAnswer.answer,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: kind === 'location' ? [newJersey, ...SERVICE_AREA] : SERVICE_AREA,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: crumbs.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })),
+    },
+    // Same questions and answers the page's accordion shows.
+    faqGraph(path, 'faq', page.faqs),
+  ]
+}
 
 function topLevelBreadcrumbGraph(route: string, name: string) {
   return {
@@ -722,6 +759,8 @@ export function graphFor(route: string) {
       graph.push(faqGraph(route, 'industry-faq', industryLandingFaqs(industryPage)))
     }
   }
+  const keywordRoute = keywordRouteByPath.get(route)
+  if (keywordRoute) graph.push(...keywordPageGraph(keywordRoute))
   if (route === '/privacy') {
     graph.push({
       '@type': 'WebPage',

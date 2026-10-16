@@ -1,5 +1,6 @@
 import { footerPages, site } from '@/content/site'
-import { industryPages, townPages } from '@/content/landing'
+import { townPages } from '@/content/landing'
+import { NJ_PATH, keywordRouteByPath, keywordRoutes } from '@/content/keyword-pages'
 import { OrbitMark } from '@/components/ui/Logo'
 import { FooterWordmark } from '@/components/ui/FooterWordmark'
 import { TransitionLink } from '@/components/ui/TransitionLink'
@@ -14,13 +15,11 @@ const townHref = new Map<string, string>([
   ['Ewing', '/web-design-ewing-nj'],
 ])
 
-// Same labels as the old footer's "Industries" + "Buyer answers" columns.
-const INDUSTRY_LABELS: Record<string, string> = {
-  hvac: 'HVAC websites',
-  plumbing: 'Plumber websites',
-  electrician: 'Electrician websites',
-  landscaping: 'Landscaping websites',
-}
+// "Industries": the keyword pages (hub, trades, SEO; src/content/keyword-pages) in
+// registry order, each trade followed by its older New Jersey page where one exists.
+// The New Jersey page heads "Areas we serve" instead.
+const INDUSTRY_ROUTES = keywordRoutes.filter((r) => r.path !== NJ_PATH)
+const NJ_ROUTE = keywordRouteByPath.get(NJ_PATH)
 const BUYER_ANSWERS: Array<[string, string]> = [
   ['Website cost guide', '/blog/how-much-does-a-website-cost-for-a-local-business'],
   ['Mercer County cost factors', '/blog/web-design-cost-factors-mercer-county-nj'],
@@ -82,6 +81,13 @@ export function Footer() {
         <nav aria-label="Areas we serve" className="lg:col-span-2">
           <p className="label mb-5">Areas we serve</p>
           <ul className="space-y-2 text-sm">
+            {NJ_ROUTE && (
+              <li>
+                <TransitionLink href={NJ_ROUTE.path} className={linkCls}>
+                  {NJ_ROUTE.footerLabel}
+                </TransitionLink>
+              </li>
+            )}
             <li>
               <TransitionLink href="/web-design-central-nj" className={linkCls}>
                 Central NJ
@@ -107,11 +113,21 @@ export function Footer() {
         <nav aria-label="Industries" className="lg:col-span-3">
           <p className="label mb-5">Industries</p>
           <ul className="space-y-2 text-sm">
-            {Object.entries(industryPages).map(([key, p]) => (
-              <li key={p.path}>
-                <TransitionLink href={p.path} className={linkCls}>
-                  {INDUSTRY_LABELS[key] ?? p.industryShort}
+            {INDUSTRY_ROUTES.map((r) => (
+              <li key={r.path}>
+                <TransitionLink href={r.path} className={linkCls}>
+                  {r.footerLabel}
                 </TransitionLink>
+                {r.nj && (
+                  <>
+                    <span aria-hidden="true" className="text-dim">
+                      {' · '}
+                    </span>
+                    <TransitionLink href={r.nj.path} className={linkCls} aria-label={r.nj.label}>
+                      NJ
+                    </TransitionLink>
+                  </>
+                )}
               </li>
             ))}
             <li>

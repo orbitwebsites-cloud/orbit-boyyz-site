@@ -4,6 +4,7 @@ import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
+import { TradeLinksGrid } from '@/components/port/TradeLinks'
 import { jsonLd, pageMeta, pageSchema, servicesSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
@@ -82,6 +83,8 @@ export default function ServicesPage() {
           </section>
         ))}
       </div>
+
+      <TradeLinksGrid heading="Website design and local SEO for your trade." />
 
       <section aria-labelledby="how-title" className="container-x py-16 md:py-24">
         <SectionLabel>[HOW IT WORKS]</SectionLabel>

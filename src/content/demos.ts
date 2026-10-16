@@ -32,6 +32,13 @@ export type DemoBusiness = {
   areas?: string[]
 }
 
+/**
+ * Fictional sample demos (slug starts with "sample-"): made-up businesses with
+ * 555 numbers, linked publicly from the keyword landing pages. Every other demo
+ * is a real lead's private preview.
+ */
+export const isSampleDemo = (slug: string) => slug.startsWith('sample-')
+
 // Clearly fictional samples (555-01xx numbers are reserved for fiction) so the
 // route always has pages to build. Real leads go below them.
 export const demos: DemoBusiness[] = [
@@ -59,6 +66,29 @@ export const demos: DemoBusiness[] = [
     town: 'East Windsor',
     phone: '(609) 555-0119',
     services: ['Brick-oven Margherita', 'Grandma pie', 'Chicken parm hero', 'Cannoli'],
+  },
+  // More fictional samples, one per trade, linked as "sample demos" from the keyword
+  // landing pages (src/content/keyword-pages). Only `sample-` slugs may be linked publicly.
+  {
+    slug: 'sample-plumbing-co-ewing',
+    name: 'Sample Plumbing Co.',
+    trade: 'plumbing',
+    town: 'Ewing',
+    phone: '(609) 555-0163',
+  },
+  {
+    slug: 'sample-roofing-co-lawrence',
+    name: 'Sample Roofing Co.',
+    trade: 'roofing',
+    town: 'Lawrence',
+    phone: '(609) 555-0128',
+  },
+  {
+    slug: 'sample-landscaping-co-princeton',
+    name: 'Sample Landscaping Co.',
+    trade: 'landscaping',
+    town: 'Princeton',
+    phone: '(609) 555-0175',
   },
   // Home-service leads with an email (Central NJ, verified no website). Facts used: name, trade, town, phone.
   {

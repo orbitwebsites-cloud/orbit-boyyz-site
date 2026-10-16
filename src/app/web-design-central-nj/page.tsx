@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { ArrowLink, DirectAnswer, LocalPagesGrid, MonoLabel, NumberedCards, Section, SectionTitle } from '@/components/port/Blocks'
+import { TradeLinksGrid } from '@/components/port/TradeLinks'
 import { legacyJsonLd } from '@/lib/legacy-seo'
 import { JsonLd, legacyMetadata } from '@/lib/legacy-meta'
 
@@ -72,6 +73,8 @@ export default function WebDesignCentralNjPage() {
       </DirectAnswer>
 
       <LocalPagesGrid current={ROUTE} />
+
+      <TradeLinksGrid heading="Websites for Central Jersey home-service trades." />
 
       <Section label="Who we work with">
         <SectionTitle>Built for businesses that take growth seriously.</SectionTitle>

@@ -9,6 +9,7 @@ import { Roi } from '@/components/sections/Roi'
 import { Services } from '@/components/sections/Services'
 import { SpeedProof } from '@/components/sections/SpeedProof'
 import { Work } from '@/components/sections/Work'
+import { TradeLinksGrid } from '@/components/port/TradeLinks'
 import type { Metadata } from 'next'
 import { faqs } from '@/content/site'
 import { legacyPageMeta } from '@/lib/legacy-seo'
@@ -38,6 +39,7 @@ export default function Home() {
       <Marquee />
       <Problem />
       <Services />
+      <TradeLinksGrid heading="Websites built for the trade you run." />
       <Work />
       <Roi />
       <Process />

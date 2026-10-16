@@ -19,10 +19,14 @@
 // wantsMarkdown() is copied verbatim from the old file. In MARKDOWN_PAGES, '/',
 // '/about', '/contact' and '/developers' are hand-maintained; '/privacy',
 // '/faq', '/services' and '/pricing' are built from src/content (the same
-// data the HTML pages render), so they cannot drift from the pages.
+// data the HTML pages render), so they cannot drift from the pages. The
+// keyword landing pages (src/content/keyword-pages) are added from their
+// content files by lib/keyword-markdown, the same way.
 import { NextResponse, type NextRequest } from 'next/server'
 import { privacyIntro, privacySections, privacyUpdated } from '@/content/legal'
+import { keywordRoutes } from '@/content/keyword-pages'
 import { carePlans, faqs, services, tiers } from '@/content/site'
+import { keywordMarkdown } from '@/lib/keyword-markdown'
 import { LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
 
 export const config = {
@@ -171,6 +175,8 @@ All errors are JSON: { "error": { "code", "message", "hint" } }
 - [OpenAPI spec](${ORIGIN}/openapi.json)
 - [llms.txt](${ORIGIN}/llms.txt)
 `,
+  // Hub, trade, SEO and New Jersey pages, built from src/content/keyword-pages.
+  ...Object.fromEntries(keywordRoutes.map((route) => [route.path, () => keywordMarkdown(route)])),
 }
 
 function wantsMarkdown(accept: string | null): boolean {

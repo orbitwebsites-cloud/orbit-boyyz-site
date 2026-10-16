@@ -39,6 +39,7 @@ const COST_GUIDES = [
   ['/blog/web-design-cost-factors-mercer-county-nj', 'Web design pricing in Mercer County →'],
   ['/blog/custom-website-cost-central-nj', 'Custom website cost in Central NJ →'],
   ['/blog/small-business-website-cost-plainsboro-nj', 'Web design pricing in Plainsboro →'],
+  ['/web-design-new-jersey', 'Web design cost across New Jersey →'],
 ] as const
 
 function CellMark({ v }: { v: Cell }) {
@@ -177,6 +178,10 @@ export default function PricingPage() {
             )
           })}
         </div>
+        {/* Outside any data-reveal wrapper so the link stays keyboard-focusable. */}
+        <p className="mt-8">
+          <ArrowLink href="/seo-for-contractors">What local SEO for contractors covers →</ArrowLink>
+        </p>
       </section>
 
       <section aria-labelledby="pfaq-title" className="container-x grid gap-10 py-16 md:grid-cols-12 md:py-24">

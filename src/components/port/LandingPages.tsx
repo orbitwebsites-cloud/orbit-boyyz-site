@@ -14,6 +14,7 @@ import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ArrowLink, DirectAnswer, LandingFaq, LocalPagesGrid, NumberedCards, Section, SectionTitle } from './Blocks'
+import { TradeLinksGrid } from './TradeLinks'
 
 export function HeroActions({ quoteHref }: { quoteHref: string }) {
   return (
@@ -94,7 +95,7 @@ export function TownLanding({ page }: { page: TownPage }) {
 }
 
 /** Trade cost question as an H2, a short direct answer, then the shared tier table. */
-function CostTiers({ cost }: { cost: NonNullable<IndustryPage['cost']> }) {
+export function CostTiers({ cost }: { cost: NonNullable<IndustryPage['cost']> }) {
   return (
     <Section label="Website cost">
       <div className="grid gap-10 lg:grid-cols-12">
@@ -275,6 +276,8 @@ function IndustryRewriteLanding({ page, rewrite }: { page: IndustryPage; rewrite
         </div>
       </Section>
 
+      <TradeLinksGrid current={page.path} heading="Website design for other home-service trades." />
+
       <LandingFaq label={`[${page.industryShort.toUpperCase()} FAQ]`} heading={rewrite.faqHeading} items={industryLandingFaqs(page)} />
 
       <CtaBand title={rewrite.cta.title} copy={rewrite.cta.copy} />
@@ -337,6 +340,8 @@ export function IndustryLanding({ page }: { page: IndustryPage }) {
       </DirectAnswer>
 
       {page.cost && <CostTiers cost={page.cost} />}
+
+      <TradeLinksGrid current={page.path} heading="Website design for other home-service trades." />
 
       <LandingFaq label="[INDUSTRY FAQ]" heading={`Questions ${name} businesses ask before hiring.`} items={industryLandingFaqs(page)} />
 

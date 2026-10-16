@@ -50,11 +50,11 @@ export function NumberedCards({ items }: { items: ReadonlyArray<readonly [string
   )
 }
 
-/** "[LOCAL PAGES // MERCER COUNTY]" — the town page link grid. */
+/** "[LOCAL PAGES // NEW JERSEY]" — the New Jersey, Central NJ and town page link grid. */
 export function LocalPagesGrid({ current }: { current?: string }) {
   return (
     <Section label="Local web design pages">
-      <SectionLabel>[LOCAL PAGES // MERCER COUNTY]</SectionLabel>
+      <SectionLabel>[LOCAL PAGES // NEW JERSEY]</SectionLabel>
       <ul className="mt-8 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4 xl:grid-cols-6">
         {localWebDesignLinks.map(([label, href]) => {
           const active = href === current

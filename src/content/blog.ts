@@ -974,8 +974,8 @@ export const blogClusters: BlogCluster[] = [
       "plumber-website-ewing-nj"
     ],
     "landing": [
-      "/services",
-      "View services"
+      "/home-service-website-design",
+      "Home-service website design"
     ]
   }
 ]
@@ -1023,6 +1023,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "custom website cost in Central NJ"
     ],
     [
+      "/web-design-new-jersey",
+      "web design in New Jersey"
+    ],
+    [
       "/quote",
       "Use the quote estimator"
     ]
@@ -1045,6 +1049,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "Mercer County web design pricing"
     ],
     [
+      "/web-design-new-jersey",
+      "web design in New Jersey"
+    ],
+    [
       "/quote",
       "Get a project range"
     ],
@@ -1057,6 +1065,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
     [
       "/website-design-for-electricians-nj",
       "electrician website design in NJ"
+    ],
+    [
+      "/website-design-for-electricians",
+      "electrician website design"
     ],
     [
       "/web-design-ewing-nj",
@@ -1073,6 +1085,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "website design for landscaping businesses in NJ"
     ],
     [
+      "/website-design-for-landscapers",
+      "lawn care and landscaping website design"
+    ],
+    [
       "/web-design-central-nj",
       "Central NJ web design"
     ],
@@ -1087,6 +1103,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "HVAC website design for NJ contractors"
     ],
     [
+      "/website-design-for-hvac-companies",
+      "HVAC website design"
+    ],
+    [
       "/web-design-hamilton-nj",
       "Hamilton web design"
     ],
@@ -1099,6 +1119,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
     [
       "/website-design-for-plumbers-nj",
       "plumber website design in NJ"
+    ],
+    [
+      "/website-design-for-plumbers",
+      "plumber website design"
     ],
     [
       "/web-design-ewing-nj",
@@ -1149,6 +1173,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "web design pricing in Plainsboro"
     ],
     [
+      "/web-design-new-jersey",
+      "web design in New Jersey"
+    ],
+    [
       "/quote",
       "Get a Mercer County range"
     ]
@@ -1157,6 +1185,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
     [
       "/website-design-for-electricians-nj",
       "websites for NJ electricians"
+    ],
+    [
+      "/website-design-for-electricians",
+      "electrician website design"
     ],
     [
       "/web-design-ewing-nj",
@@ -1175,6 +1207,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
     [
       "/website-design-for-hvac-companies-nj",
       "HVAC website design in NJ"
+    ],
+    [
+      "/website-design-for-hvac-companies",
+      "HVAC website design"
     ],
     [
       "/quote",
@@ -1217,6 +1253,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "website design for plumbers in NJ"
     ],
     [
+      "/website-design-for-plumbers",
+      "plumber website design"
+    ],
+    [
       "/quote",
       "Get a range"
     ]
@@ -1227,6 +1267,10 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
       "website design for NJ home-service businesses"
     ],
     [
+      "/home-service-website-design",
+      "home-service website design by trade"
+    ],
+    [
       "/quote",
       "Get a range"
     ]
@@ -1235,6 +1279,48 @@ export const blogLandingLinks: Record<string, Array<[href: string, label: string
     [
       "/services#refresh",
       "redesigning a Wix or GoDaddy site"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "local-seo-website-structure-service-business": [
+    [
+      "/seo-for-contractors",
+      "SEO for contractors and home-service companies"
+    ],
+    [
+      "/web-design-central-nj",
+      "Central NJ web design"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "local-service-website-google-ranking": [
+    [
+      "/seo-for-contractors",
+      "local SEO for contractors"
+    ],
+    [
+      "/web-design-new-jersey",
+      "web design in New Jersey"
+    ],
+    [
+      "/quote",
+      "Get a range"
+    ]
+  ],
+  "handcoded-websites-local-seo": [
+    [
+      "/seo-for-contractors",
+      "SEO for contractors"
+    ],
+    [
+      "/home-service-website-design",
+      "home-service website design"
     ],
     [
       "/quote",

@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { Inter } from 'next/font/google'
-import type { DemoBusiness, DemoTrade } from '@/content/demos'
+import { isSampleDemo, type DemoBusiness, type DemoTrade } from '@/content/demos'
 import {
   cleanTown,
   demoCopy,
@@ -278,12 +278,24 @@ function Slot({ label, lines = 3, children }: { label: string; lines?: number; c
 
 function PreviewBanner({ name, slug }: { name: string; slug: string }) {
   const contact = `${site.url}/contact?demo=${encodeURIComponent(slug)}`
+  // Sample demos are linked from Orbit's public pages as fictional examples, so
+  // their banner must say so instead of presenting a made-up business as a lead.
+  const sample = isSampleDemo(slug)
   return (
-    <aside aria-label="Website preview notice" className="sticky top-0 z-50 bg-[#060606] text-[#f4efe6]">
+    <aside aria-label={sample ? 'Sample demo notice' : 'Website preview notice'} className="sticky top-0 z-50 bg-[#060606] text-[#f4efe6]">
       <p className={cn(WRAP, 'py-2.5 text-center text-[13px] leading-snug sm:text-sm')}>
-        <a href={contact} className="underline-offset-4 hover:underline">
-          Free preview built for <strong className="font-semibold">{name}</strong> by Orbit Websites — not live yet. Want it?
-        </a>{' '}
+        {sample ? (
+          <>
+            <strong className="font-semibold">Sample demo by Orbit Websites:</strong> a made-up business with a fictional 555 number, not a client site.{' '}
+            <a href={contact} className="whitespace-nowrap underline underline-offset-4">
+              Want one for your business?
+            </a>
+          </>
+        ) : (
+          <a href={contact} className="underline-offset-4 hover:underline">
+            Free preview built for <strong className="font-semibold">{name}</strong> by Orbit Websites — not live yet. Want it?
+          </a>
+        )}{' '}
         <a href={site.phoneHref} className="whitespace-nowrap font-semibold text-[#d6b36a] underline underline-offset-4">
           {`Call ${site.phone}`}
         </a>

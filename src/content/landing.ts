@@ -185,7 +185,7 @@ export const townPages: Record<string, TownPage> = {
       ],
       [
         "Can we meet in person?",
-        "Often, yes. The studio is in Plainsboro, next to Princeton, so we can meet nearby when that helps. You always talk directly with the person building your site."
+        "Often, yes. The studio is in Plainsboro, next to Princeton, so we can meet nearby when that helps. You always talk directly with the people building your site."
       ]
     ]
   },
@@ -227,7 +227,7 @@ export const townPages: Record<string, TownPage> = {
       ],
       [
         "Do you have an office in Hamilton?",
-        "No. Orbit Websites is based in Plainsboro and works with Hamilton companies on calls, and can meet nearby when that helps. You talk directly with the person building your site."
+        "No. Orbit Websites is based in Plainsboro and works with Hamilton companies on calls, and can meet nearby when that helps. You talk directly with the people building your site."
       ],
       [
         "What should a Hamilton contractor show first on the homepage?",
@@ -654,8 +654,12 @@ export const webDesignNotFit: string[] = [
   "You are not ready to invest in how your business shows up online."
 ]
 
-/** "[LOCAL PAGES // MERCER COUNTY]" link grid on every landing page. */
+/** "[LOCAL PAGES // NEW JERSEY]" link grid on every town page, the NJ trade pages and /web-design-new-jersey. */
 export const localWebDesignLinks: Array<[label: string, href: string]> = [
+  [
+    "New Jersey",
+    "/web-design-new-jersey"
+  ],
   [
     "Central New Jersey",
     "/web-design-central-nj"
