@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState, type FormEvent } from 'react'
+import posthog from 'posthog-js'
 import { site } from '@/content/site'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { cn } from '@/lib/cn'
@@ -134,6 +135,11 @@ export function WebsiteCheck() {
       if (!response.ok || !data || data.error) {
         throw new Error(data?.error?.message ?? `Request failed: ${response.status}`)
       }
+      posthog.capture('website_check_completed', {
+        has_website: data.hasWebsite,
+        score: data.score,
+        checks_run: data.checksRun,
+      })
       setReport(data)
       requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
     } catch (err) {
@@ -368,6 +374,10 @@ function LeadCapture({ report }: { report: WebsiteCheckReport }) {
         }),
       })
       if (!response.ok) throw new Error(`Request failed: ${response.status}`)
+      posthog.capture('website_check_report_requested', {
+        has_website: report.hasWebsite,
+        score: report.score,
+      })
       setSent(true)
     } catch {
       setSendError(`Something didn't go through. Text or call ${site.phoneDisplay}, or email ${site.email}, and we'll take it from there.`)

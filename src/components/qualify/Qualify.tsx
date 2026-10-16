@@ -11,6 +11,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type RefObject,
 } from 'react'
+import posthog from 'posthog-js'
 import { CALENDLY_URL, FORM_ENDPOINT, INSIGHT_MS, QUALIFY_STORAGE_KEY, QUALIFY_THRESHOLDS } from '@/content/qualifyConfig'
 import { emailCheckLabel } from '@/lib/emailCheck'
 import { LEADS_URL } from '@/lib/leadsSite'
@@ -561,6 +562,10 @@ export default function Qualify() {
       const rejected =
         data !== null && typeof data === 'object' && 'success' in data && String((data as { success: unknown }).success) === 'false'
       if (!response.ok || rejected) throw new Error('Submission rejected')
+      posthog.capture('qualification_submitted', {
+        qualified: evaluation.qualified,
+        qualification_score: evaluation.score,
+      })
       setDirection(1)
       setState((current) => ({ ...current, result: evaluation, step: RESULT_STEP }))
       scrollToTop()

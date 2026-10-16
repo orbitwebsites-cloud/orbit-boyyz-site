@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import posthog from 'posthog-js'
 import { site } from '@/content/site'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { cn } from '@/lib/cn'
@@ -107,6 +108,7 @@ export function LeadForm() {
         body: JSON.stringify(input),
       })
       if (!response.ok) throw new Error(`Request failed: ${response.status}`)
+      posthog.capture('agent_build_lead_submitted')
       setSubmitted(true)
     } catch {
       setSubmitError(`Something didn't go through. Text or call ${phone}, or email ${email} directly and we'll get it from there.`)

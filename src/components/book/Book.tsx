@@ -12,6 +12,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type RefObject,
 } from 'react'
+import posthog from 'posthog-js'
 import { BOOK_CALENDLY_URL, BOOK_FORM_ENDPOINT, BOOK_STORAGE_KEY } from '@/content/bookConfig'
 import { INSIGHT_MS } from '@/content/qualifyConfig'
 import { site } from '@/content/site'
@@ -386,6 +387,9 @@ export default function Book() {
       const rejected =
         data !== null && typeof data === 'object' && 'success' in data && String((data as { success: unknown }).success) === 'false'
       if (!response.ok || rejected) throw new Error('Submission rejected')
+      posthog.capture('booking_intake_submitted', {
+        website_status: state.answers.website,
+      })
       setDirection(1)
       setState((current) => ({ ...current, sent: true, step: RESULT_STEP }))
       scrollToTop()

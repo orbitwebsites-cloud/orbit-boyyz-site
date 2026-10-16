@@ -3,10 +3,17 @@
 // WebsiteCheckReport (lib/websiteCheck.ts). Fetches the homepage (6s), probes
 // http→https (5s) and asks Google PageSpeed for a mobile score (15s, optional)
 // in parallel. Checks that can't run come back "unavailable" — never a pass.
+import { after } from 'next/server'
 import { json, jsonError, methodNotAllowed, readBody } from '@/lib/api'
 import { clientIp, rateLimit } from '@/lib/rateLimit'
 import { hasErrors, normalizeWebsiteUrl, validateCheckInput } from '@/lib/websiteCheck'
 import { BlockedHostError, runWebsiteCheck } from '@/lib/websiteCheckRun'
+import {
+  logWebsiteCheckCompleted,
+  logWebsiteCheckFailed,
+  logWebsiteCheckRejected,
+  posthogLogProvider,
+} from '../../../../instrumentation'
 
 // PageSpeed alone can take 15s; leave headroom for the parallel page fetch.
 export const maxDuration = 30
@@ -16,6 +23,12 @@ const RATE_WINDOW_MS = 10 * 60 * 1000
 
 function str(value: unknown): string {
   return typeof value === 'string' ? value.trim() : ''
+}
+
+function flushPostHogLogs() {
+  after(async () => {
+    await posthogLogProvider?.forceFlush()
+  })
 }
 
 export async function POST(request: Request) {
@@ -33,6 +46,8 @@ export async function POST(request: Request) {
 
   const retryAfter = rateLimit('website-check', clientIp(request), RATE_LIMIT, RATE_WINDOW_MS)
   if (retryAfter !== null) {
+    logWebsiteCheckRejected({ reason: 'rate_limited' })
+    flushPostHogLogs()
     return jsonError(429, 'rate_limited', 'Too many checks from this connection. Try again in a few minutes.', undefined, { 'Retry-After': String(retryAfter) })
   }
 
@@ -42,11 +57,17 @@ export async function POST(request: Request) {
       town: input.town,
       url: input.url ? normalizeWebsiteUrl(input.url) : null,
     })
+    logWebsiteCheckCompleted({ has_website: input.url.length > 0 })
+    flushPostHogLogs()
     return json(report, 200, { 'Cache-Control': 'no-store' })
   } catch (err) {
     if (err instanceof BlockedHostError) {
+      logWebsiteCheckRejected({ reason: 'blocked_host' })
+      flushPostHogLogs()
       return jsonError(400, 'invalid_field', '"url": Enter a public website address like yourbusiness.com.')
     }
+    logWebsiteCheckFailed({ error_type: err instanceof Error ? err.name : 'unknown_error' })
+    flushPostHogLogs()
     console.error('website check failed', err)
     return jsonError(500, 'check_failed', 'The check hit an unexpected error. Please try again.')
   }
