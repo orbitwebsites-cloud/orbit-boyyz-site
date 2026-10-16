@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation'
 import { createContext, useCallback, useContext, useEffect, useRef, type ReactNode } from 'react'
 import { isStandalonePath } from '@/lib/demoPath'
+import { useIsStandalone } from '@/lib/useStandalone'
 import { gsap } from './gsap'
 import { useLenis } from './LenisProvider'
 import { DUR, EASE, MQ } from './tokens'
@@ -22,6 +23,7 @@ export function usePageTransition() {
 export function PageTransitionProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
+  const standalone = useIsStandalone()
   const lenis = useLenis()
   const overlayRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLSpanElement>(null)
@@ -46,7 +48,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
 
   const navigate = (href: string) => {
     const el = overlayRef.current
-    // Standalone pages (/book, /qualify, /demo/*) unmount this panel, so it
+    // Standalone pages (/book, /qualify, /leads, /demo/*) unmount this panel, so it
     // could never lift again: go there without the wipe.
     if (!el || window.matchMedia(MQ.reduce).matches || isStandalonePath(href.split(/[?#]/)[0])) {
       router.push(href)
@@ -79,8 +81,8 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
   return (
     <TransitionContext.Provider value={{ navigate }}>
       {children}
-      {/* Standalone pages (/demo/* lead previews, /qualify, /book) carry no Orbit UI; navigate() goes there with a plain router.push. */}
-      {!isStandalonePath(pathname) && (
+      {/* Standalone pages (/demo/* lead previews, /qualify, /book, /leads) carry no Orbit UI; navigate() goes there with a plain router.push. */}
+      {!standalone && (
         <div ref={overlayRef} aria-hidden="true" className="pt-overlay pointer-events-none fixed inset-0 z-[110] flex items-end bg-panel">
           <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
           <div className="container-x flex w-full items-center justify-between pb-8">

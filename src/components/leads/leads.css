@@ -1,0 +1,76 @@
+/* leads.orbitboyzz.com (src/app/leads/page.tsx). Built from the site's own
+   tokens and utilities (globals.css); only what they don't cover lives here,
+   scoped to ld- classes. Unlayered, so it beats globals.css's layers. */
+
+/* Hero headline: on phones the lines settle up unmasked, so the headline (the
+   LCP element) paints on the first frame, like the home hero's mobile intro. */
+@media (max-width: 767px) {
+  .ld-hero .mask {
+    overflow: visible;
+  }
+  .ld-hero .page-rise {
+    animation-name: settle;
+    animation-duration: var(--d-md);
+  }
+}
+
+/* Redacted values in the lead card: a slow light sweep. */
+.ld-redact {
+  display: inline-block;
+  flex: none;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(244, 239, 230, 0.12) 0%, rgba(244, 239, 230, 0.26) 50%, rgba(244, 239, 230, 0.12) 100%);
+  background-size: 220% 100%;
+  animation: ld-sweep 3.2s var(--ease-in-out) infinite;
+}
+html:not(.motion-go) .ld-redact {
+  animation-name: none;
+}
+@keyframes ld-sweep {
+  from {
+    background-position: 110% 0;
+  }
+  to {
+    background-position: -110% 0;
+  }
+}
+
+/* Offer ticker: two copies of the list drift left forever. */
+.ld-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ld-ticker 56s linear infinite;
+}
+.ld-ticker-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+html:not(.motion-go) .ld-ticker-track {
+  animation-play-state: paused;
+}
+@keyframes ld-ticker {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-ticker-track {
+    width: auto;
+    animation: none !important;
+  }
+  .ld-ticker-group {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.5rem;
+  }
+  .ld-ticker-copy {
+    display: none;
+  }
+  .ld-redact {
+    animation: none !important;
+  }
+}

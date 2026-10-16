@@ -7,8 +7,16 @@
 //    priority than `text/html`, serves a hand-maintained markdown variant of
 //    the page instead of the HTML, for pages listed in MARKDOWN_PAGES.
 // 3. growth.orbitboyzz.com/ is served the /growth page.
+// 4. leads.orbitboyzz.com/ is served the /leads page; /qualify passes through
+//    there (as do /api/*, /_next/* and static files, which the matcher skips);
+//    every other path on that host 308s to the same path on orbitboyzz.com.
+//    On orbitboyzz.com itself /leads 308s to leads.orbitboyzz.com/, so the
+//    page has one canonical URL. (Other hosts, e.g. localhost and Vercel
+//    previews, render /leads directly.) Hosts are read from the Host header
+//    (requestHost), so `curl -H "Host: leads.orbitboyzz.com"` tests it locally.
 // MARKDOWN_PAGES and wantsMarkdown() are copied verbatim from the old file.
 import { NextResponse, type NextRequest } from 'next/server'
+import { LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
 
 export const config = {
   matcher: [
@@ -33,6 +41,13 @@ function withVary(existing: string | null) {
 }
 
 const ORIGIN = 'https://orbitboyzz.com'
+const MAIN_HOSTS: ReadonlySet<string> = new Set(['orbitboyzz.com', 'www.orbitboyzz.com'])
+// Pages leads.orbitboyzz.com serves itself, besides "/".
+const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/qualify'])
+
+function isLeadsRoute(pathname: string) {
+  return pathname === '/leads' || pathname === '/leads/'
+}
 
 const MARKDOWN_PAGES: Record<string, () => string> = {
   '/': () => `# OrbitBoyzz / Orbit Websites
@@ -188,11 +203,43 @@ function wantsMarkdown(accept: string | null): boolean {
   return markdown.q >= html.q
 }
 
+/**
+ * The requested host, from the Host header: request.nextUrl.hostname is the
+ * server's own hostname under `next start` (always "localhost"), the Host
+ * header is the domain the visitor asked for, on Vercel and self-hosted alike.
+ */
+function requestHost(request: NextRequest) {
+  const host = request.headers.get('host') ?? request.nextUrl.host
+  return host.replace(/:\d+$/, '').toLowerCase()
+}
+
 export function proxy(request: NextRequest) {
   const url = request.nextUrl
   const accept = request.headers.get('accept')
+  const host = requestHost(request)
 
-  if (url.hostname === 'growth.orbitboyzz.com' && url.pathname === '/') {
+  if (host === LEADS_HOST) {
+    if (url.pathname === '/') {
+      const target = url.clone()
+      target.pathname = '/leads'
+      const res = NextResponse.rewrite(target)
+      res.headers.set('Vary', withVary(res.headers.get('Vary')))
+      return res
+    }
+    if (!LEADS_HOST_PAGES.has(url.pathname)) {
+      // Concatenated, not new URL(pathname, ORIGIN): a path like //evil.com
+      // would otherwise resolve to another host (open redirect).
+      const destination = isLeadsRoute(url.pathname) ? new URL(LEADS_URL) : new URL(`${ORIGIN}${url.pathname}`)
+      destination.search = url.search
+      return NextResponse.redirect(destination, 308)
+    }
+  } else if (MAIN_HOSTS.has(host) && isLeadsRoute(url.pathname)) {
+    const destination = new URL(LEADS_URL)
+    destination.search = url.search
+    return NextResponse.redirect(destination, 308)
+  }
+
+  if (host === 'growth.orbitboyzz.com' && url.pathname === '/') {
     const res = NextResponse.rewrite(new URL('/growth', request.url))
     res.headers.set('Vary', withVary(res.headers.get('Vary')))
     return res

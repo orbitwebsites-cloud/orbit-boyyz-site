@@ -13,6 +13,7 @@ import {
 } from 'react'
 import { CALENDLY_URL, FORM_ENDPOINT, INSIGHT_MS, QUALIFY_STORAGE_KEY, QUALIFY_THRESHOLDS } from '@/content/qualifyConfig'
 import { emailCheckLabel } from '@/lib/emailCheck'
+import { LEADS_URL } from '@/lib/leadsSite'
 import {
   ArrowLeft,
   ArrowRight,
@@ -651,10 +652,11 @@ export default function Qualify() {
       </div>
 
       <header className="qf-header">
-        <div className="qf-brand">
+        {/* The page's links all lead to the lead data site, leads.orbitboyzz.com. */}
+        <a href={LEADS_URL} className="qf-brand">
           <Image src="/orbit-icon.svg" alt="" width={30} height={30} unoptimized loading="eager" />
           <span>Orbit Boyzz</span>
-        </div>
+        </a>
         {inFlow && (
           <div className="qf-header-tools">
             <span className="qf-counter" aria-hidden="true">
@@ -1186,6 +1188,12 @@ function ResultScreen({
             <strong>{niche}</strong>
           </div>
         )}
+        <p className="qf-site-link">
+          <a href={LEADS_URL}>
+            How we build your leads
+            <ArrowRight size={15} />
+          </a>
+        </p>
       </div>
     )
   }

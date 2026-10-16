@@ -56,8 +56,9 @@ export const viewport: Viewport = {
 }
 
 // Runs before first paint: decides whether the first-visit preloader plays.
-// Desktop only — on phones the curtain just delays the LCP.
-const preloadScript = `(function(){try{var d=document.documentElement,k='ob:visited';if(location.pathname==='/'&&matchMedia('(pointer: fine) and (min-width: 768px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!localStorage.getItem(k)){d.classList.add('is-preloading')}localStorage.setItem(k,'1');var go=function(){requestAnimationFrame(function(){d.classList.add('motion-go')})};if(document.readyState==='complete'){go()}else{addEventListener('load',go)}}catch(e){}})();`
+// Desktop only — on phones the curtain just delays the LCP. Never on
+// leads.orbitboyzz.com, whose "/" is the standalone /leads page (no preloader).
+const preloadScript = `(function(){try{var d=document.documentElement,k='ob:visited';if(location.pathname==='/'&&location.hostname.indexOf('leads.')!==0&&matchMedia('(pointer: fine) and (min-width: 768px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!localStorage.getItem(k)){d.classList.add('is-preloading')}localStorage.setItem(k,'1');var go=function(){requestAnimationFrame(function(){d.classList.add('motion-go')})};if(document.readyState==='complete'){go()}else{addEventListener('load',go)}}catch(e){}})();`
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (

@@ -696,6 +696,22 @@ a.qf-brand {
 
 .qf-recap strong { font-size: 1.1rem; overflow-wrap: anywhere; }
 
+/* Link back to leads.orbitboyzz.com on the end screen. */
+.qf-site-link { margin: 1.75rem 0 0; }
+
+.qf-site-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 2.75rem;
+  color: var(--qf-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.qf-site-link a:hover { text-decoration-thickness: 2px; }
+
 .qf-fallback {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
