@@ -1,10 +1,10 @@
-import { legacyFaqs, webDesignFit, webDesignIncludes, webDesignNotFit, webDesignTowns } from '@/content/landing'
+import { centralNjFaqs, webDesignFit, webDesignIncludes, webDesignNotFit, webDesignTowns } from '@/content/landing'
 import { site } from '@/content/site'
 import { Accordion } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
-import { LocalPagesGrid, MonoLabel, NumberedCards, Section, SectionTitle } from '@/components/port/Blocks'
+import { ArrowLink, DirectAnswer, LocalPagesGrid, MonoLabel, NumberedCards, Section, SectionTitle } from '@/components/port/Blocks'
 import { legacyJsonLd } from '@/lib/legacy-seo'
 import { JsonLd, legacyMetadata } from '@/lib/legacy-meta'
 
@@ -12,7 +12,7 @@ const ROUTE = '/web-design-central-nj'
 
 export const metadata = legacyMetadata(ROUTE)
 
-// Custom layout from the old App.tsx (WebDesignCentralNJ) — copy verbatim.
+// Custom layout from the old App.tsx (WebDesignCentralNJ). Hero, cost answer and FAQ rewritten 2026-10-16.
 export default function WebDesignCentralNjPage() {
   return (
     <>
@@ -21,10 +21,10 @@ export default function WebDesignCentralNjPage() {
         label="[WEB DESIGN // CENTRAL NEW JERSEY]"
         title={
           <>
-            Premium web design for <span className="serif-accent text-accent">Central New Jersey</span> local businesses.
+            <span className="serif-accent text-accent">Central New Jersey</span> web design for home-service and local businesses.
           </>
         }
-        lead="Orbit Websites is a Plainsboro, NJ web design agency building custom websites and AI automation systems for local businesses across Central New Jersey — including Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Lawrence, Hopewell, and Trenton. We design conversion-focused sites — and AI automations that handle intake, pricing, booking, and follow-up — for companies that treat their website as a way to win better customers, not a cheap brochure."
+        lead="Orbit Websites is a Plainsboro, NJ studio that designs and hand-codes websites for home-service and local businesses across Central Jersey: Princeton, West Windsor, Ewing, Hamilton, Lawrence, Hopewell, Trenton, Robbinsville and East Windsor in Mercer County, plus Plainsboro and Bordentown. You own the finished site."
       >
         <div className="flex flex-wrap gap-3">
           <Button href={site.phoneHref} icon="phone">
@@ -52,6 +52,24 @@ export default function WebDesignCentralNjPage() {
           ))}
         </ul>
       </Section>
+
+      <DirectAnswer
+        question="How much does a website cost in Central NJ?"
+        links={
+          <>
+            <ArrowLink href="/blog/custom-website-cost-central-nj">Custom website cost in Central NJ →</ArrowLink>
+            <ArrowLink href="/blog/web-design-cost-factors-mercer-county-nj" muted>
+              Mercer County web design pricing →
+            </ArrowLink>
+            <ArrowLink href="/pricing" muted>
+              Full website pricing →
+            </ArrowLink>
+          </>
+        }
+      >
+        Launch builds are quoted on a free call and built in a 7-day sprint. Premium builds start at $3,500, AI operations builds run $5,000–$15,000+, and optional monthly
+        plans are $300–$700 after launch.
+      </DirectAnswer>
 
       <LocalPagesGrid current={ROUTE} />
 
@@ -89,7 +107,7 @@ export default function WebDesignCentralNjPage() {
             <SectionTitle>Common questions.</SectionTitle>
           </div>
           <div className="md:col-span-8">
-            <Accordion items={legacyFaqs.slice(0, 3).map(([q, a]) => ({ q, a }))} defaultOpen={0} />
+            <Accordion items={centralNjFaqs.map(([q, a]) => ({ q, a }))} defaultOpen={0} />
           </div>
         </div>
       </Section>

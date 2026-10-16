@@ -9,11 +9,13 @@ export type TownPage = {
   county: string
   nearby: string
   audience: string
+  /** H1 as [before, accent, after]; the accent renders in the serif gold, as in IndustryRewrite.h1. */
+  h1?: [before: string, accent: string, after: string]
   /** Unique opening paragraph (hero lead). */
   intro: string
-  /** Two town-specific "what you get" cards. */
+  /** Town-specific "what you get" cards (2–4). */
   local: Array<[title: string, copy: string]>
-  /** Two town-specific FAQs, shown on the page and marked up as FAQPage. */
+  /** Town-specific FAQs (2–4), shown on the page and marked up as FAQPage. */
   faqs: Array<[question: string, answer: string]>
 }
 export type IndustryPage = {
@@ -78,7 +80,7 @@ export const townPages: Record<string, TownPage> = {
     "county": "Middlesex County",
     "nearby": "Princeton, West Windsor, Cranbury, Monroe, and South Brunswick",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Plainsboro is our home base. We build websites for the HVAC, plumbing, electrical, and remodeling companies that work the condo, townhome, and apartment communities between Route 1, Scudders Mill Road, and Plainsboro Road, plus the single-family streets toward Cranbury.",
+    "intro": "Plainsboro is home base for Orbit Websites, a web design studio that builds websites for the HVAC, plumbing, electrical, and remodeling companies working the condo, townhome, and apartment communities between Route 1, Scudders Mill Road, and Plainsboro Road, plus the single-family streets toward Cranbury.",
     "local": [
       [
         "Condo and HOA work",
@@ -87,6 +89,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "Searches that cross the county line",
         "Plainsboro is in Middlesex County, but people here also compare Princeton, West Windsor, and Cranbury companies. Your service-area copy should say plainly which neighboring towns you cover."
+      ],
+      [
+        "Plainsboro Center and Princeton Meadows",
+        "Maps and some searches use the census names Plainsboro Center and Princeton Meadows for parts of the township. Saying you serve all of Plainsboro Township, including both, matches those searches."
       ]
     ],
     "faqs": [
@@ -107,7 +113,7 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Princeton, Plainsboro, Lawrence Township, Hamilton, and Cranbury",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "West Windsor homeowners compare contractors carefully, and many commute through Princeton Junction, so they search and book from a phone in the evening. We build websites for West Windsor home-service companies that need to look established and take requests after hours.",
+    "intro": "West Windsor homeowners compare contractors carefully, and many commute through Princeton Junction, so they search and book from a phone in the evening. Orbit Websites, a web design studio in neighboring Plainsboro, builds websites for West Windsor home-service companies that need to look established and take requests after hours.",
     "local": [
       [
         "After-hours requests",
@@ -116,6 +122,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "The names locals use",
         "Customers search for Princeton Junction, Dutch Neck, and Grover's Mill as well as West Windsor. Your service-area copy should use the names people actually say."
+      ],
+      [
+        "Princeton Junction station",
+        "The Princeton Junction stop on NJ Transit’s Northeast Corridor line is in West Windsor, and many customers book repairs around a commute. Let people pick a callback window instead of asking them to call during work hours."
       ]
     ],
     "faqs": [
@@ -136,7 +146,8 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Plainsboro, West Windsor, Lawrence Township, and Hamilton",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Princeton customers expect a polished first impression, whether the job is an older house in one of the historic districts or a newer home on the edge of town. We build websites for home-service companies that need to earn that trust before the first call.",
+    "h1": ["Web design and website development for ", "Princeton, NJ", " home-service businesses."],
+    "intro": "Orbit Websites designs and hand-codes websites for Princeton, NJ home-service companies from a studio next door in Plainsboro. Princeton customers compare carefully, whether the job is an older house in a historic district or a newer home on the edge of town, so the site is built to earn trust before the first call.",
     "local": [
       [
         "Older-home expertise",
@@ -145,6 +156,14 @@ export const townPages: Record<string, TownPage> = {
       [
         "One Princeton since 2013",
         "Princeton Borough and Princeton Township merged into one municipality in 2013. Your site should simply say Princeton and can mention nearby Kingston and Rocky Hill if you work there."
+      ],
+      [
+        "Historic district paperwork",
+        "Exterior work in Princeton historic districts can need Historic Preservation Commission review. If you handle that for roofs, windows or porches, say so with real job photos. It is a concrete reason to pick you."
+      ],
+      [
+        "Princeton addresses outside Princeton",
+        "A Princeton mailing address also covers parts of neighboring townships such as Montgomery and West Windsor. Name the townships you actually serve, and neighborhoods like the Western Section, Riverside, Littlebrook or Witherspoon-Jackson only where you really work."
       ]
     ],
     "faqs": [
@@ -155,6 +174,18 @@ export const townPages: Record<string, TownPage> = {
       [
         "What should a Princeton contractor show on their website?",
         "Real job photos, license and insurance details, clear service areas, and how fast you respond. Princeton customers usually compare several companies, so specifics beat slogans."
+      ],
+      [
+        "Do you build WordPress websites in Princeton?",
+        "No. Every site is hand-coded in Next.js instead of a WordPress theme with plugins, so pages stay fast on phones and there is no plugin stack to keep updating. If you have a WordPress site now, a website refresh keeps the content that works and rebuilds the rest."
+      ],
+      [
+        "Do you offer internet marketing or SEO for Princeton businesses?",
+        "Every build includes local SEO foundations such as clean page structure and local schema, and premium builds add service and area pages. After launch, the optional Website + Leads Plan ($500/mo) and Growth Partner plan ($700/mo) add ongoing local SEO and content. Nobody can honestly promise a Google ranking, and we don’t."
+      ],
+      [
+        "Can we meet in person?",
+        "Often, yes. The studio is in Plainsboro, next to Princeton, so we can meet nearby when that helps. You always talk directly with the person building your site."
       ]
     ]
   },
@@ -165,7 +196,8 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Trenton, Ewing, Lawrence Township, Robbinsville, and Princeton",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Hamilton is the most populous township in Mercer County, so home-service companies there compete with a lot of other trucks. We build websites that help Hamilton contractors show up for the neighborhood names people search and turn those visits into calls.",
+    "h1": ["", "Hamilton, NJ", " web design for home-service companies."],
+    "intro": "Orbit Websites builds websites for home-service companies in Hamilton Township, Mercer County, from Hamilton Square and Mercerville to Yardville, White Horse and Groveville. Hamilton is the most populous township in Mercer County, so you compete with a lot of trucks; the site is built so people searching your part of town find you and call.",
     "local": [
       [
         "Neighborhood searches",
@@ -174,6 +206,14 @@ export const townPages: Record<string, TownPage> = {
       [
         "First to answer wins",
         "Hamilton customers often call whoever responds first. Click-to-call on every page and a short quote form keep you in the running when someone is comparing three companies at once."
+      ],
+      [
+        "Mercer County, not Atlantic County",
+        "There is also a Hamilton Township in Atlantic County. Say Hamilton Township, Mercer County on your site and Google Business Profile so customers and search engines do not mix you up."
+      ],
+      [
+        "Route 33, Route 130 and I-195",
+        "Hamilton sits on Route 33, Route 130 and I-195, next to Robbinsville, Bordentown and Trenton. If your crews cover those towns too, list the ones you actually reach so out-of-area calls do not waste your time."
       ]
     ],
     "faqs": [
@@ -184,6 +224,14 @@ export const townPages: Record<string, TownPage> = {
       [
         "Is Hamilton too competitive to rank in?",
         "It is crowded, but many competitors still have slow, generic sites. A fast site with clear services, real photos, and reviews has a fair shot over time. Nobody can honestly promise a ranking."
+      ],
+      [
+        "Do you have an office in Hamilton?",
+        "No. Orbit Websites is based in Plainsboro and works with Hamilton companies on calls, and can meet nearby when that helps. You talk directly with the person building your site."
+      ],
+      [
+        "What should a Hamilton contractor show first on the homepage?",
+        "Your services, the Hamilton sections and nearby towns you cover, a click-to-call button and a short quote form, all easy to reach on a phone."
       ]
     ]
   },
@@ -194,7 +242,8 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Princeton, Ewing, Hamilton, Trenton, and West Windsor",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Lawrence Township runs from the Route 1 corridor to the village of Lawrenceville, and homeowners search both names. We build websites for Lawrence home-service companies that want to cover the whole township clearly.",
+    "h1": ["Web design for ", "Lawrence Township and Lawrenceville", " home-service businesses."],
+    "intro": "Orbit Websites builds websites for home-service companies across Lawrence Township, Mercer County, including the village of Lawrenceville. The township runs from the Route 1 corridor and the Quaker Bridge Mall area to Lawrenceville’s Main Street, and homeowners search both names.",
     "local": [
       [
         "Lawrence vs. Lawrenceville",
@@ -203,6 +252,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "Between Princeton and Trenton",
         "Lawrence sits between Princeton, Ewing, and Trenton, and many crews cover all four. A clear service-area list tells customers right away whether you will come to their street."
+      ],
+      [
+        "Sections and institutions",
+        "Lawrence includes sections like Slackwood, Eldridge Park and Lawrence Square, plus Rider University and The Lawrenceville School, so some calls come from landlords and facilities, not only homeowners. Name the areas and customer types you really serve."
       ]
     ],
     "faqs": [
@@ -213,6 +266,14 @@ export const townPages: Record<string, TownPage> = {
       [
         "If I work Lawrence and Princeton, do I need two sites?",
         "No. One site with an accurate section for each town works better than a generic page that names neither."
+      ],
+      [
+        "Do you build websites for contractors in Lawrence Township?",
+        "Yes. We build websites for established home-service businesses: HVAC, plumbing, electrical, roofing, landscaping, remodeling and other contractors. Lawrence is one of the Mercer County towns we serve from our Plainsboro studio."
+      ],
+      [
+        "Should I list Slackwood or Eldridge Park on my site?",
+        "Only if you work there regularly. Section names match how some customers describe where they live, but listing every name just to rank looks spammy to people and to Google."
       ]
     ]
   },
@@ -223,7 +284,8 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Hamilton, Ewing, Lawrence Township, Bordentown, and Burlington",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Trenton is New Jersey's capital and the Mercer County seat, with dense rowhome neighborhoods and older buildings where repair calls come in fast. We build websites for Trenton-area home-service companies that need to catch those calls quickly.",
+    "h1": ["Web design for ", "Trenton, NJ", " contractors and home-service businesses."],
+    "intro": "Orbit Websites builds websites for Trenton-area contractors and repair trades: plumbing, heating, electrical and roofing companies that need to catch calls fast. Trenton is New Jersey’s capital and the Mercer County seat, with dense rowhome blocks and older multi-family buildings where repair calls come in quickly, often from landlords managing several units.",
     "local": [
       [
         "Rowhomes and older buildings",
@@ -232,6 +294,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "Landlords and property managers",
         "Many Trenton repair calls come from owners managing several units. A request form that captures the address, unit, and tenant contact saves a round of phone tag."
+      ],
+      [
+        "Neighborhood names people use",
+        "Customers describe where they live as Chambersburg, Mill Hill, Hiltonia, Cadwalader Heights, or by ward: North, South, East and West. Name the parts of the city you really work in, not every one."
       ]
     ],
     "faqs": [
@@ -242,6 +308,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "Can the site handle requests from landlords with several properties?",
         "Yes. We can build a request form that takes multiple addresses or units and sends urgent problems, like no heat or an active leak, to your phone first."
+      ],
+      [
+        "What should a Trenton repair company website do first?",
+        "Put click-to-call at the top of every page, say which Trenton neighborhoods and nearby towns you cover, and offer a short request form that takes the address, unit and a photo."
       ]
     ]
   },
@@ -252,7 +322,7 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Hamilton, East Windsor, Allentown, Bordentown, and Hightstown",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Robbinsville has grown around its Town Center and newer developments, which means many homeowners with newer systems looking for maintenance, upgrades, and finishing work. We build websites for Robbinsville home-service companies that want those jobs.",
+    "intro": "Robbinsville has grown around its Town Center and newer developments, which means many homeowners with newer systems looking for maintenance, upgrades, and finishing work. Orbit Websites, a Plainsboro, NJ web design studio, builds websites for Robbinsville home-service companies that want those jobs.",
     "local": [
       [
         "Newer homes, different jobs",
@@ -261,6 +331,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "The old name still shows up",
         "Robbinsville was formerly Washington Township, and some old directories still list it that way. Keep your site and listings consistent on the current name."
+      ],
+      [
+        "Route 130 and Route 33",
+        "Route 130 and Route 33 both run through Robbinsville. Naming the developments you work in, and the roads people know them by, tells a customer at a glance that you come to their street."
       ]
     ],
     "faqs": [
@@ -281,7 +355,7 @@ export const townPages: Record<string, TownPage> = {
     "county": "Burlington County",
     "nearby": "Trenton, Hamilton, Robbinsville, Burlington City, and Florence",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "Bordentown means two places: Bordentown City, with its historic downtown on Farnsworth Avenue, and the larger Bordentown Township around it. We build websites for home-service companies that work both, plus the Route 130 and Route 206 corridor nearby.",
+    "intro": "Bordentown means two places: Bordentown City, with its historic downtown on Farnsworth Avenue, and the larger Bordentown Township around it. Orbit Websites, a Plainsboro, NJ web design studio, builds websites for home-service companies that work both, plus the Route 130 and Route 206 corridor nearby.",
     "local": [
       [
         "City and Township",
@@ -290,6 +364,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "Right on the county line",
         "Bordentown is in Burlington County, next to Mercer. If you also work Hamilton, Trenton, or Robbinsville, say so. It tells customers you are close without needing extra pages."
+      ],
+      [
+        "River Line, Turnpike and Fieldsboro",
+        "Bordentown City has a NJ Transit River Line stop, the Township has NJ Turnpike Exit 7 and I-295, and the small borough of Fieldsboro sits next door. If you work all three, say so in one service-area line."
       ]
     ],
     "faqs": [
@@ -310,7 +388,7 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Robbinsville, Hightstown, West Windsor, Cranbury, and Monroe",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "East Windsor surrounds the borough of Hightstown, sits on Routes 130 and 33, and has New Jersey Turnpike Exit 8 in town. We build websites for East Windsor home-service companies that cover that whole area.",
+    "intro": "East Windsor surrounds the borough of Hightstown, sits on Routes 130 and 33, and has New Jersey Turnpike Exit 8 in town. Orbit Websites, a Plainsboro, NJ web design studio, builds websites for East Windsor home-service companies that cover that whole area.",
     "local": [
       [
         "East Windsor and Hightstown",
@@ -319,6 +397,10 @@ export const townPages: Record<string, TownPage> = {
       [
         "Planned communities",
         "East Windsor has many townhome and condo communities, including Twin Rivers. A form that asks for the community name and unit helps you quote faster and handle HOA rules up front."
+      ],
+      [
+        "One 08520 address, two towns",
+        "Much of East Windsor shares the 08520 Hightstown mailing address, so a customer in the township may give Hightstown as their town. Say you serve both so neither group wonders."
       ]
     ],
     "faqs": [
@@ -620,11 +702,11 @@ export const localWebDesignLinks: Array<[label: string, href: string]> = [
   ]
 ]
 
-/** Old site FAQ list (the first 3 are shown + marked up on /web-design-central-nj). */
+/** Old site FAQ list (the first 3 open centralNjFaqs on /web-design-central-nj). */
 export const legacyFaqs: Array<[question: string, answer: string]> = [
   [
     "Why hand-coded Next.js instead of a free website builder?",
-    "Speed, security, and zero platform limitations. Free builders load heavy scripts and third-party plugins that slow your site down and tank your mobile score. Hand-coded Next.js is lean, blazing-fast, and built to rank — most of our sites score 90+ on mobile performance and load in under 1 second."
+    "Speed, security and zero platform limitations. Free builders load heavy scripts and plugins that slow your site and hurt your mobile score. Hand-coded Next.js is lean, fast and built to rank — and you own it."
   ],
   [
     "How long does it take to launch?",
@@ -658,6 +740,30 @@ export const legacyFaqs: Array<[question: string, answer: string]> = [
     "What is the Enterprise Custom Build?",
     "The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Launch websites are quoted on a free call, AI operations systems run $5,000–$15,000+, and optional care plans are $300–$700/mo."
   ]
+]
+
+/**
+ * /web-design-central-nj FAQ: shown in its accordion and marked up as its FAQPage (lib/legacy-seo).
+ * The cost question is the page's DirectAnswer, so it is not repeated here.
+ */
+export const centralNjFaqs: Array<[string, string]> = [
+  legacyFaqs[0],
+  legacyFaqs[1],
+  legacyFaqs[2],
+  [
+    'Which towns do you count as Central NJ?',
+    'We build for businesses in Plainsboro, Princeton, West Windsor, Ewing, Hamilton, Lawrence, Hopewell, Trenton, Robbinsville, East Windsor and Bordentown, plus nearby towns such as Hightstown, Cranbury, Monroe and Pennington.',
+  ],
+  [
+    'Do you only build for home-service businesses?',
+    'No. Our focus is established home-service companies such as HVAC, plumbing, electrical, roofing, landscaping and remodeling, and our live portfolio also includes real estate sites and a specialty food brand.',
+  ],
+]
+
+/** The brand question on /orbitboyzz: its "Direct answer" block and its FAQPage markup (lib/legacy-seo). */
+export const orbitboyzzBrandFaq: [question: string, answer: string] = [
+  'Is OrbitBoyzz the same as Orbit Websites?',
+  'Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business. OrbitBoyzz is the branded domain at orbitboyzz.com, while Orbit Websites is the service name used for custom websites, local SEO foundations, quote forms, booking flows, and AI employee systems. Orbit Boyzz, written with a space, is the same business, and it also runs an exclusive lead data offer for outbound agencies at leads.orbitboyzz.com.',
 ]
 
 /** Old ServicesPreview cards (shown on /orbitboyzz). */
@@ -768,5 +874,13 @@ export const ewingFaqs: Array<[string, string]> = [
   [
     'What makes an Ewing local business website convert?',
     'The site needs clear services, local proof, fast mobile pages, direct click-to-call actions, quote or booking paths, and enough service-area context for buyers and search engines to understand the business quickly.',
+  ],
+  [
+    'Do you work with Ewing companies that also serve Bucks County, PA?',
+    'Yes. Your site can list the Pennsylvania towns you cover alongside Ewing and Mercer County. Keep New Jersey and Pennsylvania service areas, and your registration details for each state, clearly labeled.',
+  ],
+  [
+    'Should my site say Ewing or West Trenton?',
+    'Both, if you work there. West Trenton is part of Ewing Township and some customers use that name, so mentioning both matches how people search.',
   ],
 ]

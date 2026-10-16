@@ -1,4 +1,4 @@
-import { legacyServices, localUseCases } from '@/content/landing'
+import { legacyServices, localUseCases, orbitboyzzBrandFaq } from '@/content/landing'
 import { site } from '@/content/site'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
@@ -7,10 +7,11 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ArrowLink, Section, SectionTitle } from '@/components/port/Blocks'
 import { legacyJsonLd } from '@/lib/legacy-seo'
 import { JsonLd, legacyMetadata } from '@/lib/legacy-meta'
+import { LEADS_URL } from '@/lib/leadsSite'
 
 export const metadata = legacyMetadata('/orbitboyzz')
 
-// Old OrbitBoyzzBrandPage (App.tsx) — copy verbatim.
+// Old OrbitBoyzzBrandPage (App.tsx). The direct answer comes from orbitboyzzBrandFaq, which also feeds this page's FAQPage markup.
 export default function OrbitBoyzzPage() {
   return (
     <>
@@ -50,15 +51,15 @@ export default function OrbitBoyzzPage() {
       </Section>
 
       <Section label="Direct answer">
-        <div
-          data-reveal
-          className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-12"
-        >
-          <SectionLabel>[DIRECT ANSWER]</SectionLabel>
-          <h2 className="display t-2 mt-6 max-w-[20ch]">Is OrbitBoyzz the same as Orbit Websites?</h2>
-          <p className="t-lead mt-6 max-w-[68ch] text-muted">
-            Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business. OrbitBoyzz is the branded domain at orbitboyzz.com, while Orbit
-            Websites is the service name used for custom websites, local SEO foundations, quote forms, booking flows, and AI employee systems.
+        <div className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-12">
+          <div data-reveal>
+            <SectionLabel>[DIRECT ANSWER]</SectionLabel>
+            <h2 className="display t-2 mt-6 max-w-[20ch]">{orbitboyzzBrandFaq[0]}</h2>
+            <p className="t-lead mt-6 max-w-[68ch] text-muted">{orbitboyzzBrandFaq[1]}</p>
+          </div>
+          {/* Outside the data-reveal wrapper so the link stays keyboard-focusable. */}
+          <p className="mt-8">
+            <ArrowLink href={LEADS_URL}>Lead lists for outbound agencies →</ArrowLink>
           </p>
         </div>
       </Section>

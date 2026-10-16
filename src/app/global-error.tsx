@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import posthog from 'posthog-js'
+import { loadPostHog } from '@/lib/posthog-loader'
 
 export default function GlobalError({
   error,
@@ -11,7 +11,10 @@ export default function GlobalError({
   reset: () => void
 }>) {
   useEffect(() => {
-    posthog.captureException(error)
+    // Loads posthog-js on demand (initializing it if the idle-time init hasn't
+    // run yet), so it stays out of every page's initial bundle and early errors
+    // are still reported.
+    void loadPostHog().then((posthog) => posthog?.captureException(error))
   }, [error])
 
   return (

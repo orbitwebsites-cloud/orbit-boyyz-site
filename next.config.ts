@@ -8,6 +8,8 @@ const CANONICAL = "https://orbitboyzz.com";
 // /sitemap.xml and /api/* (which the proxy matcher skips).
 const ME_HOST = "(?:www\\.)?orbitboyzz\\.me";
 const GROWTH_ME_HOST = "growth\\.orbitboyzz\\.me";
+// leads.orbitboyzz.com gets its own /llms.txt (public/llms-leads.txt).
+const LEADS_HOST = "leads\\.orbitboyzz\\.com";
 
 // Pages removed in the 2026-09-30 SEO cleanup → closest live page.
 //  - Medical / restaurant / catering pages are outside the home-service offer.
@@ -58,13 +60,22 @@ const nextConfig: NextConfig = {
       ...MOVED.map(([source, destination]) => ({ source, destination, permanent: true })),
     ];
   },
-  // PostHog goes through our own domain so ad blockers don't drop events.
-  // proxy.ts skips /ingest/ (matcher) so leads.orbitboyzz.com keeps it too.
   async rewrites() {
-    return [
-      { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
-      { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
-    ];
+    return {
+      // Must be beforeFiles: the plain array form runs after public/ files, so
+      // public/llms.txt would win on the leads host. proxy.ts's matcher already
+      // skips *.txt, so nothing else rewrites or redirects this path.
+      beforeFiles: [
+        { source: "/llms.txt", has: [{ type: "host", value: LEADS_HOST }], destination: "/llms-leads.txt" },
+      ],
+      // PostHog goes through our own domain so ad blockers don't drop events.
+      // proxy.ts skips /ingest/ (matcher) so leads.orbitboyzz.com keeps it too.
+      afterFiles: [
+        { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
+        { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
+      ],
+      fallback: [],
+    };
   },
   skipTrailingSlashRedirect: true,
 };

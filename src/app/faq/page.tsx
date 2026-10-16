@@ -6,9 +6,9 @@ import { PageHero } from '@/components/ui/PageHero'
 import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'FAQ — Websites, pricing, timelines & AI operations',
+  title: 'Web Design FAQ: Pricing, Timelines, SEO',
   description:
-    'Answers about hand-coded Next.js websites, launch timelines, 50/50 payment, care plans, SEO and the AI operations tier from Orbit Websites in Plainsboro, NJ.',
+    'Straight answers on hand-coded websites, 7-day launch builds, 50/50 payment, care plans, SEO and AI operations from Orbit Websites in Plainsboro, NJ.',
   path: '/faq',
 })
 
@@ -21,7 +21,7 @@ export default function FaqPage() {
         label="[FAQ]"
         title={
           <>
-            Questions, <span className="serif-accent text-accent">answered straight.</span>
+            Web design questions, <span className="serif-accent text-accent">answered straight.</span>
           </>
         }
         lead="Everything business owners usually ask us before a first call. If yours is not here, just call."

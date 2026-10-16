@@ -1,6 +1,6 @@
 # Pricing - Orbit Websites
 
-Last updated: September 28, 2026
+Last updated: October 16, 2026
 
 ## Launch Build
 
@@ -35,8 +35,7 @@ Last updated: September 28, 2026
 
 ## Business Case
 
-- Labor avoided: $35,000-$54,000 per year when replacing receptionist, dispatcher, data-entry, or sales coordinator work.
-- Revenue recovered: $8,000-$25,000 per month in possible upside for businesses with high-intent emergency or corporate leads.
-- Speed-to-lead target: sub-15 seconds for initial response or 180 seconds for proposal-style workflows.
+- The exact return depends on your traffic, service value and sales process; we never promise results we cannot prove.
+- The AI operations tier and retainer are recommended only when they replace measurable admin labor or recover high-intent leads.
 
 Contact: alex@orbitboyzz.com or 609 662 8052.

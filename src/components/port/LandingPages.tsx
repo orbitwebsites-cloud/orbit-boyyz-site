@@ -31,12 +31,23 @@ export function HeroActions({ quoteHref }: { quoteHref: string }) {
   )
 }
 
+/** County-matched cost post under each town's DirectAnswer; any other county falls back to the Central NJ post. */
+const COST_POST_BY_COUNTY: Record<string, { href: string; anchor: string }> = {
+  'Mercer County': { href: '/blog/web-design-cost-factors-mercer-county-nj', anchor: 'What drives web design cost in Mercer County →' },
+  'Middlesex County': { href: '/blog/small-business-website-cost-plainsboro-nj', anchor: 'Web design pricing in Plainsboro →' },
+  'Burlington County': { href: '/blog/custom-website-cost-central-nj', anchor: 'Custom website cost in Central NJ →' },
+}
+const COST_POST_FALLBACK = COST_POST_BY_COUNTY['Burlington County']
+
 export function TownLanding({ page }: { page: TownPage }) {
-  const cards: Array<[string, string]> = [
-    ...page.local,
-    ['Service-area structure', `Clear service, town, and FAQ sections tell customers and search engines that you work in ${page.town}, ${page.county}, and nearby ${page.nearby}.`],
+  const [before, accent, after] = page.h1 ?? ['Web design for ', page.town, ' home-service businesses.']
+  const generic: Array<[string, string]> = [
     ['Built around calls and quotes', 'Click-to-call, quote requests, and booking paths come first, with AI intake added only when lead value and response speed justify it.'],
+    ['Service-area structure', `Clear service, town, and FAQ sections tell customers and search engines that you work in ${page.town}, ${page.county}, and nearby ${page.nearby}.`],
   ]
+  // At least four cards: towns with 4 local cards show no shared card, towns with 3 show one.
+  const cards = [...page.local, ...generic].slice(0, Math.max(4, page.local.length))
+  const costPost = COST_POST_BY_COUNTY[page.county] ?? COST_POST_FALLBACK
 
   return (
     <>
@@ -44,7 +55,9 @@ export function TownLanding({ page }: { page: TownPage }) {
         label={page.label}
         title={
           <>
-            Web design for <span className="serif-accent text-accent">{page.town}</span> home-service businesses.
+            {before}
+            <span className="serif-accent text-accent">{accent}</span>
+            {after}
           </>
         }
         lead={page.intro}
@@ -59,10 +72,18 @@ export function TownLanding({ page }: { page: TownPage }) {
         <NumberedCards items={cards} />
       </Section>
 
-      <DirectAnswer question={`How much does web design cost in ${page.town}?`}>
-        A launch website for a {page.town} local business is quoted on a free call after a quick look at your needs: a 7-day sprint, 50% to start and 50% on approval.
-        Premium builds start at $3,500. AI-powered lead intake, booking logic, routing, and proposal workflows run $5,000 to $15,000+, depending on integrations and
-        workflow complexity, and optional monthly plans are $300–$700/mo.
+      <DirectAnswer
+        question={`How much does web design cost in ${page.town}?`}
+        links={
+          <>
+            <ArrowLink href={costPost.href}>{costPost.anchor}</ArrowLink>
+            <ArrowLink href="/pricing" muted>
+              Full website pricing →
+            </ArrowLink>
+          </>
+        }
+      >
+        Launch builds for {page.town} businesses are quoted on a free call and premium builds start at $3,500, the same tiers Orbit Websites uses in every town it serves.
       </DirectAnswer>
 
       <LandingFaq label="[LOCAL FAQ]" heading={`Questions ${page.town} businesses ask before hiring.`} items={townLandingFaqs(page)} />

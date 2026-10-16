@@ -83,13 +83,13 @@ export function LocalPagesGrid({ current }: { current?: string }) {
 export function DirectAnswer({ question, children, links }: { question: string; children: ReactNode; links?: ReactNode }) {
   return (
     <Section label="Direct answer">
-      <div
-        data-reveal
-        className="relative overflow-hidden rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-12"
-      >
-        <SectionLabel>[DIRECT ANSWER]</SectionLabel>
-        <h2 className="display t-3 mt-6 max-w-[28ch] text-balance">{question}</h2>
-        <p className="t-lead mt-6 max-w-[68ch] text-muted">{children}</p>
+      <div className="relative overflow-hidden rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-12">
+        <div data-reveal>
+          <SectionLabel>[DIRECT ANSWER]</SectionLabel>
+          <h2 className="display t-3 mt-6 max-w-[28ch] text-balance">{question}</h2>
+          <p className="t-lead mt-6 max-w-[68ch] text-muted">{children}</p>
+        </div>
+        {/* Outside the data-reveal wrapper so the links stay keyboard-focusable before the block scrolls into view. */}
         {links && <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">{links}</div>}
       </div>
     </Section>

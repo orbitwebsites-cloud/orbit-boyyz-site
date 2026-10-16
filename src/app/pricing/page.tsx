@@ -1,4 +1,5 @@
 import { carePlans, faqs, site, tiers } from '@/content/site'
+import { ArrowLink } from '@/components/port/Blocks'
 import { Accordion } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
@@ -10,9 +11,9 @@ import { cn } from '@/lib/cn'
 import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'Pricing — Launch builds, premium sites from $3,500 & AI operations',
+  title: 'Website Design Pricing for NJ Businesses',
   description:
-    'Website pricing for Central NJ businesses: launch builds quoted on a call, premium builds from $3,500, AI operations from $5,000, monthly plans from $300.',
+    'Orbit Websites pricing: launch builds quoted on a free call, premium from $3,500, AI operations $5,000–$15,000+, optional care $300–$700/mo.',
   path: '/pricing',
 })
 
@@ -30,20 +31,34 @@ const rows: { group: string; items: { name: string; cells: [Cell, Cell, Cell] }[
   { group: 'AI operations', items: aiOwn.map((name) => ({ name, cells: [false, false, true] })) },
 ]
 
-const PRICING_FAQ = faqs.filter((f) => /payment|care plan|long|AI operations tier/i.test(f.q))
+const PRICING_FAQ = faqs.filter((f) => /payment|care plan|long|AI operations tier|cost|own my website/i.test(f.q))
+
+// Cost guides linked under the matrix (existing /blog posts).
+const COST_GUIDES = [
+  ['/blog/how-much-does-a-website-cost-for-a-local-business', 'Website cost guide for NJ local businesses →'],
+  ['/blog/web-design-cost-factors-mercer-county-nj', 'Web design pricing in Mercer County →'],
+  ['/blog/custom-website-cost-central-nj', 'Custom website cost in Central NJ →'],
+  ['/blog/small-business-website-cost-plainsboro-nj', 'Web design pricing in Plainsboro →'],
+] as const
 
 function CellMark({ v }: { v: Cell }) {
   if (v === true)
     return (
-      <svg width="16" height="16" viewBox="0 0 12 12" fill="none" className="mx-auto" role="img" aria-label="Included">
-        <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <>
+        <svg width="16" height="16" viewBox="0 0 12 12" fill="none" className="mx-auto" aria-hidden="true">
+          <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span className="sr-only">Included</span>
+      </>
     )
   if (v === 'scoped') return <span className="font-mono text-[0.68rem] tracking-[0.08em] text-muted">On the call</span>
   return (
-    <span className="text-dim" aria-label="Not included">
-      —
-    </span>
+    <>
+      <span aria-hidden="true" className="text-dim">
+        —
+      </span>
+      <span className="sr-only">Not included</span>
+    </>
   )
 }
 
@@ -56,10 +71,10 @@ export default function PricingPage() {
         label="[PRICING]"
         title={
           <>
-            Clear tiers. <span className="serif-accent text-accent">No surprises.</span>
+            Website design pricing: clear tiers, <span className="serif-accent text-accent">no surprises.</span>
           </>
         }
-        lead="50% reserves your build and starts the sprint. You approve the finished site before paying the remaining 50%. Care plans are optional and start only after launch."
+        lead="Orbit Websites pricing: launch builds are quoted on a free call and built in a 7-day sprint, premium builds start at $3,500, and AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional, $300–$700/mo after launch. 50% reserves your build; you approve the finished site before paying the rest."
       />
 
       <section aria-label="Build tiers" className="container-x">
@@ -112,6 +127,17 @@ export default function PricingPage() {
         <p className="mt-4 text-sm text-dim">
           Launch builds are quoted after the call. Premium starts at $3,500. AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer.
         </p>
+        {/* Outside any data-reveal wrapper so the links stay keyboard-focusable. */}
+        <div className="mt-8">
+          <h3 className="label">Cost guides</h3>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+            {COST_GUIDES.map(([href, label]) => (
+              <li key={href}>
+                <ArrowLink href={href}>{label}</ArrowLink>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section aria-labelledby="care-title" className="container-x py-12 md:py-20">

@@ -7,7 +7,7 @@ import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { jsonLd, pageMeta, pageSchema, servicesSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'Services — Websites, refreshes, AI intake & care plans',
+  title: 'Website Design & Redesign Services in NJ',
   description:
     'Hand-coded websites, refreshes, AI intake & booking automation and monthly plans for home-service businesses in Plainsboro, Princeton and Central NJ.',
   path: '/services',
@@ -22,10 +22,10 @@ export default function ServicesPage() {
         label="[SERVICES]"
         title={
           <>
-            Websites and systems that <span className="serif-accent text-accent">bring in work.</span>
+            Website design, redesigns and AI intake that <span className="serif-accent text-accent">bring in work.</span>
           </>
         }
-        lead="Four services, one studio. Every build is hand-coded around how your business actually takes on jobs — calls, quotes and bookings."
+        lead="Orbit Websites, a Plainsboro, NJ studio, offers four services for home-service and local businesses: custom website design, website refreshes, AI intake and booking, and optional care and growth plans after launch. Every build is hand-coded around how your business takes on jobs: calls, quotes and bookings."
       >
         <div className="flex flex-wrap gap-3">
           <Button href={site.booking}>Book a free call</Button>

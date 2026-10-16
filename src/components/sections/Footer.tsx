@@ -4,6 +4,7 @@ import { OrbitMark } from '@/components/ui/Logo'
 import { FooterWordmark } from '@/components/ui/FooterWordmark'
 import { TransitionLink } from '@/components/ui/TransitionLink'
 import { Button } from '@/components/ui/Button'
+import { LEADS_URL } from '@/lib/leadsSite'
 
 const YEAR = new Date().getFullYear()
 
@@ -69,6 +70,12 @@ export function Footer() {
                 </TransitionLink>
               </li>
             ))}
+            {/* Other host (leads.orbitboyzz.com), so a plain <a>: TransitionLink is for internal paths. */}
+            <li>
+              <a href={LEADS_URL} className={linkCls}>
+                Lead lists for agencies
+              </a>
+            </li>
           </ul>
         </nav>
 

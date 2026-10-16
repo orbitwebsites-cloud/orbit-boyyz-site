@@ -1,6 +1,6 @@
 # Orbit Websites - Search Growth Next Steps
 
-Last updated: June 13, 2026
+Last updated: October 16, 2026
 
 Priority goal: grow qualified search clicks toward 1K+ per month while converting that traffic into 1-4 client conversations per month.
 
@@ -10,12 +10,12 @@ Business type: service-area web design and AI operations studio serving Central 
 
 The site now has:
 
-- Prerendered static HTML for 56 routes.
-- Generated `dist/sitemap.xml` and `dist/feed.xml`.
+- A Next.js App Router site (this repo), deployed on Vercel.
+- `sitemap.xml` and `feed.xml` are Next.js routes (`src/app/sitemap.ts`, `src/app/feed.xml/route.ts`), generated from the page list and blog posts. The sitemap also lists https://leads.orbitboyzz.com/ as its one cross-host entry.
 - `robots.txt`, `llms.txt`, and `pricing.md`.
 - Local town pages for Central NJ, Plainsboro, West Windsor, Princeton, Ewing, Hamilton, Lawrence, Trenton, Robbinsville, Bordentown, and East Windsor.
-- Industry pages for HVAC, plumbers, electricians, landscaping companies, dental practices, restaurants/caterers, and clinics/med spas.
-- Blog clusters for local SEO, AI intake, pricing, and industries, including clinic, med spa, Plainsboro cost, Mercer County cost factors, electrician AI chatbot, and dental automation pricing articles.
+- Industry pages for HVAC, plumbers, electricians, and landscaping companies (the dental, restaurant and clinic pages now redirect, see `next.config.ts`).
+- Blog clusters for local SEO, AI intake, pricing, and industries, including Plainsboro cost, Mercer County cost factors, and electrician AI chatbot articles.
 - Breadcrumb, LocalBusiness, Service, FAQ, BlogPosting, and Blog schema.
 - Conversion tracking hooks for calls, quote clicks, pricing clicks, email clicks, and Calendly clicks.
 - A mobile sticky call/quote bar.
@@ -23,39 +23,33 @@ The site now has:
 
 ## 1. Submit The Current Site To Google Search Console
 
-1. Go to https://search.google.com/search-console and select `orbitboyzz.me`.
+1. Go to https://search.google.com/search-console and select the domain property `sc-domain:orbitboyzz.com` (it covers orbitboyzz.com and leads.orbitboyzz.com).
 2. Open **Sitemaps** and submit `sitemap.xml`.
 3. Use **URL Inspection** and request indexing for:
-   - https://orbitboyzz.me/
-   - https://orbitboyzz.me/services
-   - https://orbitboyzz.me/pricing
-   - https://orbitboyzz.me/quote
-   - https://orbitboyzz.me/web-design-central-nj
-   - https://orbitboyzz.me/website-design-for-hvac-companies-nj
-   - https://orbitboyzz.me/website-design-for-plumbers-nj
-   - https://orbitboyzz.me/website-design-for-restaurants-nj
-   - https://orbitboyzz.me/website-design-for-clinics-nj
-   - https://orbitboyzz.me/blog/local-business-website-checklist-2026
-   - https://orbitboyzz.me/blog/home-service-website-structure
-   - https://orbitboyzz.me/blog/clinic-website-design-central-nj
-   - https://orbitboyzz.me/blog/med-spa-website-design-new-jersey
-   - https://orbitboyzz.me/blog/small-business-website-cost-plainsboro-nj
-   - https://orbitboyzz.me/blog/web-design-cost-factors-mercer-county-nj
-   - https://orbitboyzz.me/blog/ai-chatbot-electrician-central-nj
-   - https://orbitboyzz.me/blog/automated-dental-website-no-monthly-fee
+   - https://orbitboyzz.com/
+   - https://orbitboyzz.com/services
+   - https://orbitboyzz.com/pricing
+   - https://orbitboyzz.com/quote
+   - https://orbitboyzz.com/web-design-central-nj
+   - https://orbitboyzz.com/website-design-for-hvac-companies-nj
+   - https://orbitboyzz.com/website-design-for-plumbers-nj
+   - https://orbitboyzz.com/blog/local-business-website-checklist-2026
+   - https://orbitboyzz.com/blog/home-service-website-structure
+   - https://orbitboyzz.com/blog/small-business-website-cost-plainsboro-nj
+   - https://orbitboyzz.com/blog/web-design-cost-factors-mercer-county-nj
+   - https://orbitboyzz.com/blog/ai-chatbot-electrician-central-nj
+   - https://leads.orbitboyzz.com/ (lead data for outbound agencies; not yet known to Google)
 4. Check the **Pages** and **Performance** reports weekly.
 
 ## 2. Submit New URLs Through IndexNow After Deploys
 
-After a production deploy:
+After a production deploy reaches orbitboyzz.com: `npm run submit:indexnow` (dry run, reads the live sitemap, lists URLs per host), then `npm run submit:indexnow -- --live`; expect HTTP 200 or 202 per host (orbitboyzz.com and leads.orbitboyzz.com). Add --since=YYYY-MM-DD to send only URLs whose sitemap lastmod is on or after that date.
 
 ```bash
-npm run build
 npm run submit:indexnow
 npm run submit:indexnow -- --live
+npm run submit:indexnow -- --live --since=2026-10-16
 ```
-
-The first command verifies the generated files. The second command is a dry run. The `--live` command submits the current `dist/sitemap.xml` URLs to the IndexNow endpoint.
 
 ## 3. Set Up Google Business Profile
 
@@ -65,7 +59,7 @@ The first command verifies the generated files. The second command is a dry run.
 4. Hide the street address and configure service areas.
 5. Use the same phone and website everywhere:
    - Phone: 609-662-8052
-   - Website: https://orbitboyzz.me/
+   - Website: https://orbitboyzz.com/
 6. Add logo, hours, services, and one launch/update post.
 
 ## 4. Build Entity Profiles

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/content/blog'
 import { NOINDEX_ROUTES, ORIGIN, isoDate, legacyPageMeta } from '@/lib/legacy-seo'
+import { LEADS_URL } from '@/lib/leadsSite'
 
 // Same URL set and order as the old site's prerender.mjs writeSitemap(), minus
 // the pages redirected in next.config.ts and the noindex routes
@@ -8,11 +9,19 @@ import { NOINDEX_ROUTES, ORIGIN, isoDate, legacyPageMeta } from '@/lib/legacy-se
 // (/form was never in the sitemap and stays out.)
 // /qualify and /book, the noindex,nofollow booking steps, must never be listed:
 // IndexNow (scripts/submit-indexnow.mjs) submits exactly what this file lists.
+//
+// LEADS_URL (https://leads.orbitboyzz.com/) is the one deliberate cross-host
+// entry: leads.orbitboyzz.com/robots.txt declares this sitemap
+// (https://orbitboyzz.com/sitemap.xml), which makes the entry valid, and the
+// sc-domain:orbitboyzz.com Search Console property covers both hosts.
 const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify', '/book'])
 
-// Every non-post page changed in the 2026-10-02 SEO pass (organization schema
-// address on every page; homepage, /growth and trade-page copy).
-const PAGES_UPDATED = '2026-10-02'
+// Every non-post page changed in the 2026-10-16 SEO pass (titles, town copy
+// and the organization schema on every page).
+const PAGES_UPDATED = '2026-10-16'
+
+// Last change to the leads.orbitboyzz.com page (copy, schema, FAQ).
+const LEADS_UPDATED = '2026-10-16'
 
 function lastMod(route: string) {
   if (route.startsWith('/blog/')) {
@@ -37,10 +46,13 @@ function changeFrequency(route: string): 'weekly' | 'monthly' {
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = Object.keys(legacyPageMeta).filter((route) => !NOINDEX_ROUTES.has(route))
   const routes = [...pages, ...blogPosts.map((p) => `/blog/${p.slug}`)].filter((route) => !NEVER_LISTED.has(route))
-  return routes.map((route) => ({
-    url: route === '/' ? ORIGIN : `${ORIGIN}${route}`,
-    lastModified: lastMod(route),
-    changeFrequency: changeFrequency(route),
-    priority: priority(route),
-  }))
+  return [
+    ...routes.map((route) => ({
+      url: route === '/' ? ORIGIN : `${ORIGIN}${route}`,
+      lastModified: lastMod(route),
+      changeFrequency: changeFrequency(route),
+      priority: priority(route),
+    })),
+    { url: LEADS_URL, lastModified: LEADS_UPDATED, changeFrequency: 'monthly', priority: 0.8 },
+  ]
 }

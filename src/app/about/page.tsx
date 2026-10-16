@@ -6,7 +6,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'About — A Plainsboro, NJ web design & AI operations studio',
+  title: 'About OrbitBoyzz, a Plainsboro NJ Studio',
   description:
     'Orbit Websites (OrbitBoyzz) is a small Plainsboro, NJ studio hand-coding fast, conversion-first websites for Central New Jersey businesses.',
   path: '/about',

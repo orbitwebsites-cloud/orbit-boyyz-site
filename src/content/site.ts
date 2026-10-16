@@ -78,7 +78,7 @@ export const hero = {
   headline: 'Your website should book jobs, not just sit there.',
   // The H1's accessible (and indexed) text; the visual headline above stays as designed.
   srHeadline: 'Custom website design for New Jersey home-service businesses that books jobs',
-  sub: 'Hand-coded, conversion-first websites for local businesses — designed with you on a call, launched in days, and fully yours.',
+  sub: 'Orbit Websites hand-codes conversion-first websites for New Jersey home-service businesses — designed with you on a call, launched in days, and fully yours.',
   primaryCta: 'Book a free call',
   secondaryCta: 'See the work',
   chips: ['50% to start', '7-day build', 'You approve before final payment'],
@@ -222,11 +222,14 @@ export const faqs = [
   { q: 'What kinds of businesses do you build for?', a: 'Established home-service businesses: HVAC, plumbing, electrical, roofing, landscaping, remodeling and other contractors where one booked job is worth hundreds or thousands of dollars.' },
   { q: 'Do you guarantee Google rankings?', a: 'No one can honestly promise rankings. We build strong local SEO foundations and clean structure that search engines reward, so your site is built the right way from day one.' },
   { q: 'What is the AI operations tier?', a: 'A build ($5,000–$15,000+) plus an optional retainer ($750–$2,500/mo) for businesses that want automated intake, lead qualification, instant proposals, booking and routing. We recommend it only when it replaces measurable admin labor or recovers high-intent leads.' },
+  { q: 'How much does a website cost with Orbit Websites?', a: 'Launch builds are quoted on a free call after a quick look at your needs and built in a 7-day sprint, with 50% to start and 50% on approval. Premium builds start at $3,500. AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional: $300, $500 or $700 per month after launch.' },
+  { q: 'Do you build on WordPress, Wix or Squarespace?', a: 'No. Every site is hand-coded in Next.js and you own the code. If you are on WordPress, Wix or Squarespace now, a website refresh keeps the content that works and rebuilds the rest.' },
+  { q: 'Do I own my website?', a: 'Yes. You approve the finished site before final payment and it is yours. Hosting with us is optional.' },
 ] as const
 
 export const about = {
   label: '[ABOUT]',
-  title: 'A small studio that builds like a big one.',
+  title: 'Orbit Websites (OrbitBoyzz): a small studio that builds like a big one.',
   copy: [
     'Orbit Websites is a Plainsboro, NJ web design and AI operations studio. You talk to the builder, not a sales floor.',
     'We hand-code every site on Next.js, Tailwind and Vercel — the same stack used by the fastest companies on the web — and we wire it around how your business actually takes on work: calls, quotes, bookings.',

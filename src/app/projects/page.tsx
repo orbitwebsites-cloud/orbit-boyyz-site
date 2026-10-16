@@ -5,7 +5,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'Projects — Real websites for local businesses',
+  title: 'Web Design Portfolio: Live Website Builds',
   description:
     'Live website builds by Orbit Websites: Weichert Princeton Pages (real estate), a property services website and Grand Treats by Tony (specialty food).',
   path: '/projects',

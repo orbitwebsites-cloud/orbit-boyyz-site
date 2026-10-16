@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { NOINDEX_ROUTES, ORIGIN, legacyPageMeta } from './legacy-seo'
 import { jsonLd } from './seo'
 
-const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
+// The 1200x630 card from app/opengraph-image.tsx (the logo PNG stays the schema logo in legacy-seo).
+const OG_IMAGE = [{ url: `${ORIGIN}/opengraph-image`, width: 1200, height: 630, alt: 'Orbit Websites' }]
 
 export function canonicalFor(route: string) {
   return route === '/' ? `${ORIGIN}/` : `${ORIGIN}${route}`
@@ -36,9 +37,9 @@ export function legacyMetadata(
       title: meta.title,
       description: meta.description,
       url,
-      images: [OG_IMAGE],
+      images: OG_IMAGE,
     },
-    twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [OG_IMAGE] },
+    twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: OG_IMAGE },
   }
 }
 

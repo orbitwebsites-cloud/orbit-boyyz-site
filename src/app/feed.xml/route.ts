@@ -22,7 +22,7 @@ export function GET() {
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <description>${xmlEscape(post.description)}</description>
-      <pubDate>${rfc822Date(post.updated)}</pubDate>
+      <pubDate>${rfc822Date(post.published)}</pubDate>
     </item>`
     })
     .join('\n')

@@ -4,16 +4,18 @@
 // volume) and no dashboard.
 
 export const leadsContact = {
-  brand: 'OrbitBoyzz',
+  brand: 'Orbit Boyzz',
   email: 'alex@orbitboyzz.com',
   address: '2401 Deer Creek Drive, Plainsboro, NJ 08536',
 } as const
 
 export const leadsHero = {
   eyebrow: 'Exclusive verified leads for outbound agencies',
+  /** Screen-reader H1: the visual headline (line1 + line2) is aria-hidden. */
+  srHeadline: 'Exclusive verified lead lists for outbound agencies',
   line1: 'Your list.',
   line2: 'Nobody else’s.',
-  sub: 'Clay and Apollo sell the same records to every agency. We build exclusive, verified leads fresh for one of your client niches, and only you get them.',
+  sub: 'Clay and Apollo sell the same records to every agency. Orbit Boyzz builds exclusive, verified leads fresh for one of your client niches, and only you get them.',
   cta: 'Get 25 free leads',
   ctaShort: 'Free leads',
   secondary: 'How it works',
@@ -143,6 +145,18 @@ export const leadsFaqs = [
   {
     q: 'Is there a long-term contract?',
     a: 'No. It’s month-to-month.',
+  },
+  {
+    q: 'What is in each lead?',
+    a: 'Company, owner name, title, verified email, phone, website, city/state, Google rating and Google reviews, delivered as a sheet.',
+  },
+  {
+    q: 'How do I start?',
+    a: 'Answer a few quick questions about your agency. We build 25 exclusive, verified leads for one of your client niches, or 300 if you qualify.',
+  },
+  {
+    q: 'Who runs this?',
+    a: 'Orbit Boyzz, based in Plainsboro, NJ. Email alex@orbitboyzz.com.',
   },
 ] as const
 

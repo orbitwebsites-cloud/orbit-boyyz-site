@@ -6,7 +6,7 @@
 //
 // Usage:
 //   node scripts/verify-agent-readiness.mjs                 # logic-only
-//   BASE_URL=https://orbitboyzz.me node scripts/verify-agent-readiness.mjs
+//   BASE_URL=https://orbitboyzz.com node scripts/verify-agent-readiness.mjs
 //   BASE_URL=http://localhost:3000 node scripts/verify-agent-readiness.mjs
 
 import assert from 'node:assert/strict'
@@ -30,10 +30,11 @@ function test(name, fn) {
 }
 
 console.log('== Quote estimate logic ==')
-await test('starter site default range is $150-$400', () => {
+await test('launch site default is quoted on a free call', () => {
   const r = calculateQuoteEstimate({ need: 'site', complexity: 'simple', urgency: 'normal', employee: 'none', automation: false })
-  assert.equal(r.upfront, '$150-$400')
-  assert.equal(r.monthly, '$100-$300/mo')
+  assert.equal(r.upfront, 'Quoted on a free call')
+  assert.equal(r.upfrontLow, null)
+  assert.equal(r.monthly, '$300–$700/mo')
   assert.equal(r.employeeCost, 'N/A')
 })
 

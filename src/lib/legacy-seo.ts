@@ -3,7 +3,7 @@
 // same code, so every ported route emits exactly what the old prerender did.
 // Copied programmatically — keep in sync with PORT-NOTES.md if edited.
 import { blogPosts, type BlogPost } from '@/content/blog'
-import { ewingFaqs, industryLandingFaqs, industryPages, legacyFaqs as faqs, townLandingFaqs, townPages } from '@/content/landing'
+import { centralNjFaqs, ewingFaqs, industryLandingFaqs, industryPages, orbitboyzzBrandFaq, townLandingFaqs, townPages } from '@/content/landing'
 
 export const ORIGIN = 'https://orbitboyzz.com'
 const OG_IMAGE = `${ORIGIN}/orbit-logo.png`
@@ -23,15 +23,8 @@ const SAME_AS: string[] = [
 ]
 // Founding date in ISO form, e.g. '2025'. Leave '' to omit until confirmed.
 const FOUNDED = '2026'
-// Operating hours (24h). Weekdays 4–8pm, weekends 12–8pm.
-const OPENING_HOURS = [
-  { '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '16:00', closes: '20:00' },
-  { '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Saturday', 'Sunday'],
-    opens: '12:00', closes: '20:00' },
-]
+// No published hours. Add only alongside a visible Hours line on /contact.
+const OPENING_HOURS: Array<Record<string, unknown>> = []
 // areaServed as structured City objects — clearer entity signal than bare strings.
 const SERVICE_AREA = [
   { '@type': 'City', name: 'Plainsboro', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
@@ -44,8 +37,11 @@ const SERVICE_AREA = [
   { '@type': 'City', name: 'Trenton', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'Robbinsville', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'City', name: 'East Windsor', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+  { '@type': 'City', name: 'Bordentown', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
   { '@type': 'AdministrativeArea', name: 'Central New Jersey' },
   { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+  { '@type': 'AdministrativeArea', name: 'Middlesex County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+  { '@type': 'AdministrativeArea', name: 'Burlington County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
 ]
 
 
@@ -54,7 +50,7 @@ const SERVICE_AREA = [
 export const legacyPageMeta: Record<string, { title: string; description: string }> = {
   // The homepage is the single owner of "home service website design" (SEO plan 2026-10-02).
   '/': {
-    title: 'Website Design for NJ Home-Service Businesses | Orbit Websites',
+    title: 'Home-Service Website Design in NJ | Orbit Websites',
     description:
       'Custom website design for New Jersey home-service businesses: HVAC, plumbing, electrical and roofing sites built to book jobs. Plainsboro, NJ studio.',
   },
@@ -69,83 +65,86 @@ export const legacyPageMeta: Record<string, { title: string; description: string
     description:
       'OrbitBoyzz is the brand handle for Orbit Websites, a Plainsboro, NJ studio hand-coding fast, conversion-focused websites for local businesses.',
   },
+  // Only feeds sitemap.ts: the rendered title and description come from pageMeta in the route's page.tsx.
   '/about': {
     title: 'About Orbit Websites | Hand-Coded Web Design in Plainsboro, NJ',
     description:
       'Orbit Websites is a Plainsboro, NJ web design studio. We hand-code every site in Next.js — no templates, no plugins — so your site is fast, secure, and built to rank locally.',
   },
+  // Only feeds sitemap.ts: the rendered title and description come from pageMeta in the route's page.tsx.
   '/services': {
     title: 'Web Design Services for Local Businesses in NJ | Orbit Websites',
     description:
       'New websites, redesigns, local SEO, booking forms, and quote automation for local businesses in Central NJ. Free demo call — no commitment.',
   },
+  // Only feeds sitemap.ts: the rendered title and description come from pageMeta in the route's page.tsx.
   '/pricing': {
     title: 'Website Design Pricing in NJ | Orbit Websites',
     description:
       'Transparent website pricing for local businesses. Launch builds quoted on a free call, premium builds from $3,500, AI systems $5,000–$15,000+, optional care $300–$700/mo. See what you get before you pay.',
   },
   '/web-design-central-nj': {
-    title: 'Web Design Agency Central NJ | Local Business Websites | Orbit Websites',
+    title: 'Central NJ Web Design Company | Central Jersey Websites',
     description:
-      'Central NJ web design agency serving Plainsboro, Princeton, Ewing, Hamilton, Trenton, and surrounding towns. Hand-coded sites with a free live demo.',
+      'Website design for Central Jersey home-service businesses in Mercer and nearby towns: Princeton, Plainsboro, Hamilton, Ewing, Trenton. Owned by you.',
   },
   '/web-design-ewing-nj': {
-    title: 'Web Design Ewing NJ | Fast, Hand-Coded Local Business Websites',
+    title: 'Web Design Ewing NJ | Websites for Ewing Township Trades',
     description:
-      'Website design for local businesses in Ewing, NJ. Hand-coded Next.js, mobile-first, built to rank in Ewing Township searches. Free demo before you pay.',
+      'Websites for Ewing Township, NJ home-service businesses, from West Trenton to the Pennington Road corridor. Hand-coded, fast, built for calls.',
   },
   '/web-design-plainsboro-nj': {
-    title: 'Web Design Plainsboro NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design Plainsboro NJ | Studio Based in Plainsboro',
     description:
-      'Website design for local businesses in Plainsboro, NJ. Fast, hand-coded, mobile-first sites that rank in Plainsboro and Middlesex County searches.',
+      'Plainsboro is our home base. Hand-coded websites for Plainsboro, NJ home-service businesses, with clear pricing: premium builds start at $3,500.',
   },
   '/web-design-west-windsor-nj': {
-    title: 'Web Design West Windsor NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design West Windsor NJ | Princeton Junction Websites',
     description:
-      'Website design for local businesses in West Windsor Township, NJ. Hand-coded, fast, and built to bring in calls and bookings. Free demo.',
+      'Websites for West Windsor and Princeton Junction home-service companies: hand-coded, fast on phones, with quote forms that work after hours.',
   },
   '/web-design-princeton-nj': {
-    title: 'Web Design Princeton NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design Princeton NJ | Website Design & Development',
     description:
-      'Website design for local businesses in Princeton, NJ. Hand-coded Next.js sites that load fast and rank in Princeton searches. Free live demo.',
+      'Hand-coded websites for Princeton, NJ home-service businesses, built by a Plainsboro studio next door. Not WordPress: fast, owned by you. Free call.',
   },
   '/web-design-hamilton-nj': {
-    title: 'Web Design Hamilton NJ | Local Business Websites | Orbit Websites',
+    title: 'Hamilton NJ Web Design for Home-Service Companies',
     description:
-      'Website design for local businesses in Hamilton Township, NJ. Fast, hand-coded, mobile-first. Built to rank in Hamilton and Mercer County searches.',
+      'Websites for Hamilton Township, NJ home-service companies, from Hamilton Square to Yardville. Hand-coded, fast on phones, built for calls and quotes.',
   },
   '/web-design-lawrence-nj': {
-    title: 'Web Design Lawrence Township NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design Lawrence Township & Lawrenceville, NJ',
     description:
-      'Website design for local businesses in Lawrence Township, NJ. Hand-coded, blazing-fast, built to generate calls and bookings from local search.',
+      'Websites for Lawrence Township home-service companies, from the Route 1 corridor to Lawrenceville. Hand-coded, fast on phones, built for calls.',
   },
   '/web-design-trenton-nj': {
-    title: 'Web Design Trenton NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design Trenton NJ | Website Design for Trenton Trades',
     description:
-      'Website design for local businesses in Trenton, NJ. Hand-coded Next.js sites that rank in Trenton and Mercer County searches. Free demo call.',
+      'Websites for Trenton, NJ contractors and repair trades: fast mobile pages, click-to-call, and request forms that handle landlords with several units.',
   },
   '/web-design-robbinsville-nj': {
-    title: 'Web Design Robbinsville NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design Robbinsville NJ | Websites for Local Trades',
     description:
       'Website design for local businesses in Robbinsville, NJ. Fast, hand-coded, mobile-first sites built to rank in Robbinsville and Mercer County searches.',
   },
   '/web-design-bordentown-nj': {
-    title: 'Web Design Bordentown NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design Bordentown NJ | Bordentown City & Township',
     description:
-      'Website design for local businesses in Bordentown, NJ. Hand-coded Next.js sites that rank locally and convert visitors into calls. Free demo.',
+      'Websites for home-service companies in Bordentown City and Bordentown Township, NJ, plus the Route 130 and 206 corridor. Fast, hand-coded, yours.',
   },
   '/web-design-east-windsor-nj': {
-    title: 'Web Design East Windsor NJ | Local Business Websites | Orbit Websites',
+    title: 'Web Design East Windsor & Hightstown, NJ',
     description:
       'Website design for local businesses in East Windsor, NJ. Fast, hand-coded, mobile-first sites built to generate calls and bookings from local search.',
   },
   '/website-design-for-hvac-companies-nj': {
-    title: 'HVAC Website Design NJ | Capture Emergency Calls 24/7 | Orbit Websites',
+    title: 'HVAC Website Design NJ | Capture Emergency Calls 24/7',
     description:
       'Website design for HVAC companies in New Jersey. Capture emergency service calls after hours, rank in local search, and never lose a hot lead. Free demo.',
   },
   '/website-design-for-plumbers-nj': {
-    title: 'Plumber Website Design NJ | Get More Emergency Jobs | Orbit Websites',
+    title: 'Website Design for Plumbers in NJ | Orbit Websites',
     description:
       'Website design for plumbers in New Jersey. Capture emergency calls overnight, rank in Mercer County searches, and get more booked jobs. Free demo.',
   },
@@ -155,7 +154,7 @@ export const legacyPageMeta: Record<string, { title: string; description: string
       'Electrician websites for NJ contractors: separate lead paths for panel upgrades, EV chargers and generators, home vs. business routing, license shown.',
   },
   '/website-design-for-landscaping-companies-nj': {
-    title: 'Landscaping Company Website Design NJ | Get More Contracts | Orbit Websites',
+    title: 'Landscaping Company Website Design NJ | Orbit Websites',
     description:
       'Website design for landscaping companies in New Jersey. Capture seasonal and annual contract leads, rank in local search, and grow your client base.',
   },
@@ -174,11 +173,13 @@ export const legacyPageMeta: Record<string, { title: string; description: string
     description:
       'Complete the inclusive Orbit Websites client discovery brief for a business, nonprofit, public initiative, personal brand, organization, or new project.',
   },
+  // Only feeds sitemap.ts: the rendered title and description come from pageMeta in the route's page.tsx.
   '/contact': {
     title: 'Book a Free Demo Call | Orbit Websites | Plainsboro, NJ',
     description:
-      'Book a free 15-minute call with Orbit Websites. We\'ll build a live demo of your site and show you before you pay a cent. Call 609-662-8052 or book online.',
+      'Book a free 30-minute call with Orbit Websites, call 609-662-8052 or email alex@orbitboyzz.com. Plainsboro, NJ studio serving Central New Jersey.',
   },
+  // Only feeds sitemap.ts: the rendered title and description come from pageMeta in the route's page.tsx.
   '/projects': {
     title: 'Website Portfolio | Local Business Web Design Examples | Orbit Websites',
     description:
@@ -189,6 +190,7 @@ export const legacyPageMeta: Record<string, { title: string; description: string
     description:
       'Practical guides on website design, local SEO, and getting more calls for local businesses in Central NJ. Written by Orbit Websites in Plainsboro, NJ.',
   },
+  // Only feeds sitemap.ts: the rendered title and description come from pageMeta in the route's page.tsx.
   '/faq': {
     title: 'Website Design FAQ | Common Questions Answered | Orbit Websites NJ',
     description:
@@ -206,10 +208,11 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   },
 }
 
-// Routes that keep working (and keep their metadata above) but are not search
-// landing pages: a client intake form and API docs. They get robots
-// "noindex, follow" and are left out of sitemap.xml.
-export const NOINDEX_ROUTES: ReadonlySet<string> = new Set(['/project-brief', '/developers'])
+// Routes that keep working but are not search landing pages: a client intake
+// form, API docs and /form, the unlinked AI-agent lead form. They get robots
+// "noindex, follow" and are left out of sitemap.xml (/form has no legacyPageMeta
+// entry, so the sitemap never listed it anyway).
+export const NOINDEX_ROUTES: ReadonlySet<string> = new Set(['/project-brief', '/developers', '/form'])
 
 // --- JSON-LD builders -------------------------------------------------------
 export const organization = {
@@ -351,7 +354,8 @@ export const website = {
 
 export function blogPostingGraph(post: BlogPost) {
   const url = `${ORIGIN}/blog/${post.slug}`
-  const date = isoDate(post.updated)
+  const published = isoDate(post.published)
+  const modified = isoDate(post.updated)
   const fallbackFaqs: Record<string, Array<[string, string]>> = {
     'custom-web-design-vs-wix-squarespace': [
       [
@@ -371,11 +375,12 @@ export function blogPostingGraph(post: BlogPost) {
       '@id': `${url}#article`,
       headline: post.title,
       description: post.description,
-      datePublished: date,
-      dateModified: date,
+      datePublished: published,
+      dateModified: modified,
       author: { '@id': `${ORIGIN}/#organization` },
       publisher: { '@id': `${ORIGIN}/#organization` },
       mainEntityOfPage: url,
+      image: `${ORIGIN}/opengraph-image`,
       articleBody: post.sections.map((s) => s.body).join(' '),
     },
     {
@@ -479,6 +484,8 @@ export function graphFor(route: string) {
       description:
         'OrbitBoyzz is the official domain and brand handle for Orbit Websites, a Plainsboro, NJ web design and AI operations studio.',
     })
+    // The page's "Direct answer" block shows this question and answer.
+    graph.push(faqGraph('/orbitboyzz', 'faq', [orbitboyzzBrandFaq]))
   }
   if (route === '/contact') {
     graph.push({
@@ -502,16 +509,8 @@ export function graphFor(route: string) {
       description:
         'Premium custom web design for local businesses in Plainsboro, Princeton, West Windsor Township, and Central New Jersey, with optional AI operations systems for intake, booking, and follow-up.',
     })
-    // The page visibly shows the first 3 FAQs — mark them up for rich results.
-    graph.push({
-      '@type': 'FAQPage',
-      '@id': `${ORIGIN}/web-design-central-nj#faq`,
-      mainEntity: faqs.slice(0, 3).map(([q, a]) => ({
-        '@type': 'Question',
-        name: q,
-        acceptedAnswer: { '@type': 'Answer', text: a },
-      })),
-    })
+    // Same list the page's accordion shows (content/landing), so markup matches the visible text.
+    graph.push(faqGraph('/web-design-central-nj', 'faq', centralNjFaqs))
   }
   if (route === '/web-design-ewing-nj') {
     graph.push({

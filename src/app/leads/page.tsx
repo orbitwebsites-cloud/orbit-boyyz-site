@@ -34,7 +34,7 @@ import '@/components/leads/leads.css'
 // and 308s orbitboyzz.com/leads to it). Standalone: <SiteChrome> drops the
 // website business's preloader, nav, footer and dock (src/lib/demoPath.ts).
 // Every primary CTA goes to orbitboyzz.com/qualify?src=leads-site.
-// Different host, so it is not listed in orbitboyzz.com's sitemap.xml.
+// Listed in orbitboyzz.com/sitemap.xml as a cross-host entry (the leads host robots.txt points to that sitemap).
 
 const TITLE = 'Exclusive verified lead lists for outbound agencies | Orbit Boyzz'
 const DESCRIPTION =
@@ -60,7 +60,15 @@ const schema = {
       url: LEADS_URL,
       serviceType: 'B2B lead data',
       audience: { '@type': 'BusinessAudience', audienceType: 'Outbound and lead-gen agencies' },
-      provider: { '@type': 'Organization', '@id': 'https://orbitboyzz.com/#organization', name: leadsContact.brand, email: leadsContact.email },
+      areaServed: { '@type': 'Country', name: 'United States' },
+      provider: {
+        '@type': 'Organization',
+        '@id': 'https://orbitboyzz.com/#organization',
+        name: 'Orbit Websites',
+        alternateName: ['Orbit Boyzz', 'OrbitBoyzz'],
+        url: 'https://orbitboyzz.com/',
+        email: leadsContact.email,
+      },
     },
     {
       '@type': 'FAQPage',
@@ -103,12 +111,15 @@ function Hero() {
             {leadsHero.eyebrow}
           </p>
           <h1 className="display mt-7 text-[clamp(3.1rem,7.2vw,7rem)]">
-            <span className="mask">
-              <span className="page-rise">{leadsHero.line1}</span>
-            </span>{' '}
-            <span className="mask">
-              <span className="page-rise serif-accent pr-[0.08em] text-accent" style={{ '--delay': '90ms' } as CSSProperties}>
-                {leadsHero.line2}
+            <span className="sr-only">{leadsHero.srHeadline}</span>
+            <span aria-hidden="true">
+              <span className="mask">
+                <span className="page-rise">{leadsHero.line1}</span>
+              </span>{' '}
+              <span className="mask">
+                <span className="page-rise serif-accent pr-[0.08em] text-accent" style={{ '--delay': '90ms' } as CSSProperties}>
+                  {leadsHero.line2}
+                </span>
               </span>
             </span>
           </h1>

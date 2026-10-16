@@ -4,8 +4,10 @@
 //    caches (CDN, browser) never serve a markdown response to a client asking
 //    for HTML, or vice versa — see https://acceptmarkdown.com.
 // 2. When a request sends `Accept: text/markdown` with equal-or-higher
-//    priority than `text/html`, serves a hand-maintained markdown variant of
-//    the page instead of the HTML, for pages listed in MARKDOWN_PAGES.
+//    priority than `text/html`, serves a markdown variant of the page instead
+//    of the HTML, for pages listed in MARKDOWN_PAGES, with a
+//    `Link: <https://orbitboyzz.com/...>; rel="canonical"` header pointing at
+//    the HTML page.
 // 3. growth.orbitboyzz.com/ is served the /growth page.
 // 4. leads.orbitboyzz.com/ is served the /leads page; /qualify passes through
 //    there (as do /api/*, /_next/* and static files, which the matcher skips);
@@ -14,8 +16,13 @@
 //    page has one canonical URL. (Other hosts, e.g. localhost and Vercel
 //    previews, render /leads directly.) Hosts are read from the Host header
 //    (requestHost), so `curl -H "Host: leads.orbitboyzz.com"` tests it locally.
-// MARKDOWN_PAGES and wantsMarkdown() are copied verbatim from the old file.
+// wantsMarkdown() is copied verbatim from the old file. In MARKDOWN_PAGES, '/',
+// '/about', '/contact' and '/developers' are hand-maintained; '/privacy',
+// '/faq', '/services' and '/pricing' are built from src/content (the same
+// data the HTML pages render), so they cannot drift from the pages.
 import { NextResponse, type NextRequest } from 'next/server'
+import { privacyIntro, privacySections, privacyUpdated } from '@/content/legal'
+import { carePlans, faqs, services, tiers } from '@/content/site'
 import { LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
 
 export const config = {
@@ -47,6 +54,15 @@ const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/qualify'])
 
 function isLeadsRoute(pathname: string) {
   return pathname === '/leads' || pathname === '/leads/'
+}
+
+/** Markdown blocks separated by blank lines, ending in a newline. */
+function markdown(blocks: readonly string[]) {
+  return `${blocks.join('\n\n')}\n`
+}
+
+function bullets(items: readonly string[]) {
+  return items.map((item) => `- ${item}`).join('\n')
 }
 
 const MARKDOWN_PAGES: Record<string, () => string> = {
@@ -88,77 +104,50 @@ automation for local service businesses.
 `,
   '/contact': () => `# Contact Orbit Websites
 
-Book a free 15-minute call, or reach us directly:
+Book a free 30-minute call, or reach us directly:
 
 - Phone: 609 662 8052 (tel:+16096628052)
 - Email: alex@orbitboyzz.com
 - Book a call: ${ORIGIN}/book
 
-We'll build a live demo of your site and show you before you pay a cent.
+You talk directly with the people building your site.
 
 - [Homepage](${ORIGIN}/)
 - [Get a quote](${ORIGIN}/quote)
 `,
-  '/privacy': () => `# Privacy Policy
-
-Last updated: June 13, 2026
-
-Orbit Websites (OrbitBoyzz) operates orbitboyzz.com. We collect information
-you voluntarily submit through our forms (quote estimator, contact, project
-brief) — such as name, business name, email, phone, and project details —
-and use privacy-respecting aggregate analytics (Vercel Analytics). We do not
-sell your personal information to third parties.
-
-Booking a call uses Calendly, which has its own privacy policy. You can
-request deletion or correction of your data, or ask what we hold, by
-emailing alex@orbitboyzz.com.
-
-Full policy: ${ORIGIN}/privacy
-`,
-  '/pricing': () => `# Pricing — Orbit Websites
-
-## Launch Build
-Quoted on a free call after a quick look at your needs. 7-day sprint, 50% to
-start and 50% on approval. Best for local businesses that need a clean mobile
-site, clear service pages, and basic local SEO foundations.
-
-## Premium Website System Build
-From $3,500. Custom design, conversion copy, and local SEO foundations for
-businesses that need calls, quote requests, and bookings.
-
-## AI Operations Website Build
-Typically $5,000-$15,000+. For businesses with high-value or after-hours
-leads that need AI intake, routing, and booking automation. Optional
-retainer: $750-$2,500/mo, only when it replaces measurable admin labor or
-recovers high-intent leads.
-
-## Care Plans (optional)
-Month to month, only after launch: $300 Site Care, $500 Website + Leads Plan,
-$700 Growth Partner per month.
-
-Full pricing reference: ${ORIGIN}/pricing.md
-Estimate your own project: ${ORIGIN}/quote (or POST ${ORIGIN}/api/quote-estimate)
-`,
-  '/services': () => `# Services — Orbit Websites
-
-- New website design — custom, hand-coded, mobile-first.
-- Website refreshes — cleaner copy, modern layout, faster load.
-- Local SEO foundations — service pages, area signals, structured content.
-- Booking & lead forms — click-to-call, quote, and booking flows.
-- Instant booking engine — AI intake that qualifies and routes leads.
-- Quote & proposal automation — priced proposals in minutes, not hours.
-
-- [Pricing](${ORIGIN}/pricing)
-- [Get a quote](${ORIGIN}/quote)
-`,
-  '/faq': () => `# Frequently Asked Questions — Orbit Websites
-
-Common questions about pricing, timelines, and what's included. Full
-answers: ${ORIGIN}/faq
-
-- [Pricing](${ORIGIN}/pricing)
-- [Contact](${ORIGIN}/contact)
-`,
+  // Built from src/content/legal.ts, the same exports app/privacy/page.tsx renders.
+  '/privacy': () =>
+    markdown([
+      '# Privacy Policy',
+      `Last updated: ${privacyUpdated}`,
+      privacyIntro,
+      ...privacySections.flatMap((s) => [`## ${s.heading}`, s.body]),
+      `Full policy: ${ORIGIN}/privacy`,
+    ]),
+  // Built from tiers + carePlans in src/content/site.ts (the /pricing page's data).
+  '/pricing': () =>
+    markdown([
+      '# Pricing — Orbit Websites',
+      ...tiers.flatMap((t) => [`## ${t.name}`, `${t.price} · ${t.meta}`, t.copy, bullets(t.features)]),
+      '## Care Plans (optional)',
+      'Month to month, only after launch.',
+      ...carePlans.flatMap((p) => [`### ${p.name} — ${p.price}/mo`, p.copy, bullets(p.features)]),
+      `Full pricing reference: ${ORIGIN}/pricing.md\nEstimate your own project: ${ORIGIN}/quote (or POST ${ORIGIN}/api/quote-estimate)`,
+    ]),
+  // Built from services in src/content/site.ts.
+  '/services': () =>
+    markdown([
+      '# Services — Orbit Websites',
+      ...services.flatMap((s) => [`## ${s.title}`, s.copy, bullets(s.bullets)]),
+      bullets([`[Pricing](${ORIGIN}/pricing)`, `[Get a quote](${ORIGIN}/quote)`]),
+    ]),
+  // Built from faqs in src/content/site.ts (the /faq page's questions).
+  '/faq': () =>
+    markdown([
+      '# Frequently Asked Questions — Orbit Websites',
+      ...faqs.flatMap((f) => [`## ${f.q}`, f.a]),
+      bullets([`[Pricing](${ORIGIN}/pricing)`, `[Contact](${ORIGIN}/contact)`]),
+    ]),
   '/developers': () => `# Developer & API Docs — Orbit Websites
 
 OrbitBoyzz / Orbit Websites publishes a small, unauthenticated JSON API.
@@ -252,6 +241,8 @@ export function proxy(request: NextRequest) {
       headers: {
         'Content-Type': 'text/markdown; charset=utf-8',
         Vary: VARY,
+        // The HTML page is the canonical URL ('/' stays ORIGIN + '/').
+        Link: `<${ORIGIN}${url.pathname === '/' ? '/' : url.pathname}>; rel="canonical"`,
       },
     })
   }

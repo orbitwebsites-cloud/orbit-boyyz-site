@@ -1,7 +1,10 @@
 // GENERATED from src/App.tsx (Privacy component, old site, read-only) by a one-off extraction script.
 // Copy is verbatim — do not rewrite. The final "Contact us" section is rendered
 // with its links in app/privacy/page.tsx (its text is kept here for reference).
-export const privacyUpdated = "June 13, 2026"
+// Edited 2026-10-16: "Automatically collected data" rewritten because Vercel
+// Analytics is no longer installed and PostHog is. src/proxy.ts builds the
+// /privacy markdown variant from these exports, so the two cannot drift.
+export const privacyUpdated = "October 16, 2026"
 
 export const privacyIntro = "Orbit Websites (also known as OrbitBoyzz, \"we,\" \"us,\" or \"our\") operates orbitboyzz.com. This policy explains what information we collect when you use this site, how we use it, and the choices you have. We are a small web design studio based in Plainsboro, New Jersey — we do not sell your personal information to third parties."
 
@@ -12,7 +15,7 @@ export const privacySections: Array<{ heading: string; body: string }> = [
   },
   {
     "heading": "Automatically collected data",
-    "body": "Like most websites, we use privacy-respecting analytics (including Vercel Analytics) to understand aggregate traffic patterns — such as which pages are viewed and which calls to action are clicked. This data is used in aggregate and is not used to build individual advertising profiles."
+    "body": "Like most websites, we use privacy-respecting analytics to understand aggregate traffic patterns, such as which pages are viewed and which calls to action are clicked. We use PostHog for this. It is loaded through our own domain (orbitboyzz.com/ingest) and also reports site errors so we can fix them; PostHog’s privacy policy is at https://posthog.com/privacy. This data is used in aggregate and is not used to build individual advertising profiles."
   },
   {
     "heading": "Third-party services",

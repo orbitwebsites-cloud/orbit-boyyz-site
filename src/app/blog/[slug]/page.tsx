@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps<'/blog/[slug]'>) {
   const post = find((await params).slug)
   if (!post) return {}
   // Blog titles are full questions: no brand suffix (same as the old prerender).
-  return legacyMetadata(`/blog/${post.slug}`, { title: post.title, description: post.description }, { article: true })
+  return legacyMetadata(`/blog/${post.slug}`, { title: post.seoTitle ?? post.title, description: post.description }, { article: true })
 }
 
 // --- ported from the old BlogPost component -------------------------------
