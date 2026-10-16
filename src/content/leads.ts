@@ -53,7 +53,7 @@ export const leadsOffer = {
     {
       figure: '30%',
       unit: 'less, at least',
-      title: 'Beat Clay or don’t pay',
+      title: 'Replace Clay and Apollo',
       copy: 'If they beat what Clay gives you, we replace your Clay and Apollo spend for at least 30% less, or you don’t pay.',
     },
     {

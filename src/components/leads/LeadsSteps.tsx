@@ -63,7 +63,8 @@ export function LeadsSteps() {
           <p data-reveal className="t-lead mt-6 max-w-md text-muted">
             {leadsSteps.intro}
           </p>
-          <div data-reveal className="mt-8">
+          {/* No data-reveal on the CTA: hidden until scrolled to, it couldn't take keyboard focus. */}
+          <div className="mt-8">
             <QualifyCta size="sm">{leadsHero.cta}</QualifyCta>
           </div>
         </div>

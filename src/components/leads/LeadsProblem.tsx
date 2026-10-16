@@ -55,8 +55,11 @@ export function LeadsProblem() {
             </span>
           ))}
         </h2>
-        <div data-reveal className="mt-12 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="t-lead max-w-xl text-muted">{leadsProblem.foot}</p>
+        {/* data-reveal stays off the link: a hidden (visibility) reveal can't take keyboard focus until scrolled to. */}
+        <div className="mt-12 flex flex-col gap-6 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
+          <p data-reveal className="t-lead max-w-xl text-muted">
+            {leadsProblem.foot}
+          </p>
           <a href="#offer" className="label shrink-0 text-fg transition-colors hover:text-accent">
             <span className="text-accent">→</span> See the offer
           </a>

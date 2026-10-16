@@ -25,7 +25,9 @@ export function LeadsFinalCta() {
     const mm = gsap.matchMedia()
     mm.add(MQ.motion, () => {
       const split = SplitText.create(h, {
-        type: 'chars',
+        // Words too, so a line can only wrap between words: chars alone let
+        // "Get your free 25." break mid-word ("you / r") on phones.
+        type: 'words,chars',
         mask: 'chars',
         autoSplit: true,
         onSplit: (self) =>

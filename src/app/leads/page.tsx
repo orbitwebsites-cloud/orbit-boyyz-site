@@ -207,9 +207,10 @@ function Offer() {
         })}
       </ul>
 
-      <div data-reveal className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+      {/* Links stay out of data-reveal blocks: a block hidden until scrolled to can't take keyboard focus. */}
+      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
         <QualifyCta>{leadsHero.cta}</QualifyCta>
-        <p className="text-sm text-dim">Pricing depends on volume, always at least 30% under your current Clay + Apollo spend.</p>
+        <p data-reveal className="text-sm text-dim">Pricing depends on volume, always at least 30% under your current Clay + Apollo spend.</p>
       </div>
     </section>
   )
@@ -263,10 +264,9 @@ function Outreach() {
   return (
     <section aria-label="Outreach" className="container-x">
       <div
-        data-reveal
         className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%),var(--panel)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12"
       >
-        <div>
+        <div data-reveal>
           <p className="display text-[clamp(1.6rem,3vw,2.4rem)]">{leadsOutreach.title}</p>
           <p className="mt-3 text-muted">{leadsOutreach.copy}</p>
         </div>
