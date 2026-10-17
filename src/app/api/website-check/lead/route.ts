@@ -62,19 +62,16 @@ export async function POST(request: Request) {
   }
 
   const report = readReport(body.report)
-  try {
-    await notifyOwner({ contactName, phone, email, businessName, town, website, report })
-  } catch (err) {
-    console.error('website-check lead email failed', err)
-    return jsonError(502, 'notify_failed', 'We could not send your request. Please call or email us instead.')
-  }
-  return json({ received: true, emailSent: true })
+  // The browser sends the email (src/lib/formNotify.ts): FormSubmit blocks server-side requests. If that send
+  // fails, the page tells the visitor to call or email instead of losing the lead.
+  const fields = ownerFields({ contactName, phone, email, businessName, town, website, report })
+  return json({ received: true, notify: { endpoint: `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, fields } })
 }
 
 const notAllowed = methodNotAllowed('/api/website-check/lead', 'POST')
 export { notAllowed as GET, notAllowed as HEAD, notAllowed as PUT, notAllowed as PATCH, notAllowed as DELETE, notAllowed as OPTIONS }
 
-async function notifyOwner(input: {
+function ownerFields(input: {
   contactName: string
   phone: string
   email: string
@@ -82,39 +79,32 @@ async function notifyOwner(input: {
   town: string
   website: string
   report: ReportSummary
-}) {
+}): Record<string, string> {
   const { report } = input
   const scoreText = report.hasWebsite ? (report.score === null ? 'n/a' : `${report.score}/100`) : 'NO WEBSITE'
-  const payload = new URLSearchParams()
-  payload.append('_subject', `Website check lead: ${input.businessName}${input.town ? ` (${input.town})` : ''} | ${scoreText}`)
-  payload.append('_template', 'table')
-  payload.append('_captcha', 'false')
-  if (input.email) {
-    payload.append(
-      '_autoresponse',
-      `Hey ${input.contactName.split(' ')[0] || 'there'}, thanks for running the free website check for ${input.businessName}. ` +
-        `We'll put together your full report and a free homepage mockup and reach out ${input.phone ? `at ${input.phone} or ` : ''}by email shortly. ` +
-        'Questions before then? Call or text 609 662 8052.',
-    )
+  return {
+    _subject: `Website check lead: ${input.businessName}${input.town ? ` (${input.town})` : ''} | ${scoreText}`,
+    _template: 'table',
+    _captcha: 'false',
+    ...(input.email
+      ? {
+          _autoresponse:
+            `Hey ${input.contactName.split(' ')[0] || 'there'}, thanks for running the free website check for ${input.businessName}. ` +
+            `We'll put together your full report and a free homepage mockup and reach out ${input.phone ? `at ${input.phone} or ` : ''}by email shortly. ` +
+            'Questions before then? Call or text 609 662 8052.',
+          email: input.email,
+        }
+      : {}),
+    name: input.contactName,
+    phone: input.phone || '[none given]',
+    business: input.businessName,
+    town: input.town || '[none given]',
+    website: input.website || (report.hasWebsite ? '[not given]' : 'NO WEBSITE'),
+    requested: 'Full report + free homepage mockup',
+    score: `${scoreText}${report.grade ? ` (${report.grade})` : ''}`,
+    summary: report.summary || '[none]',
+    issues: report.issues.length ? report.issues.join(' | ') : '[none]',
+    top_fixes: report.fixes.length ? report.fixes.map((fix, i) => `${i + 1}. ${fix}`).join('\n') : '[none]',
+    source: 'https://orbitboyzz.com/free-website-check',
   }
-  payload.append('name', input.contactName)
-  if (input.email) payload.append('email', input.email)
-  payload.append('phone', input.phone || '[none given]')
-  payload.append('business', input.businessName)
-  payload.append('town', input.town || '[none given]')
-  payload.append('website', input.website || (report.hasWebsite ? '[not given]' : 'NO WEBSITE'))
-  payload.append('requested', 'Full report + free homepage mockup')
-  payload.append('score', `${scoreText}${report.grade ? ` (${report.grade})` : ''}`)
-  payload.append('summary', report.summary || '[none]')
-  payload.append('issues', report.issues.length ? report.issues.join(' | ') : '[none]')
-  payload.append('top_fixes', report.fixes.length ? report.fixes.map((fix, i) => `${i + 1}. ${fix}`).join('\n') : '[none]')
-  payload.append('source', 'https://orbitboyzz.com/free-website-check')
-
-  const response = await fetch(`https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, {
-    method: 'POST',
-    headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: payload.toString(),
-    signal: AbortSignal.timeout(8000),
-  })
-  if (!response.ok) throw new Error(`formsubmit.co failed: ${response.status} ${await response.text()}`)
 }

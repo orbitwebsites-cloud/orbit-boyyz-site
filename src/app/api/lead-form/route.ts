@@ -52,15 +52,8 @@ export async function POST(request: Request) {
     console.error('HUBSPOT_PRIVATE_APP_TOKEN is not set — skipping CRM sync')
   }
 
-  let emailOk = true
-  try {
-    await sendConfirmationEmail(input)
-  } catch (err) {
-    emailOk = false
-    console.error('confirmation email failed', err)
-  }
-
-  return json({ received: true, crmSynced: hubspotOk, emailSent: emailOk })
+  // The browser sends the email (src/lib/formNotify.ts): FormSubmit blocks server-side requests.
+  return json({ received: true, crmSynced: hubspotOk, notify: { endpoint: `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, fields: confirmationFields(input) } })
 }
 
 const notAllowed = methodNotAllowed('/api/lead-form', 'POST')
@@ -124,27 +117,19 @@ async function createOrUpdateHubspotLead(token: string, input: LeadInput) {
   throw new Error(`HubSpot create failed: ${contactRes.status} ${await contactRes.text()}`)
 }
 
-async function sendConfirmationEmail(input: LeadInput) {
-  const payload = new URLSearchParams()
-  payload.append('_subject', `New agent-build lead: ${input.businessName}`)
-  payload.append('_template', 'table')
-  payload.append('_captcha', 'false')
-  payload.append(
-    '_autoresponse',
-    `Hey ${input.contactName.split(' ')[0] || 'there'} — got your request for ${input.businessName}. ` +
+function confirmationFields(input: LeadInput): Record<string, string> {
+  return {
+    _subject: `New agent-build lead: ${input.businessName}`,
+    _template: 'table',
+    _captcha: 'false',
+    _autoresponse:
+      `Hey ${input.contactName.split(' ')[0] || 'there'} — got your request for ${input.businessName}. ` +
       `We'll text you at ${input.phone} shortly to talk through what the agent would do for your business.`,
-  )
-  payload.append('name', input.contactName)
-  payload.append('email', input.email)
-  payload.append('business', input.businessName)
-  payload.append('industry', input.industry)
-  payload.append('phone', input.phone)
-  payload.append('details', input.details || '[none given]')
-
-  const response = await fetch(`https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, {
-    method: 'POST',
-    headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: payload.toString(),
-  })
-  if (!response.ok) throw new Error(`formsubmit.co failed: ${response.status} ${await response.text()}`)
+    name: input.contactName,
+    email: input.email,
+    business: input.businessName,
+    industry: input.industry,
+    phone: input.phone,
+    details: input.details || '[none given]',
+  }
 }

@@ -2,6 +2,7 @@
 
 import { useRef, useState, type FormEvent } from 'react'
 import posthog from 'posthog-js'
+import { sendFormNotify } from '@/lib/formNotify'
 import { site } from '@/content/site'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { cn } from '@/lib/cn'
@@ -374,6 +375,7 @@ function LeadCapture({ report }: { report: WebsiteCheckReport }) {
         }),
       })
       if (!response.ok) throw new Error(`Request failed: ${response.status}`)
+      await sendFormNotify((await response.json()).notify)
       posthog.capture('website_check_report_requested', {
         has_website: report.hasWebsite,
         score: report.score,
