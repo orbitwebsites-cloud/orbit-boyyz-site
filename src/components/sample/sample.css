@@ -1,0 +1,350 @@
+/* /sample — the free 100-lead sample request (./Sample.tsx). Loaded after
+   ../qualify/qualify.css and built on its .qf-shell tokens (--qf-*), so the
+   page shares the booking flows' cream / black / gold look in light and dark.
+   Every selector is scoped (sf- classes) because Next keeps a route's
+   stylesheet in the document after client navigation. Mobile first: one
+   column with a 16px gutter, two columns from 640px. */
+
+.sf-main {
+  width: min(100% - 2rem, 46rem);
+  margin-inline: auto;
+  padding: 1.5rem 0 3rem;
+}
+
+/* Intro ---------------------------------------------------------------- */
+
+.sf-title {
+  margin: 1rem 0 0;
+  font-family: var(--qf-font-display);
+  font-size: clamp(2.3rem, 9vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.sf-lede {
+  max-width: 40rem;
+  margin: 1.2rem 0 0;
+  color: var(--qf-muted);
+  font-size: clamp(1.02rem, 2.3vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.sf-required-note {
+  margin: 1rem 0 0;
+  color: var(--qf-faint);
+  font-size: .85rem;
+}
+
+.sf-req,
+.sf-req-inline {
+  color: var(--qf-accent);
+  font-weight: 800;
+}
+
+.sf-req { margin-left: .2rem; }
+
+/* Sections ------------------------------------------------------------- */
+
+.sf-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sf-section {
+  min-width: 0;
+  padding: 1.25rem 1rem 1.4rem;
+  border: 1px solid var(--qf-line);
+  border-radius: 1.1rem;
+  background: color-mix(in srgb, var(--qf-card) 82%, transparent);
+}
+
+.sf-section-head {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.sf-num {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  padding: 0 .4rem;
+  border: 1px solid var(--qf-accent-line);
+  border-radius: .5rem;
+  background: var(--qf-accent-soft);
+  color: var(--qf-accent);
+  font: 700 .78rem var(--qf-font-mono);
+}
+
+.sf-section-title {
+  margin: 0;
+  font-family: var(--qf-font-display);
+  font-size: clamp(1.3rem, 4.2vw, 1.65rem);
+  font-weight: 750;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.sf-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.sf-grid-tight { margin-top: .25rem; gap: 1rem; }
+
+/* Groups (fieldsets) take the whole row unless nested in another group. */
+.sf-grid > .sf-group:not(.sf-group-nested) { grid-column: 1 / -1; }
+
+/* Names, emails and areas are typed and shown back (thank-you, help text):
+   never let a long unbroken string overflow. Labels are our own copy. */
+.sf-main :is(h1, p, strong) { overflow-wrap: anywhere; }
+
+/* Field extras on top of .qf-field ------------------------------------- */
+
+.sf-help {
+  margin: 0;
+  color: var(--qf-faint);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+.sf-help-top { margin: -.2rem 0 .6rem; }
+
+.qf-shell .qf-field textarea[aria-invalid='true'] { border-color: var(--qf-error); }
+
+/* The text box under an "Other" choice */
+.sf-nested { margin-top: .8rem; }
+
+.sf-select { position: relative; }
+
+.sf-select select {
+  display: block;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 2.6rem 0 .95rem;
+  border: 1px solid var(--qf-line);
+  border-radius: .7rem;
+  outline: none;
+  background: var(--qf-card);
+  color: var(--qf-ink);
+  font: 500 1.05rem/1.4 var(--qf-font-sans);
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sf-select select:focus {
+  border-color: var(--qf-accent);
+  box-shadow: 0 0 0 3px var(--qf-focus);
+}
+
+.sf-select select[aria-invalid='true'] { border-color: var(--qf-error); }
+
+.sf-select svg {
+  position: absolute;
+  top: 50%;
+  right: .9rem;
+  color: var(--qf-muted);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* Checkbox and radio groups -------------------------------------------- */
+
+.sf-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.sf-legend {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .5rem;
+  width: 100%;
+  margin: 0 0 .6rem;
+  padding: 0;
+  color: var(--qf-muted);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+/* "Ideal client size": the legend reads as a small section heading. */
+.sf-subgroup > .sf-legend {
+  color: var(--qf-ink);
+  font-size: .95rem;
+}
+
+.sf-choices {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .5rem;
+}
+
+/* Row groups stack on phones (labels like "Spreadsheet (Excel)" need the
+   width) and sit side by side from 640px. */
+
+/* Locations (1, 2–5, 6+): three short answers always fit on one row. */
+.sf-group-nested .sf-choices-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.sf-choice {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: .7rem;
+  min-height: 3rem;
+  padding: .6rem .85rem;
+  border: 1px solid var(--qf-line);
+  border-radius: .75rem;
+  background: var(--qf-card);
+  color: var(--qf-ink);
+  font: 600 .98rem/1.3 var(--qf-font-sans);
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+
+.sf-choice:hover { border-color: var(--qf-accent-line); }
+
+.sf-choice:has(input:checked) {
+  border-color: var(--qf-accent);
+  background: var(--qf-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--qf-accent);
+}
+
+.sf-choice:has(input:focus-visible) { border-color: var(--qf-accent); }
+
+.sf-choice input {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  border: 1.5px solid var(--qf-faint);
+  border-radius: .35rem;
+  background: var(--qf-paper);
+  cursor: pointer;
+  appearance: none;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.sf-choice input[type='radio'] { border-radius: 50%; }
+
+.sf-choice input:checked {
+  border-color: var(--qf-primary);
+  background: var(--qf-primary);
+}
+
+.sf-choice input[type='checkbox']:checked::after {
+  width: .34rem;
+  height: .62rem;
+  border: solid var(--qf-on-primary);
+  border-width: 0 2px 2px 0;
+  content: '';
+  transform: translateY(-1px) rotate(45deg);
+}
+
+.sf-choice input[type='radio']:checked::after {
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: var(--qf-on-primary);
+  content: '';
+}
+
+.sf-choice input:focus-visible {
+  outline: 3px solid var(--qf-focus);
+  outline-offset: 2px;
+}
+
+.sf-group[data-invalid='true'] > .sf-choices .sf-choice:not(:has(input:checked)) { border-color: var(--qf-error); }
+
+.sf-note {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  margin: .75rem 0 0;
+  color: var(--qf-muted);
+  font-size: .86rem;
+  line-height: 1.45;
+}
+
+.sf-note svg { flex-shrink: 0; margin-top: .12rem; color: var(--qf-accent); }
+
+/* Submit --------------------------------------------------------------- */
+
+.sf-submit { padding-top: .5rem; }
+
+.sf-summary {
+  margin: 0 0 1rem;
+  padding: .75rem 1rem;
+  border-left: 3px solid var(--qf-error);
+  border-radius: 0 .6rem .6rem 0;
+  background: var(--qf-error-bg);
+  color: var(--qf-error);
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.sf-submit .qf-actions { margin-top: 1rem; }
+.sf-submit .qf-primary { width: 100%; }
+.sf-submit .qf-primary:disabled { cursor: wait; opacity: .7; }
+
+.sf-fine {
+  margin: .9rem 0 0;
+  color: var(--qf-faint);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+.sf-fine a,
+.sf-footer a,
+.sf-submit .qf-email-help a {
+  color: var(--qf-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Thank-you ------------------------------------------------------------ */
+
+.sf-done { padding-top: 3rem; }
+.sf-email { color: var(--qf-ink); }
+.sf-done-contact { margin-top: 1.75rem; font-size: .95rem; }
+
+/* Footer --------------------------------------------------------------- */
+
+.sf-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .4rem .6rem;
+  padding: 1rem 1rem 2.5rem;
+  color: var(--qf-faint);
+  font-size: .82rem;
+}
+
+@media (min-width: 640px) {
+  .sf-main { padding-top: 2.5rem; }
+  .sf-section { padding: 1.6rem 1.75rem 1.8rem; }
+  .sf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sf-choices-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sf-choices-row { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+  .sf-submit .qf-primary { width: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-choice,
+  .sf-choice input,
+  .sf-select select { transition: none; }
+}

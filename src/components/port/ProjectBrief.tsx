@@ -12,7 +12,7 @@ import { cn } from '@/lib/cn'
 type SavedBrief = { answers: string[]; respondentName: string; respondentEmail: string; savedAt: string }
 
 const STORAGE_KEY = 'orbit-project-brief-v1'
-const SUBMIT_URL = 'https://formsubmit.co/ajax/alex@orbitboyzz.com'
+const SUBMIT_URL = 'https://formsubmit.co/ajax/orbitboyzz@gmail.com'
 
 function answerLabel(index: number) {
   return `Q${String(index + 1).padStart(2, '0')}`

@@ -9,7 +9,7 @@
 //    `Link: <https://orbitboyzz.com/...>; rel="canonical"` header pointing at
 //    the HTML page.
 // 3. growth.orbitboyzz.com/ is served the /growth page.
-// 4. leads.orbitboyzz.com/ is served the /leads page; /qualify passes through
+// 4. leads.orbitboyzz.com/ is served the /leads page; /qualify and /sample pass through
 //    there (as do /api/*, /_next/* and static files, which the matcher skips);
 //    every other path on that host 308s to the same path on orbitboyzz.com.
 //    On orbitboyzz.com itself /leads 308s to leads.orbitboyzz.com/, so the
@@ -54,7 +54,7 @@ function withVary(existing: string | null) {
 const ORIGIN = 'https://orbitboyzz.com'
 const MAIN_HOSTS: ReadonlySet<string> = new Set(['orbitboyzz.com', 'www.orbitboyzz.com'])
 // Pages leads.orbitboyzz.com serves itself, besides "/".
-const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/qualify'])
+const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/qualify', '/sample'])
 
 function isLeadsRoute(pathname: string) {
   return pathname === '/leads' || pathname === '/leads/'

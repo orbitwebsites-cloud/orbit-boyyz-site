@@ -8,7 +8,7 @@ import { json, jsonError, methodNotAllowed, readBody } from '@/lib/api'
 import { clientIp, rateLimit } from '@/lib/rateLimit'
 import { hasErrors, validateCheckLead } from '@/lib/websiteCheck'
 
-const NOTIFY_EMAIL = 'alex@orbitboyzz.com'
+const NOTIFY_EMAIL = 'orbitboyzz@gmail.com' // the FormSubmit-activated inbox (alex@ never was)
 const RATE_LIMIT = 5
 const RATE_WINDOW_MS = 10 * 60 * 1000
 

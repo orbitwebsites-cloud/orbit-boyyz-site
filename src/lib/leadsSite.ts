@@ -1,6 +1,6 @@
 // leads.orbitboyzz.com: the lead data offer for outbound agencies. Same app,
 // own host: src/proxy.ts serves the host's "/" from the /leads route, passes
-// /qualify through and sends every other path on it to orbitboyzz.com.
+// /qualify and /sample through and sends every other path on it to orbitboyzz.com.
 
 export const LEADS_HOST = 'leads.orbitboyzz.com'
 

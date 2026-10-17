@@ -7,7 +7,7 @@
 // Always answers 200 { received, crmSynced, emailSent } once validation passes.
 import { json, jsonError, methodNotAllowed, readBody } from '@/lib/api'
 
-const NOTIFY_EMAIL = 'alex@orbitboyzz.com'
+const NOTIFY_EMAIL = 'orbitboyzz@gmail.com' // the FormSubmit-activated inbox (alex@ never was)
 const LEAD_SOURCE = 'agent_form'
 
 type LeadInput = { businessName: string; industry: string; contactName: string; phone: string; email: string; details: string }

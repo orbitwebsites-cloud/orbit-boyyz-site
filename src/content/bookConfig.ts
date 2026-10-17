@@ -7,7 +7,7 @@ import { site } from './site'
 export const BOOK_CALENDLY_URL = site.calendly
 
 // FormSubmit inbox for the answers (activated for orbitboyzz.com).
-export const BOOK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/alex@orbitboyzz.com'
+export const BOOK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/orbitboyzz@gmail.com'
 
 // sessionStorage key for in-progress answers. Bump the suffix if the
 // question set changes shape so stale drafts are ignored.
