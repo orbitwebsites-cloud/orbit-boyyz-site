@@ -9,9 +9,12 @@
 //    `Link: <https://orbitboyzz.com/...>; rel="canonical"` header pointing at
 //    the HTML page.
 // 3. growth.orbitboyzz.com/ is served the /growth page.
-// 4. leads.orbitboyzz.com/ is served the /leads page; /qualify and /sample pass through
+// 4. leads.orbitboyzz.com/ is served the /leads page; /sample passes through
 //    there (as do /api/*, /_next/* and static files, which the matcher skips);
-//    every other path on that host 308s to the same path on orbitboyzz.com.
+//    /qualify, /book and /contact 308 to "/#request" (the page's 25-free-leads
+//    request form: no call or calendar step on that host, query string kept so
+//    ?src= survives); every other path on that host 308s to the same path on
+//    orbitboyzz.com.
 //    On orbitboyzz.com itself /leads 308s to leads.orbitboyzz.com/, so the
 //    page has one canonical URL. (Other hosts, e.g. localhost and Vercel
 //    previews, render /leads directly.) Hosts are read from the Host header
@@ -27,7 +30,7 @@ import { privacyIntro, privacySections, privacyUpdated } from '@/content/legal'
 import { keywordRoutes } from '@/content/keyword-pages'
 import { carePlans, faqs, services, tiers } from '@/content/site'
 import { keywordMarkdown } from '@/lib/keyword-markdown'
-import { LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
+import { LEADS_HOST, LEADS_REQUEST_ID, LEADS_URL } from '@/lib/leadsSite'
 
 export const config = {
   matcher: [
@@ -54,7 +57,9 @@ function withVary(existing: string | null) {
 const ORIGIN = 'https://orbitboyzz.com'
 const MAIN_HOSTS: ReadonlySet<string> = new Set(['orbitboyzz.com', 'www.orbitboyzz.com'])
 // Pages leads.orbitboyzz.com serves itself, besides "/".
-const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/qualify', '/sample'])
+const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/sample'])
+// Call / calendar pages: on leads.orbitboyzz.com they go to the request form instead.
+const LEADS_HOST_TO_REQUEST: ReadonlySet<string> = new Set(['/qualify', '/book', '/contact'])
 
 function isLeadsRoute(pathname: string) {
   return pathname === '/leads' || pathname === '/leads/'
@@ -220,6 +225,12 @@ export function proxy(request: NextRequest) {
       const res = NextResponse.rewrite(target)
       res.headers.set('Vary', withVary(res.headers.get('Vary')))
       return res
+    }
+    if (LEADS_HOST_TO_REQUEST.has(url.pathname.replace(/\/+$/, '').toLowerCase())) {
+      const destination = new URL(LEADS_URL)
+      destination.search = url.search
+      destination.hash = LEADS_REQUEST_ID
+      return NextResponse.redirect(destination, 308)
     }
     if (!LEADS_HOST_PAGES.has(url.pathname)) {
       // Concatenated, not new URL(pathname, ORIGIN): a path like //evil.com

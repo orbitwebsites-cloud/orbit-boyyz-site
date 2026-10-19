@@ -1,8 +1,8 @@
 # Orbit Boyzz Lead Data
 
-> Exclusive, verified lead lists for outbound and lead-gen agencies (cold email, appointment setting) that pay for Clay and Apollo. Each list is built fresh for one of your client niches, and only you get it.
+> Verified lead lists for outbound and lead-gen agencies (cold email, appointment setting). Tell us a niche and an area and we build the list from Google Maps listings and each business's own website. Start with 25 free leads in one niche.
 
-Last updated: October 16, 2026
+Last updated: October 19, 2026
 
 Website: https://leads.orbitboyzz.com/
 
@@ -10,20 +10,18 @@ Orbit Boyzz is the same business as Orbit Websites (https://orbitboyzz.com/), ba
 
 ## Offer
 
-- 25 free leads to start; qualified agencies start with 300.
-- If they beat what Clay gives you, we replace your Clay + Apollo spend for at least 30% less, or you don't pay.
-- Pricing depends on volume and is not published.
-- Month-to-month, no long-term contract.
-- 10 agencies max, one per niche, so nobody else gets your list.
+- 25 free leads in one niche and one area.
+- Delivered as a sheet by email within a few business days.
+- No call, no calendar and no card: request them with a short form.
+- Example niches: roofers, HVAC, plumbers, landscapers, electricians, home cleaning, auto repair.
 - Need the outreach run too? We can send it for you from your own domains.
 
 ## What is in every lead
 
 - Company
-- Owner name
-- Title
+- Owner name and title, where public sources show them
 - Verified email
-- Phone
+- Business phone
 - Website
 - City / State
 - Google rating
@@ -33,12 +31,12 @@ Delivered as a sheet, one row per lead.
 
 ## How the data is sourced
 
-- We find the businesses in your niche on Google Maps and on their own websites.
-- We identify the actual owner of each business, with their name and title.
+- We find the businesses in your niche and area on Google Maps, then read each business's own website.
+- We add the owner's name and title where public sources show it.
 - Every email is verified before it ships. An email counts as verified only when it comes back "valid".
-- Catch-all and risky addresses are never sold as verified.
+- Catch-all and risky addresses are never marked as verified.
 
 ## Start
 
-- Get 25 free leads (a few quick questions about your agency): https://orbitboyzz.com/qualify?src=leads-site
+- Request 25 free leads (niche, area and your work email): https://leads.orbitboyzz.com/#request
 - Email: alex@orbitboyzz.com

@@ -7,7 +7,7 @@ import { gsap } from '@/lib/motion/gsap'
 import { MQ } from '@/lib/motion/tokens'
 import { useIsoLayoutEffect } from '@/lib/motion/useIsoLayoutEffect'
 import { EmailCheckLegend } from './LeadRecord'
-import { QualifyCta } from './QualifyCta'
+import { RequestCta } from './RequestCta'
 
 /**
  * [03 // HOW IT WORKS] Vertical timeline, the home page's process pattern
@@ -65,7 +65,9 @@ export function LeadsSteps() {
           </p>
           {/* No data-reveal on the CTA: hidden until scrolled to, it couldn't take keyboard focus. */}
           <div className="mt-8">
-            <QualifyCta size="sm">{leadsHero.cta}</QualifyCta>
+            <RequestCta size="sm" block>
+              {leadsHero.cta}
+            </RequestCta>
           </div>
         </div>
 

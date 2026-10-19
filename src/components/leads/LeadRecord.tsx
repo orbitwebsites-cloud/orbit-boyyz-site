@@ -99,7 +99,7 @@ export function LeadRecord() {
           <p className="mt-1 font-semibold">Your client’s niche</p>
         </div>
         <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-accent/40 px-3 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-accent">
-          <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> Yours only
+          <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> Built to order
         </span>
       </div>
 
@@ -117,7 +117,9 @@ export function LeadRecord() {
         <div className="mt-3">
           <EmailCheckLegend />
         </div>
-        <p className="mt-3 text-[0.82rem] leading-snug text-dim">Catch-all and risky addresses are never sold as verified.</p>
+        <p className="mt-3 text-[0.82rem] leading-snug text-dim">
+          Catch-all and risky addresses are never marked as verified. Owner name and title where public sources show them.
+        </p>
       </figcaption>
     </figure>
   )

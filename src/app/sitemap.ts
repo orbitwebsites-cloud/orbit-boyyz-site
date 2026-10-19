@@ -25,7 +25,7 @@ const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify', '/book', '/sample
 const PAGES_UPDATED = '2026-10-16'
 
 // Last change to the leads.orbitboyzz.com page (copy, schema, FAQ).
-const LEADS_UPDATED = '2026-10-16'
+const LEADS_UPDATED = '2026-10-19'
 
 function lastMod(route: string) {
   if (route.startsWith('/blog/')) {

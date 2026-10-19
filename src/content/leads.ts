@@ -1,7 +1,11 @@
 // Copy for leads.orbitboyzz.com (src/app/leads/page.tsx).
-// Facts only: the offer exactly as stated here. No stats, testimonials,
-// client logos, results or guarantees beyond it, no prices (they depend on
-// volume) and no dashboard.
+// Facts only: the offer exactly as stated here. 25 free leads in one niche,
+// built from Google Maps listings and each business's own website, the owner's
+// name where public sources show it, every email verified, the business phone
+// included, delivered within a few business days.
+// Never add: exclusivity, prices or price comparisons, guarantees, results
+// promises (reply rates, meetings, revenue), urgency or scarcity, a call or
+// calendar step, or medical, dental or legal niches in examples.
 
 export const leadsContact = {
   brand: 'Orbit Boyzz',
@@ -10,88 +14,89 @@ export const leadsContact = {
 } as const
 
 export const leadsHero = {
-  eyebrow: 'Exclusive verified leads for outbound agencies',
+  eyebrow: 'Verified lead lists for outbound agencies',
   /** Screen-reader H1: the visual headline (line1 + line2) is aria-hidden. */
-  srHeadline: 'Exclusive verified lead lists for outbound agencies',
-  line1: 'Your list.',
-  line2: 'Nobody else’s.',
-  sub: 'Clay and Apollo sell the same records to every agency. Orbit Boyzz builds exclusive, verified leads fresh for one of your client niches, and only you get them.',
+  srHeadline: 'Verified lead lists for outbound agencies, built for your client’s niche',
+  line1: 'Your niche.',
+  line2: 'Verified leads.',
+  sub: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, verify every email and send it to you as a sheet. Start with 25 free leads.',
   cta: 'Get 25 free leads',
   ctaShort: 'Free leads',
   secondary: 'How it works',
-  chips: ['25 free leads to start', 'Every email verified', 'One agency per niche', 'Month-to-month'],
+  chips: ['25 free leads', 'Every email verified', 'Business phone included', 'Delivered within a few business days'],
 } as const
 
 export const leadsTicker = [
-  '25 free leads to start',
-  '300 for qualified agencies',
-  'Built fresh for your niche',
-  'Owner name and title',
-  'Only “valid” emails count',
-  '10 agencies max',
-  'One per niche',
-  'Month-to-month',
+  '25 free leads in one niche',
+  'Built from Google Maps listings',
+  'And each business’s own website',
+  'Owner name where public sources show it',
+  'Every email verified',
+  'Business phone included',
+  'Delivered as a sheet',
+  'Within a few business days',
 ] as const
 
 export const leadsProblem = {
   label: '[01 // THE PROBLEM]',
-  statement: 'Clay and Apollo sell the same records to every agency. Your prospects get the same pitch from everyone, and the list burns out.',
-  accent: ['same', 'burns', 'out.'],
-  foot: 'We do the opposite: a list built fresh for one agency in one niche, that nobody else gets.',
+  statement: 'Stale data bounces. Owners change, inboxes go dead, and every bounce hurts the domain you send from.',
+  accent: ['bounces.', 'dead,', 'hurts'],
+  foot: 'So we build each list when you ask for it, from Google Maps listings and each business’s own website, and verify every email before it ships.',
 } as const
 
 export const leadsOffer = {
   label: '[02 // THE OFFER]',
-  title: 'Exclusive, verified leads.',
-  titleAccent: 'Built fresh for one of your client niches.',
-  audience: 'For outbound and lead-gen agencies (cold email, appointment setting) that pay for Clay and Apollo.',
+  title: 'Verified leads.',
+  titleAccent: 'Built for one of your client niches.',
+  audience: 'For outbound and lead-gen agencies (cold email, appointment setting) that need local-business leads for their clients.',
   cards: [
+    {
+      figure: '1',
+      unit: 'niche, one area',
+      title: 'You choose',
+      copy: 'Roofers in Austin, TX. HVAC companies in Mercer County, NJ. Tell us the niche and the area you want.',
+    },
     {
       figure: '25',
       unit: 'free leads',
       title: 'Start free',
-      copy: 'Built fresh for one of your client niches. Qualified agencies start with 300.',
+      copy: 'Built for that niche and area, and delivered as a sheet within a few business days. No call, no card.',
     },
     {
-      figure: '30%',
-      unit: 'less, at least',
-      title: 'Replace Clay and Apollo',
-      copy: 'If they beat what Clay gives you, we replace your Clay and Apollo spend for at least 30% less, or you don’t pay.',
-    },
-    {
-      figure: '10',
-      unit: 'agencies max',
-      title: 'One per niche',
-      copy: 'One agency per niche, so nobody else gets your list. Month-to-month.',
+      figure: '9',
+      unit: 'columns per lead',
+      title: 'In every row',
+      copy: 'Verified email, business phone, website and Google reviews, plus the owner’s name and title where public sources show it.',
     },
   ],
+  note: 'No call and no card. Just the niche, the area and your work email.',
 } as const
 
 export const leadsSteps = {
   label: '[03 // HOW IT WORKS]',
   title: 'From the map',
   titleAccent: 'to your sheet.',
-  intro: 'Every list is built fresh for your niche, and every email is verified before it ships.',
+  intro: 'Every list is built for your niche and area, and every email is verified before it ships.',
   steps: [
     {
       number: '01',
       title: 'Find',
-      copy: 'We find the businesses in your niche on Google Maps and on their own websites.',
+      copy: 'We find the businesses in your niche and area on Google Maps, then read each business’s own website.',
     },
     {
       number: '02',
-      title: 'Identify the owner',
-      copy: 'We identify the actual owner of each business, with their name and title.',
+      title: 'Add the owner',
+      copy: 'We add the owner’s name and title where public sources show it.',
     },
     {
       number: '03',
       title: 'Verify every email',
-      copy: 'Every email is verified before it ships. Only “valid” counts. Catch-all and risky addresses are never sold as verified.',
+      copy: 'Every email is verified before it ships. Only “valid” counts. Catch-all and risky addresses are never marked as verified.',
     },
     {
       number: '04',
       title: 'Deliver',
-      copy: 'Your leads arrive as a sheet.',
+      copy: 'Your 25 leads arrive as a sheet within a few business days.',
     },
   ],
 } as const
@@ -102,7 +107,7 @@ export const leadFields = [
   { key: 'owner', label: 'Owner name' },
   { key: 'title', label: 'Title' },
   { key: 'email', label: 'Verified email' },
-  { key: 'phone', label: 'Phone' },
+  { key: 'phone', label: 'Business phone' },
   { key: 'website', label: 'Website' },
   { key: 'city', label: 'City / State' },
   { key: 'rating', label: 'Google rating' },
@@ -113,7 +118,7 @@ export const leadsFieldsSection = {
   label: '[04 // IN EVERY LEAD]',
   title: 'What’s in',
   titleAccent: 'every lead.',
-  note: 'An email is marked verified only when it comes back “valid”. Catch-all and risky addresses are never sold as verified.',
+  note: 'Owner name and title are included where public sources show them. An email is marked verified only when it comes back “valid”. Catch-all and risky addresses are never marked as verified.',
 } as const
 
 export const leadsOutreach = {
@@ -124,35 +129,35 @@ export const leadsOutreach = {
 export const leadsFaqs = [
   {
     q: 'Who is this for?',
-    a: 'Outbound and lead-gen agencies (cold email, appointment setting) that pay for Clay and Apollo today.',
+    a: 'Outbound and lead-gen agencies (cold email, appointment setting) that need local-business leads for their clients.',
   },
   {
     q: 'Where does the data come from?',
-    a: 'We find businesses on Google Maps and on their own websites, then identify the actual owner. Every list is built fresh for your niche.',
+    a: 'Google Maps listings and each business’s own website. We add the owner’s name and title where public sources show it.',
   },
   {
     q: 'How do you verify the emails?',
-    a: 'Every email is verified before it ships, and only addresses that come back “valid” count. Catch-all and risky addresses are never sold as verified.',
-  },
-  {
-    q: 'Is my list really exclusive?',
-    a: 'Yes. We take 10 agencies max, one per niche, so nobody else gets your list.',
-  },
-  {
-    q: 'What does it cost?',
-    a: 'It depends on volume, and it’s always at least 30% under your current Clay + Apollo spend, or you don’t pay. Start with 25 free leads (300 for qualified agencies).',
-  },
-  {
-    q: 'Is there a long-term contract?',
-    a: 'No. It’s month-to-month.',
+    a: 'Every email is verified before it ships, and only addresses that come back “valid” count as verified. Catch-all and risky addresses are never marked as verified.',
   },
   {
     q: 'What is in each lead?',
-    a: 'Company, owner name, title, verified email, phone, website, city/state, Google rating and Google reviews, delivered as a sheet.',
+    a: 'Company, owner name and title (where public sources show them), verified email, business phone, website, city/state, Google rating and Google reviews, delivered as a sheet.',
+  },
+  {
+    q: 'Which niches can I ask for?',
+    a: 'Local service niches such as roofers, HVAC, plumbers, landscapers, electricians, home cleaning and auto repair. Tell us the niche and the area in the form.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'Your 25 leads arrive by email within a few business days.',
+  },
+  {
+    q: 'Is it really free?',
+    a: 'Yes. The 25 leads are free. There is no call to book and no card to enter.',
   },
   {
     q: 'How do I start?',
-    a: 'Answer a few quick questions about your agency. We build 25 exclusive, verified leads for one of your client niches, or 300 if you qualify.',
+    a: 'Fill in the short form on this page: the niche, the area and your work email.',
   },
   {
     q: 'Who runs this?',
@@ -160,10 +165,23 @@ export const leadsFaqs = [
   },
 ] as const
 
-export const leadsFinal = {
+export const leadsRequest = {
   label: '[06 // START FREE]',
   title: 'Get your free 25.',
-  copy: 'Answer a few quick questions about your agency. We’ll build 25 exclusive, verified leads for one of your client niches, or 300 if you qualify.',
-  cta: 'Get 25 free leads',
-  small: '10 agencies max · one per niche · month-to-month',
+  copy: 'Tell us the niche and the area. We’ll build 25 verified leads and email them to you as a sheet within a few business days.',
+  small: 'No call · no calendar · no card',
+  fields: {
+    niche: { label: 'Niche', placeholder: 'e.g. Roofers' },
+    area: { label: 'Area (city / state)', placeholder: 'e.g. Austin, TX' },
+    email: { label: 'Work email', placeholder: 'you@youragency.com' },
+    name: { label: 'Your name', placeholder: 'First and last name' },
+    agency: { label: 'Agency', placeholder: 'Your agency' },
+  },
+  submit: 'Send me 25 free leads',
+  fine: 'Only used to build your leads and follow up about them.',
+  done: {
+    kicker: 'Request received',
+    copy: 'Your 25 free leads arrive within a few business days, as a sheet sent to',
+    next: 'No call, no calendar. We’ll just email the sheet.',
+  },
 } as const

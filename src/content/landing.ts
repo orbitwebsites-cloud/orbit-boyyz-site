@@ -767,7 +767,7 @@ export const centralNjFaqs: Array<[string, string]> = [
 /** The brand question on /orbitboyzz: its "Direct answer" block and its FAQPage markup (lib/legacy-seo). */
 export const orbitboyzzBrandFaq: [question: string, answer: string] = [
   'Is OrbitBoyzz the same as Orbit Websites?',
-  'Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business. OrbitBoyzz is the branded domain at orbitboyzz.com, while Orbit Websites is the service name used for custom websites, local SEO foundations, quote forms, booking flows, and AI employee systems. Orbit Boyzz, written with a space, is the same business, and it also runs an exclusive lead data offer for outbound agencies at leads.orbitboyzz.com.',
+  'Yes. OrbitBoyzz and Orbit Websites refer to the same web design and AI operations business. OrbitBoyzz is the branded domain at orbitboyzz.com, while Orbit Websites is the service name used for custom websites, local SEO foundations, quote forms, booking flows, and AI employee systems. Orbit Boyzz, written with a space, is the same business, and it also runs a lead data offer for outbound agencies at leads.orbitboyzz.com.',
 ]
 
 /** Old ServicesPreview cards (shown on /orbitboyzz). */

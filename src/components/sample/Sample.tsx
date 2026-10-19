@@ -642,9 +642,9 @@ export default function Sample() {
                 value={form.minBill}
                 readOnly={busy}
                 onChange={(v) => setText('minBill', v)}
-                helper="Your client’s monthly spend, e.g. $1,000+."
+                helper="Your client’s monthly telecom spend."
               />
-              <TextField name="industriesBest" label="Industries that close best" optional value={form.industriesBest} readOnly={busy} onChange={(v) => setText('industriesBest', v)} placeholder="e.g. medical offices, law firms" />
+              <TextField name="industriesBest" label="Industries that close best" optional value={form.industriesBest} readOnly={busy} onChange={(v) => setText('industriesBest', v)} placeholder="e.g. auto repair shops, property managers" />
               <TextField name="industriesAvoid" label="Industries to avoid" optional value={form.industriesAvoid} readOnly={busy} onChange={(v) => setText('industriesAvoid', v)} placeholder="e.g. restaurants, home-based" />
               <ChoiceGroup
                 name="decider"
@@ -687,7 +687,7 @@ export default function Sample() {
                 value={form.exclude}
                 readOnly={busy}
                 onChange={(v) => setText('exclude', v)}
-                placeholder={'northlinedental.com\nRiver Road Logistics'}
+                placeholder={'northlineroofing.com\nRiver Road Logistics'}
                 helper="Company names or domains, one per line. Only used to exclude them from your sample."
               />
             </Section>
@@ -752,7 +752,7 @@ export default function Sample() {
                 value={form.clientValue}
                 readOnly={busy}
                 onChange={(v) => setText('clientValue', v)}
-                placeholder="e.g. $2,400 a year in residuals"
+                placeholder="e.g. yearly residuals per client"
               />
               <ChoiceGroup
                 name="win"

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { leadsHero } from '@/content/leads'
 import { OrbitMark } from '@/components/ui/Logo'
 import { LEADS_URL } from '@/lib/leadsSite'
-import { QualifyCta } from './QualifyCta'
+import { RequestCta } from './RequestCta'
 
 /**
  * Minimal header for leads.orbitboyzz.com: logo home and one CTA. Glass bar
@@ -37,10 +37,10 @@ export function LeadsHeader() {
             <span className="mt-1 whitespace-nowrap font-mono text-[0.58rem] tracking-[0.2em] text-dim">LEAD DATA</span>
           </span>
         </a>
-        <QualifyCta size="sm">
+        <RequestCta size="sm">
           <span className="sm:hidden">{leadsHero.ctaShort}</span>
           <span className="hidden sm:inline">{leadsHero.cta}</span>
-        </QualifyCta>
+        </RequestCta>
       </div>
     </header>
   )

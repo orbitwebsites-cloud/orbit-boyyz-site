@@ -6,7 +6,7 @@ import '@/components/sample/sample.css'
 // /sample — request form for a free 100-lead sample, written for telecom
 // advisors and brokers. Private: shared by direct link only, on both
 // orbitboyzz.com/sample and leads.orbitboyzz.com/sample (src/proxy.ts passes
-// it through on the leads host, like /qualify). Not linked from any page.
+// it through on the leads host). Not linked from any page.
 // Standalone: <SiteChrome> drops Orbit's preloader, nav, footer, dock and
 // cursor on this path (src/lib/demoPath.ts → isStandalonePath).
 // SEO: noindex,nofollow with no canonical; excluded from sitemap.xml (and so

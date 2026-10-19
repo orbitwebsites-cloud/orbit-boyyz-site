@@ -3,7 +3,7 @@ import { leadsContact } from '@/content/leads'
 
 // Share card for leads.orbitboyzz.com (the /leads route). Served from
 // orbitboyzz.com/leads/opengraph-image: only the exact /leads path redirects.
-export const alt = 'Orbit Boyzz: exclusive, verified lead lists for outbound agencies'
+export const alt = 'Orbit Boyzz: verified lead lists for outbound agencies, 25 free leads to start'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -36,11 +36,11 @@ export default function OpengraphImage() {
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', fontSize: 92, fontWeight: 800, lineHeight: 1.0, letterSpacing: -3 }}>
-          <span>Your list.</span>
-          <span style={{ color: '#D6B36A' }}>Nobody else’s.</span>
+          <span>Your niche.</span>
+          <span style={{ color: '#D6B36A' }}>Verified leads.</span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 24, color: '#B7AFA3' }}>
-          <span>Exclusive, verified leads · 25 free to start</span>
+          <span>Every email verified · 25 free leads to start</span>
           <span style={{ color: '#D6B36A' }}>{leadsContact.email}</span>
         </div>
       </div>

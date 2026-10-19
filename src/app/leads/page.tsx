@@ -12,12 +12,12 @@ import {
 } from '@/content/leads'
 import { CountUp } from '@/components/leads/CountUp'
 import { LeadRecord } from '@/components/leads/LeadRecord'
-import { LeadsFinalCta } from '@/components/leads/LeadsFinalCta'
 import { LeadsFooter } from '@/components/leads/LeadsFooter'
 import { LeadsHeader } from '@/components/leads/LeadsHeader'
 import { LeadsProblem } from '@/components/leads/LeadsProblem'
+import { LeadsRequest } from '@/components/leads/LeadsRequest'
 import { LeadsSteps } from '@/components/leads/LeadsSteps'
-import { QualifyCta } from '@/components/leads/QualifyCta'
+import { RequestCta } from '@/components/leads/RequestCta'
 import { Accordion } from '@/components/ui/Accordion'
 import { ArrowIcon } from '@/components/ui/Button'
 import { Cursor } from '@/components/ui/Cursor'
@@ -33,12 +33,14 @@ import '@/components/leads/leads.css'
 // https://leads.orbitboyzz.com/ (src/proxy.ts rewrites that host's "/" here
 // and 308s orbitboyzz.com/leads to it). Standalone: <SiteChrome> drops the
 // website business's preloader, nav, footer and dock (src/lib/demoPath.ts).
-// Every primary CTA goes to orbitboyzz.com/qualify?src=leads-site.
+// Every primary CTA jumps to the 25-free-leads request form (#request,
+// components/leads/LeadsRequest.tsx): no call or calendar step on this host.
+// Copy rules live at the top of src/content/leads.ts.
 // Listed in orbitboyzz.com/sitemap.xml as a cross-host entry (the leads host robots.txt points to that sitemap).
 
-const TITLE = 'Exclusive verified lead lists for outbound agencies | Orbit Boyzz'
+const TITLE = 'Verified lead lists for outbound agencies | Orbit Boyzz'
 const DESCRIPTION =
-  'Exclusive, verified leads built fresh for your client niche. 25 free. If they beat Clay, we replace your Clay + Apollo spend for 30%+ less, or you don’t pay.'
+  'Get 25 free leads in one niche, built from Google Maps listings and each business’s own website. Every email verified, business phone included, delivered within a few business days.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -55,7 +57,7 @@ const schema = {
     {
       '@type': 'Service',
       '@id': `${LEADS_URL}#service`,
-      name: 'Exclusive verified lead lists for outbound agencies',
+      name: 'Verified lead lists for outbound agencies',
       description: DESCRIPTION,
       url: LEADS_URL,
       serviceType: 'B2B lead data',
@@ -94,7 +96,7 @@ function Tick() {
   )
 }
 
-/** "30%" → 30 + "%", for the count-up. */
+/** "25" → 25, "10k" → 10 + "k", for the count-up. */
 function splitFigure(figure: string) {
   const match = /^(\d+)(.*)$/.exec(figure)
   return match ? { value: Number(match[1]), suffix: match[2] } : null
@@ -126,9 +128,11 @@ function Hero() {
           <p className="page-fade t-lead mt-8 max-w-[36rem] text-muted" style={{ '--delay': '0ms' } as CSSProperties}>
             {leadsHero.sub}
           </p>
-          <div className="page-fade mt-10 flex flex-wrap items-center gap-3" style={{ '--delay': '120ms' } as CSSProperties}>
-            <QualifyCta magnetic>{leadsHero.cta}</QualifyCta>
-            <a href="#how" className="btn btn-ghost">
+          <div className="page-fade mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center" style={{ '--delay': '120ms' } as CSSProperties}>
+            <RequestCta magnetic block>
+              {leadsHero.cta}
+            </RequestCta>
+            <a href="#how" className="btn btn-ghost w-full sm:w-auto">
               <span>{leadsHero.secondary}</span>
               <span className="btn-arrow">
                 <DownArrow />
@@ -203,7 +207,7 @@ function Offer() {
               <TiltCard
                 className={cn(
                   'flex h-full flex-col rounded-[var(--radius)] border p-7 md:p-8',
-                  featured ? 'border-accent/60 bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.16),transparent_60%),var(--panel)]' : 'border-line bg-panel/60',
+                  featured ? 'border-accent/60 bg-panel bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.16),transparent_60%)]' : 'border-line bg-panel/60',
                 )}
               >
                 <h3 className="label text-accent">{card.title}</h3>
@@ -219,9 +223,11 @@ function Offer() {
       </ul>
 
       {/* Links stay out of data-reveal blocks: a block hidden until scrolled to can't take keyboard focus. */}
-      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
-        <QualifyCta>{leadsHero.cta}</QualifyCta>
-        <p data-reveal className="text-sm text-dim">Pricing depends on volume, always at least 30% under your current Clay + Apollo spend.</p>
+      <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <RequestCta block>{leadsHero.cta}</RequestCta>
+        <p data-reveal className="text-center text-sm text-dim sm:text-left">
+          {leadsOffer.note}
+        </p>
       </div>
     </section>
   )
@@ -275,13 +281,13 @@ function Outreach() {
   return (
     <section aria-label="Outreach" className="container-x">
       <div
-        className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%),var(--panel)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12"
+        className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-panel bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12"
       >
         <div data-reveal>
           <p className="display text-[clamp(1.6rem,3vw,2.4rem)]">{leadsOutreach.title}</p>
           <p className="mt-3 text-muted">{leadsOutreach.copy}</p>
         </div>
-        <a href={`mailto:${leadsContact.email}?subject=Running%20our%20outreach`} className="btn btn-ghost self-start md:self-auto">
+        <a href={`mailto:${leadsContact.email}?subject=Running%20our%20outreach`} className="btn btn-ghost w-full sm:w-auto sm:self-start md:self-auto">
           <span>{leadsContact.email}</span>
           <span className="btn-arrow">
             <ArrowIcon />
@@ -330,7 +336,7 @@ export default function LeadsPage() {
       <Fields />
       <Outreach />
       <Faq />
-      <LeadsFinalCta />
+      <LeadsRequest />
       <LeadsFooter />
       <Cursor />
     </>

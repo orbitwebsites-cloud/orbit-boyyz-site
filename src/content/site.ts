@@ -11,9 +11,8 @@ export const site = {
   phoneHref: 'tel:+16096628052',
   email: 'alex@orbitboyzz.com',
   // Every "Book a call" button goes to the /book questionnaire first; it shows
-  // the Calendly scheduler (site.calendly) once the answers are in.
+  // the scheduler (BOOK_CALENDLY_URL in bookConfig.ts) once the answers are in.
   booking: '/book',
-  calendly: 'https://calendly.com/orbitwebsites/30min',
   location: 'Plainsboro, NJ',
   serviceArea: 'Central New Jersey',
   towns: [

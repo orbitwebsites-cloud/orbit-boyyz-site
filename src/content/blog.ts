@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites. The official website is orbitboyzz.com, and the business serves Plainsboro, Princeton, West Windsor Township, and Central New Jersey. Orbit Boyzz, written with a space, is the same business. It also runs an exclusive lead data offer for outbound agencies at leads.orbitboyzz.com."
+        "body": "Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites. The official website is orbitboyzz.com, and the business serves Plainsboro, Princeton, West Windsor Township, and Central New Jersey. Orbit Boyzz, written with a space, is the same business. It also runs a lead data offer for outbound agencies at leads.orbitboyzz.com."
       },
       {
         "heading": "What OrbitBoyzz does",
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "What is leads.orbitboyzz.com?",
-        "It is the same business’s lead data offer for outbound and lead-gen agencies: exclusive, verified lead lists built fresh for one client niche, with 25 free leads to start."
+        "It is the same business’s lead data offer for outbound and lead-gen agencies: verified lead lists built for one client niche, with 25 free leads to start."
       ]
     ]
   },
