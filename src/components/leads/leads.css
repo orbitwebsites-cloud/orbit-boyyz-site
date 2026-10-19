@@ -23,6 +23,26 @@ html.lenis .ld-main > section[id] {
   scroll-margin-top: 0;
 }
 
+/* Anchor targets inside a section (e.g. the request form on /qualify): same
+   as above, Lenis already offsets the jump. */
+html.lenis .ld-main .ld-anchor {
+  scroll-margin-top: 0;
+}
+
+/* Line breaks (.ld-type: the leads page's <main> and footer, and /qualify's):
+   copy never ends on a one-word line, headings split into even lines. In the
+   base layer, so a utility on the element (whitespace-nowrap, truncate,
+   text-balance) still wins: text-wrap is a shorthand that would otherwise
+   switch nowrap text back to wrapping. */
+@layer base {
+  .ld-type :where(p, li, dd, dt, address, label, figcaption, blockquote) {
+    text-wrap: pretty;
+  }
+  .ld-type :where(h1, h2, h3, h4) {
+    text-wrap: balance;
+  }
+}
+
 /* "Get your free 25." (LeadsRequest): SplitText clips each char in a
    .ld-char-mask box only as tall as the 0.9 leading, which cut the y's tail
    and shaved the right edges at -0.055em tracking. Pad the clip box down and

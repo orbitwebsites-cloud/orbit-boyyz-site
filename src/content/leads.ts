@@ -185,3 +185,21 @@ export const leadsRequest = {
     next: 'No call, no calendar. We’ll just email the sheet.',
   },
 } as const
+
+/**
+ * orbitboyzz.com/qualify (src/app/qualify/page.tsx): the same 25-free-leads
+ * request as the leads page's form, on one short page. Same rules as above.
+ */
+export const leadsQualify = {
+  eyebrow: 'Verified lead lists for outbound agencies',
+  title: 'Get 25',
+  titleAccent: 'free leads.',
+  explainer: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, and verify every email.',
+  pointsLabel: 'What you get',
+  points: [
+    'Each row: company, verified email, business phone, website, city/state, Google rating and Google reviews.',
+    'The owner’s name and title, where public sources show them.',
+    'Delivered as a sheet within a few business days.',
+    'No call and no card. Just the niche, the area and your work email.',
+  ],
+} as const

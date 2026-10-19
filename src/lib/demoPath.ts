@@ -10,7 +10,7 @@ export function isDemoPath(pathname: string | null) {
 /**
  * Pages that render on their own, without Orbit's preloader, nav, footer,
  * dock, cursor or route-transition panel: the /demo/* lead previews, the
- * /qualify and /book booking flows, the /sample request form and the /leads page served at
+ * /book booking flow, the /qualify and /sample request forms and the /leads page served at
  * leads.orbitboyzz.com (they bring their own minimal header). Their routes sit
  * outside the src/app/(site) route group, whose layout holds that chrome; keep
  * this list in step with it (the route-transition panel and its links read it).

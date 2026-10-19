@@ -1,6 +1,6 @@
 'use client'
 
-// The Calendly step of the /qualify and /book flows, kept out of ./shared.tsx
+// The Calendly step of the /book flow, kept out of ./shared.tsx
 // so pages that only reuse the form pieces (/sample, which leads.orbitboyzz.com
 // also serves) never bundle the scheduler code, its booking URL or its styles.
 

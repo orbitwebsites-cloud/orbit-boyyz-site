@@ -31,7 +31,8 @@ export function LeadsHeader() {
       <div className="scroll-progress" aria-hidden="true" />
       <div className="container-x relative flex h-[var(--nav-h)] items-center justify-between gap-3">
         <a href={LEADS_URL} className="flex min-w-0 items-center gap-2.5">
-          <OrbitMark className="h-8 w-8 shrink-0" />
+          {/* The mark's ink starts 20.5 units into its 128-unit box (5px at 32px): pull it back so the ring sits flush with the content gutter. */}
+          <OrbitMark className="-ml-[0.32rem] h-8 w-8 shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="display whitespace-nowrap text-[1.08rem] font-bold tracking-[-0.03em]">Orbit Boyzz</span>
             <span className="mt-1 whitespace-nowrap font-mono text-[0.58rem] tracking-[0.2em] text-dim">LEAD DATA</span>

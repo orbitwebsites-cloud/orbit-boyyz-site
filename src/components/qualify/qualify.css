@@ -1,6 +1,5 @@
-/* /qualify and /book — Typeform-style booking flows (./Qualify.tsx,
-   ../book/Book.tsx, shared pieces in ./shared.tsx). Imported by those two
-   pages only, but Next keeps a route's stylesheet in the document after
+/* /book — Typeform-style booking flow (../book/Book.tsx, shared pieces in
+   ./shared.tsx); /sample builds on it too. Imported by those pages only, but Next keeps a route's stylesheet in the document after
    client navigation, so every selector is scoped: qf- classes,
    qf- keyframes, and html:has(.qf-shell) for the page canvas. Unlayered, so it
    beats globals.css's @layer base/components rules without !important.

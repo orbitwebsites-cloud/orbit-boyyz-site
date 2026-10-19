@@ -8,13 +8,14 @@ const YEAR = new Date().getFullYear()
 /** Minimal footer for leads.orbitboyzz.com: who we are and how to reach us. */
 export function LeadsFooter() {
   return (
-    <footer className="relative border-t border-line bg-bg-2/60">
+    <footer className="ld-type relative border-t border-line bg-bg-2/60">
       {/* Desktop: last-baseline alignment puts the © on the same baseline as the address / email line
           (items-end lined up box bottoms, which left the smaller © about 7px low). */}
       <div className="container-x flex flex-col gap-8 pb-10 pt-14 md:flex-row md:items-baseline-last md:justify-between md:pt-16">
         <div>
           <a href={LEADS_URL} className="inline-flex items-center gap-3">
-            <OrbitMark className="h-10 w-10 shrink-0" />
+            {/* Flush with the address below: the mark's ink starts 20.5/128 of the way into its box. */}
+            <OrbitMark className="-ml-[0.4rem] h-10 w-10 shrink-0" />
             <span className="display text-2xl font-bold tracking-[-0.03em]">{leadsContact.brand}</span>
           </a>
           <address className="mt-6 not-italic leading-7 text-muted">

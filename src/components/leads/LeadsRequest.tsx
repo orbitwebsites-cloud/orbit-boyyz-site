@@ -5,15 +5,21 @@ import { leadsRequest } from '@/content/leads'
 import { OrbitSystem } from '@/components/ui/OrbitSystem'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { LEADS_REQUEST_ID } from '@/lib/leadsSite'
-import { gsap, SplitText } from '@/lib/motion/gsap'
-import { EASE, MQ, STAGGER } from '@/lib/motion/tokens'
+import { gsap, ScrollTrigger, SplitText } from '@/lib/motion/gsap'
+import { DUR, EASE, MQ, STAGGER } from '@/lib/motion/tokens'
 import { useIsoLayoutEffect } from '@/lib/motion/useIsoLayoutEffect'
 import { LeadsRequestForm } from './LeadsRequestForm'
 
 /**
  * [06 // START FREE] The page's closing move and the target of every CTA
- * (#request): kinetic headline (chars rise and un-rotate, scrubbed to the
- * scroll) with the orbit behind it, then the 25-free-leads request form.
+ * (#request): kinetic headline with the orbit behind it, then the
+ * 25-free-leads request form.
+ *
+ * The headline's chars rise and un-rotate ONCE, on a timer, when the section
+ * first scrolls into view; the reveal is never tied to the scroll position,
+ * so it always runs to the end (a scrubbed reveal could stop half-way, with
+ * letters clipped by their masks and the period below the baseline). Under
+ * prefers-reduced-motion nothing is split or moved: the headline is static.
  */
 export function LeadsRequest() {
   const section = useRef<HTMLElement>(null)
@@ -25,6 +31,8 @@ export function LeadsRequest() {
     if (!el || !h) return
     const mm = gsap.matchMedia()
     mm.add(MQ.motion, () => {
+      let started = false
+      let reveal: gsap.core.Tween | undefined
       const split = SplitText.create(h, {
         // Words too, so a line can only wrap between words: chars alone let
         // "Get your free 25." break mid-word ("you / r") on phones.
@@ -34,26 +42,42 @@ export function LeadsRequest() {
         // tight leading and tracking don't shave the y's tail or the right edges.
         charsClass: 'ld-char',
         autoSplit: true,
-        onSplit: (self) =>
-          gsap.fromTo(
+        onSplit: (self) => {
+          // autoSplit re-splits on resize and font load. The tween isn't
+          // returned (SplitText would carry its half-way time over to the new
+          // one): a re-split once the reveal has started shows the finished
+          // headline instead.
+          reveal?.kill()
+          reveal = gsap.fromTo(
             self.chars,
             // Starts far enough down to sit fully below the padded clip box.
             { yPercent: 150, rotate: 12 },
-            {
-              yPercent: 0,
-              rotate: 0,
-              ease: EASE.inOut,
-              stagger: STAGGER.words,
-              scrollTrigger: { trigger: el, start: 'top 85%', end: 'top 35%', scrub: 0.8 },
-            },
-          ),
+            { yPercent: 0, rotate: 0, duration: DUR.md, ease: EASE.out, stagger: STAGGER.words, paused: true },
+          )
+          if (started) reveal.progress(1)
+        },
+      })
+      // Fires once, also on load when the page opens already scrolled past
+      // the start (e.g. a jump straight to #request).
+      const trigger = ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          started = true
+          reveal?.play()
+        },
       })
       gsap.fromTo(
         el.querySelector('[data-final-orbit]'),
         { scale: 0.7, opacity: 0 },
         { scale: 1, opacity: 1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 90%', end: 'center center', scrub: 0.8 } },
       )
-      return () => split.revert()
+      return () => {
+        trigger.kill()
+        reveal?.kill()
+        split.revert()
+      }
     })
     return () => mm.revert()
   }, [])

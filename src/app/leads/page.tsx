@@ -336,8 +336,9 @@ export default function LeadsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(schema)} />
       <LeadsHeader />
       {/* The skip link's target (app/layout.tsx). tabIndex -1 so "Skip to content" moves focus here, not just the scroll.
-          ld-main: leads.css drops the sections' scroll-margin while Lenis runs (it already offsets anchor jumps). */}
-      <main id="main" tabIndex={-1} className="ld-main outline-none">
+          ld-main: leads.css drops the sections' scroll-margin while Lenis runs (it already offsets anchor jumps).
+          ld-type: no one-word last lines (text-wrap pretty on copy, balance on headings). */}
+      <main id="main" tabIndex={-1} className="ld-main ld-type outline-none">
         <Hero />
         <Ticker />
         <LeadsProblem />

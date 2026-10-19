@@ -9,12 +9,14 @@ import { cn } from '@/lib/cn'
 import { checkEmail, emailCheckLabel, looksLikeEmail, normalizeEmail } from '@/lib/emailCheck'
 import { isFreeMail } from '@/lib/freeMail'
 
-// The 25-free-leads request form on leads.orbitboyzz.com (#request). Short on
-// purpose: niche, area and a work email, plus an optional name and agency.
-// No call or calendar step: the success state says the sheet arrives by email.
-// Posted from the browser to FormSubmit (same inbox as /sample and /book),
-// which 403s server-side requests. ?src= (or utm_source, else the referring
-// site) rides along in a hidden field so the inbox shows where the visit came from.
+// The 25-free-leads request form: leads.orbitboyzz.com (#request) and
+// orbitboyzz.com/qualify (src/app/qualify/page.tsx) both render this one form.
+// Short on purpose: niche, area and a work email, plus an optional name and
+// agency. No call or calendar step: the success state says the sheet arrives
+// by email. Posted from the browser to FormSubmit (same inbox as /sample and
+// /book), which 403s server-side requests. ?src= (or utm_source, else the
+// referring site, else the page's `defaultSource`) rides along in a hidden
+// field so the inbox shows where the visit came from.
 
 type Field = 'niche' | 'area' | 'email' | 'name' | 'agency'
 type Values = Record<Field, string>
@@ -47,8 +49,8 @@ function cleanSource(value: string | null) {
     .slice(0, 60)
 }
 
-/** ?src=, then utm_source, then the referring site, else 'direct'. */
-function detectSource() {
+/** ?src=, then utm_source, then the referring site, else the page's default. */
+function detectSource(fallback: string) {
   const params = new URLSearchParams(window.location.search)
   const tagged = cleanSource(params.get('src')) || cleanSource(params.get('utm_source'))
   if (tagged) return tagged
@@ -60,7 +62,7 @@ function detectSource() {
   } catch {
     // Malformed referrer: fall through.
   }
-  return LEADS_REQUEST_DEFAULT_SOURCE
+  return fallback
 }
 
 function orBlank(value: string) {
@@ -86,7 +88,8 @@ function buildPayload(values: Values, source: string, emailCheck: string, honey:
     name: orBlank(values.name),
     agency: orBlank(values.agency),
     source,
-    'Submitted from': window.location.host,
+    // Host and path: leads.orbitboyzz.com/ or orbitboyzz.com/qualify.
+    'Submitted from': `${window.location.host}${window.location.pathname}`,
   }
   if (honey) fields._honey = honey
   return fields
@@ -94,10 +97,15 @@ function buildPayload(values: Values, source: string, emailCheck: string, honey:
 
 type Sent = { first: string; email: string; niche: string; area: string }
 
-export function LeadsRequestForm() {
+/**
+ * `defaultSource`: the hidden src value when the URL has no ?src= or
+ * utm_source and no outside referrer ('direct' on the leads page, 'qualify'
+ * on orbitboyzz.com/qualify).
+ */
+export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE }: { defaultSource?: string } = {}) {
   const [values, setValues] = useState<Values>(EMPTY)
   const [errors, setErrors] = useState<Errors>({})
-  const [source, setSource] = useState(LEADS_REQUEST_DEFAULT_SOURCE)
+  const [source, setSource] = useState(defaultSource)
   const [suggestion, setSuggestion] = useState('')
   const [checking, setChecking] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -113,8 +121,8 @@ export function LeadsRequestForm() {
   // Read the visit's source after hydration, so the server HTML and the first client render match.
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- read the URL once on mount
-    setSource(detectSource())
-  }, [])
+    setSource(detectSource(defaultSource))
+  }, [defaultSource])
 
   // The thank-you card is shorter than the form: bring it into view and move focus to it.
   useEffect(() => {

@@ -1,4 +1,4 @@
-/* The Calendly step of /qualify and /book (./calendly.tsx imports this file).
+/* The Calendly step of /book (./calendly.tsx imports this file).
    Kept out of ./qualify.css, which /sample also loads. Uses its --qf-* tokens. */
 
 .qf-calendly-wrap { margin-top: 1.5rem; }
