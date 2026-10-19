@@ -291,7 +291,7 @@ function Outreach() {
         className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-panel bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12"
       >
         <div data-reveal>
-          <p className="display text-[clamp(1.6rem,3vw,2.4rem)]">{leadsOutreach.title}</p>
+          <p className="display text-balance text-[clamp(1.6rem,3vw,2.4rem)]">{leadsOutreach.title}</p>
           <p className="mt-3 text-muted">{leadsOutreach.copy}</p>
         </div>
         <a href={`mailto:${leadsContact.email}?subject=Running%20our%20outreach`} className="btn btn-ghost w-full sm:w-auto sm:self-start md:self-auto">
@@ -335,15 +335,19 @@ export default function LeadsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(schema)} />
       <LeadsHeader />
-      <Hero />
-      <Ticker />
-      <LeadsProblem />
-      <Offer />
-      <LeadsSteps />
-      <Fields />
-      <Outreach />
-      <Faq />
-      <LeadsRequest />
+      {/* The skip link's target (app/layout.tsx). tabIndex -1 so "Skip to content" moves focus here, not just the scroll.
+          ld-main: leads.css drops the sections' scroll-margin while Lenis runs (it already offsets anchor jumps). */}
+      <main id="main" tabIndex={-1} className="ld-main outline-none">
+        <Hero />
+        <Ticker />
+        <LeadsProblem />
+        <Offer />
+        <LeadsSteps />
+        <Fields />
+        <Outreach />
+        <Faq />
+        <LeadsRequest />
+      </main>
       <LeadsFooter />
       <Cursor />
     </>

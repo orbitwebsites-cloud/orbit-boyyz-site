@@ -23,8 +23,10 @@ export function LeadsSteps() {
     const ol = list.current
     if (!el || !ol) return
     const steps = Array.from(ol.querySelectorAll<HTMLElement>('[data-step]'))
+    const track = el.querySelector<HTMLElement>('[data-track]')
     const fill = el.querySelector<HTMLElement>('[data-fill]')
     const dot = el.querySelector<HTMLElement>('[data-dot]')
+    if (!track || !fill || !dot) return
 
     const mm = gsap.matchMedia()
     mm.add(MQ.motion, () => {
@@ -46,7 +48,9 @@ export function LeadsSteps() {
           },
         })
         .fromTo(fill, { scaleY: 0 }, { scaleY: 1, ease: 'none' }, 0)
-        .fromTo(dot, { y: 0 }, { y: () => ol.offsetHeight - 24, ease: 'none' }, 0)
+        // The dot starts level with the track's top (both top-6) and stops with its
+        // bottom edge on the track's end, not past it under the last card.
+        .fromTo(dot, { y: 0 }, { y: () => track.offsetHeight - dot.offsetHeight, ease: 'none' }, 0)
       return () => steps.forEach((step) => delete step.dataset.active)
     })
     return () => mm.revert()
@@ -73,7 +77,7 @@ export function LeadsSteps() {
 
         <div className="relative lg:col-span-7">
           {/* Track */}
-          <div className="absolute bottom-6 left-[11px] top-6 w-px bg-line" aria-hidden="true">
+          <div data-track className="absolute bottom-6 left-[11px] top-6 w-px bg-line" aria-hidden="true">
             <div data-fill className="absolute inset-0 origin-top bg-gradient-to-b from-accent to-accent/40" />
           </div>
           <div data-dot className="absolute left-0 top-6 grid h-[23px] w-[23px] place-items-center" aria-hidden="true">

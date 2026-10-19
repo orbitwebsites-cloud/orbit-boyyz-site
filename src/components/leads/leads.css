@@ -14,6 +14,24 @@
   }
 }
 
+/* Anchor jumps (every "Get 25 free leads" CTA, "#how"): Lenis already lands
+   them under the fixed header (anchors.offset in lib/motion/LenisProvider) and
+   also adds the target's scroll-margin, which put sections 80px too low. While
+   Lenis runs (html.lenis) the margin goes; native jumps (reduced motion, or
+   before Lenis starts) keep scroll-mt-20. */
+html.lenis .ld-main > section[id] {
+  scroll-margin-top: 0;
+}
+
+/* "Get your free 25." (LeadsRequest): SplitText clips each char in a
+   .ld-char-mask box only as tall as the 0.9 leading, which cut the y's tail
+   and shaved the right edges at -0.055em tracking. Pad the clip box down and
+   right, and cancel the padding with negative margins so layout is unchanged. */
+.ld-char-mask {
+  padding: 0 0.1em 0.22em 0;
+  margin: 0 -0.1em -0.22em 0;
+}
+
 /* Redacted values in the lead card: a slow light sweep. */
 .ld-redact {
   display: inline-block;

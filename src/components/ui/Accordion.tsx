@@ -30,22 +30,25 @@ export function Accordion({ items, defaultOpen = 0 }: { items: readonly Item[]; 
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="group flex w-full items-start justify-between gap-6 py-6 text-left md:py-7"
               >
+                {/* Fixed-width number (w-6) + gap-5 = 2.75rem: the answer's pl-11 starts exactly under the question text. */}
                 <span className="flex gap-5">
-                  <span className="mt-1.5 font-mono text-[0.72rem] tracking-[0.14em] text-dim">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="mt-1.5 w-6 shrink-0 font-mono text-[0.72rem] tracking-[0.14em] text-dim">{String(i + 1).padStart(2, '0')}</span>
                   <span className={cn('display text-[clamp(1.2rem,1.9vw,1.6rem)] leading-snug transition-colors duration-[var(--d-sm)]', isOpen ? 'text-fg' : 'text-fg/80 group-hover:text-fg')}>
                     {item.q}
                   </span>
                 </span>
-                <span
-                  aria-hidden="true"
-                  className={cn(
-                    'relative mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border transition-[rotate,border-color,background-color] duration-[var(--d-sm)] ease-[var(--ease-out)]',
-                    isOpen ? 'rotate-45 border-accent bg-accent text-accent-ink' : 'border-line-strong text-fg',
-                  )}
-                >
-                  <svg width="12" height="12" viewBox="0 0 12 12">
-                    <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
+                {/* One question line tall (same font size, leading-snug = 1.375em), so the icon centres on the first line. */}
+                <span aria-hidden="true" className="flex h-[1.375em] shrink-0 items-center text-[clamp(1.2rem,1.9vw,1.6rem)]">
+                  <span
+                    className={cn(
+                      'relative grid h-9 w-9 place-items-center rounded-full border transition-[rotate,border-color,background-color] duration-[var(--d-sm)] ease-[var(--ease-out)]',
+                      isOpen ? 'rotate-45 border-accent bg-accent text-accent-ink' : 'border-line-strong text-fg',
+                    )}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12">
+                      <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </span>
                 </span>
               </button>
             </h3>
@@ -58,7 +61,7 @@ export function Accordion({ items, defaultOpen = 0 }: { items: readonly Item[]; 
               inert={!isOpen}
             >
               <div>
-                <p className="max-w-2xl pb-7 pl-10 text-muted md:pl-12">{item.a}</p>
+                <p className="max-w-2xl pb-7 pl-11 text-muted">{item.a}</p>
               </div>
             </div>
           </li>

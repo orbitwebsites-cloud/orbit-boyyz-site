@@ -11,6 +11,15 @@ const GROWTH_ME_HOST = "growth\\.orbitboyzz\\.me";
 // leads.orbitboyzz.com gets its own /llms.txt (public/llms-leads.txt).
 const LEADS_HOST = "leads\\.orbitboyzz\\.com";
 
+// orbitboyzz.com files that list the website business's prices. proxy.ts's
+// matcher skips them (.md / .json / .xml / /api), so without these redirects
+// leads.orbitboyzz.com served them as its own, and nothing on that host may
+// show a price. They 308 to the same path on orbitboyzz.com. (/sitemap.xml is
+// orbitboyzz.com's, with the leads page as a cross-host entry; the leads host's
+// robots.txt already names that URL.) /api/verify-email, which the leads
+// request form calls, stays on the leads host.
+const LEADS_HOST_TO_MAIN = ["/pricing.md", "/openapi.json", "/feed.xml", "/sitemap.xml", "/api/quote-estimate"];
+
 // Pages removed in the 2026-09-30 SEO cleanup → closest live page.
 //  - Medical / restaurant / catering pages are outside the home-service offer.
 //  - Duplicate blog posts collapse into the one post that answers the question.
@@ -57,6 +66,12 @@ const nextConfig: NextConfig = {
         destination: `${CANONICAL}/:path*`,
         permanent: true,
       },
+      ...LEADS_HOST_TO_MAIN.map((source) => ({
+        source,
+        has: [{ type: "host" as const, value: LEADS_HOST }],
+        destination: `${CANONICAL}${source}`,
+        permanent: true,
+      })),
       ...MOVED.map(([source, destination]) => ({ source, destination, permanent: true })),
     ];
   },

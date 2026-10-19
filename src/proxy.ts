@@ -14,7 +14,9 @@
 //    /qualify, /book and /contact 308 to "/#request" (the page's 25-free-leads
 //    request form: no call or calendar step on that host, query string kept so
 //    ?src= survives); every other path on that host 308s to the same path on
-//    orbitboyzz.com.
+//    orbitboyzz.com. The main site's price files the matcher skips
+//    (/pricing.md, /openapi.json, /feed.xml, /sitemap.xml, /api/quote-estimate)
+//    are sent to orbitboyzz.com on that host by next.config.ts's redirects.
 //    On orbitboyzz.com itself /leads 308s to leads.orbitboyzz.com/, so the
 //    page has one canonical URL. (Other hosts, e.g. localhost and Vercel
 //    previews, render /leads directly.) Hosts are read from the Host header

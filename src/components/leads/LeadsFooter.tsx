@@ -9,7 +9,9 @@ const YEAR = new Date().getFullYear()
 export function LeadsFooter() {
   return (
     <footer className="relative border-t border-line bg-bg-2/60">
-      <div className="container-x flex flex-col gap-8 pb-10 pt-14 md:flex-row md:items-end md:justify-between md:pt-16">
+      {/* Desktop: last-baseline alignment puts the © on the same baseline as the address / email line
+          (items-end lined up box bottoms, which left the smaller © about 7px low). */}
+      <div className="container-x flex flex-col gap-8 pb-10 pt-14 md:flex-row md:items-baseline-last md:justify-between md:pt-16">
         <div>
           <a href={LEADS_URL} className="inline-flex items-center gap-3">
             <OrbitMark className="h-10 w-10 shrink-0" />

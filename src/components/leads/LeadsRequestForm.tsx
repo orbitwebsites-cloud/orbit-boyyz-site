@@ -234,97 +234,105 @@ export function LeadsRequestForm() {
 
   const f = leadsRequest.fields
   return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit}
-      noValidate
-      aria-busy={busy}
-      className="relative grid gap-5 rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-5 shadow-[0_40px_120px_-40px_rgba(214,179,106,0.3)] backdrop-blur sm:p-8"
-    >
-      <div className="grid gap-5 sm:grid-cols-2">
-        <TextField field="niche" label={f.niche.label} placeholder={f.niche.placeholder} required value={values.niche} error={errors.niche} readOnly={busy} onChange={setValue} />
+    <>
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        noValidate
+        aria-busy={busy}
+        className="relative grid gap-5 rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-5 shadow-[0_40px_120px_-40px_rgba(214,179,106,0.3)] backdrop-blur sm:p-8"
+      >
+        <div className="grid gap-5 sm:grid-cols-2">
+          <TextField field="niche" label={f.niche.label} placeholder={f.niche.placeholder} required value={values.niche} error={errors.niche} readOnly={busy} onChange={setValue} />
+          <TextField
+            field="area"
+            label={f.area.label}
+            placeholder={f.area.placeholder}
+            required
+            value={values.area}
+            error={errors.area}
+            readOnly={busy}
+            onChange={setValue}
+            autoComplete="address-level2"
+          />
+        </div>
         <TextField
-          field="area"
-          label={f.area.label}
-          placeholder={f.area.placeholder}
+          field="email"
+          label={f.email.label}
+          placeholder={f.email.placeholder}
           required
-          value={values.area}
-          error={errors.area}
+          type="email"
+          inputMode="email"
+          autoComplete="email"
+          value={values.email}
+          error={errors.email}
           readOnly={busy}
           onChange={setValue}
-          autoComplete="address-level2"
+          onBlur={onEmailBlur}
+          after={
+            suggestion ? (
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => {
+                  setValue('email', suggestion)
+                  setSuggestion('')
+                  focusField('email')
+                }}
+                className="mt-2 text-left text-sm text-muted underline decoration-accent/60 underline-offset-4 hover:text-fg"
+              >
+                Did you mean <strong className="font-medium text-fg">{suggestion}</strong>?
+              </button>
+            ) : null
+          }
         />
-      </div>
-      <TextField
-        field="email"
-        label={f.email.label}
-        placeholder={f.email.placeholder}
-        required
-        type="email"
-        inputMode="email"
-        autoComplete="email"
-        value={values.email}
-        error={errors.email}
-        readOnly={busy}
-        onChange={setValue}
-        onBlur={onEmailBlur}
-        after={
-          suggestion ? (
-            <button
-              type="button"
-              disabled={busy}
-              onClick={() => {
-                setValue('email', suggestion)
-                setSuggestion('')
-                focusField('email')
-              }}
-              className="mt-2 text-left text-sm text-muted underline decoration-accent/60 underline-offset-4 hover:text-fg"
-            >
-              Did you mean <strong className="font-medium text-fg">{suggestion}</strong>?
-            </button>
-          ) : null
-        }
-      />
-      <div className="grid gap-5 sm:grid-cols-2">
-        <TextField field="name" label={f.name.label} placeholder={f.name.placeholder} optional autoComplete="name" value={values.name} readOnly={busy} onChange={setValue} />
-        <TextField field="agency" label={f.agency.label} placeholder={f.agency.placeholder} optional autoComplete="organization" value={values.agency} readOnly={busy} onChange={setValue} />
-      </div>
-
-      {/* Where the visit came from (?src=, utm_source or the referring site). */}
-      <input type="hidden" name="src" value={source} />
-      {/* Honeypot: people never see it; FormSubmit drops submissions that fill it. */}
-      <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
-        <label htmlFor="ld-honey">Leave this field empty</label>
-        <input ref={honeyRef} id="ld-honey" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
-      </div>
-
-      {submitError && (
-        <div role="alert" className="rounded-2xl border border-red-400/50 bg-red-400/10 px-4 py-3 text-sm leading-relaxed text-red-200">
-          <p>{submitError}</p>
-          <p className="mt-1">
-            If it keeps failing, email{' '}
-            <a href={`mailto:${leadsContact.email}`} className="underline underline-offset-4">
-              {leadsContact.email}
-            </a>
-            .
-          </p>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <TextField field="name" label={f.name.label} placeholder={f.name.placeholder} optional autoComplete="name" value={values.name} readOnly={busy} onChange={setValue} />
+          <TextField field="agency" label={f.agency.label} placeholder={f.agency.placeholder} optional autoComplete="organization" value={values.agency} readOnly={busy} onChange={setValue} />
         </div>
-      )}
 
-      <button type="submit" disabled={busy} aria-disabled={busy} className="btn btn-primary mt-1 w-full disabled:cursor-wait disabled:opacity-70">
-        <span>{checking ? 'Checking email…' : submitting ? 'Sending…' : submitError ? 'Try again' : leadsRequest.submit}</span>
-        <span className="btn-arrow" aria-hidden="true">
-          {busy ? (
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="animate-spin">
-              <path d="M21 12a9 9 0 1 1-6.2-8.56" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <ArrowIcon />
-          )}
-        </span>
-      </button>
-      <p className="text-center text-xs leading-relaxed text-dim">{leadsRequest.fine}</p>
-    </form>
+        {/* Where the visit came from (?src=, utm_source or the referring site). */}
+        <input type="hidden" name="src" value={source} />
+        {/* Honeypot: people never see it; FormSubmit drops submissions that fill it. */}
+        <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+          <label htmlFor="ld-honey">Leave this field empty</label>
+          <input ref={honeyRef} id="ld-honey" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
+        </div>
+
+        {submitError && (
+          <div role="alert" className="rounded-2xl border border-red-400/50 bg-red-400/10 px-4 py-3 text-sm leading-relaxed text-red-200">
+            <p>{submitError}</p>
+            <p className="mt-1">
+              If it keeps failing, email{' '}
+              <a href={`mailto:${leadsContact.email}`} className="underline underline-offset-4">
+                {leadsContact.email}
+              </a>
+              .
+            </p>
+          </div>
+        )}
+
+        <button type="submit" disabled={busy} aria-disabled={busy} className="btn btn-primary mt-1 w-full disabled:cursor-wait disabled:opacity-70">
+          <span>{checking ? 'Checking email…' : submitting ? 'Sending…' : submitError ? 'Try again' : leadsRequest.submit}</span>
+          <span className="btn-arrow" aria-hidden="true">
+            {busy ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="animate-spin">
+                <path d="M21 12a9 9 0 1 1-6.2-8.56" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <ArrowIcon />
+            )}
+          </span>
+        </button>
+        <p className="text-center text-xs leading-relaxed text-dim">{leadsRequest.fine}</p>
+      </form>
+      <p className="mt-6 text-center text-sm text-dim">
+        Prefer email?{' '}
+        <a href={`mailto:${leadsContact.email}?subject=25%20free%20leads`} className="link-u text-fg">
+          {leadsContact.email}
+        </a>
+      </p>
+    </>
   )
 }
 
