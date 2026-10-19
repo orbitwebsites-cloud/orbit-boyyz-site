@@ -9,8 +9,8 @@ import './demo.css'
 // Free demo homepages for leads: /demo/<slug>, one per entry in src/content/demos.ts
 // (see DEMOS.md). Prebuilt at deploy; any other slug 404s.
 // SEO: every page is noindex,nofollow with no canonical, and none are listed in
-// sitemap.xml, feed.xml or llms.txt. Orbit's nav/footer are dropped for /demo/*
-// by <SiteChrome> in the root layout, so the preview reads as the lead's own site.
+// sitemap.xml, feed.xml or llms.txt. /demo sits outside the (site) route group,
+// so Orbit's nav and footer never render and the preview reads as the lead's own site.
 export const dynamicParams = false
 
 export function generateStaticParams() {
@@ -59,5 +59,9 @@ export default async function DemoPage({ params }: PageProps<'/demo/[slug]'>) {
   const { slug } = await params
   const demo = getDemo(slug)
   if (!demo) notFound()
-  return <DemoSite demo={demo} />
+  return (
+    <main id="main">
+      <DemoSite demo={demo} />
+    </main>
+  )
 }

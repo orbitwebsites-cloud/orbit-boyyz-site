@@ -239,20 +239,26 @@ body::after {
     0 0 0 1px rgba(236, 210, 154, 0.5) inset,
     0 10px 40px -10px var(--accent-glow);
 }
-.btn-primary:hover {
-  background: var(--accent-hi);
-  box-shadow:
-    0 0 0 1px rgba(255, 240, 205, 0.7) inset,
-    0 14px 60px -8px var(--accent-glow);
+/* Hover looks only where a pointer can hover: on touch screens a tap would
+   otherwise leave the button pale with its arrow turned until the next tap. */
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: var(--accent-hi);
+    box-shadow:
+      0 0 0 1px rgba(255, 240, 205, 0.7) inset,
+      0 14px 60px -8px var(--accent-glow);
+  }
 }
 .btn-ghost {
   border: 1px solid var(--line-strong);
   color: var(--fg);
   background: rgba(244, 239, 230, 0.02);
 }
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent-hi);
+@media (hover: hover) {
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent-hi);
+  }
 }
 .btn-arrow {
   display: inline-grid;
@@ -276,8 +282,10 @@ body::after {
 .btn-arrow svg {
   transition: transform var(--d-sm) var(--ease-out);
 }
-.btn:hover .btn-arrow svg {
-  transform: rotate(-45deg);
+@media (hover: hover) {
+  .btn:hover .btn-arrow svg {
+    transform: rotate(-45deg);
+  }
 }
 
 .link-u {
@@ -500,8 +508,10 @@ html.pt-nav [data-hero] {
   transform: translate3d(-120%, 0, 0);
   transition: transform var(--d-md) var(--ease-out);
 }
-.btn-primary:hover::after {
-  transform: translate3d(120%, 0, 0);
+@media (hover: hover) {
+  .btn-primary:hover::after {
+    transform: translate3d(120%, 0, 0);
+  }
 }
 html.motion-go [data-hero] .btn-primary::after {
   animation: glint 5.5s var(--ease-in-out) 1.5s infinite;

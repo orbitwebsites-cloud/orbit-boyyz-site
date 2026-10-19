@@ -2,12 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Archivo, Bricolage_Grotesque, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { site } from '@/content/site'
-import { Footer } from '@/components/sections/Footer'
-import { Preloader } from '@/components/sections/Preloader'
-import { Cursor } from '@/components/ui/Cursor'
-import { MobileDock } from '@/components/ui/MobileDock'
-import { Nav } from '@/components/ui/Nav'
-import { SiteChrome } from '@/components/ui/SiteChrome'
 import { LenisProvider } from '@/lib/motion/LenisProvider'
 import { PageTransitionProvider } from '@/lib/motion/PageTransition'
 
@@ -77,25 +71,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         >
           Skip to content
         </a>
-        {/* SiteChrome drops Orbit's chrome on /demo/* lead previews so they read as the lead's own site. */}
-        <SiteChrome>
-          <Preloader />
-        </SiteChrome>
+        {/* Orbit's chrome (preloader, nav, <main id="main">, footer, dock, cursor)
+            is the (site) route group's layout. The standalone routes outside
+            it (/leads, /sample, /qualify, /book, /demo/*) render their own
+            <main id="main">, so no main-site nav, footer, prices or booking
+            links reach their HTML or their JavaScript. */}
         <LenisProvider>
-          <PageTransitionProvider>
-            <SiteChrome>
-              <Nav />
-            </SiteChrome>
-            <main id="main">{children}</main>
-            <SiteChrome>
-              <Footer />
-              <MobileDock />
-            </SiteChrome>
-          </PageTransitionProvider>
+          <PageTransitionProvider>{children}</PageTransitionProvider>
         </LenisProvider>
-        <SiteChrome>
-          <Cursor />
-        </SiteChrome>
       </body>
     </html>
   )

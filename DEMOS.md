@@ -70,9 +70,9 @@ license numbers or claims the owner hasn't given you.
 
 ## How the Orbit nav/footer are hidden
 
-`src/app/layout.tsx` wraps Orbit's preloader, nav, footer, mobile dock and cursor in
-`<SiteChrome>` (`src/components/ui/SiteChrome.tsx`), which renders nothing when the path
-starts with `/demo/`. The demo's light theme overrides live in `src/app/demo/[slug]/demo.css`
+Orbit's preloader, nav, footer, mobile dock and cursor live in the `(site)` route group's
+layout (`src/app/(site)/layout.tsx`). `src/app/demo` sits outside that group, so demo pages
+never render or load them. The demo's light theme overrides live in `src/app/demo/[slug]/demo.css`
 and only load on demo pages.
 
 ## Files

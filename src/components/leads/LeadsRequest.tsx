@@ -66,9 +66,10 @@ export function LeadsRequest() {
       </div>
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--bg)_72%)]" />
 
-      {/* Phones and tablets: one centred column. Desktop: headline left, form right, so the whole form is in view after a CTA jump. */}
-      <div className="container-x grid items-center gap-10 md:gap-12 lg:grid-cols-12">
-        <div className="flex flex-col items-center text-center lg:col-span-5 lg:items-start lg:text-left">
+      {/* Phones and tablets: one centred column. Desktop: headline left, form right, so the whole form is in view after a CTA jump.
+          grid-cols-1 + min-w-0: a long word (e.g. the email on the thank-you card) wraps instead of widening the column past the screen. */}
+      <div className="container-x grid grid-cols-1 items-center gap-10 md:gap-12 lg:grid-cols-12">
+        <div className="flex min-w-0 flex-col items-center text-center lg:col-span-5 lg:items-start lg:text-left">
           <SectionLabel>{leadsRequest.label}</SectionLabel>
           <h2
             ref={title}
@@ -81,7 +82,7 @@ export function LeadsRequest() {
           <p className="mt-4 font-mono text-[0.74rem] uppercase tracking-[0.14em] text-dim">{leadsRequest.small}</p>
         </div>
 
-        <div className="mx-auto w-full max-w-2xl lg:col-span-7 lg:max-w-none">
+        <div className="mx-auto w-full min-w-0 max-w-2xl lg:col-span-7 lg:max-w-none">
           <LeadsRequestForm />
           <p className="mt-6 text-center text-sm text-dim">
             Prefer email?{' '}

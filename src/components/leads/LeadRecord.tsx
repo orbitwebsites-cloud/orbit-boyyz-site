@@ -65,7 +65,8 @@ const ROWS: Array<{ label: string; value: ReactNode }> = [
   },
   { label: 'Phone', value: <Bar w="40%" delay={320} /> },
   { label: 'Website', value: <Bar w="50%" delay={400} /> },
-  { label: 'City / State', value: <Bar w="36%" delay={480} /> },
+  // No spaces around the slash: 'City / State' wraps to two lines in the phone label column.
+  { label: 'City/State', value: <Bar w="36%" delay={480} /> },
   {
     label: 'Google',
     value: (
@@ -93,9 +94,10 @@ export function LeadRecord() {
       <span className="absolute -top-3 left-5 rounded-full border border-line bg-bg px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-dim sm:left-7">
         Illustration · values redacted
       </span>
-      <div className="flex items-start justify-between gap-4">
+      {/* The eyebrow never wraps; when the card is too narrow for both (most phones), the badge drops under the title. */}
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
         <div className="min-w-0">
-          <p className="label">One lead, one row</p>
+          <p className="label whitespace-nowrap">One lead, one row</p>
           <p className="mt-1 font-semibold">Your client’s niche</p>
         </div>
         <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-accent/40 px-3 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-accent">

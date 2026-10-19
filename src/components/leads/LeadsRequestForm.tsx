@@ -213,11 +213,11 @@ export function LeadsRequestForm() {
         </h3>
         <p className="mx-auto mt-4 max-w-md text-balance leading-relaxed text-muted">
           {leadsRequest.done.copy}
-          <strong className="block break-words font-medium text-fg [overflow-wrap:anywhere]">{sent.email}</strong>
+          <strong className="block font-medium text-fg wrap-anywhere">{sent.email}</strong>
         </p>
         <p className="mx-auto mt-5 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line px-4 py-2 text-sm text-muted">
           <span className="text-dim">Your request</span>
-          <span className="text-fg">
+          <span className="min-w-0 text-fg wrap-anywhere">
             {sent.niche} · {sent.area}
           </span>
         </p>
@@ -388,8 +388,9 @@ function TextField({
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-err` : undefined}
         className={cn(
-          'h-[3.25rem] w-full rounded-2xl border bg-bg/60 px-4 text-base text-fg outline-none transition-colors duration-[var(--d-sm)] placeholder:text-dim focus:border-accent read-only:opacity-70',
-          error ? 'border-red-400/80' : 'border-line-strong',
+          'h-[3.25rem] w-full rounded-2xl border bg-bg/60 px-4 text-base text-fg outline-none transition-colors duration-[var(--d-sm)] placeholder:text-dim read-only:opacity-70',
+          // An invalid field stays red while focused, like the other invalid fields, instead of turning gold.
+          error ? 'border-red-400/80 focus:border-red-400' : 'border-line-strong focus:border-accent',
         )}
       />
       {error && (

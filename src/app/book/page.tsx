@@ -4,8 +4,8 @@ import '@/components/qualify/qualify.css'
 
 // /book — the short questionnaire every "Book a call" button on the site
 // leads to (site.booking); the Calendly scheduler loads on its last screen.
-// Standalone: <SiteChrome> drops Orbit's preloader, nav, footer, dock and
-// cursor on this path (src/lib/demoPath.ts → isStandalonePath).
+// Standalone: outside the (site) route group, so none of Orbit's preloader,
+// nav, footer, dock or cursor is rendered or shipped here.
 // SEO: noindex,nofollow with no canonical; excluded from sitemap.xml (and so
 // from IndexNow) in app/sitemap.ts.
 export const metadata: Metadata = {
@@ -23,5 +23,9 @@ export const viewport: Viewport = {
 }
 
 export default function BookPage() {
-  return <Book />
+  return (
+    <main id="main">
+      <Book />
+    </main>
+  )
 }

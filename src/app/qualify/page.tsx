@@ -4,8 +4,8 @@ import '@/components/qualify/qualify.css'
 
 // /qualify — private booking step linked from agency outreach replies
 // (prefill: ?n=<first name>&a=<agency>&e=<email>&d=<domain>).
-// Standalone: <SiteChrome> drops Orbit's preloader, nav, footer, dock and
-// cursor on this path (src/lib/demoPath.ts → isStandalonePath).
+// Standalone: outside the (site) route group, so none of Orbit's preloader,
+// nav, footer, dock or cursor is rendered or shipped here.
 // SEO: noindex,nofollow with no canonical; excluded from sitemap.xml (and so
 // from IndexNow) in app/sitemap.ts, and not listed in feed.xml or llms.txt.
 export const metadata: Metadata = {
@@ -23,5 +23,9 @@ export const viewport: Viewport = {
 }
 
 export default function QualifyPage() {
-  return <Qualify />
+  return (
+    <main id="main">
+      <Qualify />
+    </main>
+  )
 }

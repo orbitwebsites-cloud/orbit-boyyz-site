@@ -21,13 +21,11 @@ import {
   ArrowLeft,
   ArrowRight,
   CalendarClock,
-  CalendlyInline,
   Check,
   EmailSuggestion,
   KEY_LETTERS,
   LoaderCircle,
   StageScreen,
-  buildCalendlyUrl,
   firstName,
   focusSoon,
   isTypingTarget,
@@ -38,6 +36,7 @@ import {
   useIsPresent,
   useScreenStage,
 } from '@/components/qualify/shared'
+import { CalendlyInline, buildCalendlyUrl } from '@/components/qualify/calendly'
 
 // /book: the short questionnaire every "Book a call" button on the site leads
 // to. Local businesses answer five one-at-a-time questions plus their contact

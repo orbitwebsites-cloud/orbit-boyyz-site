@@ -31,8 +31,9 @@ import '@/components/leads/leads.css'
 
 // /leads — the lead data offer for outbound agencies, served at
 // https://leads.orbitboyzz.com/ (src/proxy.ts rewrites that host's "/" here
-// and 308s orbitboyzz.com/leads to it). Standalone: <SiteChrome> drops the
-// website business's preloader, nav, footer and dock (src/lib/demoPath.ts).
+// and 308s orbitboyzz.com/leads to it). Standalone: outside the (site) route
+// group, so the website business's preloader, nav, footer, dock, prices and
+// booking links are neither rendered nor shipped in this page's JavaScript.
 // Every primary CTA jumps to the 25-free-leads request form (#request,
 // components/leads/LeadsRequest.tsx): no call or calendar step on this host.
 // Copy rules live at the top of src/content/leads.ts.
@@ -236,8 +237,10 @@ function Offer() {
 function Fields() {
   return (
     <section id="fields" aria-labelledby="fields-title" className="container-x py-24 md:py-32">
-      <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-5">
+      {/* grid-cols-1 + min-w-0: the sheet's two-column grid would otherwise size this column
+          from its content (wider than a 320–375px phone) and scroll the page sideways. */}
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+        <div className="min-w-0 lg:col-span-5">
           <SectionLabel>{leadsFieldsSection.label}</SectionLabel>
           <h2 id="fields-title" data-split className="display t-2 mt-6">
             {leadsFieldsSection.title} <span className="serif-accent text-accent">{leadsFieldsSection.titleAccent}</span>
@@ -247,7 +250,7 @@ function Fields() {
           </p>
         </div>
 
-        <div data-reveal className="lg:col-span-7">
+        <div data-reveal className="min-w-0 lg:col-span-7">
           <div className="overflow-hidden rounded-[calc(var(--radius)+0.25rem)] border border-line-strong bg-panel/80">
             <div className="flex items-center justify-between gap-4 border-b border-line px-5 py-3.5">
               <span className="flex gap-1.5" aria-hidden="true">
@@ -259,7 +262,11 @@ function Fields() {
             </div>
             <ol className="grid grid-cols-2 gap-px bg-line sm:grid-cols-3">
               {leadFields.map((field, i) => (
-                <li key={field.key} className="flex flex-col items-start gap-3 bg-panel px-4 py-5 sm:flex-row sm:items-center sm:px-5">
+                <li
+                  key={field.key}
+                  // Two columns on phones: an odd last cell spans both, so no empty gap-coloured slot shows.
+                  className="flex flex-col items-start gap-3 bg-panel px-4 py-5 max-sm:odd:last:col-span-2 sm:flex-row sm:items-center sm:px-5"
+                >
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-md border border-accent/40 font-mono text-[0.72rem] text-accent" aria-hidden="true">
                     {String.fromCharCode(65 + i)}
                   </span>

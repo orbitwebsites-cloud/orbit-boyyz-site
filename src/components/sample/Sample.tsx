@@ -8,13 +8,17 @@ import { SAMPLE_FORM_ENDPOINT, SAMPLE_STORAGE_KEY } from '@/content/sampleConfig
 import { emailCheckLabel } from '@/lib/emailCheck'
 import { Check, EmailSuggestion, LoaderCircle, Send, firstName, focusSoon, looksLikeEmail, scrollToTop, useEmailCheck } from '@/components/qualify/shared'
 
-// /sample: request a free sample of 100 leads. Written for a telecom advisor /
+// /sample: request a free sample of 25 leads. Written for a telecom advisor /
 // broker (phone, internet and related services; carrier-agnostic, sits between
 // the carriers and the business), worded so other advisors and brokers fit too.
 // One page in grouped sections, not the one-question-at-a-time flow of
 // /qualify and /book, but the same look (qf- classes from qualify.css plus the
 // sf- classes in ./sample.css), the same email check and the same FormSubmit
-// inbox as /book. Never mention our prices on this page.
+// inbox as /book. leads.orbitboyzz.com serves this page too, so its rules
+// apply: no prices, no call or calendar step (it ends on the thank-you), no
+// results promises, and the owner / decision-maker only "where public sources
+// show it". Import only the form pieces from qualify/shared, never
+// qualify/calendly or '@/content/qualifyConfig'.
 
 // ---------------------------------------------------------------------------
 // Options
@@ -350,7 +354,7 @@ function buildPayload(form: Form, honey: string, emailCheck: string) {
     'Who will reach out to the leads': pickLabel(OUTREACH, form.outreach),
     'Where new clients come from today, and what it costs': text(form.channels),
     'A new client is worth per year': text(form.clientValue),
-    'What would make the 100 a win': pickLabel(WINS, form.win, form.winOther),
+    'What would make the 25 a win': pickLabel(WINS, form.win, form.winOther),
     'Ongoing list: who decides, how soon they could start': text(form.ongoing),
     'Anything else': text(form.notes),
     'Submitted from': window.location.host,
@@ -517,12 +521,13 @@ export default function Sample() {
           <div className="sf-intro">
             <p className="qf-kicker">
               <span aria-hidden="true" />
-              Free sample · 100 leads
+              Free sample · 25 leads
             </p>
-            <h1 className="sf-title">Get your free 100-lead sample</h1>
+            <h1 className="sf-title">Get your free 25-lead sample</h1>
             <p className="sf-lede">
-              Tell us who you help. We’ll build 100 businesses that look ready to switch or renew, with the decision-maker’s name, a verified email and a
-              phone number, plus the signals behind each one. We can’t see exact contract end dates; you confirm those on the first call.
+              Tell us who you help. We’ll build 25 businesses that fit, each with a verified email, a business phone number, the decision-maker’s name
+              where public sources show it, and the public signals that point to a switch or renewal. We can’t see contract end dates, so those are yours
+              to confirm. The sheet arrives by email within a few business days.
             </p>
             <p className="sf-required-note">
               Fields marked <span className="sf-req-inline" aria-hidden="true">*</span>
@@ -742,7 +747,7 @@ export default function Sample() {
                 value={form.channels}
                 readOnly={busy}
                 onChange={(v) => setText('channels', v)}
-                placeholder="e.g. carrier referrals and BNI, plus a list vendor we pay per lead"
+                placeholder="e.g. carrier referrals and BNI, plus a paid list vendor"
               />
               <TextField
                 name="clientValue"
@@ -757,7 +762,7 @@ export default function Sample() {
               <ChoiceGroup
                 name="win"
                 type="radio"
-                legend="What would make the 100 a win?"
+                legend="What would make the 25 a win?"
                 required
                 options={WINS}
                 selected={[form.win]}
@@ -1133,7 +1138,7 @@ function ThankYou({ sent }: { sent: Sent }) {
         Thanks{sent.first ? `, ${sent.first}` : ''}.
       </h1>
       <p className="qf-result-copy">
-        We’ll email you at <strong className="sf-email">{sent.email}</strong> when your 100 leads are ready, usually within a few business days.
+        We’ll email you at <strong className="sf-email">{sent.email}</strong> when your 25 leads are ready, within a few business days.
       </p>
       {sent.area && (
         <div className="qf-recap">

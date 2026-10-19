@@ -19,14 +19,12 @@ import {
   ArrowLeft,
   ArrowRight,
   CalendarClock,
-  CalendlyInline,
   Check,
   EmailSuggestion,
   KEY_LETTERS,
   LoaderCircle,
   Send,
   StageScreen,
-  buildCalendlyUrl,
   firstName,
   focusSoon,
   isTypingTarget,
@@ -37,6 +35,7 @@ import {
   useIsPresent,
   useScreenStage,
 } from './shared'
+import { CalendlyInline, buildCalendlyUrl } from './calendly'
 
 // Ported from the old Vite site's src/Qualify.tsx. Same questions, copy,
 // scoring, prefill, payload and Calendly logic. framer-motion and

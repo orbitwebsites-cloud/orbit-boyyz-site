@@ -65,7 +65,7 @@ export function LeadsSteps() {
           </p>
           {/* No data-reveal on the CTA: hidden until scrolled to, it couldn't take keyboard focus. */}
           <div className="mt-8">
-            <RequestCta size="sm" block>
+            <RequestCta block>
               {leadsHero.cta}
             </RequestCta>
           </div>
