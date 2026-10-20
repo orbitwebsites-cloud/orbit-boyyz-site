@@ -1,17 +1,21 @@
-// Copy for leads.orbitboyzz.com (src/app/leads/page.tsx).
+// Copy for leads.orbitboyzz.com (src/app/leads/page.tsx) and orbitboyzz.com/qualify.
 // Facts only: the offer exactly as stated here. 25 free leads in one niche,
 // built from Google Maps listings and each business's own website, the owner's
 // name where public sources show it, every email verified, the business phone
 // included, delivered within a few business days.
 // Never add: exclusivity, prices or price comparisons, guarantees, results
-// promises (reply rates, meetings, revenue), urgency or scarcity, a call or
-// calendar step, or medical, dental or legal niches in examples.
+// promises (reply rates, meetings, revenue), bounce replacement (not a policy
+// yet), urgency or scarcity, a call or calendar step, or medical, dental or
+// legal niches in examples.
 
 export const leadsContact = {
   brand: 'Orbit Boyzz',
   email: 'alex@orbitboyzz.com',
   address: '2401 Deer Creek Drive, Plainsboro, NJ 08536',
 } as const
+
+/** The no-risk line, shown next to every request button. */
+export const leadsNoRisk = 'Free. No card. No call.'
 
 export const leadsHero = {
   eyebrow: 'Verified lead lists for outbound agencies',
@@ -22,103 +26,78 @@ export const leadsHero = {
   sub: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, verify every email and send it to you as a sheet. Start with 25 free leads.',
   cta: 'Get 25 free leads',
   ctaShort: 'Free leads',
-  secondary: 'How it works',
-  chips: ['25 free leads', 'Every email verified', 'Business phone included', 'Delivered within a few business days'],
+  secondary: 'How we verify',
+  chips: ['Every email verified', 'Business phone included', 'Delivered within a few business days'],
 } as const
 
-export const leadsTicker = [
-  '25 free leads in one niche',
-  'Built from Google Maps listings',
-  'And each business’s own website',
-  'Owner name where public sources show it',
-  'Every email verified',
-  'Business phone included',
-  'Delivered as a sheet',
-  'Within a few business days',
-] as const
-
-export const leadsProblem = {
-  label: '[01 // THE PROBLEM]',
-  statement: 'Stale data bounces. Owners change, inboxes go dead, and every bounce hurts the domain you send from.',
-  accent: ['bounces.', 'dead,', 'hurts'],
-  foot: 'So we build each list when you ask for it, from Google Maps listings and each business’s own website, and verify every email before it ships.',
-} as const
-
-export const leadsOffer = {
-  label: '[02 // THE OFFER]',
-  title: 'Verified leads.',
-  titleAccent: 'Built for one of your client niches.',
-  audience: 'For outbound and lead-gen agencies (cold email, appointment setting) that need local-business leads for their clients.',
-  cards: [
-    {
-      figure: '1',
-      unit: 'niche, one area',
-      title: 'You choose',
-      copy: 'Roofers in Austin, TX. HVAC companies in Mercer County, NJ. Tell us the niche and the area you want.',
-    },
-    {
-      figure: '25',
-      unit: 'free leads',
-      title: 'Start free',
-      copy: 'Built for that niche and area, and delivered as a sheet within a few business days. No call, no card.',
-    },
-    {
-      figure: '9',
-      unit: 'columns per lead',
-      title: 'In every row',
-      copy: 'Verified email, business phone, website and Google reviews, plus the owner’s name and title where public sources show it.',
-    },
-  ],
-  note: 'No call and no card. Just the niche, the area and your work email.',
+/**
+ * One real row, masked, from the test list built on 2026-10-18
+ * (agency-leads/out/samples-test/orbitboyzz-dryrun.test-2026-10-18.csv, row 2:
+ * "Google Maps + website; owner email verified"). Business details are the
+ * public Google Maps listing; the owner's name, the email and the phone are
+ * masked so no full personal data is shown. Swap it only for another real row,
+ * masked the same way (j•••@domain, (609) •••-••12, initials for names).
+ */
+export const leadsSample = {
+  badge: 'Real row · masked',
+  title: 'One lead, one row',
+  context: 'HVAC · New Jersey',
+  row: {
+    company: 'Blue Air One Heating & Air Conditioning',
+    owner: 'M••• M•••',
+    title: 'Founder',
+    email: 'm•••@blueaironenj.com',
+    phone: '(908) •••-••53',
+    website: 'blueaironenj.com',
+    city: 'Linden, NJ',
+    rating: '4.9',
+    reviews: '124',
+  },
+  caption: 'From a test list we built on October 18, 2026. Owner, email and phone are masked here; your sheet has them in full.',
 } as const
 
 export const leadsSteps = {
-  label: '[03 // HOW IT WORKS]',
-  title: 'From the map',
-  titleAccent: 'to your sheet.',
-  intro: 'Every list is built for your niche and area, and every email is verified before it ships.',
+  label: '[01 // VERIFICATION]',
+  title: 'How every email',
+  titleAccent: 'is verified.',
+  intro: 'Stale lists bounce, and every bounce hurts the domain you send from. So each list is built when you ask for it, in three steps.',
   steps: [
     {
       number: '01',
-      title: 'Find',
-      copy: 'We find the businesses in your niche and area on Google Maps, then read each business’s own website.',
+      title: 'Google Maps and the business’s own website',
+      copy: 'Each lead starts from the business’s Google Maps listing and its own website.',
     },
     {
       number: '02',
-      title: 'Add the owner',
-      copy: 'We add the owner’s name and title where public sources show it.',
+      title: 'The owner, where public sources show it',
+      copy: 'We add the owner’s name and title where public sources show them. Where they don’t, the field stays blank.',
     },
     {
       number: '03',
-      title: 'Verify every email',
-      copy: 'Every email is verified before it ships. Only “valid” counts. Catch-all and risky addresses are never marked as verified.',
-    },
-    {
-      number: '04',
-      title: 'Deliver',
-      copy: 'Your 25 leads arrive as a sheet within a few business days.',
+      title: 'Every email verified before delivery',
+      copy: 'Every email is checked with a verification service before the sheet ships. Only “valid” counts as verified.',
     },
   ],
 } as const
 
 /** Spreadsheet columns, A to I. */
 export const leadFields = [
-  { key: 'company', label: 'Company' },
-  { key: 'owner', label: 'Owner name' },
-  { key: 'title', label: 'Title' },
-  { key: 'email', label: 'Verified email' },
-  { key: 'phone', label: 'Business phone' },
-  { key: 'website', label: 'Website' },
-  { key: 'city', label: 'City / State' },
-  { key: 'rating', label: 'Google rating' },
-  { key: 'reviews', label: 'Google reviews' },
+  { key: 'company', label: 'Company', note: 'From Google Maps' },
+  { key: 'owner', label: 'Owner name', note: 'Where public sources show it' },
+  { key: 'title', label: 'Title', note: 'e.g. Founder, President' },
+  { key: 'email', label: 'Verified email', note: 'Only “valid” counts' },
+  { key: 'phone', label: 'Business phone', note: 'The listed business line' },
+  { key: 'website', label: 'Website', note: 'The business’s own site' },
+  { key: 'city', label: 'City / State', note: 'Where the business is' },
+  { key: 'rating', label: 'Google rating', note: 'From the listing' },
+  { key: 'reviews', label: 'Google reviews', note: 'Number of reviews' },
 ] as const
 
 export const leadsFieldsSection = {
-  label: '[04 // IN EVERY LEAD]',
+  label: '[02 // IN EVERY ROW]',
   title: 'What’s in',
-  titleAccent: 'every lead.',
-  note: 'Owner name and title are included where public sources show them. An email is marked verified only when it comes back “valid”. Catch-all and risky addresses are never marked as verified.',
+  titleAccent: 'every row.',
+  note: 'Delivered as a sheet, one row per lead. Owner name and title only where public sources show them. Catch-all and risky addresses are never marked as verified.',
 } as const
 
 export const leadsOutreach = {
@@ -126,50 +105,49 @@ export const leadsOutreach = {
   copy: 'We can send it for you from your own domains.',
 } as const
 
+export const leadsFaqSection = {
+  label: '[03 // QUESTIONS]',
+  title: 'Straight answers, before you start.',
+} as const
+
 export const leadsFaqs = [
   {
-    q: 'Who is this for?',
-    a: 'Outbound and lead-gen agencies (cold email, appointment setting) that need local-business leads for their clients.',
-  },
-  {
-    q: 'Where does the data come from?',
-    a: 'Google Maps listings and each business’s own website. We add the owner’s name and title where public sources show it.',
-  },
-  {
-    q: 'How do you verify the emails?',
-    a: 'Every email is verified before it ships, and only addresses that come back “valid” count as verified. Catch-all and risky addresses are never marked as verified.',
-  },
-  {
-    q: 'What is in each lead?',
-    a: 'Company, owner name and title (where public sources show them), verified email, business phone, website, city/state, Google rating and Google reviews, delivered as a sheet.',
-  },
-  {
-    q: 'Which niches can I ask for?',
-    a: 'Local service niches such as roofers, HVAC, plumbers, landscapers, electricians, home cleaning and auto repair. Tell us the niche and the area in the form.',
+    q: 'Is it free?',
+    a: 'Yes. The 25 leads are free. There’s no card to enter and no call to book: just the niche, the area and your work email.',
   },
   {
     q: 'How long does it take?',
-    a: 'Your 25 leads arrive by email within a few business days.',
+    a: 'Your sheet arrives by email within a few business days of your request.',
   },
   {
-    q: 'Is it really free?',
-    a: 'Yes. The 25 leads are free. There is no call to book and no card to enter.',
+    q: 'What if an email bounces?',
+    a: 'Every email is verified before the sheet ships, and only addresses that come back “valid” are marked verified. An inbox can still close after it’s checked. If one bounces, reply to the email your sheet came with and tell us which address. We’ll check it.',
   },
   {
-    q: 'How do I start?',
-    a: 'Fill in the short form on this page: the niche, the area and your work email.',
-  },
-  {
-    q: 'Who runs this?',
-    a: 'Orbit Boyzz, based in Plainsboro, NJ. Email alex@orbitboyzz.com.',
+    q: 'What niches can I ask for?',
+    a: 'Local service businesses with a Google Maps listing and their own website, such as roofers, HVAC, plumbers, landscapers, electricians, home cleaning and auto repair. Put the niche and the area in the form.',
   },
 ] as const
 
 export const leadsRequest = {
-  label: '[06 // START FREE]',
+  label: '[04 // START FREE]',
   title: 'Get your free 25.',
-  copy: 'Tell us the niche and the area. We’ll build 25 verified leads and email them to you as a sheet within a few business days.',
-  small: 'No call · no calendar · no card',
+  copy: 'Tell us the niche and the area. We’ll build 25 verified leads and email them to you as a sheet.',
+  nextLabel: 'What happens after you request',
+  next: [
+    {
+      title: 'We build your 25 leads',
+      copy: 'For your niche and area, from Google Maps listings and each business’s own website.',
+    },
+    {
+      title: 'We verify every email',
+      copy: 'Before the sheet ships. Only “valid” counts as verified.',
+    },
+    {
+      title: 'The sheet lands in your inbox',
+      copy: 'At the work email you give us, within a few business days.',
+    },
+  ],
   fields: {
     niche: { label: 'Niche', placeholder: 'e.g. Roofers' },
     area: { label: 'Area (city / state)', placeholder: 'e.g. Austin, TX' },
@@ -178,28 +156,21 @@ export const leadsRequest = {
     agency: { label: 'Agency', placeholder: 'Your agency' },
   },
   submit: 'Send me 25 free leads',
-  fine: 'Only used to build your leads and follow up about them.',
+  fine: 'Your email is only used to build your leads and follow up about them.',
   done: {
     kicker: 'Request received',
-    copy: 'Your 25 free leads arrive within a few business days, as a sheet sent to',
-    next: 'No call, no calendar. We’ll just email the sheet.',
+    lead: 'Here’s what happens next:',
+    foot: 'No call and no card. Questions before then? Email',
   },
 } as const
 
 /**
  * orbitboyzz.com/qualify (src/app/qualify/page.tsx): the same 25-free-leads
- * request as the leads page's form, on one short page. Same rules as above.
+ * request as the leads page's form, form first. Same rules as above.
  */
 export const leadsQualify = {
   eyebrow: 'Verified lead lists for outbound agencies',
   title: 'Get 25',
   titleAccent: 'free leads.',
   explainer: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, and verify every email.',
-  pointsLabel: 'What you get',
-  points: [
-    'Each row: company, verified email, business phone, website, city/state, Google rating and Google reviews.',
-    'The owner’s name and title, where public sources show them.',
-    'Delivered as a sheet within a few business days.',
-    'No call and no card. Just the niche, the area and your work email.',
-  ],
 } as const

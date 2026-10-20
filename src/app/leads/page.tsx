@@ -1,30 +1,17 @@
 import type { CSSProperties } from 'react'
 import type { Metadata } from 'next'
-import {
-  leadFields,
-  leadsContact,
-  leadsFaqs,
-  leadsFieldsSection,
-  leadsHero,
-  leadsOffer,
-  leadsOutreach,
-  leadsTicker,
-} from '@/content/leads'
-import { CountUp } from '@/components/leads/CountUp'
+import { leadFields, leadsContact, leadsFaqs, leadsFieldsSection, leadsHero, leadsNoRisk, leadsOutreach } from '@/content/leads'
 import { LeadRecord } from '@/components/leads/LeadRecord'
+import { LeadsFaq } from '@/components/leads/LeadsFaq'
 import { LeadsFooter } from '@/components/leads/LeadsFooter'
 import { LeadsHeader } from '@/components/leads/LeadsHeader'
-import { LeadsProblem } from '@/components/leads/LeadsProblem'
 import { LeadsRequest } from '@/components/leads/LeadsRequest'
 import { LeadsSteps } from '@/components/leads/LeadsSteps'
 import { RequestCta } from '@/components/leads/RequestCta'
-import { Accordion } from '@/components/ui/Accordion'
 import { ArrowIcon } from '@/components/ui/Button'
 import { Cursor } from '@/components/ui/Cursor'
 import { OrbitSystem } from '@/components/ui/OrbitSystem'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { TiltCard } from '@/components/ui/TiltCard'
-import { cn } from '@/lib/cn'
 import { LEADS_URL } from '@/lib/leadsSite'
 import { jsonLd } from '@/lib/seo'
 import '@/components/leads/leads.css'
@@ -36,6 +23,9 @@ import '@/components/leads/leads.css'
 // booking links are neither rendered nor shipped in this page's JavaScript.
 // Every primary CTA jumps to the 25-free-leads request form (#request,
 // components/leads/LeadsRequest.tsx): no call or calendar step on this host.
+// Order: a real masked row up top, how every email is verified, what's in each
+// row, four straight answers, then the form with what happens after it.
+// Motion stays quiet here: short fades only (data-reveal), no text effects.
 // Copy rules live at the top of src/content/leads.ts.
 // Listed in orbitboyzz.com/sitemap.xml as a cross-host entry (the leads host robots.txt points to that sitemap).
 
@@ -89,18 +79,12 @@ function DownArrow() {
   )
 }
 
-function Tick() {
+function Tick({ className }: { className?: string }) {
   return (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className={className}>
       <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
-}
-
-/** "25" → 25, "10k" → 10 + "k", for the count-up. */
-function splitFigure(figure: string) {
-  const match = /^(\d+)(.*)$/.exec(figure)
-  return match ? { value: Number(match[1]), suffix: match[2] } : null
 }
 
 function Hero() {
@@ -129,18 +113,25 @@ function Hero() {
           <p className="page-fade t-lead mt-8 max-w-[36rem] text-muted" style={{ '--delay': '0ms' } as CSSProperties}>
             {leadsHero.sub}
           </p>
-          <div className="page-fade mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center" style={{ '--delay': '120ms' } as CSSProperties}>
-            <RequestCta magnetic block>
-              {leadsHero.cta}
-            </RequestCta>
-            <a href="#how" className="btn btn-ghost w-full sm:w-auto">
-              <span>{leadsHero.secondary}</span>
-              <span className="btn-arrow">
-                <DownArrow />
-              </span>
-            </a>
+          <div className="page-fade mt-10" style={{ '--delay': '120ms' } as CSSProperties}>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <RequestCta magnetic block>
+                {leadsHero.cta}
+              </RequestCta>
+              <a href="#how" className="btn btn-ghost w-full sm:w-auto">
+                <span>{leadsHero.secondary}</span>
+                <span className="btn-arrow">
+                  <DownArrow />
+                </span>
+              </a>
+            </div>
+            {/* The no-risk line sits right under the buttons, where the decision happens. */}
+            <p className="mt-4 flex items-center gap-2 text-[0.95rem] font-medium text-fg/90">
+              <Tick className="shrink-0" />
+              {leadsNoRisk}
+            </p>
           </div>
-          <ul className="page-fade mt-10 flex flex-wrap gap-2" style={{ '--delay': '200ms' } as CSSProperties}>
+          <ul className="page-fade mt-9 flex flex-wrap gap-2" style={{ '--delay': '200ms' } as CSSProperties}>
             {leadsHero.chips.map((chip) => (
               <li key={chip} className="flex items-center gap-2 rounded-full border border-line bg-panel/60 px-3.5 py-2 text-[0.82rem] text-muted backdrop-blur-sm">
                 <Tick />
@@ -161,88 +152,15 @@ function Hero() {
   )
 }
 
-function Ticker() {
-  const group = (copy: boolean) => (
-    <ul className={cn('ld-ticker-group', copy && 'ld-ticker-copy')} aria-hidden={copy || undefined}>
-      {leadsTicker.map((item) => (
-        <li key={item} className="flex items-center gap-6 whitespace-nowrap pr-6 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted">
-          {item}
-          <span className="text-accent" aria-hidden="true">
-            ✦
-          </span>
-        </li>
-      ))}
-    </ul>
-  )
-  return (
-    <div className="overflow-hidden border-y border-line bg-bg-2/60 py-5">
-      <div className="ld-ticker-track">
-        {group(false)}
-        {group(true)}
-      </div>
-    </div>
-  )
-}
-
-function Offer() {
-  return (
-    <section id="offer" aria-labelledby="offer-title" className="container-x scroll-mt-20 py-24 md:py-32">
-      <div className="grid gap-10 lg:grid-cols-12">
-        <div className="lg:col-span-8">
-          <SectionLabel>{leadsOffer.label}</SectionLabel>
-          <h2 id="offer-title" data-split className="display t-2 mt-6 max-w-[20ch] text-balance">
-            {leadsOffer.title} <span className="serif-accent text-accent">{leadsOffer.titleAccent}</span>
-          </h2>
-        </div>
-        <p data-reveal className="t-lead text-muted lg:col-span-4 lg:self-end">
-          {leadsOffer.audience}
-        </p>
-      </div>
-
-      <ul className="mt-14 grid gap-4 md:grid-cols-3">
-        {leadsOffer.cards.map((card, i) => {
-          const figure = splitFigure(card.figure)
-          const featured = i === 1
-          return (
-            <li key={card.title} data-reveal>
-              <TiltCard
-                className={cn(
-                  'flex h-full flex-col rounded-[var(--radius)] border p-7 md:p-8',
-                  featured ? 'border-accent/60 bg-panel bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.16),transparent_60%)]' : 'border-line bg-panel/60',
-                )}
-              >
-                <h3 className="label text-accent">{card.title}</h3>
-                <p className="display mt-8 text-[clamp(4rem,7.5vw,6.5rem)] leading-none">
-                  {figure ? <CountUp value={figure.value} suffix={figure.suffix} /> : card.figure}
-                </p>
-                <p className="mt-3 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted">{card.unit}</p>
-                <p className="mt-8 flex-1 border-t border-line pt-5 leading-relaxed text-muted">{card.copy}</p>
-              </TiltCard>
-            </li>
-          )
-        })}
-      </ul>
-
-      {/* Links stay out of data-reveal blocks: a block hidden until scrolled to can't take keyboard focus. */}
-      <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-        <RequestCta block>{leadsHero.cta}</RequestCta>
-        <p data-reveal className="text-center text-sm text-dim sm:text-left">
-          {leadsOffer.note}
-        </p>
-      </div>
-    </section>
-  )
-}
-
 function Fields() {
   return (
-    <section id="fields" aria-labelledby="fields-title" className="container-x py-24 md:py-32">
+    <section id="fields" aria-labelledby="fields-title" className="container-x py-16 md:py-32">
       {/* grid-cols-1 + min-w-0: the sheet's two-column grid would otherwise size this column
           from its content (wider than a 320–375px phone) and scroll the page sideways. */}
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
         <div className="min-w-0 lg:col-span-5">
-          <SectionLabel>{leadsFieldsSection.label}</SectionLabel>
-          <h2 id="fields-title" data-split className="display t-2 mt-6">
+          <SectionLabel decode={false}>{leadsFieldsSection.label}</SectionLabel>
+          <h2 id="fields-title" data-reveal className="display t-2 mt-6">
             {leadsFieldsSection.title} <span className="serif-accent text-accent">{leadsFieldsSection.titleAccent}</span>
           </h2>
           <p data-reveal className="mt-6 max-w-md leading-relaxed text-muted">
@@ -265,14 +183,14 @@ function Fields() {
                 <li
                   key={field.key}
                   // Two columns on phones: an odd last cell spans both, so no empty gap-coloured slot shows.
-                  className="flex flex-col items-start gap-3 bg-panel px-4 py-5 max-sm:odd:last:col-span-2 sm:flex-row sm:items-center sm:px-5"
+                  className="flex flex-col items-start gap-3 bg-panel px-4 py-5 max-sm:odd:last:col-span-2 sm:flex-row sm:items-start sm:px-5"
                 >
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-md border border-accent/40 font-mono text-[0.72rem] text-accent" aria-hidden="true">
                     {String.fromCharCode(65 + i)}
                   </span>
                   <span className="min-w-0">
                     <span className="block text-[0.95rem] font-medium leading-tight sm:text-base">{field.label}</span>
-                    <span className="ld-redact mt-2 block w-16" style={{ animationDelay: `${i * 90}ms` } as CSSProperties} aria-hidden="true" />
+                    <span className="mt-1.5 block text-[0.8rem] leading-snug text-dim">{field.note}</span>
                   </span>
                 </li>
               ))}
@@ -286,10 +204,8 @@ function Fields() {
 
 function Outreach() {
   return (
-    <section aria-label="Outreach" className="container-x">
-      <div
-        className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-panel bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12"
-      >
+    <section aria-label="Outreach" className="container-x pb-16 md:pb-32">
+      <div className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-panel bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12">
         <div data-reveal>
           <p className="display text-balance text-[clamp(1.6rem,3vw,2.4rem)]">{leadsOutreach.title}</p>
           <p className="mt-3 text-muted">{leadsOutreach.copy}</p>
@@ -305,31 +221,6 @@ function Outreach() {
   )
 }
 
-function Faq() {
-  return (
-    <section id="faq" aria-labelledby="faq-title" className="container-x scroll-mt-20 py-24 md:py-32">
-      <div className="grid gap-10 md:grid-cols-12">
-        <div className="md:col-span-4">
-          <SectionLabel>[05 // QUESTIONS]</SectionLabel>
-          <h2 id="faq-title" data-split className="display t-3 mt-6">
-            Straight answers, before you start.
-          </h2>
-          <p className="mt-5 text-muted">
-            Anything else? Email{' '}
-            <a href={`mailto:${leadsContact.email}`} className="link-u text-fg">
-              {leadsContact.email}
-            </a>
-            .
-          </p>
-        </div>
-        <div className="md:col-span-8">
-          <Accordion items={leadsFaqs} defaultOpen={0} />
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export default function LeadsPage() {
   return (
     <>
@@ -340,14 +231,11 @@ export default function LeadsPage() {
           ld-type: no one-word last lines (text-wrap pretty on copy, balance on headings). */}
       <main id="main" tabIndex={-1} className="ld-main ld-type outline-none">
         <Hero />
-        <Ticker />
-        <LeadsProblem />
-        <Offer />
         <LeadsSteps />
         <Fields />
-        <Outreach />
-        <Faq />
+        <LeadsFaq />
         <LeadsRequest />
+        <Outreach />
       </main>
       <LeadsFooter />
       <Cursor />

@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import posthog from 'posthog-js'
-import { leadsContact, leadsRequest } from '@/content/leads'
+import { leadsContact, leadsNoRisk, leadsRequest } from '@/content/leads'
 import { LEADS_REQUEST_DEFAULT_SOURCE, LEADS_REQUEST_ENDPOINT } from '@/content/leadsRequestConfig'
 import { ArrowIcon } from '@/components/ui/Button'
 import { cn } from '@/lib/cn'
@@ -12,8 +12,9 @@ import { isFreeMail } from '@/lib/freeMail'
 // The 25-free-leads request form: leads.orbitboyzz.com (#request) and
 // orbitboyzz.com/qualify (src/app/qualify/page.tsx) both render this one form.
 // Short on purpose: niche, area and a work email, plus an optional name and
-// agency. No call or calendar step: the success state says the sheet arrives
-// by email. Posted from the browser to FormSubmit (same inbox as /sample and
+// agency. No call or calendar step: the success state lists exactly what
+// happens next (build, verify, the sheet by email within a few business days).
+// Posted from the browser to FormSubmit (same inbox as /sample and
 // /book), which 403s server-side requests. ?src= (or utm_source, else the
 // referring site, else the page's `defaultSource`) rides along in a hidden
 // field so the inbox shows where the visit came from.
@@ -205,32 +206,46 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
   }
 
   if (sent) {
+    // Exactly what happens next, with their own niche, area and email filled in.
+    const steps: ReactNode[] = [
+      <>
+        We build 25 leads: <strong className="font-medium text-fg wrap-anywhere">{sent.niche}</strong> in{' '}
+        <strong className="font-medium text-fg wrap-anywhere">{sent.area}</strong>.
+      </>,
+      <>We verify every email before the sheet ships. Only “valid” counts as verified.</>,
+      <>
+        The sheet arrives at <strong className="font-medium text-fg wrap-anywhere">{sent.email}</strong> within a few business days.
+      </>,
+    ]
     return (
       <div
         role="status"
-        className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/40 bg-panel bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.16),transparent_60%)] p-7 text-center sm:p-10"
+        className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/40 bg-panel bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.14),transparent_60%)] p-6 sm:p-10"
       >
-        <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-ink" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 12 12" fill="none">
-            <path d="m2 6.2 2.6 2.6L10 3.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-        <p className="label mt-6 text-accent">{leadsRequest.done.kicker}</p>
-        <h3 ref={doneRef} tabIndex={-1} className="display mt-3 text-[clamp(2rem,4vw,2.8rem)] outline-none">
+        <div className="flex items-center gap-4">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent text-accent-ink" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 12 12" fill="none">
+              <path d="m2 6.2 2.6 2.6L10 3.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <p className="label text-accent">{leadsRequest.done.kicker}</p>
+        </div>
+        <h3 ref={doneRef} tabIndex={-1} className="display mt-6 text-[clamp(2rem,4vw,2.8rem)] outline-none">
           Thanks{sent.first ? `, ${sent.first}` : ''}.
         </h3>
-        <p className="mx-auto mt-4 max-w-md text-balance leading-relaxed text-muted">
-          {leadsRequest.done.copy}
-          <strong className="block font-medium text-fg wrap-anywhere">{sent.email}</strong>
-        </p>
-        <p className="mx-auto mt-5 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line px-4 py-2 text-sm text-muted">
-          <span className="text-dim">Your request</span>
-          <span className="min-w-0 text-fg wrap-anywhere">
-            {sent.niche} · {sent.area}
-          </span>
-        </p>
-        <p className="mx-auto mt-5 max-w-md text-sm text-dim">
-          {leadsRequest.done.next} Questions before then? Email{' '}
+        <p className="mt-3 leading-relaxed text-muted">{leadsRequest.done.lead}</p>
+        <ol className="mt-5 border-t border-line">
+          {steps.map((step, i) => (
+            <li key={i} className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-2 border-b border-line py-4 leading-relaxed text-muted">
+              <span className="pt-[0.2em] font-mono text-[0.75rem] tracking-[0.14em] text-accent" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className="min-w-0">{step}</span>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 text-sm leading-relaxed text-dim">
+          {leadsRequest.done.foot}{' '}
           <a href={`mailto:${leadsContact.email}`} className="link-u text-fg">
             {leadsContact.email}
           </a>
@@ -332,7 +347,15 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
             )}
           </span>
         </button>
-        <p className="text-center text-xs leading-relaxed text-dim">{leadsRequest.fine}</p>
+        <div className="grid justify-items-center gap-1.5 text-center">
+          <p className="inline-flex items-center gap-2 text-sm font-medium text-fg/90">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="shrink-0 text-accent">
+              <path d="m2 6.2 2.6 2.6L10 3.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            {leadsNoRisk}
+          </p>
+          <p className="text-xs leading-relaxed text-dim">{leadsRequest.fine}</p>
+        </div>
       </form>
       <p className="mt-6 text-center text-sm text-dim">
         Prefer email?{' '}

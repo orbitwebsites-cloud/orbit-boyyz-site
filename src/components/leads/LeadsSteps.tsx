@@ -10,9 +10,10 @@ import { EmailCheckLegend } from './LeadRecord'
 import { RequestCta } from './RequestCta'
 
 /**
- * [03 // HOW IT WORKS] Vertical timeline, the home page's process pattern
- * without the pin: an orbiting dot travels the track as you scroll (scrub)
- * and each step lights up when the dot reaches it. Reduced motion: all lit.
+ * [01 // VERIFICATION] How every email is verified, in three steps. Vertical
+ * timeline, the home page's process pattern without the pin: an orbiting dot
+ * travels the track as you scroll (scrub) and each step lights up when the dot
+ * reaches it. Reduced motion: all lit.
  */
 export function LeadsSteps() {
   const section = useRef<HTMLElement>(null)
@@ -57,11 +58,11 @@ export function LeadsSteps() {
   }, [])
 
   return (
-    <section ref={section} id="how" aria-labelledby="how-title" className="relative scroll-mt-20 py-24 md:py-32">
+    <section ref={section} id="how" aria-labelledby="how-title" className="relative scroll-mt-20 py-16 md:py-32">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:sticky lg:top-32 lg:col-span-5 lg:self-start">
-          <SectionLabel>{leadsSteps.label}</SectionLabel>
-          <h2 id="how-title" data-split className="display t-2 mt-6 max-w-[12ch]">
+          <SectionLabel decode={false}>{leadsSteps.label}</SectionLabel>
+          <h2 id="how-title" data-reveal className="display t-2 mt-6 max-w-[12ch]">
             {leadsSteps.title} <span className="serif-accent text-accent">{leadsSteps.titleAccent}</span>
           </h2>
           <p data-reveal className="t-lead mt-6 max-w-md text-muted">
@@ -69,9 +70,7 @@ export function LeadsSteps() {
           </p>
           {/* No data-reveal on the CTA: hidden until scrolled to, it couldn't take keyboard focus. */}
           <div className="mt-8">
-            <RequestCta block>
-              {leadsHero.cta}
-            </RequestCta>
+            <RequestCta block>{leadsHero.cta}</RequestCta>
           </div>
         </div>
 
@@ -86,7 +85,7 @@ export function LeadsSteps() {
           </div>
 
           <ol ref={list} className="relative space-y-4 pl-10 sm:pl-14">
-            {leadsSteps.steps.map((step) => (
+            {leadsSteps.steps.map((step, i) => (
               <li
                 key={step.number}
                 data-step
@@ -95,9 +94,9 @@ export function LeadsSteps() {
                 <span className="font-mono text-[0.78rem] tracking-[0.14em] text-dim transition-colors duration-[var(--d-sm)] group-data-[active=true]:text-accent">
                   STEP {step.number}
                 </span>
-                <h3 className="display mt-3 text-[clamp(1.5rem,2.4vw,2.1rem)]">{step.title}</h3>
-                <p className="mt-2 max-w-lg leading-relaxed text-muted">{step.copy}</p>
-                {step.number === '03' && (
+                <h3 className="display mt-3 max-w-[22ch] text-[clamp(1.4rem,2.2vw,1.95rem)] leading-[1.08]">{step.title}</h3>
+                <p className="mt-3 max-w-lg leading-relaxed text-muted">{step.copy}</p>
+                {i === leadsSteps.steps.length - 1 && (
                   <div className="mt-5">
                     <EmailCheckLegend />
                   </div>

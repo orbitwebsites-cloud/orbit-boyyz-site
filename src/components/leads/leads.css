@@ -1,6 +1,7 @@
-/* leads.orbitboyzz.com (src/app/leads/page.tsx). Built from the site's own
-   tokens and utilities (globals.css); only what they don't cover lives here,
-   scoped to ld- classes. Unlayered, so it beats globals.css's layers. */
+/* leads.orbitboyzz.com (src/app/leads/page.tsx) and orbitboyzz.com/qualify.
+   Built from the site's own tokens and utilities (globals.css); only what they
+   don't cover lives here, scoped to ld- classes. Unlayered, so it beats
+   globals.css's layers. */
 
 /* Hero headline: on phones the lines settle up unmasked, so the headline (the
    LCP element) paints on the first frame, like the home hero's mobile intro. */
@@ -29,6 +30,13 @@ html.lenis .ld-main .ld-anchor {
   scroll-margin-top: 0;
 }
 
+/* Once a request is sent, the thank-you card (role="status") lists what
+   happens next with the visitor's own niche, area and email, so the generic
+   "What happens after you request" list beside it goes. */
+.ld-request:has([role='status']) .ld-next {
+  display: none;
+}
+
 /* Line breaks (.ld-type: the leads page's <main> and footer, and /qualify's):
    copy never ends on a one-word line, headings split into even lines. In the
    base layer, so a utility on the element (whitespace-nowrap, truncate,
@@ -40,75 +48,5 @@ html.lenis .ld-main .ld-anchor {
   }
   .ld-type :where(h1, h2, h3, h4) {
     text-wrap: balance;
-  }
-}
-
-/* "Get your free 25." (LeadsRequest): SplitText clips each char in a
-   .ld-char-mask box only as tall as the 0.9 leading, which cut the y's tail
-   and shaved the right edges at -0.055em tracking. Pad the clip box down and
-   right, and cancel the padding with negative margins so layout is unchanged. */
-.ld-char-mask {
-  padding: 0 0.1em 0.22em 0;
-  margin: 0 -0.1em -0.22em 0;
-}
-
-/* Redacted values in the lead card: a slow light sweep. */
-.ld-redact {
-  display: inline-block;
-  flex: none;
-  height: 0.62rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(244, 239, 230, 0.12) 0%, rgba(244, 239, 230, 0.26) 50%, rgba(244, 239, 230, 0.12) 100%);
-  background-size: 220% 100%;
-  animation: ld-sweep 3.2s var(--ease-in-out) infinite;
-}
-html:not(.motion-go) .ld-redact {
-  animation-name: none;
-}
-@keyframes ld-sweep {
-  from {
-    background-position: 110% 0;
-  }
-  to {
-    background-position: -110% 0;
-  }
-}
-
-/* Offer ticker: two copies of the list drift left forever. */
-.ld-ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ld-ticker 56s linear infinite;
-}
-.ld-ticker-group {
-  display: flex;
-  flex: none;
-  align-items: center;
-}
-html:not(.motion-go) .ld-ticker-track {
-  animation-play-state: paused;
-}
-@keyframes ld-ticker {
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ld-ticker-track {
-    width: auto;
-    animation: none !important;
-  }
-  .ld-ticker-group {
-    flex: 1 1 auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 0.5rem;
-  }
-  .ld-ticker-copy {
-    display: none;
-  }
-  .ld-redact {
-    animation: none !important;
   }
 }

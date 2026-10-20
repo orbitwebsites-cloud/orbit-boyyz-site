@@ -15,7 +15,7 @@ import {
 import posthog from 'posthog-js'
 import { BOOK_CALENDLY_URL, BOOK_FORM_ENDPOINT, BOOK_STORAGE_KEY } from '@/content/bookConfig'
 import { INSIGHT_MS } from '@/content/qualifyConfig'
-import { site } from '@/content/site'
+import { site } from '@/content/siteInfo'
 import { emailCheckLabel } from '@/lib/emailCheck'
 import {
   ArrowLeft,
@@ -37,11 +37,15 @@ import {
   useScreenStage,
 } from '@/components/qualify/shared'
 import { CalendlyInline, buildCalendlyUrl } from '@/components/qualify/calendly'
+import { BookProof } from './BookProof'
 
 // /book: the short questionnaire every "Book a call" button on the site leads
 // to. Local businesses answer five one-at-a-time questions plus their contact
 // details; the answers go to the inbox (FormSubmit) and only then does the
 // Calendly scheduler load. Same look, transitions and email check as /qualify.
+// The intro screen also carries the proof (./BookProof.tsx: work, speed,
+// process, the call, FAQ) below the Start button; once the questions start,
+// only the questions show.
 
 // ---------------------------------------------------------------------------
 // Questions
@@ -458,6 +462,11 @@ export default function Book() {
   const { step } = state
   const inFlow = step >= 0 && step <= CONTACT_STEP
   const progress = step === RESULT_STEP ? 100 : inFlow ? Math.round(((step + 1) / (CONTACT_STEP + 2)) * 100) : 0
+  // The intro's wide, top-aligned stage follows the screen on stage (so an
+  // exiting intro keeps its layout); the proof shows only once the intro is
+  // both the step and the screen, and goes the moment the questions start.
+  const introOnStage = stageView.state.step === INTRO_STEP
+  const showProof = step === INTRO_STEP && introOnStage
 
   return (
     // data-lenis-prevent: the site's Lenis smooth scroll leaves this page (and
@@ -493,11 +502,13 @@ export default function Book() {
         )}
       </header>
 
-      <div className={`qf-stage${step === RESULT_STEP ? ' qf-stage-wide' : ''}`}>
+      <div className={`qf-stage${step === RESULT_STEP ? ' qf-stage-wide' : ''}${introOnStage ? ' qf-stage-intro' : ''}`}>
         <StageScreen stage={stage} screenKey={`step-${stageView.state.step}`}>
           {renderScreen(stageView)}
         </StageScreen>
       </div>
+
+      {showProof && <BookProof questionCount={QUESTIONS.length} onStart={() => goTo(0, 1)} />}
     </div>
   )
 }
@@ -540,6 +551,11 @@ function IntroScreen({ resuming, onStart }: { resuming: boolean; onStart: () => 
           <ArrowRight size={18} />
         </button>
         <span className="qf-hint">press <kbd>Enter ↵</kbd></span>
+        {/* The proof (BookProof, id="work") is right below this screen. */}
+        <a href="#work" className="bk-skip">
+          See the work first
+          <ArrowRight size={15} />
+        </a>
       </div>
     </div>
   )

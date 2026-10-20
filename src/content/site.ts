@@ -1,34 +1,7 @@
 // Shared site content — single source of truth for both builds.
 // Facts only. Do not add testimonials, results or clients that don't exist.
 
-export const site = {
-  name: 'Orbit Websites',
-  handle: 'OrbitBoyzz',
-  tagline: 'Designed personally. Built quickly. Owned by you.',
-  url: 'https://orbitboyzz.com',
-  phone: '609-662-8052',
-  phoneDisplay: '609 662 8052',
-  phoneHref: 'tel:+16096628052',
-  email: 'alex@orbitboyzz.com',
-  // Every "Book a call" button goes to the /book questionnaire first; it shows
-  // the scheduler (BOOK_CALENDLY_URL in bookConfig.ts) once the answers are in.
-  booking: '/book',
-  location: 'Plainsboro, NJ',
-  serviceArea: 'Central New Jersey',
-  towns: [
-    'Plainsboro',
-    'Princeton',
-    'West Windsor',
-    'Ewing',
-    'Hamilton',
-    'Lawrence',
-    'Hopewell',
-    'Trenton',
-    'Robbinsville',
-    'East Windsor',
-    'Bordentown',
-  ],
-} as const
+export { site } from './siteInfo'
 
 export const nav = [
   { label: 'Services', href: '/services' },
@@ -128,6 +101,8 @@ export const projects = [
   {
     slug: 'weichert-princeton-pages',
     name: 'Weichert Princeton Pages',
+    // Concept: designed for a local office, not a paying client. Label it everywhere it shows.
+    kind: 'Concept',
     category: 'Real estate',
     headline: 'Find your next home.',
     description: 'A focused local property experience built to make listings and contact options easy to find.',
@@ -139,6 +114,7 @@ export const projects = [
   {
     slug: 'real-estate-website',
     name: 'Real Estate Website',
+    kind: 'Concept',
     category: 'Property services',
     headline: 'Move with confidence.',
     description: 'A modern service website with clear navigation, trust signals and direct lead paths.',
@@ -149,6 +125,8 @@ export const projects = [
   {
     slug: 'grand-treats-by-tony',
     name: 'Grand Treats by Tony',
+    // A real client.
+    kind: 'Client',
     category: 'Specialty food',
     headline: 'Made for sweet moments.',
     description: 'A warm, product-led website that helps customers understand the brand and get in touch.',

@@ -8,9 +8,10 @@ import { cn } from '@/lib/cn'
 const mobileShot = (src: string) => src.replace('.png', '-mobile.png')
 
 /**
- * [03 // SELECTED WORK] Three real client builds. Media wipes open with a
- * clip-path as it enters (data-clip); on hover the desktop shot eases in and
- * the phone view swings up; the cursor becomes "View case".
+ * [03 // SELECTED WORK] Three live builds: one client site, two concepts,
+ * each labeled with its kind (projects[].kind in content/site.ts). Media wipes
+ * open with a clip-path as it enters (data-clip); on hover the desktop shot
+ * eases in and the phone view swings up; the cursor becomes "View case".
  */
 export function Work() {
   return (
@@ -19,12 +20,12 @@ export function Work() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionLabel>[03 // SELECTED WORK]</SectionLabel>
-            <h2 id="work-title" data-split className="display t-1 mt-6 max-w-[14ch]">
-              Real sites for real local businesses.
+            <h2 id="work-title" data-split className="display t-1 mt-6 max-w-[14ch] text-balance">
+              Real sites, live right now.
             </h2>
           </div>
           <div data-reveal className="max-w-sm">
-            <p className="text-muted">No stock mockups, no invented case studies. These are live builds — click through and use them on your phone.</p>
+            <p className="text-muted">No stock mockups, no invented case studies. One client site and two concepts, all live: click through and use them on your phone.</p>
             <div className="mt-6">
               <Button href="/projects" variant="ghost" size="sm">
                 All projects
@@ -64,7 +65,12 @@ export function Work() {
               </div>
 
               <div data-reveal className={cn('md:col-span-4', i % 2 === 1 && 'md:order-1')}>
-                <p className="label text-accent">{p.category}</p>
+                <p className="label flex flex-wrap items-center gap-x-3 gap-y-2 text-accent">
+                  {p.category}
+                  <span className={cn('rounded-full border px-2.5 py-1', p.kind === 'Client' ? 'border-accent/60 text-accent' : 'border-line-strong text-muted')}>
+                    {p.kind}
+                  </span>
+                </p>
                 <h3 className="display t-3 mt-4">{p.name}</h3>
                 <p className="serif-accent mt-3 text-[1.6rem] leading-tight text-fg/90">{p.headline}</p>
                 <p className="mt-4 max-w-sm text-muted">{p.description}</p>

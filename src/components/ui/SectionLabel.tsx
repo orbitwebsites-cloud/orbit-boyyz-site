@@ -1,7 +1,11 @@
 import { cn } from '@/lib/cn'
 
-/** Renders "[01 // THE PROBLEM]" with gold brackets and slashes. */
-export function SectionLabel({ children, className }: { children: string; className?: string }) {
+/**
+ * Renders "[01 // THE PROBLEM]" with gold brackets and slashes.
+ * `decode={false}` keeps the text still: the funnel pages (leads.orbitboyzz.com,
+ * /qualify) skip RouteMotion's terminal-style decode.
+ */
+export function SectionLabel({ children, className, decode = true }: { children: string; className?: string; decode?: boolean }) {
   const parts = children.split(/(\[|\]|\/\/)/g).filter(Boolean)
   return (
     <p className={cn('label flex flex-wrap items-center gap-[0.35em]', className)}>
@@ -12,7 +16,7 @@ export function SectionLabel({ children, className }: { children: string; classN
           </span>
         ) : (
           // data-scramble: RouteMotion "decodes" this text when it scrolls in.
-          <span key={i} data-scramble>
+          <span key={i} data-scramble={decode || undefined}>
             {p.trim()}
           </span>
         ),

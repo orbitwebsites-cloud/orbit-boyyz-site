@@ -64,7 +64,7 @@ export function FinalCta() {
           Let&rsquo;s launch.
         </h2>
         <p className="t-lead mt-8 max-w-xl text-muted">
-          A free 30-minute call. Talk directly with the people building your site — leave with a clear scope, a timeline and a price.
+          A free 30-minute call, weekdays 5 PM ET or later. Talk directly with the people building your site, and leave with a clear scope, a timeline and a quote.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Button href={site.booking} magnetic>

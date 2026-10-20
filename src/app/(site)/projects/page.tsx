@@ -30,7 +30,8 @@ export default function ProjectsPage() {
           <article key={p.slug} id={p.slug} aria-labelledby={`${p.slug}-title`} className="scroll-mt-28">
             <div className="flex flex-col gap-4 border-t border-line pt-6 md:flex-row md:items-baseline md:justify-between">
               <p className="label">
-                <span className="text-accent">{String(i + 1).padStart(2, '0')}</span> / {p.category}
+                <span className="text-accent">{String(i + 1).padStart(2, '0')}</span> / {p.category} /{' '}
+                <span className={p.kind === 'Client' ? 'text-accent' : 'text-fg'}>{p.kind}</span>
               </p>
               <a href={p.url} target="_blank" rel="noopener noreferrer" className="label link-u w-fit text-fg hover:text-accent">
                 {p.url.replace(/^https?:\/\//, '').replace(/\/$/, '')} ↗
@@ -48,8 +49,8 @@ export default function ProjectsPage() {
                 </p>
                 <dl data-reveal className="mt-8 grid grid-cols-2 gap-4 border-t border-line pt-6 text-sm">
                   <div>
-                    <dt className="label">Category</dt>
-                    <dd className="mt-2">{p.category}</dd>
+                    <dt className="label">Type</dt>
+                    <dd className="mt-2">{p.kind === 'Client' ? 'Client site' : 'Concept site'}</dd>
                   </div>
                   <div>
                     <dt className="label">Status</dt>

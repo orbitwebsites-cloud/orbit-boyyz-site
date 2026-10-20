@@ -1,0 +1,397 @@
+/* /book proof under the intro screen (./BookProof.tsx) and the intro's wider
+   stage. Imported by app/book/page.tsx after qualify.css, and built on its
+   qf- tokens (set on .qf-shell, light and dark), so it follows the same cream /
+   ink / gold look. Next keeps a route's stylesheet after client navigation,
+   so every selector is scoped: bk- classes, or qf- classes /book alone uses. */
+
+/* Intro: top-aligned instead of centred in a full screen, and as wide as the
+   proof below it, so the left edges line up and the work starts just under
+   the fold (in view on most laptops). The copy itself keeps its 46rem column. */
+.qf-stage.qf-stage-intro {
+  width: min(100% - 2rem, 72rem);
+  min-height: 0;
+  align-items: start;
+  padding: clamp(2.25rem, 8vh, 5.5rem) 0 clamp(2.5rem, 6vh, 4rem);
+}
+
+.qf-stage-intro .qf-intro { max-width: 46rem; }
+
+/* No one-word last lines in the intro and end-screen copy ("…5 PM ET or / later."). */
+.qf-shell :is(.qf-lede, .qf-result-copy) { text-wrap: pretty; }
+
+/* "See the work first": quiet text link next to Start. */
+.bk-skip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 2.75rem;
+  color: var(--qf-muted);
+  font-size: .92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--qf-accent-line);
+  text-underline-offset: 4px;
+  transition: color 160ms ease;
+}
+
+.bk-skip:hover { color: var(--qf-ink); }
+
+.bk-skip svg { transform: rotate(90deg); }
+
+/* Sections ----------------------------------------------------------- */
+
+.bk-proof {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+  padding-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.bk-section {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  border-top: 1px solid var(--qf-line);
+}
+
+.bk-head { max-width: 40rem; min-width: 0; }
+
+.bk-title {
+  margin: .9rem 0 0;
+  font-family: var(--qf-font-display);
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.bk-copy {
+  max-width: 38rem;
+  margin: .9rem 0 0;
+  color: var(--qf-muted);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* Work --------------------------------------------------------------- */
+
+.bk-work {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bk-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--qf-line);
+  border-radius: 1rem;
+  background: var(--qf-card);
+  box-shadow: 0 1px 0 rgb(13 11 8 / 3%);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+@media (hover: hover) {
+  .bk-card:hover {
+    border-color: var(--qf-accent-line);
+    box-shadow: 0 1rem 2.5rem rgb(13 11 8 / 7%);
+    transform: translateY(-2px);
+  }
+}
+
+.bk-shot-bar {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  height: 2rem;
+  padding: 0 .8rem;
+  border-bottom: 1px solid var(--qf-line);
+  background: var(--qf-paper);
+}
+
+.bk-shot-bar span {
+  flex: none;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--qf-line);
+}
+
+.bk-shot-bar em {
+  min-width: 0;
+  margin-left: .45rem;
+  overflow: hidden;
+  color: var(--qf-muted);
+  font: 500 .68rem var(--qf-font-mono);
+  font-style: normal;
+  letter-spacing: .02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 16:9 crop of the 16:10 shots, from the top: the hero, not the page's lower edge. */
+.bk-shot-img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--qf-line);
+}
+
+.bk-shot-img img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.bk-card-body {
+  display: grid;
+  align-content: start;
+  gap: .5rem;
+  padding: 1.1rem 1.2rem 1.35rem;
+}
+
+.bk-tag {
+  justify-self: start;
+  margin: 0;
+  padding: .28rem .6rem;
+  border: 1px solid var(--qf-line);
+  border-radius: 999px;
+  color: var(--qf-muted);
+  font: 700 .64rem var(--qf-font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.bk-tag[data-kind='client'] {
+  border-color: var(--qf-primary);
+  background: var(--qf-primary);
+  color: var(--qf-on-primary);
+}
+
+.bk-card h3 {
+  margin: .25rem 0 0;
+  font: 750 1.2rem/1.2 var(--qf-font-display);
+  letter-spacing: -.02em;
+}
+
+.bk-card-body > p:last-child {
+  margin: 0;
+  color: var(--qf-muted);
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+/* Speed -------------------------------------------------------------- */
+
+.bk-speed {
+  display: grid;
+  grid-template-areas: 'head' 'figure' 'body';
+  gap: 1.5rem 3.5rem;
+  align-items: center;
+}
+
+.bk-speed-head { grid-area: head; min-width: 0; }
+
+.bk-figure {
+  grid-area: figure;
+  margin: 0;
+  color: var(--qf-ink);
+  font: 800 clamp(5.5rem, 22vw, 10rem)/.8 var(--qf-font-display);
+  letter-spacing: -.06em;
+}
+
+.bk-figure span { color: var(--qf-accent); }
+
+.bk-speed-body { grid-area: body; min-width: 0; }
+
+.bk-speed-body .bk-copy { margin-top: 0; }
+
+.bk-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bk-cats li {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 2.25rem;
+  padding: 0 .85rem;
+  border: 1px solid var(--qf-accent-line);
+  border-radius: 999px;
+  background: var(--qf-accent-soft);
+  color: var(--qf-ink);
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.bk-cats svg { color: var(--qf-accent); }
+
+.bk-note {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: var(--qf-muted);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+/* Process ------------------------------------------------------------ */
+
+.bk-steps {
+  display: grid;
+  gap: 1rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bk-step {
+  min-width: 0;
+  padding: 1.4rem 1.35rem 1.55rem;
+  border: 1px solid var(--qf-line);
+  border-radius: 1rem;
+  background: var(--qf-card);
+}
+
+.bk-step-num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid var(--qf-accent-line);
+  border-radius: .5rem;
+  background: var(--qf-accent-soft);
+  color: var(--qf-accent);
+  font: 700 .78rem var(--qf-font-mono);
+}
+
+.bk-step h3 {
+  margin: 1rem 0 0;
+  font: 750 1.4rem/1.15 var(--qf-font-display);
+  letter-spacing: -.025em;
+}
+
+.bk-step p {
+  margin: .5rem 0 0;
+  color: var(--qf-muted);
+  line-height: 1.55;
+}
+
+/* Two-column sections: heading left, list right (call, FAQ) ----------- */
+
+.bk-split {
+  display: grid;
+  gap: 1.75rem 4rem;
+  align-items: start;
+}
+
+.bk-list {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--qf-line);
+}
+
+.bk-list li {
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr);
+  gap: .4rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--qf-line);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.bk-list svg { margin-top: .2rem; color: var(--qf-accent); }
+
+/* The next section's top border closes the list; a second line 3-5rem above it looked like a slip. */
+.bk-list li:last-child,
+.bk-faq > div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.bk-faq {
+  min-width: 0;
+  margin: 0;
+  border-top: 1px solid var(--qf-line);
+}
+
+.bk-faq > div {
+  padding: 1.15rem 0 1.25rem;
+  border-bottom: 1px solid var(--qf-line);
+}
+
+.bk-faq dt {
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.bk-faq dd {
+  max-width: 40rem;
+  margin: .45rem 0 0;
+  color: var(--qf-muted);
+  line-height: 1.55;
+}
+
+.bk-faq a {
+  color: var(--qf-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Final CTA ---------------------------------------------------------- */
+
+.bk-final {
+  display: grid;
+  justify-items: start;
+  margin-top: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.75rem, 5vw, 3.25rem);
+  border: 1px solid var(--qf-accent-line);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 100% 0%, var(--qf-glow), transparent 24rem),
+    var(--qf-card);
+}
+
+.bk-final .bk-title { margin-top: 0; }
+.bk-final .bk-copy { max-width: 46rem; }
+.bk-final .qf-primary { margin-top: 1.6rem; }
+
+/* Wider screens ------------------------------------------------------ */
+
+@media (min-width: 640px) {
+  .bk-work { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  .bk-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .bk-speed {
+    grid-template-areas: 'figure head' 'figure body';
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: .9rem;
+    align-items: end;
+  }
+  .bk-speed .bk-figure { align-self: center; }
+  .bk-speed-body { align-self: start; }
+}
+
+@media (min-width: 960px) {
+  .bk-split { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+}
+
+@media (min-width: 1024px) {
+  .bk-work { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Reduced motion: no hover lift (globals.css already shortens transitions). */
+@media (prefers-reduced-motion: reduce) {
+  .bk-card:hover { transform: none; }
+}
