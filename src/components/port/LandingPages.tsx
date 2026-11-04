@@ -53,13 +53,6 @@ function PlaceNames({ places }: { places: NonNullable<TownPage['extra']>['places
       <p data-reveal className="t-lead mt-6 max-w-[68ch] text-muted">
         {places.body}
       </p>
-      <ul data-reveal className="mt-8 flex flex-wrap gap-2">
-        {places.names.map((name) => (
-          <li key={name} className="rounded-full border border-line bg-panel/50 px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-fg/90">
-            {name}
-          </li>
-        ))}
-      </ul>
     </Section>
   )
 }
@@ -80,9 +73,10 @@ function WorkStrip() {
           {bookWork.copy} Each one is labeled.
         </p>
       </div>
+      {/* No data-reveal on the cards: a hidden reveal block would keep its links out of the tab order. */}
       <ul className="mt-10 grid gap-4 md:grid-cols-3">
         {bookWork.items.map((item) => (
-          <li key={item.name} data-reveal>
+          <li key={item.name}>
             <a
               href={`https://${item.domain}`}
               target="_blank"
@@ -117,7 +111,7 @@ function WorkStrip() {
         ))}
       </ul>
       <p className="mt-8 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
-        <ArrowLink href="/projects">All projects →</ArrowLink>
+        <ArrowLink href="/projects">More work →</ArrowLink>
       </p>
     </Section>
   )

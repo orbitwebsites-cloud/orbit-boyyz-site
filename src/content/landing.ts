@@ -23,8 +23,8 @@ export type TownPage = {
    * town without it renders the shared template exactly as before.
    */
   extra?: {
-    /** Place names and ZIP codes customers use. Facts only: check each against the town's Wikipedia page or its own site. */
-    places: { heading: string; body: string; names: string[] }
+    /** Place names and ZIP codes customers use, as one paragraph (no bare list of names). Facts only: check each against the town's Wikipedia page or its own site. */
+    places: { heading: string; body: string }
     /** Fictional sample demos: `sample-` slugs only (content/demos.ts). Any other slug fails the build. */
     demos: { heading: string; intro: string; slugs: string[] }
     /** Heading and intro over the five steps in site.ts `process`. */
@@ -127,15 +127,19 @@ export const townPages: Record<string, TownPage> = {
     "nearby": "Princeton, Plainsboro, Lawrence Township, Hamilton, and Cranbury",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
     "h1": ["Web design for ", "West Windsor", " and Princeton Junction home-service businesses."],
-    "intro": "Orbit Websites builds websites for home-service companies in West Windsor Township, from Princeton Junction and Dutch Neck to Grover's Mill and the parts of town with Princeton mailing addresses. The studio is next door in Plainsboro. Every site is hand-coded, fast on a phone, and set up so a customer can send the job details and photos at 9 pm instead of waiting to call during work hours.",
+    "intro": "Orbit Websites builds websites for home-service companies in West Windsor Township and Princeton Junction, from a studio next door in Plainsboro. New sites are hand-coded, fast on a phone, and set up so a customer can send the job details and photos at 9 pm instead of waiting to call during work hours.",
     "local": [
       [
         "Requests after the commute",
-        "Plenty of West Windsor residents commute, many by train from Princeton Junction, so requests come in at night and on weekends. A quote form that collects the job, a photo and a callback window catches them while they are still on your site, instead of a voicemail you return the next afternoon."
+        "Commuters, including the ones catching trains at Princeton Junction, often can't call during work hours. A quote form that collects the job, a photo and a callback window lets them reach you at 9 pm, instead of leaving a voicemail you return the next afternoon."
       ],
       [
         "Built for careful buyers",
-        "West Windsor is often ranked among New Jersey's highest-income towns, and homeowners here tend to compare a few companies before they call. Real job photos, your license or registration numbers and a plain list of services give them something concrete to compare."
+        "West Windsor is often ranked among New Jersey's highest-income towns. Homeowners who compare a few companies before calling look for real job photos, your license or registration numbers and a plain list of services, not slogans."
+      ],
+      [
+        "Plainsboro next door",
+        "West Windsor borders Plainsboro, and the two towns share the West Windsor-Plainsboro Regional School District. If you work in both, name both in your service area so customers in either town can see you come to them."
       ]
     ],
     "faqs": [
@@ -145,7 +149,7 @@ export const townPages: Record<string, TownPage> = {
       ],
       [
         "Do West Windsor customers really book online?",
-        "Many do, especially commuters who can't call during work hours. A form that lets someone describe the job, attach a photo and pick a callback window catches those requests, and your phone number stays one tap away for everyone else."
+        "Some will, especially commuters who can't call during work hours. A form that lets someone describe the job, attach a photo and pick a callback window catches those requests, and your phone number stays one tap away for everyone else."
       ],
       [
         "Can we meet in person?",
@@ -153,18 +157,17 @@ export const townPages: Record<string, TownPage> = {
       ],
       [
         "Do you only build websites for contractors?",
-        "Our focus is established home-service companies: HVAC, plumbing, electrical, roofing, landscaping and remodeling. Our work so far also includes a restaurant client, plus concept sites for a landscaper and a real estate office, each labeled Client or Concept."
+        "Our focus is established home-service companies: HVAC, plumbing, electrical, roofing, landscaping and remodeling. Our client work so far is a restaurant site, and our concept sites include a landscaper and a real estate office, each labeled Client or Concept."
       ]
     ],
     "extra": {
       "places": {
         "heading": "West Windsor, Princeton Junction or Princeton? Name all three.",
-        "body": "West Windsor has two ZIP codes: 08550 for Princeton Junction, and 08540 for the parts of the township with Princeton mailing addresses, which come from a Princeton post office inside West Windsor. Customers also use place names like Dutch Neck, Grover's Mill, Penns Neck and Edinburg. Name the township and the places you actually work on your site and in your Google Business Profile, so people searching any of those names can tell you work there.",
-        "names": ["West Windsor Township", "Princeton Junction 08550", "Princeton 08540", "Dutch Neck", "Grover's Mill", "Penns Neck", "Edinburg", "Mercer County"]
+        "body": "West Windsor has two ZIP codes: 08550 for Princeton Junction, and 08540 for the parts of the township with Princeton mailing addresses, which come from a Princeton post office inside West Windsor. Customers also use place names like Dutch Neck, Grover's Mill, Penns Neck and Edinburg. Name the township and the places you actually work on your site and in your Google Business Profile, so people searching any of those names can tell you work there."
       },
       "demos": {
         "heading": "See a sample West Windsor site.",
-        "intro": "Sample Electric LLC is a made-up West Windsor electrician we built to show the layout: call buttons up top, services, FAQs and a service area. Your site uses your real services, photos and numbers.",
+        "intro": "Sample Electric LLC is a made-up West Windsor electrician we built to show the layout: call buttons up top, services, FAQs and a service area. Your build is designed around your real services, photos and numbers.",
         "slugs": ["sample-electric-west-windsor"]
       },
       "process": {

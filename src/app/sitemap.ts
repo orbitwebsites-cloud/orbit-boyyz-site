@@ -27,12 +27,17 @@ const PAGES_UPDATED = '2026-10-16'
 // Last change to the leads.orbitboyzz.com page (copy, schema, FAQ).
 const LEADS_UPDATED = '2026-10-19'
 
+// Pages changed since the SEO pass, so IndexNow's --since picks up only them.
+const ROUTE_UPDATED: Record<string, string> = {
+  '/web-design-west-windsor-nj': '2026-11-03',
+}
+
 function lastMod(route: string) {
   if (route.startsWith('/blog/')) {
     const post = blogPosts.find((item) => item.slug === route.replace('/blog/', ''))
     return post ? isoDate(post.updated) : PAGES_UPDATED
   }
-  return PAGES_UPDATED
+  return ROUTE_UPDATED[route] ?? PAGES_UPDATED
 }
 
 function priority(route: string) {
