@@ -8,12 +8,16 @@ import {
   type IndustryRewrite,
   type TownPage,
 } from '@/content/landing'
+import Image from 'next/image'
+import { bookWork } from '@/content/bookProof'
+import { getDemo, isSampleDemo } from '@/content/demos'
 import { site } from '@/content/site'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { ArrowLink, DirectAnswer, LandingFaq, LocalPagesGrid, NumberedCards, Section, SectionTitle } from './Blocks'
+import { cn } from '@/lib/cn'
+import { ArrowLink, DirectAnswer, LandingFaq, LocalPagesGrid, NumberedCards, ProcessSteps, SampleDemos, Section, SectionTitle } from './Blocks'
 import { TradeLinksGrid } from './TradeLinks'
 
 export function HeroActions({ quoteHref }: { quoteHref: string }) {
@@ -40,6 +44,85 @@ const COST_POST_BY_COUNTY: Record<string, { href: string; anchor: string }> = {
 }
 const COST_POST_FALLBACK = COST_POST_BY_COUNTY['Burlington County']
 
+/** The place names and ZIP codes a town's customers use (TownPage.extra.places). */
+function PlaceNames({ places }: { places: NonNullable<TownPage['extra']>['places'] }) {
+  return (
+    <Section label="Place names">
+      <SectionLabel>[SERVICE AREA // PLACE NAMES]</SectionLabel>
+      <SectionTitle className="mt-6">{places.heading}</SectionTitle>
+      <p data-reveal className="t-lead mt-6 max-w-[68ch] text-muted">
+        {places.body}
+      </p>
+      <ul data-reveal className="mt-8 flex flex-wrap gap-2">
+        {places.names.map((name) => (
+          <li key={name} className="rounded-full border border-line bg-panel/50 px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-fg/90">
+            {name}
+          </li>
+        ))}
+      </ul>
+    </Section>
+  )
+}
+
+/**
+ * Compact work strip for town pages: the /book proof items (content/bookProof.ts), each
+ * labeled Client or Concept, linking to the live sites. The home page keeps the full Work section.
+ */
+function WorkStrip() {
+  return (
+    <Section label="Work">
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <SectionLabel>[WORK // CLIENT AND CONCEPT SITES]</SectionLabel>
+          <SectionTitle className="mt-6">{bookWork.title}</SectionTitle>
+        </div>
+        <p data-reveal className="max-w-sm text-muted">
+          {bookWork.copy} Each one is labeled.
+        </p>
+      </div>
+      <ul className="mt-10 grid gap-4 md:grid-cols-3">
+        {bookWork.items.map((item) => (
+          <li key={item.name} data-reveal>
+            <a
+              href={`https://${item.domain}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-line bg-panel/60 transition-colors duration-[var(--d-sm)] hover:border-accent/50"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-panel">
+                <Image
+                  src={item.image}
+                  alt={`${item.name} homepage${item.kind === 'Concept' ? ' (concept)' : ''}`}
+                  fill
+                  sizes="(min-width: 768px) 30vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-5 md:p-6">
+                <p className="label flex items-center gap-3">
+                  <span className={cn('rounded-full border px-2.5 py-1', item.kind === 'Client' ? 'border-accent/60 text-accent' : 'border-line-strong text-muted')}>
+                    {item.kind}
+                  </span>
+                  <span className="text-dim">{item.year}</span>
+                </p>
+                <h3 className="display mt-4 text-xl transition-colors group-hover:text-accent-hi">{item.name}</h3>
+                <p className="mt-2 text-[0.92rem] leading-relaxed text-muted">{item.copy}</p>
+                <span className="mt-auto pt-5 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-accent">
+                  {item.domain} <span aria-hidden="true">↗</span>
+                  <span className="sr-only">(opens in a new tab)</span>
+                </span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-8 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+        <ArrowLink href="/projects">All projects →</ArrowLink>
+      </p>
+    </Section>
+  )
+}
+
 export function TownLanding({ page }: { page: TownPage }) {
   const [before, accent, after] = page.h1 ?? ['Web design for ', page.town, ' home-service businesses.']
   const generic: Array<[string, string]> = [
@@ -49,6 +132,12 @@ export function TownLanding({ page }: { page: TownPage }) {
   // At least four cards: towns with 4 local cards show no shared card, towns with 3 show one.
   const cards = [...page.local, ...generic].slice(0, Math.max(4, page.local.length))
   const costPost = COST_POST_BY_COUNTY[page.county] ?? COST_POST_FALLBACK
+  // Only fictional samples may be linked publicly; anything else fails the build.
+  const demos = (page.extra?.demos.slugs ?? []).map((slug) => {
+    const demo = getDemo(slug)
+    if (!demo || !isSampleDemo(slug)) throw new Error(`${page.path}: "${slug}" is not a sample demo in content/demos.ts`)
+    return demo
+  })
 
   return (
     <>
@@ -73,6 +162,14 @@ export function TownLanding({ page }: { page: TownPage }) {
         <NumberedCards items={cards} />
       </Section>
 
+      {page.extra && (
+        <>
+          <PlaceNames places={page.extra.places} />
+          <SampleDemos heading={page.extra.demos.heading} intro={page.extra.demos.intro} demos={demos} />
+          <WorkStrip />
+        </>
+      )}
+
       <DirectAnswer
         question={`How much does web design cost in ${page.town}?`}
         links={
@@ -86,6 +183,8 @@ export function TownLanding({ page }: { page: TownPage }) {
       >
         Launch builds for {page.town} businesses are quoted on a free call and premium builds start at $3,500, the same tiers Orbit Websites uses in every town it serves.
       </DirectAnswer>
+
+      {page.extra && <ProcessSteps heading={page.extra.process.heading} intro={page.extra.process.intro} />}
 
       <LandingFaq label="[LOCAL FAQ]" heading={`Questions ${page.town} businesses ask before hiring.`} items={townLandingFaqs(page)} />
 

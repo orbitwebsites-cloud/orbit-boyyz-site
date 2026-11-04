@@ -17,6 +17,19 @@ export type TownPage = {
   local: Array<[title: string, copy: string]>
   /** Town-specific FAQs (2–4), shown on the page and marked up as FAQPage. */
   faqs: Array<[question: string, answer: string]>
+  /**
+   * Optional deeper page (rank plan 2026-11-03): the place names customers use, a sample
+   * demo, the labeled work section and the shared process. Added one town at a time; a
+   * town without it renders the shared template exactly as before.
+   */
+  extra?: {
+    /** Place names and ZIP codes customers use. Facts only: check each against the town's Wikipedia page or its own site. */
+    places: { heading: string; body: string; names: string[] }
+    /** Fictional sample demos: `sample-` slugs only (content/demos.ts). Any other slug fails the build. */
+    demos: { heading: string; intro: string; slugs: string[] }
+    /** Heading and intro over the five steps in site.ts `process`. */
+    process: { heading: string; intro: string }
+  }
 }
 export type IndustryPage = {
   path: string
@@ -113,31 +126,52 @@ export const townPages: Record<string, TownPage> = {
     "county": "Mercer County",
     "nearby": "Princeton, Plainsboro, Lawrence Township, Hamilton, and Cranbury",
     "audience": "HVAC, plumbing, electrical, roofing, landscaping, and remodeling companies",
-    "intro": "West Windsor homeowners compare contractors carefully, and many commute through Princeton Junction, so they search and book from a phone in the evening. Orbit Websites, a web design studio in neighboring Plainsboro, builds websites for West Windsor home-service companies that need to look established and take requests after hours.",
+    "h1": ["Web design for ", "West Windsor", " and Princeton Junction home-service businesses."],
+    "intro": "Orbit Websites builds websites for home-service companies in West Windsor Township, from Princeton Junction and Dutch Neck to Grover's Mill and the parts of town with Princeton mailing addresses. The studio is next door in Plainsboro. Every site is hand-coded, fast on a phone, and set up so a customer can send the job details and photos at 9 pm instead of waiting to call during work hours.",
     "local": [
       [
-        "After-hours requests",
-        "With so many commuters, evening and weekend requests are common in West Windsor. A quote form that collects job details at 9 pm beats a voicemail you return the next afternoon."
+        "Requests after the commute",
+        "Plenty of West Windsor residents commute, many by train from Princeton Junction, so requests come in at night and on weekends. A quote form that collects the job, a photo and a callback window catches them while they are still on your site, instead of a voicemail you return the next afternoon."
       ],
       [
-        "The names locals use",
-        "Customers search for Princeton Junction, Dutch Neck, and Grover's Mill as well as West Windsor. Your service-area copy should use the names people actually say."
-      ],
-      [
-        "Princeton Junction station",
-        "The Princeton Junction stop on NJ Transit’s Northeast Corridor line is in West Windsor, and many customers book repairs around a commute. Let people pick a callback window instead of asking them to call during work hours."
+        "Built for careful buyers",
+        "West Windsor is often ranked among New Jersey's highest-income towns, and homeowners here tend to compare a few companies before they call. Real job photos, your license or registration numbers and a plain list of services give them something concrete to compare."
       ]
     ],
     "faqs": [
       [
         "Should I target Princeton Junction or West Windsor?",
-        "Both, on the same page. Princeton Junction is part of West Windsor Township and people search for either name. One strong page that mentions both beats two thin ones."
+        "Both, on the same page. Princeton Junction is part of West Windsor Township, and parts of the township have Princeton mailing addresses too. One strong page that names all three beats three thin ones."
       ],
       [
         "Do West Windsor customers really book online?",
-        "Many prefer it. A form that lets someone describe the job, attach a photo, and pick a callback window catches the people who won't phone during work hours."
+        "Many do, especially commuters who can't call during work hours. A form that lets someone describe the job, attach a photo and pick a callback window catches those requests, and your phone number stays one tap away for everyone else."
+      ],
+      [
+        "Can we meet in person?",
+        "Often, yes. The studio is in neighboring Plainsboro, so we can meet in person nearby when that helps. You always talk directly with the people building your site."
+      ],
+      [
+        "Do you only build websites for contractors?",
+        "Our focus is established home-service companies: HVAC, plumbing, electrical, roofing, landscaping and remodeling. Our work so far also includes a restaurant client, plus concept sites for a landscaper and a real estate office, each labeled Client or Concept."
       ]
-    ]
+    ],
+    "extra": {
+      "places": {
+        "heading": "West Windsor, Princeton Junction or Princeton? Name all three.",
+        "body": "West Windsor has two ZIP codes: 08550 for Princeton Junction, and 08540 for the parts of the township with Princeton mailing addresses, which come from a Princeton post office inside West Windsor. Customers also use place names like Dutch Neck, Grover's Mill, Penns Neck and Edinburg. Name the township and the places you actually work on your site and in your Google Business Profile, so people searching any of those names can tell you work there.",
+        "names": ["West Windsor Township", "Princeton Junction 08550", "Princeton 08540", "Dutch Neck", "Grover's Mill", "Penns Neck", "Edinburg", "Mercer County"]
+      },
+      "demos": {
+        "heading": "See a sample West Windsor site.",
+        "intro": "Sample Electric LLC is a made-up West Windsor electrician we built to show the layout: call buttons up top, services, FAQs and a service area. Your site uses your real services, photos and numbers.",
+        "slugs": ["sample-electric-west-windsor"]
+      },
+      "process": {
+        "heading": "From the first call to a live site.",
+        "intro": "Launch builds run on a 7-day sprint once scope and direction are clear. 50% reserves the build and starts the sprint, and you approve the finished site before paying the other 50%."
+      }
+    }
   },
   "princeton": {
     "path": "/web-design-princeton-nj",

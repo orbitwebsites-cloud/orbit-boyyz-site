@@ -103,7 +103,7 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   '/web-design-west-windsor-nj': {
     title: 'Web Design West Windsor NJ | Princeton Junction Websites',
     description:
-      'Websites for West Windsor and Princeton Junction home-service companies: hand-coded, fast on phones, with quote forms that work after hours.',
+      'Web design for West Windsor and Princeton Junction home-service companies, from a studio next door in Plainsboro. Hand-coded, fast on phones, built for calls.',
   },
   '/web-design-princeton-nj': {
     title: 'Web Design Princeton NJ | Website Design & Development',
@@ -590,6 +590,7 @@ export function graphFor(route: string) {
       provider: { '@id': `${ORIGIN}/#organization` },
       areaServed: [
         { '@type': 'City', name: 'West Windsor Township', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
+        { '@type': 'Place', name: 'Princeton Junction', address: { '@type': 'PostalAddress', postalCode: '08550', addressRegion: 'NJ', addressCountry: 'US' } },
         { '@type': 'AdministrativeArea', name: 'Mercer County', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
       ],
       description:

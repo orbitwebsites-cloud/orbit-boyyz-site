@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react'
+import { demoCopy } from '@/content/demoCopy'
+import type { DemoBusiness } from '@/content/demos'
 import { localWebDesignLinks } from '@/content/landing'
+import { process } from '@/content/site'
 import { Accordion } from '@/components/ui/Accordion'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { TransitionLink } from '@/components/ui/TransitionLink'
@@ -106,6 +109,70 @@ export function ArrowLink({ href, children, muted = false }: { href: string; chi
     <a href={href} className={cls}>
       {children}
     </a>
+  )
+}
+
+/**
+ * Fictional sample demos (/demo/sample-*). Always labeled as made-up businesses:
+ * they show a layout, they are not clients. The demo pages are noindex and carry
+ * no Orbit chrome, so they open in a new tab with rel="nofollow".
+ */
+export function SampleDemos({ heading, intro, demos }: { heading: string; intro: string; demos: DemoBusiness[] }) {
+  return (
+    <Section label="Sample demos">
+      <SectionLabel>[EXAMPLES // SAMPLE DEMOS]</SectionLabel>
+      <SectionTitle className="mt-6">{heading}</SectionTitle>
+      <p data-reveal className="t-lead mt-6 max-w-[64ch] text-muted">
+        {intro}
+      </p>
+      <ul className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {demos.map((demo) => (
+          <li key={demo.slug} data-reveal>
+            <a
+              href={`/demo/${demo.slug}`}
+              target="_blank"
+              rel="nofollow noopener"
+              className="group flex h-full flex-col justify-between gap-8 rounded-[var(--radius)] border border-line bg-panel/60 p-6 transition-colors duration-[var(--d-sm)] hover:border-accent/50 md:p-7"
+            >
+              <div>
+                <p className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-dim">
+                  <span className="text-accent">[</span> Sample demo <span className="text-accent">{'//'}</span> {demoCopy(demo.trade).label} <span className="text-accent">]</span>
+                </p>
+                <h3 className="display mt-6 text-[1.55rem] leading-[1.08] text-balance transition-colors group-hover:text-accent-hi">{demo.name}</h3>
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">Fictional business in {demo.town}, NJ, with a made-up 555 number.</p>
+              </div>
+              <span className="inline-flex items-center gap-2 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-accent">
+                Open the demo <span aria-hidden="true">↗</span>
+                <span className="sr-only">(opens in a new tab)</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 text-sm text-dim">Sample demos are examples of a layout, not client websites.</p>
+    </Section>
+  )
+}
+
+/** The five steps from site.ts `process`, under a page-specific heading. */
+export function ProcessSteps({ heading, intro }: { heading: string; intro: string }) {
+  return (
+    <Section label="How it works">
+      <SectionLabel>[HOW IT WORKS]</SectionLabel>
+      <SectionTitle className="mt-6">{heading}</SectionTitle>
+      <p data-reveal className="t-lead mt-6 max-w-[64ch] text-muted">
+        {intro}
+      </p>
+      <ol className="mt-10 grid gap-4 md:grid-cols-5">
+        {process.map((step) => (
+          <li key={step.number} data-reveal className="rounded-[var(--radius)] border border-line bg-panel/60 p-6">
+            <span className="font-mono text-[0.72rem] tracking-[0.14em] text-accent">STEP {step.number}</span>
+            <h3 className="display mt-6 text-xl">{step.title}</h3>
+            <p className="mt-3 text-[0.9rem] leading-relaxed text-muted">{step.copy}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
   )
 }
 
