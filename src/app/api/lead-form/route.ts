@@ -6,6 +6,7 @@
 //   2. Triggers an instant confirmation email to the lead via formsubmit.co.
 // Always answers 200 { received, crmSynced, emailSent } once validation passes.
 import { json, jsonError, methodNotAllowed, readBody } from '@/lib/api'
+import { syncLeadToCrm } from '@/lib/crmSync'
 
 const NOTIFY_EMAIL = 'orbitboyzz@gmail.com' // the FormSubmit-activated inbox (alex@ never was)
 const LEAD_SOURCE = 'agent_form'
@@ -36,86 +37,22 @@ export async function POST(request: Request) {
   if (details.length > 2000) return jsonError(400, 'invalid_field', '"details" must be under 2000 characters.')
 
   const input: LeadInput = { businessName, industry, contactName, phone, email, details }
-  // Read at request time (never hardcoded) — add it in the Vercel project env vars.
-  const token = process.env.HUBSPOT_PRIVATE_APP_TOKEN
-
-  let hubspotOk = true
-  if (token) {
-    try {
-      await createOrUpdateHubspotLead(token, input)
-    } catch (err) {
-      hubspotOk = false
-      console.error('hubspot lead sync failed', err)
-    }
-  } else {
-    hubspotOk = false
-    console.error('HUBSPOT_PRIVATE_APP_TOKEN is not set — skipping CRM sync')
+  // Leads go to the Orbit CRM (src/lib/crmSync.ts), not HubSpot.
+  let crmSynced = true
+  try {
+    await syncLeadToCrm(input, LEAD_SOURCE)
+  } catch (err) {
+    crmSynced = false
+    console.error("crm lead sync failed", err)
   }
 
   // The browser sends the email (src/lib/formNotify.ts): FormSubmit blocks server-side requests.
-  return json({ received: true, crmSynced: hubspotOk, notify: { endpoint: `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, fields: confirmationFields(input) } })
+  return json({ received: true, crmSynced, notify: { endpoint: `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, fields: confirmationFields(input) } })
 }
 
 const notAllowed = methodNotAllowed('/api/lead-form', 'POST')
 export { notAllowed as GET, notAllowed as HEAD, notAllowed as PUT, notAllowed as PATCH, notAllowed as DELETE, notAllowed as OPTIONS }
 
-async function createOrUpdateHubspotLead(token: string, input: LeadInput) {
-  const [firstName, ...rest] = input.contactName.split(' ')
-  const lastName = rest.join(' ') || '-'
-  const headers = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }
-
-  const contactRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      properties: {
-        email: input.email,
-        firstname: firstName,
-        lastname: lastName,
-        phone: input.phone,
-        company: input.businessName,
-        industry: input.industry,
-        lead_source: LEAD_SOURCE,
-        message: input.details,
-      },
-    }),
-  })
-
-  if (contactRes.ok) return
-
-  // 409 = contact already exists by email — fall back to a search + PATCH.
-  if (contactRes.status === 409) {
-    const searchRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/search', {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({
-        filterGroups: [{ filters: [{ propertyName: 'email', operator: 'EQ', value: input.email }] }],
-        limit: 1,
-      }),
-    })
-    const searchJson = (await searchRes.json()) as { results?: Array<{ id: string }> }
-    const existingId = searchJson.results?.[0]?.id
-    if (!existingId) throw new Error('HubSpot 409 but no matching contact found via search')
-
-    const patchRes = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${existingId}`, {
-      method: 'PATCH',
-      headers,
-      body: JSON.stringify({
-        properties: {
-          phone: input.phone,
-          company: input.businessName,
-          industry: input.industry,
-          lead_source: LEAD_SOURCE,
-          message: input.details,
-        },
-      }),
-    })
-    if (!patchRes.ok) throw new Error(`HubSpot PATCH failed: ${patchRes.status} ${await patchRes.text()}`)
-    return
-  }
-
-  throw new Error(`HubSpot create failed: ${contactRes.status} ${await contactRes.text()}`)
-}
 
 function confirmationFields(input: LeadInput): Record<string, string> {
   return {

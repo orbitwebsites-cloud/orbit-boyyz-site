@@ -8,6 +8,8 @@ import { LeadsRequestForm } from '@/components/leads/LeadsRequestForm'
 import { NextSteps } from '@/components/leads/NextSteps'
 import { VerifySteps } from '@/components/leads/VerifySteps'
 import { Cursor } from '@/components/ui/Cursor'
+import { BOOK_CALENDLY_URL } from '@/content/bookConfig'
+import { CalendlyInline } from '@/components/qualify/calendly'
 import { LEADS_REQUEST_ID } from '@/lib/leadsSite'
 import '@/components/leads/leads.css'
 
@@ -90,6 +92,17 @@ export default function QualifyPage() {
             <div className="min-w-0 lg:col-span-5 lg:row-start-2 lg:self-start">
               <LeadRecord className="mt-3 lg:mt-1" />
             </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="qualify-book" className="container-x py-14 md:py-20">
+          <h2 id="qualify-book" className="display t-3 max-w-[24ch]">Prefer to talk first?</h2>
+          <p className="mt-4 max-w-[60ch] text-muted">Pick a 30-minute call with the team to ask questions before you request the free leads.</p>
+          <div className="mt-8">
+            <CalendlyInline
+              url={BOOK_CALENDLY_URL}
+              fallback={<a className="link-u text-accent" href={BOOK_CALENDLY_URL} target="_blank" rel="noopener noreferrer">open the booking page</a>}
+            />
           </div>
         </section>
 
