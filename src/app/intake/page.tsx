@@ -34,6 +34,24 @@ export default function IntakePage() {
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [error, setError] = useState('')
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
+
+  async function send() {
+    setError('')
+    setSending(true)
+    const fields: Record<string, string> = { ...answers, business: answers.company || '', contact_name: answers.name || '' }
+    try {
+      const res = await fetch('/api/crm-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ source: 'intake', fields }) })
+      const data = await res.json().catch(() => null)
+      if (!res.ok || !data?.ok) throw new Error('not saved')
+      setSent(true)
+    } catch {
+      setError('That didn’t go through. Your answers are still here. Try again.')
+    } finally {
+      setSending(false)
+    }
+  }
 
   const done = step >= QUESTIONS.length
   const q = QUESTIONS[step]
@@ -56,20 +74,21 @@ export default function IntakePage() {
     setStep(step + 1)
   }
 
+  if (sent) {
+    return (
+      <main className="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-6 py-16">
+        <h1 className="text-3xl font-semibold">Thanks, that’s everything.</h1>
+        <p className="mt-3 text-neutral-300">We’ll review your answers before the call and reach out to confirm the time.</p>
+      </main>
+    )
+  }
+
   if (done) {
     return (
       <main className="mx-auto max-w-xl px-6 py-16">
         <h1 className="text-3xl font-semibold">Last step</h1>
         <p className="mt-3 text-neutral-300">Check your answers, then send.</p>
-        <form action="https://formsubmit.co/OrbitBoyzz@gmail.com" method="POST" className="mt-8">
-          <input type="hidden" name="_subject" value={`Intake form: ${answers.company || answers.name || 'new answers'}`} />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://orbitboyzz.com/intake?sent=1" />
-          {answers.email && <input type="hidden" name="_replyto" value={answers.email} />}
-          {QUESTIONS.map((item) => (
-            <input key={item.key} type="hidden" name={item.label} value={answers[item.key] || ''} />
-          ))}
+        <div className="mt-8">
           <ul className="space-y-3 text-sm text-neutral-300">
             {QUESTIONS.filter((item) => answers[item.key]).map((item) => (
               <li key={item.key}>
@@ -78,11 +97,14 @@ export default function IntakePage() {
               </li>
             ))}
           </ul>
+          {error && <p className="mt-4 text-red-400">{error}</p>}
           <div className="mt-8 flex gap-3">
-            <button type="button" onClick={() => setStep(step - 1)} className="rounded-full border border-neutral-600 px-5 py-3 text-neutral-200">Back</button>
-            <button type="submit" className="rounded-full bg-amber-400 px-6 py-3 font-medium text-black">Send</button>
+            <button type="button" onClick={() => setStep(step - 1)} disabled={sending} className="rounded-full border border-neutral-600 px-5 py-3 text-neutral-200 disabled:opacity-50">Back</button>
+            <button type="button" onClick={send} disabled={sending} className="rounded-full bg-amber-400 px-6 py-3 font-medium text-black disabled:opacity-60">
+              {sending ? "Sending…" : "Send"}
+            </button>
           </div>
-        </form>
+        </div>
       </main>
     )
   }
