@@ -1,7 +1,7 @@
 // Receives form submissions from the site and saves them to the Orbit CRM (lead_form segment).
 import { syncFormToCrm } from '@/lib/crmSync'
 
-const SOURCES = new Set(['qualify', 'discovery'])
+const SOURCES = /^[a-z0-9_-]{1,40}$/
 const MAX_FIELD = 2000
 
 export async function POST(request: Request) {
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   } catch {
     return Response.json({ ok: false, error: 'invalid_json' }, { status: 400 })
   }
-  const source = typeof body.source === 'string' && SOURCES.has(body.source) ? body.source : null
+  const source = typeof body.source === 'string' && SOURCES.test(body.source) ? body.source : null
   if (!source || !body.fields || typeof body.fields !== 'object') {
     return Response.json({ ok: false, error: 'invalid_request' }, { status: 400 })
   }

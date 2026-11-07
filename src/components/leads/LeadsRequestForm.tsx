@@ -180,16 +180,17 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
       }
 
       setSubmitting(true)
-      const response = await fetch(LEADS_REQUEST_ENDPOINT, {
+      // The lead goes to the Orbit CRM first (same site, never blocked by the browser). The CRM
+      // watch emails it to both team inboxes. FormSubmit is only a backup copy and never blocks the user.
+      const response = await fetch('/api/crm-lead', {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new URLSearchParams(buildPayload(values, source, emailCheckLabel(check), honeyRef.current?.value ?? '')),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ source, fields: { niche: values.niche.trim(), area: values.area.trim(), email: normalizeEmail(values.email), name: values.name.trim(), agency: values.agency.trim(), email_check: emailCheckLabel(check) } }),
       })
       const data: unknown = await response.json().catch(() => null)
-      const rejected = data !== null && typeof data === 'object' && 'success' in data && String((data as { success: unknown }).success) === 'false'
-      if (!response.ok || rejected) throw new Error('Submission rejected')
-      // Also save to the Orbit CRM so the lead is in one place (failures don't block the user).
-      fetch('/api/crm-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ source: 'qualify', fields: { niche: values.niche.trim(), area: values.area.trim(), email: normalizeEmail(values.email), name: values.name.trim(), agency: values.agency.trim() } }) }).catch(() => {})
+      const saved = data !== null && typeof data === 'object' && 'ok' in data && (data as { ok: unknown }).ok === true
+      if (!response.ok || !saved) throw new Error('Submission rejected')
+      fetch(LEADS_REQUEST_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: new URLSearchParams(buildPayload(values, source, emailCheckLabel(check), honeyRef.current?.value ?? '')) }).catch(() => {})
       // Source only: no names, emails or free text.
       posthog.capture('leads_request_submitted', { source })
       setSent({
