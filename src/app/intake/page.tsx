@@ -24,8 +24,8 @@ export default function InfoPage() {
     try {
       const res = await fetch(FORMSUBMIT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
+        headers: { Accept: 'application/json' },
+        body: new URLSearchParams({
           _subject: `Info form: ${values.company || values.name}`,
           _template: 'table',
           _captcha: 'false',

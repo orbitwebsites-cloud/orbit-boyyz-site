@@ -182,8 +182,8 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
       setSubmitting(true)
       const response = await fetch(LEADS_REQUEST_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(buildPayload(values, source, emailCheckLabel(check), honeyRef.current?.value ?? '')),
+        headers: { Accept: 'application/json' },
+        body: new URLSearchParams(buildPayload(values, source, emailCheckLabel(check), honeyRef.current?.value ?? '')),
       })
       const data: unknown = await response.json().catch(() => null)
       const rejected = data !== null && typeof data === 'object' && 'success' in data && String((data as { success: unknown }).success) === 'false'
