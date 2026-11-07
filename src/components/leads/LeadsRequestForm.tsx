@@ -188,6 +188,8 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
       const data: unknown = await response.json().catch(() => null)
       const rejected = data !== null && typeof data === 'object' && 'success' in data && String((data as { success: unknown }).success) === 'false'
       if (!response.ok || rejected) throw new Error('Submission rejected')
+      // Also save to the Orbit CRM so the lead is in one place (failures don't block the user).
+      fetch('/api/crm-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ source: 'qualify', fields: { niche: values.niche.trim(), area: values.area.trim(), email: normalizeEmail(values.email), name: values.name.trim(), agency: values.agency.trim() } }) }).catch(() => {})
       // Source only: no names, emails or free text.
       posthog.capture('leads_request_submitted', { source })
       setSent({
