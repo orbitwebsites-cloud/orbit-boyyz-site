@@ -6,10 +6,10 @@ import { cn } from '@/lib/cn'
 // behind the final CTA. Rings rotate on the compositor; reduced motion freezes them.
 
 const RINGS = [
-  { size: 36, dur: 24, color: '#F4EFE6', delay: -4 },
-  { size: 54, dur: 36, color: '#D6B36A', delay: -20 },
-  { size: 72, dur: 52, color: '#7FB4FF', delay: -9 },
-  { size: 92, dur: 74, color: '#ECD29A', delay: -41 },
+  { size: 36, dur: 24, color: '#F3F1EC', delay: -4 },
+  { size: 54, dur: 36, color: '#FF4F18', delay: -20 },
+  { size: 72, dur: 52, color: '#F3F1EC', delay: -9 },
+  { size: 92, dur: 74, color: '#FF7A4D', delay: -41 },
 ] as const
 
 type Props = {

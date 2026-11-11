@@ -3,23 +3,25 @@
 
 export { site } from './siteInfo'
 
+// Marketing first: the two main offers, then websites, then the rest.
 export const nav = [
-  { label: 'Services', href: '/services' },
-  { label: 'Work', href: '/projects' },
+  { label: 'Ads management', href: '/ads-management' },
+  { label: 'Cold leads', href: '/cold-leads' },
+  { label: 'Websites', href: '/website' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ] as const
 
 export const footerPages = [
   { label: 'Home', href: '/' },
+  { label: 'Ads management', href: '/ads-management' },
+  { label: 'Cold lead generation', href: '/cold-leads' },
+  { label: 'Websites', href: '/website' },
   { label: 'Services', href: '/services' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Projects', href: '/projects' },
   { label: 'About', href: '/about' },
-  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
   { label: 'Quote', href: '/quote' },
   { label: 'Free website check', href: '/free-website-check' },
@@ -27,6 +29,7 @@ export const footerPages = [
   { label: 'Blog', href: '/blog' },
   { label: 'OrbitBoyzz', href: '/orbitboyzz' },
   { label: 'Developers / API', href: '/developers' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Privacy', href: '/privacy' },
 ] as const
 
@@ -190,11 +193,14 @@ export const roi = {
 } as const
 
 export const faqs = [
+  { q: 'What does OrbitBoyzz do?', a: 'Two things first. We manage ads for home-service businesses, including the landing page and the text follow-up that books the estimate. And we generate cold leads for teams doing outreach. We also build websites.' },
+  { q: 'How do you charge for ads management?', a: 'Per booking to start. When the bookings add up to more than a flat fee would cost you, we move you to a monthly retainer. Ads run in your own account and you pay Meta directly.' },
+  { q: 'How much does cold lead generation cost?', a: '$0.20 per lead. Plans start at 10,000 new leads a month, so the smallest plan is $2,000 a month.' },
   { q: 'Why hand-coded Next.js instead of a free website builder?', a: 'Speed, security and zero platform limitations. Free builders load heavy scripts and plugins that slow your site and hurt your mobile score. Hand-coded Next.js is lean, fast and built to rank — and you own it.' },
   { q: 'How long does it take to launch?', a: 'A launch build runs on a seven-day sprint once scope and direction are clear. Larger premium or AI projects are scoped on the call with a timeline you agree to before paying anything.' },
   { q: 'How does payment work?', a: '50% reserves your build and starts the sprint. You approve the finished site before paying the remaining 50%. Monthly care plans are optional and begin only after launch.' },
   { q: 'What does a monthly care plan cover?', a: 'Fast managed hosting, security updates, backups and content changes — just text us what you need updated. Higher plans add local SEO maintenance and ongoing improvements.' },
-  { q: 'Is OrbitBoyzz the same as Orbit Websites?', a: 'Yes. OrbitBoyzz is the domain and brand handle for Orbit Websites, a Plainsboro, NJ website design and AI operations studio.' },
+  { q: 'Is OrbitBoyzz the same as Orbit Websites?', a: 'Yes. Orbit Websites is the name the studio launched under. It is now OrbitBoyzz, a Plainsboro, NJ marketing agency that also builds websites.' },
   { q: 'Where is Orbit Websites based?', a: 'Plainsboro, NJ. We serve businesses across Central New Jersey, including Princeton, West Windsor, Ewing, Hamilton, Lawrence, Robbinsville and Trenton.' },
   { q: 'What kinds of businesses do you build for?', a: 'Established home-service businesses: HVAC, plumbing, electrical, roofing, landscaping, remodeling and other contractors where one booked job is worth hundreds or thousands of dollars.' },
   { q: 'Do you guarantee Google rankings?', a: 'No one can honestly promise rankings. We build strong local SEO foundations and clean structure that search engines reward, so your site is built the right way from day one.' },
@@ -206,9 +212,10 @@ export const faqs = [
 
 export const about = {
   label: '[ABOUT]',
-  title: 'Orbit Websites (OrbitBoyzz): a small studio that builds like a big one.',
+  title: 'OrbitBoyzz: a small team that gets paid when you get booked.',
   copy: [
-    'Orbit Websites is a Plainsboro, NJ web design and AI operations studio. You talk to the builder, not a sales floor.',
+    'OrbitBoyzz is a Plainsboro, NJ marketing agency. We manage ads for home-service businesses and generate cold leads for outreach teams. You talk to the people doing the work, not a sales floor.',
+    'We started as Orbit Websites, and we still build websites the same way.',
     'We hand-code every site on Next.js, Tailwind and Vercel — the same stack used by the fastest companies on the web — and we wire it around how your business actually takes on work: calls, quotes, bookings.',
     'We are a new brand with premium standards. We do not invent case studies or reviews; our proof is the work, the offer and the speed at which we deliver.',
   ],

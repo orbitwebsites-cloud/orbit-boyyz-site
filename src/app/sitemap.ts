@@ -29,6 +29,14 @@ const LEADS_UPDATED = '2026-10-19'
 
 // Pages changed since the SEO pass, so IndexNow's --since picks up only them.
 const ROUTE_UPDATED: Record<string, string> = {
+  // 2026-11-11: marketing-first homepage and the three offer pages.
+  '/': '2026-11-11',
+  '/ads-management': '2026-11-11',
+  '/cold-leads': '2026-11-11',
+  '/website': '2026-11-11',
+  '/pricing': '2026-11-11',
+  '/services': '2026-11-11',
+  '/about': '2026-11-11',
   '/web-design-west-windsor-nj': '2026-11-03',
 }
 
@@ -42,7 +50,7 @@ function lastMod(route: string) {
 
 function priority(route: string) {
   if (route === '/') return 1.0
-  if (route === '/pricing' || route === '/quote' || route === '/contact') return 0.9
+  if (route === '/pricing' || route === '/quote' || route === '/contact' || route === '/ads-management' || route === '/cold-leads') return 0.9
   if (route === '/blog' || KEYWORD_PATHS.has(route) || route.startsWith('/web-design-') || route.startsWith('/website-design-for-')) return 0.8
   if (route.startsWith('/blog/')) return 0.7
   return 0.6

@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from 'next'
-import { Archivo, Bricolage_Grotesque, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 import { site } from '@/content/site'
 import { LenisProvider } from '@/lib/motion/LenisProvider'
 import { PageTransitionProvider } from '@/lib/motion/PageTransition'
 
-const display = Bricolage_Grotesque({
+const display = Geist({
   subsets: ['latin'],
   variable: '--ff-display',
   display: 'swap',
 })
 
-const body = Archivo({
+const body = Geist({
   subsets: ['latin'],
   variable: '--ff-body',
   display: 'swap',
@@ -25,7 +25,7 @@ const serif = Instrument_Serif({
   display: 'swap',
 })
 
-const mono = JetBrains_Mono({
+const mono = Geist_Mono({
   subsets: ['latin'],
   variable: '--ff-mono',
   display: 'swap',
@@ -35,8 +35,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: 'Page not found · Orbit Websites',
-    template: '%s · Orbit Websites',
+    default: 'Page not found · OrbitBoyzz',
+    template: '%s · OrbitBoyzz',
   },
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#060606',
+  themeColor: '#0E0E0E',
   colorScheme: 'dark',
 }
 
 // Runs before first paint: decides whether the first-visit preloader plays.
 // Desktop only — on phones the curtain just delays the LCP. Never on
 // leads.orbitboyzz.com, whose "/" is the standalone /leads page (no preloader).
-const preloadScript = `(function(){try{var d=document.documentElement,k='ob:visited';if(location.pathname==='/'&&location.hostname.indexOf('leads.')!==0&&matchMedia('(pointer: fine) and (min-width: 768px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!localStorage.getItem(k)){d.classList.add('is-preloading')}localStorage.setItem(k,'1');var go=function(){requestAnimationFrame(function(){d.classList.add('motion-go')})};if(document.readyState==='complete'){go()}else{addEventListener('load',go)}}catch(e){}})();`
+const preloadScript = `(function(){try{var d=document.documentElement,k='ob:visited';d.classList.add('js');if(location.pathname==='/'&&location.hostname.indexOf('leads.')!==0&&matchMedia('(pointer: fine) and (min-width: 768px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!localStorage.getItem(k)){d.classList.add('is-preloading')}localStorage.setItem(k,'1');var go=function(){requestAnimationFrame(function(){d.classList.add('motion-go')})};if(document.readyState==='complete'){go()}else{addEventListener('load',go)}}catch(e){}})();`
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (

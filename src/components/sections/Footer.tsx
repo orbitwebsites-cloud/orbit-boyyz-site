@@ -151,7 +151,7 @@ export function Footer() {
 
       <div className="container-x mt-16 flex flex-col gap-3 border-t border-line py-6 text-xs text-dim sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © {YEAR} {site.name} · {site.handle}. Hand-coded in {site.location}.
+          © {YEAR} {site.name}, formerly {site.formerName}. {site.location}.
         </p>
         <p className="font-mono tracking-[0.12em]">40.33°N · 74.58°W</p>
       </div>

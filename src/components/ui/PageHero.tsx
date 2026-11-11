@@ -25,7 +25,7 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden pb-16 pt-[calc(var(--nav-h)+4rem)] md:pb-24 md:pt-[calc(var(--nav-h)+7rem)]">
-      <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(214,179,106,0.16),transparent_65%)]" />
+      <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(255, 79, 24,0.16),transparent_65%)]" />
       <div className="container-x">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="page-fade mb-7 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-dim" style={{ '--delay': '-400ms' } as CSSProperties}>

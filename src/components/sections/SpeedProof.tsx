@@ -82,7 +82,7 @@ export function SpeedProof() {
             <div key={g.label} className="flex flex-col items-center rounded-[var(--radius)] border border-line bg-panel/70 px-4 py-8">
               <div className="relative h-32 w-32 md:h-36 md:w-36">
                 <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90" aria-hidden="true">
-                  <circle cx="50" cy="50" r={R} fill="none" stroke="rgba(244,239,230,0.08)" strokeWidth="4" />
+                  <circle cx="50" cy="50" r={R} fill="none" stroke="rgba(243, 241, 236,0.08)" strokeWidth="4" />
                   <circle
                     data-arc
                     data-value={g.value}
@@ -90,7 +90,7 @@ export function SpeedProof() {
                     cy="50"
                     r={R}
                     fill="none"
-                    stroke="#D6B36A"
+                    stroke="#FF4F18"
                     strokeWidth="4"
                     strokeLinecap="round"
                     strokeDasharray={C}

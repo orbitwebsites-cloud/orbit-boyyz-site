@@ -10,6 +10,7 @@
     "submit:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@opentelemetry/api-logs": "^0.223.0",
     "@opentelemetry/exporter-logs-otlp-http": "^0.223.0",
     "@opentelemetry/resources": "^2.12.0",

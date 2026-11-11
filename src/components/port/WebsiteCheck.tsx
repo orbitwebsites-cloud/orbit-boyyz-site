@@ -269,7 +269,7 @@ function ReportCard({ report }: { report: WebsiteCheckReport }) {
 
   return (
     <section aria-labelledby="report-title" className="container-x pb-10">
-      <div className="rounded-[var(--radius)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_60%),var(--panel)] p-6 md:p-10">
+      <div className="rounded-[var(--radius)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(255, 79, 24,0.14),transparent_60%),var(--panel)] p-6 md:p-10">
         <div className="grid gap-8 md:grid-cols-12 md:items-end">
           <div className="md:col-span-4">
             <SectionLabel>[YOUR REPORT]</SectionLabel>

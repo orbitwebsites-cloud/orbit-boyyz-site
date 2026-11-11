@@ -7,7 +7,7 @@ import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
   title: 'Contact Us: Book a Free 30-Minute Call',
-  description: `Book a free 30-minute call, call ${site.phone} or email ${site.email}. Orbit Websites is based in Plainsboro, NJ and serves Central New Jersey.`,
+  description: `Book a free 30-minute call, call ${site.phone} or email ${site.email}. OrbitBoyzz is based in Plainsboro, NJ and serves Central New Jersey.`,
   path: '/contact',
 })
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
             Let&rsquo;s talk about <span className="serif-accent text-accent">your site.</span>
           </>
         }
-        lead={`Book a free 30-minute call with Orbit Websites, call or text ${site.phoneDisplay}, or email ${site.email}. You will speak with the people building your site, with no sales handoff.`}
+        lead={`Book a free 30-minute call with OrbitBoyzz, call or text ${site.phoneDisplay}, or email ${site.email}. You will speak with the people doing the work, with no sales handoff.`}
       />
 
       <section aria-label="Ways to reach us" className="container-x grid gap-4 md:grid-cols-3">

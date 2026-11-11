@@ -66,8 +66,8 @@ export function Marquee() {
             {name}
           </span>
           <svg width="22" height="22" viewBox="0 0 22 22" className="shrink-0" aria-hidden="true">
-            <circle cx="11" cy="11" r="8" fill="none" stroke="#D6B36A" strokeWidth="1.5" />
-            <circle cx="11" cy="11" r="3" fill="#F4EFE6" />
+            <circle cx="11" cy="11" r="8" fill="none" stroke="#FF4F18" strokeWidth="1.5" />
+            <circle cx="11" cy="11" r="3" fill="#F3F1EC" />
           </svg>
         </Fragment>
       ))}

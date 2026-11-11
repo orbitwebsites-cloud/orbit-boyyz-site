@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 function Tick() {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="shrink-0">
-      <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#FF4F18" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -59,7 +59,7 @@ export default function QualifyPage() {
           aria-labelledby="qualify-title"
           className="ld-request relative isolate overflow-hidden pb-16 pt-[calc(var(--nav-h)+2.5rem)] md:pb-28 md:pt-[calc(var(--nav-h)+4.5rem)]"
         >
-          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(214,179,106,0.16),transparent_65%)]" />
+          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(255, 79, 24,0.16),transparent_65%)]" />
 
           {/* Phones: headline, form, what happens next, then the real row. Desktop: headline and the
               real row left; form and what happens next right.

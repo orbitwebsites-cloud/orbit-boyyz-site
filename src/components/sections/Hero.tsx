@@ -6,7 +6,7 @@ import { HeroScene } from './HeroScene'
 
 // Words rendered in the serif-italic gold accent.
 const ACCENT = new Set(['book', 'jobs,'])
-const PLANET_COLORS = ['#F4EFE6', '#D6B36A', '#7FB4FF', '#ECD29A']
+const PLANET_COLORS = ['#F3F1EC', '#FF4F18', '#F3F1EC', '#FF7A4D']
 
 type Word = { text: string; start: number; accent: boolean }
 
@@ -95,7 +95,7 @@ export function Hero() {
             {hero.chips.map((chip) => (
               <li key={chip} className="flex items-center gap-2 rounded-full border border-line bg-panel/60 px-3.5 py-2 text-[0.82rem] text-muted backdrop-blur-sm">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#FF4F18" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 {chip}
               </li>

@@ -97,7 +97,7 @@ export function QuoteEstimator() {
               automation ? 'border-accent/60 bg-accent/10' : 'border-line bg-bg/40 hover:border-line-strong',
             )}
           >
-            <input type="checkbox" checked={automation} onChange={(e) => setAutomation(e.target.checked)} className="mt-1 h-5 w-5 shrink-0 accent-[#d6b36a]" />
+            <input type="checkbox" checked={automation} onChange={(e) => setAutomation(e.target.checked)} className="mt-1 h-5 w-5 shrink-0 accent-[#FF4F18]" />
             <span>
               <span className="block font-mono text-[0.72rem] uppercase tracking-[0.14em] text-accent">[05 // AUTOMATION ADD-ON]</span>
               <span className="mt-2 block leading-relaxed text-muted">Include follow-up automation, quote routing, booking logic, or a starter AI workflow.</span>
@@ -107,7 +107,7 @@ export function QuoteEstimator() {
 
         <div
           aria-live="polite"
-          className="flex flex-col justify-between gap-10 rounded-[var(--radius)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_60%),var(--panel)] p-6 md:p-8 lg:sticky lg:top-24 lg:col-span-5 lg:self-start"
+          className="flex flex-col justify-between gap-10 rounded-[var(--radius)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(255, 79, 24,0.14),transparent_60%),var(--panel)] p-6 md:p-8 lg:sticky lg:top-24 lg:col-span-5 lg:self-start"
         >
           <div>
             <SectionLabel>[ESTIMATED RANGE]</SectionLabel>

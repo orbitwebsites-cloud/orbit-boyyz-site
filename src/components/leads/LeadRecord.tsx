@@ -110,7 +110,7 @@ export function LeadRecord({ className }: { className?: string }) {
   return (
     <figure
       className={cn(
-        'relative rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-5 shadow-[0_40px_120px_-40px_rgba(214,179,106,0.35)] backdrop-blur sm:p-7',
+        'relative rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-5 shadow-[0_40px_120px_-40px_rgba(255, 79, 24,0.35)] backdrop-blur sm:p-7',
         className,
       )}
     >

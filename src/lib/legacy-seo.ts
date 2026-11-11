@@ -52,9 +52,22 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   // The homepage owned "home service website design" (SEO plan 2026-10-02). Since 2026-10-16 the
   // /home-service-website-design hub (trade by trade) targets the generic phrase; the homepage keeps the NJ brand angle.
   '/': {
-    title: 'Home-Service Website Design in NJ | Orbit Websites',
+    title: 'OrbitBoyzz | Ads Management and Cold Lead Generation in NJ',
     description:
-      'Custom website design for New Jersey home-service businesses: HVAC, plumbing, electrical and roofing sites built to book jobs. Plainsboro, NJ studio.',
+      'Ads management that ends in booked estimates, and cold lead generation at $0.20 a lead for outreach teams. Plainsboro, NJ. We also build websites.',
+  },
+  // Only feed sitemap.ts: the rendered title and description come from pageMeta in each route's page.tsx.
+  '/ads-management': {
+    title: 'Facebook Ads Management for NJ Home-Service Businesses',
+    description: 'Ads in your own account, a landing page, and text follow-up that books the estimate. Pay per booking, then a retainer.',
+  },
+  '/cold-leads': {
+    title: 'Cold Lead Generation for Outreach Teams',
+    description: 'New verified leads every month for cold email, calls and texts. $0.20 a lead, plans from 10,000 a month.',
+  },
+  '/website': {
+    title: 'Website Design for New Jersey Home-Service Businesses',
+    description: 'Hand-coded websites built to turn visitors into calls, quotes and bookings. Built in seven days and yours to keep.',
   },
   // Single owner of "hvac lead generation nj" / missed-call recovery / AI receptionist intent.
   '/growth': {
@@ -494,8 +507,11 @@ function topLevelBreadcrumbGraph(route: string, name: string) {
 export function graphFor(route: string) {
   const graph: Array<Record<string, unknown>> = [organization, website]
   const topLevelBreadcrumbs: Record<string, string> = {
-    '/about': 'About Orbit Websites',
-    '/services': 'Website Services',
+    '/about': 'About OrbitBoyzz',
+    '/ads-management': 'Ads Management',
+    '/cold-leads': 'Cold Lead Generation',
+    '/website': 'Websites',
+    '/services': 'Services',
     '/pricing': 'Pricing',
     '/quote': 'Quote Estimator',
     '/free-website-check': 'Free Website Check',

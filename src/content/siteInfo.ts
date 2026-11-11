@@ -4,9 +4,11 @@
 // site.ts re-exports it, so `import { site } from '@/content/site'` still works.
 
 export const site = {
-  name: 'Orbit Websites',
+  name: 'OrbitBoyzz',
+  // The name the studio launched under. Older pages and listings still use it.
+  formerName: 'Orbit Websites',
   handle: 'OrbitBoyzz',
-  tagline: 'Designed personally. Built quickly. Owned by you.',
+  tagline: 'Ads management and cold lead generation. Websites too.',
   url: 'https://orbitboyzz.com',
   phone: '609-662-8052',
   phoneDisplay: '609 662 8052',

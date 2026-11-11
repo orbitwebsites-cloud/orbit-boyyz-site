@@ -1,4 +1,5 @@
 import { process, services, site } from '@/content/site'
+import { MarketingPricing } from '@/components/agency/OfferBlocks'
 import { Button } from '@/components/ui/Button'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
@@ -8,9 +9,9 @@ import { TradeLinksGrid } from '@/components/port/TradeLinks'
 import { jsonLd, pageMeta, pageSchema, servicesSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'Website Design & Redesign Services in NJ',
+  title: 'Services: Ads Management, Cold Leads and Websites',
   description:
-    'Hand-coded websites, refreshes, AI intake & booking automation and monthly plans for home-service businesses in Plainsboro, Princeton and Central NJ.',
+    'Ads management and cold lead generation first, plus hand-coded websites, refreshes, AI intake and monthly plans for businesses in Central NJ.',
   path: '/services',
 })
 
@@ -23,10 +24,10 @@ export default function ServicesPage() {
         label="[SERVICES]"
         title={
           <>
-            Website design, redesigns and AI intake that <span className="serif-accent text-accent">bring in work.</span>
+            Ads, cold leads and websites that <span className="serif-accent text-accent">bring in work.</span>
           </>
         }
-        lead="Orbit Websites, a Plainsboro, NJ studio, offers four services for home-service and local businesses: custom website design, website refreshes, AI intake and booking, and optional care and growth plans after launch. Every build is hand-coded around how your business takes on jobs: calls, quotes and bookings."
+        lead="OrbitBoyzz, a Plainsboro, NJ agency, leads with two services: ads management that ends in booked estimates, and cold lead generation for outreach teams. Below those are the four website services for home-service and local businesses: custom website design, website refreshes, AI intake and booking, and optional care and growth plans after launch. Every build is hand-coded around how your business takes on jobs: calls, quotes and bookings."
       >
         <div className="flex flex-wrap gap-3">
           <Button href={site.booking}>Book a free call</Button>
@@ -39,7 +40,9 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <nav aria-label="Services" className="container-x">
+      <MarketingPricing />
+
+      <nav aria-label="Website services" className="container-x">
         <ul className="grid grid-cols-2 gap-2 border-y border-line py-4 md:grid-cols-4">
           {services.map((s) => (
             <li key={s.slug}>

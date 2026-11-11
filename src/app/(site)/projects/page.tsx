@@ -7,7 +7,7 @@ import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 export const metadata = pageMeta({
   title: 'Web Design Portfolio: Live Website Builds',
   description:
-    'Live website builds by Orbit Websites: Weichert Princeton Pages (real estate), a property services website and Grand Treats by Tony (specialty food).',
+    'Live website builds by OrbitBoyzz: Weichert Princeton Pages (real estate), a property services website and Grand Treats by Tony (specialty food).',
   path: '/projects',
 })
 

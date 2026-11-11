@@ -5,10 +5,10 @@ export function OrbitMark({ className, title }: { className?: string; title?: st
   return (
     <svg className={className} viewBox="0 0 128 128" fill="none" role={title ? 'img' : undefined} aria-hidden={title ? undefined : true}>
       {title && <title>{title}</title>}
-      <circle cx="64" cy="64" r="38" stroke="#D6B36A" strokeWidth="8" />
-      <circle cx="64" cy="64" r="14" fill="#F4EFE6" />
-      <path d="M24 72C40 45 78 32 106 44" stroke="#F4EFE6" strokeWidth="7" strokeLinecap="round" />
-      <circle cx="104" cy="44" r="8" fill="#D6B36A" />
+      <circle cx="64" cy="64" r="38" stroke="#FF4F18" strokeWidth="8" />
+      <circle cx="64" cy="64" r="14" fill="#F3F1EC" />
+      <path d="M24 72C40 45 78 32 106 44" stroke="#F3F1EC" strokeWidth="7" strokeLinecap="round" />
+      <circle cx="104" cy="44" r="8" fill="#FF4F18" />
     </svg>
   )
 }
@@ -18,8 +18,8 @@ export function Wordmark({ className }: { className?: string }) {
     <span className={cn('flex items-center gap-2.5', className)}>
       <OrbitMark className="h-8 w-8 shrink-0" />
       <span className="flex flex-col leading-none">
-        <span className="display whitespace-nowrap text-[1.08rem] font-bold tracking-[-0.03em]">Orbit Websites</span>
-        <span className="mt-1 font-mono text-[0.58rem] tracking-[0.2em] text-dim">ORBITBOYZZ</span>
+        <span className="display whitespace-nowrap text-[1.08rem] font-semibold tracking-[-0.03em]">OrbitBoyzz</span>
+        <span className="mt-1 font-mono text-[0.58rem] tracking-[0.2em] text-dim">MARKETING</span>
       </span>
     </span>
   )

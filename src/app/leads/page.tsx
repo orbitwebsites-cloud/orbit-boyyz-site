@@ -82,7 +82,7 @@ function DownArrow() {
 function Tick({ className }: { className?: string }) {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className={className}>
-      <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#FF4F18" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -90,7 +90,7 @@ function Tick({ className }: { className?: string }) {
 function Hero() {
   return (
     <section className="ld-hero relative isolate overflow-hidden pb-16 pt-[calc(var(--nav-h)+3rem)] md:pb-24 md:pt-[calc(var(--nav-h)+5rem)] lg:flex lg:min-h-[100svh] lg:items-center">
-      <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(214,179,106,0.16),transparent_65%)]" />
+      <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(255, 79, 24,0.16),transparent_65%)]" />
       <div className="container-x grid w-full gap-14 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-7">
           <p className="page-fade label flex items-center gap-2.5" style={{ '--delay': '-300ms' } as CSSProperties}>
@@ -205,7 +205,7 @@ function Fields() {
 function Outreach() {
   return (
     <section aria-label="Outreach" className="container-x pb-16 md:pb-32">
-      <div className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-panel bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.14),transparent_55%)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12">
+      <div className="flex flex-col gap-6 rounded-[calc(var(--radius)+0.5rem)] border border-line bg-panel bg-[radial-gradient(ellipse_at_top_right,rgba(255, 79, 24,0.14),transparent_55%)] px-6 py-9 md:flex-row md:items-center md:justify-between md:px-12 md:py-12">
         <div data-reveal>
           <p className="display text-balance text-[clamp(1.6rem,3vw,2.4rem)]">{leadsOutreach.title}</p>
           <p className="mt-3 text-muted">{leadsOutreach.copy}</p>

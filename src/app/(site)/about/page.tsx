@@ -8,7 +8,7 @@ import { jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 export const metadata = pageMeta({
   title: 'About OrbitBoyzz, a Plainsboro NJ Studio',
   description:
-    'Orbit Websites (OrbitBoyzz) is a small Plainsboro, NJ studio hand-coding fast, conversion-first websites for Central New Jersey businesses.',
+    'OrbitBoyzz, formerly Orbit Websites, is a small Plainsboro, NJ marketing agency: ads management, cold lead generation and hand-coded websites.',
   path: '/about',
 })
 

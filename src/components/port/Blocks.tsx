@@ -86,7 +86,7 @@ export function LocalPagesGrid({ current }: { current?: string }) {
 export function DirectAnswer({ question, children, links }: { question: string; children: ReactNode; links?: ReactNode }) {
   return (
     <Section label="Direct answer">
-      <div className="relative overflow-hidden rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-12">
+      <div className="relative overflow-hidden rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(255, 79, 24,0.12),transparent_60%),var(--panel)] p-6 md:p-12">
         <div data-reveal>
           <SectionLabel>[DIRECT ANSWER]</SectionLabel>
           <h2 className="display t-3 mt-6 max-w-[28ch] text-balance">{question}</h2>

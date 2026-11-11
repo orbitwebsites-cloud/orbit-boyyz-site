@@ -242,7 +242,7 @@ function LeadSystemLink({ link }: { link: NonNullable<IndustryPage['leadSystem']
     <Section label="Lead response">
       <div
         data-reveal
-        className="grid gap-8 rounded-[calc(var(--radius)+0.5rem)] border border-accent/40 bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.16),transparent_60%),var(--panel)] p-6 md:grid-cols-12 md:items-end md:p-12"
+        className="grid gap-8 rounded-[calc(var(--radius)+0.5rem)] border border-accent/40 bg-[radial-gradient(ellipse_at_top_right,rgba(255, 79, 24,0.16),transparent_60%),var(--panel)] p-6 md:grid-cols-12 md:items-end md:p-12"
       >
         <div className="md:col-span-8">
           <SectionLabel>[AFTER THE CLICK // LEAD RESPONSE]</SectionLabel>

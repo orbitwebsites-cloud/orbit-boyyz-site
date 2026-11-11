@@ -34,7 +34,7 @@ export function FooterWordmark() {
         // of centre (plus the T's side bearing). Padding the right edge shifts the word back to the middle.
         className="display select-none pr-[0.08em] text-center text-[23.5vw] leading-[0.78] tracking-[-0.06em] text-transparent"
         style={{
-          backgroundImage: 'linear-gradient(180deg, #f4efe6 0%, #d6b36a 55%, rgba(214,179,106,0.05) 100%)',
+          backgroundImage: 'linear-gradient(180deg, #F3F1EC 0%, #FF4F18 55%, rgba(255, 79, 24,0.05) 100%)',
           WebkitBackgroundClip: 'text',
           backgroundClip: 'text',
         }}

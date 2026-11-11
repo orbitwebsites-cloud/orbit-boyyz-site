@@ -94,12 +94,12 @@ export function Services() {
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <path d="M0 150 C 250 20, 500 20, 750 110 S 1000 160, 1000 60" fill="none" stroke="rgba(244,239,230,0.08)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <path d="M0 150 C 250 20, 500 20, 750 110 S 1000 160, 1000 60" fill="none" stroke="rgba(243, 241, 236,0.08)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           <path
             data-svc-orbit
             d="M0 150 C 250 20, 500 20, 750 110 S 1000 160, 1000 60"
             fill="none"
-            stroke="#D6B36A"
+            stroke="#FF4F18"
             strokeWidth="1.25"
             pathLength={1}
             strokeDasharray="1"

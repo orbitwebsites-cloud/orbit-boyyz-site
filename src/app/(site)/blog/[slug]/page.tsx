@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: PageProps<'/blog/[slug]'>
 
       <article className="pb-8">
         <header className="relative overflow-hidden pb-12 pt-[calc(var(--nav-h)+3rem)] md:pb-16 md:pt-[calc(var(--nav-h)+5.5rem)]">
-          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(214,179,106,0.14),transparent_65%)]" />
+          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(255, 79, 24,0.14),transparent_65%)]" />
           <div className="container-x">
             <div className="mx-auto max-w-[68ch]">
               <nav aria-label="Breadcrumb" className="page-fade font-mono text-[0.7rem] uppercase tracking-[0.14em] text-dim" style={{ '--delay': '-300ms' } as CSSProperties}>
@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: PageProps<'/blog/[slug]'>
             <aside
               data-reveal
               aria-label="Key takeaways"
-              className="mt-14 rounded-[var(--radius)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-8"
+              className="mt-14 rounded-[var(--radius)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(255, 79, 24,0.12),transparent_60%),var(--panel)] p-6 md:p-8"
             >
               <SectionLabel>[EXTRACTABLE TAKEAWAYS]</SectionLabel>
               <ol className="mt-6 grid gap-5">

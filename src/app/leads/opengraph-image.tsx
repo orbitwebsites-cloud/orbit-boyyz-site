@@ -18,17 +18,17 @@ export default function OpengraphImage() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '64px 72px',
-          background: 'radial-gradient(circle at 84% 30%, rgba(214,179,106,0.32), rgba(6,6,6,0) 45%), #060606',
-          color: '#F4EFE6',
+          background: 'radial-gradient(circle at 84% 30%, rgba(255, 79, 24,0.32), rgba(6,6,6,0) 45%), #0E0E0E',
+          color: '#F3F1EC',
           fontFamily: 'sans-serif',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
           <svg width="64" height="64" viewBox="0 0 128 128" fill="none">
-            <circle cx="64" cy="64" r="38" stroke="#D6B36A" strokeWidth="8" />
-            <circle cx="64" cy="64" r="14" fill="#F4EFE6" />
-            <path d="M24 72C40 45 78 32 106 44" stroke="#F4EFE6" strokeWidth="7" strokeLinecap="round" />
-            <circle cx="104" cy="44" r="8" fill="#D6B36A" />
+            <circle cx="64" cy="64" r="38" stroke="#FF4F18" strokeWidth="8" />
+            <circle cx="64" cy="64" r="14" fill="#F3F1EC" />
+            <path d="M24 72C40 45 78 32 106 44" stroke="#F3F1EC" strokeWidth="7" strokeLinecap="round" />
+            <circle cx="104" cy="44" r="8" fill="#FF4F18" />
           </svg>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: 34, fontWeight: 800, letterSpacing: -1 }}>Orbit Boyzz</span>
@@ -37,11 +37,11 @@ export default function OpengraphImage() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', fontSize: 92, fontWeight: 800, lineHeight: 1.0, letterSpacing: -3 }}>
           <span>Your niche.</span>
-          <span style={{ color: '#D6B36A' }}>Verified leads.</span>
+          <span style={{ color: '#FF4F18' }}>Verified leads.</span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 24, color: '#B7AFA3' }}>
           <span>Every email verified · 25 free leads to start</span>
-          <span style={{ color: '#D6B36A' }}>{leadsContact.email}</span>
+          <span style={{ color: '#FF4F18' }}>{leadsContact.email}</span>
         </div>
       </div>
     ),

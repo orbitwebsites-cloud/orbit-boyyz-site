@@ -16,7 +16,7 @@ export function PricingTiers({ headingLevel = 'h3' }: { headingLevel?: 'h2' | 'h
               className={cn(
                 'flex h-full flex-col rounded-[calc(var(--radius)+0.25rem)] border p-7 md:p-8',
                 featured
-                  ? 'border-accent/50 bg-[linear-gradient(180deg,rgba(214,179,106,0.12),rgba(16,15,13,0.95)_45%)] shadow-[0_0_80px_-20px_var(--accent-glow)]'
+                  ? 'border-accent/50 bg-[linear-gradient(180deg,rgba(255, 79, 24,0.12),rgba(16,15,13,0.95)_45%)] shadow-[0_0_80px_-20px_var(--accent-glow)]'
                   : 'border-line bg-panel/80',
               )}
             >
@@ -43,7 +43,7 @@ export function PricingTiers({ headingLevel = 'h3' }: { headingLevel?: 'h2' | 'h
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
                     <svg width="14" height="14" viewBox="0 0 12 12" fill="none" className="mt-1 shrink-0" aria-hidden="true">
-                      <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#FF4F18" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     {f}
                   </li>

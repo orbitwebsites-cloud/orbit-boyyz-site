@@ -37,10 +37,10 @@ html:has(.qf-shell) body::after {
   --qf-accent: #7d5a12;
   --qf-accent-soft: rgb(214 179 106 / 14%);
   --qf-accent-line: rgb(166 124 42 / 45%);
-  --qf-primary: #d6b36a;
-  --qf-on-primary: #1a1408;
+  --qf-primary: #FF4F18;
+  --qf-on-primary: #0E0E0E;
   --qf-primary-shadow: rgb(166 124 42 / 24%);
-  --qf-highlight: #d6b36a;
+  --qf-highlight: #FF4F18;
   --qf-glow: rgb(214 179 106 / 26%);
   --qf-grid: rgb(13 11 8 / 2.6%);
   --qf-focus: rgb(166 124 42 / 38%);
@@ -60,29 +60,29 @@ html:has(.qf-shell) body::after {
 
 @media (prefers-color-scheme: dark) {
   html:has(.qf-shell) {
-    background: #060606;
+    background: #0E0E0E;
     color-scheme: dark;
   }
 
   html:has(.qf-shell) body {
-    background: #060606;
-    color: #f4efe6;
+    background: #0E0E0E;
+    color: #F3F1EC;
   }
 
   .qf-shell {
-    --qf-paper: #060606;
+    --qf-paper: #0E0E0E;
     --qf-card: #100f0d;
-    --qf-ink: #f4efe6;
+    --qf-ink: #F3F1EC;
     --qf-muted: #b7afa3;
     --qf-faint: #8c857a;
     --qf-line: #26231e;
-    --qf-accent: #d6b36a;
+    --qf-accent: #FF4F18;
     --qf-accent-soft: rgb(214 179 106 / 9%);
     --qf-accent-line: rgb(214 179 106 / 42%);
-    --qf-primary: #d6b36a;
-    --qf-on-primary: #1a1408;
+    --qf-primary: #FF4F18;
+    --qf-on-primary: #0E0E0E;
     --qf-primary-shadow: rgb(214 179 106 / 14%);
-    --qf-highlight: #d6b36a;
+    --qf-highlight: #FF4F18;
     --qf-glow: rgb(214 179 106 / 9%);
     --qf-grid: rgb(244 239 230 / 3%);
     --qf-focus: rgb(214 179 106 / 40%);

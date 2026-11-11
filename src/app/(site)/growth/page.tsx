@@ -25,7 +25,7 @@ function Check() {
 
 function MetricCard() {
   return (
-    <div aria-label="Sample lead response dashboard" className="relative rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-6 shadow-[0_40px_120px_-40px_rgba(214,179,106,0.35)] backdrop-blur md:p-8">
+    <div aria-label="Sample lead response dashboard" className="relative rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-6 shadow-[0_40px_120px_-40px_rgba(255, 79, 24,0.35)] backdrop-blur md:p-8">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="label">Lead response dashboard</p>
@@ -75,7 +75,7 @@ export default function GrowthPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pb-16 pt-[calc(var(--nav-h)+4rem)] md:pb-24 md:pt-[calc(var(--nav-h)+6rem)]">
-        <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(214,179,106,0.16),transparent_65%)]" />
+        <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(255, 79, 24,0.16),transparent_65%)]" />
         <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7">
             <p className="page-fade inline-flex items-center gap-3 rounded-full border border-accent/30 px-4 py-2 text-sm text-accent" style={{ '--delay': '-300ms' } as CSSProperties}>
@@ -278,7 +278,7 @@ export default function GrowthPage() {
               data-reveal
               className={cn(
                 'relative flex flex-col rounded-[var(--radius)] border p-7 md:p-8',
-                tier.featured ? 'border-accent/60 bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.16),transparent_60%),var(--panel)]' : 'border-line bg-panel/60',
+                tier.featured ? 'border-accent/60 bg-[radial-gradient(ellipse_at_top,rgba(255, 79, 24,0.16),transparent_60%),var(--panel)]' : 'border-line bg-panel/60',
               )}
             >
               {tier.featured && <span className="label mb-4 text-accent">Best fit for growing teams</span>}
@@ -333,7 +333,7 @@ export default function GrowthPage() {
       <Section label="Founding partner offer">
         <div
           data-reveal
-          className="relative grid gap-10 overflow-hidden rounded-[calc(var(--radius)+0.75rem)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,106,0.2),transparent_55%),var(--panel)] px-6 py-12 md:grid-cols-12 md:px-14 md:py-16"
+          className="relative grid gap-10 overflow-hidden rounded-[calc(var(--radius)+0.75rem)] border border-accent/30 bg-[radial-gradient(ellipse_at_top_right,rgba(255, 79, 24,0.2),transparent_55%),var(--panel)] px-6 py-12 md:grid-cols-12 md:px-14 md:py-16"
         >
           <div className="md:col-span-8">
             <SectionLabel>[Founding partner offer]</SectionLabel>

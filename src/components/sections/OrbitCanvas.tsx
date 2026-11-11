@@ -18,10 +18,10 @@ type RingDef = {
 }
 
 const RINGS: RingDef[] = [
-  { r: 1.75, tilt: [1.2, 0.12, 0.25], speed: 0.46, color: '#F4EFE6', size: 0.08, phase: 0.4 },
-  { r: 2.55, tilt: [1.34, -0.24, -0.16], speed: 0.31, color: '#D6B36A', size: 0.11, phase: 2.1 },
-  { r: 3.35, tilt: [1.12, 0.34, 0.42], speed: 0.21, color: '#7FB4FF', size: 0.09, phase: 4.0 },
-  { r: 4.25, tilt: [1.27, -0.08, -0.5], speed: 0.14, color: '#ECD29A', size: 0.065, phase: 5.3 },
+  { r: 1.75, tilt: [1.2, 0.12, 0.25], speed: 0.46, color: '#F3F1EC', size: 0.08, phase: 0.4 },
+  { r: 2.55, tilt: [1.34, -0.24, -0.16], speed: 0.31, color: '#FF4F18', size: 0.11, phase: 2.1 },
+  { r: 3.35, tilt: [1.12, 0.34, 0.42], speed: 0.21, color: '#F3F1EC', size: 0.09, phase: 4.0 },
+  { r: 4.25, tilt: [1.27, -0.08, -0.5], speed: 0.14, color: '#FF7A4D', size: 0.065, phase: 5.3 },
 ]
 
 // Deterministic PRNG so the star field is identical on every render.
@@ -80,7 +80,7 @@ function Stars({ count }: { count: number }) {
 
   return (
     <points ref={ref} geometry={geometry}>
-      <pointsMaterial size={0.035} sizeAttenuation color="#F4EFE6" transparent opacity={0.55} depthWrite={false} />
+      <pointsMaterial size={0.035} sizeAttenuation color="#F3F1EC" transparent opacity={0.55} depthWrite={false} />
     </points>
   )
 }
@@ -95,13 +95,13 @@ function Core({ glow }: { glow: THREE.Texture }) {
     <group ref={ref}>
       <mesh>
         <sphereGeometry args={[0.6, 48, 48]} />
-        <meshStandardMaterial color="#F4EFE6" emissive="#D6B36A" emissiveIntensity={0.85} roughness={0.35} />
+        <meshStandardMaterial color="#F3F1EC" emissive="#FF4F18" emissiveIntensity={0.85} roughness={0.35} />
       </mesh>
       <sprite scale={4.4}>
-        <spriteMaterial map={glow} color="#D6B36A" transparent opacity={0.7} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <spriteMaterial map={glow} color="#FF4F18" transparent opacity={0.7} blending={THREE.AdditiveBlending} depthWrite={false} />
       </sprite>
       <sprite scale={10}>
-        <spriteMaterial map={glow} color="#7FB4FF" transparent opacity={0.1} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <spriteMaterial map={glow} color="#F3F1EC" transparent opacity={0.1} blending={THREE.AdditiveBlending} depthWrite={false} />
       </sprite>
     </group>
   )
@@ -117,7 +117,7 @@ function Ring({ def, glow }: { def: RingDef; glow: THREE.Texture }) {
     <group rotation={def.tilt}>
       <mesh>
         <torusGeometry args={[def.r, 0.006, 6, 256]} />
-        <meshBasicMaterial color="#F4EFE6" transparent opacity={0.2} />
+        <meshBasicMaterial color="#F3F1EC" transparent opacity={0.2} />
       </mesh>
       <group ref={planet}>
         <mesh>
@@ -173,8 +173,8 @@ function Scene({ stars }: { stars: number }) {
   return (
     <>
       <ambientLight intensity={0.35} />
-      <pointLight position={[0, 0, 0]} intensity={24} distance={14} color="#D6B36A" />
-      <directionalLight position={[4, 6, 6]} intensity={0.7} color="#F4EFE6" />
+      <pointLight position={[0, 0, 0]} intensity={24} distance={14} color="#FF4F18" />
+      <directionalLight position={[4, 6, 6]} intensity={0.7} color="#F3F1EC" />
       <Rig>
         <Core glow={glow} />
         {RINGS.map((def, i) => (

@@ -8,7 +8,7 @@ import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 export const metadata = pageMeta({
   title: 'Web Design FAQ: Pricing, Timelines, SEO',
   description:
-    'Straight answers on hand-coded websites, 7-day launch builds, 50/50 payment, care plans, SEO and AI operations from Orbit Websites in Plainsboro, NJ.',
+    'Straight answers on ads management, cold lead generation, hand-coded websites, pricing and payment from OrbitBoyzz in Plainsboro, NJ.',
   path: '/faq',
 })
 

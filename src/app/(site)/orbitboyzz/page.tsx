@@ -51,7 +51,7 @@ export default function OrbitBoyzzPage() {
       </Section>
 
       <Section label="Direct answer">
-        <div className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(214,179,106,0.12),transparent_60%),var(--panel)] p-6 md:p-12">
+        <div className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/25 bg-[radial-gradient(ellipse_at_top_left,rgba(255, 79, 24,0.12),transparent_60%),var(--panel)] p-6 md:p-12">
           <div data-reveal>
             <SectionLabel>[DIRECT ANSWER]</SectionLabel>
             <h2 className="display t-2 mt-6 max-w-[20ch]">{orbitboyzzBrandFaq[0]}</h2>

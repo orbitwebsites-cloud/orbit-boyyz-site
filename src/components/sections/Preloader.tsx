@@ -9,20 +9,20 @@ export function Preloader() {
     <div className="preloader" aria-hidden="true">
       <div className="flex w-[min(20rem,70vw)] flex-col items-center">
         <svg viewBox="0 0 128 128" className="h-24 w-24" fill="none">
-          <circle className="preloader__ring" pathLength={1} cx="64" cy="64" r="38" stroke="#D6B36A" strokeWidth="6" />
-          <circle className="preloader__core" cx="64" cy="64" r="14" fill="#F4EFE6" />
+          <circle className="preloader__ring" pathLength={1} cx="64" cy="64" r="38" stroke="#FF4F18" strokeWidth="6" />
+          <circle className="preloader__core" cx="64" cy="64" r="14" fill="#F3F1EC" />
           <path
             className="preloader__arc"
             pathLength={1}
             d="M24 72C40 45 78 32 106 44"
-            stroke="#F4EFE6"
+            stroke="#F3F1EC"
             strokeWidth="6"
             strokeLinecap="round"
           />
-          <circle className="preloader__planet" cx="104" cy="44" r="8" fill="#D6B36A" />
+          <circle className="preloader__planet" cx="104" cy="44" r="8" fill="#FF4F18" />
         </svg>
         <div className="mt-8 flex w-full items-center justify-between font-mono text-[0.7rem] tracking-[0.18em] text-muted">
-          <span>ORBIT WEBSITES</span>
+          <span>ORBITBOYZZ</span>
           <span className="preloader__count text-accent" />
         </div>
         <div className="preloader__bar mt-3 h-px w-full bg-line">

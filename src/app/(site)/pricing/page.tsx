@@ -2,6 +2,7 @@ import { carePlans, faqs, site, tiers } from '@/content/site'
 import { ArrowLink } from '@/components/port/Blocks'
 import { Accordion } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
+import { MarketingPricing } from '@/components/agency/OfferBlocks'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
 import { PricingTiers } from '@/components/ui/PricingTiers'
@@ -11,9 +12,9 @@ import { cn } from '@/lib/cn'
 import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 
 export const metadata = pageMeta({
-  title: 'Website Design Pricing for NJ Businesses',
+  title: 'Pricing: Ads Management, Cold Leads and Websites',
   description:
-    'Orbit Websites pricing: launch builds quoted on a free call, premium from $3,500, AI operations $5,000–$15,000+, optional care $300–$700/mo.',
+    'OrbitBoyzz pricing: ads management per booking then a retainer, cold leads at $0.20 each from 10,000 a month, websites from $3,500, optional care $300–$700/mo.',
   path: '/pricing',
 })
 
@@ -47,7 +48,7 @@ function CellMark({ v }: { v: Cell }) {
     return (
       <>
         <svg width="16" height="16" viewBox="0 0 12 12" fill="none" className="mx-auto" aria-hidden="true">
-          <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#D6B36A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="m2 6.2 2.6 2.6L10 3.4" stroke="#FF4F18" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <span className="sr-only">Included</span>
       </>
@@ -72,13 +73,14 @@ export default function PricingPage() {
         label="[PRICING]"
         title={
           <>
-            Website design pricing: clear tiers, <span className="serif-accent text-accent">no surprises.</span>
+            Pricing for ads, leads and websites, <span className="serif-accent text-accent">no surprises.</span>
           </>
         }
-        lead="Orbit Websites pricing: launch builds are quoted on a free call and built in a 7-day sprint, premium builds start at $3,500, and AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional, $300–$700/mo after launch. 50% reserves your build; you approve the finished site before paying the rest."
+        lead="OrbitBoyzz pricing: ads management is paid per booking, then on a monthly retainer once that costs you less. Cold leads are $0.20 each, with plans from 10,000 a month. For websites, launch builds are quoted on a free call and built in a 7-day sprint, premium builds start at $3,500, and AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional, $300–$700/mo after launch. 50% reserves your build; you approve the finished site before paying the rest."
       />
 
-      <section aria-label="Build tiers" className="container-x">
+      <MarketingPricing />
+      <section aria-label="Website build tiers" className="container-x">
         <PricingTiers headingLevel="h2" />
       </section>
 

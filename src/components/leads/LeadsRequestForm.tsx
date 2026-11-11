@@ -223,7 +223,7 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
     return (
       <div
         role="status"
-        className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/40 bg-panel bg-[radial-gradient(ellipse_at_top,rgba(214,179,106,0.14),transparent_60%)] p-6 sm:p-10"
+        className="rounded-[calc(var(--radius)+0.5rem)] border border-accent/40 bg-panel bg-[radial-gradient(ellipse_at_top,rgba(255, 79, 24,0.14),transparent_60%)] p-6 sm:p-10"
       >
         <div className="flex items-center gap-4">
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent text-accent-ink" aria-hidden="true">
@@ -266,7 +266,7 @@ export function LeadsRequestForm({ defaultSource = LEADS_REQUEST_DEFAULT_SOURCE 
         onSubmit={handleSubmit}
         noValidate
         aria-busy={busy}
-        className="relative grid gap-5 rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-5 shadow-[0_40px_120px_-40px_rgba(214,179,106,0.3)] backdrop-blur sm:p-8"
+        className="relative grid gap-5 rounded-[calc(var(--radius)+0.5rem)] border border-line-strong bg-panel/90 p-5 shadow-[0_40px_120px_-40px_rgba(255, 79, 24,0.3)] backdrop-blur sm:p-8"
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <TextField field="niche" label={f.niche.label} placeholder={f.niche.placeholder} required value={values.niche} error={errors.niche} readOnly={busy} onChange={setValue} />
