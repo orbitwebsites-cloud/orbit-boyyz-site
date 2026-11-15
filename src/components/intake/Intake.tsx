@@ -120,9 +120,8 @@ export function Intake() {
     leaving.current = true
     gsap.to('[data-screen] > *', {
       opacity: 0,
-      y: -24 * direction.current,
-      duration: 0.2,
-      stagger: 0.025,
+      y: -12 * direction.current,
+      duration: 0.1,
       ease: 'power2.in',
       onComplete: () => {
         leaving.current = false
@@ -139,8 +138,8 @@ export function Intake() {
       if (!motionOk()) return field?.focus({ preventScroll: true })
       gsap.fromTo(
         '[data-screen] > *',
-        { opacity: 0, y: 40 * direction.current },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, ease: 'power3.out', onStart: () => field?.focus({ preventScroll: true }) },
+        { opacity: 0, y: 16 * direction.current },
+        { opacity: 1, y: 0, duration: 0.26, stagger: 0.025, ease: 'power3.out', onStart: () => field?.focus({ preventScroll: true }) },
       )
     },
     { scope: root, dependencies: [step, sent] },
@@ -162,7 +161,7 @@ export function Intake() {
     setError('')
     setAnswers((a) => ({ ...a, [question.key]: option }))
     // A beat so the choice is seen before the screen changes.
-    window.setTimeout(() => advance(option), 180)
+    window.setTimeout(() => advance(option), 60)
   }
 
   function onSubmit(event: FormEvent) {
@@ -243,9 +242,9 @@ export function Intake() {
           pathLength={1}
           strokeDasharray="1"
           strokeDashoffset={1 - progress}
-          className="transition-[stroke-dashoffset] duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
+          className="transition-[stroke-dashoffset] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]"
         />
-        <g className="origin-center transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `rotate(${progress * 360}deg)` }}>
+        <g className="origin-center transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `rotate(${progress * 360}deg)` }}>
           <circle cx="99" cy="50" r="0.7" fill="var(--accent)" />
         </g>
       </svg>
@@ -262,7 +261,7 @@ export function Intake() {
 
       {/* A plain bar as well: the ring is easy to miss on a phone. */}
       <div aria-hidden="true" className="relative z-10 mx-5 h-px bg-line md:mx-10">
-        <div className="h-px origin-left bg-accent transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `scaleX(${progress})` }} />
+        <div className="h-px origin-left bg-accent transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `scaleX(${progress})` }} />
       </div>
 
       <main id="main" className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-6 pb-16 pt-10 md:px-10">

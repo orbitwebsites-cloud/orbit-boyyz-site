@@ -114,9 +114,8 @@ export default function BookFlow() {
     leaving.current = true
     gsap.to('[data-screen] > *', {
       opacity: 0,
-      y: -24 * direction.current,
-      duration: 0.2,
-      stagger: 0.025,
+      y: -12 * direction.current,
+      duration: 0.1,
       ease: 'power2.in',
       onComplete: () => {
         leaving.current = false
@@ -133,8 +132,8 @@ export default function BookFlow() {
       if (!motionOk()) return field?.focus({ preventScroll: true })
       gsap.fromTo(
         '[data-screen] > *',
-        { opacity: 0, y: 40 * direction.current },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, ease: 'power3.out', onStart: () => field?.focus({ preventScroll: true }) },
+        { opacity: 0, y: 16 * direction.current },
+        { opacity: 1, y: 0, duration: 0.26, stagger: 0.025, ease: 'power3.out', onStart: () => field?.focus({ preventScroll: true }) },
       )
     },
     { scope: root, dependencies: [step] },
@@ -144,7 +143,7 @@ export default function BookFlow() {
     if (!question) return
     setAnswers((a) => ({ ...a, [question.key]: option }))
     // A beat so the choice is seen before the screen changes.
-    window.setTimeout(() => goTo(step + 1), 180)
+    window.setTimeout(() => goTo(step + 1), 60)
   }
 
   function onKeyDown(event: KeyboardEvent<HTMLFormElement>) {
@@ -243,9 +242,9 @@ export default function BookFlow() {
           pathLength={1}
           strokeDasharray="1"
           strokeDashoffset={1 - progress}
-          className="transition-[stroke-dashoffset] duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
+          className="transition-[stroke-dashoffset] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]"
         />
-        <g className="origin-center transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `rotate(${progress * 360}deg)` }}>
+        <g className="origin-center transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `rotate(${progress * 360}deg)` }}>
           <circle cx="99" cy="50" r="0.7" fill="var(--accent)" />
         </g>
       </svg>
@@ -266,7 +265,7 @@ export default function BookFlow() {
           </div>
         </header>
         <div aria-hidden="true" className="mx-5 h-px bg-line md:mx-10">
-          <div className="h-px origin-left bg-accent transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `scaleX(${progress})` }} />
+          <div className="h-px origin-left bg-accent transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]" style={{ transform: `scaleX(${progress})` }} />
         </div>
 
         <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-6 pb-14 pt-10 md:px-10">
