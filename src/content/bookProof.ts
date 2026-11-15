@@ -1,5 +1,5 @@
-// Proof under the /book intro (src/components/book/BookProof.tsx), for local
-// businesses deciding whether to book the free website call. Facts only:
+// Work, speed and process proof first written for the old /book intro. bookWork is still
+// used by the town pages (components/port/LandingPages.tsx). Facts only:
 // - Speed: orbitboyzz.com's September 2026 rebuild scored 95 or higher in all
 //   four Lighthouse categories on mobile. Say it about orbitboyzz.com only,
 //   never about a client or concept site.

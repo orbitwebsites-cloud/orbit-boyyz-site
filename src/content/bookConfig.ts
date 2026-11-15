@@ -1,4 +1,4 @@
-// Settings for the /book flow (src/components/book/Book.tsx): the short
+// Settings for the /book flow (src/components/book/BookFlow.tsx): the short
 // questionnaire every "Book a call" button leads to before the scheduler.
 
 // Calendly event shown on the final screen, prefilled with name, email and

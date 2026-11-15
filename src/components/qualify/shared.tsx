@@ -1,7 +1,7 @@
 'use client'
 
 // Pieces of the Typeform-style /book flow (website clients,
-// components/book/Book.tsx), and the form pieces /sample reuses. Styles live in ./qualify.css (qf- classes),
+// components/book/BookFlow.tsx), and the form pieces /sample reuses. Styles live in ./qualify.css (qf- classes),
 // imported by those pages. The Calendly step lives in ./calendly.tsx: nothing
 // here may import it or '@/content/qualifyConfig', or /sample (also served on
 // leads.orbitboyzz.com, which has no call or calendar step) would ship it.
