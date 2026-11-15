@@ -340,6 +340,8 @@ export function Intake() {
           </form>
         ) : question && part ? (
           <form key={step} onSubmit={onSubmit} onKeyDown={onKeyDown} noValidate data-screen className="flex flex-col items-start">
+            {/* The question is a <label>, so the page still needs a heading for screen readers. */}
+            <h1 className="sr-only">Before your call</h1>
             <p className="alabel text-accent">
               {step === 0 ? `Before your call · ${TOTAL} short questions` : `Part ${question.partIndex + 1} of ${PARTS.length} · ${part.title}`}
             </p>
