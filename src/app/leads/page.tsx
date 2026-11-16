@@ -21,17 +21,17 @@ import '@/components/leads/leads.css'
 // and 308s orbitboyzz.com/leads to it). Standalone: outside the (site) route
 // group, so the website business's preloader, nav, footer, dock, prices and
 // booking links are neither rendered nor shipped in this page's JavaScript.
-// Every primary CTA jumps to the 25-free-leads request form (#request,
-// components/leads/LeadsRequest.tsx): no call or calendar step on this host.
+// Every primary CTA goes to the lead-list booking flow (/book-leads): three
+// questions, contact details, then the calendar. There is no free sample.
 // Order: a real masked row up top, how every email is verified, what's in each
-// row, four straight answers, then the form with what happens after it.
+// row, straight answers, then the closing "Book a call" section.
 // Motion stays quiet here: short fades only (data-reveal), no text effects.
 // Copy rules live at the top of src/content/leads.ts.
 // Listed in orbitboyzz.com/sitemap.xml as a cross-host entry (the leads host robots.txt points to that sitemap).
 
 const TITLE = 'Verified lead lists for outbound agencies | Orbit Boyzz'
 const DESCRIPTION =
-  'Get 25 free leads in one niche, built from Google Maps listings and each business’s own website. Every email verified, business phone included, delivered within a few business days.'
+  'Lead lists built for one niche and area, from Google Maps listings and each business’s own website. Every email verified, business phone included. Book a free 30-minute call to scope yours.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

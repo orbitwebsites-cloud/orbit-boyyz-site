@@ -73,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         </a>
         {/* Orbit's chrome (preloader, nav, <main id="main">, footer, dock, cursor)
             is the (site) route group's layout. The standalone routes outside
-            it (/leads, /sample, /qualify, /book, /demo/*) render their own
+            it (/leads, /sample, /qualify, /book, /book-leads, /demo/*) render their own
             <main id="main">, so no main-site nav, footer, prices or booking
             links reach their HTML or their JavaScript. */}
         <LenisProvider>

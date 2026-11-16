@@ -2,10 +2,9 @@ import { leadsRequest } from '@/content/leads'
 import { cn } from '@/lib/cn'
 
 /**
- * "What happens after you request": the three steps between the form and the
- * sheet, shown next to the request form on leads.orbitboyzz.com and /qualify.
- * `heading` keeps the outline in order: h3 under the leads page's h2, h2 under
- * /qualify's h1.
+ * "What happens after you book": the three steps after the booking button,
+ * shown in the closing section of leads.orbitboyzz.com.
+ * `heading` keeps the outline in order: h3 under the leads page's h2.
  */
 export function NextSteps({ heading: Heading = 'h3', className }: { heading?: 'h2' | 'h3'; className?: string }) {
   return (

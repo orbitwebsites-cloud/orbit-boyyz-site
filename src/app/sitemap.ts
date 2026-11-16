@@ -10,22 +10,22 @@ import { LEADS_URL } from '@/lib/leadsSite'
 // Keyword landing pages (src/content/keyword-pages) come in through
 // legacyPageMeta; one still marked `draft: true` is noindex and stays out.
 // (/form was never in the sitemap and stays out.)
-// /qualify and /book, the noindex,nofollow booking steps, and /sample (the
-// noindex,nofollow lead sample request) must never be listed:
+// /book and /book-leads, the noindex,nofollow booking flows, and /qualify and
+// /sample (which now redirect to /book-leads) must never be listed:
 // IndexNow (scripts/submit-indexnow.mjs) submits exactly what this file lists.
 //
 // LEADS_URL (https://leads.orbitboyzz.com/) is the one deliberate cross-host
 // entry: leads.orbitboyzz.com/robots.txt declares this sitemap
 // (https://orbitboyzz.com/sitemap.xml), which makes the entry valid, and the
 // sc-domain:orbitboyzz.com Search Console property covers both hosts.
-const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify', '/book', '/sample'])
+const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify', '/book', '/book-leads', '/sample'])
 
 // Every non-post page changed in the 2026-10-16 SEO pass (titles, town copy
 // and the organization schema on every page).
 const PAGES_UPDATED = '2026-10-16'
 
 // Last change to the leads.orbitboyzz.com page (copy, schema, FAQ).
-const LEADS_UPDATED = '2026-10-19'
+const LEADS_UPDATED = '2026-11-16'
 
 // Pages changed since the SEO pass, so IndexNow's --since picks up only them.
 const ROUTE_UPDATED: Record<string, string> = {

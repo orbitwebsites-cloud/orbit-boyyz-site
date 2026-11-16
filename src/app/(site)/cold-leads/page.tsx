@@ -20,7 +20,6 @@ const QUESTIONS: [string, string][] = [
   ['Where do the leads come from?', 'Each list is built when you ask for it, from Google Maps listings and each business’s own website.'],
   ['Are the emails verified?', 'Every email is checked with a verification service before the sheet ships. Only “valid” counts as verified.'],
   ['What is in each row?', 'Company, owner name and title where public sources show them, verified email, business phone, website, city and state, Google rating and review count.'],
-  ['Can I try it first?', 'Yes. You can start with 25 free leads for your niche and area before committing to a plan.'],
   ['How do I get the leads?', 'As a sheet, one row per lead.'],
 ]
 

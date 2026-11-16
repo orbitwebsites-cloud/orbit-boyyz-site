@@ -69,7 +69,7 @@ Ideal client: established home-service businesses (HVAC, plumbing, electrical, r
   landscaping, remodeling) in Central NJ. Not a fit: medical, dental and legal practices.
 
 Second offer, https://leads.orbitboyzz.com/: exclusive, verified lead lists for US outbound
-  and lead-gen agencies. 25 free leads to test, then 300 for qualified agencies; replaces
+  and lead-gen agencies. Starts with a free 30-minute call, no free sample; replaces
   Clay + Apollo spend for at least 30% less or they don't pay; month-to-month; 10 agencies
   max, one per niche. Pricing is not published.
 

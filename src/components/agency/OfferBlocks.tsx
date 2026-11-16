@@ -114,7 +114,7 @@ export function LeadsOffer() {
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-paper/15 pt-8">
             <BookButton label="Book a call about leads" />
             <a href={LEADS_URL} className="text-[15px] underline decoration-1 underline-offset-[6px]">
-              Or start with 25 free leads →
+              See what is in every row →
             </a>
           </div>
         </div>

@@ -1,11 +1,12 @@
 'use client'
 
-// /book: the short flow every "Book a free call" button leads to. Three quick
-// marketing questions (the first two are yes/no), contact details, then the
+// The booking flow behind /book (the marketing call every "Book a free call"
+// button leads to) and /book-leads (the lead-list call for outbound agencies).
+// Three quick questions (the first two are yes/no), contact details, then the
 // calendar. The answers are saved to the Orbit CRM and emailed to the inbox
 // before the calendar loads, and they also travel with the Calendly booking,
 // so a failed save never stops someone from booking.
-// Copy, questions and their rules: src/content/bookFlow.ts.
+// Copy, questions and their rules, per flow: src/content/bookFlow.ts.
 
 import Link from 'next/link'
 import posthog from 'posthog-js'
@@ -14,7 +15,7 @@ import { buildCalendlyUrl } from '@/components/qualify/calendly'
 import { looksLikeEmail, useEmailCheck } from '@/components/qualify/shared'
 import { OrbitMark } from '@/components/ui/Logo'
 import { BOOK_CALENDLY_URL, BOOK_FORM_ENDPOINT } from '@/content/bookConfig'
-import { BOOK_FLOW_STORAGE_KEY, BOOK_QUESTIONS, bookIntro, bookNextSteps, type BookAnswerKey } from '@/content/bookFlow'
+import { marketingBookFlow, type BookAnswerKey, type BookFlowConfig } from '@/content/bookFlow'
 import { site } from '@/content/siteInfo'
 import { gsap, useGSAP } from '@/lib/agencyMotion'
 import { emailCheckLabel } from '@/lib/emailCheck'
@@ -24,8 +25,6 @@ import { BookTrust } from './BookTrust'
 type Answers = Record<BookAnswerKey, string> & { name: string; business: string; phone: string; email: string; notes: string }
 
 const EMPTY: Answers = { owner: '', spending: '', need: '', name: '', business: '', phone: '', email: '', notes: '' }
-const CONTACT = BOOK_QUESTIONS.length
-const SCHEDULE = CONTACT + 1
 const LETTERS = 'ABCDEF'
 
 const digits = (value: string) => value.replace(/\D/g, '')
@@ -41,12 +40,15 @@ function contactProblem(a: Answers): { field: 'name' | 'business' | 'phone' | 'e
 }
 
 /** One line that carries the answers into the Calendly booking. */
-function summary(a: Answers) {
-  return [`${a.business.trim()}`, `wants: ${a.need}`, `decides: ${a.owner}`, `spending now: ${a.spending}`, a.phone.trim(), a.notes.trim()].filter(Boolean).join(' · ')
+function summary(a: Answers, flow: BookFlowConfig) {
+  const labels = flow.answerLabels
+  return [a.business.trim(), `${labels.need}: ${a.need}`, `${labels.owner}: ${a.owner}`, `${labels.spending}: ${a.spending}`, a.phone.trim(), a.notes.trim()]
+    .filter(Boolean)
+    .join(' · ')
 }
 
-function calendarUrl(a: Answers) {
-  const base = buildCalendlyUrl(BOOK_CALENDLY_URL, { name: a.name, email: a.email, a1: summary(a) })
+function calendarUrl(a: Answers, flow: BookFlowConfig) {
+  const base = buildCalendlyUrl(BOOK_CALENDLY_URL, { name: a.name, email: a.email, a1: summary(a, flow) })
   if (!base) return ''
   const url = new URL(base)
   url.searchParams.set('embed_type', 'Inline')
@@ -58,7 +60,9 @@ function calendarUrl(a: Answers) {
 const fieldClass =
   'w-full border-b border-line-strong bg-transparent pb-2.5 text-[clamp(1.15rem,2.2vw,1.5rem)] font-medium tracking-[-0.02em] text-fg outline-none transition-colors placeholder:text-fg/25 focus:border-accent read-only:opacity-60'
 
-export default function BookFlow() {
+export default function BookFlow({ flow = marketingBookFlow }: { flow?: BookFlowConfig }) {
+  const CONTACT = flow.questions.length
+  const SCHEDULE = CONTACT + 1
   const root = useRef<HTMLDivElement>(null)
   const honey = useRef<HTMLInputElement>(null)
   const [step, setStep] = useState(0)
@@ -75,7 +79,7 @@ export default function BookFlow() {
   // a returning visitor lands on their contact details and continues from there.
   useEffect(() => {
     try {
-      const saved = JSON.parse(sessionStorage.getItem(BOOK_FLOW_STORAGE_KEY) || 'null')
+      const saved = JSON.parse(sessionStorage.getItem(flow.storageKey) || 'null')
       /* eslint-disable react-hooks/set-state-in-effect -- hydrate from sessionStorage once on mount (same as Intake.tsx) */
       if (saved && typeof saved === 'object') {
         if (saved.answers && typeof saved.answers === 'object') setAnswers({ ...EMPTY, ...saved.answers })
@@ -84,13 +88,13 @@ export default function BookFlow() {
       /* eslint-enable react-hooks/set-state-in-effect */
     } catch {}
     loaded.current = true
-  }, [])
+  }, [flow.storageKey, CONTACT])
   useEffect(() => {
     if (!loaded.current) return
     try {
-      sessionStorage.setItem(BOOK_FLOW_STORAGE_KEY, JSON.stringify({ step: Math.min(step, CONTACT), answers }))
+      sessionStorage.setItem(flow.storageKey, JSON.stringify({ step: Math.min(step, CONTACT), answers }))
     } catch {}
-  }, [step, answers])
+  }, [step, answers, flow.storageKey, CONTACT])
 
   // Calendly tells the page when a time has been booked.
   useEffect(() => {
@@ -103,7 +107,7 @@ export default function BookFlow() {
     return () => window.removeEventListener('message', onMessage)
   }, [])
 
-  const question = step < CONTACT ? BOOK_QUESTIONS[step] : null
+  const question = step < CONTACT ? flow.questions[step] : null
   const motionOk = () => window.matchMedia(MQ.motion).matches
 
   function goTo(next: number) {
@@ -178,38 +182,43 @@ export default function BookFlow() {
       // Bots fill the hidden field. Let them through to nothing.
       if (!honey.current?.value) {
         const email = answers.email.trim()
+        const labels = flow.answerLabels
+        // ?src= on the link (outreach replies carry it) is kept with the lead.
+        const src = (new URLSearchParams(window.location.search).get('src') || '').replace(/[^\w.-]/g, '').slice(0, 40)
         const crmFields: Record<string, string> = {
           business: answers.business.trim(),
           contact_name: answers.name.trim(),
           phone: answers.phone.trim(),
           email,
-          category: answers.need,
+          category: flow.category ?? answers.need,
           decision_maker: answers.owner,
-          spending_on_marketing_now: answers.spending,
-          wants: answers.need,
+          [labels.spending.replace(/ /g, '_')]: answers.spending,
+          [labels.need.replace(/ /g, '_')]: answers.need,
           notes_from_form: answers.notes.trim(),
           email_check: emailCheckLabel(check),
-          details: `Booked through /book. ${summary(answers)}`,
+          details: `Booked through ${flow.path}. ${summary(answers, flow)}`,
+          ...(src ? { link_source: src } : {}),
         }
         const inbox: Record<string, string> = {
-          _subject: `Marketing call: ${answers.business.trim()}`,
+          _subject: `${flow.subject}: ${answers.business.trim()}`,
           _template: 'table',
           _captcha: 'false',
           _replyto: email,
           name: answers.name.trim(),
           business: answers.business.trim(),
-          'decides on marketing': answers.owner,
-          'spending on ads or outreach now': answers.spending,
-          'needs more of': answers.need,
+          [labels.owner]: answers.owner,
+          [labels.spending]: answers.spending,
+          [labels.need]: answers.need,
           phone: answers.phone.trim(),
           email,
           email_check: emailCheckLabel(check),
           'anything we should know': answers.notes.trim() || '(left blank)',
+          ...(src ? { 'link source': src } : {}),
         }
         const post = (url: string, body: unknown) =>
           fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) })
-        await Promise.allSettled([post('/api/crm-lead', { source: 'book', fields: crmFields }), post(BOOK_FORM_ENDPOINT, inbox)])
-        posthog.capture('booking_intake_submitted', { need: answers.need, decision_maker: answers.owner, spending_now: answers.spending })
+        await Promise.allSettled([post('/api/crm-lead', { source: flow.crmSource, fields: crmFields }), post(BOOK_FORM_ENDPOINT, inbox)])
+        posthog.capture('booking_intake_submitted', { flow: flow.id, need: answers.need, decision_maker: answers.owner, spending_now: answers.spending })
       }
       goTo(SCHEDULE)
     } finally {
@@ -221,7 +230,7 @@ export default function BookFlow() {
   const progress = step / SCHEDULE
   const name = firstName(answers.name)
   const locked = sending || emailCheck.checking
-  const url = step === SCHEDULE ? calendarUrl(answers) : ''
+  const url = step === SCHEDULE ? calendarUrl(answers, flow) : ''
 
   return (
     <div ref={root} className="relative flex min-h-svh flex-col overflow-x-clip bg-bg text-fg">
@@ -273,11 +282,11 @@ export default function BookFlow() {
             <form key={step} onSubmit={(e) => e.preventDefault()} onKeyDown={onKeyDown} data-screen className="flex flex-col items-start">
               {step === 0 ? (
                 <h1 className="alabel text-accent">
-                  {bookIntro.label} · <span className="text-muted">{bookIntro.note}</span>
+                  {flow.intro.label} · <span className="text-muted">{flow.intro.note}</span>
                 </h1>
               ) : (
                 <p className="alabel text-accent">
-                  Question {step + 1} of {BOOK_QUESTIONS.length}
+                  Question {step + 1} of {flow.questions.length}
                 </p>
               )}
               <p id={`book-${question.key}-label`} className="display mt-4 text-[clamp(1.9rem,4.8vw,3.4rem)] leading-[1.05]">
@@ -316,7 +325,7 @@ export default function BookFlow() {
               {step === 0 ? (
                 <>
                   <ul className="mt-9 flex flex-col gap-2 text-[15px] text-muted sm:flex-row sm:flex-wrap sm:gap-x-7">
-                    {bookIntro.points.map((point) => (
+                    {flow.intro.points.map((point) => (
                       <li key={point} className="flex items-center gap-2.5">
                         <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
                         {point}
@@ -324,7 +333,7 @@ export default function BookFlow() {
                     ))}
                   </ul>
                   <a href="#about-the-call" className="mt-8 text-[15px] text-muted underline decoration-1 underline-offset-4 hover:text-fg">
-                    What happens on the call, and how we get paid
+                    {flow.trustLink}
                   </a>
                 </>
               ) : (
@@ -438,7 +447,7 @@ export default function BookFlow() {
                 )}
               </h2>
               <ol className="mt-5 flex flex-col gap-1.5 text-[15px] text-muted sm:flex-row sm:flex-wrap sm:gap-x-7">
-                {bookNextSteps.map((line, i) => (
+                {flow.nextSteps.map((line, i) => (
                   <li key={line} className="flex gap-2.5">
                     <span className="alabel text-accent">{i + 1}</span>
                     {line}
@@ -475,6 +484,8 @@ export default function BookFlow() {
 
       {step === 0 && (
         <BookTrust
+          copy={flow.trust}
+          note={flow.intro.note}
           onStart={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' })
             root.current?.querySelector<HTMLElement>('[data-autofocus]')?.focus({ preventScroll: true })

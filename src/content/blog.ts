@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "What is leads.orbitboyzz.com?",
-        "It is the same business’s lead data offer for outbound and lead-gen agencies: verified lead lists built for one client niche, with 25 free leads to start."
+        "It is the same business’s lead data offer for outbound and lead-gen agencies: verified lead lists built for one client niche."
       ]
     ]
   },

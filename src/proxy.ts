@@ -9,11 +9,11 @@
 //    `Link: <https://orbitboyzz.com/...>; rel="canonical"` header pointing at
 //    the HTML page.
 // 3. growth.orbitboyzz.com/ is served the /growth page.
-// 4. leads.orbitboyzz.com/ is served the /leads page; /sample passes through
-//    there (as do /api/*, /_next/* and static files, which the matcher skips);
-//    /qualify, /book and /contact 308 to "/#request" (the page's 25-free-leads
-//    request form: no call or calendar step on that host, query string kept so
-//    ?src= survives); every other path on that host 308s to the same path on
+// 4. leads.orbitboyzz.com/ is served the /leads page; /book-leads (the
+//    lead-list booking flow) passes through there (as do /api/*, /_next/* and
+//    static files, which the matcher skips); /qualify, /sample, /book and
+//    /contact 308 to /book-leads on that host (query string kept so ?src=
+//    survives); every other path on that host 308s to the same path on
 //    orbitboyzz.com. The main site's price files the matcher skips
 //    (/pricing.md, /openapi.json, /feed.xml, /sitemap.xml, /api/quote-estimate)
 //    are sent to orbitboyzz.com on that host by next.config.ts's redirects.
@@ -32,7 +32,7 @@ import { privacyIntro, privacySections, privacyUpdated } from '@/content/legal'
 import { keywordRoutes } from '@/content/keyword-pages'
 import { carePlans, faqs, services, tiers } from '@/content/site'
 import { keywordMarkdown } from '@/lib/keyword-markdown'
-import { LEADS_HOST, LEADS_REQUEST_ID, LEADS_URL } from '@/lib/leadsSite'
+import { LEADS_BOOK_PATH, LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
 
 export const config = {
   matcher: [
@@ -59,9 +59,9 @@ function withVary(existing: string | null) {
 const ORIGIN = 'https://orbitboyzz.com'
 const MAIN_HOSTS: ReadonlySet<string> = new Set(['orbitboyzz.com', 'www.orbitboyzz.com'])
 // Pages leads.orbitboyzz.com serves itself, besides "/".
-const LEADS_HOST_PAGES: ReadonlySet<string> = new Set(['/sample'])
-// Call / calendar pages: on leads.orbitboyzz.com they go to the request form instead.
-const LEADS_HOST_TO_REQUEST: ReadonlySet<string> = new Set(['/qualify', '/book', '/contact'])
+const LEADS_HOST_PAGES: ReadonlySet<string> = new Set([LEADS_BOOK_PATH])
+// The old request forms and the main site's call pages: on leads.orbitboyzz.com they go to the lead-list booking flow.
+const LEADS_HOST_TO_BOOKING: ReadonlySet<string> = new Set(['/qualify', '/sample', '/book', '/contact'])
 
 function isLeadsRoute(pathname: string) {
   return pathname === '/leads' || pathname === '/leads/'
@@ -228,10 +228,9 @@ export function proxy(request: NextRequest) {
       res.headers.set('Vary', withVary(res.headers.get('Vary')))
       return res
     }
-    if (LEADS_HOST_TO_REQUEST.has(url.pathname.replace(/\/+$/, '').toLowerCase())) {
-      const destination = new URL(LEADS_URL)
+    if (LEADS_HOST_TO_BOOKING.has(url.pathname.replace(/\/+$/, '').toLowerCase())) {
+      const destination = new URL(LEADS_BOOK_PATH, LEADS_URL)
       destination.search = url.search
-      destination.hash = LEADS_REQUEST_ID
       return NextResponse.redirect(destination, 308)
     }
     if (!LEADS_HOST_PAGES.has(url.pathname)) {

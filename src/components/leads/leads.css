@@ -15,7 +15,7 @@
   }
 }
 
-/* Anchor jumps (every "Get 25 free leads" CTA, "#how"): Lenis already lands
+/* Anchor jumps ("#how", "#request"): Lenis already lands
    them under the fixed header (anchors.offset in lib/motion/LenisProvider) and
    also adds the target's scroll-margin, which put sections 80px too low. While
    Lenis runs (html.lenis) the margin goes; native jumps (reduced motion, or

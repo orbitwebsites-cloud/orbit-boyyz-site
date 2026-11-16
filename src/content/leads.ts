@@ -1,12 +1,12 @@
-// Copy for leads.orbitboyzz.com (src/app/leads/page.tsx) and orbitboyzz.com/qualify.
-// Facts only: the offer exactly as stated here. 25 free leads in one niche,
-// built from Google Maps listings and each business's own website, the owner's
-// name where public sources show it, every email verified, the business phone
-// included, delivered within a few business days.
+// Copy for leads.orbitboyzz.com (src/app/leads/page.tsx).
+// Facts only: the offer exactly as stated here. Lead lists in one niche, built
+// from Google Maps listings and each business's own website, the owner's name
+// where public sources show it, every email verified, the business phone
+// included. It starts with a free 30-minute call (/book-leads): there is no
+// free sample of leads any more, so never offer one.
 // Never add: exclusivity, prices or price comparisons, guarantees, results
 // promises (reply rates, meetings, revenue), bounce replacement (not a policy
-// yet), urgency or scarcity, a call or calendar step, or medical, dental or
-// legal niches in examples.
+// yet), urgency or scarcity, or medical, dental or legal niches in examples.
 
 export const leadsContact = {
   brand: 'Orbit Boyzz',
@@ -14,8 +14,8 @@ export const leadsContact = {
   address: '2401 Deer Creek Drive, Plainsboro, NJ 08536',
 } as const
 
-/** The no-risk line, shown next to every request button. */
-export const leadsNoRisk = 'Free. No card. No call.'
+/** The no-risk line, shown next to every booking button. */
+export const leadsNoRisk = 'Free 30-minute call. Nothing to sign or pay on it.'
 
 export const leadsHero = {
   eyebrow: 'Verified lead lists for outbound agencies',
@@ -23,11 +23,11 @@ export const leadsHero = {
   srHeadline: 'Verified lead lists for outbound agencies, built for your client’s niche',
   line1: 'Your niche.',
   line2: 'Verified leads.',
-  sub: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, verify every email and send it to you as a sheet. Start with 25 free leads.',
-  cta: 'Get 25 free leads',
-  ctaShort: 'Free leads',
+  sub: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, verify every email and send it to you as a sheet.',
+  cta: 'Book a call',
+  ctaShort: 'Book a call',
   secondary: 'How we verify',
-  chips: ['Every email verified', 'Business phone included', 'Delivered within a few business days'],
+  chips: ['Every email verified', 'Business phone included', 'Built for your niche and area'],
 } as const
 
 /**
@@ -112,12 +112,8 @@ export const leadsFaqSection = {
 
 export const leadsFaqs = [
   {
-    q: 'Is it free?',
-    a: 'Yes. The 25 leads are free. There’s no card to enter and no call to book: just the niche, the area and your work email.',
-  },
-  {
-    q: 'How long does it take?',
-    a: 'Your sheet arrives by email within a few business days of your request.',
+    q: 'How do I start?',
+    a: 'Book a free 30-minute call. We go through your niche, your area and how many leads you need, and you leave with a scope and a price.',
   },
   {
     q: 'What if an email bounces?',
@@ -125,52 +121,29 @@ export const leadsFaqs = [
   },
   {
     q: 'What niches can I ask for?',
-    a: 'Local service businesses with a Google Maps listing and their own website, such as roofers, HVAC, plumbers, landscapers, electricians, home cleaning and auto repair. Put the niche and the area in the form.',
+    a: 'Local service businesses with a Google Maps listing and their own website, such as roofers, HVAC, plumbers, landscapers, electricians, home cleaning and auto repair. Tell us the niche and the area on the call.',
   },
 ] as const
 
 export const leadsRequest = {
-  label: '[04 // START FREE]',
-  title: 'Get your free 25.',
-  copy: 'Tell us the niche and the area. We’ll build 25 verified leads and email them to you as a sheet.',
-  nextLabel: 'What happens after you request',
+  label: '[04 // BOOK A CALL]',
+  title: 'Book a call.',
+  copy: 'Three quick questions, then pick a time. On the call we go through your niche, your area and how many leads you need.',
+  cta: 'Book a call',
+  nextLabel: 'What happens after you book',
   next: [
     {
-      title: 'We build your 25 leads',
-      copy: 'For your niche and area, from Google Maps listings and each business’s own website.',
+      title: 'We read your answers',
+      copy: 'Before the call, so the 30 minutes go to your niche and your numbers.',
     },
     {
-      title: 'We verify every email',
-      copy: 'Before the sheet ships. Only “valid” counts as verified.',
+      title: 'We scope your list on the call',
+      copy: 'The niche, the area, how many leads a month, and what each row has in it.',
     },
     {
-      title: 'The sheet lands in your inbox',
-      copy: 'At the work email you give us, within a few business days.',
+      title: 'You leave with a scope and a price',
+      copy: 'Then you decide. Nothing is signed or paid on the call.',
     },
   ],
-  fields: {
-    niche: { label: 'Niche', placeholder: 'e.g. Roofers' },
-    area: { label: 'Area (city / state)', placeholder: 'e.g. Austin, TX' },
-    email: { label: 'Work email', placeholder: 'you@youragency.com' },
-    name: { label: 'Your name', placeholder: 'First and last name' },
-    agency: { label: 'Agency', placeholder: 'Your agency' },
-  },
-  submit: 'Send me 25 free leads',
-  fine: 'Your email is only used to build your leads and follow up about them.',
-  done: {
-    kicker: 'Request received',
-    lead: 'Here’s what happens next:',
-    foot: 'No call and no card. Questions before then? Email',
-  },
-} as const
-
-/**
- * orbitboyzz.com/qualify (src/app/qualify/page.tsx): the same 25-free-leads
- * request as the leads page's form, form first. Same rules as above.
- */
-export const leadsQualify = {
-  eyebrow: 'Verified lead lists for outbound agencies',
-  title: 'Get 25',
-  titleAccent: 'free leads.',
-  explainer: 'Tell us a niche and an area. We build the list from Google Maps listings and each business’s own website, and verify every email.',
+  foot: 'Prefer email? Write to',
 } as const
