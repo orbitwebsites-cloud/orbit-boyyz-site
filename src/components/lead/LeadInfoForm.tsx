@@ -121,7 +121,7 @@ export function LeadInfoForm() {
           ...(src ? { link_source: src } : {}),
         }
         const inbox: Record<string, string> = {
-          _subject: `New lead info: ${a.business.trim()}`,
+          _subject: `New lead from ${a.name.trim()} (${a.business.trim()})`,
           _template: 'table',
           _captcha: 'false',
           _replyto: email,
