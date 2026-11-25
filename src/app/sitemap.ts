@@ -18,7 +18,7 @@ import { LEADS_URL } from '@/lib/leadsSite'
 // entry: leads.orbitboyzz.com/robots.txt declares this sitemap
 // (https://orbitboyzz.com/sitemap.xml), which makes the entry valid, and the
 // sc-domain:orbitboyzz.com Search Console property covers both hosts.
-const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify', '/book', '/book-leads', '/sample', '/start'])
+const NEVER_LISTED: ReadonlySet<string> = new Set(['/qualify', '/book', '/book-leads', '/book-website', '/sample', '/start'])
 
 // Every non-post page changed in the 2026-10-16 SEO pass (titles, town copy
 // and the organization schema on every page).

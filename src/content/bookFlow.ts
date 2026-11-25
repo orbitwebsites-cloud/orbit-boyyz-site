@@ -3,6 +3,9 @@
 // - /book: the marketing call every "Book a free call" button on the site leads to.
 // - /book-leads: the lead-list call for outbound agencies (leads.orbitboyzz.com
 //   and the old /qualify and /sample links all end up here).
+// - /book-website: the website call, for businesses we call or text about a new
+//   website. Facts as on /website: seven-day launch sprint, 50% to start and 50%
+//   after approval, hand-coded, the client owns the site.
 // The first call is where we get to know the business, so the form stays short.
 //
 // Facts only, same rules as the rest of the site:
@@ -35,7 +38,7 @@ export type BookTrustCopy = {
 
 export type BookFlowConfig = {
   /** Sent to analytics with the submit event. */
-  id: 'marketing' | 'leads'
+  id: 'marketing' | 'leads' | 'website'
   /** The page's own path, for the CRM note. */
   path: string
   /** sessionStorage key for in-progress answers. Bump when the questions change shape. */
@@ -201,6 +204,72 @@ export const leadsBookFlow: BookFlowConfig = {
           a: 'Local service businesses with a Google Maps listing and their own website, such as roofers, HVAC, plumbers, landscapers, electricians, home cleaning and auto repair.',
         },
         { q: 'What does it cost?', a: 'It depends on the niche, the area and how many leads you need a month. You get the price on the call.' },
+        sharedFaqs.details,
+      ],
+    },
+  },
+}
+
+export const websiteBookFlow: BookFlowConfig = {
+  id: 'website',
+  path: '/book-website',
+  storageKey: 'orbit-book-website-v1',
+  crmSource: 'book-website',
+  subject: 'Website call',
+  category: 'Website',
+  questions: [
+    { key: 'owner', label: 'Are you the owner, or the person who decides on the website?', options: ['Yes', 'No'] },
+    { key: 'spending', label: 'Does your business have a website right now?', options: ['Yes', 'No'] },
+    {
+      key: 'need',
+      label: 'What should the website do for you?',
+      hint: 'Pick the closest. We will get into the details on the call.',
+      options: ['Bring in calls and quote requests', 'Show my work and reviews', 'Replace a site that looks old', 'Not sure yet'],
+    },
+  ],
+  answerLabels: { owner: 'decides on the website', spending: 'has a website now', need: 'wants the website to' },
+  intro: {
+    label: 'Free 30-minute call',
+    note: '3 quick questions, then pick a time.',
+    points: ['Free, and you decide afterwards', 'You talk to the people who build it', 'Weekdays, 5 PM ET or later'],
+  },
+  trustLink: 'What happens on the call, and how the build works',
+  nextSteps: ['Pick a time below.', 'Calendly emails you the invite.', 'We read your answers before the call.'],
+  trust: {
+    agenda: {
+      label: 'On the call',
+      title: 'What happens in those 30 minutes',
+      items: [
+        ['We ask about your business', 'What you do, the towns you work in, and what one new job is worth to you.'],
+        ['We look at how people find you', 'Your Google listing, your reviews and your current site, if you have one.'],
+        ['We sketch the site with you', 'Which pages it needs and what a visitor should do on each one: call, ask for a quote or book.'],
+        ['You leave with a scope and a price', 'Then you decide. Nothing is signed or paid on the call.'],
+      ],
+    },
+    terms: {
+      label: 'How the build works',
+      title: 'You approve it before you pay in full',
+      items: [
+        ['Seven days', 'A launch build runs on a seven-day sprint once the scope and direction are clear.'],
+        ['50 / 50', '50% reserves your build and starts the sprint. You approve the finished site before paying the other 50%.'],
+        ['Yours', 'Hand-coded, with no website builder underneath. Once you approve it and pay the balance, the site is yours. Hosting with us is optional.'],
+      ],
+    },
+    straight: {
+      ...straight,
+      copy: [
+        'You will not find made-up reviews, client counts or case studies on this site. We do not publish what we cannot back up.',
+        'Our proof is the work and the terms: you see the finished site before you pay the second half, and you can call the number below and reach the people building it.',
+      ],
+    },
+    faqs: {
+      label: 'Questions',
+      title: 'Before you book',
+      items: [
+        sharedFaqs.free,
+        sharedFaqs.when,
+        { q: 'What does a website cost?', a: 'It depends on the size of the site. You get a price on the call, before anything is signed.', link: { href: '/pricing', label: 'See our published prices' } },
+        { q: 'Do I own the site?', a: 'Yes. Once you approve it and pay the balance, it is yours. Hosting with us is optional.' },
         sharedFaqs.details,
       ],
     },

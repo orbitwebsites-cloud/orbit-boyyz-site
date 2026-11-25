@@ -18,5 +18,5 @@ export function isDemoPath(pathname: string | null) {
  * on leads.orbitboyzz.com the browser URL is "/" while the route is /leads.
  */
 export function isStandalonePath(pathname: string | null) {
-  return isDemoPath(pathname) || pathname === '/qualify' || pathname === '/book' || pathname === '/book-leads' || pathname === '/sample' || pathname === '/leads'
+  return isDemoPath(pathname) || pathname === '/qualify' || pathname === '/book' || pathname === '/book-leads' || pathname === '/book-website' || pathname === '/sample' || pathname === '/leads'
 }
