@@ -147,6 +147,22 @@ export const process = [
   { number: '05', title: 'Launch', copy: 'Approve the finished site, pay the remaining 50%, and it is yours. Hosting with us is optional.' },
 ] as const
 
+/**
+ * The base plan: the entry website offer. One monthly price with the website
+ * and local SEO included, instead of paying for a build up front. The exact
+ * price inside the range is set on the call. Owner, 2026-11-25: "200-500 plan",
+ * "monthly including seo". Never state a contract length or other terms here
+ * until the owner sets them.
+ */
+export const basePlan = {
+  name: 'Base plan',
+  price: '$200 – $500/mo',
+  meta: 'Website and local SEO included',
+  copy: 'Your website and your local SEO for one monthly price, with no build fee up front. The exact price depends on the size of the site and is set on the call.',
+  features: ['Custom website, hand-coded', 'Hosting, security and backups', 'Local SEO every month', 'Call, quote and booking paths', 'Text us what you need changed'],
+  cta: 'Start on the base plan',
+} as const
+
 export const tiers = [
   {
     id: 'launch',
@@ -181,7 +197,6 @@ export const tiers = [
 export const carePlans = [
   { price: '$300', name: 'Site Care', copy: 'We keep the website online, protected and handled.', features: ['Managed hosting', 'Security and backups', 'Routine content updates'] },
   { price: '$500', name: 'Website + Leads Plan', copy: 'For established home-service shops: steady local SEO and site improvements aimed at more calls and quote requests.', features: ['Everything in Site Care', 'Local SEO maintenance', 'Monthly site improvements'], featured: true },
-  { price: '$700', name: 'Growth Partner', copy: 'Active SEO, content support and closer attention.', features: ['Everything in Website + Leads Plan', 'Ongoing SEO and content', 'Priority updates and support'] },
 ] as const
 
 export const roi = {
@@ -205,7 +220,7 @@ export const faqs = [
   { q: 'What kinds of businesses do you build for?', a: 'Established home-service businesses: HVAC, plumbing, electrical, roofing, landscaping, remodeling and other contractors where one booked job is worth hundreds or thousands of dollars.' },
   { q: 'Do you guarantee Google rankings?', a: 'No one can honestly promise rankings. We build strong local SEO foundations and clean structure that search engines reward, so your site is built the right way from day one.' },
   { q: 'What is the AI operations tier?', a: 'A build ($5,000–$15,000+) plus an optional retainer ($750–$2,500/mo) for businesses that want automated intake, lead qualification, instant proposals, booking and routing. We recommend it only when it replaces measurable admin labor or recovers high-intent leads.' },
-  { q: 'How much does a website cost with Orbit Websites?', a: 'Launch builds are quoted on a free call after a quick look at your needs and built in a 7-day sprint, with 50% to start and 50% on approval. Premium builds start at $3,500. AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional: $300, $500 or $700 per month after launch.' },
+  { q: 'How much does a website cost with Orbit Websites?', a: 'The base plan is $200–$500 a month, with the website and local SEO included and no build fee up front. To buy a site outright: launch builds are quoted on a free call after a quick look at your needs and built in a 7-day sprint, with 50% to start and 50% on approval. Premium builds start at $3,500. AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional: $300 or $500 per month after launch.' },
   { q: 'Do you build on WordPress, Wix or Squarespace?', a: 'No. Every site is hand-coded in Next.js and you own the code. If you are on WordPress, Wix or Squarespace now, a website refresh keeps the content that works and rebuilds the rest.' },
   { q: 'Do I own my website?', a: 'Yes. You approve the finished site before final payment and it is yours. Hosting with us is optional.' },
 ] as const

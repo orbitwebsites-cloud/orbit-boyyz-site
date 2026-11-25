@@ -69,7 +69,7 @@ export default function WebDesignCentralNjPage() {
         }
       >
         Launch builds are quoted on a free call and built in a 7-day sprint. Premium builds start at $3,500, AI operations builds run $5,000–$15,000+, and optional monthly
-        plans are $300–$700 after launch.
+        plans are $300–$500 after launch.
       </DirectAnswer>
 
       <LocalPagesGrid current={ROUTE} />

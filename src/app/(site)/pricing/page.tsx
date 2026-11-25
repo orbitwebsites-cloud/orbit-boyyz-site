@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { MarketingPricing } from '@/components/agency/OfferBlocks'
 import { CtaBand } from '@/components/ui/CtaBand'
 import { PageHero } from '@/components/ui/PageHero'
+import { BasePlan } from '@/components/ui/BasePlan'
 import { PricingTiers } from '@/components/ui/PricingTiers'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { TiltCard } from '@/components/ui/TiltCard'
@@ -14,7 +15,7 @@ import { faqSchema, jsonLd, pageMeta, pageSchema } from '@/lib/seo'
 export const metadata = pageMeta({
   title: 'Pricing: Ads Management, Cold Leads and Websites',
   description:
-    'OrbitBoyzz pricing: ads management per booking then a retainer, cold leads at $0.20 each from 10,000 a month, websites from $3,500, optional care $300–$700/mo.',
+    'OrbitBoyzz pricing: ads management per booking then a retainer, cold leads at $0.20 each from 10,000 a month, a website base plan at $200–$500/mo, builds from $3,500, optional care $300–$500/mo.',
   path: '/pricing',
 })
 
@@ -76,10 +77,11 @@ export default function PricingPage() {
             Pricing for ads, leads and websites, <span className="serif-accent text-accent">no surprises.</span>
           </>
         }
-        lead="OrbitBoyzz pricing: ads management is paid per booking, then on a monthly retainer once that costs you less. Cold leads are $0.20 each, with plans from 10,000 a month. For websites, launch builds are quoted on a free call and built in a 7-day sprint, premium builds start at $3,500, and AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional, $300–$700/mo after launch. 50% reserves your build; you approve the finished site before paying the rest."
+        lead="OrbitBoyzz pricing: ads management is paid per booking, then on a monthly retainer once that costs you less. Cold leads are $0.20 each, with plans from 10,000 a month. For websites, the base plan is $200–$500 a month with the website and local SEO included; to buy outright, launch builds are quoted on a free call and built in a 7-day sprint, premium builds start at $3,500, and AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer. Care plans are optional, $300–$500/mo after launch. 50% reserves your build; you approve the finished site before paying the rest."
       />
 
       <MarketingPricing />
+      <BasePlan />
       <section aria-label="Website build tiers" className="container-x">
         <PricingTiers headingLevel="h2" />
       </section>
@@ -128,7 +130,7 @@ export default function PricingPage() {
           </table>
         </div>
         <p className="mt-4 text-sm text-dim">
-          Launch builds are quoted after the call. Premium starts at $3,500. AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer.
+          The base plan is $200–$500 a month with the website and local SEO included. Launch builds are quoted after the call. Premium starts at $3,500. AI operations builds run $5,000–$15,000+ with an optional $750–$2,500/mo retainer.
         </p>
         {/* Outside any data-reveal wrapper so the links stay keyboard-focusable. */}
         <div className="mt-8">
@@ -155,7 +157,7 @@ export default function PricingPage() {
             Month to month, only after launch. Hosting with us is optional — the site is yours either way.
           </p>
         </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
           {carePlans.map((p) => {
             const featured = 'featured' in p && p.featured
             return (

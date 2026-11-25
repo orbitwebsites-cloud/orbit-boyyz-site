@@ -81,7 +81,7 @@ export const websiteCostTiers: Array<[tier: string, price: string, covers: strin
   ['Launch build', 'Quoted on a free call', '7-day sprint, 50% to start. A custom mobile site with call, quote and booking paths.'],
   ['Premium build', 'From $3,500', 'Deeper strategy and copy, service and area pages, structured data and analytics.'],
   ['AI operations', '$5,000–$15,000+', 'AI intake, urgency routing, booking and follow-up. Optional retainer $750–$2,500/mo.'],
-  ['Monthly plans (optional)', '$300–$700/mo', 'Site Care $300, Website + Leads Plan $500, Growth Partner $700. Month to month, after launch.'],
+  ['Monthly plans (optional)', '$300–$500/mo', 'Site Care $300 and Website + Leads Plan $500. Month to month, after launch.'],
 ]
 
 /** Generic town landing pages. Ewing and Central NJ have custom pages (see landing-custom.ts). */
@@ -218,7 +218,7 @@ export const townPages: Record<string, TownPage> = {
       ],
       [
         "Do you offer internet marketing or SEO for Princeton businesses?",
-        "Every build includes local SEO foundations such as clean page structure and local schema, and premium builds add service and area pages. After launch, the optional Website + Leads Plan ($500/mo) and Growth Partner plan ($700/mo) add ongoing local SEO and content. Nobody can honestly promise a Google ranking, and we don’t."
+        "Every build includes local SEO foundations such as clean page structure and local schema, and premium builds add service and area pages. After launch, the optional Website + Leads Plan ($500/mo) adds ongoing local SEO. Nobody can honestly promise a Google ranking, and we don’t."
       ],
       [
         "Can we meet in person?",
@@ -465,7 +465,7 @@ export const industryPages: Record<string, IndustryPage> = {
     "towns": "Ewing, Hamilton, Lawrence Township, Trenton, Mercer County, and Central New Jersey",
     "cost": {
       "question": "How much does an HVAC website cost?",
-      "answer": "An HVAC website with Orbit falls into one of three build tiers. A launch build is quoted on a free call and ships in a 7-day sprint. Premium builds start at $3,500. AI operations builds, with after-hours intake, urgency routing and booking, run $5,000–$15,000+. Optional monthly plans are $300–$700, and you own the site."
+      "answer": "An HVAC website with Orbit falls into one of three build tiers. A launch build is quoted on a free call and ships in a 7-day sprint. Premium builds start at $3,500. AI operations builds, with after-hours intake, urgency routing and booking, run $5,000–$15,000+. Optional monthly plans are $300–$500, and you own the site."
     },
     "leadSystem": {
       "title": "Pair the website with a lead response system.",
@@ -485,7 +485,7 @@ export const industryPages: Record<string, IndustryPage> = {
     "towns": "Ewing, Trenton, Hamilton, Lawrence, Princeton, Mercer County, and Central New Jersey",
     "cost": {
       "question": "How much does a plumbing website cost?",
-      "answer": "A plumbing website with Orbit falls into one of three build tiers. A launch build is quoted on a free call and ships in a 7-day sprint. Premium builds start at $3,500. AI operations builds that sort emergency leaks from scheduled jobs and text you the details run $5,000–$15,000+. Optional monthly plans are $300–$700."
+      "answer": "A plumbing website with Orbit falls into one of three build tiers. A launch build is quoted on a free call and ships in a 7-day sprint. Premium builds start at $3,500. AI operations builds that sort emergency leaks from scheduled jobs and text you the details run $5,000–$15,000+. Optional monthly plans are $300–$500."
     },
     "leadSystem": {
       "title": "Catch the emergency calls you can't answer.",
@@ -505,7 +505,7 @@ export const industryPages: Record<string, IndustryPage> = {
     "towns": "Ewing, Princeton, Lawrence Township, Hamilton, West Windsor, Mercer County, and Central NJ",
     "cost": {
       "question": "How much does an electrician website cost?",
-      "answer": "An electrician website runs from a launch build quoted on a free call to $5,000–$15,000+ for AI intake and routing. Premium builds with separate panel upgrade, EV charger and generator pages start at $3,500. The launch tier ships in a 7-day sprint. Optional monthly plans run $300–$700, month to month."
+      "answer": "An electrician website runs from a launch build quoted on a free call to $5,000–$15,000+ for AI intake and routing. Premium builds with separate panel upgrade, EV charger and generator pages start at $3,500. The launch tier ships in a 7-day sprint. Optional monthly plans run $300–$500, month to month."
     },
     // Rewritten 2026-10-02 (the page did not rank, so it was safe to replace the template).
     "rewrite": {
@@ -779,7 +779,7 @@ export const legacyFaqs: Array<[question: string, answer: string]> = [
   ],
   [
     "What is the Enterprise Custom Build?",
-    "The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Launch websites are quoted on a free call, AI operations systems run $5,000–$15,000+, and optional care plans are $300–$700/mo."
+    "The Enterprise tier ($3,500+) is for businesses that need advanced systems — automated intake, AI-powered lead triage, CRM integrations, and custom proposal workflows. Launch websites are quoted on a free call, AI operations systems run $5,000–$15,000+, and optional care plans are $300–$500/mo."
   ]
 ]
 
@@ -868,7 +868,7 @@ export function townLandingFaqs(page: TownPage): Array<[string, string]> {
   return [
     [
       `How much does web design cost in ${page.town}?`,
-      `Launch builds for ${page.town} businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional monthly plans are $300–$700/mo.`,
+      `Launch builds for ${page.town} businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional monthly plans are $300–$500/mo.`,
     ],
     ...page.faqs,
     [
@@ -889,7 +889,7 @@ export function industryLandingFaqs(page: IndustryPage): Array<[string, string]>
   return [
     [
       `How much does a website cost for ${a} ${name} company in NJ?`,
-      `A focused launch site for ${a} ${name} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows run $5,000 to $15,000+, and optional care plans are $300–$700/mo.`,
+      `A focused launch site for ${a} ${name} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, routing, booking, proposal logic, and deeper custom workflows run $5,000 to $15,000+, and optional care plans are $300–$500/mo.`,
     ],
     [
       `What should ${a} ${name} website include?`,
@@ -906,7 +906,7 @@ export function industryLandingFaqs(page: IndustryPage): Array<[string, string]>
 export const ewingFaqs: Array<[string, string]> = [
   [
     'How much does web design cost in Ewing, NJ?',
-    'Launch builds for Ewing businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional monthly plans are $300–$700/mo.',
+    'Launch builds for Ewing businesses are quoted on a free call after a quick look at your needs, and premium builds start at $3,500. AI intake, booking logic, quote routing, and deeper automation run $5,000 to $15,000+, and optional monthly plans are $300–$500/mo.',
   ],
   [
     'Do you work with businesses near Ewing?',

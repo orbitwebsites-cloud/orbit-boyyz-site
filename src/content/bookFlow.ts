@@ -4,8 +4,9 @@
 // - /book-leads: the lead-list call for outbound agencies (leads.orbitboyzz.com
 //   and the old /qualify and /sample links all end up here).
 // - /book-website: the website call, for businesses we call or text about a new
-//   website. Facts as on /website: seven-day launch sprint, 50% to start and 50%
-//   after approval, hand-coded, the client owns the site.
+//   website. Facts as on /website and /pricing: base plan $200-$500 a month with
+//   the website and local SEO included; or buy outright (seven-day launch sprint,
+//   50% to start and 50% after approval, the client owns the site).
 // The first call is where we get to know the business, so the form stays short.
 //
 // Facts only, same rules as the rest of the site:
@@ -248,11 +249,11 @@ export const websiteBookFlow: BookFlowConfig = {
     },
     terms: {
       label: 'How the build works',
-      title: 'You approve it before you pay in full',
+      title: 'Pay monthly, or buy it outright',
       items: [
-        ['Seven days', 'A launch build runs on a seven-day sprint once the scope and direction are clear.'],
-        ['50 / 50', '50% reserves your build and starts the sprint. You approve the finished site before paying the other 50%.'],
-        ['Yours', 'Hand-coded, with no website builder underneath. Once you approve it and pay the balance, the site is yours. Hosting with us is optional.'],
+        ['$200–$500 a month', 'The base plan: your website and your local SEO for one monthly price, with no build fee up front. The exact price is set on the call.'],
+        ['Or buy it', 'Buy the site outright instead: 50% starts a seven-day build, and you approve the finished site before paying the other 50%.'],
+        ['Hand-coded', 'Built by hand, with no website builder underneath, so it loads fast on phones.'],
       ],
     },
     straight: {
@@ -268,8 +269,7 @@ export const websiteBookFlow: BookFlowConfig = {
       items: [
         sharedFaqs.free,
         sharedFaqs.when,
-        { q: 'What does a website cost?', a: 'It depends on the size of the site. You get a price on the call, before anything is signed.', link: { href: '/pricing', label: 'See our published prices' } },
-        { q: 'Do I own the site?', a: 'Yes. Once you approve it and pay the balance, it is yours. Hosting with us is optional.' },
+        { q: 'What does a website cost?', a: 'The base plan is $200 to $500 a month, with the website and local SEO included. The exact price depends on the size of the site, and you get it on the call before anything is signed.', link: { href: '/pricing', label: 'See our published prices' } },
         sharedFaqs.details,
       ],
     },

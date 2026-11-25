@@ -428,7 +428,7 @@ export function IndustryLanding({ page }: { page: IndustryPage }) {
         }
       >
         A launch site for {a} {name} company is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. Projects with AI intake,
-        job-type routing, emergency alert logic, or proposal automation run $5,000 to $15,000+ depending on workflow complexity, and optional care plans are $300–$700/mo. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of
+        job-type routing, emergency alert logic, or proposal automation run $5,000 to $15,000+ depending on workflow complexity, and optional care plans are $300–$500/mo. Average {page.jobType} run {page.avgJob}, so the site pays back in a handful of
         jobs.
       </DirectAnswer>
 

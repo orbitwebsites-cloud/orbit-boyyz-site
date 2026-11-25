@@ -10,10 +10,18 @@ const STEPS = [
 
 const TIERS = [
   {
+    tag: "Monthly · no build fee",
+    name: "Base plan",
+    price: "$200 – $500/mo",
+    body: "Your website and your local SEO for one monthly price. The exact price is set on the call.",
+    points: ["Custom website, hand-coded", "Hosting, security and backups", "Local SEO every month", "Text us what you need changed"],
+    dark: false,
+  },
+  {
     tag: "7-day sprint",
     name: "Launch build",
     price: "Quoted on the call",
-    body: "A polished custom site for a business that needs to look credible and get calls, fast.",
+    body: "Buy the site outright. A polished custom site for a business that needs to look credible and get calls, fast.",
     points: ["Custom design, hand-coded", "Mobile-first and fast", "Call, quote and booking paths", "Local SEO basics"],
     dark: false,
   },
@@ -24,14 +32,6 @@ const TIERS = [
     body: "A full website system for brands that need trust, clarity and a serious first impression.",
     points: ["Everything in Launch", "Deeper strategy and copy", "Service and area pages", "Booking and lead flows wired in"],
     dark: true,
-  },
-  {
-    tag: "After launch · optional",
-    name: "Care plans",
-    price: "From $300/mo",
-    body: "We keep it online, protected and improving. Month to month.",
-    points: ["Site Care · $300/mo", "Website + Leads · $500/mo", "Growth Partner · $700/mo", "Text us what you need changed"],
-    dark: false,
   },
 ];
 
@@ -60,7 +60,7 @@ export function WebsiteOffer() {
           Pricing
         </p>
         <h2 data-reveal className="mt-3 max-w-[18ch] text-[clamp(2.2rem,5.4vw,4.75rem)] font-medium leading-[1] tracking-[-0.04em]">
-          You approve it <em className="font-serif tracking-[-0.02em]">before you pay the rest.</em>
+          Pay monthly, <em className="font-serif tracking-[-0.02em]">or buy it outright.</em>
         </h2>
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {TIERS.map((t) => (

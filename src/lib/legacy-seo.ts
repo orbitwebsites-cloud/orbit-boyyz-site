@@ -96,7 +96,7 @@ export const legacyPageMeta: Record<string, { title: string; description: string
   '/pricing': {
     title: 'Website Design Pricing in NJ | Orbit Websites',
     description:
-      'Transparent website pricing for local businesses. Launch builds quoted on a free call, premium builds from $3,500, AI systems $5,000–$15,000+, optional care $300–$700/mo. See what you get before you pay.',
+      'Transparent website pricing for local businesses. Base plan $200–$500/mo with website and SEO included, launch builds quoted on a free call, premium builds from $3,500, AI systems $5,000–$15,000+, optional care $300–$500/mo. See what you get before you pay.',
   },
   '/web-design-central-nj': {
     title: 'Central NJ Web Design Company | Central Jersey Websites',
@@ -329,7 +329,7 @@ export const organization = {
       {
         '@type': 'Offer',
         name: 'Monthly Website Care Plan',
-        description: 'Optional, month-to-month after launch: Site Care $300, Website + Leads Plan $500, Growth Partner $700 per month. Managed hosting, security, backups and content updates.',
+        description: 'Optional, month-to-month after launch: Site Care $300 and Website + Leads Plan $500 per month. Managed hosting, security, backups and content updates.',
         price: '300',
         priceCurrency: 'USD',
         priceSpecification: {

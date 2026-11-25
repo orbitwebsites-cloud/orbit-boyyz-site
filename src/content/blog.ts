@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "At Orbit Websites, a launch website for a local business is quoted on a free call after a quick look at your needs; it is built in a 7-day sprint, with 50% to start and 50% when you approve the finished site. Premium builds start at $3,500. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000–$15,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work, and optional care plans are $300–$700 per month after launch."
+        "body": "At Orbit Websites, a launch website for a local business is quoted on a free call after a quick look at your needs; it is built in a 7-day sprint, with 50% to start and 50% when you approve the finished site. Premium builds start at $3,500. An AI operations website - one that automates intake, pricing, booking, and routing - is typically $5,000–$15,000+ depending on workflow complexity. Ongoing AI operations retainers run $750 to $2,500 per month when the system replaces measurable administrative work, and optional care plans are $300–$500 per month after launch."
       },
       {
         "heading": "What changes the price",
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
     "faqs": [
       [
         "How much does a website cost for a local business in New Jersey?",
-        "At Orbit Websites, launch builds are quoted on a free call, premium builds start at $3,500, AI operations systems run $5,000–$15,000+, and optional care plans are $300–$700/mo."
+        "At Orbit Websites, launch builds are quoted on a free call, premium builds start at $3,500, AI operations systems run $5,000–$15,000+, and optional care plans are $300–$500/mo."
       ],
       [
         "Do you need a monthly plan?",
@@ -206,7 +206,7 @@ export const blogPosts: BlogPost[] = [
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "At Orbit Websites, a focused launch site for a Central New Jersey business is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher (AI systems run $5,000–$15,000+) because they require more planning, testing, and operational handoff. Optional care plans are $300–$700/mo."
+        "body": "At Orbit Websites, a focused launch site for a Central New Jersey business is quoted on a free call after a quick look at your needs, and premium builds start at $3,500. Projects with custom design depth, AI intake, booking logic, ecommerce, proposal automation, or data integrations usually move higher (AI systems run $5,000–$15,000+) because they require more planning, testing, and operational handoff. Optional care plans are $300–$500/mo."
       },
       {
         "heading": "What factors drive the price?",
@@ -220,7 +220,7 @@ export const blogPosts: BlogPost[] = [
     "faqs": [
       [
         "How much does a custom website cost in Central NJ?",
-        "At Orbit Websites, a focused launch site is quoted on a free call, premium builds start at $3,500, AI intake and automation run $5,000–$15,000+, and optional care plans are $300–$700/mo."
+        "At Orbit Websites, a focused launch site is quoted on a free call, premium builds start at $3,500, AI intake and automation run $5,000–$15,000+, and optional care plans are $300–$500/mo."
       ],
       [
         "What makes a custom website cost more?",
@@ -564,7 +564,7 @@ export const blogPosts: BlogPost[] = [
     "slug": "small-business-website-cost-plainsboro-nj",
     "title": "How Much Does a Small Business Website Cost in Plainsboro, NJ?",
     "seoTitle": "Plainsboro NJ Web Design Pricing for Small Businesses",
-    "description": "Plainsboro web design pricing: launch builds quoted on a free call, premium from $3,500, care plans $300–$700/mo. What a small business site needs.",
+    "description": "Plainsboro web design pricing: launch builds quoted on a free call, premium from $3,500, care plans $300–$500/mo. What a small business site needs.",
     "published": "October 1, 2026",
     "updated": "October 16, 2026",
     "audience": "Small businesses in Plainsboro, Princeton, West Windsor, and nearby Central New Jersey towns comparing website options",
@@ -576,7 +576,7 @@ export const blogPosts: BlogPost[] = [
     "sections": [
       {
         "heading": "Direct answer",
-        "body": "A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. At Orbit Websites, launch builds are quoted on a free call after a quick look at your needs, premium builds start at $3,500, AI workflows run $5,000–$15,000+, and optional care plans are $300–$700/mo."
+        "body": "A small business website in Plainsboro, NJ usually costs a few thousand dollars for a focused custom build, with more complex projects ranging higher when they include custom design, multiple service pages, booking, lead forms, AI intake, proposal logic, or integrations. At Orbit Websites, launch builds are quoted on a free call after a quick look at your needs, premium builds start at $3,500, AI workflows run $5,000–$15,000+, and optional care plans are $300–$500/mo."
       },
       {
         "heading": "What changes the price",
@@ -590,7 +590,7 @@ export const blogPosts: BlogPost[] = [
     "faqs": [
       [
         "How much does web design cost in Plainsboro?",
-        "At Orbit Websites, launch builds are quoted on a free call, premium builds start at $3,500, AI workflows run $5,000–$15,000+, and optional care plans are $300–$700/mo."
+        "At Orbit Websites, launch builds are quoted on a free call, premium builds start at $3,500, AI workflows run $5,000–$15,000+, and optional care plans are $300–$500/mo."
       ],
       [
         "Is Orbit Websites based in Plainsboro?",
@@ -673,7 +673,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "heading": "Orbit Websites price tiers",
-        "body": "Launch build: quoted on a free call, built in a 7-day sprint, 50% to start and 50% when you approve the finished site. Premium build: from $3,500, with deeper strategy and copy, service and area pages, structured data and analytics. AI operations: $5,000–$15,000+, with an optional $750–$2,500/mo retainer. Monthly plans are optional and start after launch: Site Care $300, Website + Leads Plan $500, Growth Partner $700."
+        "body": "Launch build: quoted on a free call, built in a 7-day sprint, 50% to start and 50% when you approve the finished site. Premium build: from $3,500, with deeper strategy and copy, service and area pages, structured data and analytics. AI operations: $5,000–$15,000+, with an optional $750–$2,500/mo retainer. Monthly plans are optional and start after launch: Site Care $300 and Website + Leads Plan $500."
       },
       {
         "heading": "Does web design cost more in Princeton than in Hamilton or Trenton?",
@@ -695,7 +695,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "How much does a typical Mercer County business website cost?",
-        "At Orbit Websites, a focused launch build is quoted on a free call, and premium sites start at $3,500. AI-enabled workflows run $5,000 to $15,000+ depending on scope, and optional care plans are $300–$700/mo."
+        "At Orbit Websites, a focused launch build is quoted on a free call, and premium sites start at $3,500. AI-enabled workflows run $5,000 to $15,000+ depending on scope, and optional care plans are $300–$500/mo."
       ],
       [
         "Do you charge for a quote?",
@@ -707,7 +707,7 @@ export const blogPosts: BlogPost[] = [
       ],
       [
         "Are monthly fees required?",
-        "No. Care plans ($300–$700/mo) are optional, month to month, and start only after launch. Hosting with us is optional; the site is yours either way."
+        "No. Care plans ($300–$500/mo) are optional, month to month, and start only after launch. Hosting with us is optional; the site is yours either way."
       ]
     ]
   },

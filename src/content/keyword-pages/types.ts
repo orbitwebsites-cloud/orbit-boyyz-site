@@ -121,8 +121,8 @@ const CARE = carePlans.map((p) => p.price)
  */
 export const PRICING_SENTENCE = `Launch builds are quoted on a free call and built in a ${SPRINT}, premium builds start at ${PREMIUM_FROM}, AI operations builds run ${AI_RANGE}, and optional monthly plans are ${CARE.slice(0, -1).join(', ')} or ${CARE[CARE.length - 1]} after launch.`
 
-/** The two plans that include SEO work, with their real prices. For SEO answers. */
-export const SEO_PLANS_SENTENCE = `After launch, the optional ${plan('Website + Leads Plan').name} (${plan('Website + Leads Plan').price}/mo) adds steady local SEO and monthly site improvements, and ${plan('Growth Partner').name} (${plan('Growth Partner').price}/mo) adds active SEO and content. Both are month to month.`
+/** The plan that includes SEO work, with its real price. For SEO answers. */
+export const SEO_PLANS_SENTENCE = `After launch, the optional ${plan('Website + Leads Plan').name} (${plan('Website + Leads Plan').price}/mo) adds steady local SEO and monthly site improvements. It is month to month.`
 
 /** "50% to start, 50% when you approve the finished site." */
 export const PAYMENT_SENTENCE = '50% reserves the build and starts the sprint, and you approve the finished site before paying the other 50%.'

@@ -4,7 +4,7 @@ import { SEO_PLANS_SENTENCE, type KeywordPage } from './types'
 // "seo for plumbers". The ranking pages are step-by-step how-to guides (Comrade's 10 strategies,
 // Backlinko's 5 steps) and agency pages that promise page one, so this page leads with a numbered
 // checklist and covers the same ground (citations, keywords, tracking) honestly, then the service
-// view: local SEO built into a site made for calls, plus the optional $500/$700 plans (prices only via
+// view: local SEO built into a site made for calls, plus the optional $500 plan (prices only via
 // SEO_PLANS_SENTENCE). "seo for hvac companies" (390, KD 20) is a separate, HVAC-specific SERP, so it
 // is no longer in the title; one FAQ covers it. The site already says nobody can promise rankings.
 export const seoForContractors: KeywordPage = {
@@ -184,7 +184,7 @@ export const seoForContractors: KeywordPage = {
       id: 'monthly-local-seo',
       heading: 'What ongoing local SEO looks like, honestly',
       paragraphs: [
-        `${SEO_PLANS_SENTENCE} Site Care, the plan below them, covers hosting, security and updates without the SEO work.`,
+        `${SEO_PLANS_SENTENCE} Site Care, the plan below it, covers hosting, security and updates without the SEO work.`,
         'SEO is slow. Google’s own guidance says it often takes four months to a year to put improvements in place and start seeing a benefit, and a brand-new site usually takes longer than an established one. Rankings also move with competition, the searcher’s location and Google’s own updates.',
         'So a plan buys steady work, not a position on the page: the parts you control, kept up month after month, on a site you own, by the people who built it.',
       ],
@@ -201,7 +201,7 @@ export const seoForContractors: KeywordPage = {
       ['Structured data and analytics', 'Premium builds describe your business to search engines with structured data and set up analytics, so you can see which pages people use.'],
       ['Call, quote and booking paths', 'Tap-to-call, quote forms and booking paths, so a visitor from search has an easy way to become a job.'],
       ['Hand-coded and fast', 'Built in Next.js, mobile-first, with no page builder or SEO plugins to keep updating. You own the code.'],
-      ['Optional monthly local SEO', 'Local SEO maintenance and monthly site improvements on the Website + Leads Plan, or active SEO and content on Growth Partner. Month to month, after launch.'],
+      ['Optional monthly local SEO', 'Local SEO maintenance and monthly site improvements on the Website + Leads Plan. Month to month, after launch.'],
     ],
   },
 
@@ -250,7 +250,7 @@ export const seoForContractors: KeywordPage = {
     ],
     [
       'Which monthly plan makes sense for a contractor?',
-      'The Website + Leads Plan suits an established shop that wants local SEO maintenance and steady improvements to the site each month. Growth Partner adds active SEO, content and priority support, for a shop that wants the site to keep covering more. If you only need hosting, security and updates, Site Care is the plan without SEO work. All three are month to month.',
+      'The Website + Leads Plan suits an established shop that wants local SEO maintenance and steady improvements to the site each month. If you only need hosting, security and updates, Site Care is the plan without SEO work. Both are month to month.',
     ],
     [
       'Is SEO for HVAC companies different from SEO for plumbers?',

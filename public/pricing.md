@@ -1,6 +1,12 @@
 # Pricing - Orbit Websites
 
-Last updated: October 16, 2026
+Last updated: November 25, 2026
+
+## Base Plan
+
+- Price: $200-$500 per month. The exact price depends on the size of the site and is set on a free call.
+- Best for: Local businesses that want a website and ongoing local SEO without paying for a build up front.
+- Includes: Custom hand-coded website, hosting, security and backups, local SEO every month, call, quote and booking paths, and content changes by text.
 
 ## Launch Build
 
@@ -29,9 +35,9 @@ Last updated: October 16, 2026
 
 ## Care Plans (optional)
 
-- Price: $300/mo Site Care, $500/mo Website + Leads Plan, $700/mo Growth Partner.
+- Price: $300/mo Site Care, $500/mo Website + Leads Plan.
 - Terms: Month to month; starts only after launch.
-- Includes: Managed hosting, security and backups, and routine content updates (Site Care); local SEO maintenance and monthly improvements (Website + Leads Plan); ongoing SEO, content and priority support (Growth Partner).
+- Includes: Managed hosting, security and backups, and routine content updates (Site Care); local SEO maintenance and monthly improvements (Website + Leads Plan).
 
 ## Business Case
 

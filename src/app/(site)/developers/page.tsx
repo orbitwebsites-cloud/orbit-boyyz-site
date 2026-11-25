@@ -106,7 +106,7 @@ export default function DevelopersPage() {
         <p className="mt-4 max-w-[72ch] leading-relaxed text-muted">
           Figures are a rough range, not a quote. For a simple website with no AI selections, <Code>upfront</Code> is <Code>&quot;Quoted on a free call&quot;</Code> and{' '}
           <Code>upfrontLow</Code> / <Code>upfrontHigh</Code> are <Code>null</Code>; moderate or complex websites return <Code>&quot;From $3,500&quot;</Code>. The monthly
-          figure is an optional care plan ($300–$700/mo) or, for AI builds, an optional retainer ($750–$2,500/mo).
+          figure is an optional care plan ($300–$500/mo) or, for AI builds, an optional retainer ($750–$2,500/mo).
         </p>
         <Pre>{responseExample}</Pre>
       </Section>

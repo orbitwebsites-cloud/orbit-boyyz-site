@@ -6,7 +6,8 @@
 // - Launch build: no published price, quoted on a free call (7-day sprint, 50/50).
 // - Premium build: from $3,500.
 // - AI operations: $5,000–$15,000+ build, optional $750–$2,500/mo retainer.
-// - Care plans (optional, after launch): $300 / $500 / $700 per month.
+// - Base plan: $200 to $500 a month, website and local SEO included (basePlan in site.ts).
+// - Care plans (optional, after launch): $300 / $500 per month.
 
 export type QuoteNeed = 'site' | 'refresh' | 'forms' | 'ai'
 export type QuoteUrgency = 'normal' | 'fast' | 'urgent'
@@ -71,7 +72,7 @@ export const LAUNCH_QUOTE_LABEL = 'Quoted on a free call'
 const PREMIUM_FROM = 3500
 const AI_BUILD = { low: 5000, high: 15000 }
 const AI_RETAINER = { low: 750, high: 2500 }
-const CARE = { low: 300, high: 700 }
+const CARE = { low: 300, high: 500 }
 
 const NEED_VALUES = new Set(quoteOptions.need.map(([value]) => value))
 const COMPLEXITY_VALUES = new Set(quoteOptions.complexity.map(([value]) => value))

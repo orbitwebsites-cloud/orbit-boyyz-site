@@ -30,7 +30,7 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { privacyIntro, privacySections, privacyUpdated } from '@/content/legal'
 import { keywordRoutes } from '@/content/keyword-pages'
-import { carePlans, faqs, services, tiers } from '@/content/site'
+import { basePlan, carePlans, faqs, services, tiers } from '@/content/site'
 import { keywordMarkdown } from '@/lib/keyword-markdown'
 import { LEADS_BOOK_PATH, LEADS_HOST, LEADS_URL } from '@/lib/leadsSite'
 
@@ -139,6 +139,10 @@ You talk directly with the people building your site.
   '/pricing': () =>
     markdown([
       '# Pricing — Orbit Websites',
+      `## ${basePlan.name}`,
+      `${basePlan.price} · ${basePlan.meta}`,
+      basePlan.copy,
+      bullets(basePlan.features),
       ...tiers.flatMap((t) => [`## ${t.name}`, `${t.price} · ${t.meta}`, t.copy, bullets(t.features)]),
       '## Care Plans (optional)',
       'Month to month, only after launch.',
